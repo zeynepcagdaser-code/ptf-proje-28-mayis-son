@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 from sequence.config import (
+    ANCHOR_FILE_MAP,
     EXCLUDE_COLUMNS,
     FEATURE_COLUMNS_FILE,
     FEATURE_SCALER_FILE,
@@ -47,6 +48,23 @@ def _resolve_columns(df: pd.DataFrame) -> tuple[list[str], list[str]]:
         if c not in EXCLUDE_COLUMNS and c not in target_columns
     ]
     return feature_columns, target_columns
+
+
+def _save_anchor_csv(
+    anchor_ts_hours: list,
+    split_name: str,
+    output_dir: Path,
+) -> Path:
+    anchor_df = pd.DataFrame(
+        {
+            "sample_index": range(len(anchor_ts_hours)),
+            "anchor_ts_hour": anchor_ts_hours,
+            "split": split_name,
+        }
+    )
+    path = output_dir / ANCHOR_FILE_MAP[split_name]
+    anchor_df.to_csv(path, index=False)
+    return path
 
 
 def _tabular_nan_report(
@@ -101,6 +119,7 @@ def run_pipeline(
     dropped_insufficient: dict[str, int] = {}
     shapes: dict[str, dict[str, list[int]]] = {}
     anchors: dict[str, list] = {}
+    anchor_paths: dict[str, str] = {}
 
     for split in SPLIT_ORDER:
         result = build_split_sequences(
@@ -118,6 +137,12 @@ def run_pipeline(
             "y": list(result.y.shape),
         }
         anchors[split] = result.anchor_ts_hours
+        anchor_path = _save_anchor_csv(
+            result.anchor_ts_hours,
+            split,
+            output_dir,
+        )
+        anchor_paths[split] = str(anchor_path)
 
     file_map = {
         "train": ("X_train", "y_train"),
@@ -154,6 +179,7 @@ def run_pipeline(
         "scaler_fit_split": "train",
         "scaler_type": "MinMaxScaler(feature_range=(0, 1))",
         "split_order": SPLIT_ORDER,
+        "anchor_files": anchor_paths,
     }
     (output_dir / METADATA_FILE).write_text(
         json.dumps(metadata, indent=2, default=str),
@@ -176,6 +202,7 @@ def run_pipeline(
     )
     report["tabular_nan_rows"] = tabular_nan
     report["metadata_file"] = str(output_dir / METADATA_FILE)
+    report["anchor_files"] = anchor_paths
 
     json_path, md_path = write_sequence_report(report, reports_dir)
     report["report_json"] = str(json_path)

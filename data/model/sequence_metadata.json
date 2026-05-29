@@ -60,5 +60,10 @@
     "train",
     "validation",
     "test"
-  ]
+  ],
+  "anchor_files": {
+    "train": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_train.csv",
+    "validation": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_val.csv",
+    "test": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_test.csv"
+  }
 }

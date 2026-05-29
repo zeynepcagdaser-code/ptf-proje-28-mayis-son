@@ -45,3 +45,12 @@ python run_sequence.py
 - Girdi: `data/features/lstm_next24_v1.parquet`
 - Çıktı: `data/model/X_{train,val,test}.npy`, `y_*.npy`, scaler `.pkl`, metadata JSON
 - Rapor: `reports/sequence_report_latest.json` ve `.md`
+- Anchor metadata: `data/model/anchor_{train,val,test}.csv`
+
+### ML artifacts (manuel CI)
+
+Ham CSV güncellemesinden sonra parquet/feature/sequence üretmek için GitHub Actions:
+
+- Workflow: `.github/workflows/build_ml_artifacts.yml`
+- Tetik: yalnızca `workflow_dispatch` (saatlik cron’u yavaşlatmaz)
+- `.npy` dosyaları commit edilmez (yerelde `python run_sequence.py` ile üretilir)

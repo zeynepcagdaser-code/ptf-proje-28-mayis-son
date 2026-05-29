@@ -1,6 +1,6 @@
 # Sequence Dataset Report
 
-- **Generated (UTC):** 2026-05-29T20:37:39.450636+00:00
+- **Generated (UTC):** 2026-05-29T21:39:51.061814+00:00
 - **Source:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Output dir:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model`
 

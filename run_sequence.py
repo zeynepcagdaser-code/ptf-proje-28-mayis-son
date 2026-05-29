@@ -17,6 +17,10 @@ def main() -> None:
     for split, count in report["dropped_nan_sequences"].items():
         print(f"  {split}: {count}")
     print("\nScaler fit split:", report["scaler_fit_split"])
+    if report.get("anchor_files"):
+        print("\nAnchor files:")
+        for split, path in report["anchor_files"].items():
+            print(f"  {split}: {path}")
     print("JSON report:", report["report_json"])
     print("Markdown report:", report["report_md"])
 

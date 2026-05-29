@@ -1,6 +1,6 @@
 # Master Dataset Report
 
-- **Generated (UTC):** 2026-05-29T20:13:53.706576+00:00
+- **Generated (UTC):** 2026-05-29T21:35:36.998776+00:00
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet`
 - **Rows:** 56208 (spine: 56208, match: True)
 - **Columns:** 75
@@ -34,41 +34,41 @@
 
 | Column | Missing % | Availability |
 |--------|----------:|----------------|
-| `wind_generation_mean` | 0.5604 | realized |
-| `wind_generation_min` | 0.5604 | realized |
-| `wind_generation_max` | 0.5604 | realized |
+| `wind_generation_mean` | 0.5586 | realized |
+| `wind_generation_min` | 0.5586 | realized |
+| `wind_generation_max` | 0.5586 | realized |
 | `outage_fault_mw_loss_sum` | 0.2989 | outage_event |
 | `outage_fault_mw_loss_max` | 0.2989 | outage_event |
 | `outage_fault_operator_power_sum` | 0.2989 | outage_event |
 | `outage_maint_capacity_sum` | 0.1352 | outage_event |
 | `outage_maint_operator_power_sum` | 0.1352 | outage_event |
 | `wind_forecast_std` | 0.0783 | forecast |
-| `smf_systemMarginalPrice` | 0.0552 | balancing |
-| `smf_is_systemMarginalPrice_zero` | 0.0552 | metadata |
-| `smf_is_systemMarginalPrice_capped` | 0.0552 | metadata |
-| `gen_total` | 0.0480 | realized |
-| `gen_naturalGas` | 0.0480 | realized |
-| `gen_dammedHydro` | 0.0480 | realized |
-| `gen_lignite` | 0.0480 | realized |
-| `gen_river` | 0.0480 | realized |
-| `gen_importCoal` | 0.0480 | realized |
-| `gen_wind` | 0.0480 | realized |
-| `gen_sun` | 0.0480 | realized |
-| `gen_fueloil` | 0.0480 | realized |
-| `gen_geothermal` | 0.0480 | realized |
-| `gen_asphaltiteCoal` | 0.0480 | realized |
-| `gen_blackCoal` | 0.0480 | realized |
-| `gen_biomass` | 0.0480 | realized |
-| `gen_importExport` | 0.0480 | realized |
-| `gen_wasteheat` | 0.0480 | realized |
-| `gen_was_sun_clipped` | 0.0480 | metadata |
-| `cons_consumption` | 0.0480 | realized |
+| `smf_systemMarginalPrice` | 0.0534 | balancing |
+| `smf_is_systemMarginalPrice_zero` | 0.0534 | metadata |
+| `smf_is_systemMarginalPrice_capped` | 0.0534 | metadata |
 | `wind_quarter2_mean` | 0.0480 | forecast |
 | `wind_quarter3_mean` | 0.0480 | forecast |
 | `wind_quarter4_mean` | 0.0480 | forecast |
 | `wind_forecast_mean` | 0.0480 | forecast |
 | `wind_forecast_min` | 0.0480 | forecast |
 | `wind_forecast_max` | 0.0480 | forecast |
+| `gen_total` | 0.0463 | realized |
+| `gen_naturalGas` | 0.0463 | realized |
+| `gen_dammedHydro` | 0.0463 | realized |
+| `gen_lignite` | 0.0463 | realized |
+| `gen_river` | 0.0463 | realized |
+| `gen_importCoal` | 0.0463 | realized |
+| `gen_wind` | 0.0463 | realized |
+| `gen_sun` | 0.0463 | realized |
+| `gen_fueloil` | 0.0463 | realized |
+| `gen_geothermal` | 0.0463 | realized |
+| `gen_asphaltiteCoal` | 0.0463 | realized |
+| `gen_blackCoal` | 0.0463 | realized |
+| `gen_biomass` | 0.0463 | realized |
+| `gen_importExport` | 0.0463 | realized |
+| `gen_wasteheat` | 0.0463 | realized |
+| `gen_was_sun_clipped` | 0.0463 | metadata |
+| `cons_consumption` | 0.0463 | realized |
 | `load_lep` | 0.0427 | forecast |
 
 ## Schema

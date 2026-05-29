@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-29T20:37:39.450636+00:00",
+  "generated_at_utc": "2026-05-29T21:39:51.061814+00:00",
   "source_features": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
   "output_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model",
   "window_size": 168,
@@ -192,5 +192,10 @@
     "feature_nan_rows": 861,
     "target_nan_rows": 0
   },
-  "metadata_file": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/sequence_metadata.json"
+  "metadata_file": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/sequence_metadata.json",
+  "anchor_files": {
+    "train": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_train.csv",
+    "validation": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_val.csv",
+    "test": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_test.csv"
+  }
 }

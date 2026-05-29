@@ -20,6 +20,12 @@ FEATURE_COLUMNS_FILE = "feature_columns.json"
 TARGET_COLUMNS_FILE = "target_columns.json"
 METADATA_FILE = "sequence_metadata.json"
 
+ANCHOR_FILE_MAP = {
+    "train": "anchor_train.csv",
+    "validation": "anchor_val.csv",
+    "test": "anchor_test.csv",
+}
+
 LEAKAGE_CHECKLIST = [
     {
         "check": "feature_scaler fit only on train tabular rows",

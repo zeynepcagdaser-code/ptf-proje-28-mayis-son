@@ -1,6 +1,6 @@
 # Cleaning Report
 
-- **Generated (UTC):** 2026-05-29T20:08:34.973788+00:00
+- **Generated (UTC):** 2026-05-29T21:35:35.797658+00:00
 - **Output directory:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/clean`
 
 ## Rules applied
@@ -59,13 +59,13 @@
 ### realtime_generation
 
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/clean/realtime_generation_hourly.parquet`
-- **Rows in:** 56181
-- **Rows out:** 56181
-- **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-29 20:00:00+03:00
+- **Rows in:** 56182
+- **Rows out:** 56182
+- **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-29 21:00:00+03:00
 - **ts_parse_fail:** 0
-- **rows_after_ts_drop:** 56181
+- **rows_after_ts_drop:** 56182
 - **duplicate_key_rows:** 0
-- **rows_after_dedupe:** 56181
+- **rows_after_dedupe:** 56182
 - **duplicate_ts_hour_removed:** 0
 - **dropped_columns:** ['naphta', 'lng']
 - **numeric_na_pct:** {}
@@ -73,13 +73,13 @@
 ### real_consumption
 
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/clean/real_consumption_hourly.parquet`
-- **Rows in:** 56181
-- **Rows out:** 56181
-- **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-29 20:00:00+03:00
+- **Rows in:** 56182
+- **Rows out:** 56182
+- **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-29 21:00:00+03:00
 - **ts_parse_fail:** 0
-- **rows_after_ts_drop:** 56181
+- **rows_after_ts_drop:** 56182
 - **duplicate_key_rows:** 0
-- **rows_after_dedupe:** 56181
+- **rows_after_dedupe:** 56182
 - **duplicate_ts_hour_removed:** 0
 - **dropped_columns:** []
 - **numeric_na_pct:** {}
@@ -87,13 +87,13 @@
 ### smf
 
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/clean/smf_hourly.parquet`
-- **Rows in:** 56177
-- **Rows out:** 56177
-- **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-29 16:00:00+03:00
+- **Rows in:** 56178
+- **Rows out:** 56178
+- **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-29 17:00:00+03:00
 - **ts_parse_fail:** 0
-- **rows_after_ts_drop:** 56177
+- **rows_after_ts_drop:** 56178
 - **duplicate_key_rows:** 0
-- **rows_after_dedupe:** 56177
+- **rows_after_dedupe:** 56178
 - **duplicate_ts_hour_removed:** 0
 - **dropped_columns:** ['hour']
 - **numeric_na_pct:** {}
@@ -122,7 +122,7 @@
 - **duplicate_key_rows:** 0
 - **rows_after_dedupe:** 336333
 - **partial_hours:** 432
-- **numeric_na_pct:** {'quarter2_mean': 0.048035866780529464, 'quarter3_mean': 0.048035866780529464, 'quarter4_mean': 0.048035866780529464, 'generation_mean': 0.5604184457728437, 'generation_min': 0.5604184457728437, 'generation_max': 0.5604184457728437, 'forecast_mean': 0.048035866780529464, 'forecast_min': 0.048035866780529464, 'forecast_max': 0.048035866780529464, 'forecast_std': 0.07828067179049246}
+- **numeric_na_pct:** {'quarter2_mean': 0.048035866780529464, 'quarter3_mean': 0.048035866780529464, 'quarter4_mean': 0.048035866780529464, 'generation_mean': 0.558639339595787, 'generation_min': 0.558639339595787, 'generation_max': 0.558639339595787, 'forecast_mean': 0.048035866780529464, 'forecast_min': 0.048035866780529464, 'forecast_max': 0.048035866780529464, 'forecast_std': 0.07828067179049246}
 
 ### outages
 
