@@ -1,4 +1,4 @@
-name: Update PTF, KGUP, Realtime Generation, SMF, YAL YAT, Load Forecast and Consumption Datasets
+name: Update PTF, KGUP, Realtime Generation, SMF, YAL YAT, Load Forecast, Consumption and Wind Datasets
 
 on:
   workflow_dispatch:
@@ -71,11 +71,17 @@ jobs:
           EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
         run: python fetch_real_consumption.py
 
+      - name: Rüzgar üretim tahmini verisini güncelle
+        env:
+          EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
+          EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
+        run: python fetch_wind_forecast.py
+
       - name: Commit and push CSV changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/*.csv fetch_realtime_generation.py fetch_smf.py fetch_yal_yat.py fetch_load_forecast.py fetch_real_consumption.py
+          git add data/*.csv fetch_realtime_generation.py fetch_smf.py fetch_yal_yat.py fetch_load_forecast.py fetch_real_consumption.py fetch_wind_forecast.py
 
           if git diff --cached --quiet; then
             echo "No dataset changes to commit"
