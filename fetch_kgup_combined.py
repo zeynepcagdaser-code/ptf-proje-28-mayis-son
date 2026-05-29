@@ -17,10 +17,28 @@ FDPP_URL = "https://seffaflik.epias.com.tr/electricity-service/v1/generation/dat
 FDPP_FIRST_VERSION_URL = "https://seffaflik.epias.com.tr/electricity-service/v1/generation/data/dpp-first-version"
 
 CSV_PATH = "data/kgup_combined.csv"
+REQUEST_TIMEOUT = (10, 120)
+MAX_RETRIES = 3
+
+
+def post_with_retries(url, **kwargs):
+    last_error = None
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            return requests.post(url, timeout=REQUEST_TIMEOUT, **kwargs)
+        except requests.exceptions.RequestException as exc:
+            last_error = exc
+            print(f"İstek hatası ({attempt}/{MAX_RETRIES}): {exc}")
+
+            if attempt < MAX_RETRIES:
+                time.sleep(attempt * 10)
+
+    raise last_error
 
 
 def get_tgt():
-    response = requests.post(
+    response = post_with_retries(
         LOGIN_URL,
         headers={
             "Content-Type": "application/x-www-form-urlencoded",
@@ -73,7 +91,7 @@ def fetch_epias_data(url, start_date, end_date, source_type, tgt, max_days):
 
         print(f"{source_type} çekiliyor:", payload["startDate"], "→", payload["endDate"])
 
-        response = requests.post(url, json=payload, headers=headers)
+        response = post_with_retries(url, json=payload, headers=headers)
 
         print("Durum:", response.status_code)
 

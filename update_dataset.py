@@ -13,9 +13,27 @@ password = os.getenv("EPIAS_PASSWORD")
 
 login_url = "https://giris.epias.com.tr/cas/v1/tickets"
 ptf_url = "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/mcp"
+REQUEST_TIMEOUT = (10, 120)
+MAX_RETRIES = 3
+
+
+def post_with_retries(url, **kwargs):
+    last_error = None
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            return requests.post(url, timeout=REQUEST_TIMEOUT, **kwargs)
+        except requests.exceptions.RequestException as exc:
+            last_error = exc
+            print(f"İstek hatası ({attempt}/{MAX_RETRIES}): {exc}")
+
+            if attempt < MAX_RETRIES:
+                time.sleep(attempt * 10)
+
+    raise last_error
 
 # 1) TGT AL
-tgt_response = requests.post(
+tgt_response = post_with_retries(
     login_url,
     headers={
         "Content-Type": "application/x-www-form-urlencoded",
@@ -72,7 +90,7 @@ while current_start < end_date:
 
     print("Çekiliyor:", payload["startDate"], "→", payload["endDate"])
 
-    response = requests.post(
+    response = post_with_retries(
         ptf_url,
         json=payload,
         headers=headers
