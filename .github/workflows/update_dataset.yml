@@ -28,11 +28,17 @@ jobs:
         run: |
           pip install pandas requests python-dotenv
 
-      - name: Veriyi güncelle
+      - name: PTF verisini güncelle
         env:
-          EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
-          EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
+        EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
+        EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
         run: python update_dataset.py
+
+      - name: KGÜP verisini güncelle
+        env:
+        EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
+        EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
+        run: python fetch_kgup_combined.py
 
       - name: GitHub'a kaydet
         run: |
