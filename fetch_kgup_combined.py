@@ -19,6 +19,7 @@ FDPP_FIRST_VERSION_URL = "https://seffaflik.epias.com.tr/electricity-service/v1/
 CSV_PATH = "data/kgup_combined.csv"
 REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 3
+ROLLING_REFRESH_HOURS = 48
 
 
 def post_with_retries(url, **kwargs):
@@ -172,7 +173,8 @@ if last_date is None:
 else:
     print("Son kayıt tarihi:", last_date)
 
-    start_update = last_date.replace(hour=0, minute=0, second=0, microsecond=0)
+    start_update = last_date - timedelta(hours=ROLLING_REFRESH_HOURS)
+    start_update = start_update.replace(minute=0, second=0, microsecond=0)
 
     print("Güncelleme başlangıcı:", start_update)
 

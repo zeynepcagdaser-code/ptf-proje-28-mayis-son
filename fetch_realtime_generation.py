@@ -21,6 +21,7 @@ REALTIME_URL = (
 
 CSV_PATH = "data/realtime_generation.csv"
 MAX_DAYS_PER_REQUEST = 90
+ROLLING_REFRESH_HOURS = 48
 
 
 def get_tgt():
@@ -199,7 +200,7 @@ if os.path.exists(CSV_PATH):
 
     start_date = last_date.to_pydatetime().replace(tzinfo=None)
 
-    start_date = start_date + timedelta(hours=1)
+    start_date = start_date - timedelta(hours=ROLLING_REFRESH_HOURS)
 
     start_date = start_date.replace(
         minute=0,
@@ -237,7 +238,8 @@ final_df = pd.concat(
 if "date" in final_df.columns and "hour" in final_df.columns:
 
     final_df = final_df.drop_duplicates(
-        subset=["date", "hour"]
+        subset=["date", "hour"],
+        keep="last"
     )
 
     final_df = final_df.sort_values(

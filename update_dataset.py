@@ -15,6 +15,8 @@ login_url = "https://giris.epias.com.tr/cas/v1/tickets"
 ptf_url = "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/mcp"
 REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 3
+ROLLING_REFRESH_HOURS = 48
+CSV_PATH = "data/ptf_dataset.csv"
 
 
 def post_with_retries(url, **kwargs):
@@ -69,8 +71,38 @@ headers = {
     "TGT": tgt
 }
 
+
+def get_start_date_from_csv(csv_path):
+    if not os.path.exists(csv_path):
+        return datetime(2020, 1, 1)
+
+    old_df = pd.read_csv(csv_path)
+
+    if old_df.empty or "date" not in old_df.columns:
+        return datetime(2020, 1, 1)
+
+    parsed = pd.to_datetime(old_df["date"], errors="coerce")
+    last_date = parsed.max()
+
+    if pd.isna(last_date):
+        return datetime(2020, 1, 1)
+
+    print("Son kayıt:", last_date)
+
+    return last_date.to_pydatetime().replace(tzinfo=None) - timedelta(
+        hours=ROLLING_REFRESH_HOURS
+    )
+
+
 # 2) TARİH ARALIKLARINI PARÇA PARÇA ÇEK
-start_date = datetime(2020, 1, 1)
+old_df = pd.DataFrame()
+
+if os.path.exists(CSV_PATH):
+    old_df = pd.read_csv(CSV_PATH)
+    print("Eski PTF satır sayısı:", len(old_df))
+
+start_date = get_start_date_from_csv(CSV_PATH)
+start_date = start_date.replace(minute=0, second=0, microsecond=0)
 end_date = datetime.now()
 
 all_items = []
@@ -113,15 +145,21 @@ while current_start < end_date:
 
     time.sleep(1)
 
+print("Yeni gelen satır:", len(all_items))
+
 # 3) CSV'YE KAYDET
-df = pd.DataFrame(all_items)
+new_df = pd.DataFrame(all_items)
+df = pd.concat([old_df, new_df], ignore_index=True)
 
-df = df.drop_duplicates(subset=["date", "hour"])
-df = df.sort_values(by=["date", "hour"])
+if "date" in df.columns and "hour" in df.columns:
+    df = df.drop_duplicates(subset=["date", "hour"], keep="last")
+    df = df.sort_values(by=["date", "hour"])
 
-csv_path = "data/ptf_dataset.csv"
-df.to_csv(csv_path, index=False)
+if "datetime" in df.columns:
+    df = df.drop(columns=["datetime"])
+
+df.to_csv(CSV_PATH, index=False)
 
 print("Bitti.")
 print("Toplam satır:", len(df))
-print("CSV kaydedildi:", csv_path)
+print("CSV kaydedildi:", CSV_PATH)

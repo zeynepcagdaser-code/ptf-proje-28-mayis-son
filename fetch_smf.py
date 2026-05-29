@@ -18,6 +18,7 @@ CSV_PATH = "data/smf.csv"
 REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 3
 MAX_DAYS_PER_REQUEST = 90
+ROLLING_REFRESH_HOURS = 48
 
 
 def post_with_retries(url, **kwargs):
@@ -72,11 +73,16 @@ def parse_datetime_columns(df):
 
     parsed = pd.to_datetime(df["date"], errors="coerce")
 
-    if parsed.isna().all() and "hour" in df.columns:
-        parsed = pd.to_datetime(
-            df["date"].astype(str) + " " + df["hour"].astype(str),
-            errors="coerce"
-        )
+    if "hour" in df.columns:
+        parsed_hour = pd.to_datetime(df["hour"], errors="coerce")
+
+        if not parsed_hour.isna().all():
+            parsed = parsed_hour
+        elif parsed.isna().all():
+            parsed = pd.to_datetime(
+                df["date"].astype(str) + " " + df["hour"].astype(str),
+                errors="coerce"
+            )
 
     return parsed
 
@@ -99,7 +105,9 @@ def get_start_date_from_csv(csv_path):
 
     print("Son kayıt:", last_date)
 
-    return last_date.to_pydatetime().replace(tzinfo=None) + timedelta(hours=1)
+    return last_date.to_pydatetime().replace(tzinfo=None) - timedelta(
+        hours=ROLLING_REFRESH_HOURS
+    )
 
 
 def fetch_smf_data(start_date, end_date, tgt):
