@@ -16,6 +16,7 @@ ptf_url = "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/dat
 REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 3
 ROLLING_REFRESH_HOURS = 48
+FORWARD_LOOK_DAYS = 7
 CSV_PATH = "data/ptf_dataset.csv"
 
 
@@ -103,7 +104,7 @@ if os.path.exists(CSV_PATH):
 
 start_date = get_start_date_from_csv(CSV_PATH)
 start_date = start_date.replace(minute=0, second=0, microsecond=0)
-end_date = datetime.now()
+end_date = datetime.now() + timedelta(days=FORWARD_LOOK_DAYS)
 
 all_items = []
 

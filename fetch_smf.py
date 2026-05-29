@@ -19,6 +19,7 @@ REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 3
 MAX_DAYS_PER_REQUEST = 90
 ROLLING_REFRESH_HOURS = 48
+FORWARD_LOOK_DAYS = 7
 
 
 def post_with_retries(url, **kwargs):
@@ -119,12 +120,13 @@ def fetch_smf_data(start_date, end_date, tgt):
 
     all_items = []
     current_start = start_date
+    safe_end_date = end_date
 
-    while current_start <= end_date:
+    while current_start <= safe_end_date:
         current_end = current_start + timedelta(days=MAX_DAYS_PER_REQUEST - 1)
 
-        if current_end > end_date:
-            current_end = end_date
+        if current_end > safe_end_date:
+            current_end = safe_end_date
 
         payload = {
             "startDate": current_start.strftime("%Y-%m-%dT00:00:00+03:00"),
@@ -140,6 +142,18 @@ def fetch_smf_data(start_date, end_date, tgt):
 
         if response.status_code != 200:
             print(response.text[:1500])
+
+            if "geçmiş zaman olmalıdır" in response.text and current_end > datetime.now():
+                safe_end_date = datetime.now().replace(
+                    minute=0,
+                    second=0,
+                    microsecond=0
+                )
+                print("SMF endpoint ileri endDate kabul etmedi. Güvenli bitişe dönülüyor:", safe_end_date)
+
+                if current_start <= safe_end_date:
+                    continue
+
             break
 
         data = response.json()
@@ -167,7 +181,8 @@ if os.path.exists(CSV_PATH):
 start_date = get_start_date_from_csv(CSV_PATH)
 start_date = start_date.replace(minute=0, second=0, microsecond=0)
 
-end_date = datetime.now().replace(minute=0, second=0, microsecond=0)
+end_date = datetime.now() + timedelta(days=FORWARD_LOOK_DAYS)
+end_date = end_date.replace(minute=0, second=0, microsecond=0)
 
 print("Başlangıç:", start_date)
 print("Bitiş:", end_date)

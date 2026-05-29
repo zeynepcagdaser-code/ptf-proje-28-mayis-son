@@ -20,6 +20,7 @@ CSV_PATH = "data/kgup_combined.csv"
 REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 3
 ROLLING_REFRESH_HOURS = 48
+FORWARD_LOOK_DAYS = 7
 
 
 def post_with_retries(url, **kwargs):
@@ -137,7 +138,7 @@ def get_last_date_from_csv(csv_path):
 tgt = get_tgt()
 print("TGT alındı:", tgt[:20] + "...")
 
-today = datetime.now().replace(tzinfo=None)
+end_date = datetime.now().replace(tzinfo=None) + timedelta(days=FORWARD_LOOK_DAYS)
 
 old_df = pd.DataFrame()
 
@@ -162,7 +163,7 @@ if last_date is None:
     fdpp_first_items = fetch_epias_data(
         url=FDPP_FIRST_VERSION_URL,
         start_date=datetime(2023, 1, 1),
-        end_date=today,
+        end_date=end_date,
         source_type="fdpp_first_version",
         tgt=tgt,
         max_days=365
@@ -181,7 +182,7 @@ else:
     new_items = fetch_epias_data(
         url=FDPP_FIRST_VERSION_URL,
         start_date=start_update,
-        end_date=today,
+        end_date=end_date,
         source_type="fdpp_first_version",
         tgt=tgt,
         max_days=365

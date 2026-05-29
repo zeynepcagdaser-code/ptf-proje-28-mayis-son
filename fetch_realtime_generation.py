@@ -22,6 +22,7 @@ REALTIME_URL = (
 CSV_PATH = "data/realtime_generation.csv"
 MAX_DAYS_PER_REQUEST = 90
 ROLLING_REFRESH_HOURS = 48
+FORWARD_LOOK_DAYS = 7
 
 
 def get_tgt():
@@ -214,8 +215,7 @@ else:
 
     start_date = datetime(2020, 1, 1)
 
-# düne kadar çek
-end_date = datetime.now() - timedelta(days=1)
+end_date = datetime.now() + timedelta(days=FORWARD_LOOK_DAYS)
 
 print("Başlangıç:", start_date)
 print("Bitiş:", end_date)
