@@ -11,6 +11,9 @@ permissions:
 jobs:
   update-datasets:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONUNBUFFERED: "1"
 
     steps:
       - name: Checkout repository
@@ -30,13 +33,13 @@ jobs:
         env:
           EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
           EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
-        run: python update_dataset.py
+        run: python -u update_dataset.py
 
       - name: Update KGUP dataset
         env:
           EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
           EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
-        run: python fetch_kgup_combined.py
+        run: python -u fetch_kgup_combined.py
 
       - name: Commit and push CSV changes
         run: |
