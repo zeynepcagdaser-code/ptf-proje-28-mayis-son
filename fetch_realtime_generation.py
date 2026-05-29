@@ -178,14 +178,28 @@ if os.path.exists(CSV_PATH):
     print("Eski satır:", len(old_df))
 
     old_df["datetime"] = pd.to_datetime(
-        old_df["date"] + " " + old_df["hour"].astype(str) + ":00:00"
+        old_df["date"],
+        errors="coerce"
     )
+
+    if old_df["datetime"].isna().all() and "hour" in old_df.columns:
+
+        old_df["datetime"] = pd.to_datetime(
+            old_df["date"].astype(str) + " " + old_df["hour"].astype(str),
+            errors="coerce"
+        )
 
     last_date = old_df["datetime"].max()
 
+    if pd.isna(last_date):
+
+        raise Exception("CSV içinden son kayıt tarihi okunamadı")
+
     print("Son kayıt:", last_date)
 
-    start_date = last_date + timedelta(hours=1)
+    start_date = last_date.to_pydatetime().replace(tzinfo=None)
+
+    start_date = start_date + timedelta(hours=1)
 
     start_date = start_date.replace(
         minute=0,
@@ -229,6 +243,10 @@ if "date" in final_df.columns and "hour" in final_df.columns:
     final_df = final_df.sort_values(
         by=["date", "hour"]
     )
+
+if "datetime" in final_df.columns:
+
+    final_df = final_df.drop(columns=["datetime"])
 
 final_df.to_csv(CSV_PATH, index=False)
 
