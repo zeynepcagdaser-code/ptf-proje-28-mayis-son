@@ -1,4 +1,4 @@
-name: Update PTF, KGUP and Realtime Generation Datasets
+name: Update PTF, KGUP, Realtime Generation and SMF Datasets
 
 on:
   workflow_dispatch:
@@ -47,11 +47,17 @@ jobs:
           EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
         run: python -u fetch_realtime_generation.py
 
+      - name: SMF verisini güncelle
+        env:
+          EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
+          EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
+        run: python fetch_smf.py
+
       - name: Commit and push CSV changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/*.csv fetch_realtime_generation.py
+          git add data/*.csv fetch_realtime_generation.py fetch_smf.py
 
           if git diff --cached --quiet; then
             echo "No dataset changes to commit"
