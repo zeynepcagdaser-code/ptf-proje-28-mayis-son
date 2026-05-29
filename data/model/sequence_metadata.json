@@ -1,0 +1,64 @@
+{
+  "source_features": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
+  "input_window": 168,
+  "output_horizon": 24,
+  "feature_count": 75,
+  "target_count": 24,
+  "index_mapping": "X[t-167:t] -> y[t+1:t+24]",
+  "shapes": {
+    "train": {
+      "X": [
+        42871,
+        168,
+        75
+      ],
+      "y": [
+        42871,
+        24
+      ]
+    },
+    "validation": {
+      "X": [
+        8501,
+        168,
+        75
+      ],
+      "y": [
+        8501,
+        24
+      ]
+    },
+    "test": {
+      "X": [
+        3282,
+        168,
+        75
+      ],
+      "y": [
+        3282,
+        24
+      ]
+    }
+  },
+  "sequence_counts": {
+    "train": 42871,
+    "validation": 8501,
+    "test": 3282
+  },
+  "dropped_nan_sequences": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "tabular_nan_rows": {
+    "feature_nan_rows": 861,
+    "target_nan_rows": 0
+  },
+  "scaler_fit_split": "train",
+  "scaler_type": "MinMaxScaler(feature_range=(0, 1))",
+  "split_order": [
+    "train",
+    "validation",
+    "test"
+  ]
+}
