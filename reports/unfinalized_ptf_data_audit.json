@@ -1,0 +1,294 @@
+{
+  "generated_at": "2026-05-30T12:18:40.067932+00:00",
+  "audit_type": "data_discovery_only",
+  "no_training": true,
+  "no_feature_changes": true,
+  "keywords_searched": [
+    "mcp",
+    "market clearing price",
+    "dam",
+    "day ahead market",
+    "provisional",
+    "unfinalized",
+    "finalized",
+    "kesinleşmemiş",
+    "kesinleşmiş",
+    "piyasa takas fiyatı",
+    "interim",
+    "k.ptf"
+  ],
+  "data_csv_scan": [
+    {
+      "file": "data/kgup_combined.csv",
+      "columns": [
+        "date",
+        "time",
+        "toplam",
+        "dogalgaz",
+        "ruzgar",
+        "linyit",
+        "tasKomur",
+        "ithalKomur",
+        "fuelOil",
+        "jeotermal",
+        "barajli",
+        "nafta",
+        "biokutle",
+        "akarsu",
+        "gunes",
+        "diger",
+        "source_type"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/load_forecast.csv",
+      "columns": [
+        "date",
+        "time",
+        "lep"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/outages.csv",
+      "columns": [
+        "regionId",
+        "regionShortName",
+        "messageTypeId",
+        "messageTypeName",
+        "id",
+        "orgName",
+        "powerPlantName",
+        "uevcbId",
+        "uevcbName",
+        "caseStartDate",
+        "caseEndDate",
+        "operatorPower",
+        "capacityAtCaseTime",
+        "reason",
+        "faultDetailCount",
+        "detailStartHour",
+        "detailEndHour",
+        "minRemainingCapacity",
+        "maxPreFaultPower",
+        "maxFaultCausedPowerLoss",
+        "totalFaultCausedPowerLoss",
+        "totalFaultCausedEnergyLoss"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/ptf_dataset.csv",
+      "columns": [
+        "date",
+        "hour",
+        "price",
+        "priceUsd",
+        "priceEur"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/real_consumption.csv",
+      "columns": [
+        "date",
+        "time",
+        "consumption"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/realtime_generation.csv",
+      "columns": [
+        "date",
+        "hour",
+        "total",
+        "naturalGas",
+        "dammedHydro",
+        "lignite",
+        "river",
+        "importCoal",
+        "wind",
+        "sun",
+        "fueloil",
+        "geothermal",
+        "asphaltiteCoal",
+        "blackCoal",
+        "biomass",
+        "naphta",
+        "lng",
+        "importExport",
+        "wasteheat"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/smf.csv",
+      "columns": [
+        "date",
+        "hour",
+        "systemMarginalPrice"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/wind_forecast.csv",
+      "columns": [
+        "date",
+        "time",
+        "quarter1",
+        "quarter2",
+        "quarter3",
+        "quarter4",
+        "generation",
+        "forecast"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    },
+    {
+      "file": "data/yal_yat.csv",
+      "columns": [
+        "date",
+        "hour",
+        "upRegulationZeroCoded",
+        "upRegulationOneCoded",
+        "upRegulationTwoCoded",
+        "upRegulationDelivered",
+        "net",
+        "downRegulationZeroCoded",
+        "downRegulationOneCoded",
+        "downRegulationTwoCoded",
+        "downRegulationDelivered"
+      ],
+      "ptf_related_columns": [],
+      "has_unfinalized_column": false
+    }
+  ],
+  "ptf_dataset": {
+    "exists": true,
+    "path": "data/ptf_dataset.csv",
+    "columns": [
+      "date",
+      "hour",
+      "price",
+      "priceUsd",
+      "priceEur"
+    ],
+    "row_count": 56208,
+    "date_min": "2020-01-01T00:00:00+03:00",
+    "date_max": "2026-05-30T23:00:00+03:00",
+    "price_columns_only": true,
+    "unfinalized_or_final_flag_column": false,
+    "notes": "Only DAM MCP listing fields (price/priceUsd/priceEur). No interim/K.PTF/marketTradePrice column."
+  },
+  "update_dataset": {
+    "script": "update_dataset.py",
+    "endpoint_url": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/mcp",
+    "method": "POST",
+    "auth": "CAS TGT (giris.epias.com.tr)",
+    "csv_output": "data/ptf_dataset.csv",
+    "rolling_refresh_hours": 48,
+    "forward_look_days": 7,
+    "inferred_price_type": "PTF Listeleme (MCP) — not interim-mcp",
+    "code_excerpt_endpoint": "ptf_url = .../markets/dam/data/mcp"
+  },
+  "master_mapping": {
+    "clean_spine": "data/clean/ptf_hourly.parquet",
+    "master_parquet": "data/master/master_hourly_v1.parquet",
+    "ptf_price_source_chain": [
+      "update_dataset.py → data/ptf_dataset.csv (mcp)",
+      "cleaning → data/clean/ptf_hourly.parquet",
+      "master spine → ptf_price, ptf_priceUsd, ptf_priceEur"
+    ]
+  },
+  "epias_endpoints": {
+    "electricity_service_v1": {
+      "unfinalized_k_ptf_list": {
+        "name": "Kesinleşmemiş Piyasa Takas Fiyatı (K.PTF) Listeleme",
+        "method": "POST",
+        "path": "/v1/markets/dam/data/interim-mcp",
+        "full_url": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp",
+        "response_price_field": "marketTradePrice",
+        "unit": "TL/MWh",
+        "description": "DAM match price before objection period completes (itiraz süreci tamamlanmamış)."
+      },
+      "unfinalized_publish_status": {
+        "name": "K.PTF yayınlanma durumu",
+        "method": "GET",
+        "path": "/v1/markets/dam/data/interim-mcp-published-status",
+        "full_url": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp-published-status"
+      },
+      "ptf_mcp_list_current_ingestion": {
+        "name": "Piyasa Takas Fiyatı (PTF) Listeleme",
+        "method": "POST",
+        "path": "/v1/markets/dam/data/mcp",
+        "full_url": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/mcp",
+        "response_price_fields": [
+          "price",
+          "priceUsd",
+          "priceEur"
+        ],
+        "description": "Standard hourly DAM MCP/PTF; EPİAŞ documents as post-match clearing price. Typically treated as published PTF series (updates after objections finalize)."
+      },
+      "export_variants": {
+        "interim_export": "POST /v1/markets/dam/export/interim-mcp",
+        "mcp_export": "POST /v1/markets/dam/export/mcp"
+      }
+    },
+    "legacy_transparency_api": {
+      "interim_mcp": "GET /market/day-ahead-interim-mcp",
+      "day_ahead_mcp": "GET /market/day-ahead-mcp",
+      "mcp_smp_with_state": {
+        "path": "GET /market/mcp-smp",
+        "mcpState_enum": [
+          "INTERIM",
+          "FINAL"
+        ],
+        "note": "Can expose whether MCP row is interim vs finalized on combined feed."
+      }
+    },
+    "documentation_sources": [
+      "https://seffaflik.epias.com.tr/electricity-service/technical/tr/index.html",
+      "https://seffaflik.epias.com.tr/transparency/technical/tr/"
+    ]
+  },
+  "d_plus_one_alignment": {
+    "goal": "Baseline = unfinalized PTF known on day D; target = day D+1 hourly PTF (prefer finalized MCP).",
+    "recommended_anchor": "End of day D (e.g. ts_hour = D 23:00 Europe/Istanbul) or last hour when K.PTF for day D is published.",
+    "baseline_column_candidate": "interim_mcp.marketTradePrice (K.PTF) for delivery hour on D+1",
+    "baseline_rule_option_a": "For target D+1 hour h: baseline = K.PTF(D+1, hour=h) if published on anchor evening; else K.PTF(D, hour=h) as same-clock proxy.",
+    "baseline_rule_option_b": "Persistence-style: baseline(D+1,h) = K.PTF(D, hour=h) using kesinleşmemiş day-D prices only.",
+    "target_column": "MCP price (finalized PTF) for (D+1, hour=h) from /mcp endpoint",
+    "residual_target": "target_ptf(D+1,h) - baseline(D+1,h)",
+    "leakage_checks": [
+      "Do not use finalized MCP(D+1) in features available at anchor on D.",
+      "Use interim-mcp-published-status to gate hours not yet published.",
+      "Separate train features: lag finalized PTF for history vs interim for baseline only."
+    ],
+    "current_pipeline_gap": "master.ptf_price and persistence shift(24) use finalized MCP from ptf_dataset.csv; no interim series joined."
+  },
+  "conclusions": {
+    "has_unfinalized_ptf_in_repo": false,
+    "current_ptf_column_is": "Finalized/published MCP (price) from POST /markets/dam/data/mcp",
+    "required_new_ingestion": {
+      "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp",
+      "suggested_file": "data/ptf_interim_dataset.csv",
+      "suggested_master_columns": [
+        "ptf_interim_price",
+        "ptf_interim_published"
+      ],
+      "price_field": "marketTradePrice"
+    },
+    "keep_existing_mcp_for": "Final targets, backtest realized PTF, and post-finalization evaluation",
+    "answer_summary_tr": "Elimizde kesinleşmemiş PTF yok; yalnızca kesinleşmiş/yayınlanmış PTF (mcp→price) var. Kesinleşmemiş için interim-mcp endpoint ve marketTradePrice kolonu çekilmeli."
+  }
+}

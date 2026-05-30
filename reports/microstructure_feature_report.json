@@ -1,0 +1,417 @@
+{
+  "generated_at_utc": "2026-05-30T11:20:45.056234+00:00",
+  "input_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
+  "master_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet",
+  "output_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_microstructure_next24_v1.parquet",
+  "row_count": 56016,
+  "new_feature_count": 24,
+  "new_feature_names": [
+    "smf_ptf_spread_lag_1",
+    "smf_ptf_spread_lag_24",
+    "smf_ptf_spread_change_3h",
+    "smf_volatility_24h",
+    "ptf_volatility_24h",
+    "ptf_change_1h",
+    "ptf_change_3h",
+    "ptf_change_24h",
+    "kgup_total_ramp_1h",
+    "kgup_total_ramp_3h",
+    "kgup_total_ramp_24h",
+    "kgup_renewable_ramp_1h",
+    "kgup_thermal_ramp_1h",
+    "renewable_pressure",
+    "thermal_margin",
+    "wind_forecast_ramp_1h",
+    "wind_forecast_ramp_24h",
+    "load_forecast_ramp_1h",
+    "load_forecast_ramp_24h",
+    "yal_yat_net_pressure_lag_1",
+    "yal_yat_net_pressure_lag_24",
+    "yal_yat_transition_lag_1",
+    "yal_yat_abs_pressure_lag_1",
+    "gas_marginal_proxy"
+  ],
+  "columns_added": [
+    "smf_ptf_spread_lag_1",
+    "smf_ptf_spread_change_3h",
+    "smf_volatility_24h",
+    "ptf_volatility_24h",
+    "ptf_change_1h",
+    "ptf_change_3h",
+    "ptf_change_24h",
+    "kgup_total_ramp_1h",
+    "kgup_total_ramp_3h",
+    "kgup_total_ramp_24h",
+    "kgup_renewable_ramp_1h",
+    "kgup_thermal_ramp_1h",
+    "renewable_pressure",
+    "thermal_margin",
+    "wind_forecast_ramp_1h",
+    "wind_forecast_ramp_24h",
+    "load_forecast_ramp_1h",
+    "load_forecast_ramp_24h",
+    "yal_yat_net_pressure_lag_1",
+    "yal_yat_net_pressure_lag_24",
+    "yal_yat_transition_lag_1",
+    "yal_yat_abs_pressure_lag_1",
+    "gas_marginal_proxy"
+  ],
+  "columns_already_in_input": [
+    "smf_ptf_spread_lag_24"
+  ],
+  "null_pct": {
+    "smf_ptf_spread_lag_1": 0.0089,
+    "smf_ptf_spread_lag_24": 0.0,
+    "smf_ptf_spread_change_3h": 0.0089,
+    "smf_volatility_24h": 0.0,
+    "ptf_volatility_24h": 0.0,
+    "ptf_change_1h": 0.0,
+    "ptf_change_3h": 0.0,
+    "ptf_change_24h": 0.0,
+    "kgup_total_ramp_1h": 0.0,
+    "kgup_total_ramp_3h": 0.0,
+    "kgup_total_ramp_24h": 0.0,
+    "kgup_renewable_ramp_1h": 0.0,
+    "kgup_thermal_ramp_1h": 0.0,
+    "renewable_pressure": 0.0428,
+    "thermal_margin": 0.0,
+    "wind_forecast_ramp_1h": 0.0518,
+    "wind_forecast_ramp_24h": 0.0964,
+    "load_forecast_ramp_1h": 0.0446,
+    "load_forecast_ramp_24h": 0.0857,
+    "yal_yat_net_pressure_lag_1": 0.0,
+    "yal_yat_net_pressure_lag_24": 0.0,
+    "yal_yat_transition_lag_1": 0.0,
+    "yal_yat_abs_pressure_lag_1": 0.0,
+    "gas_marginal_proxy": 0.0
+  },
+  "feature_summary": [
+    {
+      "feature": "smf_ptf_spread_lag_1",
+      "count_non_null": 56011,
+      "mean": -21.369068932888176,
+      "std": 539.5836709325993,
+      "min": -4344.08,
+      "p50": 0.0,
+      "max": 4300.01
+    },
+    {
+      "feature": "smf_ptf_spread_lag_24",
+      "count_non_null": 56016,
+      "mean": -21.332629427306482,
+      "std": 539.5591021069758,
+      "min": -4344.08,
+      "p50": 0.0,
+      "max": 4300.01
+    },
+    {
+      "feature": "smf_ptf_spread_change_3h",
+      "count_non_null": 56011,
+      "mean": -0.0008725071860882826,
+      "std": 596.9124569504463,
+      "min": -7781.99,
+      "p50": 0.0,
+      "max": 6460.0
+    },
+    {
+      "feature": "smf_volatility_24h",
+      "count_non_null": 56016,
+      "mean": 496.9092222281259,
+      "std": 417.56973528339995,
+      "min": 0.0,
+      "p50": 431.9817803692852,
+      "max": 2067.072348666001
+    },
+    {
+      "feature": "ptf_volatility_24h",
+      "count_non_null": 56016,
+      "mean": 391.5690235272892,
+      "std": 333.649544685464,
+      "min": 0.0,
+      "p50": 343.3739065420028,
+      "max": 2013.665533874781
+    },
+    {
+      "feature": "ptf_change_1h",
+      "count_non_null": 56016,
+      "mean": -0.002352720651242197,
+      "std": 357.38931668643954,
+      "min": -3208.99,
+      "p50": 0.0,
+      "max": 4620.01
+    },
+    {
+      "feature": "ptf_change_3h",
+      "count_non_null": 56016,
+      "mean": -0.007111182519280874,
+      "std": 606.0223351610722,
+      "min": -4300.01,
+      "p50": 0.0,
+      "max": 4719.01
+    },
+    {
+      "feature": "ptf_change_24h",
+      "count_non_null": 56016,
+      "mean": -0.09612467866323876,
+      "std": 550.0822397053585,
+      "min": -4475.52,
+      "p50": 0.0,
+      "max": 4470.01
+    },
+    {
+      "feature": "kgup_total_ramp_1h",
+      "count_non_null": 56016,
+      "mean": -0.04601899457297927,
+      "std": 1318.3810591884087,
+      "min": -5657.919999999998,
+      "p50": -59.279999999998836,
+      "max": 7023.690000000002
+    },
+    {
+      "feature": "kgup_total_ramp_3h",
+      "count_non_null": 56016,
+      "mean": -0.14581548129105826,
+      "std": 3376.0090087790045,
+      "min": -9817.599999999999,
+      "p50": -86.28499999999985,
+      "max": 15008.120000000003
+    },
+    {
+      "feature": "kgup_total_ramp_24h",
+      "count_non_null": 56016,
+      "mean": -0.5413417594972862,
+      "std": 2826.8548021893134,
+      "min": -14472.3,
+      "p50": -154.11999999999898,
+      "max": 17921.32
+    },
+    {
+      "feature": "kgup_renewable_ramp_1h",
+      "count_non_null": 56016,
+      "mean": 0.24306501713796005,
+      "std": 1026.431249224348,
+      "min": -4519.639999999999,
+      "p50": -35.24000000000024,
+      "max": 6189.629999999997
+    },
+    {
+      "feature": "kgup_thermal_ramp_1h",
+      "count_non_null": 56016,
+      "mean": -0.2888469365895457,
+      "std": 768.5105177384983,
+      "min": -4523.709999999999,
+      "p50": -8.534999999999854,
+      "max": 5259.129999999997
+    },
+    {
+      "feature": "renewable_pressure",
+      "count_non_null": 55992,
+      "mean": 0.35260024026936154,
+      "std": 0.1405865895779788,
+      "min": 0.07522454162537166,
+      "p50": 0.32966557449342904,
+      "max": 1.2639048555969363
+    },
+    {
+      "feature": "thermal_margin",
+      "count_non_null": 56016,
+      "mean": 0.5795186896908473,
+      "std": 0.1444536420448027,
+      "min": 0.10048709460984472,
+      "p50": 0.6036385818704815,
+      "max": 0.8832086283597599
+    },
+    {
+      "feature": "wind_forecast_ramp_1h",
+      "count_non_null": 55987,
+      "mean": 0.036637841522734464,
+      "std": 189.49445564771972,
+      "min": -1277.1516666666676,
+      "p50": -5.26833333333343,
+      "max": 2211.1201666666666
+    },
+    {
+      "feature": "wind_forecast_ramp_24h",
+      "count_non_null": 55962,
+      "mean": 0.6200744597524497,
+      "std": 1791.682553883394,
+      "min": -7258.531666666667,
+      "p50": -59.333333333333485,
+      "max": 7808.421666666666
+    },
+    {
+      "feature": "load_forecast_ramp_1h",
+      "count_non_null": 55991,
+      "mean": -0.050025897019163795,
+      "std": 1560.6828340045413,
+      "min": -18487.0,
+      "p50": -219.0,
+      "max": 20686.0
+    },
+    {
+      "feature": "load_forecast_ramp_24h",
+      "count_non_null": 55968,
+      "mean": -3.749767724413951,
+      "std": 3425.3943191479834,
+      "min": -22319.0,
+      "p50": -176.0,
+      "max": 27870.0
+    },
+    {
+      "feature": "yal_yat_net_pressure_lag_1",
+      "count_non_null": 56016,
+      "mean": 479.9975723007712,
+      "std": 1257.2187148527153,
+      "min": -21192.64,
+      "p50": 363.265,
+      "max": 10953.76
+    },
+    {
+      "feature": "yal_yat_net_pressure_lag_24",
+      "count_non_null": 56016,
+      "mean": 482.2576379962868,
+      "std": 1250.2115717290392,
+      "min": -21192.64,
+      "p50": 364.185,
+      "max": 10953.76
+    },
+    {
+      "feature": "yal_yat_transition_lag_1",
+      "count_non_null": 56016,
+      "mean": 479.9975644458726,
+      "std": 1257.2187226798553,
+      "min": -21192.64,
+      "p50": 363.265,
+      "max": 10953.76
+    },
+    {
+      "feature": "yal_yat_abs_pressure_lag_1",
+      "count_non_null": 56016,
+      "mean": 904.0946045772636,
+      "std": 996.7943786049586,
+      "min": 0.0,
+      "p50": 647.735,
+      "max": 21192.64
+    },
+    {
+      "feature": "gas_marginal_proxy",
+      "count_non_null": 56016,
+      "mean": 0.22175105096053987,
+      "std": 0.11426333196865311,
+      "min": 0.0011146227436794566,
+      "p50": 0.23343575980460696,
+      "max": 0.5950211823147147
+    }
+  ],
+  "top_volatility_features": [
+    {
+      "feature": "load_forecast_ramp_24h",
+      "std": 3425.3943191479834,
+      "mean_abs": 2245.9254038021727
+    },
+    {
+      "feature": "kgup_total_ramp_3h",
+      "std": 3376.0090087790045,
+      "mean_abs": 2652.855600899743
+    },
+    {
+      "feature": "kgup_total_ramp_24h",
+      "std": 2826.8548021893134,
+      "mean_abs": 1888.4582380034278
+    },
+    {
+      "feature": "wind_forecast_ramp_24h",
+      "std": 1791.6825538833937,
+      "mean_abs": 1330.8082941594298
+    },
+    {
+      "feature": "load_forecast_ramp_1h",
+      "std": 1560.6828340045413,
+      "mean_abs": 1112.533389294708
+    },
+    {
+      "feature": "kgup_total_ramp_1h",
+      "std": 1318.3810591884087,
+      "mean_abs": 1008.0346590259926
+    },
+    {
+      "feature": "yal_yat_transition_lag_1",
+      "std": 1257.2187226798553,
+      "mean_abs": 904.0945913667523
+    },
+    {
+      "feature": "yal_yat_net_pressure_lag_1",
+      "std": 1257.2187148527153,
+      "mean_abs": 904.0946045772636
+    },
+    {
+      "feature": "yal_yat_net_pressure_lag_24",
+      "std": 1250.2115717290392,
+      "mean_abs": 902.7513822836332
+    },
+    {
+      "feature": "kgup_renewable_ramp_1h",
+      "std": 1026.431249224348,
+      "mean_abs": 724.5786216438162
+    }
+  ],
+  "high_correlation_pairs": [
+    {
+      "a": "yal_yat_net_pressure_lag_1",
+      "b": "yal_yat_transition_lag_1",
+      "r": 0.9999999999975564
+    },
+    {
+      "a": "renewable_pressure",
+      "b": "thermal_margin",
+      "r": -0.9717470799148813
+    },
+    {
+      "a": "smf_volatility_24h",
+      "b": "ptf_volatility_24h",
+      "r": 0.8839864244395343
+    },
+    {
+      "a": "kgup_total_ramp_24h",
+      "b": "load_forecast_ramp_24h",
+      "r": 0.8625203213247574
+    },
+    {
+      "a": "thermal_margin",
+      "b": "gas_marginal_proxy",
+      "r": 0.8585570882243682
+    }
+  ],
+  "correlation_figure": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/figures/microstructure_correlation.png",
+  "split_counts": {
+    "train": 43680,
+    "validation": 8760,
+    "test": 3576
+  },
+  "target_columns_preserved": [
+    "target_1h",
+    "target_2h",
+    "target_3h",
+    "target_4h",
+    "target_5h",
+    "target_6h",
+    "target_7h",
+    "target_8h",
+    "target_9h",
+    "target_10h",
+    "target_11h",
+    "target_12h",
+    "target_13h",
+    "target_14h",
+    "target_15h",
+    "target_16h",
+    "target_17h",
+    "target_18h",
+    "target_19h",
+    "target_20h",
+    "target_21h",
+    "target_22h",
+    "target_23h",
+    "target_24h"
+  ]
+}

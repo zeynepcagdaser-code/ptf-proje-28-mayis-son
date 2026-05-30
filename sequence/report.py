@@ -45,18 +45,23 @@ def build_sequence_report(
     }
 
 
-def write_sequence_report(report: dict[str, Any], reports_dir: Path) -> tuple[Path, Path]:
+def write_sequence_report(
+    report: dict[str, Any],
+    reports_dir: Path,
+    *,
+    basename: str = "sequence_report",
+) -> tuple[Path, Path]:
     reports_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
 
-    json_path = reports_dir / f"sequence_report_{stamp}.json"
-    md_path = reports_dir / f"sequence_report_{stamp}.md"
+    json_path = reports_dir / f"{basename}_{stamp}.json"
+    md_path = reports_dir / f"{basename}_{stamp}.md"
 
     json_path.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
     md_path.write_text(_to_markdown(report), encoding="utf-8")
 
-    latest_json = reports_dir / "sequence_report_latest.json"
-    latest_md = reports_dir / "sequence_report_latest.md"
+    latest_json = reports_dir / f"{basename}_latest.json"
+    latest_md = reports_dir / f"{basename}_latest.md"
     latest_json.write_text(json_path.read_text(encoding="utf-8"), encoding="utf-8")
     latest_md.write_text(md_path.read_text(encoding="utf-8"), encoding="utf-8")
 

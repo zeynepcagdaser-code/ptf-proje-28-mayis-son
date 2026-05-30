@@ -54,3 +54,13 @@ Ham CSV güncellemesinden sonra parquet/feature/sequence üretmek için GitHub A
 - Workflow: `.github/workflows/build_ml_artifacts.yml`
 - Tetik: yalnızca `workflow_dispatch` (saatlik cron’u yavaşlatmaz)
 - `.npy` dosyaları commit edilmez (yerelde `python run_sequence.py` ile üretilir)
+
+## LSTM baseline eğitimi (PyTorch)
+
+```bash
+pip install -r requirements.txt
+python run_sequence.py   # .npy yoksa önce üret
+python train_lstm.py
+```
+
+Çıktılar: `models/lstm_baseline.pt`, `reports/lstm_baseline_metrics.*`, `reports/figures/`, `data/predictions/lstm_test_predictions.csv`

@@ -1,0 +1,3886 @@
+{
+  "importance": {
+    "cells_loaded": 96,
+    "per_horizon_gain": {
+      "1": {
+        "ptf_return_24h": 43004824472.589516,
+        "renewable_share_change_24h": 23616570967.280144,
+        "persistence_1h": 21462973443.08436,
+        "dow_cos": 19263684729.60212,
+        "kgup_dogalgaz": 6114195140.598732,
+        "ptf_roll_std_24": 5129994578.634079,
+        "weekend_x_ptf_vol": 4964999654.273575,
+        "ptf_range_24h": 3908975519.5550385,
+        "ptf_roll_std_168": 3400908867.783821,
+        "ptf_lag_1": 2745342300.360855,
+        "ptf_momentum_24h": 2729587523.348984,
+        "ptf_roll_mean_168": 2673695140.5524445,
+        "wind_forecast_ramp_24h": 2602625492.317642,
+        "ptf_roll_mean_24": 2269775565.380844,
+        "ptf_zscore_24h": 2245541239.69722,
+        "load_lep": 2082014975.7569504,
+        "dow_sin": 1677016817.2901764,
+        "kgup_renewable_share": 1474479497.4045258,
+        "wind_forecast_ramp_1h": 1464824213.8153648,
+        "ptf_lag_24": 1417646326.3470612,
+        "kgup_ithalKomur": 1415390743.5348167,
+        "ptf_lag_48": 1314157459.3825607,
+        "ptf_spike_share_168h": 1304227604.307129,
+        "wind_forecast_share": 1273391960.5461159,
+        "ptf_lag_168": 1208050826.475563,
+        "gen_total_lag_24": 1099123251.3872604,
+        "ptf_return_1h": 1055765616.5368195,
+        "ptf_vol_ratio_24_168": 1016960976.0666275,
+        "wind_generation_mean_lag_24": 1006676420.1336823,
+        "kgup_toplam": 931777545.7598152,
+        "smf_lag_168": 905248403.1534119,
+        "kgup_thermal_share": 902672547.797615,
+        "ptf_hours_since_spike": 902348139.3298111,
+        "smf_lag_48": 897090117.2632599,
+        "supply_gap_zscore_24h": 835076648.5501328,
+        "is_holiday_or_weekend": 789708539.3757935,
+        "cons_consumption_lag_24": 786583120.4336166,
+        "hour_x_ptf_lag24": 774213970.0546417,
+        "gen_total_lag_168": 771518756.5145111,
+        "kgup_gunes": 767641320.5098877,
+        "supply_gap_change_1h": 758896904.8500595,
+        "supply_gap_change_24h": 747121488.280304,
+        "spread_nowcast_lag1": 708126554.0849533,
+        "smf_lag_24": 652770105.6159515,
+        "kgup_diger": 639099880.0681381,
+        "kgup_biokutle": 630254907.533287,
+        "smf_ptf_spread_lag_24": 617408527.6631927,
+        "kgup_fuelOil": 592941490.894867,
+        "kgup_jeotermal": 585114543.8565216,
+        "wind_generation_mean_lag_48": 579685126.7438469,
+        "kgup_barajli": 577897266.9575882,
+        "kgup_total_minus_load": 574575868.3839874,
+        "outage_fault_mw_loss_sum": 556271150.9386063,
+        "outage_fault_mw_loss_max": 538037290.7862778,
+        "wind_forecast_std": 537282413.986145,
+        "kgup_ruzgar": 528304373.1740494,
+        "cons_consumption_lag_168": 525178803.03230286,
+        "kgup_akarsu": 523651532.19459534,
+        "ptf_hours_since_zero": 496450556.12184143,
+        "wind_quarter1_mean": 491690231.4537926,
+        "outage_stress": 487290611.85562897,
+        "kgup_linyit": 486896573.33613586,
+        "outage_maint_operator_power_sum": 469931374.5755234,
+        "outage_fault_operator_power_sum": 464510418.0179634,
+        "spread_change_24h": 454092286.37023926,
+        "wind_generation_mean_lag_168": 445391396.28692245,
+        "yal_yat_net_stress_24h": 441974368.6761246,
+        "spread_zscore_24h": 422506214.45492554,
+        "yal_yat_net_stress_168h": 389311548.13629913,
+        "gen_total_lag_48": 385773924.45806885,
+        "yal_yat_upRegulationDelivered_lag_48": 383916381.1658249,
+        "cons_consumption_lag_48": 366920268.9007721,
+        "month_cos": 366749694.6255493,
+        "outage_maint_capacity_sum": 366640907.2292099,
+        "smf_ptf_spread_lag_168": 366577460.8163452,
+        "outage_event_rows": 344361229.4774246,
+        "yal_yat_net_lag_48": 335350075.36639404,
+        "kgup_tasKomur": 321447780.7455063,
+        "yal_yat_downRegulationDelivered_lag_48": 320829529.72636414,
+        "yal_yat_upRegulationDelivered_lag_24": 315148192.4662094,
+        "is_weekend": 301065602.31051636,
+        "wind_quarter4_mean": 285958132.4278641,
+        "yal_yat_downRegulationDelivered_lag_168": 285644258.3201752,
+        "ptf_spike_share_24h": 272581298.22998047,
+        "outage_fault_event_count": 264429889.92795563,
+        "yal_yat_downRegulationDelivered_lag_24": 264240354.83766937,
+        "wind_quarter2_mean": 251006921.03279114,
+        "yal_yat_upRegulationDelivered_lag_168": 248248141.41103363,
+        "wind_quarter3_mean": 225773302.5849762,
+        "yal_yat_net_lag_168": 224505613.47657776,
+        "yal_yat_net_lag_24": 200901744.0239601,
+        "outage_maint_event_count": 189368695.66342163,
+        "yal_down_stress_168h": 187624827.666584,
+        "month_sin": 173388558.30039978,
+        "wind_forecast_max": 170547264.6096573,
+        "wind_forecast_mean": 167161041.76281738,
+        "yal_down_stress_24h": 166162382.74398804,
+        "wind_forecast_min": 155891471.60477448,
+        "supply_gap": 141001300.93489075,
+        "hour_x_spread_lag24": 135487304.7941742,
+        "yal_up_stress_24h": 80172240.85974121,
+        "yal_up_stress_168h": 76243487.48855591,
+        "ptf_zero_share_168h": 2740123.4069213867,
+        "kgup_nafta": 2392813.7916870117,
+        "hour_sin": 0.0,
+        "hour_cos": 0.0,
+        "is_holiday_tr": 0.0,
+        "ptf_zero_share_24h": 0.0
+      },
+      "2": {
+        "persistence_2h": 26485572338.366714,
+        "dow_cos": 26223134864.339798,
+        "renewable_share_change_24h": 24630952657.493202,
+        "ptf_return_24h": 21029587465.32699,
+        "kgup_dogalgaz": 7110211161.553474,
+        "weekend_x_ptf_vol": 6501276667.441864,
+        "ptf_roll_std_24": 5719346588.962769,
+        "ptf_range_24h": 3637691233.8795853,
+        "ptf_roll_std_168": 3420588001.3698883,
+        "wind_forecast_ramp_24h": 3319318940.337593,
+        "ptf_lag_1": 3007743169.760765,
+        "ptf_roll_mean_168": 2996709843.89624,
+        "ptf_momentum_24h": 2991784742.9203224,
+        "dow_sin": 2884695178.789398,
+        "ptf_roll_mean_24": 2422563041.268799,
+        "ptf_zscore_24h": 2180841564.7756786,
+        "wind_forecast_ramp_1h": 2119547241.8232956,
+        "load_lep": 1814923295.3799133,
+        "kgup_renewable_share": 1703838165.7064285,
+        "is_holiday_or_weekend": 1667515032.2821655,
+        "wind_forecast_share": 1377109510.0287704,
+        "ptf_spike_share_168h": 1339183829.9239502,
+        "ptf_lag_24": 1308532752.0877075,
+        "ptf_lag_48": 1276650472.5396576,
+        "kgup_ithalKomur": 1245559360.876175,
+        "ptf_lag_168": 1206323607.9310532,
+        "kgup_toplam": 1164988912.219658,
+        "wind_generation_mean_lag_24": 1164797377.2764816,
+        "ptf_vol_ratio_24_168": 1144584911.7281036,
+        "ptf_hours_since_spike": 1081062863.5521622,
+        "smf_lag_48": 1053070890.540329,
+        "kgup_thermal_share": 993850067.0490494,
+        "ptf_return_1h": 971980604.0307388,
+        "kgup_gunes": 958089279.377449,
+        "gen_total_lag_24": 932621892.226059,
+        "gen_total_lag_168": 923845359.5216141,
+        "smf_lag_168": 905274172.7324371,
+        "supply_gap_change_24h": 880110953.7054214,
+        "cons_consumption_lag_24": 836670542.5676727,
+        "supply_gap_zscore_24h": 770407206.426094,
+        "kgup_jeotermal": 755138384.2886276,
+        "supply_gap_change_1h": 744566985.3292084,
+        "smf_lag_24": 739346136.8200073,
+        "kgup_diger": 723292928.300705,
+        "wind_forecast_std": 718694854.6270218,
+        "kgup_barajli": 712870169.832344,
+        "kgup_ruzgar": 691896211.2084274,
+        "wind_quarter1_mean": 687261754.9118118,
+        "kgup_biokutle": 668648507.2778816,
+        "spread_nowcast_lag1": 666400817.2810974,
+        "kgup_total_minus_load": 650481646.5535736,
+        "outage_fault_mw_loss_sum": 638945441.7943382,
+        "wind_generation_mean_lag_48": 627137576.4373703,
+        "kgup_akarsu": 595287910.2056274,
+        "outage_fault_mw_loss_max": 575485721.3521652,
+        "kgup_linyit": 573080828.8463974,
+        "spread_change_24h": 564173775.0722809,
+        "hour_x_ptf_lag24": 546319772.8499756,
+        "kgup_fuelOil": 532560136.3780365,
+        "cons_consumption_lag_168": 528775126.4893036,
+        "outage_maint_operator_power_sum": 514198472.03328705,
+        "outage_stress": 501328328.7437744,
+        "outage_fault_operator_power_sum": 499242052.77614594,
+        "wind_generation_mean_lag_168": 494502024.5687256,
+        "ptf_hours_since_zero": 479233683.4835892,
+        "month_cos": 449333144.3338928,
+        "yal_yat_net_stress_168h": 447333420.0529709,
+        "spread_zscore_24h": 442313225.0762024,
+        "yal_yat_upRegulationDelivered_lag_48": 438482839.5078125,
+        "smf_ptf_spread_lag_24": 438330902.61050415,
+        "yal_yat_net_stress_24h": 426232193.49180603,
+        "gen_total_lag_48": 404836377.5572052,
+        "outage_event_rows": 402327212.69805145,
+        "outage_maint_capacity_sum": 400462568.7229004,
+        "kgup_tasKomur": 396952573.54595184,
+        "cons_consumption_lag_48": 368297373.6973114,
+        "yal_yat_net_lag_48": 367774933.485878,
+        "yal_yat_downRegulationDelivered_lag_48": 346525339.25751495,
+        "smf_ptf_spread_lag_168": 341382562.677475,
+        "wind_quarter4_mean": 326902159.03941345,
+        "yal_yat_upRegulationDelivered_lag_24": 321836547.1302719,
+        "yal_yat_downRegulationDelivered_lag_168": 320102554.9709625,
+        "yal_yat_upRegulationDelivered_lag_168": 318787974.50735474,
+        "outage_fault_event_count": 313981132.9660034,
+        "yal_yat_downRegulationDelivered_lag_24": 300058363.51527405,
+        "yal_yat_net_lag_168": 292007473.6931305,
+        "wind_quarter2_mean": 290394394.7772827,
+        "ptf_spike_share_24h": 290169960.6845703,
+        "wind_quarter3_mean": 253231149.51623535,
+        "yal_yat_net_lag_24": 237105564.2476883,
+        "is_weekend": 229008002.8397827,
+        "outage_maint_event_count": 221388779.30551147,
+        "month_sin": 196231693.63842773,
+        "supply_gap": 195530834.6826172,
+        "wind_forecast_mean": 195145712.64772034,
+        "yal_down_stress_24h": 166318332.29589844,
+        "yal_down_stress_168h": 160761398.9678192,
+        "wind_forecast_max": 145714188.4343872,
+        "wind_forecast_min": 144212474.48657227,
+        "hour_x_spread_lag24": 117292830.69267273,
+        "yal_up_stress_168h": 96138744.58261108,
+        "yal_up_stress_24h": 89278422.83366394,
+        "ptf_zero_share_168h": 3981452.078857422,
+        "kgup_nafta": 3188310.256225586,
+        "hour_sin": 0.0,
+        "hour_cos": 0.0,
+        "is_holiday_tr": 0.0,
+        "ptf_zero_share_24h": 0.0
+      },
+      "3": {
+        "persistence_3h": 28535715938.608788,
+        "dow_cos": 28395123302.410477,
+        "renewable_share_change_24h": 21905254390.657272,
+        "ptf_return_24h": 14902182541.180725,
+        "weekend_x_ptf_vol": 7455163874.30545,
+        "kgup_dogalgaz": 7007159637.903564,
+        "ptf_roll_std_24": 6080222051.190437,
+        "ptf_range_24h": 3693288814.175171,
+        "ptf_roll_std_168": 3607746648.5649796,
+        "wind_forecast_ramp_24h": 3479835235.492813,
+        "dow_sin": 3347713589.6926193,
+        "ptf_roll_mean_168": 3188406502.8839874,
+        "ptf_lag_1": 2834588036.3441925,
+        "wind_forecast_ramp_1h": 2678592803.861206,
+        "ptf_momentum_24h": 2675070157.333641,
+        "ptf_roll_mean_24": 2452176021.0842133,
+        "is_holiday_or_weekend": 2031079129.6740112,
+        "ptf_zscore_24h": 2027713645.4323425,
+        "load_lep": 1856053342.5626907,
+        "kgup_renewable_share": 1811194917.0470276,
+        "wind_forecast_share": 1518502763.2093735,
+        "ptf_lag_48": 1404914554.6373444,
+        "ptf_lag_24": 1403328155.5022507,
+        "ptf_vol_ratio_24_168": 1389121004.0056915,
+        "ptf_spike_share_168h": 1373033208.9923096,
+        "ptf_lag_168": 1325483218.6264954,
+        "kgup_ithalKomur": 1250844702.230278,
+        "wind_generation_mean_lag_24": 1235696077.0878906,
+        "ptf_hours_since_spike": 1208041598.170906,
+        "kgup_toplam": 1186396741.2390366,
+        "kgup_gunes": 1089670602.1160355,
+        "kgup_thermal_share": 1057743657.1442795,
+        "smf_lag_48": 981774795.2015686,
+        "smf_lag_168": 947133425.4940262,
+        "smf_lag_24": 930289224.4142914,
+        "supply_gap_change_24h": 919476506.4753418,
+        "ptf_return_1h": 859414188.255539,
+        "gen_total_lag_24": 831507154.1253891,
+        "wind_forecast_std": 828129239.091011,
+        "kgup_jeotermal": 822663100.7827225,
+        "kgup_ruzgar": 820365475.9266357,
+        "kgup_diger": 804060610.0925903,
+        "gen_total_lag_168": 801683835.2038422,
+        "supply_gap_zscore_24h": 799065642.6613312,
+        "kgup_barajli": 778044603.1060867,
+        "wind_quarter1_mean": 747731297.3927002,
+        "supply_gap_change_1h": 738459265.5742569,
+        "outage_fault_mw_loss_max": 716011755.1032257,
+        "outage_fault_mw_loss_sum": 706226480.8346252,
+        "wind_generation_mean_lag_48": 704158727.8135071,
+        "kgup_biokutle": 703344866.3125839,
+        "kgup_linyit": 700641402.4560852,
+        "kgup_total_minus_load": 699334045.4291687,
+        "kgup_akarsu": 659398330.7820282,
+        "spread_nowcast_lag1": 647644943.3168945,
+        "cons_consumption_lag_24": 629285545.4156494,
+        "outage_maint_operator_power_sum": 619377278.4760284,
+        "cons_consumption_lag_168": 616404329.197403,
+        "spread_change_24h": 579621008.9267273,
+        "kgup_fuelOil": 569409507.7815247,
+        "outage_stress": 564357079.6722946,
+        "wind_generation_mean_lag_168": 562571112.1924973,
+        "outage_fault_operator_power_sum": 556243712.2596436,
+        "ptf_hours_since_zero": 537317589.9253922,
+        "yal_yat_net_stress_168h": 511492667.5860672,
+        "hour_x_ptf_lag24": 504690284.9799042,
+        "month_cos": 504656771.3293915,
+        "yal_yat_net_stress_24h": 499308980.4214325,
+        "outage_maint_capacity_sum": 493145904.83403015,
+        "yal_yat_upRegulationDelivered_lag_48": 451910717.5157623,
+        "outage_event_rows": 442447296.73236084,
+        "smf_ptf_spread_lag_24": 434582176.0493622,
+        "spread_zscore_24h": 433036771.3404083,
+        "gen_total_lag_48": 431165953.24186325,
+        "kgup_tasKomur": 428594758.46208954,
+        "yal_yat_net_lag_48": 419077959.25618744,
+        "is_weekend": 411020872.0673218,
+        "yal_yat_downRegulationDelivered_lag_48": 372855122.3492279,
+        "cons_consumption_lag_48": 370967065.6379471,
+        "smf_ptf_spread_lag_168": 363789871.973793,
+        "yal_yat_downRegulationDelivered_lag_24": 349794037.0842514,
+        "yal_yat_upRegulationDelivered_lag_24": 337068316.5936737,
+        "yal_yat_upRegulationDelivered_lag_168": 327712108.14810944,
+        "yal_yat_downRegulationDelivered_lag_168": 322128453.23454285,
+        "outage_fault_event_count": 317251508.0459671,
+        "wind_quarter4_mean": 301262987.8560333,
+        "wind_quarter3_mean": 294965587.5071564,
+        "wind_quarter2_mean": 282550730.2104721,
+        "yal_yat_net_lag_24": 268921508.54397583,
+        "yal_yat_net_lag_168": 262203284.02412415,
+        "ptf_spike_share_24h": 257233258.8203125,
+        "outage_maint_event_count": 235453236.91503143,
+        "supply_gap": 233373096.12519073,
+        "month_sin": 227116997.50904846,
+        "wind_forecast_mean": 201461509.42271423,
+        "yal_down_stress_24h": 200952070.85458374,
+        "wind_forecast_min": 179539471.03746033,
+        "wind_forecast_max": 164309283.96650696,
+        "yal_down_stress_168h": 161162520.10310364,
+        "hour_x_spread_lag24": 100819190.89928436,
+        "yal_up_stress_168h": 78672469.056427,
+        "yal_up_stress_24h": 68071443.85656738,
+        "ptf_zero_share_168h": 3618676.1854248047,
+        "kgup_nafta": 2972211.5516967773,
+        "hour_sin": 0.0,
+        "hour_cos": 0.0,
+        "is_holiday_tr": 0.0,
+        "ptf_zero_share_24h": 0.0
+      },
+      "4": {
+        "dow_cos": 30671261685.769394,
+        "persistence_4h": 29765960993.96765,
+        "renewable_share_change_24h": 19096507698.300888,
+        "ptf_return_24h": 9957502427.556946,
+        "weekend_x_ptf_vol": 8549719250.083115,
+        "kgup_dogalgaz": 6894045997.498543,
+        "ptf_roll_std_24": 5938010714.623306,
+        "dow_sin": 3987848758.811447,
+        "ptf_roll_std_168": 3878908801.71714,
+        "ptf_range_24h": 3802072461.2401886,
+        "wind_forecast_ramp_24h": 3609000659.991085,
+        "ptf_roll_mean_168": 3284397412.301613,
+        "wind_forecast_ramp_1h": 2856581613.939499,
+        "ptf_momentum_24h": 2853442497.2807007,
+        "ptf_lag_1": 2543858795.8915253,
+        "ptf_roll_mean_24": 2535944874.688202,
+        "kgup_renewable_share": 2132535989.888939,
+        "ptf_zscore_24h": 2122521366.002739,
+        "is_holiday_or_weekend": 2069473430.9053955,
+        "load_lep": 1704156452.071701,
+        "ptf_lag_168": 1642059149.4832,
+        "wind_forecast_share": 1600141364.201561,
+        "ptf_vol_ratio_24_168": 1474050559.7218475,
+        "ptf_lag_48": 1473173987.7923431,
+        "ptf_spike_share_168h": 1397116066.2804565,
+        "ptf_lag_24": 1303435336.297535,
+        "wind_generation_mean_lag_24": 1301809202.0403442,
+        "ptf_hours_since_spike": 1281136932.5875778,
+        "kgup_ithalKomur": 1192564705.0808258,
+        "kgup_toplam": 1171202096.4983978,
+        "kgup_gunes": 1096639784.119217,
+        "smf_lag_48": 1079013922.2436066,
+        "wind_forecast_std": 1072618549.1632233,
+        "kgup_thermal_share": 1052704267.5425873,
+        "ptf_return_1h": 957482811.1331177,
+        "kgup_jeotermal": 949522519.1226196,
+        "smf_lag_168": 943970632.620697,
+        "smf_lag_24": 928262795.5657806,
+        "supply_gap_change_24h": 911410810.5288773,
+        "kgup_barajli": 875734572.3556671,
+        "kgup_diger": 859643557.7349243,
+        "supply_gap_zscore_24h": 851795614.4064255,
+        "supply_gap_change_1h": 848281562.3838501,
+        "kgup_linyit": 846930249.3151627,
+        "gen_total_lag_24": 834521331.4653473,
+        "spread_nowcast_lag1": 787365878.7786026,
+        "outage_fault_mw_loss_sum": 783464959.6815186,
+        "kgup_ruzgar": 771311813.342514,
+        "outage_maint_operator_power_sum": 759296009.4420395,
+        "kgup_total_minus_load": 753969974.3202744,
+        "wind_generation_mean_lag_48": 736859291.6079559,
+        "kgup_biokutle": 732141616.3985443,
+        "kgup_akarsu": 718195153.9667206,
+        "gen_total_lag_168": 713108054.317215,
+        "cons_consumption_lag_24": 672839600.4167099,
+        "outage_fault_mw_loss_max": 660501974.7702866,
+        "outage_stress": 642430601.2596741,
+        "wind_quarter1_mean": 638052284.8091736,
+        "month_cos": 635484523.2253723,
+        "wind_generation_mean_lag_168": 603804038.6766739,
+        "outage_fault_operator_power_sum": 594851749.8259201,
+        "cons_consumption_lag_168": 588381166.8166656,
+        "ptf_hours_since_zero": 572354933.3427811,
+        "yal_yat_net_stress_24h": 547425202.0872726,
+        "kgup_fuelOil": 538207721.5662308,
+        "spread_change_24h": 532648331.77466583,
+        "yal_yat_net_stress_168h": 500347874.8053055,
+        "outage_maint_capacity_sum": 497606562.59412766,
+        "hour_x_ptf_lag24": 476261846.0085068,
+        "outage_event_rows": 473132075.00679016,
+        "yal_yat_upRegulationDelivered_lag_48": 454121712.8114548,
+        "yal_yat_net_lag_48": 453506726.93795776,
+        "smf_ptf_spread_lag_24": 451695806.3578491,
+        "spread_zscore_24h": 442981625.2176361,
+        "kgup_tasKomur": 416064077.6685486,
+        "cons_consumption_lag_48": 414681570.27223206,
+        "yal_yat_downRegulationDelivered_lag_24": 413202627.0314255,
+        "wind_quarter4_mean": 409543884.67878723,
+        "smf_ptf_spread_lag_168": 408403054.51691437,
+        "gen_total_lag_48": 408251770.66864014,
+        "yal_yat_downRegulationDelivered_lag_168": 405842280.52970886,
+        "yal_yat_downRegulationDelivered_lag_48": 391915517.5335846,
+        "outage_fault_event_count": 367679416.4882202,
+        "yal_yat_upRegulationDelivered_lag_24": 363526036.8791199,
+        "is_weekend": 338318625.35961914,
+        "wind_quarter2_mean": 334848179.58555603,
+        "yal_yat_upRegulationDelivered_lag_168": 307313138.7312927,
+        "yal_yat_net_lag_168": 286965540.9507828,
+        "wind_quarter3_mean": 277889430.5270691,
+        "month_sin": 270169623.4555969,
+        "ptf_spike_share_24h": 266272092.37280273,
+        "yal_yat_net_lag_24": 253466608.87379456,
+        "outage_maint_event_count": 243842408.4464569,
+        "supply_gap": 232935871.8329773,
+        "wind_forecast_mean": 219512608.3554077,
+        "yal_down_stress_24h": 209036211.7492981,
+        "wind_forecast_max": 198155787.26449585,
+        "wind_forecast_min": 183253521.8317871,
+        "yal_down_stress_168h": 179724238.33932495,
+        "hour_x_spread_lag24": 119064781.84777832,
+        "yal_up_stress_24h": 90271025.87278748,
+        "yal_up_stress_168h": 85427021.20887756,
+        "kgup_nafta": 6002616.689331055,
+        "ptf_zero_share_168h": 5936772.77331543,
+        "hour_sin": 0.0,
+        "hour_cos": 0.0,
+        "is_holiday_tr": 0.0,
+        "ptf_zero_share_24h": 0.0
+      }
+    },
+    "global_gain_ranked": [
+      {
+        "feature": "dow_cos",
+        "gain": 104553204582.12178
+      },
+      {
+        "feature": "renewable_share_change_24h",
+        "gain": 89249285713.7315
+      },
+      {
+        "feature": "ptf_return_24h",
+        "gain": 88894096906.65417
+      },
+      {
+        "feature": "persistence_4h",
+        "gain": 29765960993.96765
+      },
+      {
+        "feature": "persistence_3h",
+        "gain": 28535715938.608788
+      },
+      {
+        "feature": "weekend_x_ptf_vol",
+        "gain": 27471159446.104004
+      },
+      {
+        "feature": "kgup_dogalgaz",
+        "gain": 27125611937.554314
+      },
+      {
+        "feature": "persistence_2h",
+        "gain": 26485572338.366714
+      },
+      {
+        "feature": "ptf_roll_std_24",
+        "gain": 22867573933.41059
+      },
+      {
+        "feature": "persistence_1h",
+        "gain": 21462973443.08436
+      },
+      {
+        "feature": "ptf_range_24h",
+        "gain": 15042028028.849983
+      },
+      {
+        "feature": "ptf_roll_std_168",
+        "gain": 14308152319.43583
+      },
+      {
+        "feature": "wind_forecast_ramp_24h",
+        "gain": 13010780328.139133
+      },
+      {
+        "feature": "ptf_roll_mean_168",
+        "gain": 12143208899.634285
+      },
+      {
+        "feature": "dow_sin",
+        "gain": 11897274344.583641
+      },
+      {
+        "feature": "ptf_momentum_24h",
+        "gain": 11249884920.883648
+      },
+      {
+        "feature": "ptf_lag_1",
+        "gain": 11131532302.357338
+      },
+      {
+        "feature": "ptf_roll_mean_24",
+        "gain": 9680459502.422058
+      },
+      {
+        "feature": "wind_forecast_ramp_1h",
+        "gain": 9119545873.439365
+      },
+      {
+        "feature": "ptf_zscore_24h",
+        "gain": 8576617815.90798
+      },
+      {
+        "feature": "load_lep",
+        "gain": 7457148065.7712555
+      },
+      {
+        "feature": "kgup_renewable_share",
+        "gain": 7122048570.046921
+      },
+      {
+        "feature": "is_holiday_or_weekend",
+        "gain": 6557776132.237366
+      },
+      {
+        "feature": "wind_forecast_share",
+        "gain": 5769145597.985821
+      },
+      {
+        "feature": "ptf_lag_48",
+        "gain": 5468896474.351906
+      },
+      {
+        "feature": "ptf_lag_24",
+        "gain": 5432942570.234554
+      },
+      {
+        "feature": "ptf_spike_share_168h",
+        "gain": 5413560709.503845
+      },
+      {
+        "feature": "ptf_lag_168",
+        "gain": 5381916802.516312
+      },
+      {
+        "feature": "kgup_ithalKomur",
+        "gain": 5104359511.7220955
+      },
+      {
+        "feature": "ptf_vol_ratio_24_168",
+        "gain": 5024717451.52227
+      },
+      {
+        "feature": "wind_generation_mean_lag_24",
+        "gain": 4708979076.538399
+      },
+      {
+        "feature": "ptf_hours_since_spike",
+        "gain": 4472589533.640457
+      },
+      {
+        "feature": "kgup_toplam",
+        "gain": 4454365295.7169075
+      },
+      {
+        "feature": "smf_lag_48",
+        "gain": 4010949725.248764
+      },
+      {
+        "feature": "kgup_thermal_share",
+        "gain": 4006970539.533531
+      },
+      {
+        "feature": "kgup_gunes",
+        "gain": 3912040986.122589
+      },
+      {
+        "feature": "ptf_return_1h",
+        "gain": 3844643219.956215
+      },
+      {
+        "feature": "smf_lag_168",
+        "gain": 3701626634.000572
+      },
+      {
+        "feature": "gen_total_lag_24",
+        "gain": 3697773629.204056
+      },
+      {
+        "feature": "supply_gap_change_24h",
+        "gain": 3458119758.9899445
+      },
+      {
+        "feature": "supply_gap_zscore_24h",
+        "gain": 3256345112.0439835
+      },
+      {
+        "feature": "smf_lag_24",
+        "gain": 3250668262.416031
+      },
+      {
+        "feature": "gen_total_lag_168",
+        "gain": 3210156005.5571823
+      },
+      {
+        "feature": "wind_forecast_std",
+        "gain": 3156725056.867401
+      },
+      {
+        "feature": "kgup_jeotermal",
+        "gain": 3112438548.0504913
+      },
+      {
+        "feature": "supply_gap_change_1h",
+        "gain": 3090204718.137375
+      },
+      {
+        "feature": "kgup_diger",
+        "gain": 3026096976.1963577
+      },
+      {
+        "feature": "kgup_barajli",
+        "gain": 2944546612.251686
+      },
+      {
+        "feature": "cons_consumption_lag_24",
+        "gain": 2925378808.8336487
+      },
+      {
+        "feature": "kgup_ruzgar",
+        "gain": 2811877873.6516266
+      },
+      {
+        "feature": "spread_nowcast_lag1",
+        "gain": 2809538193.461548
+      },
+      {
+        "feature": "kgup_biokutle",
+        "gain": 2734389897.522297
+      },
+      {
+        "feature": "outage_fault_mw_loss_sum",
+        "gain": 2684908033.2490883
+      },
+      {
+        "feature": "kgup_total_minus_load",
+        "gain": 2678361534.687004
+      },
+      {
+        "feature": "wind_generation_mean_lag_48",
+        "gain": 2647840722.60268
+      },
+      {
+        "feature": "kgup_linyit",
+        "gain": 2607549053.953781
+      },
+      {
+        "feature": "wind_quarter1_mean",
+        "gain": 2564735568.567478
+      },
+      {
+        "feature": "kgup_akarsu",
+        "gain": 2496532927.1489716
+      },
+      {
+        "feature": "outage_fault_mw_loss_max",
+        "gain": 2490036742.0119553
+      },
+      {
+        "feature": "outage_maint_operator_power_sum",
+        "gain": 2362803134.5268784
+      },
+      {
+        "feature": "hour_x_ptf_lag24",
+        "gain": 2301485873.8930283
+      },
+      {
+        "feature": "cons_consumption_lag_168",
+        "gain": 2258739425.535675
+      },
+      {
+        "feature": "kgup_fuelOil",
+        "gain": 2233118856.620659
+      },
+      {
+        "feature": "outage_stress",
+        "gain": 2195406621.531372
+      },
+      {
+        "feature": "spread_change_24h",
+        "gain": 2130535402.1439133
+      },
+      {
+        "feature": "outage_fault_operator_power_sum",
+        "gain": 2114847932.879673
+      },
+      {
+        "feature": "wind_generation_mean_lag_168",
+        "gain": 2106268571.7248192
+      },
+      {
+        "feature": "ptf_hours_since_zero",
+        "gain": 2085356762.8736038
+      },
+      {
+        "feature": "month_cos",
+        "gain": 1956224133.514206
+      },
+      {
+        "feature": "smf_ptf_spread_lag_24",
+        "gain": 1942017412.6809082
+      },
+      {
+        "feature": "yal_yat_net_stress_24h",
+        "gain": 1914940744.6766357
+      },
+      {
+        "feature": "yal_yat_net_stress_168h",
+        "gain": 1848485510.5806427
+      },
+      {
+        "feature": "outage_maint_capacity_sum",
+        "gain": 1757855943.380268
+      },
+      {
+        "feature": "spread_zscore_24h",
+        "gain": 1740837836.0891724
+      },
+      {
+        "feature": "yal_yat_upRegulationDelivered_lag_48",
+        "gain": 1728431651.0008545
+      },
+      {
+        "feature": "outage_event_rows",
+        "gain": 1662267813.914627
+      },
+      {
+        "feature": "gen_total_lag_48",
+        "gain": 1630028025.9257774
+      },
+      {
+        "feature": "yal_yat_net_lag_48",
+        "gain": 1575709695.0464172
+      },
+      {
+        "feature": "kgup_tasKomur",
+        "gain": 1563059190.4220963
+      },
+      {
+        "feature": "cons_consumption_lag_48",
+        "gain": 1520866278.5082626
+      },
+      {
+        "feature": "smf_ptf_spread_lag_168",
+        "gain": 1480152949.9845276
+      },
+      {
+        "feature": "yal_yat_downRegulationDelivered_lag_48",
+        "gain": 1432125508.8666916
+      },
+      {
+        "feature": "yal_yat_upRegulationDelivered_lag_24",
+        "gain": 1337579093.069275
+      },
+      {
+        "feature": "yal_yat_downRegulationDelivered_lag_168",
+        "gain": 1333717547.0553894
+      },
+      {
+        "feature": "yal_yat_downRegulationDelivered_lag_24",
+        "gain": 1327295382.4686203
+      },
+      {
+        "feature": "wind_quarter4_mean",
+        "gain": 1323667164.002098
+      },
+      {
+        "feature": "is_weekend",
+        "gain": 1279413102.57724
+      },
+      {
+        "feature": "outage_fault_event_count",
+        "gain": 1263341947.4281464
+      },
+      {
+        "feature": "yal_yat_upRegulationDelivered_lag_168",
+        "gain": 1202061362.7977905
+      },
+      {
+        "feature": "wind_quarter2_mean",
+        "gain": 1158800225.606102
+      },
+      {
+        "feature": "ptf_spike_share_24h",
+        "gain": 1086256610.107666
+      },
+      {
+        "feature": "yal_yat_net_lag_168",
+        "gain": 1065681912.1446152
+      },
+      {
+        "feature": "wind_quarter3_mean",
+        "gain": 1051859470.135437
+      },
+      {
+        "feature": "yal_yat_net_lag_24",
+        "gain": 960395425.6894188
+      },
+      {
+        "feature": "outage_maint_event_count",
+        "gain": 890053120.3304214
+      },
+      {
+        "feature": "month_sin",
+        "gain": 866906872.9034729
+      },
+      {
+        "feature": "supply_gap",
+        "gain": 802841103.575676
+      },
+      {
+        "feature": "wind_forecast_mean",
+        "gain": 783280872.1886597
+      },
+      {
+        "feature": "yal_down_stress_24h",
+        "gain": 742468997.6437683
+      },
+      {
+        "feature": "yal_down_stress_168h",
+        "gain": 689272985.0768318
+      },
+      {
+        "feature": "wind_forecast_max",
+        "gain": 678726524.2750473
+      },
+      {
+        "feature": "wind_forecast_min",
+        "gain": 662896938.9605942
+      },
+      {
+        "feature": "hour_x_spread_lag24",
+        "gain": 472664108.2339096
+      },
+      {
+        "feature": "yal_up_stress_168h",
+        "gain": 336481722.33647156
+      },
+      {
+        "feature": "yal_up_stress_24h",
+        "gain": 327793133.42276
+      },
+      {
+        "feature": "ptf_zero_share_168h",
+        "gain": 16277024.444519043
+      },
+      {
+        "feature": "kgup_nafta",
+        "gain": 14555952.28894043
+      },
+      {
+        "feature": "hour_sin",
+        "gain": 0.0
+      },
+      {
+        "feature": "hour_cos",
+        "gain": 0.0
+      },
+      {
+        "feature": "is_holiday_tr",
+        "gain": 0.0
+      },
+      {
+        "feature": "ptf_zero_share_24h",
+        "gain": 0.0
+      }
+    ],
+    "per_horizon_ranked": {
+      "1": [
+        {
+          "feature": "ptf_return_24h",
+          "gain": 43004824472.589516
+        },
+        {
+          "feature": "renewable_share_change_24h",
+          "gain": 23616570967.280144
+        },
+        {
+          "feature": "persistence_1h",
+          "gain": 21462973443.08436
+        },
+        {
+          "feature": "dow_cos",
+          "gain": 19263684729.60212
+        },
+        {
+          "feature": "kgup_dogalgaz",
+          "gain": 6114195140.598732
+        },
+        {
+          "feature": "ptf_roll_std_24",
+          "gain": 5129994578.634079
+        },
+        {
+          "feature": "weekend_x_ptf_vol",
+          "gain": 4964999654.273575
+        },
+        {
+          "feature": "ptf_range_24h",
+          "gain": 3908975519.5550385
+        },
+        {
+          "feature": "ptf_roll_std_168",
+          "gain": 3400908867.783821
+        },
+        {
+          "feature": "ptf_lag_1",
+          "gain": 2745342300.360855
+        },
+        {
+          "feature": "ptf_momentum_24h",
+          "gain": 2729587523.348984
+        },
+        {
+          "feature": "ptf_roll_mean_168",
+          "gain": 2673695140.5524445
+        },
+        {
+          "feature": "wind_forecast_ramp_24h",
+          "gain": 2602625492.317642
+        },
+        {
+          "feature": "ptf_roll_mean_24",
+          "gain": 2269775565.380844
+        },
+        {
+          "feature": "ptf_zscore_24h",
+          "gain": 2245541239.69722
+        },
+        {
+          "feature": "load_lep",
+          "gain": 2082014975.7569504
+        },
+        {
+          "feature": "dow_sin",
+          "gain": 1677016817.2901764
+        },
+        {
+          "feature": "kgup_renewable_share",
+          "gain": 1474479497.4045258
+        },
+        {
+          "feature": "wind_forecast_ramp_1h",
+          "gain": 1464824213.8153648
+        },
+        {
+          "feature": "ptf_lag_24",
+          "gain": 1417646326.3470612
+        },
+        {
+          "feature": "kgup_ithalKomur",
+          "gain": 1415390743.5348167
+        },
+        {
+          "feature": "ptf_lag_48",
+          "gain": 1314157459.3825607
+        },
+        {
+          "feature": "ptf_spike_share_168h",
+          "gain": 1304227604.307129
+        },
+        {
+          "feature": "wind_forecast_share",
+          "gain": 1273391960.5461159
+        },
+        {
+          "feature": "ptf_lag_168",
+          "gain": 1208050826.475563
+        },
+        {
+          "feature": "gen_total_lag_24",
+          "gain": 1099123251.3872604
+        },
+        {
+          "feature": "ptf_return_1h",
+          "gain": 1055765616.5368195
+        },
+        {
+          "feature": "ptf_vol_ratio_24_168",
+          "gain": 1016960976.0666275
+        },
+        {
+          "feature": "wind_generation_mean_lag_24",
+          "gain": 1006676420.1336823
+        },
+        {
+          "feature": "kgup_toplam",
+          "gain": 931777545.7598152
+        },
+        {
+          "feature": "smf_lag_168",
+          "gain": 905248403.1534119
+        },
+        {
+          "feature": "kgup_thermal_share",
+          "gain": 902672547.797615
+        },
+        {
+          "feature": "ptf_hours_since_spike",
+          "gain": 902348139.3298111
+        },
+        {
+          "feature": "smf_lag_48",
+          "gain": 897090117.2632599
+        },
+        {
+          "feature": "supply_gap_zscore_24h",
+          "gain": 835076648.5501328
+        },
+        {
+          "feature": "is_holiday_or_weekend",
+          "gain": 789708539.3757935
+        },
+        {
+          "feature": "cons_consumption_lag_24",
+          "gain": 786583120.4336166
+        },
+        {
+          "feature": "hour_x_ptf_lag24",
+          "gain": 774213970.0546417
+        },
+        {
+          "feature": "gen_total_lag_168",
+          "gain": 771518756.5145111
+        },
+        {
+          "feature": "kgup_gunes",
+          "gain": 767641320.5098877
+        },
+        {
+          "feature": "supply_gap_change_1h",
+          "gain": 758896904.8500595
+        },
+        {
+          "feature": "supply_gap_change_24h",
+          "gain": 747121488.280304
+        },
+        {
+          "feature": "spread_nowcast_lag1",
+          "gain": 708126554.0849533
+        },
+        {
+          "feature": "smf_lag_24",
+          "gain": 652770105.6159515
+        },
+        {
+          "feature": "kgup_diger",
+          "gain": 639099880.0681381
+        },
+        {
+          "feature": "kgup_biokutle",
+          "gain": 630254907.533287
+        },
+        {
+          "feature": "smf_ptf_spread_lag_24",
+          "gain": 617408527.6631927
+        },
+        {
+          "feature": "kgup_fuelOil",
+          "gain": 592941490.894867
+        },
+        {
+          "feature": "kgup_jeotermal",
+          "gain": 585114543.8565216
+        },
+        {
+          "feature": "wind_generation_mean_lag_48",
+          "gain": 579685126.7438469
+        },
+        {
+          "feature": "kgup_barajli",
+          "gain": 577897266.9575882
+        },
+        {
+          "feature": "kgup_total_minus_load",
+          "gain": 574575868.3839874
+        },
+        {
+          "feature": "outage_fault_mw_loss_sum",
+          "gain": 556271150.9386063
+        },
+        {
+          "feature": "outage_fault_mw_loss_max",
+          "gain": 538037290.7862778
+        },
+        {
+          "feature": "wind_forecast_std",
+          "gain": 537282413.986145
+        },
+        {
+          "feature": "kgup_ruzgar",
+          "gain": 528304373.1740494
+        },
+        {
+          "feature": "cons_consumption_lag_168",
+          "gain": 525178803.03230286
+        },
+        {
+          "feature": "kgup_akarsu",
+          "gain": 523651532.19459534
+        },
+        {
+          "feature": "ptf_hours_since_zero",
+          "gain": 496450556.12184143
+        },
+        {
+          "feature": "wind_quarter1_mean",
+          "gain": 491690231.4537926
+        },
+        {
+          "feature": "outage_stress",
+          "gain": 487290611.85562897
+        },
+        {
+          "feature": "kgup_linyit",
+          "gain": 486896573.33613586
+        },
+        {
+          "feature": "outage_maint_operator_power_sum",
+          "gain": 469931374.5755234
+        },
+        {
+          "feature": "outage_fault_operator_power_sum",
+          "gain": 464510418.0179634
+        },
+        {
+          "feature": "spread_change_24h",
+          "gain": 454092286.37023926
+        },
+        {
+          "feature": "wind_generation_mean_lag_168",
+          "gain": 445391396.28692245
+        },
+        {
+          "feature": "yal_yat_net_stress_24h",
+          "gain": 441974368.6761246
+        },
+        {
+          "feature": "spread_zscore_24h",
+          "gain": 422506214.45492554
+        },
+        {
+          "feature": "yal_yat_net_stress_168h",
+          "gain": 389311548.13629913
+        },
+        {
+          "feature": "gen_total_lag_48",
+          "gain": 385773924.45806885
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_48",
+          "gain": 383916381.1658249
+        },
+        {
+          "feature": "cons_consumption_lag_48",
+          "gain": 366920268.9007721
+        },
+        {
+          "feature": "month_cos",
+          "gain": 366749694.6255493
+        },
+        {
+          "feature": "outage_maint_capacity_sum",
+          "gain": 366640907.2292099
+        },
+        {
+          "feature": "smf_ptf_spread_lag_168",
+          "gain": 366577460.8163452
+        },
+        {
+          "feature": "outage_event_rows",
+          "gain": 344361229.4774246
+        },
+        {
+          "feature": "yal_yat_net_lag_48",
+          "gain": 335350075.36639404
+        },
+        {
+          "feature": "kgup_tasKomur",
+          "gain": 321447780.7455063
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_48",
+          "gain": 320829529.72636414
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_24",
+          "gain": 315148192.4662094
+        },
+        {
+          "feature": "is_weekend",
+          "gain": 301065602.31051636
+        },
+        {
+          "feature": "wind_quarter4_mean",
+          "gain": 285958132.4278641
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_168",
+          "gain": 285644258.3201752
+        },
+        {
+          "feature": "ptf_spike_share_24h",
+          "gain": 272581298.22998047
+        },
+        {
+          "feature": "outage_fault_event_count",
+          "gain": 264429889.92795563
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_24",
+          "gain": 264240354.83766937
+        },
+        {
+          "feature": "wind_quarter2_mean",
+          "gain": 251006921.03279114
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_168",
+          "gain": 248248141.41103363
+        },
+        {
+          "feature": "wind_quarter3_mean",
+          "gain": 225773302.5849762
+        },
+        {
+          "feature": "yal_yat_net_lag_168",
+          "gain": 224505613.47657776
+        },
+        {
+          "feature": "yal_yat_net_lag_24",
+          "gain": 200901744.0239601
+        },
+        {
+          "feature": "outage_maint_event_count",
+          "gain": 189368695.66342163
+        },
+        {
+          "feature": "yal_down_stress_168h",
+          "gain": 187624827.666584
+        },
+        {
+          "feature": "month_sin",
+          "gain": 173388558.30039978
+        },
+        {
+          "feature": "wind_forecast_max",
+          "gain": 170547264.6096573
+        },
+        {
+          "feature": "wind_forecast_mean",
+          "gain": 167161041.76281738
+        },
+        {
+          "feature": "yal_down_stress_24h",
+          "gain": 166162382.74398804
+        },
+        {
+          "feature": "wind_forecast_min",
+          "gain": 155891471.60477448
+        },
+        {
+          "feature": "supply_gap",
+          "gain": 141001300.93489075
+        },
+        {
+          "feature": "hour_x_spread_lag24",
+          "gain": 135487304.7941742
+        },
+        {
+          "feature": "yal_up_stress_24h",
+          "gain": 80172240.85974121
+        },
+        {
+          "feature": "yal_up_stress_168h",
+          "gain": 76243487.48855591
+        },
+        {
+          "feature": "ptf_zero_share_168h",
+          "gain": 2740123.4069213867
+        },
+        {
+          "feature": "kgup_nafta",
+          "gain": 2392813.7916870117
+        },
+        {
+          "feature": "hour_sin",
+          "gain": 0.0
+        },
+        {
+          "feature": "hour_cos",
+          "gain": 0.0
+        },
+        {
+          "feature": "is_holiday_tr",
+          "gain": 0.0
+        },
+        {
+          "feature": "ptf_zero_share_24h",
+          "gain": 0.0
+        }
+      ],
+      "2": [
+        {
+          "feature": "persistence_2h",
+          "gain": 26485572338.366714
+        },
+        {
+          "feature": "dow_cos",
+          "gain": 26223134864.339798
+        },
+        {
+          "feature": "renewable_share_change_24h",
+          "gain": 24630952657.493202
+        },
+        {
+          "feature": "ptf_return_24h",
+          "gain": 21029587465.32699
+        },
+        {
+          "feature": "kgup_dogalgaz",
+          "gain": 7110211161.553474
+        },
+        {
+          "feature": "weekend_x_ptf_vol",
+          "gain": 6501276667.441864
+        },
+        {
+          "feature": "ptf_roll_std_24",
+          "gain": 5719346588.962769
+        },
+        {
+          "feature": "ptf_range_24h",
+          "gain": 3637691233.8795853
+        },
+        {
+          "feature": "ptf_roll_std_168",
+          "gain": 3420588001.3698883
+        },
+        {
+          "feature": "wind_forecast_ramp_24h",
+          "gain": 3319318940.337593
+        },
+        {
+          "feature": "ptf_lag_1",
+          "gain": 3007743169.760765
+        },
+        {
+          "feature": "ptf_roll_mean_168",
+          "gain": 2996709843.89624
+        },
+        {
+          "feature": "ptf_momentum_24h",
+          "gain": 2991784742.9203224
+        },
+        {
+          "feature": "dow_sin",
+          "gain": 2884695178.789398
+        },
+        {
+          "feature": "ptf_roll_mean_24",
+          "gain": 2422563041.268799
+        },
+        {
+          "feature": "ptf_zscore_24h",
+          "gain": 2180841564.7756786
+        },
+        {
+          "feature": "wind_forecast_ramp_1h",
+          "gain": 2119547241.8232956
+        },
+        {
+          "feature": "load_lep",
+          "gain": 1814923295.3799133
+        },
+        {
+          "feature": "kgup_renewable_share",
+          "gain": 1703838165.7064285
+        },
+        {
+          "feature": "is_holiday_or_weekend",
+          "gain": 1667515032.2821655
+        },
+        {
+          "feature": "wind_forecast_share",
+          "gain": 1377109510.0287704
+        },
+        {
+          "feature": "ptf_spike_share_168h",
+          "gain": 1339183829.9239502
+        },
+        {
+          "feature": "ptf_lag_24",
+          "gain": 1308532752.0877075
+        },
+        {
+          "feature": "ptf_lag_48",
+          "gain": 1276650472.5396576
+        },
+        {
+          "feature": "kgup_ithalKomur",
+          "gain": 1245559360.876175
+        },
+        {
+          "feature": "ptf_lag_168",
+          "gain": 1206323607.9310532
+        },
+        {
+          "feature": "kgup_toplam",
+          "gain": 1164988912.219658
+        },
+        {
+          "feature": "wind_generation_mean_lag_24",
+          "gain": 1164797377.2764816
+        },
+        {
+          "feature": "ptf_vol_ratio_24_168",
+          "gain": 1144584911.7281036
+        },
+        {
+          "feature": "ptf_hours_since_spike",
+          "gain": 1081062863.5521622
+        },
+        {
+          "feature": "smf_lag_48",
+          "gain": 1053070890.540329
+        },
+        {
+          "feature": "kgup_thermal_share",
+          "gain": 993850067.0490494
+        },
+        {
+          "feature": "ptf_return_1h",
+          "gain": 971980604.0307388
+        },
+        {
+          "feature": "kgup_gunes",
+          "gain": 958089279.377449
+        },
+        {
+          "feature": "gen_total_lag_24",
+          "gain": 932621892.226059
+        },
+        {
+          "feature": "gen_total_lag_168",
+          "gain": 923845359.5216141
+        },
+        {
+          "feature": "smf_lag_168",
+          "gain": 905274172.7324371
+        },
+        {
+          "feature": "supply_gap_change_24h",
+          "gain": 880110953.7054214
+        },
+        {
+          "feature": "cons_consumption_lag_24",
+          "gain": 836670542.5676727
+        },
+        {
+          "feature": "supply_gap_zscore_24h",
+          "gain": 770407206.426094
+        },
+        {
+          "feature": "kgup_jeotermal",
+          "gain": 755138384.2886276
+        },
+        {
+          "feature": "supply_gap_change_1h",
+          "gain": 744566985.3292084
+        },
+        {
+          "feature": "smf_lag_24",
+          "gain": 739346136.8200073
+        },
+        {
+          "feature": "kgup_diger",
+          "gain": 723292928.300705
+        },
+        {
+          "feature": "wind_forecast_std",
+          "gain": 718694854.6270218
+        },
+        {
+          "feature": "kgup_barajli",
+          "gain": 712870169.832344
+        },
+        {
+          "feature": "kgup_ruzgar",
+          "gain": 691896211.2084274
+        },
+        {
+          "feature": "wind_quarter1_mean",
+          "gain": 687261754.9118118
+        },
+        {
+          "feature": "kgup_biokutle",
+          "gain": 668648507.2778816
+        },
+        {
+          "feature": "spread_nowcast_lag1",
+          "gain": 666400817.2810974
+        },
+        {
+          "feature": "kgup_total_minus_load",
+          "gain": 650481646.5535736
+        },
+        {
+          "feature": "outage_fault_mw_loss_sum",
+          "gain": 638945441.7943382
+        },
+        {
+          "feature": "wind_generation_mean_lag_48",
+          "gain": 627137576.4373703
+        },
+        {
+          "feature": "kgup_akarsu",
+          "gain": 595287910.2056274
+        },
+        {
+          "feature": "outage_fault_mw_loss_max",
+          "gain": 575485721.3521652
+        },
+        {
+          "feature": "kgup_linyit",
+          "gain": 573080828.8463974
+        },
+        {
+          "feature": "spread_change_24h",
+          "gain": 564173775.0722809
+        },
+        {
+          "feature": "hour_x_ptf_lag24",
+          "gain": 546319772.8499756
+        },
+        {
+          "feature": "kgup_fuelOil",
+          "gain": 532560136.3780365
+        },
+        {
+          "feature": "cons_consumption_lag_168",
+          "gain": 528775126.4893036
+        },
+        {
+          "feature": "outage_maint_operator_power_sum",
+          "gain": 514198472.03328705
+        },
+        {
+          "feature": "outage_stress",
+          "gain": 501328328.7437744
+        },
+        {
+          "feature": "outage_fault_operator_power_sum",
+          "gain": 499242052.77614594
+        },
+        {
+          "feature": "wind_generation_mean_lag_168",
+          "gain": 494502024.5687256
+        },
+        {
+          "feature": "ptf_hours_since_zero",
+          "gain": 479233683.4835892
+        },
+        {
+          "feature": "month_cos",
+          "gain": 449333144.3338928
+        },
+        {
+          "feature": "yal_yat_net_stress_168h",
+          "gain": 447333420.0529709
+        },
+        {
+          "feature": "spread_zscore_24h",
+          "gain": 442313225.0762024
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_48",
+          "gain": 438482839.5078125
+        },
+        {
+          "feature": "smf_ptf_spread_lag_24",
+          "gain": 438330902.61050415
+        },
+        {
+          "feature": "yal_yat_net_stress_24h",
+          "gain": 426232193.49180603
+        },
+        {
+          "feature": "gen_total_lag_48",
+          "gain": 404836377.5572052
+        },
+        {
+          "feature": "outage_event_rows",
+          "gain": 402327212.69805145
+        },
+        {
+          "feature": "outage_maint_capacity_sum",
+          "gain": 400462568.7229004
+        },
+        {
+          "feature": "kgup_tasKomur",
+          "gain": 396952573.54595184
+        },
+        {
+          "feature": "cons_consumption_lag_48",
+          "gain": 368297373.6973114
+        },
+        {
+          "feature": "yal_yat_net_lag_48",
+          "gain": 367774933.485878
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_48",
+          "gain": 346525339.25751495
+        },
+        {
+          "feature": "smf_ptf_spread_lag_168",
+          "gain": 341382562.677475
+        },
+        {
+          "feature": "wind_quarter4_mean",
+          "gain": 326902159.03941345
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_24",
+          "gain": 321836547.1302719
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_168",
+          "gain": 320102554.9709625
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_168",
+          "gain": 318787974.50735474
+        },
+        {
+          "feature": "outage_fault_event_count",
+          "gain": 313981132.9660034
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_24",
+          "gain": 300058363.51527405
+        },
+        {
+          "feature": "yal_yat_net_lag_168",
+          "gain": 292007473.6931305
+        },
+        {
+          "feature": "wind_quarter2_mean",
+          "gain": 290394394.7772827
+        },
+        {
+          "feature": "ptf_spike_share_24h",
+          "gain": 290169960.6845703
+        },
+        {
+          "feature": "wind_quarter3_mean",
+          "gain": 253231149.51623535
+        },
+        {
+          "feature": "yal_yat_net_lag_24",
+          "gain": 237105564.2476883
+        },
+        {
+          "feature": "is_weekend",
+          "gain": 229008002.8397827
+        },
+        {
+          "feature": "outage_maint_event_count",
+          "gain": 221388779.30551147
+        },
+        {
+          "feature": "month_sin",
+          "gain": 196231693.63842773
+        },
+        {
+          "feature": "supply_gap",
+          "gain": 195530834.6826172
+        },
+        {
+          "feature": "wind_forecast_mean",
+          "gain": 195145712.64772034
+        },
+        {
+          "feature": "yal_down_stress_24h",
+          "gain": 166318332.29589844
+        },
+        {
+          "feature": "yal_down_stress_168h",
+          "gain": 160761398.9678192
+        },
+        {
+          "feature": "wind_forecast_max",
+          "gain": 145714188.4343872
+        },
+        {
+          "feature": "wind_forecast_min",
+          "gain": 144212474.48657227
+        },
+        {
+          "feature": "hour_x_spread_lag24",
+          "gain": 117292830.69267273
+        },
+        {
+          "feature": "yal_up_stress_168h",
+          "gain": 96138744.58261108
+        },
+        {
+          "feature": "yal_up_stress_24h",
+          "gain": 89278422.83366394
+        },
+        {
+          "feature": "ptf_zero_share_168h",
+          "gain": 3981452.078857422
+        },
+        {
+          "feature": "kgup_nafta",
+          "gain": 3188310.256225586
+        },
+        {
+          "feature": "hour_sin",
+          "gain": 0.0
+        },
+        {
+          "feature": "hour_cos",
+          "gain": 0.0
+        },
+        {
+          "feature": "is_holiday_tr",
+          "gain": 0.0
+        },
+        {
+          "feature": "ptf_zero_share_24h",
+          "gain": 0.0
+        }
+      ],
+      "3": [
+        {
+          "feature": "persistence_3h",
+          "gain": 28535715938.608788
+        },
+        {
+          "feature": "dow_cos",
+          "gain": 28395123302.410477
+        },
+        {
+          "feature": "renewable_share_change_24h",
+          "gain": 21905254390.657272
+        },
+        {
+          "feature": "ptf_return_24h",
+          "gain": 14902182541.180725
+        },
+        {
+          "feature": "weekend_x_ptf_vol",
+          "gain": 7455163874.30545
+        },
+        {
+          "feature": "kgup_dogalgaz",
+          "gain": 7007159637.903564
+        },
+        {
+          "feature": "ptf_roll_std_24",
+          "gain": 6080222051.190437
+        },
+        {
+          "feature": "ptf_range_24h",
+          "gain": 3693288814.175171
+        },
+        {
+          "feature": "ptf_roll_std_168",
+          "gain": 3607746648.5649796
+        },
+        {
+          "feature": "wind_forecast_ramp_24h",
+          "gain": 3479835235.492813
+        },
+        {
+          "feature": "dow_sin",
+          "gain": 3347713589.6926193
+        },
+        {
+          "feature": "ptf_roll_mean_168",
+          "gain": 3188406502.8839874
+        },
+        {
+          "feature": "ptf_lag_1",
+          "gain": 2834588036.3441925
+        },
+        {
+          "feature": "wind_forecast_ramp_1h",
+          "gain": 2678592803.861206
+        },
+        {
+          "feature": "ptf_momentum_24h",
+          "gain": 2675070157.333641
+        },
+        {
+          "feature": "ptf_roll_mean_24",
+          "gain": 2452176021.0842133
+        },
+        {
+          "feature": "is_holiday_or_weekend",
+          "gain": 2031079129.6740112
+        },
+        {
+          "feature": "ptf_zscore_24h",
+          "gain": 2027713645.4323425
+        },
+        {
+          "feature": "load_lep",
+          "gain": 1856053342.5626907
+        },
+        {
+          "feature": "kgup_renewable_share",
+          "gain": 1811194917.0470276
+        },
+        {
+          "feature": "wind_forecast_share",
+          "gain": 1518502763.2093735
+        },
+        {
+          "feature": "ptf_lag_48",
+          "gain": 1404914554.6373444
+        },
+        {
+          "feature": "ptf_lag_24",
+          "gain": 1403328155.5022507
+        },
+        {
+          "feature": "ptf_vol_ratio_24_168",
+          "gain": 1389121004.0056915
+        },
+        {
+          "feature": "ptf_spike_share_168h",
+          "gain": 1373033208.9923096
+        },
+        {
+          "feature": "ptf_lag_168",
+          "gain": 1325483218.6264954
+        },
+        {
+          "feature": "kgup_ithalKomur",
+          "gain": 1250844702.230278
+        },
+        {
+          "feature": "wind_generation_mean_lag_24",
+          "gain": 1235696077.0878906
+        },
+        {
+          "feature": "ptf_hours_since_spike",
+          "gain": 1208041598.170906
+        },
+        {
+          "feature": "kgup_toplam",
+          "gain": 1186396741.2390366
+        },
+        {
+          "feature": "kgup_gunes",
+          "gain": 1089670602.1160355
+        },
+        {
+          "feature": "kgup_thermal_share",
+          "gain": 1057743657.1442795
+        },
+        {
+          "feature": "smf_lag_48",
+          "gain": 981774795.2015686
+        },
+        {
+          "feature": "smf_lag_168",
+          "gain": 947133425.4940262
+        },
+        {
+          "feature": "smf_lag_24",
+          "gain": 930289224.4142914
+        },
+        {
+          "feature": "supply_gap_change_24h",
+          "gain": 919476506.4753418
+        },
+        {
+          "feature": "ptf_return_1h",
+          "gain": 859414188.255539
+        },
+        {
+          "feature": "gen_total_lag_24",
+          "gain": 831507154.1253891
+        },
+        {
+          "feature": "wind_forecast_std",
+          "gain": 828129239.091011
+        },
+        {
+          "feature": "kgup_jeotermal",
+          "gain": 822663100.7827225
+        },
+        {
+          "feature": "kgup_ruzgar",
+          "gain": 820365475.9266357
+        },
+        {
+          "feature": "kgup_diger",
+          "gain": 804060610.0925903
+        },
+        {
+          "feature": "gen_total_lag_168",
+          "gain": 801683835.2038422
+        },
+        {
+          "feature": "supply_gap_zscore_24h",
+          "gain": 799065642.6613312
+        },
+        {
+          "feature": "kgup_barajli",
+          "gain": 778044603.1060867
+        },
+        {
+          "feature": "wind_quarter1_mean",
+          "gain": 747731297.3927002
+        },
+        {
+          "feature": "supply_gap_change_1h",
+          "gain": 738459265.5742569
+        },
+        {
+          "feature": "outage_fault_mw_loss_max",
+          "gain": 716011755.1032257
+        },
+        {
+          "feature": "outage_fault_mw_loss_sum",
+          "gain": 706226480.8346252
+        },
+        {
+          "feature": "wind_generation_mean_lag_48",
+          "gain": 704158727.8135071
+        },
+        {
+          "feature": "kgup_biokutle",
+          "gain": 703344866.3125839
+        },
+        {
+          "feature": "kgup_linyit",
+          "gain": 700641402.4560852
+        },
+        {
+          "feature": "kgup_total_minus_load",
+          "gain": 699334045.4291687
+        },
+        {
+          "feature": "kgup_akarsu",
+          "gain": 659398330.7820282
+        },
+        {
+          "feature": "spread_nowcast_lag1",
+          "gain": 647644943.3168945
+        },
+        {
+          "feature": "cons_consumption_lag_24",
+          "gain": 629285545.4156494
+        },
+        {
+          "feature": "outage_maint_operator_power_sum",
+          "gain": 619377278.4760284
+        },
+        {
+          "feature": "cons_consumption_lag_168",
+          "gain": 616404329.197403
+        },
+        {
+          "feature": "spread_change_24h",
+          "gain": 579621008.9267273
+        },
+        {
+          "feature": "kgup_fuelOil",
+          "gain": 569409507.7815247
+        },
+        {
+          "feature": "outage_stress",
+          "gain": 564357079.6722946
+        },
+        {
+          "feature": "wind_generation_mean_lag_168",
+          "gain": 562571112.1924973
+        },
+        {
+          "feature": "outage_fault_operator_power_sum",
+          "gain": 556243712.2596436
+        },
+        {
+          "feature": "ptf_hours_since_zero",
+          "gain": 537317589.9253922
+        },
+        {
+          "feature": "yal_yat_net_stress_168h",
+          "gain": 511492667.5860672
+        },
+        {
+          "feature": "hour_x_ptf_lag24",
+          "gain": 504690284.9799042
+        },
+        {
+          "feature": "month_cos",
+          "gain": 504656771.3293915
+        },
+        {
+          "feature": "yal_yat_net_stress_24h",
+          "gain": 499308980.4214325
+        },
+        {
+          "feature": "outage_maint_capacity_sum",
+          "gain": 493145904.83403015
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_48",
+          "gain": 451910717.5157623
+        },
+        {
+          "feature": "outage_event_rows",
+          "gain": 442447296.73236084
+        },
+        {
+          "feature": "smf_ptf_spread_lag_24",
+          "gain": 434582176.0493622
+        },
+        {
+          "feature": "spread_zscore_24h",
+          "gain": 433036771.3404083
+        },
+        {
+          "feature": "gen_total_lag_48",
+          "gain": 431165953.24186325
+        },
+        {
+          "feature": "kgup_tasKomur",
+          "gain": 428594758.46208954
+        },
+        {
+          "feature": "yal_yat_net_lag_48",
+          "gain": 419077959.25618744
+        },
+        {
+          "feature": "is_weekend",
+          "gain": 411020872.0673218
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_48",
+          "gain": 372855122.3492279
+        },
+        {
+          "feature": "cons_consumption_lag_48",
+          "gain": 370967065.6379471
+        },
+        {
+          "feature": "smf_ptf_spread_lag_168",
+          "gain": 363789871.973793
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_24",
+          "gain": 349794037.0842514
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_24",
+          "gain": 337068316.5936737
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_168",
+          "gain": 327712108.14810944
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_168",
+          "gain": 322128453.23454285
+        },
+        {
+          "feature": "outage_fault_event_count",
+          "gain": 317251508.0459671
+        },
+        {
+          "feature": "wind_quarter4_mean",
+          "gain": 301262987.8560333
+        },
+        {
+          "feature": "wind_quarter3_mean",
+          "gain": 294965587.5071564
+        },
+        {
+          "feature": "wind_quarter2_mean",
+          "gain": 282550730.2104721
+        },
+        {
+          "feature": "yal_yat_net_lag_24",
+          "gain": 268921508.54397583
+        },
+        {
+          "feature": "yal_yat_net_lag_168",
+          "gain": 262203284.02412415
+        },
+        {
+          "feature": "ptf_spike_share_24h",
+          "gain": 257233258.8203125
+        },
+        {
+          "feature": "outage_maint_event_count",
+          "gain": 235453236.91503143
+        },
+        {
+          "feature": "supply_gap",
+          "gain": 233373096.12519073
+        },
+        {
+          "feature": "month_sin",
+          "gain": 227116997.50904846
+        },
+        {
+          "feature": "wind_forecast_mean",
+          "gain": 201461509.42271423
+        },
+        {
+          "feature": "yal_down_stress_24h",
+          "gain": 200952070.85458374
+        },
+        {
+          "feature": "wind_forecast_min",
+          "gain": 179539471.03746033
+        },
+        {
+          "feature": "wind_forecast_max",
+          "gain": 164309283.96650696
+        },
+        {
+          "feature": "yal_down_stress_168h",
+          "gain": 161162520.10310364
+        },
+        {
+          "feature": "hour_x_spread_lag24",
+          "gain": 100819190.89928436
+        },
+        {
+          "feature": "yal_up_stress_168h",
+          "gain": 78672469.056427
+        },
+        {
+          "feature": "yal_up_stress_24h",
+          "gain": 68071443.85656738
+        },
+        {
+          "feature": "ptf_zero_share_168h",
+          "gain": 3618676.1854248047
+        },
+        {
+          "feature": "kgup_nafta",
+          "gain": 2972211.5516967773
+        },
+        {
+          "feature": "hour_sin",
+          "gain": 0.0
+        },
+        {
+          "feature": "hour_cos",
+          "gain": 0.0
+        },
+        {
+          "feature": "is_holiday_tr",
+          "gain": 0.0
+        },
+        {
+          "feature": "ptf_zero_share_24h",
+          "gain": 0.0
+        }
+      ],
+      "4": [
+        {
+          "feature": "dow_cos",
+          "gain": 30671261685.769394
+        },
+        {
+          "feature": "persistence_4h",
+          "gain": 29765960993.96765
+        },
+        {
+          "feature": "renewable_share_change_24h",
+          "gain": 19096507698.300888
+        },
+        {
+          "feature": "ptf_return_24h",
+          "gain": 9957502427.556946
+        },
+        {
+          "feature": "weekend_x_ptf_vol",
+          "gain": 8549719250.083115
+        },
+        {
+          "feature": "kgup_dogalgaz",
+          "gain": 6894045997.498543
+        },
+        {
+          "feature": "ptf_roll_std_24",
+          "gain": 5938010714.623306
+        },
+        {
+          "feature": "dow_sin",
+          "gain": 3987848758.811447
+        },
+        {
+          "feature": "ptf_roll_std_168",
+          "gain": 3878908801.71714
+        },
+        {
+          "feature": "ptf_range_24h",
+          "gain": 3802072461.2401886
+        },
+        {
+          "feature": "wind_forecast_ramp_24h",
+          "gain": 3609000659.991085
+        },
+        {
+          "feature": "ptf_roll_mean_168",
+          "gain": 3284397412.301613
+        },
+        {
+          "feature": "wind_forecast_ramp_1h",
+          "gain": 2856581613.939499
+        },
+        {
+          "feature": "ptf_momentum_24h",
+          "gain": 2853442497.2807007
+        },
+        {
+          "feature": "ptf_lag_1",
+          "gain": 2543858795.8915253
+        },
+        {
+          "feature": "ptf_roll_mean_24",
+          "gain": 2535944874.688202
+        },
+        {
+          "feature": "kgup_renewable_share",
+          "gain": 2132535989.888939
+        },
+        {
+          "feature": "ptf_zscore_24h",
+          "gain": 2122521366.002739
+        },
+        {
+          "feature": "is_holiday_or_weekend",
+          "gain": 2069473430.9053955
+        },
+        {
+          "feature": "load_lep",
+          "gain": 1704156452.071701
+        },
+        {
+          "feature": "ptf_lag_168",
+          "gain": 1642059149.4832
+        },
+        {
+          "feature": "wind_forecast_share",
+          "gain": 1600141364.201561
+        },
+        {
+          "feature": "ptf_vol_ratio_24_168",
+          "gain": 1474050559.7218475
+        },
+        {
+          "feature": "ptf_lag_48",
+          "gain": 1473173987.7923431
+        },
+        {
+          "feature": "ptf_spike_share_168h",
+          "gain": 1397116066.2804565
+        },
+        {
+          "feature": "ptf_lag_24",
+          "gain": 1303435336.297535
+        },
+        {
+          "feature": "wind_generation_mean_lag_24",
+          "gain": 1301809202.0403442
+        },
+        {
+          "feature": "ptf_hours_since_spike",
+          "gain": 1281136932.5875778
+        },
+        {
+          "feature": "kgup_ithalKomur",
+          "gain": 1192564705.0808258
+        },
+        {
+          "feature": "kgup_toplam",
+          "gain": 1171202096.4983978
+        },
+        {
+          "feature": "kgup_gunes",
+          "gain": 1096639784.119217
+        },
+        {
+          "feature": "smf_lag_48",
+          "gain": 1079013922.2436066
+        },
+        {
+          "feature": "wind_forecast_std",
+          "gain": 1072618549.1632233
+        },
+        {
+          "feature": "kgup_thermal_share",
+          "gain": 1052704267.5425873
+        },
+        {
+          "feature": "ptf_return_1h",
+          "gain": 957482811.1331177
+        },
+        {
+          "feature": "kgup_jeotermal",
+          "gain": 949522519.1226196
+        },
+        {
+          "feature": "smf_lag_168",
+          "gain": 943970632.620697
+        },
+        {
+          "feature": "smf_lag_24",
+          "gain": 928262795.5657806
+        },
+        {
+          "feature": "supply_gap_change_24h",
+          "gain": 911410810.5288773
+        },
+        {
+          "feature": "kgup_barajli",
+          "gain": 875734572.3556671
+        },
+        {
+          "feature": "kgup_diger",
+          "gain": 859643557.7349243
+        },
+        {
+          "feature": "supply_gap_zscore_24h",
+          "gain": 851795614.4064255
+        },
+        {
+          "feature": "supply_gap_change_1h",
+          "gain": 848281562.3838501
+        },
+        {
+          "feature": "kgup_linyit",
+          "gain": 846930249.3151627
+        },
+        {
+          "feature": "gen_total_lag_24",
+          "gain": 834521331.4653473
+        },
+        {
+          "feature": "spread_nowcast_lag1",
+          "gain": 787365878.7786026
+        },
+        {
+          "feature": "outage_fault_mw_loss_sum",
+          "gain": 783464959.6815186
+        },
+        {
+          "feature": "kgup_ruzgar",
+          "gain": 771311813.342514
+        },
+        {
+          "feature": "outage_maint_operator_power_sum",
+          "gain": 759296009.4420395
+        },
+        {
+          "feature": "kgup_total_minus_load",
+          "gain": 753969974.3202744
+        },
+        {
+          "feature": "wind_generation_mean_lag_48",
+          "gain": 736859291.6079559
+        },
+        {
+          "feature": "kgup_biokutle",
+          "gain": 732141616.3985443
+        },
+        {
+          "feature": "kgup_akarsu",
+          "gain": 718195153.9667206
+        },
+        {
+          "feature": "gen_total_lag_168",
+          "gain": 713108054.317215
+        },
+        {
+          "feature": "cons_consumption_lag_24",
+          "gain": 672839600.4167099
+        },
+        {
+          "feature": "outage_fault_mw_loss_max",
+          "gain": 660501974.7702866
+        },
+        {
+          "feature": "outage_stress",
+          "gain": 642430601.2596741
+        },
+        {
+          "feature": "wind_quarter1_mean",
+          "gain": 638052284.8091736
+        },
+        {
+          "feature": "month_cos",
+          "gain": 635484523.2253723
+        },
+        {
+          "feature": "wind_generation_mean_lag_168",
+          "gain": 603804038.6766739
+        },
+        {
+          "feature": "outage_fault_operator_power_sum",
+          "gain": 594851749.8259201
+        },
+        {
+          "feature": "cons_consumption_lag_168",
+          "gain": 588381166.8166656
+        },
+        {
+          "feature": "ptf_hours_since_zero",
+          "gain": 572354933.3427811
+        },
+        {
+          "feature": "yal_yat_net_stress_24h",
+          "gain": 547425202.0872726
+        },
+        {
+          "feature": "kgup_fuelOil",
+          "gain": 538207721.5662308
+        },
+        {
+          "feature": "spread_change_24h",
+          "gain": 532648331.77466583
+        },
+        {
+          "feature": "yal_yat_net_stress_168h",
+          "gain": 500347874.8053055
+        },
+        {
+          "feature": "outage_maint_capacity_sum",
+          "gain": 497606562.59412766
+        },
+        {
+          "feature": "hour_x_ptf_lag24",
+          "gain": 476261846.0085068
+        },
+        {
+          "feature": "outage_event_rows",
+          "gain": 473132075.00679016
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_48",
+          "gain": 454121712.8114548
+        },
+        {
+          "feature": "yal_yat_net_lag_48",
+          "gain": 453506726.93795776
+        },
+        {
+          "feature": "smf_ptf_spread_lag_24",
+          "gain": 451695806.3578491
+        },
+        {
+          "feature": "spread_zscore_24h",
+          "gain": 442981625.2176361
+        },
+        {
+          "feature": "kgup_tasKomur",
+          "gain": 416064077.6685486
+        },
+        {
+          "feature": "cons_consumption_lag_48",
+          "gain": 414681570.27223206
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_24",
+          "gain": 413202627.0314255
+        },
+        {
+          "feature": "wind_quarter4_mean",
+          "gain": 409543884.67878723
+        },
+        {
+          "feature": "smf_ptf_spread_lag_168",
+          "gain": 408403054.51691437
+        },
+        {
+          "feature": "gen_total_lag_48",
+          "gain": 408251770.66864014
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_168",
+          "gain": 405842280.52970886
+        },
+        {
+          "feature": "yal_yat_downRegulationDelivered_lag_48",
+          "gain": 391915517.5335846
+        },
+        {
+          "feature": "outage_fault_event_count",
+          "gain": 367679416.4882202
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_24",
+          "gain": 363526036.8791199
+        },
+        {
+          "feature": "is_weekend",
+          "gain": 338318625.35961914
+        },
+        {
+          "feature": "wind_quarter2_mean",
+          "gain": 334848179.58555603
+        },
+        {
+          "feature": "yal_yat_upRegulationDelivered_lag_168",
+          "gain": 307313138.7312927
+        },
+        {
+          "feature": "yal_yat_net_lag_168",
+          "gain": 286965540.9507828
+        },
+        {
+          "feature": "wind_quarter3_mean",
+          "gain": 277889430.5270691
+        },
+        {
+          "feature": "month_sin",
+          "gain": 270169623.4555969
+        },
+        {
+          "feature": "ptf_spike_share_24h",
+          "gain": 266272092.37280273
+        },
+        {
+          "feature": "yal_yat_net_lag_24",
+          "gain": 253466608.87379456
+        },
+        {
+          "feature": "outage_maint_event_count",
+          "gain": 243842408.4464569
+        },
+        {
+          "feature": "supply_gap",
+          "gain": 232935871.8329773
+        },
+        {
+          "feature": "wind_forecast_mean",
+          "gain": 219512608.3554077
+        },
+        {
+          "feature": "yal_down_stress_24h",
+          "gain": 209036211.7492981
+        },
+        {
+          "feature": "wind_forecast_max",
+          "gain": 198155787.26449585
+        },
+        {
+          "feature": "wind_forecast_min",
+          "gain": 183253521.8317871
+        },
+        {
+          "feature": "yal_down_stress_168h",
+          "gain": 179724238.33932495
+        },
+        {
+          "feature": "hour_x_spread_lag24",
+          "gain": 119064781.84777832
+        },
+        {
+          "feature": "yal_up_stress_24h",
+          "gain": 90271025.87278748
+        },
+        {
+          "feature": "yal_up_stress_168h",
+          "gain": 85427021.20887756
+        },
+        {
+          "feature": "kgup_nafta",
+          "gain": 6002616.689331055
+        },
+        {
+          "feature": "ptf_zero_share_168h",
+          "gain": 5936772.77331543
+        },
+        {
+          "feature": "hour_sin",
+          "gain": 0.0
+        },
+        {
+          "feature": "hour_cos",
+          "gain": 0.0
+        },
+        {
+          "feature": "is_holiday_tr",
+          "gain": 0.0
+        },
+        {
+          "feature": "ptf_zero_share_24h",
+          "gain": 0.0
+        }
+      ]
+    }
+  },
+  "feature_sets": {
+    "10": {
+      "1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1"
+      ],
+      "2": [
+        "persistence_2h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "kgup_dogalgaz",
+        "weekend_x_ptf_vol",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h"
+      ],
+      "3": [
+        "persistence_3h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h"
+      ],
+      "4": [
+        "persistence_4h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "dow_sin",
+        "ptf_roll_std_168",
+        "ptf_range_24h"
+      ]
+    },
+    "20": {
+      "1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "load_lep",
+        "dow_sin",
+        "kgup_renewable_share",
+        "wind_forecast_ramp_1h",
+        "ptf_lag_24"
+      ],
+      "2": [
+        "persistence_2h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "kgup_dogalgaz",
+        "weekend_x_ptf_vol",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h",
+        "ptf_lag_1",
+        "ptf_roll_mean_168",
+        "ptf_momentum_24h",
+        "dow_sin",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "wind_forecast_ramp_1h",
+        "load_lep",
+        "kgup_renewable_share",
+        "is_holiday_or_weekend"
+      ],
+      "3": [
+        "persistence_3h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h",
+        "dow_sin",
+        "ptf_roll_mean_168",
+        "ptf_lag_1",
+        "wind_forecast_ramp_1h",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_24",
+        "is_holiday_or_weekend",
+        "ptf_zscore_24h",
+        "load_lep",
+        "kgup_renewable_share"
+      ],
+      "4": [
+        "persistence_4h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "dow_sin",
+        "ptf_roll_std_168",
+        "ptf_range_24h",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_1h",
+        "ptf_momentum_24h",
+        "ptf_lag_1",
+        "ptf_roll_mean_24",
+        "kgup_renewable_share",
+        "ptf_zscore_24h",
+        "is_holiday_or_weekend",
+        "load_lep"
+      ]
+    },
+    "30": {
+      "1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "load_lep",
+        "dow_sin",
+        "kgup_renewable_share",
+        "wind_forecast_ramp_1h",
+        "ptf_lag_24",
+        "kgup_ithalKomur",
+        "ptf_lag_48",
+        "ptf_spike_share_168h",
+        "wind_forecast_share",
+        "ptf_lag_168",
+        "gen_total_lag_24",
+        "ptf_return_1h",
+        "ptf_vol_ratio_24_168",
+        "wind_generation_mean_lag_24",
+        "kgup_toplam"
+      ],
+      "2": [
+        "persistence_2h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "kgup_dogalgaz",
+        "weekend_x_ptf_vol",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h",
+        "ptf_lag_1",
+        "ptf_roll_mean_168",
+        "ptf_momentum_24h",
+        "dow_sin",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "wind_forecast_ramp_1h",
+        "load_lep",
+        "kgup_renewable_share",
+        "is_holiday_or_weekend",
+        "wind_forecast_share",
+        "ptf_spike_share_168h",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "kgup_ithalKomur",
+        "ptf_lag_168",
+        "kgup_toplam",
+        "wind_generation_mean_lag_24",
+        "ptf_vol_ratio_24_168",
+        "ptf_hours_since_spike"
+      ],
+      "3": [
+        "persistence_3h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h",
+        "dow_sin",
+        "ptf_roll_mean_168",
+        "ptf_lag_1",
+        "wind_forecast_ramp_1h",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_24",
+        "is_holiday_or_weekend",
+        "ptf_zscore_24h",
+        "load_lep",
+        "kgup_renewable_share",
+        "wind_forecast_share",
+        "ptf_lag_48",
+        "ptf_lag_24",
+        "ptf_vol_ratio_24_168",
+        "ptf_spike_share_168h",
+        "ptf_lag_168",
+        "kgup_ithalKomur",
+        "wind_generation_mean_lag_24",
+        "ptf_hours_since_spike",
+        "kgup_toplam"
+      ],
+      "4": [
+        "persistence_4h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "dow_sin",
+        "ptf_roll_std_168",
+        "ptf_range_24h",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_1h",
+        "ptf_momentum_24h",
+        "ptf_lag_1",
+        "ptf_roll_mean_24",
+        "kgup_renewable_share",
+        "ptf_zscore_24h",
+        "is_holiday_or_weekend",
+        "load_lep",
+        "ptf_lag_168",
+        "wind_forecast_share",
+        "ptf_vol_ratio_24_168",
+        "ptf_lag_48",
+        "ptf_spike_share_168h",
+        "ptf_lag_24",
+        "wind_generation_mean_lag_24",
+        "ptf_hours_since_spike",
+        "kgup_ithalKomur",
+        "kgup_toplam"
+      ]
+    },
+    "50": {
+      "1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "load_lep",
+        "dow_sin",
+        "kgup_renewable_share",
+        "wind_forecast_ramp_1h",
+        "ptf_lag_24",
+        "kgup_ithalKomur",
+        "ptf_lag_48",
+        "ptf_spike_share_168h",
+        "wind_forecast_share",
+        "ptf_lag_168",
+        "gen_total_lag_24",
+        "ptf_return_1h",
+        "ptf_vol_ratio_24_168",
+        "wind_generation_mean_lag_24",
+        "kgup_toplam",
+        "smf_lag_168",
+        "kgup_thermal_share",
+        "ptf_hours_since_spike",
+        "smf_lag_48",
+        "supply_gap_zscore_24h",
+        "is_holiday_or_weekend",
+        "cons_consumption_lag_24",
+        "hour_x_ptf_lag24",
+        "gen_total_lag_168",
+        "kgup_gunes",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "spread_nowcast_lag1",
+        "smf_lag_24",
+        "kgup_diger",
+        "kgup_biokutle",
+        "smf_ptf_spread_lag_24",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "wind_generation_mean_lag_48"
+      ],
+      "2": [
+        "persistence_2h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "kgup_dogalgaz",
+        "weekend_x_ptf_vol",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h",
+        "ptf_lag_1",
+        "ptf_roll_mean_168",
+        "ptf_momentum_24h",
+        "dow_sin",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "wind_forecast_ramp_1h",
+        "load_lep",
+        "kgup_renewable_share",
+        "is_holiday_or_weekend",
+        "wind_forecast_share",
+        "ptf_spike_share_168h",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "kgup_ithalKomur",
+        "ptf_lag_168",
+        "kgup_toplam",
+        "wind_generation_mean_lag_24",
+        "ptf_vol_ratio_24_168",
+        "ptf_hours_since_spike",
+        "smf_lag_48",
+        "kgup_thermal_share",
+        "ptf_return_1h",
+        "kgup_gunes",
+        "gen_total_lag_24",
+        "gen_total_lag_168",
+        "smf_lag_168",
+        "supply_gap_change_24h",
+        "cons_consumption_lag_24",
+        "supply_gap_zscore_24h",
+        "kgup_jeotermal",
+        "supply_gap_change_1h",
+        "smf_lag_24",
+        "kgup_diger",
+        "wind_forecast_std",
+        "kgup_barajli",
+        "kgup_ruzgar",
+        "wind_quarter1_mean",
+        "kgup_biokutle",
+        "spread_nowcast_lag1"
+      ],
+      "3": [
+        "persistence_3h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "wind_forecast_ramp_24h",
+        "dow_sin",
+        "ptf_roll_mean_168",
+        "ptf_lag_1",
+        "wind_forecast_ramp_1h",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_24",
+        "is_holiday_or_weekend",
+        "ptf_zscore_24h",
+        "load_lep",
+        "kgup_renewable_share",
+        "wind_forecast_share",
+        "ptf_lag_48",
+        "ptf_lag_24",
+        "ptf_vol_ratio_24_168",
+        "ptf_spike_share_168h",
+        "ptf_lag_168",
+        "kgup_ithalKomur",
+        "wind_generation_mean_lag_24",
+        "ptf_hours_since_spike",
+        "kgup_toplam",
+        "kgup_gunes",
+        "kgup_thermal_share",
+        "smf_lag_48",
+        "smf_lag_168",
+        "smf_lag_24",
+        "supply_gap_change_24h",
+        "ptf_return_1h",
+        "gen_total_lag_24",
+        "wind_forecast_std",
+        "kgup_jeotermal",
+        "kgup_ruzgar",
+        "kgup_diger",
+        "gen_total_lag_168",
+        "supply_gap_zscore_24h",
+        "kgup_barajli",
+        "wind_quarter1_mean",
+        "supply_gap_change_1h",
+        "outage_fault_mw_loss_max",
+        "outage_fault_mw_loss_sum",
+        "wind_generation_mean_lag_48"
+      ],
+      "4": [
+        "persistence_4h",
+        "dow_cos",
+        "renewable_share_change_24h",
+        "ptf_return_24h",
+        "weekend_x_ptf_vol",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "dow_sin",
+        "ptf_roll_std_168",
+        "ptf_range_24h",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_1h",
+        "ptf_momentum_24h",
+        "ptf_lag_1",
+        "ptf_roll_mean_24",
+        "kgup_renewable_share",
+        "ptf_zscore_24h",
+        "is_holiday_or_weekend",
+        "load_lep",
+        "ptf_lag_168",
+        "wind_forecast_share",
+        "ptf_vol_ratio_24_168",
+        "ptf_lag_48",
+        "ptf_spike_share_168h",
+        "ptf_lag_24",
+        "wind_generation_mean_lag_24",
+        "ptf_hours_since_spike",
+        "kgup_ithalKomur",
+        "kgup_toplam",
+        "kgup_gunes",
+        "smf_lag_48",
+        "wind_forecast_std",
+        "kgup_thermal_share",
+        "ptf_return_1h",
+        "kgup_jeotermal",
+        "smf_lag_168",
+        "smf_lag_24",
+        "supply_gap_change_24h",
+        "kgup_barajli",
+        "kgup_diger",
+        "supply_gap_zscore_24h",
+        "supply_gap_change_1h",
+        "kgup_linyit",
+        "gen_total_lag_24",
+        "spread_nowcast_lag1",
+        "outage_fault_mw_loss_sum",
+        "kgup_ruzgar",
+        "outage_maint_operator_power_sum",
+        "kgup_total_minus_load"
+      ]
+    },
+    "all": {
+      "1": [
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "month_sin",
+        "month_cos",
+        "is_weekend",
+        "is_holiday_tr",
+        "is_holiday_or_weekend",
+        "ptf_lag_1",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "ptf_lag_168",
+        "ptf_roll_mean_24",
+        "ptf_roll_std_24",
+        "ptf_roll_mean_168",
+        "ptf_roll_std_168",
+        "smf_ptf_spread_lag_24",
+        "smf_ptf_spread_lag_168",
+        "kgup_total_minus_load",
+        "kgup_renewable_share",
+        "kgup_thermal_share",
+        "wind_forecast_share",
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ruzgar",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ithalKomur",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "kgup_barajli",
+        "kgup_nafta",
+        "kgup_biokutle",
+        "kgup_akarsu",
+        "kgup_gunes",
+        "kgup_diger",
+        "load_lep",
+        "wind_quarter1_mean",
+        "wind_quarter2_mean",
+        "wind_quarter3_mean",
+        "wind_quarter4_mean",
+        "wind_forecast_mean",
+        "wind_forecast_min",
+        "wind_forecast_max",
+        "wind_forecast_std",
+        "outage_event_rows",
+        "outage_fault_event_count",
+        "outage_fault_mw_loss_sum",
+        "outage_fault_mw_loss_max",
+        "outage_fault_operator_power_sum",
+        "outage_maint_event_count",
+        "outage_maint_capacity_sum",
+        "outage_maint_operator_power_sum",
+        "gen_total_lag_24",
+        "gen_total_lag_48",
+        "gen_total_lag_168",
+        "cons_consumption_lag_24",
+        "cons_consumption_lag_48",
+        "cons_consumption_lag_168",
+        "smf_lag_24",
+        "smf_lag_48",
+        "smf_lag_168",
+        "yal_yat_net_lag_24",
+        "yal_yat_net_lag_48",
+        "yal_yat_net_lag_168",
+        "yal_yat_upRegulationDelivered_lag_24",
+        "yal_yat_upRegulationDelivered_lag_48",
+        "yal_yat_upRegulationDelivered_lag_168",
+        "yal_yat_downRegulationDelivered_lag_24",
+        "yal_yat_downRegulationDelivered_lag_48",
+        "yal_yat_downRegulationDelivered_lag_168",
+        "wind_generation_mean_lag_24",
+        "wind_generation_mean_lag_48",
+        "wind_generation_mean_lag_168",
+        "ptf_return_1h",
+        "ptf_return_24h",
+        "ptf_momentum_24h",
+        "ptf_zscore_24h",
+        "ptf_range_24h",
+        "ptf_vol_ratio_24_168",
+        "spread_nowcast_lag1",
+        "spread_change_24h",
+        "spread_zscore_24h",
+        "supply_gap",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "supply_gap_zscore_24h",
+        "renewable_share_change_24h",
+        "yal_yat_net_stress_24h",
+        "yal_yat_net_stress_168h",
+        "yal_up_stress_24h",
+        "yal_up_stress_168h",
+        "yal_down_stress_24h",
+        "yal_down_stress_168h",
+        "outage_stress",
+        "wind_forecast_ramp_1h",
+        "wind_forecast_ramp_24h",
+        "hour_x_ptf_lag24",
+        "hour_x_spread_lag24",
+        "weekend_x_ptf_vol",
+        "ptf_zero_share_24h",
+        "ptf_zero_share_168h",
+        "ptf_spike_share_24h",
+        "ptf_spike_share_168h",
+        "ptf_hours_since_zero",
+        "ptf_hours_since_spike",
+        "persistence_1h"
+      ],
+      "2": [
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "month_sin",
+        "month_cos",
+        "is_weekend",
+        "is_holiday_tr",
+        "is_holiday_or_weekend",
+        "ptf_lag_1",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "ptf_lag_168",
+        "ptf_roll_mean_24",
+        "ptf_roll_std_24",
+        "ptf_roll_mean_168",
+        "ptf_roll_std_168",
+        "smf_ptf_spread_lag_24",
+        "smf_ptf_spread_lag_168",
+        "kgup_total_minus_load",
+        "kgup_renewable_share",
+        "kgup_thermal_share",
+        "wind_forecast_share",
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ruzgar",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ithalKomur",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "kgup_barajli",
+        "kgup_nafta",
+        "kgup_biokutle",
+        "kgup_akarsu",
+        "kgup_gunes",
+        "kgup_diger",
+        "load_lep",
+        "wind_quarter1_mean",
+        "wind_quarter2_mean",
+        "wind_quarter3_mean",
+        "wind_quarter4_mean",
+        "wind_forecast_mean",
+        "wind_forecast_min",
+        "wind_forecast_max",
+        "wind_forecast_std",
+        "outage_event_rows",
+        "outage_fault_event_count",
+        "outage_fault_mw_loss_sum",
+        "outage_fault_mw_loss_max",
+        "outage_fault_operator_power_sum",
+        "outage_maint_event_count",
+        "outage_maint_capacity_sum",
+        "outage_maint_operator_power_sum",
+        "gen_total_lag_24",
+        "gen_total_lag_48",
+        "gen_total_lag_168",
+        "cons_consumption_lag_24",
+        "cons_consumption_lag_48",
+        "cons_consumption_lag_168",
+        "smf_lag_24",
+        "smf_lag_48",
+        "smf_lag_168",
+        "yal_yat_net_lag_24",
+        "yal_yat_net_lag_48",
+        "yal_yat_net_lag_168",
+        "yal_yat_upRegulationDelivered_lag_24",
+        "yal_yat_upRegulationDelivered_lag_48",
+        "yal_yat_upRegulationDelivered_lag_168",
+        "yal_yat_downRegulationDelivered_lag_24",
+        "yal_yat_downRegulationDelivered_lag_48",
+        "yal_yat_downRegulationDelivered_lag_168",
+        "wind_generation_mean_lag_24",
+        "wind_generation_mean_lag_48",
+        "wind_generation_mean_lag_168",
+        "ptf_return_1h",
+        "ptf_return_24h",
+        "ptf_momentum_24h",
+        "ptf_zscore_24h",
+        "ptf_range_24h",
+        "ptf_vol_ratio_24_168",
+        "spread_nowcast_lag1",
+        "spread_change_24h",
+        "spread_zscore_24h",
+        "supply_gap",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "supply_gap_zscore_24h",
+        "renewable_share_change_24h",
+        "yal_yat_net_stress_24h",
+        "yal_yat_net_stress_168h",
+        "yal_up_stress_24h",
+        "yal_up_stress_168h",
+        "yal_down_stress_24h",
+        "yal_down_stress_168h",
+        "outage_stress",
+        "wind_forecast_ramp_1h",
+        "wind_forecast_ramp_24h",
+        "hour_x_ptf_lag24",
+        "hour_x_spread_lag24",
+        "weekend_x_ptf_vol",
+        "ptf_zero_share_24h",
+        "ptf_zero_share_168h",
+        "ptf_spike_share_24h",
+        "ptf_spike_share_168h",
+        "ptf_hours_since_zero",
+        "ptf_hours_since_spike",
+        "persistence_2h"
+      ],
+      "3": [
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "month_sin",
+        "month_cos",
+        "is_weekend",
+        "is_holiday_tr",
+        "is_holiday_or_weekend",
+        "ptf_lag_1",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "ptf_lag_168",
+        "ptf_roll_mean_24",
+        "ptf_roll_std_24",
+        "ptf_roll_mean_168",
+        "ptf_roll_std_168",
+        "smf_ptf_spread_lag_24",
+        "smf_ptf_spread_lag_168",
+        "kgup_total_minus_load",
+        "kgup_renewable_share",
+        "kgup_thermal_share",
+        "wind_forecast_share",
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ruzgar",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ithalKomur",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "kgup_barajli",
+        "kgup_nafta",
+        "kgup_biokutle",
+        "kgup_akarsu",
+        "kgup_gunes",
+        "kgup_diger",
+        "load_lep",
+        "wind_quarter1_mean",
+        "wind_quarter2_mean",
+        "wind_quarter3_mean",
+        "wind_quarter4_mean",
+        "wind_forecast_mean",
+        "wind_forecast_min",
+        "wind_forecast_max",
+        "wind_forecast_std",
+        "outage_event_rows",
+        "outage_fault_event_count",
+        "outage_fault_mw_loss_sum",
+        "outage_fault_mw_loss_max",
+        "outage_fault_operator_power_sum",
+        "outage_maint_event_count",
+        "outage_maint_capacity_sum",
+        "outage_maint_operator_power_sum",
+        "gen_total_lag_24",
+        "gen_total_lag_48",
+        "gen_total_lag_168",
+        "cons_consumption_lag_24",
+        "cons_consumption_lag_48",
+        "cons_consumption_lag_168",
+        "smf_lag_24",
+        "smf_lag_48",
+        "smf_lag_168",
+        "yal_yat_net_lag_24",
+        "yal_yat_net_lag_48",
+        "yal_yat_net_lag_168",
+        "yal_yat_upRegulationDelivered_lag_24",
+        "yal_yat_upRegulationDelivered_lag_48",
+        "yal_yat_upRegulationDelivered_lag_168",
+        "yal_yat_downRegulationDelivered_lag_24",
+        "yal_yat_downRegulationDelivered_lag_48",
+        "yal_yat_downRegulationDelivered_lag_168",
+        "wind_generation_mean_lag_24",
+        "wind_generation_mean_lag_48",
+        "wind_generation_mean_lag_168",
+        "ptf_return_1h",
+        "ptf_return_24h",
+        "ptf_momentum_24h",
+        "ptf_zscore_24h",
+        "ptf_range_24h",
+        "ptf_vol_ratio_24_168",
+        "spread_nowcast_lag1",
+        "spread_change_24h",
+        "spread_zscore_24h",
+        "supply_gap",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "supply_gap_zscore_24h",
+        "renewable_share_change_24h",
+        "yal_yat_net_stress_24h",
+        "yal_yat_net_stress_168h",
+        "yal_up_stress_24h",
+        "yal_up_stress_168h",
+        "yal_down_stress_24h",
+        "yal_down_stress_168h",
+        "outage_stress",
+        "wind_forecast_ramp_1h",
+        "wind_forecast_ramp_24h",
+        "hour_x_ptf_lag24",
+        "hour_x_spread_lag24",
+        "weekend_x_ptf_vol",
+        "ptf_zero_share_24h",
+        "ptf_zero_share_168h",
+        "ptf_spike_share_24h",
+        "ptf_spike_share_168h",
+        "ptf_hours_since_zero",
+        "ptf_hours_since_spike",
+        "persistence_3h"
+      ],
+      "4": [
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "month_sin",
+        "month_cos",
+        "is_weekend",
+        "is_holiday_tr",
+        "is_holiday_or_weekend",
+        "ptf_lag_1",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "ptf_lag_168",
+        "ptf_roll_mean_24",
+        "ptf_roll_std_24",
+        "ptf_roll_mean_168",
+        "ptf_roll_std_168",
+        "smf_ptf_spread_lag_24",
+        "smf_ptf_spread_lag_168",
+        "kgup_total_minus_load",
+        "kgup_renewable_share",
+        "kgup_thermal_share",
+        "wind_forecast_share",
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ruzgar",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ithalKomur",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "kgup_barajli",
+        "kgup_nafta",
+        "kgup_biokutle",
+        "kgup_akarsu",
+        "kgup_gunes",
+        "kgup_diger",
+        "load_lep",
+        "wind_quarter1_mean",
+        "wind_quarter2_mean",
+        "wind_quarter3_mean",
+        "wind_quarter4_mean",
+        "wind_forecast_mean",
+        "wind_forecast_min",
+        "wind_forecast_max",
+        "wind_forecast_std",
+        "outage_event_rows",
+        "outage_fault_event_count",
+        "outage_fault_mw_loss_sum",
+        "outage_fault_mw_loss_max",
+        "outage_fault_operator_power_sum",
+        "outage_maint_event_count",
+        "outage_maint_capacity_sum",
+        "outage_maint_operator_power_sum",
+        "gen_total_lag_24",
+        "gen_total_lag_48",
+        "gen_total_lag_168",
+        "cons_consumption_lag_24",
+        "cons_consumption_lag_48",
+        "cons_consumption_lag_168",
+        "smf_lag_24",
+        "smf_lag_48",
+        "smf_lag_168",
+        "yal_yat_net_lag_24",
+        "yal_yat_net_lag_48",
+        "yal_yat_net_lag_168",
+        "yal_yat_upRegulationDelivered_lag_24",
+        "yal_yat_upRegulationDelivered_lag_48",
+        "yal_yat_upRegulationDelivered_lag_168",
+        "yal_yat_downRegulationDelivered_lag_24",
+        "yal_yat_downRegulationDelivered_lag_48",
+        "yal_yat_downRegulationDelivered_lag_168",
+        "wind_generation_mean_lag_24",
+        "wind_generation_mean_lag_48",
+        "wind_generation_mean_lag_168",
+        "ptf_return_1h",
+        "ptf_return_24h",
+        "ptf_momentum_24h",
+        "ptf_zscore_24h",
+        "ptf_range_24h",
+        "ptf_vol_ratio_24_168",
+        "spread_nowcast_lag1",
+        "spread_change_24h",
+        "spread_zscore_24h",
+        "supply_gap",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "supply_gap_zscore_24h",
+        "renewable_share_change_24h",
+        "yal_yat_net_stress_24h",
+        "yal_yat_net_stress_168h",
+        "yal_up_stress_24h",
+        "yal_up_stress_168h",
+        "yal_down_stress_24h",
+        "yal_down_stress_168h",
+        "outage_stress",
+        "wind_forecast_ramp_1h",
+        "wind_forecast_ramp_24h",
+        "hour_x_ptf_lag24",
+        "hour_x_spread_lag24",
+        "weekend_x_ptf_vol",
+        "ptf_zero_share_24h",
+        "ptf_zero_share_168h",
+        "ptf_spike_share_24h",
+        "ptf_spike_share_168h",
+        "ptf_hours_since_zero",
+        "ptf_hours_since_spike",
+        "persistence_4h"
+      ]
+    }
+  },
+  "experiments": [
+    {
+      "feature_set": "10",
+      "n_features_h1": 10,
+      "features_h1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1"
+      ],
+      "val_mae_mean": 271.78610467099287,
+      "test_mae_mean": 491.92139334281944,
+      "overfit_gap": 220.13528867182657,
+      "horizon_test_mae": {
+        "1": 447.9346163086857,
+        "2": 487.75806310316307,
+        "3": 506.78046747338,
+        "4": 525.212426486049
+      }
+    },
+    {
+      "feature_set": "20",
+      "n_features_h1": 20,
+      "features_h1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "load_lep",
+        "dow_sin",
+        "kgup_renewable_share",
+        "wind_forecast_ramp_1h",
+        "ptf_lag_24"
+      ],
+      "val_mae_mean": 264.501971313499,
+      "test_mae_mean": 468.97899748381394,
+      "overfit_gap": 204.47702617031496,
+      "horizon_test_mae": {
+        "1": 441.1528407797618,
+        "2": 457.36419078337593,
+        "3": 475.8869978076163,
+        "4": 501.5119605645019
+      }
+    },
+    {
+      "feature_set": "30",
+      "n_features_h1": 30,
+      "features_h1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "load_lep",
+        "dow_sin",
+        "kgup_renewable_share",
+        "wind_forecast_ramp_1h",
+        "ptf_lag_24",
+        "kgup_ithalKomur",
+        "ptf_lag_48",
+        "ptf_spike_share_168h",
+        "wind_forecast_share",
+        "ptf_lag_168",
+        "gen_total_lag_24",
+        "ptf_return_1h",
+        "ptf_vol_ratio_24_168",
+        "wind_generation_mean_lag_24",
+        "kgup_toplam"
+      ],
+      "val_mae_mean": 259.208920551121,
+      "test_mae_mean": 484.68599753575165,
+      "overfit_gap": 225.47707698463063,
+      "horizon_test_mae": {
+        "1": 435.1481482890023,
+        "2": 485.6903332666901,
+        "3": 502.0616440602157,
+        "4": 515.8438645270984
+      }
+    },
+    {
+      "feature_set": "50",
+      "n_features_h1": 50,
+      "features_h1": [
+        "persistence_1h",
+        "ptf_return_24h",
+        "renewable_share_change_24h",
+        "dow_cos",
+        "kgup_dogalgaz",
+        "ptf_roll_std_24",
+        "weekend_x_ptf_vol",
+        "ptf_range_24h",
+        "ptf_roll_std_168",
+        "ptf_lag_1",
+        "ptf_momentum_24h",
+        "ptf_roll_mean_168",
+        "wind_forecast_ramp_24h",
+        "ptf_roll_mean_24",
+        "ptf_zscore_24h",
+        "load_lep",
+        "dow_sin",
+        "kgup_renewable_share",
+        "wind_forecast_ramp_1h",
+        "ptf_lag_24",
+        "kgup_ithalKomur",
+        "ptf_lag_48",
+        "ptf_spike_share_168h",
+        "wind_forecast_share",
+        "ptf_lag_168",
+        "gen_total_lag_24",
+        "ptf_return_1h",
+        "ptf_vol_ratio_24_168",
+        "wind_generation_mean_lag_24",
+        "kgup_toplam",
+        "smf_lag_168",
+        "kgup_thermal_share",
+        "ptf_hours_since_spike",
+        "smf_lag_48",
+        "supply_gap_zscore_24h",
+        "is_holiday_or_weekend",
+        "cons_consumption_lag_24",
+        "hour_x_ptf_lag24",
+        "gen_total_lag_168",
+        "kgup_gunes",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "spread_nowcast_lag1",
+        "smf_lag_24",
+        "kgup_diger",
+        "kgup_biokutle",
+        "smf_ptf_spread_lag_24",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "wind_generation_mean_lag_48"
+      ],
+      "val_mae_mean": 258.1231090046638,
+      "test_mae_mean": 485.7074523309275,
+      "overfit_gap": 227.5843433262637,
+      "horizon_test_mae": {
+        "1": 451.0682069579221,
+        "2": 476.07309682105114,
+        "3": 500.29170725665847,
+        "4": 515.3967982880781
+      }
+    },
+    {
+      "feature_set": "all",
+      "n_features_h1": 108,
+      "features_h1": [
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "month_sin",
+        "month_cos",
+        "is_weekend",
+        "is_holiday_tr",
+        "is_holiday_or_weekend",
+        "ptf_lag_1",
+        "ptf_lag_24",
+        "ptf_lag_48",
+        "ptf_lag_168",
+        "ptf_roll_mean_24",
+        "ptf_roll_std_24",
+        "ptf_roll_mean_168",
+        "ptf_roll_std_168",
+        "smf_ptf_spread_lag_24",
+        "smf_ptf_spread_lag_168",
+        "kgup_total_minus_load",
+        "kgup_renewable_share",
+        "kgup_thermal_share",
+        "wind_forecast_share",
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ruzgar",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ithalKomur",
+        "kgup_fuelOil",
+        "kgup_jeotermal",
+        "kgup_barajli",
+        "kgup_nafta",
+        "kgup_biokutle",
+        "kgup_akarsu",
+        "kgup_gunes",
+        "kgup_diger",
+        "load_lep",
+        "wind_quarter1_mean",
+        "wind_quarter2_mean",
+        "wind_quarter3_mean",
+        "wind_quarter4_mean",
+        "wind_forecast_mean",
+        "wind_forecast_min",
+        "wind_forecast_max",
+        "wind_forecast_std",
+        "outage_event_rows",
+        "outage_fault_event_count",
+        "outage_fault_mw_loss_sum",
+        "outage_fault_mw_loss_max",
+        "outage_fault_operator_power_sum",
+        "outage_maint_event_count",
+        "outage_maint_capacity_sum",
+        "outage_maint_operator_power_sum",
+        "gen_total_lag_24",
+        "gen_total_lag_48",
+        "gen_total_lag_168",
+        "cons_consumption_lag_24",
+        "cons_consumption_lag_48",
+        "cons_consumption_lag_168",
+        "smf_lag_24",
+        "smf_lag_48",
+        "smf_lag_168",
+        "yal_yat_net_lag_24",
+        "yal_yat_net_lag_48",
+        "yal_yat_net_lag_168",
+        "yal_yat_upRegulationDelivered_lag_24",
+        "yal_yat_upRegulationDelivered_lag_48",
+        "yal_yat_upRegulationDelivered_lag_168",
+        "yal_yat_downRegulationDelivered_lag_24",
+        "yal_yat_downRegulationDelivered_lag_48",
+        "yal_yat_downRegulationDelivered_lag_168",
+        "wind_generation_mean_lag_24",
+        "wind_generation_mean_lag_48",
+        "wind_generation_mean_lag_168",
+        "ptf_return_1h",
+        "ptf_return_24h",
+        "ptf_momentum_24h",
+        "ptf_zscore_24h",
+        "ptf_range_24h",
+        "ptf_vol_ratio_24_168",
+        "spread_nowcast_lag1",
+        "spread_change_24h",
+        "spread_zscore_24h",
+        "supply_gap",
+        "supply_gap_change_1h",
+        "supply_gap_change_24h",
+        "supply_gap_zscore_24h",
+        "renewable_share_change_24h",
+        "yal_yat_net_stress_24h",
+        "yal_yat_net_stress_168h",
+        "yal_up_stress_24h",
+        "yal_up_stress_168h",
+        "yal_down_stress_24h",
+        "yal_down_stress_168h",
+        "outage_stress",
+        "wind_forecast_ramp_1h",
+        "wind_forecast_ramp_24h",
+        "hour_x_ptf_lag24",
+        "hour_x_spread_lag24",
+        "weekend_x_ptf_vol",
+        "ptf_zero_share_24h",
+        "ptf_zero_share_168h",
+        "ptf_spike_share_24h",
+        "ptf_spike_share_168h",
+        "ptf_hours_since_zero",
+        "ptf_hours_since_spike",
+        "persistence_1h"
+      ],
+      "val_mae_mean": 259.6938556278012,
+      "test_mae_mean": 485.16165343512955,
+      "overfit_gap": 225.46779780732834,
+      "horizon_test_mae": {
+        "1": 447.0160327554247,
+        "2": 477.64394059285775,
+        "3": 496.96791608459915,
+        "4": 519.0187243076367
+      }
+    }
+  ],
+  "baselines_h1_h4": {
+    "advanced_tree": {
+      "1": 398.72715747172975,
+      "2": 438.48985640878175,
+      "3": 470.4444332520536,
+      "4": 504.356623146713,
+      "mean_h1_h4": 453.00451756981954
+    },
+    "short_expert": {
+      "1": 431.2953696975004,
+      "2": 476.16466614041394,
+      "3": 495.81316942267637,
+      "4": 500.4002209898105,
+      "mean_h1_h4": 475.9183565626003
+    },
+    "residual_lstm": {
+      "1": 539.6780446537147,
+      "2": 540.503714654347,
+      "3": 538.896231050028,
+      "4": 535.5319996279375,
+      "mean_h1_h4": 538.6524974965068
+    },
+    "persistence": {
+      "1": 544.2368068251067,
+      "2": 544.1822364411944,
+      "3": 543.9285588056064,
+      "4": 543.689984765387,
+      "mean_h1_h4": 544.0093967093236
+    }
+  },
+  "best_feature_set": "20",
+  "best_test_mae_mean": 468.97899748381394,
+  "beats_advanced_tree": false,
+  "verdict": "No feature subset beat current advanced tree h1\u2013h4 mean MAE (453.0). Best tuned: '20' at 469.0.",
+  "tune_model_root": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/tree_advanced_h1h4_tune",
+  "source_models": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/tree_advanced"
+}

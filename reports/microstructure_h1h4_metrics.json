@@ -1,0 +1,70 @@
+{
+  "features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_microstructure_next24_v1.parquet",
+  "feature_count_base": 98,
+  "feature_count_per_horizon": 99,
+  "method": "persistence_plus_residual_lgbm",
+  "model_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/microstructure_h1h4",
+  "predictions_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/microstructure_h1h4_predictions.csv",
+  "model_aligned": {
+    "test_anchors": 3281,
+    "prediction_rows": 13124,
+    "horizon_mae": {
+      "1": 400.42887289765,
+      "2": 450.59708748093465,
+      "3": 486.454870451396,
+      "4": 509.56972276484703
+    },
+    "mean_mae_h1_h4": 461.76263839870694
+  },
+  "comparisons": {
+    "persistence": {
+      "1": 544.2987503809815,
+      "2": 544.3328527887838,
+      "3": 544.0836757086254,
+      "4": 543.8418622371229,
+      "mean_h1_h4": 544.1392852788783
+    },
+    "advanced_tree": {
+      "1": 398.839762111917,
+      "2": 438.55708212723545,
+      "3": 470.5084073998694,
+      "4": 504.47386543217385,
+      "mean_h1_h4": 453.0947792677989
+    },
+    "short_expert": {
+      "1": 431.3030339991853,
+      "2": 476.1375182371043,
+      "3": 495.8262051804036,
+      "4": 500.457673781986,
+      "mean_h1_h4": 475.93110779966975
+    }
+  },
+  "delta_vs_baselines": {
+    "persistence": {
+      "1": -143.86987748333144,
+      "2": -93.73576530784919,
+      "3": -57.628805257229374,
+      "4": -34.27213947227585,
+      "mean_h1_h4": -82.37664688017139
+    },
+    "advanced_tree": {
+      "1": 1.5891107857329985,
+      "2": 12.0400053536992,
+      "3": 15.94646305152662,
+      "4": 5.095857332673177,
+      "mean_h1_h4": 8.667859130908028
+    },
+    "short_expert": {
+      "1": -30.874161101535265,
+      "2": -25.540430756169656,
+      "3": -9.371334729007572,
+      "4": 9.11204898286104,
+      "mean_h1_h4": -14.168469400962806
+    }
+  },
+  "beats_persistence": true,
+  "beats_advanced_tree": false,
+  "beats_short_expert": true,
+  "verdict": "Microstructure h1\u2013h4 is WORSE than advanced tree on mean MAE (461.8 vs 453.1). Advanced tree remains best for short horizons.",
+  "smoke_test": false
+}

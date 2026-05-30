@@ -1,0 +1,175 @@
+{
+  "generated_at_utc": "2026-05-30T12:41:14.267798+00:00",
+  "project_root": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s",
+  "purpose": "Codex handover — full context export without re-running experiments",
+  "current_best_checkpoint": {
+    "scope": "h1_h4_lstm_anchor_aligned_test",
+    "model": "validation_weighted_ensemble",
+    "mean_mae_h1_h4": 443.87,
+    "weights_validation": {
+      "h1": 0.6,
+      "h2": 0.7,
+      "h3": 0.9,
+      "h4": 1.0
+    },
+    "beats_advanced_tree_by": 9.22,
+    "advanced_tree_mae": 453.09,
+    "persistence_mae_h1_h4_approx": 544.14,
+    "report": "reports/final_h1h4_summary.json",
+    "predictions": "data/predictions/h1h4_validation_weighted_ensemble_predictions.csv"
+  },
+  "new_research_direction": {
+    "name": "interim_mcp_to_final_mcp_correction",
+    "baseline": "K.PTF marketTradePrice (interim-mcp endpoint)",
+    "target": "finalized MCP price from /mcp",
+    "residual": "final_mcp - interim_mcp at delivery hour",
+    "status": "data_audit_done; fetch_partial; dataset_build_pending_full_history",
+    "endpoint": "POST /electricity-service/v1/markets/dam/data/interim-mcp"
+  },
+  "interim_mcp_fetch_status": {
+    "csv_path": "data/raw/interim_mcp.csv",
+    "rows": 2160,
+    "date_range": [
+      "2020-01-01T00:00:00+03:00",
+      "2020-03-30T23:00:00+03:00"
+    ],
+    "api_limitation": "One calendar day (24 rows) per request; requires daily loop",
+    "rate_limit": "HTTP 429 after ~50 rapid requests; need 0.65s+ delay and retry",
+    "historical_fetch_complete": false,
+    "scripts": [
+      "fetch_interim_mcp.py",
+      "build_interim_residual_dataset.py"
+    ]
+  },
+  "split_policy": {
+    "train_years": "2020-2024",
+    "validation_year": 2025,
+    "test_year": 2026,
+    "anchor_files": [
+      "data/model/anchor_train.csv",
+      "data/model/anchor_val.csv",
+      "data/model/anchor_test.csv"
+    ],
+    "evaluation_alignment": "LSTM anchor_test.csv for model comparison"
+  },
+  "global_seed": 42,
+  "git": {
+    "status_short": " M .gitignore\n M README.md\n M features/engineering.py\n M features/report.py\n M requirements.txt\n M sequence/report.py\n?? audit_final_h1h4_pipeline.py\n?? audit_unfinalized_ptf_data.py\n?? baseline_persistence.py\n?? build_interim_residual_dataset.py\n?? build_microstructure_features.py\n?? build_residual_features.py\n?? build_tree_features.py\n?? data/features/lstm_microstructure_next24_v1.parquet\n?? data/features/lstm_residual_next24_v1.parquet\n?? data/features/lstm_tree_micro_v1.parquet\n?? data/model_residual/\n?? data/predictions/\n?? data/raw/\n?? evaluate_h1h4_ensemble.py\n?? evaluate_h1h4_validation_weighted_ensemble.py\n?? evaluate_h5h12_validation_weighted_ensemble.py\n?? evaluate_lstm_residual_predictions.py\n?? export_codex_handover.py\n?? features/build_residual_features.py\n?? features/build_tree_features.py\n?? features/interim_residual.py\n?? features/microstructure.py\n?? features/microstructure_v2.py\n?? features/residual_config.py\n?? fetch_interim_mcp.py\n?? reports/advanced_tree_h1h4_feature_selection.json\n?? reports/advanced_tree_h1h4_feature_selection.md\n?? reports/final_h1h4_summary.json\n?? reports/final_h1h4_summary.md\n?? reports/h1h4_ensemble_metrics.json\n?? reports/h1h4_ensemble_metrics.md\n?? reports/h1h4_validation_weighted_ensemble_metrics.json\n?? reports/h1h4_validation_weighted_ensemble_metrics.md\n?? reports/h5h12_validation_weighted_ensemble_metrics.json\n?? reports/h5h12_validation_weighted_ensemble_metrics.md\n?? reports/lstm_baseline_metrics.json\n?? reports/lstm_baseline_metrics.md\n?? reports/lstm_residual_metrics.json\n?? reports/lstm_residual_metrics.md\n?? reports/microstructure_feature_report.json\n?? reports/microstructure_feature_report.md\n?? reports/microstructure_h1h4_metrics.json\n?? reports/microstructure_h1h4_metrics.md\n?? reports/persistence_metrics.json\n?? reports/persistence_metrics.md\n?? reports/reproducibility/\n?? reports/residual_features_report_latest.json\n?? reports/residual_features_report_latest.md\n?? reports/residual_sequence_report_latest.json\n?? reports/residual_sequence_report_latest.md\n?? reports/short_horizon_expert_metrics.json\n?? reports/short_horizon_expert_metrics.md\n?? reports/tree_advanced_metrics.json\n?? reports/tree_advanced_metrics.md\n?? reports/tree_baseline_metrics.json\n?? reports/tree_baseline_metrics.md\n?? reports/tree_features_report_latest.json\n?? reports/tree_features_report_latest.md\n?? reports/unfinalized_ptf_data_audit.json\n?? reports/unfinalized_ptf_data_audit.md\n?? run_sequence_residual.py\n?? sequence/residual_config.py\n?? sequence/residual_pipeline.py\n?? train_lstm.py\n?? train_lstm_residual.py\n?? train_microstructure_h1h4.py\n?? train_microstructure_h5h12.py\n?? train_short_horizon_expert.py\n?? train_tree_advanced.py\n?? train_tree_horizon.py\n?? tree_advanced/\n?? tune_advanced_tree_h1h4_features.py\n",
+    "untracked_count": 72
+  },
+  "metrics_files": {
+    "persistence": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/persistence.json",
+    "lstm_baseline": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/lstm_baseline.json",
+    "lstm_residual": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/lstm_residual.json",
+    "tree_advanced": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/tree_advanced.json",
+    "short_expert": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/short_expert.json",
+    "micro_h1h4": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/micro_h1h4.json",
+    "h1h4_ensemble": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h1h4_ensemble.json",
+    "h1h4_val_ensemble": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h1h4_val_ensemble.json",
+    "h5h12_val_ensemble": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h5h12_val_ensemble.json",
+    "final_h1h4": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/final_h1h4.json",
+    "unfinalized_audit": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/unfinalized_audit.json"
+  },
+  "documents": {
+    "codex_handover_md": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/codex_handover.md",
+    "codex_handover_json": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/codex_handover.json",
+    "repository_audit_md": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/repository_audit.md",
+    "repository_tree_txt": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/repository_tree.txt",
+    "experiment_timeline_md": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/experiment_timeline.md"
+  },
+  "critical_paths": {
+    "parquets": [
+      "data/master/master_hourly_v1.parquet",
+      "data/features/lstm_tree_micro_v1.parquet",
+      "data/features/lstm_microstructure_next24_v1.parquet",
+      "data/features/interim_residual_next24_v1.parquet"
+    ],
+    "models": [
+      "models/tree_advanced/",
+      "models/microstructure_h1h4/",
+      "models/lstm_residual.pt"
+    ],
+    "predictions": [
+      "data/predictions/h1h4_validation_weighted_ensemble_predictions.csv",
+      "data/predictions/tree_test_predictions.csv"
+    ],
+    "csv_raw": [
+      "data/ptf_dataset.csv",
+      "data/raw/interim_mcp.csv"
+    ]
+  },
+  "untracked_sample": [
+    "audit_final_h1h4_pipeline.py",
+    "audit_unfinalized_ptf_data.py",
+    "baseline_persistence.py",
+    "build_interim_residual_dataset.py",
+    "build_microstructure_features.py",
+    "build_residual_features.py",
+    "build_tree_features.py",
+    "data/features/lstm_microstructure_next24_v1.parquet",
+    "data/features/lstm_residual_next24_v1.parquet",
+    "data/features/lstm_tree_micro_v1.parquet",
+    "data/model_residual/",
+    "data/predictions/",
+    "data/raw/",
+    "evaluate_h1h4_ensemble.py",
+    "evaluate_h1h4_validation_weighted_ensemble.py",
+    "evaluate_h5h12_validation_weighted_ensemble.py",
+    "evaluate_lstm_residual_predictions.py",
+    "export_codex_handover.py",
+    "features/build_residual_features.py",
+    "features/build_tree_features.py",
+    "features/interim_residual.py",
+    "features/microstructure.py",
+    "features/microstructure_v2.py",
+    "features/residual_config.py",
+    "fetch_interim_mcp.py",
+    "reports/advanced_tree_h1h4_feature_selection.json",
+    "reports/advanced_tree_h1h4_feature_selection.md",
+    "reports/final_h1h4_summary.json",
+    "reports/final_h1h4_summary.md",
+    "reports/h1h4_ensemble_metrics.json",
+    "reports/h1h4_ensemble_metrics.md",
+    "reports/h1h4_validation_weighted_ensemble_metrics.json",
+    "reports/h1h4_validation_weighted_ensemble_metrics.md",
+    "reports/h5h12_validation_weighted_ensemble_metrics.json",
+    "reports/h5h12_validation_weighted_ensemble_metrics.md",
+    "reports/lstm_baseline_metrics.json",
+    "reports/lstm_baseline_metrics.md",
+    "reports/lstm_residual_metrics.json",
+    "reports/lstm_residual_metrics.md",
+    "reports/microstructure_feature_report.json",
+    "reports/microstructure_feature_report.md",
+    "reports/microstructure_h1h4_metrics.json",
+    "reports/microstructure_h1h4_metrics.md",
+    "reports/persistence_metrics.json",
+    "reports/persistence_metrics.md",
+    "reports/reproducibility/",
+    "reports/residual_features_report_latest.json",
+    "reports/residual_features_report_latest.md",
+    "reports/residual_sequence_report_latest.json",
+    "reports/residual_sequence_report_latest.md",
+    "reports/short_horizon_expert_metrics.json",
+    "reports/short_horizon_expert_metrics.md",
+    "reports/tree_advanced_metrics.json",
+    "reports/tree_advanced_metrics.md",
+    "reports/tree_baseline_metrics.json",
+    "reports/tree_baseline_metrics.md",
+    "reports/tree_features_report_latest.json",
+    "reports/tree_features_report_latest.md",
+    "reports/unfinalized_ptf_data_audit.json",
+    "reports/unfinalized_ptf_data_audit.md",
+    "run_sequence_residual.py",
+    "sequence/residual_config.py",
+    "sequence/residual_pipeline.py",
+    "train_lstm.py",
+    "train_lstm_residual.py",
+    "train_microstructure_h1h4.py",
+    "train_microstructure_h5h12.py",
+    "train_short_horizon_expert.py",
+    "train_tree_advanced.py",
+    "train_tree_horizon.py",
+    "tree_advanced/",
+    "tune_advanced_tree_h1h4_features.py"
+  ]
+}

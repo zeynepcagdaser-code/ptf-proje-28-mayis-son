@@ -190,6 +190,28 @@ def list_target_columns() -> list[str]:
     return [f"target_{h}h" for h in TARGET_HORIZONS]
 
 
+def list_persistence_columns() -> list[str]:
+    return [f"persistence_{h}h" for h in TARGET_HORIZONS]
+
+
+def list_residual_target_columns() -> list[str]:
+    return [f"target_residual_{h}h" for h in TARGET_HORIZONS]
+
+
+def add_persistence_and_residual_targets(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    persistence(t+h) = PTF(t+h-24); residual = actual - persistence.
+    Uses target_h.shift(24) == PTF(t+h-24) at anchor t (no ptf_price column needed).
+    """
+    out = df.copy()
+    for h in TARGET_HORIZONS:
+        tcol = f"target_{h}h"
+        persistence = out[tcol].shift(24)
+        out[f"persistence_{h}h"] = persistence
+        out[f"target_residual_{h}h"] = out[tcol] - persistence
+    return out
+
+
 def assign_split(ts_hour: pd.Series) -> pd.Series:
     years = ts_hour.dt.tz_convert("Europe/Istanbul").dt.year
     split = pd.Series(index=ts_hour.index, dtype="object")

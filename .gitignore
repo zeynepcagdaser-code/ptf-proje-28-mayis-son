@@ -3,13 +3,18 @@
 __pycache__/
 *.pyc
 
+# Raw fetch outputs (regenerate with fetch_interim_mcp.py / update_dataset.py)
+data/raw/*.csv
+
+# Large data artifacts — regenerate locally
+*.parquet
+data/predictions/
+models/
+
 # Large sequence tensors — regenerate with: python run_sequence.py
 data/model/*.npy
-
-# Model checkpoints (future LSTM training)
-models/*.pt
-models/*.pth
-models/*.keras
+data/model_residual/*.npy
+data/model_residual/*.pkl
 
 # Optional large figures
 reports/figures/*.png
@@ -17,3 +22,10 @@ reports/figures/*.png
 # Timestamped report snapshots (keep only *_latest.* in git)
 reports/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_*.json
 reports/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_*.md
+
+# Cache / temp
+.cache/
+*.tmp
+*.temp
+data/model_residual/anchor_train.csv
+data/model_residual/anchor_val.csv

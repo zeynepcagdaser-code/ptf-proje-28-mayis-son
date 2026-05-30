@@ -1,0 +1,293 @@
+{
+  "method": "per_horizon_validation_weight_search",
+  "advanced_tree_validation_inference": "regressor (train-only), not regressor_online (train+val)",
+  "note": "Test predictions use existing CSVs (online/advanced pipeline). Weights are chosen on validation with out-of-sample advanced tree regressors.",
+  "weight_grid_advanced": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "blend_formula": "w * advanced_tree + (1 - w) * microstructure",
+  "validation_prediction_paths": {
+    "advanced_tree": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/tree_advanced_h1h4_validation_predictions.csv",
+    "microstructure": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/microstructure_h1h4_validation_predictions.csv"
+  },
+  "test_prediction_paths": {
+    "advanced_tree": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/tree_test_predictions.csv",
+    "microstructure": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/microstructure_h1h4_predictions.csv"
+  },
+  "anchor_val": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_val.csv",
+  "anchor_test": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_test.csv",
+  "validation_rows": 33964,
+  "test_rows": 13124,
+  "selected_weights_validation": {
+    "1": 0.6,
+    "2": 0.7,
+    "3": 0.9,
+    "4": 1.0
+  },
+  "validation_metrics": {
+    "advanced_tree_only": {
+      "1": 247.10117477648825,
+      "2": 257.870494453528,
+      "3": 264.3856698536276,
+      "4": 272.85092680210965,
+      "mean_h1_h4": 260.55206647143837
+    },
+    "microstructure_only": {
+      "1": 258.5220438637578,
+      "2": 278.05313005330333,
+      "3": 294.7062599838453,
+      "4": 313.2119139305585,
+      "mean_h1_h4": 286.12333695786623
+    },
+    "validation_weighted_ensemble": {
+      "1": 239.08458957648674,
+      "2": 254.7406811582458,
+      "3": 263.88368445166134,
+      "4": 272.85092680210965,
+      "mean_h1_h4": 257.6399704971259
+    }
+  },
+  "validation_weight_search": {
+    "1": [
+      {
+        "w_advanced": 0.0,
+        "mae": 258.5220438637578
+      },
+      {
+        "w_advanced": 0.1,
+        "mae": 252.9033833982465
+      },
+      {
+        "w_advanced": 0.2,
+        "mae": 248.21718634763403
+      },
+      {
+        "w_advanced": 0.3,
+        "mae": 244.48821009180406
+      },
+      {
+        "w_advanced": 0.4,
+        "mae": 241.69476924917657
+      },
+      {
+        "w_advanced": 0.5,
+        "mae": 239.84400205717702
+      },
+      {
+        "w_advanced": 0.6,
+        "mae": 239.08458957648674
+      },
+      {
+        "w_advanced": 0.7,
+        "mae": 239.41172050789788
+      },
+      {
+        "w_advanced": 0.8,
+        "mae": 240.82633208532295
+      },
+      {
+        "w_advanced": 0.9,
+        "mae": 243.3968734775912
+      },
+      {
+        "w_advanced": 1.0,
+        "mae": 247.10117477648825
+      }
+    ],
+    "2": [
+      {
+        "w_advanced": 0.0,
+        "mae": 278.05313005330333
+      },
+      {
+        "w_advanced": 0.1,
+        "mae": 272.45160751359236
+      },
+      {
+        "w_advanced": 0.2,
+        "mae": 267.4415000048921
+      },
+      {
+        "w_advanced": 0.3,
+        "mae": 263.1988912511863
+      },
+      {
+        "w_advanced": 0.4,
+        "mae": 259.7929010013597
+      },
+      {
+        "w_advanced": 0.5,
+        "mae": 257.22620239036235
+      },
+      {
+        "w_advanced": 0.6,
+        "mae": 255.52282502939818
+      },
+      {
+        "w_advanced": 0.7,
+        "mae": 254.7406811582458
+      },
+      {
+        "w_advanced": 0.8,
+        "mae": 254.79059734564441
+      },
+      {
+        "w_advanced": 0.9,
+        "mae": 255.81981784220804
+      },
+      {
+        "w_advanced": 1.0,
+        "mae": 257.870494453528
+      }
+    ],
+    "3": [
+      {
+        "w_advanced": 0.0,
+        "mae": 294.7062599838453
+      },
+      {
+        "w_advanced": 0.1,
+        "mae": 288.7764164583605
+      },
+      {
+        "w_advanced": 0.2,
+        "mae": 283.3090461837732
+      },
+      {
+        "w_advanced": 0.3,
+        "mae": 278.4731938929905
+      },
+      {
+        "w_advanced": 0.4,
+        "mae": 274.3845129863871
+      },
+      {
+        "w_advanced": 0.5,
+        "mae": 270.9410400871053
+      },
+      {
+        "w_advanced": 0.6,
+        "mae": 268.08021386882297
+      },
+      {
+        "w_advanced": 0.7,
+        "mae": 265.8469883065154
+      },
+      {
+        "w_advanced": 0.8,
+        "mae": 264.37747003659405
+      },
+      {
+        "w_advanced": 0.9,
+        "mae": 263.88368445166134
+      },
+      {
+        "w_advanced": 1.0,
+        "mae": 264.3856698536276
+      }
+    ],
+    "4": [
+      {
+        "w_advanced": 0.0,
+        "mae": 313.2119139305585
+      },
+      {
+        "w_advanced": 0.1,
+        "mae": 305.9469970686702
+      },
+      {
+        "w_advanced": 0.2,
+        "mae": 299.39488826479186
+      },
+      {
+        "w_advanced": 0.3,
+        "mae": 293.4855101228045
+      },
+      {
+        "w_advanced": 0.4,
+        "mae": 288.257474909533
+      },
+      {
+        "w_advanced": 0.5,
+        "mae": 283.7163836342232
+      },
+      {
+        "w_advanced": 0.6,
+        "mae": 279.8535523815948
+      },
+      {
+        "w_advanced": 0.7,
+        "mae": 276.8039371964271
+      },
+      {
+        "w_advanced": 0.8,
+        "mae": 274.5650868357909
+      },
+      {
+        "w_advanced": 0.9,
+        "mae": 273.23344524724695
+      },
+      {
+        "w_advanced": 1.0,
+        "mae": 272.85092680210965
+      }
+    ]
+  },
+  "test_metrics": {
+    "advanced_tree_only": {
+      "1": 398.839762111917,
+      "2": 438.55708212723545,
+      "3": 470.5084073998694,
+      "4": 504.47386543217385,
+      "mean_h1_h4": 453.0947792677989
+    },
+    "microstructure_only": {
+      "1": 400.42887289765,
+      "2": 450.59708748093465,
+      "3": 486.45487045139595,
+      "4": 509.56972276484703,
+      "mean_h1_h4": 461.7626383987069
+    },
+    "validation_weighted_ensemble": {
+      "1": 377.8335711988889,
+      "2": 426.79184897800695,
+      "3": 466.385759260898,
+      "4": 504.47386543217385,
+      "mean_h1_h4": 443.87126121749196
+    },
+    "fixed_0.7_0.3": {
+      "1": 380.1667712812589,
+      "2": 426.79184897800695,
+      "3": 461.9834535470666,
+      "4": 492.23305133705736,
+      "mean_h1_h4": 440.29378128584744
+    },
+    "test_oracle_weights": {
+      "1": 377.6384010064759,
+      "2": 426.17082513362345,
+      "3": 461.6134474239447,
+      "4": 490.6451021724191,
+      "mean_h1_h4": 439.01694393411583
+    }
+  },
+  "test_oracle_weights": {
+    "1": 0.5,
+    "2": 0.6,
+    "3": 0.6,
+    "4": 0.5
+  },
+  "advanced_tree_test_baseline": 453.0947792677989,
+  "primary_result": "validation_weighted_ensemble",
+  "primary_beats_advanced_tree": true,
+  "verdict": "Validation-weighted ensemble beats advanced tree on test (443.87 vs 453.09, \u0394 -9.22)."
+}

@@ -1,0 +1,673 @@
+{
+  "generated_at": "2026-05-30T12:08:23.486178+00:00",
+  "scope": "h1_h4_short_horizon_checkpoint",
+  "evaluation_only": true,
+  "no_training": true,
+  "anchor_test_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_test.csv",
+  "global_seed": 42,
+  "audit": {
+    "splits": {
+      "split_ranges_config": {
+        "train": [
+          2020,
+          2024
+        ],
+        "validation": [
+          2025,
+          2025
+        ],
+        "test": [
+          2026,
+          2026
+        ]
+      },
+      "feature_row_counts": {
+        "train": 43680,
+        "validation": 8760,
+        "test": 3576
+      },
+      "anchor_test_count": 3282,
+      "anchor_val_count": 8501,
+      "anchor_test_all_in_feature_test_split": true,
+      "anchor_test_missing_from_feature_test": 0,
+      "anchor_val_all_in_feature_validation_split": true,
+      "anchor_val_missing_from_feature_validation": 0,
+      "years_per_split": {
+        "test": {
+          "2026": 3576
+        },
+        "train": {
+          "2024": 8784,
+          "2021": 8760,
+          "2022": 8760,
+          "2023": 8760,
+          "2020": 8616
+        },
+        "validation": {
+          "2025": 8760
+        }
+      },
+      "status": "pass"
+    },
+    "persistence_shift": {
+      "rule": "persistence_h(t) = target_h.shift(24) at anchor row",
+      "rows_checked_against_microstructure_csv": 13792,
+      "max_abs_error_vs_shift": 0.0,
+      "status": "pass"
+    },
+    "prediction_alignment": {
+      "per_model_rows_after_anchor_h1h4_filter": {
+        "advanced_tree": 13128,
+        "persistence": 13128,
+        "residual_lstm": 13128,
+        "short_expert": 13128,
+        "microstructure": 13124,
+        "validation_weighted_ensemble": 13124
+      },
+      "inner_join_aligned_rows": 13124,
+      "inner_join_aligned_anchors": 3281,
+      "actual_price_consistent_across_models": true,
+      "microstructure_row_gap_vs_advanced": 4,
+      "status": "pass",
+      "aligned_frame_columns": [
+        "anchor_ts_hour",
+        "target_hour",
+        "actual_price",
+        "advanced_tree",
+        "persistence",
+        "residual_lstm",
+        "short_expert",
+        "microstructure",
+        "validation_weighted_ensemble"
+      ]
+    },
+    "leakage": {
+      "checks": [
+        {
+          "id": "feature_engineering_leakage",
+          "status": "pass",
+          "detail": "See features/config.py LEAKAGE_CHECKLIST (outage_* marked review).",
+          "checklist_items": 11
+        },
+        {
+          "id": "test_weight_selection",
+          "status": "pass",
+          "detail": "Best model: validation-weighted ensemble; weights from validation only.",
+          "selected_weights": {
+            "1": 0.6,
+            "2": 0.7,
+            "3": 0.9,
+            "4": 1.0
+          }
+        },
+        {
+          "id": "advanced_tree_test_inference",
+          "status": "documented",
+          "detail": "tree_test_predictions.csv uses regressor_online (train+val refit) \u2014 intended test deploy.",
+          "use_online_test": true
+        },
+        {
+          "id": "advanced_tree_validation_weight_search",
+          "status": "pass",
+          "detail": "regressor (train-only), not regressor_online (train+val)",
+          "use_online_validation": false
+        },
+        {
+          "id": "fixed_test_blend_leakage",
+          "status": "pass",
+          "detail": "0.7/0.3 fixed blend is reference only, not primary checkpoint."
+        },
+        {
+          "id": "oracle_ensemble",
+          "status": "pass",
+          "detail": "Per-horizon test oracle weights reported separately, not used as primary."
+        },
+        {
+          "id": "microstructure_early_stopping",
+          "status": "review",
+          "detail": "LightGBM uses validation fold for early stopping (standard); val preds not used for test weights."
+        },
+        {
+          "id": "lstm_residual_eval",
+          "status": "pass",
+          "detail": "Evaluated from saved test predictions CSV only."
+        }
+      ],
+      "status": "pass",
+      "feature_leakage_checklist": [
+        {
+          "check": "No same-hour gen_* in feature matrix",
+          "status": "pass",
+          "detail": "Only gen_total_lag_{24,48,168} included"
+        },
+        {
+          "check": "No same-hour cons_* in feature matrix",
+          "status": "pass",
+          "detail": "Only cons_consumption_lag_{24,48,168} included"
+        },
+        {
+          "check": "No same-hour smf_* in feature matrix",
+          "status": "pass",
+          "detail": "Only smf_systemMarginalPrice_lag_{24,48,168} and spread lags"
+        },
+        {
+          "check": "No same-hour yal_yat_* in feature matrix",
+          "status": "pass",
+          "detail": "Only selected yal_yat_* lag_{24,48,168}"
+        },
+        {
+          "check": "No same-hour wind_generation_* in feature matrix",
+          "status": "pass",
+          "detail": "Only wind_generation_mean_lag_{24,48,168}"
+        },
+        {
+          "check": "PTF rolling features use data through t-1 only",
+          "status": "pass",
+          "detail": "shift(1) before rolling window"
+        },
+        {
+          "check": "Targets are future PTF only (t+1..t+24)",
+          "status": "pass",
+          "detail": "target_kh = ptf_price.shift(-k)"
+        },
+        {
+          "check": "No interpolation or bfill on features",
+          "status": "pass",
+          "detail": "Optional ffill(limit=2) past-only on features after missing report"
+        },
+        {
+          "check": "kgup_*, load_lep, wind_forecast_* at same hour t",
+          "status": "pass",
+          "detail": "Planned/forecast availability class"
+        },
+        {
+          "check": "outage_* at same hour t",
+          "status": "review",
+          "detail": "Event aggregates may be revised retroactively; use with caution for strict DAM cutoff"
+        },
+        {
+          "check": "is_holiday_tr / is_holiday_or_weekend from ts_hour calendar only",
+          "status": "pass",
+          "detail": "holidays.Turkey on anchor date; no future data"
+        }
+      ]
+    }
+  },
+  "reproducibility": {
+    "reproducibility_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/reproducibility",
+    "artifacts": [
+      "reports/reproducibility/model_configs.json",
+      "reports/reproducibility/advanced_tree_base_features.json",
+      "reports/reproducibility/microstructure_horizon_features.json"
+    ],
+    "configs": {
+      "global_seed": 42,
+      "split_ranges": {
+        "train": [
+          2020,
+          2024
+        ],
+        "validation": [
+          2025,
+          2025
+        ],
+        "test": [
+          2026,
+          2026
+        ]
+      },
+      "advanced_tree": {
+        "features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_tree_micro_v1.parquet",
+        "model_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/tree_advanced",
+        "backend_params": {
+          "regressor": {
+            "seed": 42,
+            "learning_rate": 0.03,
+            "num_leaves": 31,
+            "early_stopping_rounds": 50,
+            "max_boost_rounds": 1500
+          }
+        },
+        "rolling_refit": true,
+        "hour_specific": true,
+        "test_inference": "regressor_online",
+        "validation_weight_search_inference": "regressor",
+        "classifier_overrides": true,
+        "base_feature_count": 107,
+        "base_features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/reproducibility/advanced_tree_base_features.json"
+      },
+      "microstructure_h1h4": {
+        "features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_microstructure_next24_v1.parquet",
+        "model_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/microstructure_h1h4",
+        "seed": 42,
+        "method": "persistence_plus_residual_lgbm",
+        "per_horizon_features": {
+          "h1": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/microstructure_h1h4/horizon_01_features.json",
+          "h2": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/microstructure_h1h4/horizon_02_features.json",
+          "h3": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/microstructure_h1h4/horizon_03_features.json",
+          "h4": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/microstructure_h1h4/horizon_04_features.json"
+        }
+      },
+      "short_horizon_expert": {
+        "model_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/models/short_horizon_expert",
+        "features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_tree_micro_v1.parquet",
+        "horizon_features_json": null
+      },
+      "validation_weighted_ensemble": {
+        "method": "per_horizon_validation_weight_search",
+        "advanced_tree_validation_inference": "regressor (train-only), not regressor_online (train+val)",
+        "note": "Test predictions use existing CSVs (online/advanced pipeline). Weights are chosen on validation with out-of-sample advanced tree regressors.",
+        "weight_grid_advanced": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "blend_formula": "w * advanced_tree + (1 - w) * microstructure",
+        "validation_prediction_paths": {
+          "advanced_tree": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/tree_advanced_h1h4_validation_predictions.csv",
+          "microstructure": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/microstructure_h1h4_validation_predictions.csv"
+        },
+        "test_prediction_paths": {
+          "advanced_tree": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/tree_test_predictions.csv",
+          "microstructure": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/microstructure_h1h4_predictions.csv"
+        },
+        "anchor_val": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_val.csv",
+        "anchor_test": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/anchor_test.csv",
+        "validation_rows": 33964,
+        "test_rows": 13124,
+        "selected_weights_validation": {
+          "1": 0.6,
+          "2": 0.7,
+          "3": 0.9,
+          "4": 1.0
+        },
+        "validation_metrics": {
+          "advanced_tree_only": {
+            "1": 247.10117477648825,
+            "2": 257.870494453528,
+            "3": 264.3856698536276,
+            "4": 272.85092680210965,
+            "mean_h1_h4": 260.55206647143837
+          },
+          "microstructure_only": {
+            "1": 258.5220438637578,
+            "2": 278.05313005330333,
+            "3": 294.7062599838453,
+            "4": 313.2119139305585,
+            "mean_h1_h4": 286.12333695786623
+          },
+          "validation_weighted_ensemble": {
+            "1": 239.08458957648674,
+            "2": 254.7406811582458,
+            "3": 263.88368445166134,
+            "4": 272.85092680210965,
+            "mean_h1_h4": 257.6399704971259
+          }
+        },
+        "validation_weight_search": {
+          "1": [
+            {
+              "w_advanced": 0.0,
+              "mae": 258.5220438637578
+            },
+            {
+              "w_advanced": 0.1,
+              "mae": 252.9033833982465
+            },
+            {
+              "w_advanced": 0.2,
+              "mae": 248.21718634763403
+            },
+            {
+              "w_advanced": 0.3,
+              "mae": 244.48821009180406
+            },
+            {
+              "w_advanced": 0.4,
+              "mae": 241.69476924917657
+            },
+            {
+              "w_advanced": 0.5,
+              "mae": 239.84400205717702
+            },
+            {
+              "w_advanced": 0.6,
+              "mae": 239.08458957648674
+            },
+            {
+              "w_advanced": 0.7,
+              "mae": 239.41172050789788
+            },
+            {
+              "w_advanced": 0.8,
+              "mae": 240.82633208532295
+            },
+            {
+              "w_advanced": 0.9,
+              "mae": 243.3968734775912
+            },
+            {
+              "w_advanced": 1.0,
+              "mae": 247.10117477648825
+            }
+          ],
+          "2": [
+            {
+              "w_advanced": 0.0,
+              "mae": 278.05313005330333
+            },
+            {
+              "w_advanced": 0.1,
+              "mae": 272.45160751359236
+            },
+            {
+              "w_advanced": 0.2,
+              "mae": 267.4415000048921
+            },
+            {
+              "w_advanced": 0.3,
+              "mae": 263.1988912511863
+            },
+            {
+              "w_advanced": 0.4,
+              "mae": 259.7929010013597
+            },
+            {
+              "w_advanced": 0.5,
+              "mae": 257.22620239036235
+            },
+            {
+              "w_advanced": 0.6,
+              "mae": 255.52282502939818
+            },
+            {
+              "w_advanced": 0.7,
+              "mae": 254.7406811582458
+            },
+            {
+              "w_advanced": 0.8,
+              "mae": 254.79059734564441
+            },
+            {
+              "w_advanced": 0.9,
+              "mae": 255.81981784220804
+            },
+            {
+              "w_advanced": 1.0,
+              "mae": 257.870494453528
+            }
+          ],
+          "3": [
+            {
+              "w_advanced": 0.0,
+              "mae": 294.7062599838453
+            },
+            {
+              "w_advanced": 0.1,
+              "mae": 288.7764164583605
+            },
+            {
+              "w_advanced": 0.2,
+              "mae": 283.3090461837732
+            },
+            {
+              "w_advanced": 0.3,
+              "mae": 278.4731938929905
+            },
+            {
+              "w_advanced": 0.4,
+              "mae": 274.3845129863871
+            },
+            {
+              "w_advanced": 0.5,
+              "mae": 270.9410400871053
+            },
+            {
+              "w_advanced": 0.6,
+              "mae": 268.08021386882297
+            },
+            {
+              "w_advanced": 0.7,
+              "mae": 265.8469883065154
+            },
+            {
+              "w_advanced": 0.8,
+              "mae": 264.37747003659405
+            },
+            {
+              "w_advanced": 0.9,
+              "mae": 263.88368445166134
+            },
+            {
+              "w_advanced": 1.0,
+              "mae": 264.3856698536276
+            }
+          ],
+          "4": [
+            {
+              "w_advanced": 0.0,
+              "mae": 313.2119139305585
+            },
+            {
+              "w_advanced": 0.1,
+              "mae": 305.9469970686702
+            },
+            {
+              "w_advanced": 0.2,
+              "mae": 299.39488826479186
+            },
+            {
+              "w_advanced": 0.3,
+              "mae": 293.4855101228045
+            },
+            {
+              "w_advanced": 0.4,
+              "mae": 288.257474909533
+            },
+            {
+              "w_advanced": 0.5,
+              "mae": 283.7163836342232
+            },
+            {
+              "w_advanced": 0.6,
+              "mae": 279.8535523815948
+            },
+            {
+              "w_advanced": 0.7,
+              "mae": 276.8039371964271
+            },
+            {
+              "w_advanced": 0.8,
+              "mae": 274.5650868357909
+            },
+            {
+              "w_advanced": 0.9,
+              "mae": 273.23344524724695
+            },
+            {
+              "w_advanced": 1.0,
+              "mae": 272.85092680210965
+            }
+          ]
+        },
+        "test_metrics": {
+          "advanced_tree_only": {
+            "1": 398.839762111917,
+            "2": 438.55708212723545,
+            "3": 470.5084073998694,
+            "4": 504.47386543217385,
+            "mean_h1_h4": 453.0947792677989
+          },
+          "microstructure_only": {
+            "1": 400.42887289765,
+            "2": 450.59708748093465,
+            "3": 486.45487045139595,
+            "4": 509.56972276484703,
+            "mean_h1_h4": 461.7626383987069
+          },
+          "validation_weighted_ensemble": {
+            "1": 377.8335711988889,
+            "2": 426.79184897800695,
+            "3": 466.385759260898,
+            "4": 504.47386543217385,
+            "mean_h1_h4": 443.87126121749196
+          },
+          "fixed_0.7_0.3": {
+            "1": 380.1667712812589,
+            "2": 426.79184897800695,
+            "3": 461.9834535470666,
+            "4": 492.23305133705736,
+            "mean_h1_h4": 440.29378128584744
+          },
+          "test_oracle_weights": {
+            "1": 377.6384010064759,
+            "2": 426.17082513362345,
+            "3": 461.6134474239447,
+            "4": 490.6451021724191,
+            "mean_h1_h4": 439.01694393411583
+          }
+        },
+        "test_oracle_weights": {
+          "1": 0.5,
+          "2": 0.6,
+          "3": 0.6,
+          "4": 0.5
+        },
+        "advanced_tree_test_baseline": 453.0947792677989,
+        "primary_result": "validation_weighted_ensemble",
+        "primary_beats_advanced_tree": true,
+        "verdict": "Validation-weighted ensemble beats advanced tree on test (443.87 vs 453.09, \u0394 -9.22)."
+      },
+      "lstm_residual": {
+        "seed": 42,
+        "eval": "predictions_csv_only"
+      }
+    }
+  },
+  "comparison": {
+    "aligned_rows": 13124,
+    "persistence_mae_h1_h4": {
+      "1": 544.2987503809815,
+      "2": 544.3328527887838,
+      "3": 544.0836757086254,
+      "4": 543.8418622371229,
+      "mean_h1_h4": 544.1392852788783
+    },
+    "models": {
+      "persistence": {
+        "1": 544.2987503809815,
+        "2": 544.3328527887838,
+        "3": 544.0836757086254,
+        "4": 543.8418622371229,
+        "mean_h1_h4": 544.1392852788783,
+        "improvement_pct_vs_persistence": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "mean_h1_h4": 0.0
+        }
+      },
+      "residual_lstm": {
+        "1": 539.6613084470946,
+        "2": 540.412325747575,
+        "3": 538.8199907362109,
+        "4": 535.4805116500198,
+        "mean_h1_h4": 538.593534145225,
+        "improvement_pct_vs_persistence": {
+          "1": 0.8520030462390163,
+          "2": 0.7202444278574767,
+          "3": 0.9674403418847183,
+          "4": 1.5374599065817027,
+          "mean_h1_h4": 1.0191785970408374
+        }
+      },
+      "short_expert": {
+        "1": 431.3030339991853,
+        "2": 476.1375182371043,
+        "3": 495.8262051804036,
+        "4": 500.457673781986,
+        "mean_h1_h4": 475.93110779966975,
+        "improvement_pct_vs_persistence": {
+          "1": 20.759870623018134,
+          "2": 12.528241534989842,
+          "3": 8.869494286034278,
+          "4": 7.97735361464704,
+          "mean_h1_h4": 12.535058453691875
+        }
+      },
+      "advanced_tree": {
+        "1": 398.839762111917,
+        "2": 438.55708212723545,
+        "3": 470.5084073998694,
+        "4": 504.47386543217385,
+        "mean_h1_h4": 453.0947792677989,
+        "improvement_pct_vs_persistence": {
+          "1": 26.724108436267862,
+          "2": 19.432185678234696,
+          "3": 13.522785482018019,
+          "4": 7.23886841719147,
+          "mean_h1_h4": 16.731838423395207
+        }
+      },
+      "microstructure": {
+        "1": 400.42887289765,
+        "2": 450.59708748093465,
+        "3": 486.45487045139595,
+        "4": 509.56972276484703,
+        "mean_h1_h4": 461.7626383987069,
+        "improvement_pct_vs_persistence": {
+          "1": 26.432152817295616,
+          "2": 17.220302766517246,
+          "3": 10.591901178099587,
+          "4": 6.301857553093754,
+          "mean_h1_h4": 15.138889822658616
+        }
+      },
+      "validation_weighted_ensemble": {
+        "1": 377.8335711988889,
+        "2": 426.79184897800695,
+        "3": 466.385759260898,
+        "4": 504.47386543217385,
+        "mean_h1_h4": 443.87126121749196,
+        "improvement_pct_vs_persistence": {
+          "1": 30.583421157144937,
+          "2": 21.59358987953388,
+          "3": 14.280508663769792,
+          "4": 7.23886841719147,
+          "mean_h1_h4": 18.42690406188881
+        }
+      }
+    },
+    "ranking_by_mean_h1_h4": [
+      "validation_weighted_ensemble",
+      "advanced_tree",
+      "microstructure",
+      "short_expert",
+      "residual_lstm",
+      "persistence"
+    ],
+    "best_model": "validation_weighted_ensemble"
+  },
+  "checkpoint": {
+    "best_model": "validation_weighted_ensemble",
+    "best_mean_mae_h1_h4": 443.87126121749196,
+    "advanced_tree_mean_mae": 453.0947792677989,
+    "validation_weights": {
+      "1": 0.6,
+      "2": 0.7,
+      "3": 0.9,
+      "4": 1.0
+    },
+    "notes": "Primary deployable short-horizon stack: validation-weighted blend of advanced tree and microstructure. Test uses online advanced tree CSV; weights tuned on validation with train-only regressors. Do not use test oracle or fixed 0.7/0.3 as primary metrics."
+  },
+  "figure_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/figures/final_h1h4_comparison.png"
+}
