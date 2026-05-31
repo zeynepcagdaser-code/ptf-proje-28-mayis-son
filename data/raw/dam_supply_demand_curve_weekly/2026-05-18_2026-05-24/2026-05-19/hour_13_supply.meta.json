@@ -1,0 +1,10 @@
+{
+  "status_code": 200,
+  "content_type": "application/json",
+  "response_hash": "e6eb8cd48c6bc7962eb872dad8bf2fa00ce168c72a8425c62c360242ad5555c9",
+  "payload": {
+    "date": "2026-05-19T13:00:00+03:00",
+    "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/supply-demand-chart-data"
+  },
+  "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/supply-demand-chart-data"
+}

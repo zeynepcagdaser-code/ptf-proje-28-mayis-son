@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-05-31T14:53:06.771481+00:00",
+  "rows": 13,
+  "routing_branch_counts": {
+    "normal_route": 13
+  },
+  "spike_hours": [],
+  "zero_pressure_hours": [
+    "2026-06-01 06:00:00",
+    "2026-06-01 07:00:00",
+    "2026-06-01 08:00:00",
+    "2026-06-01 09:00:00",
+    "2026-06-01 10:00:00",
+    "2026-06-01 11:00:00",
+    "2026-06-01 12:00:00"
+  ],
+  "cap_risk_hours": [],
+  "most_divergent_hours": [
+    {
+      "ts_hour": "2026-06-01 11:00:00",
+      "predicted_ptf": 317.65925284249,
+      "persistence_pred": 0.0,
+      "abs_diff_vs_persistence": 317.65925284249
+    },
+    {
+      "ts_hour": "2026-06-01 12:00:00",
+      "predicted_ptf": 273.76188432313677,
+      "persistence_pred": 0.0,
+      "abs_diff_vs_persistence": 273.76188432313677
+    },
+    {
+      "ts_hour": "2026-06-01 10:00:00",
+      "predicted_ptf": 271.3957715587914,
+      "persistence_pred": 0.0,
+      "abs_diff_vs_persistence": 271.3957715587914
+    },
+    {
+      "ts_hour": "2026-06-01 09:00:00",
+      "predicted_ptf": 253.53309320562113,
+      "persistence_pred": 0.0,
+      "abs_diff_vs_persistence": 253.53309320562113
+    },
+    {
+      "ts_hour": "2026-06-01 06:00:00",
+      "predicted_ptf": 232.44497691303067,
+      "persistence_pred": 30.01,
+      "abs_diff_vs_persistence": 202.43497691303068
+    }
+  ],
+  "columns": [
+    "ts_hour",
+    "analyst_spike_score",
+    "analyst_persistence_break_score",
+    "analyst_zero_score",
+    "analyst_tight_score",
+    "analyst_confidence_score",
+    "predicted_regime",
+    "persistence_pred",
+    "must_run_proxy",
+    "must_run_supply_proxy",
+    "predicted_ptf",
+    "routing_branch",
+    "spike_probability",
+    "spike_transition_probability",
+    "abs_diff_vs_persistence"
+  ]
+}

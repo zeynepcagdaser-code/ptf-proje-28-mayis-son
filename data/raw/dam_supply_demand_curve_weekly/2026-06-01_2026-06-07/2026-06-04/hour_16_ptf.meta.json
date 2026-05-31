@@ -1,0 +1,10 @@
+{
+  "status_code": 400,
+  "content_type": "application/json",
+  "response_hash": "c9c67b62c2b445041bb505e3f18c96cd4d0131dc5ae03df825d8148e001d1470",
+  "payload": {
+    "date": "2026-06-04T16:00:00+03:00",
+    "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/supply-demand-chart-ptf-data"
+  },
+  "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/supply-demand-chart-ptf-data"
+}

@@ -1,0 +1,198 @@
+{
+  "dataset_rows": 336,
+  "train_rows": 240,
+  "validation_rows": 24,
+  "test_rows": 72,
+  "coverage": {
+    "start": "2026-05-19 00:00:00",
+    "end": "2026-06-01 23:00:00",
+    "train_start": "2026-05-19 00:00:00",
+    "train_end": "2026-05-28 23:00:00",
+    "validation_start": "2026-05-29 00:00:00",
+    "validation_end": "2026-05-29 23:00:00",
+    "test_start": "2026-05-30 00:00:00",
+    "test_end": "2026-06-01 23:00:00"
+  },
+  "class_distribution": {
+    "train": {
+      "normal": 133,
+      "negative_zero_pressure": 81,
+      "tight": 16,
+      "spike_cap": 10
+    },
+    "validation": {
+      "negative_zero_pressure": 13,
+      "normal": 11
+    },
+    "test": {
+      "normal": 34,
+      "negative_zero_pressure": 28,
+      "spike_cap": 9,
+      "tight": 1
+    }
+  },
+  "metrics": {
+    "persistence": {
+      "mae": 415.2006944444445,
+      "rmse": 1055.9753075428791,
+      "median_ae": 42.5,
+      "p90_ae": 1430.4079999999992,
+      "within_10_tl_pct": 0.3888888888888889,
+      "within_50_tl_pct": 0.5277777777777778,
+      "rows": 72,
+      "regime_mae": {
+        "normal": 206.91852941176472,
+        "negative_zero_pressure": 4.035714285714286,
+        "spike_cap": 2358.2488888888893,
+        "tight": 1521.98
+      },
+      "transition_mae": 1493.8888235294119,
+      "persistence_failure_mae": 1526.5566666666668
+    },
+    "base_market_fuel_switch": {
+      "mae": 465.6543294123264,
+      "rmse": 1100.209612763404,
+      "median_ae": 106.50995946442694,
+      "p90_ae": 1459.2179962888556,
+      "within_10_tl_pct": 0.3333333333333333,
+      "within_50_tl_pct": 0.3888888888888889,
+      "rows": 72,
+      "regime_mae": {
+        "normal": 285.1964598911943,
+        "negative_zero_pressure": 4.035714285714286,
+        "spike_cap": 2453.207586299738,
+        "tight": 1638.563804689251
+      },
+      "transition_mae": 1547.6226670913636,
+      "persistence_failure_mae": 1609.4334876314024
+    },
+    "curve_aware": {
+      "mae": 465.44794344127877,
+      "rmse": 1099.962754443706,
+      "median_ae": 106.28925968243621,
+      "p90_ae": 1459.1079383061965,
+      "within_10_tl_pct": 0.3333333333333333,
+      "within_50_tl_pct": 0.3888888888888889,
+      "rows": 72,
+      "regime_mae": {
+        "normal": 284.8989514208827,
+        "negative_zero_pressure": 4.035714285714286,
+        "spike_cap": 2452.835875034755,
+        "tight": 1637.1647041492602
+      },
+      "transition_mae": 1547.3342557266265,
+      "persistence_failure_mae": 1608.9958557000527
+    }
+  },
+  "delta_vs_persistence": {
+    "base_market_fuel_switch_mae": 50.4536349678819,
+    "curve_aware_mae": 50.24724899683429
+  },
+  "delta_curve_vs_base": {
+    "mae": -0.20638597104760947,
+    "rmse": -0.24685831969804894
+  },
+  "top_curve_aware_features": [
+    {
+      "feature": "kgup_renewable_mw",
+      "importance": 571,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "ptf_lag_24",
+      "importance": 503,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "wind_share",
+      "importance": 395,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "kgup_total",
+      "importance": 311,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "coal_share",
+      "importance": 273,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "gas_share",
+      "importance": 248,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "zero_price_pressure_score",
+      "importance": 233,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "reconstruction_confidence",
+      "importance": 223,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "kgup_wind_mw",
+      "importance": 199,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "weekday",
+      "importance": 185,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "gas_marginality_proxy",
+      "importance": 72,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "hydro_share",
+      "importance": 72,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "analyst_persistence_break_score",
+      "importance": 66,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "load_deviation_from_weekly_norm",
+      "importance": 64,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "previous_day_regime_negative_zero_pressure",
+      "importance": 52,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "analyst_zero_score",
+      "importance": 49,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "kgup_solar_mw",
+      "importance": 49,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "analyst_spike_score",
+      "importance": 48,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "solar_share",
+      "importance": 41,
+      "model": "curve_aware"
+    },
+    {
+      "feature": "hydro_displacement_score",
+      "importance": 32,
+      "model": "curve_aware"
+    }
+  ],
+  "caveat": "This is a two-week curve-history smoke ablation, not a production-grade backtest. More historical DAM curve days are required before trusting small MAE differences."
+}

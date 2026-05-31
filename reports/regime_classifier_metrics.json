@@ -1,0 +1,491 @@
+{
+  "generated_at": "2026-05-31T13:31:44.003806+00:00",
+  "model": "LightGBM LGBMClassifier multiclass",
+  "label_path": "data/regime_labels.csv",
+  "feature_store": "data/features/regime_feature_store.parquet",
+  "reasoning_features": "data/features/market_reasoning_features.parquet",
+  "outputs": {
+    "model_dir": "models/regime_classifier",
+    "predictions": "data/predictions/regime_classifier_predictions.csv",
+    "confusion_matrix_figure": "reports/figures/regime_classifier_confusion_matrix.png"
+  },
+  "splits": {
+    "train": {
+      "years": "2020-2024",
+      "rows": 43848,
+      "class_distribution": {
+        "normal": 21504,
+        "tight": 20238,
+        "spike_cap": 1631,
+        "negative_zero_pressure": 475
+      }
+    },
+    "validation": {
+      "years": "2025-2025",
+      "rows": 8760,
+      "class_distribution": {
+        "tight": 7871,
+        "normal": 800,
+        "negative_zero_pressure": 89
+      }
+    },
+    "test": {
+      "years": "2026-2026",
+      "rows": 3624,
+      "class_distribution": {
+        "tight": 1769,
+        "normal": 1395,
+        "negative_zero_pressure": 387,
+        "spike_cap": 73
+      }
+    }
+  },
+  "feature_columns": [
+    "ptf_lag_1",
+    "ptf_lag_24",
+    "ptf_lag_168",
+    "rolling_volatility",
+    "volatility_cluster_score",
+    "price_band_persistence",
+    "hour",
+    "weekday",
+    "weekend",
+    "month",
+    "evening_ramp_flag",
+    "sunset_window_flag",
+    "kgup_total",
+    "gas_share",
+    "coal_share",
+    "hydro_share",
+    "wind_share",
+    "solar_share",
+    "thermal_share",
+    "kgup_wind_mw",
+    "kgup_solar_mw",
+    "kgup_renewable_mw",
+    "load_forecast",
+    "load_ramp_1h",
+    "load_ramp_3h",
+    "residual_load_forecast",
+    "residual_load_ramp",
+    "load_minus_kgup",
+    "solar_ramp_down",
+    "solar_cliff_score",
+    "wind_relief_score",
+    "renewable_oversupply_score",
+    "active_maintenance_capacity",
+    "gas_maintenance",
+    "coal_maintenance",
+    "hydro_maintenance",
+    "outage_stress_index",
+    "smf_lag_24",
+    "smf_spread_lagged",
+    "yal_lagged",
+    "yat_lagged",
+    "snapshot_marketTradePrice",
+    "snapshot_age_minutes",
+    "analyst_zero_score",
+    "analyst_spike_score",
+    "analyst_tight_score",
+    "analyst_persistence_break_score",
+    "analyst_confidence_score",
+    "snapshot_marketTradePrice_missing",
+    "price_band_lag_24_negative_zero_pressure",
+    "price_band_lag_24_normal",
+    "price_band_lag_24_spike_cap",
+    "price_band_lag_24_tight",
+    "price_band_lag_24_<NA>",
+    "price_band_lag_168_negative_zero_pressure",
+    "price_band_lag_168_normal",
+    "price_band_lag_168_spike_cap",
+    "price_band_lag_168_tight",
+    "price_band_lag_168_<NA>",
+    "snapshot_publish_state_False",
+    "snapshot_publish_state_<NA>",
+    "analyst_expected_regime_negative_zero_pressure",
+    "analyst_expected_regime_normal",
+    "analyst_expected_regime_spike_cap",
+    "analyst_expected_regime_tight",
+    "analyst_expected_regime_nan"
+  ],
+  "leakage_checks": [
+    {
+      "check": "Forbidden feature columns absent",
+      "status": "pass",
+      "detail": "Forbidden columns present in model feature matrix: []"
+    },
+    {
+      "check": "analyst_reason_text excluded",
+      "status": "pass",
+      "detail": "Text reason column is kept out of numeric feature matrix."
+    },
+    {
+      "check": "historical interim-mcp oracle excluded",
+      "status": "pass",
+      "detail": "Only point-in-time snapshot columns from feature store are eligible."
+    },
+    {
+      "check": "same-hour realized SMF/YAL-YAT excluded",
+      "status": "pass",
+      "detail": "Feature store exposes only lagged SMF/YAL/YAT fields."
+    }
+  ],
+  "validation": {
+    "split": "validation",
+    "rows": 8760,
+    "class_distribution": {
+      "tight": 7871,
+      "normal": 800,
+      "negative_zero_pressure": 89
+    },
+    "accuracy": 0.9581050228310503,
+    "balanced_accuracy": 0.8953577448767747,
+    "macro_f1": 0.6543890149168042,
+    "per_class": {
+      "negative_zero_pressure": {
+        "precision": 0.8080808080808081,
+        "recall": 0.898876404494382,
+        "f1": 0.851063829787234,
+        "support": 89
+      },
+      "normal": {
+        "precision": 0.7640845070422535,
+        "recall": 0.81375,
+        "f1": 0.788135593220339,
+        "support": 800
+      },
+      "tight": {
+        "precision": 0.9833162217659137,
+        "recall": 0.973446830135942,
+        "f1": 0.9783566366596438,
+        "support": 7871
+      },
+      "spike_cap": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "spike_cap_recall": 0.0,
+    "negative_zero_pressure_recall": 0.898876404494382,
+    "normal_tight_accuracy": 0.9587129512166993,
+    "lag24_baseline_accuracy": 0.8921232876712328,
+    "lag24_baseline_balanced_accuracy": 0.5478896646629142,
+    "most_frequent_baseline_accuracy": 0.091324200913242,
+    "most_frequent_baseline_balanced_accuracy": 0.3333333333333333,
+    "persistence_failure_hours": {
+      "threshold_train_p75": 304.115,
+      "rows": 3320,
+      "model_recall": 0.9156626506024096,
+      "lag24_baseline_recall": 0.7337349397590361
+    },
+    "transition_recall": [
+      {
+        "transition_label": "tight -> tight",
+        "count": 7440,
+        "model_recall": 0.9801075268817204,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "tight -> normal",
+        "count": 413,
+        "model_recall": 0.7578692493946732,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "normal -> tight",
+        "count": 400,
+        "model_recall": 0.8675,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "normal -> normal",
+        "count": 352,
+        "model_recall": 0.875,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "normal -> negative_zero_pressure",
+        "count": 48,
+        "model_recall": 0.9166666666666666,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "negative_zero_pressure -> normal",
+        "count": 35,
+        "model_recall": 0.8571428571428571,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "negative_zero_pressure -> tight",
+        "count": 31,
+        "model_recall": 0.7419354838709677,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "negative_zero_pressure -> negative_zero_pressure",
+        "count": 23,
+        "model_recall": 1.0,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "tight -> negative_zero_pressure",
+        "count": 18,
+        "model_recall": 0.7222222222222222,
+        "lag24_baseline_recall": 0.0
+      }
+    ],
+    "classification_report": {
+      "negative_zero_pressure": {
+        "precision": 0.8080808080808081,
+        "recall": 0.898876404494382,
+        "f1-score": 0.851063829787234,
+        "support": 89.0
+      },
+      "normal": {
+        "precision": 0.7640845070422535,
+        "recall": 0.81375,
+        "f1-score": 0.788135593220339,
+        "support": 800.0
+      },
+      "tight": {
+        "precision": 0.9833162217659137,
+        "recall": 0.973446830135942,
+        "f1-score": 0.9783566366596438,
+        "support": 7871.0
+      },
+      "spike_cap": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+      },
+      "accuracy": 0.9581050228310503,
+      "macro avg": {
+        "precision": 0.6388703842222438,
+        "recall": 0.671518308657581,
+        "f1-score": 0.6543890149168042,
+        "support": 8760.0
+      },
+      "weighted avg": {
+        "precision": 0.9615147008073632,
+        "recall": 0.9581050228310503,
+        "f1-score": 0.9596915802026702,
+        "support": 8760.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        80,
+        9,
+        0,
+        0
+      ],
+      [
+        19,
+        651,
+        130,
+        0
+      ],
+      [
+        0,
+        192,
+        7662,
+        17
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "test": {
+    "split": "test",
+    "rows": 3624,
+    "class_distribution": {
+      "tight": 1769,
+      "normal": 1395,
+      "negative_zero_pressure": 387,
+      "spike_cap": 73
+    },
+    "accuracy": 0.8722406181015453,
+    "balanced_accuracy": 0.6690183315076416,
+    "macro_f1": 0.6699460988390681,
+    "per_class": {
+      "negative_zero_pressure": {
+        "precision": 0.8618925831202046,
+        "recall": 0.8708010335917312,
+        "f1": 0.8663239074550129,
+        "support": 387
+      },
+      "normal": {
+        "precision": 0.8558238636363636,
+        "recall": 0.8637992831541219,
+        "f1": 0.8597930788440956,
+        "support": 1395
+      },
+      "tight": {
+        "precision": 0.8869994514536478,
+        "recall": 0.9140757490107405,
+        "f1": 0.9003340757238307,
+        "support": 1769
+      },
+      "spike_cap": {
+        "precision": 1.0,
+        "recall": 0.0273972602739726,
+        "f1": 0.05333333333333334,
+        "support": 73
+      }
+    },
+    "spike_cap_recall": 0.0273972602739726,
+    "negative_zero_pressure_recall": 0.8708010335917312,
+    "normal_tight_accuracy": 0.8919089759797725,
+    "lag24_baseline_accuracy": 0.7740066225165563,
+    "lag24_baseline_balanced_accuracy": 0.670113498190841,
+    "most_frequent_baseline_accuracy": 0.3849337748344371,
+    "most_frequent_baseline_balanced_accuracy": 0.25,
+    "persistence_failure_hours": {
+      "threshold_train_p75": 304.115,
+      "rows": 1673,
+      "model_recall": 0.840406455469217,
+      "lag24_baseline_recall": 0.6736401673640168
+    },
+    "transition_recall": [
+      {
+        "transition_label": "tight -> tight",
+        "count": 1523,
+        "model_recall": 0.9363099146421536,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "normal -> normal",
+        "count": 1014,
+        "model_recall": 0.9013806706114399,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "tight -> normal",
+        "count": 238,
+        "model_recall": 0.7016806722689075,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "negative_zero_pressure -> negative_zero_pressure",
+        "count": 232,
+        "model_recall": 0.9224137931034483,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "normal -> tight",
+        "count": 212,
+        "model_recall": 0.7641509433962265,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "normal -> negative_zero_pressure",
+        "count": 149,
+        "model_recall": 0.785234899328859,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "negative_zero_pressure -> normal",
+        "count": 138,
+        "model_recall": 0.8768115942028986,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "spike_cap -> spike_cap",
+        "count": 36,
+        "model_recall": 0.05555555555555555,
+        "lag24_baseline_recall": 1.0
+      },
+      {
+        "transition_label": "spike_cap -> tight",
+        "count": 29,
+        "model_recall": 0.9310344827586207,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "tight -> spike_cap",
+        "count": 25,
+        "model_recall": 0.0,
+        "lag24_baseline_recall": 0.0
+      },
+      {
+        "transition_label": "normal -> spike_cap",
+        "count": 12,
+        "model_recall": 0.0,
+        "lag24_baseline_recall": 0.0
+      }
+    ],
+    "classification_report": {
+      "negative_zero_pressure": {
+        "precision": 0.8618925831202046,
+        "recall": 0.8708010335917312,
+        "f1-score": 0.8663239074550129,
+        "support": 387.0
+      },
+      "normal": {
+        "precision": 0.8558238636363636,
+        "recall": 0.8637992831541219,
+        "f1-score": 0.8597930788440956,
+        "support": 1395.0
+      },
+      "tight": {
+        "precision": 0.8869994514536478,
+        "recall": 0.9140757490107405,
+        "f1-score": 0.9003340757238307,
+        "support": 1769.0
+      },
+      "spike_cap": {
+        "precision": 1.0,
+        "recall": 0.0273972602739726,
+        "f1-score": 0.05333333333333334,
+        "support": 73.0
+      },
+      "accuracy": 0.8722406181015453,
+      "macro avg": {
+        "precision": 0.901178974552554,
+        "recall": 0.6690183315076416,
+        "f1-score": 0.6699460988390681,
+        "support": 3624.0
+      },
+      "weighted avg": {
+        "precision": 0.8745940256792907,
+        "recall": 0.8722406181015453,
+        "f1-score": 0.8640350470368083,
+        "support": 3624.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        337,
+        50,
+        0,
+        0
+      ],
+      [
+        54,
+        1205,
+        136,
+        0
+      ],
+      [
+        0,
+        152,
+        1617,
+        0
+      ],
+      [
+        0,
+        1,
+        70,
+        2
+      ]
+    ]
+  },
+  "critical_evaluation": "The classifier does not collapse to only the majority class. Spike/cap recall is weak and must improve before cap expert routing (0.027). Zero-pressure recall is acceptable as a first prototype (0.871). On persistence-failure hours, model recall is 0.840 vs lag24 baseline 0.674 (delta +0.167)."
+}

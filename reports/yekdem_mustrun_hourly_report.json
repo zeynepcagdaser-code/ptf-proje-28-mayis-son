@@ -1,0 +1,22 @@
+{
+  "available": true,
+  "rows": 24,
+  "coverage_start": "2026-05-31 00:00:00",
+  "coverage_end": "2026-05-31 23:00:00",
+  "rows_with_price": 24,
+  "rows_with_regime": 24,
+  "proxy_columns": [
+    "must_run_supply_proxy",
+    "must_run_wind_proxy",
+    "must_run_solar_proxy",
+    "must_run_hydro_proxy",
+    "must_run_biomass_proxy",
+    "must_run_geothermal_proxy",
+    "renewable_concentration_score",
+    "solar_oversupply_score",
+    "hydro_pressure_score",
+    "renewable_ramp_score"
+  ],
+  "leakage_policy": "structural_proxy_only",
+  "missing_real_plant_level_kgup_reason": "No dense plant-level KGUP archive with publication timestamps exists in the repository yet."
+}

@@ -1,0 +1,39 @@
+{
+  "available": true,
+  "mode": "raw_smoke",
+  "delivery_hour": "2026-06-01T00:00:00+03:00",
+  "supply_points": 534,
+  "demand_points": 184,
+  "price_axis_points": 541,
+  "crossings_found": 1,
+  "clearing_price": 449.5218048780488,
+  "clearing_volume": 16426.443066847336,
+  "mcp_price": 456.0,
+  "mcp_volume": 16438.9,
+  "mcp_price_delta": -6.478195121951217,
+  "mcp_volume_delta": -12.456933152665442,
+  "feature_means": {
+    "delivery_hour": "2026-06-01 00:00:00+03:00",
+    "clearing_price": 449.5218048780488,
+    "clearing_volume": 16426.443066847336,
+    "slope_near_clearing": 0.3385416666666667,
+    "elasticity_near_clearing": 1.0416666666666667,
+    "curve_fragility_score": 1.3802083333333335,
+    "volume_needed_for_100TL_move": 186.42200905487698,
+    "volume_needed_for_500TL_move": 514.36373684313,
+    "oversupply_pressure": 0.0,
+    "cap_risk_score": 0.0,
+    "mcp_price": 456.0,
+    "mcp_volume": 16438.9,
+    "mcp_price_delta": -6.478195121951217,
+    "mcp_volume_delta": -12.456933152665442,
+    "supply_points": 534,
+    "demand_points": 184,
+    "price_axis_points": 541
+  },
+  "notes": [
+    "Real smoke raw curve body used directly.",
+    "No proxy fallback.",
+    "Clearing intersection is derived from the reconstructed supply and demand step curves."
+  ]
+}

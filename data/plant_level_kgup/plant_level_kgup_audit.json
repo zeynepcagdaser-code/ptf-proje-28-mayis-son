@@ -1,0 +1,1669 @@
+{
+  "generated_at": "2026-05-31T22:53:39.081479+00:00",
+  "api_notes": {
+    "dpp_bulk_endpoint": "POST /v1/generation/data/dpp-bulk",
+    "dpp_bulk_semantics": "Verilen güne ait, topluca verilen UEVÇB'lerin KGÜP değerlerini döner.",
+    "powerplant_list_endpoint": "GET /v1/generation/data/powerplant-list",
+    "uevcb_bulk_endpoint": "POST /v1/generation/data/uevcb-list-bulk"
+  },
+  "raw_dir": "data/plant_level_kgup/raw",
+  "normalized_rows": 48192,
+  "matched_rows": 15552,
+  "latest_asof_rows": 45192,
+  "feature_rows": 24,
+  "normalization": [
+    {
+      "source_file": "chunk_0000.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0001.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0002.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0003.csv",
+      "rows_in": 504,
+      "rows_out": 504,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0004.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0005.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0006.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0007.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0008.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0009.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0010.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0011.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0012.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0013.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0014.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0015.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0016.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0017.csv",
+      "rows_in": 552,
+      "rows_out": 552,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0018.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0019.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0020.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0021.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0022.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0023.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0024.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0025.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0026.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0027.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0028.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0029.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0030.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0031.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0032.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0033.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0034.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0035.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0036.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0037.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0038.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0039.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0040.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0041.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0042.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0043.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0044.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0045.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0046.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0047.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0048.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0049.csv",
+      "rows_in": 552,
+      "rows_out": 552,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0050.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0051.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0052.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0053.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0054.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0055.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0056.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0057.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0058.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0059.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0060.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0061.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0062.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0063.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0064.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0065.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0066.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0067.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0068.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0069.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0070.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0071.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0072.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0073.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0074.csv",
+      "rows_in": 576,
+      "rows_out": 576,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0075.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0076.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0077.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0078.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0079.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0080.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0081.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0082.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0083.csv",
+      "rows_in": 600,
+      "rows_out": 600,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    },
+    {
+      "source_file": "chunk_0084.csv",
+      "rows_in": 360,
+      "rows_out": 360,
+      "missing_columns": [
+        "archive_snapshot_timestamp"
+      ],
+      "detected_columns": {
+        "entsoe_code": "entsoe_code",
+        "plant_name": "plant_name",
+        "fuel_type": "fuel_type",
+        "delivery_hour": "delivery_hour",
+        "publication_timestamp": "publication_timestamp",
+        "archive_snapshot_timestamp": null,
+        "kgup_mwh": "kgup_mwh",
+        "forecast_timestamp": "forecast_timestamp"
+      }
+    }
+  ],
+  "registry_summary": [
+    {
+      "registry_year": 2021,
+      "plant_count": 894,
+      "source_files": "_PortalAdmin_Uploads_Content_News_49ffec2852371 (1).xls"
+    },
+    {
+      "registry_year": 2022,
+      "plant_count": 1022,
+      "source_files": "_PortalAdmin_Uploads_Content_News_1bbe9be893217.xls"
+    },
+    {
+      "registry_year": 2023,
+      "plant_count": 859,
+      "source_files": "_PortalAdmin_Uploads_Content_News_b2e2dbd832616.xlsx"
+    },
+    {
+      "registry_year": 2024,
+      "plant_count": 753,
+      "source_files": "_PortalAdmin_Uploads_Content_News_47ef17c255990.xlsx"
+    },
+    {
+      "registry_year": 2025,
+      "plant_count": 725,
+      "source_files": "2025-Nihai-YEK-Listesi (1).xls"
+    },
+    {
+      "registry_year": 2026,
+      "plant_count": 622,
+      "source_files": "_PortalAdmin_Uploads_Content_News_8024708e54184.xlsx"
+    }
+  ],
+  "mapping_audit": {
+    "matched_plants": 648,
+    "unmatched_plants": 1235,
+    "duplicate_mappings": 0,
+    "low_confidence_matches": 0,
+    "match_method_counts": {
+      "normalized_name_exact": 15552
+    },
+    "code_name_mismatch_rows": 48,
+    "unmatched_plant_sample": [
+      "40W000000000102Z",
+      "40W0000000002576",
+      "40W0000000002584",
+      "40W0000000002592",
+      "40W000000000260H",
+      "40W0000000002681",
+      "40W0000000004560",
+      "40W000000000576R",
+      "40W000000000582W",
+      "40W000000000591V",
+      "40W000000000602F",
+      "40W000000000604B",
+      "40W0000000006148",
+      "40W0000000007306",
+      "40W0000000007330",
+      "40W000000000736V",
+      "40W000000000744W",
+      "40W000000000767K",
+      "40W000000000771T",
+      "40W000000000777H",
+      "40W000000000785I",
+      "40W000000000797B",
+      "40W0000000008019",
+      "40W000000000807Y",
+      "40W0000000008140"
+    ]
+  },
+  "leakage_audit": {
+    "eligible_rows": 45192,
+    "leakage_rows": 0,
+    "strict_point_in_time_rows": 0,
+    "structural_proxy_rows": 45192,
+    "missing_publication_timestamp": 48192,
+    "missing_forecast_timestamp": 0,
+    "missing_snapshot_timestamp": 0
+  },
+  "must_run_analysis": {
+    "available": true,
+    "rows": 24,
+    "coverage_start": "2026-05-31 00:00:00",
+    "coverage_end": "2026-05-31 23:00:00",
+    "correlations": {
+      "must_run_share_vs_price": 0.5495112763151623,
+      "residual_load_after_must_run_vs_price": 0.20015086742258784,
+      "must_run_solar_vs_price_solar_window": NaN
+    },
+    "regime_summary": [
+      {
+        "target_regime": "negative_zero_pressure",
+        "rows": 12,
+        "must_run_supply_mean": 3220.8416666666667,
+        "must_run_share_mean": 0.09304856775716608,
+        "residual_load_after_must_run_mean": 31633.575,
+        "price_mean": 4.083333333333333
+      },
+      {
+        "target_regime": "normal",
+        "rows": 8,
+        "must_run_supply_mean": 4414.543750000001,
+        "must_run_share_mean": 0.13656520792330126,
+        "residual_load_after_must_run_mean": 28036.58125,
+        "price_mean": 412.25125
+      },
+      {
+        "target_regime": "spike_cap",
+        "rows": 3,
+        "must_run_supply_mean": 5326.1433333333325,
+        "must_run_share_mean": 0.1407549583678984,
+        "residual_load_after_must_run_mean": 32534.190000000002,
+        "price_mean": 4300.003333333333
+      },
+      {
+        "target_regime": "tight",
+        "rows": 1,
+        "must_run_supply_mean": 5305.68,
+        "must_run_share_mean": 0.1512106703146375,
+        "residual_load_after_must_run_mean": 29782.32,
+        "price_mean": 1849.99
+      }
+    ]
+  }
+}

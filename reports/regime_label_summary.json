@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-05-31T12:47:32.330476+00:00",
+  "input": "data/ptf_dataset.csv",
+  "output": "data/regime_labels.csv",
+  "rows": 56232,
+  "valid_lag24_rows": 56208,
+  "coverage_start": "2020-01-01T00:00:00",
+  "coverage_end": "2026-05-31T23:00:00",
+  "regime_counts": {
+    "tight": 29878,
+    "normal": 23699,
+    "spike_cap": 1704,
+    "negative_zero_pressure": 951
+  },
+  "transition_counts_top20": {
+    "tight -> tight": 26775,
+    "normal -> normal": 20685,
+    "tight -> normal": 2565,
+    "normal -> tight": 2486,
+    "spike_cap -> spike_cap": 1166,
+    "spike_cap -> tight": 511,
+    "tight -> spike_cap": 500,
+    "normal -> negative_zero_pressure": 482,
+    "negative_zero_pressure -> negative_zero_pressure": 432,
+    "negative_zero_pressure -> normal": 401,
+    "negative_zero_pressure -> tight": 106,
+    "normal -> spike_cap": 38,
+    "tight -> negative_zero_pressure": 37,
+    "spike_cap -> normal": 24
+  },
+  "persistence_error_mae": 294.8685763592371,
+  "persistence_error_median": 100.0,
+  "leakage_policy": {
+    "finalized_ptf_usage": "labels_and_evaluation_only",
+    "forbidden_downstream_feature_columns": [
+      "price",
+      "target_regime",
+      "transition_label",
+      "persistence_error"
+    ]
+  }
+}

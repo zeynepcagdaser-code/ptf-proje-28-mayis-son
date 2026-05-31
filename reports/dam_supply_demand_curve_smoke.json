@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-05-31T19:08:40.974157+00:00",
+  "smoke_date": "2026-06-01",
+  "smoke_hour": "00:00",
+  "supply_demand": {
+    "status_code": 200,
+    "items_count": 718,
+    "content_type": "application/json",
+    "response_hash": "8ed46dc99d0fd4e4ce80650a621b5b045ea26948215218ddcd70ab98927881fe",
+    "body_preview": "{\"items\":[{\"amount\":13750.4,\"supplyPrice\":0.0},{\"amount\":13754.6,\"supplyPrice\":0.01},{\"amount\":13754.6,\"supplyPrice\":0.1},{\"amount\":13755.9,\"supplyPrice\":0.11},{\"amount\":13755.91,\"supplyPrice\":0.2},{\"amount\":13755.93,\"supplyPrice\":1.0},{\"amount\":13755.93,\"supplyPrice\":1.01},{\"amount\":13756.03,\"supplyPrice\":5.0},{\"amount\":13756.03,\"supplyPrice\":5.01},{\"amount\":13756.16,\"supplyPrice\":9.9},{\"amount\":13756.16,\"supplyPrice\":9.91},{\"amount\":13756.16,\"supplyPrice\":10.0},{\"amount\":13756.16,\"supplyPrice\":10.01},{\"amount\":13756.42,\"supplyPrice\":19.99},{\"amount\":14126.42,\"supplyPrice\":20.0},{\"amount\":14126.42,\"supplyPrice\":20.01},{\"amount\":14126.68,\"supplyPrice\":30.0},{\"amount\":14126.68,\"supplyPrice\":30.01},{\"amount\":14126.78,\"supplyPrice\":33.99},{\"amount\":14126.78,\"supplyPrice\":34.0},{\"amount\":14126.81,\"supplyPrice\":35.0},{\"amount\":14126.81,\"supplyPrice\":35.01},{\"amount\":14126.94,\"supplyPrice\":40.0},{\"amount\":14126.94,\"supplyPrice\":40.01},{\"amount\":14127.07,\"supplyPrice\":45.0},{\"amount\":14127.07,\"supplyPrice\":45.01},{\"amount\":14127.17,\"supplyPrice\":49.0},{\"amount\":14127.17,\"supplyPrice\":49.01},{\"amount\":14127.2,\"supplyPrice\":49.99},{\"amount\":14127.2,\"supplyPrice\":50.0},{\"amount\":14127.2,\"supplyPrice\":50.01},{\"amount\":14127.33,\"supplyPrice\":55.0},{\"amount\":14127.33,\"supplyPrice\":55.01},{\"amount\":14127.46,\"supplyPrice\":60.0},{\"amount\":14127.46,\"supplyPrice\":60.01},{\"amount\":14127.98,\"supplyPrice\":79.99},{\"amount\":14127.98,\"supplyPrice\":80.0},{\"amount\":14127.98,\"supplyPrice\":80.01},{\"amount\":14128.37,\"supplyPrice\":95.0},{\"amount\":14128.37,\"supplyPrice\":95.01},{\"amount\":14128.47,\"supplyPrice\":98.99},{\"amount\":14128.47,\"supplyPrice\":99.0},{\"amount\":14128.49,\"supplyPrice\":99.47},{\"amount\":14128.49,\"supplyPrice\":99.48},{\"amount\":14128.5,\"supplyPrice\":99.99},{\"amount\":14148.5,\"supplyPrice\":100.0},{\"amount\":14150.2,\"supplyPrice\":100.01},{\"amount\":14150.2,\"supplyPrice\":100.1},{\"amount\":14150.72,\"supplyPrice\":120.0},{\"amount\":14150.72,\"supplyPrice\":120.01},{\"amount\":14150.93,\"supplyPric",
+    "available_columns": [
+      "amount",
+      "supplyPrice",
+      "demandPrice"
+    ],
+    "raw_file": "data/raw/dam_supply_demand_curve_smoke/supply_demand_attempt_01.body.txt"
+  },
+  "ptf": {
+    "status_code": 200,
+    "items_count": 1,
+    "content_type": "application/json",
+    "response_hash": "0a3e29d2e1be279f8398da28020892ee10a3d6b6c1126084c0581249684c7709",
+    "body_preview": "{\"status\":\"200 OK\",\"correlationId\":\"ea437cf6-7d16-49c5-ac95-d717ca4b5eda\",\"spanIds\":\"(electricity-service)78877\",\"hostName\":\"*********.41\",\"clientIp\":\"176.40.224.64\",\"userName\":\"zeynepcagdaser@gmail.com\",\"successMessage\":null,\"errors\":null,\"body\":{\"content\":{\"response\":{\"date\":\"2026-06-01T00:00:00+03:00\",\"mcpPrice\":456,\"matchingQuantity\":16438.900000000001}}}}",
+    "available_columns": [
+      "date",
+      "mcpPrice",
+      "matchingQuantity"
+    ],
+    "raw_file": "data/raw/dam_supply_demand_curve_smoke/ptf_attempt_01.body.txt"
+  },
+  "normalized": {
+    "rows": 719,
+    "columns": [
+      "delivery_hour",
+      "price",
+      "supply_mwh",
+      "demand_mwh",
+      "source_endpoint"
+    ],
+    "clearing_price_column_found": true,
+    "supply_demand_columns_present": {
+      "price": true,
+      "supply_mwh": true,
+      "demand_mwh": true
+    }
+  },
+  "usable_for_curve_extraction": true,
+  "notes": [
+    "Raw response bodies and meta JSON saved per endpoint attempt.",
+    "Only a single-hour smoke test was executed.",
+    "Proxy fallback was not used."
+  ]
+}

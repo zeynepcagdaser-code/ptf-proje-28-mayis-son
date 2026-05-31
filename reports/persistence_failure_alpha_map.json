@@ -1,0 +1,721 @@
+{
+  "generated_at": "2026-05-31T12:47:51.413416+00:00",
+  "inputs": {
+    "labels": "data/regime_labels.csv",
+    "load_forecast": "data/load_forecast.csv",
+    "kgup": "data/kgup_combined.csv",
+    "outages": "data/outages.csv"
+  },
+  "rows": 56232,
+  "valid_persistence_rows": 56208,
+  "h1_h4": {
+    "definition": "target delivery hour in {1,2,3,4}; diagnostic slice only, not model horizon training",
+    "rows": 9368,
+    "persistence_mae": 262.50194278394537,
+    "persistence_median_error": 109.60500000000002
+  },
+  "full_h24": {
+    "definition": "all delivery hours 0-23",
+    "rows": 56208,
+    "persistence_mae": 294.8685763592371,
+    "persistence_median_error": 100.0
+  },
+  "worst_hours": [
+    {
+      "hour": 11,
+      "count": 2342,
+      "mean": 424.8456703672075,
+      "median": 167.85000000000002
+    },
+    {
+      "hour": 10,
+      "count": 2342,
+      "mean": 421.66672075149444,
+      "median": 152.0100000000001
+    },
+    {
+      "hour": 9,
+      "count": 2342,
+      "mean": 409.54295900939366,
+      "median": 104.42500000000001
+    },
+    {
+      "hour": 15,
+      "count": 2342,
+      "mean": 393.5069214346712,
+      "median": 155.115
+    },
+    {
+      "hour": 14,
+      "count": 2342,
+      "mean": 391.19523057216054,
+      "median": 166.3900000000001
+    },
+    {
+      "hour": 13,
+      "count": 2342,
+      "mean": 389.47071733561063,
+      "median": 170.5
+    },
+    {
+      "hour": 8,
+      "count": 2342,
+      "mean": 387.2278949615713,
+      "median": 99.9549999999997
+    },
+    {
+      "hour": 12,
+      "count": 2342,
+      "mean": 364.9499957301452,
+      "median": 160.65499999999983
+    },
+    {
+      "hour": 16,
+      "count": 2342,
+      "mean": 319.8312852263023,
+      "median": 104.8350000000001
+    },
+    {
+      "hour": 7,
+      "count": 2342,
+      "mean": 313.4182109308283,
+      "median": 137.93499999999995
+    },
+    {
+      "hour": 6,
+      "count": 2342,
+      "mean": 298.71347139197263,
+      "median": 120.89999999999998
+    },
+    {
+      "hour": 5,
+      "count": 2342,
+      "mean": 275.01504696840306,
+      "median": 111.96000000000004
+    },
+    {
+      "hour": 23,
+      "count": 2342,
+      "mean": 269.9769470538002,
+      "median": 109.56500000000005
+    },
+    {
+      "hour": 2,
+      "count": 2342,
+      "mean": 268.9933518360376,
+      "median": 111.02000000000044
+    },
+    {
+      "hour": 3,
+      "count": 2342,
+      "mean": 268.77392826643893,
+      "median": 125.00999999999999
+    },
+    {
+      "hour": 4,
+      "count": 2342,
+      "mean": 263.63268146883007,
+      "median": 112.36500000000024
+    },
+    {
+      "hour": 1,
+      "count": 2342,
+      "mean": 248.6078095644748,
+      "median": 97.45499999999993
+    },
+    {
+      "hour": 0,
+      "count": 2342,
+      "mean": 233.71570452604612,
+      "median": 89.7199999999998
+    },
+    {
+      "hour": 17,
+      "count": 2342,
+      "mean": 227.80347139197266,
+      "median": 50.375
+    },
+    {
+      "hour": 22,
+      "count": 2342,
+      "mean": 227.1099871904355,
+      "median": 91.08499999999987
+    },
+    {
+      "hour": 18,
+      "count": 2342,
+      "mean": 180.751951323655,
+      "median": 29.83500000000015
+    },
+    {
+      "hour": 21,
+      "count": 2342,
+      "mean": 172.30980785653287,
+      "median": 38.309999999999945
+    },
+    {
+      "hour": 19,
+      "count": 2342,
+      "mean": 169.6246071733561,
+      "median": 22.155
+    },
+    {
+      "hour": 20,
+      "count": 2342,
+      "mean": 156.16146029035013,
+      "median": 12.889999999999873
+    }
+  ],
+  "regime_mae": [
+    {
+      "target_regime": "spike_cap",
+      "count": 1704,
+      "mean": 515.9501291079812,
+      "median": 204.9749999999999
+    },
+    {
+      "target_regime": "tight",
+      "count": 29878,
+      "mean": 360.35893634112057,
+      "median": 198.78999999999985
+    },
+    {
+      "target_regime": "negative_zero_pressure",
+      "count": 951,
+      "mean": 267.40512092534175,
+      "median": 90.0
+    },
+    {
+      "target_regime": "normal",
+      "count": 23675,
+      "mean": 197.41023653643083,
+      "median": 30.40000000000003
+    }
+  ],
+  "worst_transitions": [
+    {
+      "transition_label": "normal -> spike_cap",
+      "count": 38,
+      "mean": 3612.3505263157895,
+      "median": 3724.55
+    },
+    {
+      "transition_label": "spike_cap -> normal",
+      "count": 24,
+      "mean": 3512.6270833333333,
+      "median": 3397.6800000000003
+    },
+    {
+      "transition_label": "negative_zero_pressure -> tight",
+      "count": 106,
+      "mean": 2126.929716981132,
+      "median": 2076.1549999999997
+    },
+    {
+      "transition_label": "tight -> negative_zero_pressure",
+      "count": 37,
+      "mean": 1799.1154054054055,
+      "median": 1639.99
+    },
+    {
+      "transition_label": "tight -> spike_cap",
+      "count": 500,
+      "mean": 1128.4894199999999,
+      "median": 1033.9899999999998
+    },
+    {
+      "transition_label": "normal -> tight",
+      "count": 2486,
+      "mean": 1125.1369871279162,
+      "median": 1000.27
+    },
+    {
+      "transition_label": "tight -> normal",
+      "count": 2565,
+      "mean": 1017.2460233918127,
+      "median": 927.01
+    },
+    {
+      "transition_label": "spike_cap -> tight",
+      "count": 511,
+      "mean": 1013.9375929549902,
+      "median": 894.4899999999998
+    },
+    {
+      "transition_label": "normal -> negative_zero_pressure",
+      "count": 482,
+      "mean": 383.006887966805,
+      "median": 196.99
+    },
+    {
+      "transition_label": "negative_zero_pressure -> normal",
+      "count": 401,
+      "mean": 342.4779301745636,
+      "median": 200.0
+    },
+    {
+      "transition_label": "tight -> tight",
+      "count": 26775,
+      "mean": 269.8837381886088,
+      "median": 156.04999999999995
+    },
+    {
+      "transition_label": "spike_cap -> spike_cap",
+      "count": 1166,
+      "mean": 152.371346483705,
+      "median": 48.61999999999989
+    },
+    {
+      "transition_label": "normal -> normal",
+      "count": 20685,
+      "mean": 89.0894174522601,
+      "median": 19.5
+    },
+    {
+      "transition_label": "negative_zero_pressure -> negative_zero_pressure",
+      "count": 432,
+      "mean": 7.23537037037037,
+      "median": 0.0
+    }
+  ],
+  "hour_x_regime_mae": [
+    {
+      "hour": 11,
+      "target_regime": "spike_cap",
+      "count": 91,
+      "mean": 699.8208791208791,
+      "median": 383.6800000000003
+    },
+    {
+      "hour": 15,
+      "target_regime": "spike_cap",
+      "count": 96,
+      "mean": 625.9428125,
+      "median": 214.33500000000004
+    },
+    {
+      "hour": 14,
+      "target_regime": "spike_cap",
+      "count": 82,
+      "mean": 610.2251219512194,
+      "median": 357.0
+    },
+    {
+      "hour": 8,
+      "target_regime": "spike_cap",
+      "count": 116,
+      "mean": 605.7821551724138,
+      "median": 99.99499999999989
+    },
+    {
+      "hour": 21,
+      "target_regime": "spike_cap",
+      "count": 127,
+      "mean": 570.1434645669292,
+      "median": 306.5100000000002
+    },
+    {
+      "hour": 10,
+      "target_regime": "tight",
+      "count": 1118,
+      "mean": 533.2662880143113,
+      "median": 303.16499999999996
+    },
+    {
+      "hour": 10,
+      "target_regime": "spike_cap",
+      "count": 105,
+      "mean": 531.3058095238096,
+      "median": 127.80999999999996
+    },
+    {
+      "hour": 11,
+      "target_regime": "tight",
+      "count": 1132,
+      "mean": 529.7794699646643,
+      "median": 300.0
+    },
+    {
+      "hour": 9,
+      "target_regime": "spike_cap",
+      "count": 127,
+      "mean": 525.8374803149607,
+      "median": 55.56999999999971
+    },
+    {
+      "hour": 13,
+      "target_regime": "tight",
+      "count": 1062,
+      "mean": 519.0876271186441,
+      "median": 346.01999999999987
+    },
+    {
+      "hour": 15,
+      "target_regime": "tight",
+      "count": 1128,
+      "mean": 501.0059042553192,
+      "median": 306.995
+    },
+    {
+      "hour": 14,
+      "target_regime": "tight",
+      "count": 1146,
+      "mean": 500.1217626527051,
+      "median": 324.0050000000001
+    },
+    {
+      "hour": 12,
+      "target_regime": "tight",
+      "count": 906,
+      "mean": 491.1118432671082,
+      "median": 320.0
+    },
+    {
+      "hour": 9,
+      "target_regime": "tight",
+      "count": 1188,
+      "mean": 490.57319865319863,
+      "median": 210.9949999999999
+    },
+    {
+      "hour": 8,
+      "target_regime": "tight",
+      "count": 1222,
+      "mean": 455.4426923076923,
+      "median": 169.80999999999995
+    },
+    {
+      "hour": 16,
+      "target_regime": "spike_cap",
+      "count": 119,
+      "mean": 444.29899159663864,
+      "median": 49.97999999999956
+    },
+    {
+      "hour": 19,
+      "target_regime": "spike_cap",
+      "count": 155,
+      "mean": 443.6247096774194,
+      "median": 129.89000000000033
+    },
+    {
+      "hour": 20,
+      "target_regime": "spike_cap",
+      "count": 159,
+      "mean": 422.8408176100629,
+      "median": 149.98999999999978
+    },
+    {
+      "hour": 0,
+      "target_regime": "spike_cap",
+      "count": 59,
+      "mean": 419.94457627118635,
+      "median": 230.0
+    },
+    {
+      "hour": 7,
+      "target_regime": "tight",
+      "count": 1154,
+      "mean": 405.14041594454073,
+      "median": 279.69000000000005
+    },
+    {
+      "hour": 16,
+      "target_regime": "tight",
+      "count": 1213,
+      "mean": 398.8674031327287,
+      "median": 217.07000000000016
+    },
+    {
+      "hour": 11,
+      "target_regime": "negative_zero_pressure",
+      "count": 97,
+      "mean": 393.529793814433,
+      "median": 151.01
+    },
+    {
+      "hour": 6,
+      "target_regime": "tight",
+      "count": 1230,
+      "mean": 380.5357317073171,
+      "median": 249.98500000000013
+    },
+    {
+      "hour": 5,
+      "target_regime": "tight",
+      "count": 1296,
+      "mean": 354.231875,
+      "median": 239.0
+    },
+    {
+      "hour": 3,
+      "target_regime": "tight",
+      "count": 1239,
+      "mean": 345.29774011299435,
+      "median": 235.2099999999996
+    },
+    {
+      "hour": 2,
+      "target_regime": "tight",
+      "count": 1269,
+      "mean": 344.50666666666666,
+      "median": 229.26000000000025
+    },
+    {
+      "hour": 4,
+      "target_regime": "tight",
+      "count": 1261,
+      "mean": 339.6916891356066,
+      "median": 224.30000000000015
+    },
+    {
+      "hour": 23,
+      "target_regime": "tight",
+      "count": 1358,
+      "mean": 338.9296023564065,
+      "median": 205.8599999999999
+    },
+    {
+      "hour": 9,
+      "target_regime": "negative_zero_pressure",
+      "count": 83,
+      "mean": 335.704578313253,
+      "median": 60.0
+    },
+    {
+      "hour": 10,
+      "target_regime": "negative_zero_pressure",
+      "count": 89,
+      "mean": 322.37910112359555,
+      "median": 36.99
+    }
+  ],
+  "residual_load_mae": [
+    {
+      "residual_load_bin": "Q1_low",
+      "count": 11228,
+      "mean": 435.2500792661204,
+      "median": 177.57999999999998
+    },
+    {
+      "residual_load_bin": "Q2",
+      "count": 11231,
+      "mean": 318.2464838393731,
+      "median": 126.74999999999976
+    },
+    {
+      "residual_load_bin": "Q3",
+      "count": 11242,
+      "mean": 265.4815299768724,
+      "median": 99.52499999999964
+    },
+    {
+      "residual_load_bin": "Q4",
+      "count": 11241,
+      "mean": 241.63548438751002,
+      "median": 74.86000000000013
+    },
+    {
+      "residual_load_bin": "Q5_high",
+      "count": 11242,
+      "mean": 213.58738124888808,
+      "median": 50.73999999999995
+    }
+  ],
+  "load_minus_kgup_mae": [
+    {
+      "load_minus_kgup_bin": "Q5_high",
+      "count": 11242,
+      "mean": 388.95027219355984,
+      "median": 180.0100000000001
+    },
+    {
+      "load_minus_kgup_bin": "Q1_low",
+      "count": 11235,
+      "mean": 338.6414036493102,
+      "median": 140.4699999999998
+    },
+    {
+      "load_minus_kgup_bin": "Q4",
+      "count": 11238,
+      "mean": 277.9460455597081,
+      "median": 85.99000000000001
+    },
+    {
+      "load_minus_kgup_bin": "Q2",
+      "count": 11231,
+      "mean": 240.564826818627,
+      "median": 70.00999999999999
+    },
+    {
+      "load_minus_kgup_bin": "Q3",
+      "count": 11238,
+      "mean": 227.84970368392953,
+      "median": 65.37500000000006
+    }
+  ],
+  "residual_load_x_outage_stress_mae_2026": [
+    {
+      "outage_stress_bin": "Q3",
+      "residual_load_bin": "Q5_high",
+      "count": 75,
+      "mean": 1058.0408,
+      "median": 790.0100000000002
+    },
+    {
+      "outage_stress_bin": "Q4_high",
+      "residual_load_bin": "Q5_high",
+      "count": 74,
+      "mean": 953.5897297297297,
+      "median": 520.9949999999999
+    },
+    {
+      "outage_stress_bin": "Q3",
+      "residual_load_bin": "Q4",
+      "count": 145,
+      "mean": 921.430275862069,
+      "median": 717.0
+    },
+    {
+      "outage_stress_bin": "Q4_high",
+      "residual_load_bin": "Q4",
+      "count": 116,
+      "mean": 856.3584482758621,
+      "median": 500.0050000000002
+    },
+    {
+      "outage_stress_bin": "Q1_low",
+      "residual_load_bin": "Q1_low",
+      "count": 219,
+      "mean": 836.1921461187214,
+      "median": 684.0
+    },
+    {
+      "outage_stress_bin": "Q1_low",
+      "residual_load_bin": "Q2",
+      "count": 170,
+      "mean": 695.578294117647,
+      "median": 500.0100000000001
+    },
+    {
+      "outage_stress_bin": "Q1_low",
+      "residual_load_bin": "Q3",
+      "count": 177,
+      "mean": 692.8860451977401,
+      "median": 545.4799999999996
+    },
+    {
+      "outage_stress_bin": "Q1_low",
+      "residual_load_bin": "Q4",
+      "count": 165,
+      "mean": 634.7769090909092,
+      "median": 393.9799999999995
+    },
+    {
+      "outage_stress_bin": "Q2",
+      "residual_load_bin": "Q1_low",
+      "count": 164,
+      "mean": 626.2570121951219,
+      "median": 460.0
+    },
+    {
+      "outage_stress_bin": "Q4_high",
+      "residual_load_bin": "Q3",
+      "count": 186,
+      "mean": 593.8213440860216,
+      "median": 204.495
+    },
+    {
+      "outage_stress_bin": "Q2",
+      "residual_load_bin": "Q2",
+      "count": 181,
+      "mean": 591.3700552486188,
+      "median": 458.4699999999998
+    },
+    {
+      "outage_stress_bin": "Q2",
+      "residual_load_bin": "Q4",
+      "count": 173,
+      "mean": 513.7112716763006,
+      "median": 349.0
+    },
+    {
+      "outage_stress_bin": "Q2",
+      "residual_load_bin": "Q3",
+      "count": 187,
+      "mean": 510.03203208556147,
+      "median": 300.69000000000005
+    },
+    {
+      "outage_stress_bin": "Q3",
+      "residual_load_bin": "Q2",
+      "count": 200,
+      "mean": 470.9297,
+      "median": 233.0
+    },
+    {
+      "outage_stress_bin": "Q3",
+      "residual_load_bin": "Q3",
+      "count": 221,
+      "mean": 420.87515837104075,
+      "median": 292.34000000000003
+    },
+    {
+      "outage_stress_bin": "Q2",
+      "residual_load_bin": "Q5_high",
+      "count": 200,
+      "mean": 345.966,
+      "median": 115.98499999999967
+    },
+    {
+      "outage_stress_bin": "Q4_high",
+      "residual_load_bin": "Q2",
+      "count": 200,
+      "mean": 336.52315000000004,
+      "median": 134.065
+    },
+    {
+      "outage_stress_bin": "Q1_low",
+      "residual_load_bin": "Q5_high",
+      "count": 176,
+      "mean": 293.86090909090905,
+      "median": 137.35500000000002
+    },
+    {
+      "outage_stress_bin": "Q3",
+      "residual_load_bin": "Q1_low",
+      "count": 256,
+      "mean": 253.9803125,
+      "median": 100.005
+    },
+    {
+      "outage_stress_bin": "Q4_high",
+      "residual_load_bin": "Q1_low",
+      "count": 315,
+      "mean": 231.47038095238094,
+      "median": 50.98000000000002
+    }
+  ],
+  "alpha_map": {
+    "highest_alpha": [
+      "normal -> spike_cap",
+      "spike_cap -> normal",
+      "negative_zero_pressure -> tight",
+      "tight -> negative_zero_pressure",
+      "tight -> spike_cap",
+      "normal -> tight"
+    ],
+    "interpretation": "Persistence fails when yesterday's same-hour regime is no longer valid. Training should prioritize regime transition detection before price-level experts."
+  },
+  "leakage_policy": {
+    "finalized_ptf_usage": "evaluation_and_labels_only",
+    "forbidden_as_features": [
+      "price",
+      "target_regime",
+      "transition_label",
+      "persistence_error",
+      "same-hour realized SMF/YAL/YAT",
+      "historical interim-mcp oracle data"
+    ]
+  }
+}

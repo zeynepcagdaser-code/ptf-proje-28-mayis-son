@@ -1,0 +1,175 @@
+{
+  "generated_at": "2026-05-31T21:57:35.360869+00:00",
+  "scenarios": [
+    {
+      "scenario": "without_explicit_fuel_switch",
+      "feature_count": 85,
+      "selected_config": {
+        "name": "global_residual_pred",
+        "cap_floor_strength": 0.0,
+        "validation_mae": 396.2753838141996
+      },
+      "test_mae": 531.4635477119931,
+      "test_rmse": 832.191207222997,
+      "test_median_ae": 258.75907170311007,
+      "test_p90_ae": 1453.0180572881281,
+      "delta_vs_persistence": -3.925652067256351,
+      "pct_error_le_50": 0.23399558498896247,
+      "regime_wise": [
+        {
+          "target_regime": "spike_cap",
+          "rows": 73,
+          "mae": 1167.1500583176967,
+          "persistence_mae": 1183.6687671232876,
+          "delta_vs_persistence": -16.518708805590904
+        },
+        {
+          "target_regime": "tight",
+          "rows": 1769,
+          "mae": 615.532035891519,
+          "persistence_mae": 622.4692198982476,
+          "delta_vs_persistence": -6.937184006728671
+        },
+        {
+          "target_regime": "normal",
+          "rows": 1395,
+          "mae": 496.242608327721,
+          "persistence_mae": 501.00216487455197,
+          "delta_vs_persistence": -4.759556546830993
+        },
+        {
+          "target_regime": "negative_zero_pressure",
+          "rows": 387,
+          "mae": 154.2308334413519,
+          "persistence_mae": 139.00922480620156,
+          "delta_vs_persistence": 15.221608635150346
+        }
+      ],
+      "cap_miss_penalty": {
+        "rows": 73,
+        "cap_miss_rate_pred_below_4000": 0.5068493150684932,
+        "mean_shortfall_to_4000": 939.7771833628043,
+        "mae_spike_cap": 1167.1500583176967
+      },
+      "persistence_failure_hours": {
+        "rows": 1673,
+        "mae": 1032.750627338664,
+        "rmse": 1216.1112417200025,
+        "median_ae": 861.4833352486705,
+        "p90_ae": 1856.4564124929843,
+        "pct_error_le_2": 0.0,
+        "pct_error_le_10": 0.0,
+        "pct_error_le_50": 0.0
+      },
+      "delivery_hour_1_4_mae": {
+        "rows": 604,
+        "mae": 425.2819339410311,
+        "rmse": 603.315315384078,
+        "median_ae": 266.76340066683946,
+        "p90_ae": 1096.7843665009964,
+        "pct_error_le_2": 0.0033112582781456954,
+        "pct_error_le_10": 0.0347682119205298,
+        "pct_error_le_50": 0.18874172185430463
+      }
+    },
+    {
+      "scenario": "with_explicit_fuel_switch",
+      "feature_count": 100,
+      "selected_config": {
+        "name": "global_residual_pred",
+        "cap_floor_strength": 0.0,
+        "validation_mae": 396.2826810571681
+      },
+      "test_mae": 531.4966834406658,
+      "test_rmse": 832.198755942654,
+      "test_median_ae": 258.7583418398948,
+      "test_p90_ae": 1452.9673053924992,
+      "delta_vs_persistence": -3.8925163385836186,
+      "pct_error_le_50": 0.233719646799117,
+      "regime_wise": [
+        {
+          "target_regime": "spike_cap",
+          "rows": 73,
+          "mae": 1167.1695522979903,
+          "persistence_mae": 1183.6687671232876,
+          "delta_vs_persistence": -16.49921482529726
+        },
+        {
+          "target_regime": "tight",
+          "rows": 1769,
+          "mae": 615.5321982303888,
+          "persistence_mae": 622.4692198982476,
+          "delta_vs_persistence": -6.937021667858858
+        },
+        {
+          "target_regime": "normal",
+          "rows": 1395,
+          "mae": 496.27479309382244,
+          "persistence_mae": 501.00216487455197,
+          "delta_vs_persistence": -4.727371780729527
+        },
+        {
+          "target_regime": "negative_zero_pressure",
+          "rows": 387,
+          "mae": 154.42069363250616,
+          "persistence_mae": 139.00922480620156,
+          "delta_vs_persistence": 15.4114688263046
+        }
+      ],
+      "cap_miss_penalty": {
+        "rows": 73,
+        "cap_miss_rate_pred_below_4000": 0.5068493150684932,
+        "mean_shortfall_to_4000": 939.7756760271832,
+        "mae_spike_cap": 1167.1695522979903
+      },
+      "persistence_failure_hours": {
+        "rows": 1673,
+        "mae": 1032.7631030698387,
+        "rmse": 1216.1186746190897,
+        "median_ae": 861.43653777703,
+        "p90_ae": 1856.474862518652,
+        "pct_error_le_2": 0.0,
+        "pct_error_le_10": 0.0,
+        "pct_error_le_50": 0.0
+      },
+      "delivery_hour_1_4_mae": {
+        "rows": 604,
+        "mae": 425.28036163296247,
+        "rmse": 603.3220370132618,
+        "median_ae": 266.51677574147504,
+        "p90_ae": 1096.7724689716667,
+        "pct_error_le_2": 0.004966887417218543,
+        "pct_error_le_10": 0.0347682119205298,
+        "pct_error_le_50": 0.1870860927152318
+      }
+    }
+  ],
+  "delta": {
+    "mae_delta_full_minus_without": 0.03313572867273251,
+    "rmse_delta_full_minus_without": 0.007548719656938374,
+    "p90_delta_full_minus_without": -0.050751895628991406,
+    "delta_vs_persistence_change": 0.03313572867273251
+  },
+  "fuel_switch_columns": [
+    "gas_marginality_proxy",
+    "hydro_displacement_score",
+    "renewable_share_of_generation",
+    "gas_share_of_generation",
+    "renewable_minus_gas_shift",
+    "cheap_supply_pressure",
+    "low_demand_flag",
+    "gas_off_flag",
+    "renewable_share_high_flag",
+    "hydro_high_flag",
+    "zero_price_pressure_score",
+    "load_deviation_from_weekly_norm",
+    "load_deviation_from_monthly_norm",
+    "demand_weakness_score",
+    "load_vs_renewable_balance"
+  ],
+  "notes": [
+    "Both scenarios use the same time-based split and model family.",
+    "The without scenario drops explicit fuel-switch columns from the feature matrix.",
+    "Updated analyst scores remain available in both scenarios, so this isolates direct column contribution rather than the full reasoning-layer contribution."
+  ]
+}

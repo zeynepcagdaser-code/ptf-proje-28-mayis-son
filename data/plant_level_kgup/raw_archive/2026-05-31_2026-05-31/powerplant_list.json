@@ -1,0 +1,4298 @@
+[
+  {
+    "power_plant_id": 11652,
+    "entsoe_code": "40X000000011652C",
+    "plant_name": "3S KALE ENERJİ ÜRETİM A.Ş.",
+    "short_name": "3S KALE"
+  },
+  {
+    "power_plant_id": 17619,
+    "entsoe_code": "40X000000017619H",
+    "plant_name": "5ER ENERJİ TARIM HAYVANCILIK A.Ş.",
+    "short_name": "5ER"
+  },
+  {
+    "power_plant_id": 11393,
+    "entsoe_code": "40X000000011393A",
+    "plant_name": "ABDÜLMECİT MODOĞLU İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "MODOĞLU"
+  },
+  {
+    "power_plant_id": 15739,
+    "entsoe_code": "40X000000015739H",
+    "plant_name": "ABRAK ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ABRAK"
+  },
+  {
+    "power_plant_id": 19720,
+    "entsoe_code": "40X000000019720I",
+    "plant_name": "ABY PLASTİK AMBALAJ VE ENERJİ SAN. TİC. A.Ş.",
+    "short_name": "ABY"
+  },
+  {
+    "power_plant_id": 5573,
+    "entsoe_code": "40X000000005573V",
+    "plant_name": "ACARSOY ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "ACARSOY"
+  },
+  {
+    "power_plant_id": 14920,
+    "entsoe_code": "40X000000014920Z",
+    "plant_name": "ACIBADEM SAĞLIK HİZMETLERİ VE TİCARET A.Ş.",
+    "short_name": "ACIBADEMM"
+  },
+  {
+    "power_plant_id": 10372,
+    "entsoe_code": "40X000000010372N",
+    "plant_name": "ACWA GÜÇ ELEKTRİK İŞLETME VE YÖNETİM SAN. VE TİC. A.Ş.",
+    "short_name": "ACWA"
+  },
+  {
+    "power_plant_id": 11810,
+    "entsoe_code": "40X000000011810K",
+    "plant_name": "ADAPAZARI ELEKTRİK ÜRETİM LİMİTED ŞİRKETİ",
+    "short_name": "ADAPAZARI"
+  },
+  {
+    "power_plant_id": 393,
+    "entsoe_code": "40X000000000393L",
+    "plant_name": "ADM BESİN VE TARIM A.Ş.",
+    "short_name": "ADM"
+  },
+  {
+    "power_plant_id": 4649,
+    "entsoe_code": "40X000000004649T",
+    "plant_name": "ADV ELEKTRİK ÜRETİM LTD.ŞTİ.",
+    "short_name": "ADV"
+  },
+  {
+    "power_plant_id": 18019,
+    "entsoe_code": "40X100000018019N",
+    "plant_name": "ADV ELEKTRİK ÜRETİM LTD.ŞTİ. URTMKTGR1",
+    "short_name": "ADVKTGR1"
+  },
+  {
+    "power_plant_id": 11133,
+    "entsoe_code": "40X100000011133N",
+    "plant_name": "AFJET AFYON JEOTERMAL ELEKTRİK ÜRETİM TESİSLERİ TUR. SAN. TİC. A.Ş.",
+    "short_name": "AFJET"
+  },
+  {
+    "power_plant_id": 12377,
+    "entsoe_code": "40X0000000123773",
+    "plant_name": "AFTA ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "AFTA"
+  },
+  {
+    "power_plant_id": 8041,
+    "entsoe_code": "40X000000008041C",
+    "plant_name": "AFYON ENERJİ VE GÜBRE ÜRETİM TİC. VE SAN. A.Ş.",
+    "short_name": "AFYON ENG"
+  },
+  {
+    "power_plant_id": 4510,
+    "entsoe_code": "40X000000004510N",
+    "plant_name": "AGE ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "AGE DENİZL"
+  },
+  {
+    "power_plant_id": 9489,
+    "entsoe_code": "40X0000000094890",
+    "plant_name": "AGMAN OVACIK BİYOKÜTLE ENERJİ A.Ş.",
+    "short_name": "AGMAN"
+  },
+  {
+    "power_plant_id": 13237,
+    "entsoe_code": "40X000000013237E",
+    "plant_name": "AGT ENERJİ A.Ş.",
+    "short_name": "AGT"
+  },
+  {
+    "power_plant_id": 8901,
+    "entsoe_code": "40X000000008901P",
+    "plant_name": "AHEM ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "AHEM"
+  },
+  {
+    "power_plant_id": 17279,
+    "entsoe_code": "40X000000017279F",
+    "plant_name": "AHLAT GERİ DÖNÜŞÜM ENERJİ ANONİM ŞİRKETİ",
+    "short_name": "AHLAT"
+  },
+  {
+    "power_plant_id": 10354,
+    "entsoe_code": "40X000000010354P",
+    "plant_name": "AHMETLİ HES ELEKTRİK ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "AHMETLİHES"
+  },
+  {
+    "power_plant_id": 102000,
+    "entsoe_code": "40X000000102000C",
+    "plant_name": "AKAL İPLİK TEKSTİL SAN. VE TİC. A.Ş.",
+    "short_name": "AKAL"
+  },
+  {
+    "power_plant_id": 11653,
+    "entsoe_code": "40X000000011653A",
+    "plant_name": "AKARE BİYOKÜTLE ENERJİ ÜRETİM A.Ş.",
+    "short_name": "AKARE"
+  },
+  {
+    "power_plant_id": 242,
+    "entsoe_code": "40X0000000002425",
+    "plant_name": "AKBAŞLAR TEKSTİL ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "AKBAŞLAR"
+  },
+  {
+    "power_plant_id": 5657,
+    "entsoe_code": "40X000000005657P",
+    "plant_name": "AKDENİZLİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "AKDENİZLİ"
+  },
+  {
+    "power_plant_id": 166,
+    "entsoe_code": "40X000000000166W",
+    "plant_name": "AKENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "AKENRJİ"
+  },
+  {
+    "power_plant_id": 9631,
+    "entsoe_code": "40X000000009631N",
+    "plant_name": "AKENES ENERJİ ELEKTRİK ÜRETİM İNŞ. VE TAAH. SAN. TİC. A.Ş.",
+    "short_name": "AKENES"
+  },
+  {
+    "power_plant_id": 4571,
+    "entsoe_code": "40X0000000045713",
+    "plant_name": "AKGÜN ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "AKGÜN"
+  },
+  {
+    "power_plant_id": 146,
+    "entsoe_code": "40X0000000001461",
+    "plant_name": "AKIN TEKSTİL A.Ş.",
+    "short_name": "AKIN"
+  },
+  {
+    "power_plant_id": 10373,
+    "entsoe_code": "40X000000010373L",
+    "plant_name": "AKINCI ELEKTRİK ÜRETİM ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "AKINCI"
+  },
+  {
+    "power_plant_id": 14519,
+    "entsoe_code": "40X100000014519N",
+    "plant_name": "AKIŞ ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "AKIŞ"
+  },
+  {
+    "power_plant_id": 6078,
+    "entsoe_code": "40X100000006078N",
+    "plant_name": "AKKOÇ ELEKTRİK ÜRETİM LTD.ŞTİ",
+    "short_name": "AKKOÇ"
+  },
+  {
+    "power_plant_id": 103960,
+    "entsoe_code": "40X000000103960R",
+    "plant_name": "AKKUŞ MİMARLIK İNŞAAT TURİZM SAN. VE TİC. A.Ş.",
+    "short_name": "AKKUŞ"
+  },
+  {
+    "power_plant_id": 511,
+    "entsoe_code": "40X0000000005114",
+    "plant_name": "AKKÖY ENERJİ A.Ş.",
+    "short_name": "AKKÖY"
+  },
+  {
+    "power_plant_id": 17499,
+    "entsoe_code": "40X0000000174991",
+    "plant_name": "AKODA ENERJİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "AKODA"
+  },
+  {
+    "power_plant_id": 9650,
+    "entsoe_code": "40X000000009650J",
+    "plant_name": "AKPINAR ENERJİ ÜRETİM SAN.VE TİC. A.Ş",
+    "short_name": "AKPINAR"
+  },
+  {
+    "power_plant_id": 103261,
+    "entsoe_code": "40X000000103261G",
+    "plant_name": "AKSA DENGELEME VE ENERJİ YÖNETİMİ A.Ş. (TOPLAYICI)",
+    "short_name": "AKSA DENGELEME TOPLAYICI"
+  },
+  {
+    "power_plant_id": 396,
+    "entsoe_code": "40X000000000396F",
+    "plant_name": "AKSA ENERJİ ÜRETİM A.Ş.",
+    "short_name": "AKSA EÜ"
+  },
+  {
+    "power_plant_id": 9162,
+    "entsoe_code": "40X000000009162W",
+    "plant_name": "AKSA GÖYNÜK ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "AKSAGÖYNÜK"
+  },
+  {
+    "power_plant_id": 105602,
+    "entsoe_code": "40X0000001056026",
+    "plant_name": "AKSA YENİLENEBİLİR ENERJİ ÜRETİM A.Ş. ( ÜRETİM )",
+    "short_name": "AKSA YENİLENEBİLİR ÜRETİM"
+  },
+  {
+    "power_plant_id": 104360,
+    "entsoe_code": "40X0000001043609",
+    "plant_name": "AKSET ENERJİ ÜRETİM A.Ş.",
+    "short_name": "AKSET"
+  },
+  {
+    "power_plant_id": 4449,
+    "entsoe_code": "40X0000000044490",
+    "plant_name": "AKSU MADENCİLİK SAN. VE ELEKTRİK ÜRETİM TİC. A.Ş.",
+    "short_name": "AKSU"
+  },
+  {
+    "power_plant_id": 5009,
+    "entsoe_code": "40X000000005009N",
+    "plant_name": "AKSU TEMİZ ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "AKSUTEMİZ"
+  },
+  {
+    "power_plant_id": 104522,
+    "entsoe_code": "40X0000001045229",
+    "plant_name": "AKTOR TOPLAYICILIK VE ENERJİ YÖNETİMİ A.Ş. (TOPLAYICI)",
+    "short_name": "AKTOR TOPLAYICI"
+  },
+  {
+    "power_plant_id": 497,
+    "entsoe_code": "40X0000000004979",
+    "plant_name": "AKUA ENERJİ ÜRETİM VE PAZARLAMA SAN. VE TİC. A.Ş.",
+    "short_name": "AKUA EÜ"
+  },
+  {
+    "power_plant_id": 17282,
+    "entsoe_code": "40X000000017282Q",
+    "plant_name": "AKYURT ELEKTRİK SANAYİ VE TİCARET A.Ş.",
+    "short_name": "AKYURT ENE"
+  },
+  {
+    "power_plant_id": 10898,
+    "entsoe_code": "40X000000010898M",
+    "plant_name": "AKÇANSA ÇİMENTO SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "AKÇANSA"
+  },
+  {
+    "power_plant_id": 11261,
+    "entsoe_code": "40X000000011261R",
+    "plant_name": "AKŞAR NAZAR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "AKŞAR"
+  },
+  {
+    "power_plant_id": 6619,
+    "entsoe_code": "40X000000006619S",
+    "plant_name": "AL-YEL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "AL-YEL"
+  },
+  {
+    "power_plant_id": 15060,
+    "entsoe_code": "40X000000015060H",
+    "plant_name": "ALBEDO BS ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ALBEDO"
+  },
+  {
+    "power_plant_id": 11174,
+    "entsoe_code": "40X000000011174M",
+    "plant_name": "ALBİOMA KUYUCAK JEOTERMAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KUYUCAK"
+  },
+  {
+    "power_plant_id": 104942,
+    "entsoe_code": "40X000000104942O",
+    "plant_name": "ALCEN ENERJİ TOPLAYICILIK A.Ş. (TOPLAYICI)",
+    "short_name": "ALCEN TOPLAYICI"
+  },
+  {
+    "power_plant_id": 3847,
+    "entsoe_code": "40X000000003847U",
+    "plant_name": "ALDAŞ ALTYAPI YÖNETİM DANIŞMANLIK ELEKTRİK ENERJİSİ ÜRETİM HİZMETLERİ İNŞAAT TAAHHÜT SAN. VE TİC. A.Ş.",
+    "short_name": "ALDAŞ"
+  },
+  {
+    "power_plant_id": 5754,
+    "entsoe_code": "40X000000005754R",
+    "plant_name": "ALES ELEKTRİK ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "ALES"
+  },
+  {
+    "power_plant_id": 269,
+    "entsoe_code": "40X000000000269M",
+    "plant_name": "ALKİM KAĞIT SANAYİ VE TİC. A.Ş.",
+    "short_name": "ALKIMKAGIT"
+  },
+  {
+    "power_plant_id": 7325,
+    "entsoe_code": "40X0000000073253",
+    "plant_name": "ALPEREN ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ALPEREN"
+  },
+  {
+    "power_plant_id": 341,
+    "entsoe_code": "40X0000000003413",
+    "plant_name": "ALTEK ALARKO ELEKTRİK SANTRALLARI TESİS İŞLETME VE TİCARET A.Ş.",
+    "short_name": "ALTEK-ALAR"
+  },
+  {
+    "power_plant_id": 1944,
+    "entsoe_code": "40X0000000019445",
+    "plant_name": "ALTINMARKA GIDA SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "ALTNMARK"
+  },
+  {
+    "power_plant_id": 361,
+    "entsoe_code": "40X000000000361Y",
+    "plant_name": "ALİZE ENERJİ ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "ALİZE"
+  },
+  {
+    "power_plant_id": 12397,
+    "entsoe_code": "40X000000012397Y",
+    "plant_name": "AMBARLIK ELEKTRİK ÜRETİM SAN. VE TİC A.Ş",
+    "short_name": "AMBARLIK"
+  },
+  {
+    "power_plant_id": 6579,
+    "entsoe_code": "40X000000006579E",
+    "plant_name": "ANADOLU İPLİK VE TEKSTİL FABRİKALARI SANAYİ A.Ş.",
+    "short_name": "A.İPLİK"
+  },
+  {
+    "power_plant_id": 15459,
+    "entsoe_code": "40X000000015459N",
+    "plant_name": "ANAHTAR ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "ANAHTAR"
+  },
+  {
+    "power_plant_id": 3526,
+    "entsoe_code": "40X000000003526D",
+    "plant_name": "ANG ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ANG"
+  },
+  {
+    "power_plant_id": 17259,
+    "entsoe_code": "40X000000017259L",
+    "plant_name": "ARAKLI ELEKTRİK ÜRETİM VE İNŞAAT A.Ş.",
+    "short_name": "ARAKLI"
+  },
+  {
+    "power_plant_id": 20580,
+    "entsoe_code": "40X000000020580A",
+    "plant_name": "ARB RÜZGAR ENERJI ANONIM ŞIRKETI",
+    "short_name": "ARB RÜZGAR"
+  },
+  {
+    "power_plant_id": 102381,
+    "entsoe_code": "40X000000102381B",
+    "plant_name": "ARBAN ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ARBAN"
+  },
+  {
+    "power_plant_id": 10332,
+    "entsoe_code": "40X000000010332Z",
+    "plant_name": "AREL YENİLENEBİLİR ENERJİ TEKNOLOJİLERİ VE ELEKTRİK ÜRETİM LTD. ŞTİ.",
+    "short_name": "AREL Y."
+  },
+  {
+    "power_plant_id": 5470,
+    "entsoe_code": "40X0000000054704",
+    "plant_name": "AREL ÇEVRE YATIRIMLARI ENERJİ VE ELEKTRİK ÜRETİMİ A.Ş.",
+    "short_name": "AREL"
+  },
+  {
+    "power_plant_id": 11767,
+    "entsoe_code": "40X000000011767W",
+    "plant_name": "ARF BİO YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ARF"
+  },
+  {
+    "power_plant_id": 11756,
+    "entsoe_code": "40X0000000117560",
+    "plant_name": "ARI EN ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ARIEN"
+  },
+  {
+    "power_plant_id": 4830,
+    "entsoe_code": "40X0000000048305",
+    "plant_name": "ARIK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ARIK"
+  },
+  {
+    "power_plant_id": 9610,
+    "entsoe_code": "40X000000009610V",
+    "plant_name": "ARIKAN MENSUCAT SAN. VE TİC. A.Ş.",
+    "short_name": "ARIKAN"
+  },
+  {
+    "power_plant_id": 4792,
+    "entsoe_code": "40X000000004792O",
+    "plant_name": "ARMAHES ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ARMAHES"
+  },
+  {
+    "power_plant_id": 102580,
+    "entsoe_code": "40X0000001025805",
+    "plant_name": "ARMAHES ELEKTRİK ÜRETİM A.Ş. URTMKTGR2",
+    "short_name": "ARMAHESKTGR2"
+  },
+  {
+    "power_plant_id": 17401,
+    "entsoe_code": "40X0000000174017",
+    "plant_name": "ARMATEC ENERJİ VE İNŞAAT LİMİTED ŞİRKETİ",
+    "short_name": "ARMATEC"
+  },
+  {
+    "power_plant_id": 6319,
+    "entsoe_code": "40X0000000063193",
+    "plant_name": "ARSAN DOKUMA BOYA SANAYİ VE TİCARET A.Ş.",
+    "short_name": "ARSAN D."
+  },
+  {
+    "power_plant_id": 17521,
+    "entsoe_code": "40X000000017521Y",
+    "plant_name": "ARTEN BİYOENERJİ SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "ARTEN"
+  },
+  {
+    "power_plant_id": 8861,
+    "entsoe_code": "40X000000008861B",
+    "plant_name": "ARTIDEĞER ENERJİ MÜHENDİSLİK KİMYA MEDİKAL VE GIDA MADDELERİ SAN. TİC. A.Ş.",
+    "short_name": "ARTIDEĞER"
+  },
+  {
+    "power_plant_id": 11533,
+    "entsoe_code": "40X000000011533K",
+    "plant_name": "ARİA TEKNOLOJİK YATIRIMLAR A.Ş.",
+    "short_name": "ARİA"
+  },
+  {
+    "power_plant_id": 7020,
+    "entsoe_code": "40X000000007020P",
+    "plant_name": "ASLANCIK ELEKTRİK ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "ASLANCIK"
+  },
+  {
+    "power_plant_id": 11775,
+    "entsoe_code": "40X000000011775X",
+    "plant_name": "ASMAR ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "ASMAR"
+  },
+  {
+    "power_plant_id": 9674,
+    "entsoe_code": "40X0000000096745",
+    "plant_name": "ASSAN ALÜMİNYUM SANAYİ VE TİCARET A.Ş",
+    "short_name": "ASSAN"
+  },
+  {
+    "power_plant_id": 15081,
+    "entsoe_code": "40X0000000150819",
+    "plant_name": "ASYA BİYOGAZ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ASYABIYGAZ"
+  },
+  {
+    "power_plant_id": 6859,
+    "entsoe_code": "40X0000000068598",
+    "plant_name": "ATABEY ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "ATABEY"
+  },
+  {
+    "power_plant_id": 14840,
+    "entsoe_code": "40X000000014840X",
+    "plant_name": "ATAKALERES ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ATAKALERES"
+  },
+  {
+    "power_plant_id": 103760,
+    "entsoe_code": "40X000000103760Z",
+    "plant_name": "ATAM ENERJİ ÜRETİM A.Ş. (TOPLAYICI)",
+    "short_name": "ATAM TOPLAYICI"
+  },
+  {
+    "power_plant_id": 17286,
+    "entsoe_code": "40X000000017286I",
+    "plant_name": "ATASEVEN ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ATASEVEN"
+  },
+  {
+    "power_plant_id": 8247,
+    "entsoe_code": "40X000000008247T",
+    "plant_name": "ATE ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "ATE ENERJİ"
+  },
+  {
+    "power_plant_id": 614,
+    "entsoe_code": "40X000000000614V",
+    "plant_name": "ATIK PASHA TURIZM",
+    "short_name": "ATİK"
+  },
+  {
+    "power_plant_id": 15639,
+    "entsoe_code": "40X000000015639L",
+    "plant_name": "ATIK ÇEVRE TEKNOLOJİLERİ İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "ATIK ÇEVRE"
+  },
+  {
+    "power_plant_id": 18559,
+    "entsoe_code": "40X0000000185594",
+    "plant_name": "ATLAS BIYOGAZ ELEKTRIK A.Ş.",
+    "short_name": "ATLASBYGZ"
+  },
+  {
+    "power_plant_id": 7639,
+    "entsoe_code": "40X000000007639H",
+    "plant_name": "ATLAS ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ATLAS EN."
+  },
+  {
+    "power_plant_id": 10376,
+    "entsoe_code": "40X000000010376F",
+    "plant_name": "ATLAS İNŞAAT SAN VE TİC.LTD.ŞTİ.",
+    "short_name": "ATLAS İNŞ."
+  },
+  {
+    "power_plant_id": 11806,
+    "entsoe_code": "40X000000011806B",
+    "plant_name": "ATLAS İNŞAAT SAN. VE TİC. LTD. ŞTİ. URTMKTGR3",
+    "short_name": "ATLASKTGR3"
+  },
+  {
+    "power_plant_id": 10338,
+    "entsoe_code": "40X000000010338N",
+    "plant_name": "ATYA ELEKTRİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ATYA"
+  },
+  {
+    "power_plant_id": 5410,
+    "entsoe_code": "40X000000005410M",
+    "plant_name": "AVCILAR ENERJİ ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "AVCILAR"
+  },
+  {
+    "power_plant_id": 5189,
+    "entsoe_code": "40X000000005189W",
+    "plant_name": "AYCAN ENERJİ ÜRETİM TİC. VE SAN. A.Ş.",
+    "short_name": "AYCAN"
+  },
+  {
+    "power_plant_id": 108,
+    "entsoe_code": "40X0000000001089",
+    "plant_name": "AYDEM YENİLENEBİLİR ENERJİ ANONİM ŞİRKETİ",
+    "short_name": "AYDEM"
+  },
+  {
+    "power_plant_id": 204,
+    "entsoe_code": "40X000000000204D",
+    "plant_name": "AYDIN ÖRME SAN. VE TİC. A.Ş.",
+    "short_name": "AYDIN ÖRME"
+  },
+  {
+    "power_plant_id": 105542,
+    "entsoe_code": "40X000000105542Z",
+    "plant_name": "AYEK ENERJİ ÜRETİM İNŞAAT A.Ş.",
+    "short_name": "AYEK"
+  },
+  {
+    "power_plant_id": 613,
+    "entsoe_code": "40X000000000613X",
+    "plant_name": "AYEN ENERJİ A.Ş.",
+    "short_name": "AYEN"
+  },
+  {
+    "power_plant_id": 111,
+    "entsoe_code": "40X000000000111K",
+    "plant_name": "AYEN OSTİM ENERJİ ÜRETİM  A.Ş.",
+    "short_name": "AYEN OSTİM"
+  },
+  {
+    "power_plant_id": 10412,
+    "entsoe_code": "40X0000000104120",
+    "plant_name": "AİRRES ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "AIRRES"
+  },
+  {
+    "power_plant_id": 7481,
+    "entsoe_code": "40X000000007481Q",
+    "plant_name": "AŞKALE ELEKTRİK ÜRETİM A. Ş.",
+    "short_name": "AŞKALE"
+  },
+  {
+    "power_plant_id": 10976,
+    "entsoe_code": "40X000000010976S",
+    "plant_name": "AŞKALE ÇİMENTO SAN. T.A.Ş.",
+    "short_name": "AŞKALEÇMNT"
+  },
+  {
+    "power_plant_id": 394,
+    "entsoe_code": "40X000000000394J",
+    "plant_name": "BAGFAŞ BANDIRMA GÜBRE FABRİKASI A.Ş.",
+    "short_name": "BAGFAŞ"
+  },
+  {
+    "power_plant_id": 581,
+    "entsoe_code": "40X000000000581K",
+    "plant_name": "BAHÇIVAN GIDA SAN.TİC.VE A.Ş.",
+    "short_name": "BAHÇIVAN"
+  },
+  {
+    "power_plant_id": 574,
+    "entsoe_code": "40X000000000574H",
+    "plant_name": "BAKİ ELEKTRİK ÜRETİM LİMİTED ŞİRKETİ",
+    "short_name": "BAKİELEK"
+  },
+  {
+    "power_plant_id": 4890,
+    "entsoe_code": "40X000000004890O",
+    "plant_name": "BALSUYU MENSUCAT SANAYİ VE TİCARET A.Ş.",
+    "short_name": "BALSUYU"
+  },
+  {
+    "power_plant_id": 6819,
+    "entsoe_code": "40X000000006819K",
+    "plant_name": "BAREN ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "BAREN"
+  },
+  {
+    "power_plant_id": 15541,
+    "entsoe_code": "40X0000000155411",
+    "plant_name": "BARKAN ENERJİ YATIRIM ÜRETİM VE TİC. A.Ş.",
+    "short_name": "BARKAN"
+  },
+  {
+    "power_plant_id": 17040,
+    "entsoe_code": "40X000000017040D",
+    "plant_name": "BARUTÇUOĞLU İNŞAAT SANAYI VE TICARET LTD. ŞTI.",
+    "short_name": "BARUTÇU"
+  },
+  {
+    "power_plant_id": 5149,
+    "entsoe_code": "40X0000000051497",
+    "plant_name": "BATEN ENERJİ ÜRETİMİ A.Ş.",
+    "short_name": "BATEN"
+  },
+  {
+    "power_plant_id": 9321,
+    "entsoe_code": "40X0000000093211",
+    "plant_name": "BATISÖKE SÖKE ÇİMENTO SANAYİİ T.A.Ş.",
+    "short_name": "BATISÖKE"
+  },
+  {
+    "power_plant_id": 9455,
+    "entsoe_code": "40X000000009455H",
+    "plant_name": "BATIÇİM BATI ANADOLU ÇİMENTO SANAYİİ A.Ş",
+    "short_name": "B.BATI AND"
+  },
+  {
+    "power_plant_id": 507,
+    "entsoe_code": "40X000000000507W",
+    "plant_name": "BATIÇİM ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "BATIÇİM"
+  },
+  {
+    "power_plant_id": 638,
+    "entsoe_code": "40X000000000638H",
+    "plant_name": "BAYBURT ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "BAYBURT"
+  },
+  {
+    "power_plant_id": 11816,
+    "entsoe_code": "40X0000000118168",
+    "plant_name": "BAYMİNA ENERJİ A.Ş.",
+    "short_name": "BAYMİNA"
+  },
+  {
+    "power_plant_id": 16382,
+    "entsoe_code": "40X000000016382R",
+    "plant_name": "BAYSAK ENERJİ ÜRETİMİ ULUSLARARASI NAKLİYAT OTOMOTİV VE DIŞ TİC. LTD. ŞTİ.",
+    "short_name": "BAYSAK"
+  },
+  {
+    "power_plant_id": 997,
+    "entsoe_code": "40X000000000997Q",
+    "plant_name": "BELEN ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "BELEN"
+  },
+  {
+    "power_plant_id": 17940,
+    "entsoe_code": "40X000000017940E",
+    "plant_name": "BEMKA ENERJİ A.Ş.",
+    "short_name": "BEMKA"
+  },
+  {
+    "power_plant_id": 9888,
+    "entsoe_code": "40X000000009888N",
+    "plant_name": "BERKE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "BERKE"
+  },
+  {
+    "power_plant_id": 11094,
+    "entsoe_code": "40X000000011094K",
+    "plant_name": "BERRAK SU ENERJİ ÜRETİM İNŞAAT VE TİC A.Ş.",
+    "short_name": "BERRAKSU"
+  },
+  {
+    "power_plant_id": 17339,
+    "entsoe_code": "40X000000017339N",
+    "plant_name": "BERRAKSU ELEKTRIK ÜRETIM A.Ş",
+    "short_name": "BERSU"
+  },
+  {
+    "power_plant_id": 8060,
+    "entsoe_code": "40X0000000080608",
+    "plant_name": "BERTA ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "BERTA"
+  },
+  {
+    "power_plant_id": 17079,
+    "entsoe_code": "40X000000017079N",
+    "plant_name": "BERTA ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "BERTA ENRJ"
+  },
+  {
+    "power_plant_id": 12957,
+    "entsoe_code": "40X000000012957M",
+    "plant_name": "BERİT SU ENERJİ ÜRETİM A.Ş",
+    "short_name": "BERİT SU"
+  },
+  {
+    "power_plant_id": 16260,
+    "entsoe_code": "40X0000000162604",
+    "plant_name": "BES BİYOKÜTLE ENERJİ SANTRALİ A.Ş.",
+    "short_name": "BES BİYO"
+  },
+  {
+    "power_plant_id": 15719,
+    "entsoe_code": "40X000000015719N",
+    "plant_name": "BEYAZ PİRAMİT TARIM HAYVANCILIK ENERJİ EĞİTİM VE DANŞMANLIK A.Ş.",
+    "short_name": "BEYAZ PİR"
+  },
+  {
+    "power_plant_id": 5842,
+    "entsoe_code": "40X000000005842U",
+    "plant_name": "BEYBO BOYA SAN. VE TİC. A.Ş.",
+    "short_name": "BEYBO"
+  },
+  {
+    "power_plant_id": 10380,
+    "entsoe_code": "40X000000010380O",
+    "plant_name": "BEŞTEPELER ENERJİ ÜRETİM TİCARET ANONİM ŞİRKETİ",
+    "short_name": "BEŞTEPELER"
+  },
+  {
+    "power_plant_id": 13377,
+    "entsoe_code": "40X000000013377Z",
+    "plant_name": "BK ALTERNATİF ENERJİ ANONİM ŞİRKETİ",
+    "short_name": "BK ENERJİ"
+  },
+  {
+    "power_plant_id": 7041,
+    "entsoe_code": "40X000000007041H",
+    "plant_name": "BND ELEKTRIK ÜRETIM A.Ş.",
+    "short_name": "BND"
+  },
+  {
+    "power_plant_id": 15200,
+    "entsoe_code": "40X000000015200R",
+    "plant_name": "BOLU GÜÇ BİRLİĞİ ENERJİ YATIRIM A.Ş.",
+    "short_name": "BOLU GÜÇ"
+  },
+  {
+    "power_plant_id": 16380,
+    "entsoe_code": "40X000000016380V",
+    "plant_name": "BOR BİYOKÜTLE ENERJİ YATIRIM A.Ş.",
+    "short_name": "BOR BİO"
+  },
+  {
+    "power_plant_id": 20680,
+    "entsoe_code": "40X0000000206806",
+    "plant_name": "BORUSAN ENBW ENERJİ YATIRIMLARI VE ÜRETİM A.Ş.",
+    "short_name": "BORUSAN"
+  },
+  {
+    "power_plant_id": 10329,
+    "entsoe_code": "40X000000010329O",
+    "plant_name": "BOYUT GRUP ENERJİ ELEKTRİK ÜRETİM İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "BOYUT_ENR"
+  },
+  {
+    "power_plant_id": 4148,
+    "entsoe_code": "40X000000004148E",
+    "plant_name": "BTA ELEKTRİK ENERJİ ÜRETİM İNŞ. SAN. VE TİC.A.Ş.",
+    "short_name": "BTA"
+  },
+  {
+    "power_plant_id": 5901,
+    "entsoe_code": "40X0000000059013",
+    "plant_name": "BUCAK YENİLENEBİLİR ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "BUCAK"
+  },
+  {
+    "power_plant_id": 10813,
+    "entsoe_code": "40X000000010813J",
+    "plant_name": "BULUT ENERJİ ÜRETİM İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "BULUT"
+  },
+  {
+    "power_plant_id": 18641,
+    "entsoe_code": "40X000000018641J",
+    "plant_name": "BURDUR YENİLENEBİLİR ENERJİ VE ENTEGRE ATIK YÖNETİMİ LTD. ŞTİ.",
+    "short_name": "BURDUR YEN"
+  },
+  {
+    "power_plant_id": 18642,
+    "entsoe_code": "40X000000018642H",
+    "plant_name": "BURDUR YENİLENEBİLİR ENERJİ VE ENTEGRE ATIK YÖNETİMİ LTD. ŞTİ. URTMKTGR1",
+    "short_name": "BRDRKTGR1"
+  },
+  {
+    "power_plant_id": 10895,
+    "entsoe_code": "40X000000010895S",
+    "plant_name": "BURSA ÇİMENTO FABRİKASI A.Ş.",
+    "short_name": "BURSA_ÇMNT"
+  },
+  {
+    "power_plant_id": 12218,
+    "entsoe_code": "40X000000012218N",
+    "plant_name": "BYZ GLOBAL ENERJİ VE GÜBRE ÜRETİMİ SANAYİ TİCARET A.Ş.",
+    "short_name": "BYZ"
+  },
+  {
+    "power_plant_id": 7102,
+    "entsoe_code": "40X000000007102N",
+    "plant_name": "BÜKKÖY MADENCİLİK TURİZM İNŞAAT ELEKTRİK ÜRETİM SAN. TİC. A.Ş.",
+    "short_name": "BÜKKÖY"
+  },
+  {
+    "power_plant_id": 17424,
+    "entsoe_code": "40X000000017424W",
+    "plant_name": "BÜYÜK ŞİŞMANLAR YUMURTA VE GIDA MADDELERİ TİC. LTD. ŞTİ.",
+    "short_name": "BÜYÜK ŞİŞ"
+  },
+  {
+    "power_plant_id": 7079,
+    "entsoe_code": "40X000000007079T",
+    "plant_name": "BİFA BISKÜVİ VE GIDA SANAYİ A.Ş.",
+    "short_name": "BİFA"
+  },
+  {
+    "power_plant_id": 18239,
+    "entsoe_code": "40X000000018239M",
+    "plant_name": "BİGAN YENİLENEBİLİR ENERJİ A.Ş.",
+    "short_name": "BİGAN"
+  },
+  {
+    "power_plant_id": 331,
+    "entsoe_code": "40X0000000003316",
+    "plant_name": "BİLENERJİ BİLKENT ENERJİ ÜRETİM SANAYİ VE TİC. A.Ş.",
+    "short_name": "BİLENRJİ"
+  },
+  {
+    "power_plant_id": 294,
+    "entsoe_code": "40X000000000294N",
+    "plant_name": "BİLGİN GÜÇ SANTRALLERİ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "BİLGİN GÜÇ"
+  },
+  {
+    "power_plant_id": 1904,
+    "entsoe_code": "40X000000001904H",
+    "plant_name": "BİLGİN RES ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "BİLGİN RES"
+  },
+  {
+    "power_plant_id": 15500,
+    "entsoe_code": "40X000000015500F",
+    "plant_name": "BİLSEV ENERJİ ÜRETİM VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "BİLSEV"
+  },
+  {
+    "power_plant_id": 14900,
+    "entsoe_code": "40X0000000149004",
+    "plant_name": "BİO KÜTLE ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "BİO KÜTLE"
+  },
+  {
+    "power_plant_id": 14579,
+    "entsoe_code": "40X000000014579I",
+    "plant_name": "BİODEN ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "BİODEN"
+  },
+  {
+    "power_plant_id": 17480,
+    "entsoe_code": "40X000000017480M",
+    "plant_name": "BİOKÜTLE ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "BİOKÜTLE"
+  },
+  {
+    "power_plant_id": 15939,
+    "entsoe_code": "40X0000000159399",
+    "plant_name": "BİOPİR ENERJİ VE ÜRETİM LTD. ŞTİ.",
+    "short_name": "BİOPİR"
+  },
+  {
+    "power_plant_id": 9322,
+    "entsoe_code": "40X100000009322N",
+    "plant_name": "BİOSUN PAMUKOVA KATI ATIK İŞLEME ENERJİ VE ÇEVRE SANAYİ TİCARET ANONİM ŞİRKETİ",
+    "short_name": "BIOSUN"
+  },
+  {
+    "power_plant_id": 17526,
+    "entsoe_code": "40X000000017526O",
+    "plant_name": "BİRLİK ÜRETİM ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "BİRLİK"
+  },
+  {
+    "power_plant_id": 17719,
+    "entsoe_code": "40X000000017719D",
+    "plant_name": "BİYOSAN ENERJİ ÜRETİM DANIŞMANLIK A.Ş.",
+    "short_name": "BİYOSAN"
+  },
+  {
+    "power_plant_id": 157,
+    "entsoe_code": "40X000000000157X",
+    "plant_name": "CAMİŞ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "CAMIS"
+  },
+  {
+    "power_plant_id": 238,
+    "entsoe_code": "40X000000000238X",
+    "plant_name": "CAN TEKSTİL ENTEGRE TESİSLERİ VE TARIM ÜRÜNLERİ SAN. VE TİC. A.Ş.",
+    "short_name": "CAN TEKST."
+  },
+  {
+    "power_plant_id": 11033,
+    "entsoe_code": "40X0000000110333",
+    "plant_name": "CENAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "CNL"
+  },
+  {
+    "power_plant_id": 1964,
+    "entsoe_code": "40X100000001964N",
+    "plant_name": "CENGİZ ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "CENGİZ"
+  },
+  {
+    "power_plant_id": 6159,
+    "entsoe_code": "40X100000006159N",
+    "plant_name": "CESE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "CESE"
+  },
+  {
+    "power_plant_id": 1804,
+    "entsoe_code": "40X000000001804L",
+    "plant_name": "CEV ENERJİ ÜRETİM SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "CEV.ENR"
+  },
+  {
+    "power_plant_id": 4749,
+    "entsoe_code": "40X000000004749P",
+    "plant_name": "CEV MARMARA ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "CEVMARMARA"
+  },
+  {
+    "power_plant_id": 17159,
+    "entsoe_code": "40X000000017159P",
+    "plant_name": "CEYDURU ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "CEYDURU"
+  },
+  {
+    "power_plant_id": 617,
+    "entsoe_code": "40X000000000617P",
+    "plant_name": "CEYKAR ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "CEYKAR"
+  },
+  {
+    "power_plant_id": 12357,
+    "entsoe_code": "40X0000000123579",
+    "plant_name": "CHARGE ENERJİ ELEKTRİK ÜRETİM TİC. A.Ş.",
+    "short_name": "CHARGE"
+  },
+  {
+    "power_plant_id": 17319,
+    "entsoe_code": "40X000000017319T",
+    "plant_name": "COD ENERJİ ÜRETİM SAN. TİC. A.Ş.",
+    "short_name": "COD"
+  },
+  {
+    "power_plant_id": 17399,
+    "entsoe_code": "40X0000000173995",
+    "plant_name": "DAFNE ELEKTRİK ÜRETİM LTD. ŞTİ.",
+    "short_name": "DAFNE"
+  },
+  {
+    "power_plant_id": 577,
+    "entsoe_code": "40X000000000577B",
+    "plant_name": "DARENHES ELEKTRİK ÜRETİMİ A.Ş.",
+    "short_name": "DARENHES"
+  },
+  {
+    "power_plant_id": 19181,
+    "entsoe_code": "40X000000019181M",
+    "plant_name": "DARK ENERJİ ÜRETİM TİCARET A.Ş.",
+    "short_name": "DARK"
+  },
+  {
+    "power_plant_id": 4989,
+    "entsoe_code": "40X0000000049895",
+    "plant_name": "DEDEGÖL ENERJİ YATIRIM A.Ş.",
+    "short_name": "DEDEGÖL"
+  },
+  {
+    "power_plant_id": 584,
+    "entsoe_code": "40X000000000584E",
+    "plant_name": "DELTA ENERJI ÜRETIM VE TIC. A.Ş.",
+    "short_name": "DELTA ENER"
+  },
+  {
+    "power_plant_id": 13277,
+    "entsoe_code": "40X0000000132772",
+    "plant_name": "DEMİR RES MÜHENDİSLİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "DEMİRRES"
+  },
+  {
+    "power_plant_id": 8248,
+    "entsoe_code": "40X000000008248R",
+    "plant_name": "DEMİRCİ ENERJİ YATIRIM ÜRETİM İNŞAAT VE TİCARET A.Ş.",
+    "short_name": "DEMİRCİ"
+  },
+  {
+    "power_plant_id": 16619,
+    "entsoe_code": "40X000000016619M",
+    "plant_name": "DENİZLİ BİYOGAZ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "DNZLBYGZ"
+  },
+  {
+    "power_plant_id": 674,
+    "entsoe_code": "40X000000000674D",
+    "plant_name": "DENİZLİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "DEUAS"
+  },
+  {
+    "power_plant_id": 11918,
+    "entsoe_code": "40X0000000119180",
+    "plant_name": "DERBENT ENERJİ ÜRETİM PAZARLAMA İTHALAT VE İHRACAT A.Ş.",
+    "short_name": "DERBENT"
+  },
+  {
+    "power_plant_id": 6759,
+    "entsoe_code": "40X000000006759C",
+    "plant_name": "DEREBAŞI ENERJİ A.Ş.",
+    "short_name": "DEREBAŞI"
+  },
+  {
+    "power_plant_id": 7260,
+    "entsoe_code": "40X0000000072605",
+    "plant_name": "DEREMEN ENERJİ ELEKTRİK ÜRETİM  SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "DEREMEN"
+  },
+  {
+    "power_plant_id": 6145,
+    "entsoe_code": "40X000000006145A",
+    "plant_name": "DERYA ELEKTRİK ÜRETİMİ VE TİCARET A.Ş.",
+    "short_name": "DERYA"
+  },
+  {
+    "power_plant_id": 234,
+    "entsoe_code": "40X0000000002344",
+    "plant_name": "DESA ENERJİ ELEKTRİK ÜRETİM A.Ş. ( ÜRETİM )",
+    "short_name": "DESA ÜRETİM"
+  },
+  {
+    "power_plant_id": 16259,
+    "entsoe_code": "40X000000016259Q",
+    "plant_name": "DEĞİRMENYANI ENERJİ ÜRETİM VE TİC. A.Ş.",
+    "short_name": "DEĞİRMENY"
+  },
+  {
+    "power_plant_id": 488,
+    "entsoe_code": "40X000000000488A",
+    "plant_name": "DEĞİRMENÜSTÜ ENERJİ ÜRETİM TİCARET VE SANAYİ A.Ş.",
+    "short_name": "DEĞİRMEN"
+  },
+  {
+    "power_plant_id": 17321,
+    "entsoe_code": "40X0000000173215",
+    "plant_name": "DHARMA ENERJİ TARIM VE HAYVANCILIK TİC. A.Ş.",
+    "short_name": "DHARMA"
+  },
+  {
+    "power_plant_id": 6780,
+    "entsoe_code": "40X000000006780L",
+    "plant_name": "DOKUBOY DOKUMACILAR TEKSTİL MADENCİLİK SAN.VE TİC.A.Ş.",
+    "short_name": "DOKUBOY"
+  },
+  {
+    "power_plant_id": 20401,
+    "entsoe_code": "40X100000020401N",
+    "plant_name": "DORUK MADENCİLİK VE ELEKTRİK ÜRETİM SAN. TİC. A.Ş.",
+    "short_name": "DORUK MDN"
+  },
+  {
+    "power_plant_id": 459,
+    "entsoe_code": "40X000000000459H",
+    "plant_name": "DOĞAL ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "DOĞAL EÜ"
+  },
+  {
+    "power_plant_id": 10452,
+    "entsoe_code": "40X000000010452P",
+    "plant_name": "DOĞU STAR ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "DOĞUSTAR"
+  },
+  {
+    "power_plant_id": 16561,
+    "entsoe_code": "40X000000016561R",
+    "plant_name": "DOĞU STAR ELEKTRİK ÜRETİM A.Ş. URTMKTGR1",
+    "short_name": "DGSTRKTGR1"
+  },
+  {
+    "power_plant_id": 18539,
+    "entsoe_code": "40X000000018539A",
+    "plant_name": "DOĞU STAR ELEKTRİK ÜRETİM A.Ş. URTMKTGR2",
+    "short_name": "DGSTRKTGR2"
+  },
+  {
+    "power_plant_id": 990,
+    "entsoe_code": "40X0000000009903",
+    "plant_name": "DOĞUBAY ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "DOĞUBAY"
+  },
+  {
+    "power_plant_id": 9422,
+    "entsoe_code": "40X000000009422W",
+    "plant_name": "DOĞUŞ ENERJİ ÜRETİM VE TİC. A.Ş.",
+    "short_name": "DOĞUŞ-EÜ"
+  },
+  {
+    "power_plant_id": 20360,
+    "entsoe_code": "40X000000020360O",
+    "plant_name": "DOĞUŞ ÇAY VE GIDA MADDELERİ ÜRETİM PAZARLAMA İTHALAT İHRACAT A.Ş.",
+    "short_name": "DOĞUŞ ÇAY"
+  },
+  {
+    "power_plant_id": 5269,
+    "entsoe_code": "40X000000005269Y",
+    "plant_name": "DU ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "DUELEKTRİK"
+  },
+  {
+    "power_plant_id": 4030,
+    "entsoe_code": "40X0000000040300",
+    "plant_name": "DURUCASU ELEKTRİK ÜRETİM LTD.ŞTİ.",
+    "short_name": "DURUCA"
+  },
+  {
+    "power_plant_id": 5798,
+    "entsoe_code": "40X0000000057987",
+    "plant_name": "DURUM GIDA SANAYİ VE TİCARET A.Ş.",
+    "short_name": "DURUM GIDA"
+  },
+  {
+    "power_plant_id": 612,
+    "entsoe_code": "40X000000000612Z",
+    "plant_name": "DÜZCE ENERJİ BİRLİĞİ İMALAT İŞL. SAN. VE TİC. A.Ş.",
+    "short_name": "DÜZCE ENJ."
+  },
+  {
+    "power_plant_id": 9660,
+    "entsoe_code": "40X000000009660G",
+    "plant_name": "DÜZHAN ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "DÜZHAN"
+  },
+  {
+    "power_plant_id": 2184,
+    "entsoe_code": "40X000000002184K",
+    "plant_name": "DİLER ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "DİLER"
+  },
+  {
+    "power_plant_id": 10337,
+    "entsoe_code": "40X000000010337P",
+    "plant_name": "DİNAMİK HİDROELEKTRİK SANTRALİ ENERJİ YATIRIMLARI ELEKTRİK ÜRETİMİ A.Ş.",
+    "short_name": "DİNAMİKHES"
+  },
+  {
+    "power_plant_id": 13659,
+    "entsoe_code": "40X000000013659P",
+    "plant_name": "DİNAR BİYOGAZ ENERJİ ÜRETİMİ SAN. VE TİC. A.Ş.",
+    "short_name": "DİNAR BİYO"
+  },
+  {
+    "power_plant_id": 5635,
+    "entsoe_code": "40X000000005635Z",
+    "plant_name": "DİZ-EP ELEKTRİK ÜRETİM LİMİTED ŞİRKETİ",
+    "short_name": "DİZ-EP"
+  },
+  {
+    "power_plant_id": 3406,
+    "entsoe_code": "40X000000003406N",
+    "plant_name": "EBD ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "EBD"
+  },
+  {
+    "power_plant_id": 16059,
+    "entsoe_code": "40X000000016059Y",
+    "plant_name": "EBY ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "EBY"
+  },
+  {
+    "power_plant_id": 104380,
+    "entsoe_code": "40X0000001043803",
+    "plant_name": "ECO BİO ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "ECO BİO"
+  },
+  {
+    "power_plant_id": 5904,
+    "entsoe_code": "40X000000005904Y",
+    "plant_name": "EFE ENERJİ ELEKTRİK ÜRETİM PAZARLAMA DANIŞMANLIK SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "EFE ENERJİ"
+  },
+  {
+    "power_plant_id": 4910,
+    "entsoe_code": "40X0000000049107",
+    "plant_name": "EGER ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "EGER"
+  },
+  {
+    "power_plant_id": 102704,
+    "entsoe_code": "40X000000102704D",
+    "plant_name": "EKO EN DİDİM ENERJİ ELEKTRİK İMALAT SAN. VE TİC. A.Ş.",
+    "short_name": "EKOENDİDİM"
+  },
+  {
+    "power_plant_id": 17723,
+    "entsoe_code": "40X000000017723M",
+    "plant_name": "EKO EN ENERJİ ELEKTRİK İMALAT SAN. VE TİC. A.Ş.",
+    "short_name": "EKO EN"
+  },
+  {
+    "power_plant_id": 17724,
+    "entsoe_code": "40X000000017724K",
+    "plant_name": "EKO EN ENERJİ ELEKTRİK İMALAT SAN. VE TİC. A.Ş. URTMKTGR1",
+    "short_name": "EKOENKTGR1"
+  },
+  {
+    "power_plant_id": 411,
+    "entsoe_code": "40X0000000004118",
+    "plant_name": "EKOLOJİK ENERJİ A.Ş.",
+    "short_name": "EKOLOJİK"
+  },
+  {
+    "power_plant_id": 21000,
+    "entsoe_code": "40X000000021000C",
+    "plant_name": "EKOLOJİK ENERJİ A.Ş. URTMKTGR1",
+    "short_name": "EKOKTGR1"
+  },
+  {
+    "power_plant_id": 400,
+    "entsoe_code": "40X000000000400D",
+    "plant_name": "EKOTEN TEKSTİL SAN.VE TİC. A.Ş.",
+    "short_name": "EKOTEN"
+  },
+  {
+    "power_plant_id": 4711,
+    "entsoe_code": "40X000000004711D",
+    "plant_name": "EKSİM ENERJİ A.Ş.",
+    "short_name": "EKSİM ÜRTM"
+  },
+  {
+    "power_plant_id": 18380,
+    "entsoe_code": "40X000000018380L",
+    "plant_name": "EKTON ENERJİ ELEKTRİK ÜRETİM VE TİC. A.Ş.",
+    "short_name": "EKTON"
+  },
+  {
+    "power_plant_id": 2665,
+    "entsoe_code": "40X0000000026654",
+    "plant_name": "ELDA ELEKTRİK ÜRETİM LTD.ŞTİ.",
+    "short_name": "ELDA"
+  },
+  {
+    "power_plant_id": 195,
+    "entsoe_code": "40X000000000195P",
+    "plant_name": "ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "EÜAŞ"
+  },
+  {
+    "power_plant_id": 676,
+    "entsoe_code": "40X0000000006769",
+    "plant_name": "ELESTAŞ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ELESTAŞ"
+  },
+  {
+    "power_plant_id": 18921,
+    "entsoe_code": "40X000000018921D",
+    "plant_name": "EMBA ELEKTRIK ÜRETIM A.Ş.",
+    "short_name": "EMBA ÜRTM"
+  },
+  {
+    "power_plant_id": 5777,
+    "entsoe_code": "40X000000005777F",
+    "plant_name": "EMSEY SAĞLIK HİZMETLERİ VE İŞLETMELERİ TURİZM OTELCİLİK TİC. A.Ş.",
+    "short_name": "EMSEY"
+  },
+  {
+    "power_plant_id": 15147,
+    "entsoe_code": "40X0000000151475",
+    "plant_name": "EMİRLER ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "EMİRLER"
+  },
+  {
+    "power_plant_id": 9432,
+    "entsoe_code": "40X000000009432T",
+    "plant_name": "ENERJEO KEMALİYE ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ENERJEO"
+  },
+  {
+    "power_plant_id": 11233,
+    "entsoe_code": "40X000000011233W",
+    "plant_name": "ENERJİ 2023 İNŞAAT ELEKTRİK ÜRETİM TİC. A.Ş.",
+    "short_name": "2023"
+  },
+  {
+    "power_plant_id": 104320,
+    "entsoe_code": "40X000000104320L",
+    "plant_name": "ENERJİSA DOĞAL GAZ TOPTAN SATIS A.Ş. (TOPLAYICI)",
+    "short_name": "ENERJİSA DOĞALGAZ TOPLAYICI"
+  },
+  {
+    "power_plant_id": 282,
+    "entsoe_code": "40X000000000282U",
+    "plant_name": "ENERJİSA ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ENERJİSAEÜ"
+  },
+  {
+    "power_plant_id": 103340,
+    "entsoe_code": "40X000000103340K",
+    "plant_name": "ENERJİSA MÜŞTERİ ÇÖZÜMLERİ A.Ş. (TOPLAYICI)",
+    "short_name": "ENERJİSAMÇ TOPLAYICI"
+  },
+  {
+    "power_plant_id": 4088,
+    "entsoe_code": "40X0000000040886",
+    "plant_name": "ENERKA KALECİK ELEKTRİK ÜRETİM VE PAZARLAMA ANONİM ŞİRKETİ",
+    "short_name": "ENERKA"
+  },
+  {
+    "power_plant_id": 6440,
+    "entsoe_code": "40X0000000064408",
+    "plant_name": "ENERSE ENERJİ ELEKTRİK ÜRETİM İNŞ. MAD. SAN. VE TİC. A.Ş.",
+    "short_name": "ENERSE ÜRETİM"
+  },
+  {
+    "power_plant_id": 2785,
+    "entsoe_code": "40X000000002785V",
+    "plant_name": "ENERSİS ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş",
+    "short_name": "ENERSİS"
+  },
+  {
+    "power_plant_id": 6418,
+    "entsoe_code": "40X0000000064181",
+    "plant_name": "ENFAŞ ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ENFAŞ"
+  },
+  {
+    "power_plant_id": 104000,
+    "entsoe_code": "40X0000001040002",
+    "plant_name": "ENKA KIRKLARELİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ENKAKIRKLARELİ"
+  },
+  {
+    "power_plant_id": 103420,
+    "entsoe_code": "40X000000103420M",
+    "plant_name": "ENKO ENERJİ SAN. VE TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "ENKO TOPLAYICI"
+  },
+  {
+    "power_plant_id": 499,
+    "entsoe_code": "40X0000000004995",
+    "plant_name": "ENOVA ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ENOVA"
+  },
+  {
+    "power_plant_id": 147,
+    "entsoe_code": "40X100000000147N",
+    "plant_name": "ENTEK ELEKTRİK ÜRETİMİ A.Ş.",
+    "short_name": "ENTEK"
+  },
+  {
+    "power_plant_id": 16479,
+    "entsoe_code": "40X000000016479C",
+    "plant_name": "ER İDARE TURİZM İNŞAAT GIDA TEMIZLİK HİZMETLERİ ALIM SAN. VE TİC. A.Ş.",
+    "short_name": "ER İDARE"
+  },
+  {
+    "power_plant_id": 11332,
+    "entsoe_code": "40X000000011332U",
+    "plant_name": "ERA ÇEVRE TEKNOLOJİLERİ A.Ş.",
+    "short_name": "ERA ÇEVRE"
+  },
+  {
+    "power_plant_id": 17541,
+    "entsoe_code": "40X000000017541S",
+    "plant_name": "ERBİR ENERJİ DOĞALGAZ İNŞAAT MADENCİLİK SAN. TİC. LTD. ŞTİ.",
+    "short_name": "ERBİR"
+  },
+  {
+    "power_plant_id": 101040,
+    "entsoe_code": "40X0000001010405",
+    "plant_name": "ERBİR ENERJİ DOĞALGAZ İNŞAAT MADENCİLİK SAN. TİC. LTD. ŞTİ. URTMKTGR1",
+    "short_name": "ERBİRKTGR1"
+  },
+  {
+    "power_plant_id": 17202,
+    "entsoe_code": "40X000000017202D",
+    "plant_name": "ERDEMİR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ERDEMİR"
+  },
+  {
+    "power_plant_id": 603,
+    "entsoe_code": "40X100000000603N",
+    "plant_name": "EREN ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "EREN"
+  },
+  {
+    "power_plant_id": 165,
+    "entsoe_code": "40X000000000165Y",
+    "plant_name": "EREĞLİ DEMİR VE ÇELİK FABRİKALARI T.A.Ş.",
+    "short_name": "EREĞLİ"
+  },
+  {
+    "power_plant_id": 15679,
+    "entsoe_code": "40X0000000156799",
+    "plant_name": "ERGUVAN ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ERGUVAN"
+  },
+  {
+    "power_plant_id": 11642,
+    "entsoe_code": "40X000000011642F",
+    "plant_name": "ERKAR YENİLENEBİLİR ENERJİ A.Ş.",
+    "short_name": "ERKAR"
+  },
+  {
+    "power_plant_id": 103201,
+    "entsoe_code": "40X000000103201Y",
+    "plant_name": "ERKİM ELEKTRİK ENERJİSİ TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "ERKİM TOPLAYICI"
+  },
+  {
+    "power_plant_id": 1002,
+    "entsoe_code": "40X000000001002K",
+    "plant_name": "ERVA ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ERVA"
+  },
+  {
+    "power_plant_id": 101280,
+    "entsoe_code": "40X000000101280M",
+    "plant_name": "ERİŞİM HARİTACILIK İNŞAAT MÜHENDİSLİK MEDİKAL TEMİZLİK ÜRÜNLERİ SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "ERİŞİM"
+  },
+  {
+    "power_plant_id": 6147,
+    "entsoe_code": "40X0000000061476",
+    "plant_name": "ESER ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ESERÜRETİM"
+  },
+  {
+    "power_plant_id": 7739,
+    "entsoe_code": "40X000000007739D",
+    "plant_name": "ESPİYE ELEKTRİK ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "ESPİYE"
+  },
+  {
+    "power_plant_id": 7000,
+    "entsoe_code": "40X000000007000V",
+    "plant_name": "ETKEN ELEKTRİK ÜRETİM LTD. ŞTİ.",
+    "short_name": "ETKEN"
+  },
+  {
+    "power_plant_id": 134,
+    "entsoe_code": "40X0000000001348",
+    "plant_name": "ETİ ALÜMİNYUM AŞ",
+    "short_name": "ETİ ALÜMİN"
+  },
+  {
+    "power_plant_id": 415,
+    "entsoe_code": "40X0000000004150",
+    "plant_name": "ETİ BAKIR A.Ş.",
+    "short_name": "ETİBAKIR"
+  },
+  {
+    "power_plant_id": 10793,
+    "entsoe_code": "40X100000010793N",
+    "plant_name": "ETİ KROM ANONİM ŞİRKETİ",
+    "short_name": "ETİKROM"
+  },
+  {
+    "power_plant_id": 332,
+    "entsoe_code": "40X0000000003324",
+    "plant_name": "ETİ MADEN İŞLETMELERİ GENEL MÜDÜRLÜĞÜ",
+    "short_name": "ETİ MADEN"
+  },
+  {
+    "power_plant_id": 593,
+    "entsoe_code": "40X000000000593D",
+    "plant_name": "ETİ SODA  ÜRETİM PAZ. NAK. VE ELK. ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "ETİ SODA"
+  },
+  {
+    "power_plant_id": 15039,
+    "entsoe_code": "40X0000000150398",
+    "plant_name": "EVRENCİK RÜZGAR ENERJİSİNDEN ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "EVRENCİK"
+  },
+  {
+    "power_plant_id": 3165,
+    "entsoe_code": "40X000000003165J",
+    "plant_name": "EY DOĞAL ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "EYDOĞAL"
+  },
+  {
+    "power_plant_id": 14080,
+    "entsoe_code": "40X000000014080G",
+    "plant_name": "EYD ENERJİ YATIRIM DANIŞMANLIK TİC. A.Ş.",
+    "short_name": "EYD"
+  },
+  {
+    "power_plant_id": 9749,
+    "entsoe_code": "40X0000000097490",
+    "plant_name": "EĞIN ENERJİ ÜRETİM AĞAÇLANDIRMA TARIM VE HAYVANCILIK İNŞAAT TURİZM MADENCİLİK SAN. VE TİC. A.Ş.",
+    "short_name": "EĞİN ENRJ"
+  },
+  {
+    "power_plant_id": 105502,
+    "entsoe_code": "40X000000105502A",
+    "plant_name": "EŞREF ENERJİ ÜRETİM A.Ş.",
+    "short_name": "EŞREF"
+  },
+  {
+    "power_plant_id": 13097,
+    "entsoe_code": "40X0000000130974",
+    "plant_name": "FBY ENERJİ ÜRETİM A.Ş.",
+    "short_name": "FBY"
+  },
+  {
+    "power_plant_id": 16839,
+    "entsoe_code": "40X0000000168398",
+    "plant_name": "FLAŞ BOR BİO ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "FLAŞ BOR"
+  },
+  {
+    "power_plant_id": 13598,
+    "entsoe_code": "40X000000013598J",
+    "plant_name": "FLOKSER TEKSTİL SAN. VE TİC. A.Ş.",
+    "short_name": "FLOKSERR"
+  },
+  {
+    "power_plant_id": 11274,
+    "entsoe_code": "40X000000011274I",
+    "plant_name": "FRİTO LAY GIDA SANAYİ VE TİCARET A.Ş.",
+    "short_name": "FRITO LAY"
+  },
+  {
+    "power_plant_id": 18860,
+    "entsoe_code": "40X0000000188607",
+    "plant_name": "FULL FORCE ENERJİ ELK. ÜRT. SAN. TİC. LTD. ŞTİ. URTMKTGR1",
+    "short_name": "FULLKTGR1"
+  },
+  {
+    "power_plant_id": 588,
+    "entsoe_code": "40X0000000005886",
+    "plant_name": "GALATA WIND ENERJİ A.Ş.",
+    "short_name": "GALATA"
+  },
+  {
+    "power_plant_id": 17660,
+    "entsoe_code": "40X000000017660K",
+    "plant_name": "GAZİ BİYOGAZ ÜRETİMİ A.Ş.",
+    "short_name": "GAZİ BYGZ"
+  },
+  {
+    "power_plant_id": 5819,
+    "entsoe_code": "40X000000005819P",
+    "plant_name": "GAZİANTEP ÖZEL SAĞLIK HASTANESİ A.Ş.",
+    "short_name": "GOSH A.Ş."
+  },
+  {
+    "power_plant_id": 11778,
+    "entsoe_code": "40X000000011778R",
+    "plant_name": "GAZİBEL HİZMET MÜŞAVİRLİK İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "GAZİBEL"
+  },
+  {
+    "power_plant_id": 8520,
+    "entsoe_code": "40X0000000085200",
+    "plant_name": "GAZİPAŞA ENERJİ ÜRETİM A.Ş.",
+    "short_name": "GAZİPAŞA"
+  },
+  {
+    "power_plant_id": 104381,
+    "entsoe_code": "40X0000001043811",
+    "plant_name": "GAİN TOPLAYICILIK VE ENERJİ YÖNETİMİ A.Ş. (TOPLAYICI)",
+    "short_name": "GAİN TOPLAYICI"
+  },
+  {
+    "power_plant_id": 11811,
+    "entsoe_code": "40X000000011811I",
+    "plant_name": "GEBZE ELEKTRİK ÜRETİM LİMİTED ŞİRKETİ",
+    "short_name": "GEBZE"
+  },
+  {
+    "power_plant_id": 10794,
+    "entsoe_code": "40X000000010794Y",
+    "plant_name": "GEMCİLER GÜVEN METAL SAN. VE TİC. A.Ş.",
+    "short_name": "GEMCİLER"
+  },
+  {
+    "power_plant_id": 10973,
+    "entsoe_code": "40X000000010973Y",
+    "plant_name": "GENERJİ ELEKTRİK ÜRETİM LTD.ŞTİ.",
+    "short_name": "GENERJİ"
+  },
+  {
+    "power_plant_id": 103940,
+    "entsoe_code": "40X000000103940X",
+    "plant_name": "GENVERA ELEKTRİK TİC. VE ENERJİ YÖNETİMİ A.Ş. (TOPLAYICI)",
+    "short_name": "GENVERA TOPLAYICI"
+  },
+  {
+    "power_plant_id": 8702,
+    "entsoe_code": "40X000000008702V",
+    "plant_name": "GMT ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "GMT"
+  },
+  {
+    "power_plant_id": 287,
+    "entsoe_code": "40X000000000287K",
+    "plant_name": "GRANİSER GRANİT SERAMİK SAN. TİC. A.Ş.",
+    "short_name": "GRANİSERAŞ"
+  },
+  {
+    "power_plant_id": 12137,
+    "entsoe_code": "40X000000012137N",
+    "plant_name": "GZL ENERJİ A.Ş.",
+    "short_name": "GZL"
+  },
+  {
+    "power_plant_id": 104060,
+    "entsoe_code": "40X000000104060L",
+    "plant_name": "GÖKADA ELEKTRİK TOPLAYICILIK ÜRETİM SAN. VE TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "GÖKADA TOPLAYICI"
+  },
+  {
+    "power_plant_id": 9664,
+    "entsoe_code": "40X0000000096648",
+    "plant_name": "GÖKBÖĞET ENERJİ ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "GÖKBÖGET"
+  },
+  {
+    "power_plant_id": 8242,
+    "entsoe_code": "40X0000000082422",
+    "plant_name": "GÖKSU ENERJİ ÜRETİM A.Ş.",
+    "short_name": "GÖKSU ÜRET"
+  },
+  {
+    "power_plant_id": 104662,
+    "entsoe_code": "40X000000104662U",
+    "plant_name": "GÖKÇEDAĞ RÜZGAR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "GÖKÇEDAĞ"
+  },
+  {
+    "power_plant_id": 18840,
+    "entsoe_code": "40X000000018840D",
+    "plant_name": "GÖLMAR MADENCİLİK İNŞAAT İMALAT SAN. VE TİC. LTD. ŞTİ",
+    "short_name": "GÖLMAR MAD"
+  },
+  {
+    "power_plant_id": 123,
+    "entsoe_code": "40X000000000123D",
+    "plant_name": "GÖLTAŞ ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "GÖLTAŞ"
+  },
+  {
+    "power_plant_id": 11636,
+    "entsoe_code": "40X000000011636A",
+    "plant_name": "GÖLTAŞ GÖLLER BÖLGESİ ÇİMENTO SAN. VE TİC. A.Ş.",
+    "short_name": "GÖLTAŞ GÖL"
+  },
+  {
+    "power_plant_id": 16139,
+    "entsoe_code": "40X100000016139N",
+    "plant_name": "GÜCE TEKKEKÖY ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "GÜCE"
+  },
+  {
+    "power_plant_id": 7580,
+    "entsoe_code": "40X000000007580O",
+    "plant_name": "GÜFEN ENERJİ ELEKTRİK ÜRETİM PAZARLAMA SAN. TİC. LTD. ŞTİ.",
+    "short_name": "GÜFEN"
+  },
+  {
+    "power_plant_id": 161,
+    "entsoe_code": "40X0000000001615",
+    "plant_name": "GÜL ENERJİ ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "GULENJ"
+  },
+  {
+    "power_plant_id": 162,
+    "entsoe_code": "40X0000000001623",
+    "plant_name": "GÜLLE ENTEGRE TEKSTİL İŞLETMELERİ EMLAK DANIŞMANLIĞI SAN. VE TİC. A.Ş.",
+    "short_name": "GULLE"
+  },
+  {
+    "power_plant_id": 5229,
+    "entsoe_code": "40X0000000052299",
+    "plant_name": "GÜMÜŞKÖY JEOTERMAL ENERJİ ÜRETİM A.Ş.",
+    "short_name": "GÜMÜŞKÖY"
+  },
+  {
+    "power_plant_id": 15379,
+    "entsoe_code": "40X000000015379L",
+    "plant_name": "GÜNEY BİYOGAZ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "GÜNEY BİYO"
+  },
+  {
+    "power_plant_id": 15059,
+    "entsoe_code": "40X0000000150592",
+    "plant_name": "GÜNGÖR ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "GÜNGÖR"
+  },
+  {
+    "power_plant_id": 105182,
+    "entsoe_code": "40X0000001051822",
+    "plant_name": "GÜNMAN ENERJİ ÜRETİM A.Ş.",
+    "short_name": "GÜNMAN"
+  },
+  {
+    "power_plant_id": 7959,
+    "entsoe_code": "40X100000007959N",
+    "plant_name": "GÜRGEN ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "GÜRGEN"
+  },
+  {
+    "power_plant_id": 12257,
+    "entsoe_code": "40X000000012257D",
+    "plant_name": "GÜRLE ENERJİ ELEKTRİK ÜRETİM İNŞAAT EĞİTİM DANIŞMANLIK SAN. TİC. LTD.",
+    "short_name": "GÜRLE"
+  },
+  {
+    "power_plant_id": 620,
+    "entsoe_code": "40X100000000620N",
+    "plant_name": "GÜRMAT ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "GÜRMAT"
+  },
+  {
+    "power_plant_id": 103840,
+    "entsoe_code": "40X0000001038400",
+    "plant_name": "GÜRSU ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "GÜRSU"
+  },
+  {
+    "power_plant_id": 4490,
+    "entsoe_code": "40X0000000044903",
+    "plant_name": "GÜRÜZ ELEKTRİK ÜRETİM LTD ŞTİ",
+    "short_name": "GÜRÜZ"
+  },
+  {
+    "power_plant_id": 100140,
+    "entsoe_code": "40X0000001001406",
+    "plant_name": "GÜRİŞ İNŞAAT VE MÜHENDİSLİK A.Ş. URTMKTGR1",
+    "short_name": "GÜRİŞKTGR1"
+  },
+  {
+    "power_plant_id": 100001,
+    "entsoe_code": "40X000000100001K",
+    "plant_name": "GÜVENEN ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "GÜVENEN"
+  },
+  {
+    "power_plant_id": 17545,
+    "entsoe_code": "40X000000017545K",
+    "plant_name": "GİRENİZ ENERJİ A.Ş.",
+    "short_name": "GİRENİZ"
+  },
+  {
+    "power_plant_id": 181,
+    "entsoe_code": "40X100000000181N",
+    "plant_name": "HABAŞ SINAİ VE TIBBİ GAZLAR İSTİHSAL ENDÜSTRİSİ A.Ş.",
+    "short_name": "HABAŞ"
+  },
+  {
+    "power_plant_id": 105342,
+    "entsoe_code": "40X0000001053426",
+    "plant_name": "HADİM YENİLENEBİLİR ENERJİ ANONİM ŞİRKETİ",
+    "short_name": "HADİM"
+  },
+  {
+    "power_plant_id": 6442,
+    "entsoe_code": "40X0000000064424",
+    "plant_name": "HALİÇ ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "HALİÇ"
+  },
+  {
+    "power_plant_id": 616,
+    "entsoe_code": "40X000000000616R",
+    "plant_name": "HAMEKA HİDRO ELEKTRİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "HAMEKA"
+  },
+  {
+    "power_plant_id": 378,
+    "entsoe_code": "40X000000000378H",
+    "plant_name": "HAMİTABAT ELEKTRİK ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "HEAŞ"
+  },
+  {
+    "power_plant_id": 14219,
+    "entsoe_code": "40X000000014219B",
+    "plant_name": "HAVAALANI İŞLETME VE HAVACILIK ENDÜSTRİLERİ A.Ş.",
+    "short_name": "HAVAALANI"
+  },
+  {
+    "power_plant_id": 272,
+    "entsoe_code": "40X000000000272X",
+    "plant_name": "HAYAT KİMYA SANAYİ A.Ş.",
+    "short_name": "HAYAT KİM."
+  },
+  {
+    "power_plant_id": 5576,
+    "entsoe_code": "40X000000005576P",
+    "plant_name": "HED ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "HEDELEK"
+  },
+  {
+    "power_plant_id": 105282,
+    "entsoe_code": "40X000000105282Z",
+    "plant_name": "HEKİMHAN MADENCİLİK İTHALAT İHRACAT SAN. VE TİC. A.Ş.",
+    "short_name": "HEKİMHAN"
+  },
+  {
+    "power_plant_id": 4789,
+    "entsoe_code": "40X000000004789D",
+    "plant_name": "HER ENERJİ VE ÇEVRE TEKNOLOJİLER ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "HER"
+  },
+  {
+    "power_plant_id": 8561,
+    "entsoe_code": "40X000000008561N",
+    "plant_name": "HES ENERJİ ÜRETİMİ SAN. TİC. A.Ş.",
+    "short_name": "HESENERJİ"
+  },
+  {
+    "power_plant_id": 509,
+    "entsoe_code": "40X000000000509S",
+    "plant_name": "HETAŞ HACISALİHOĞLU ENERJİ VE TİC. A.Ş.",
+    "short_name": "HETAŞ"
+  },
+  {
+    "power_plant_id": 103000,
+    "entsoe_code": "40X0000001030007",
+    "plant_name": "HEVSEL ENERJİ A.Ş.",
+    "short_name": "HEVSEL"
+  },
+  {
+    "power_plant_id": 102340,
+    "entsoe_code": "40X000000102340P",
+    "plant_name": "HEZ ENERJİ İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "HEZ"
+  },
+  {
+    "power_plant_id": 6399,
+    "entsoe_code": "40X000000006399G",
+    "plant_name": "HGG ENERJİ ÜRETİM A.Ş.",
+    "short_name": "HGG"
+  },
+  {
+    "power_plant_id": 17799,
+    "entsoe_code": "40X000000017799Q",
+    "plant_name": "HGT ORMAN ÜRÜNLERİ TAŞIMACILIK SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "HGT"
+  },
+  {
+    "power_plant_id": 16859,
+    "entsoe_code": "40X0000000168592",
+    "plant_name": "HOM ENERJİ GERİ DÖNÜŞÜM TAAHHÜT VE TİC. LTD. ŞTİ.",
+    "short_name": "HOM"
+  },
+  {
+    "power_plant_id": 428,
+    "entsoe_code": "40X000000000428S",
+    "plant_name": "HİDRO KONTROL ELEKTRİK ÜRETİM SANAYİ A.Ş.",
+    "short_name": "H.KONTROL"
+  },
+  {
+    "power_plant_id": 11535,
+    "entsoe_code": "40X000000011535G",
+    "plant_name": "HİDRO-GEN ENERJİ İTHALAT İHRACAT DAĞITIM VE TİCARET A.Ş.",
+    "short_name": "HİDRO-GEN"
+  },
+  {
+    "power_plant_id": 100020,
+    "entsoe_code": "40X000000100020G",
+    "plant_name": "HİDROBAKIM HİDRO ELEKTRİK SATRALLERİ İŞLETME BAKIM MÜŞAVİRLİK İNŞAAT SAN. TİC. LTD. ŞTİ.",
+    "short_name": "HİDROBAKIM"
+  },
+  {
+    "power_plant_id": 9592,
+    "entsoe_code": "40X0000000095927",
+    "plant_name": "HİDROGÜÇ ENERJİ ELEKTRİK ÜRETİM SAN.VE TİC.A.Ş.",
+    "short_name": "HİDROGÜÇ"
+  },
+  {
+    "power_plant_id": 15139,
+    "entsoe_code": "40X0000000151394",
+    "plant_name": "HİDROLİDER ELEKTRİK ÜRETİM VE TİC. A.Ş.",
+    "short_name": "HİDROLDR"
+  },
+  {
+    "power_plant_id": 17022,
+    "entsoe_code": "40X000000017022F",
+    "plant_name": "HİDROSOLAR ELEKTRİK ÜRETİM İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "HİDROSOLAR"
+  },
+  {
+    "power_plant_id": 101740,
+    "entsoe_code": "40X000000101740E",
+    "plant_name": "IC İÇTAŞ  GÜNEŞ ENERJİ ÜRETİM ve TİCARET A.Ş",
+    "short_name": "ICGUNEŞ"
+  },
+  {
+    "power_plant_id": 103600,
+    "entsoe_code": "40X000000103600K",
+    "plant_name": "INAVITAS TOPLAYICILIK VE ENERJİ TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "INAVITAS TOPLAYICI"
+  },
+  {
+    "power_plant_id": 4860,
+    "entsoe_code": "40X000000004860X",
+    "plant_name": "ISPARTA ELEKTRİK ÜRETİMİ A.Ş.",
+    "short_name": "ISPARTA"
+  },
+  {
+    "power_plant_id": 16819,
+    "entsoe_code": "40X000000016819E",
+    "plant_name": "ITC ANTALYA KATI ATIK ENERJİ YÖNETİMİ DANIŞMANLIK GIDA NAKLİYE SAN. VE TİC. A.Ş.",
+    "short_name": "ITCANTKATI"
+  },
+  {
+    "power_plant_id": 420,
+    "entsoe_code": "40X0000000004207",
+    "plant_name": "ITC-KA ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "ITC-KA"
+  },
+  {
+    "power_plant_id": 10954,
+    "entsoe_code": "40X0000000109541",
+    "plant_name": "K3 AKEDAŞ ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 AKEDAŞ"
+  },
+  {
+    "power_plant_id": 10933,
+    "entsoe_code": "40X0000000109339",
+    "plant_name": "K3 AKSA FIRAT ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3 FIRAT"
+  },
+  {
+    "power_plant_id": 10932,
+    "entsoe_code": "40X000000010932B",
+    "plant_name": "K3 AKSA ÇORUH ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 ÇORUH"
+  },
+  {
+    "power_plant_id": 10942,
+    "entsoe_code": "40X0000000109428",
+    "plant_name": "K3 ARAS ELEKTRIK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 ARAS"
+  },
+  {
+    "power_plant_id": 10934,
+    "entsoe_code": "40X0000000109347",
+    "plant_name": "K3 AYDEM ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3 AYDEM"
+  },
+  {
+    "power_plant_id": 10957,
+    "entsoe_code": "40X000000010957W",
+    "plant_name": "K3 CK AKDENİZ ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 AKDENİZ"
+  },
+  {
+    "power_plant_id": 10956,
+    "entsoe_code": "40X000000010956Y",
+    "plant_name": "K3 CK BOĞAZİÇİ ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3BOĞAZİÇİ"
+  },
+  {
+    "power_plant_id": 10949,
+    "entsoe_code": "40X000000010949V",
+    "plant_name": "K3 CK ÇAMLIBEL ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3ÇAMLIBEL"
+  },
+  {
+    "power_plant_id": 10958,
+    "entsoe_code": "40X000000010958U",
+    "plant_name": "K3 DİCLE ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 DİCLE"
+  },
+  {
+    "power_plant_id": 10944,
+    "entsoe_code": "40X0000000109444",
+    "plant_name": "K3 ENERJİSA BAŞKENT ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3 BAŞKENT"
+  },
+  {
+    "power_plant_id": 10945,
+    "entsoe_code": "40X0000000109452",
+    "plant_name": "K3 ENERJİSA TOROSLAR ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3TOROSLAR"
+  },
+  {
+    "power_plant_id": 10943,
+    "entsoe_code": "40X0000000109436",
+    "plant_name": "K3 ENERJİSA İSTANBUL ANADOLU YAKASI ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3 AYEDAŞ"
+  },
+  {
+    "power_plant_id": 10935,
+    "entsoe_code": "40X0000000109355",
+    "plant_name": "K3 GEDİZ ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3 GEDİZ"
+  },
+  {
+    "power_plant_id": 10931,
+    "entsoe_code": "40X000000010931D",
+    "plant_name": "K3 KAYSERI ELEKTRIK PERAKENDE SATIŞ ANONIM ŞIRKETI",
+    "short_name": "K3 KEPSAŞ"
+  },
+  {
+    "power_plant_id": 10939,
+    "entsoe_code": "40X000000010939Y",
+    "plant_name": "K3 MERAM ELEKTRIK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 MERAM"
+  },
+  {
+    "power_plant_id": 10930,
+    "entsoe_code": "40X000000010930F",
+    "plant_name": "K3 OSMANGAZİ ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 OGAZİ"
+  },
+  {
+    "power_plant_id": 10929,
+    "entsoe_code": "40X0000000109290",
+    "plant_name": "K3 SAKARYA ELEKTRIK PERAKENDE SATIS A.S.",
+    "short_name": "K3 SEPAŞ"
+  },
+  {
+    "power_plant_id": 10959,
+    "entsoe_code": "40X000000010959S",
+    "plant_name": "K3 TRAKYA ELEKTRİK PERAKENDE SATIŞ ANONİM ŞİRKETİ",
+    "short_name": "K3 TRAKYA"
+  },
+  {
+    "power_plant_id": 10940,
+    "entsoe_code": "40X000000010940C",
+    "plant_name": "K3 TÜRKERLER VANGÖLÜ ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 VANGÖLÜ"
+  },
+  {
+    "power_plant_id": 10953,
+    "entsoe_code": "40X0000000109533",
+    "plant_name": "K3 ULUDAĞ PERAKENDE ELEKTRİK SATIŞ A.Ş.",
+    "short_name": "K3 LİMAK"
+  },
+  {
+    "power_plant_id": 10955,
+    "entsoe_code": "40X100000010955N",
+    "plant_name": "K3 YEŞİLIRMAK ELEKTRİK PERAKENDE SATIŞ A.Ş.",
+    "short_name": "K3 YEŞİL"
+  },
+  {
+    "power_plant_id": 17739,
+    "entsoe_code": "40X0000000177397",
+    "plant_name": "KALDE ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KALDE"
+  },
+  {
+    "power_plant_id": 17721,
+    "entsoe_code": "40X000000017721Q",
+    "plant_name": "KALDE ENERJİ ELEKTRİK ÜRETİM A.Ş. URTMKTGR1",
+    "short_name": "KALDEKTGR1"
+  },
+  {
+    "power_plant_id": 17722,
+    "entsoe_code": "40X000000017722O",
+    "plant_name": "KALDE ENERJİ ELEKTRİK ÜRETİM A.Ş. URTMKTGR2",
+    "short_name": "KALDEKTGR2"
+  },
+  {
+    "power_plant_id": 104120,
+    "entsoe_code": "40X000000104120T",
+    "plant_name": "KALE ENERJİ ÜRETİM TİC. VE SAN A.Ş. (TOPLAYICI)",
+    "short_name": "KALE TOPLAYICI"
+  },
+  {
+    "power_plant_id": 2225,
+    "entsoe_code": "40X000000002225W",
+    "plant_name": "KALE ENERJİ ÜRETİM TİC. VE SAN. A.Ş.",
+    "short_name": "KALE"
+  },
+  {
+    "power_plant_id": 8243,
+    "entsoe_code": "40X0000000082430",
+    "plant_name": "KALEHAN BEYHAN ENERJİ ÜRETİM A.Ş.",
+    "short_name": "KALEHAN"
+  },
+  {
+    "power_plant_id": 12897,
+    "entsoe_code": "40X000000012897E",
+    "plant_name": "KALEHAN GENÇ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "KALEHAN G"
+  },
+  {
+    "power_plant_id": 11074,
+    "entsoe_code": "40X000000011074Q",
+    "plant_name": "KALEHAN KALE ENERJİ ÜRETİM A.Ş.",
+    "short_name": "KLHN-KALE"
+  },
+  {
+    "power_plant_id": 500,
+    "entsoe_code": "40X0000000005009",
+    "plant_name": "KALEN ENERJİ  ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KALEN"
+  },
+  {
+    "power_plant_id": 169,
+    "entsoe_code": "40X000000000169Q",
+    "plant_name": "KALESERAMİK ÇANAKKALE KALEBODUR SERAMİK SAN. A.Ş.",
+    "short_name": "KS"
+  },
+  {
+    "power_plant_id": 14842,
+    "entsoe_code": "40X000000014842T",
+    "plant_name": "KALYON GÜNEŞ ENERJİSİ ÜRETİM A.Ş.",
+    "short_name": "KALYON"
+  },
+  {
+    "power_plant_id": 21100,
+    "entsoe_code": "40X0000000211008",
+    "plant_name": "KALYON YEKA GES 3 VE 4 GÜNEŞ ENERJİSİ YATIRIMLARI A.Ş.",
+    "short_name": "KALYON YEKA GES 3 ve 4"
+  },
+  {
+    "power_plant_id": 102200,
+    "entsoe_code": "40X0000001022004",
+    "plant_name": "KALYON YEKA RES 3 RÜZGAR ENERJİSİ YATIRIMLARI A.Ş.",
+    "short_name": "KALYON YEKA RES 3"
+  },
+  {
+    "power_plant_id": 5999,
+    "entsoe_code": "40X000000005999Y",
+    "plant_name": "KAM ENERJİ ÜRETİM TİCARET VE SANAYİ A.Ş.",
+    "short_name": "KAM ENERJİ"
+  },
+  {
+    "power_plant_id": 7839,
+    "entsoe_code": "40X0000000078399",
+    "plant_name": "KANGAL ELEKTRİK ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "KANGAL ELK"
+  },
+  {
+    "power_plant_id": 6700,
+    "entsoe_code": "40X0000000067008",
+    "plant_name": "KANGAL TERMİK SANTRAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KANGAL T."
+  },
+  {
+    "power_plant_id": 5656,
+    "entsoe_code": "40X000000005656R",
+    "plant_name": "KANYON YENİLENEBİLİR ENERJİ ÜRETİM TİC. A.Ş.",
+    "short_name": "KANYON"
+  },
+  {
+    "power_plant_id": 15879,
+    "entsoe_code": "40X0000000158791",
+    "plant_name": "KARADENİZ GARANTİ BİYOKÜTLE ENERJİ TESİSLERİ SAN. VE TİC. A.Ş",
+    "short_name": "KRDNZ GRNT"
+  },
+  {
+    "power_plant_id": 6098,
+    "entsoe_code": "40X000000006098U",
+    "plant_name": "KARAKÖY ELEKTRİK ÜRETİM VE TİCARET LTD. ŞTİ.",
+    "short_name": "KARAKÖY"
+  },
+  {
+    "power_plant_id": 9444,
+    "entsoe_code": "40X000000009444M",
+    "plant_name": "KARAMAN YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "KAR.YEÜ."
+  },
+  {
+    "power_plant_id": 14039,
+    "entsoe_code": "40X000000014039D",
+    "plant_name": "KARAYEL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KARAYEL"
+  },
+  {
+    "power_plant_id": 153,
+    "entsoe_code": "40X0000000001534",
+    "plant_name": "KARDEMİR KARABÜK DEMİR ÇELİK  SAN.VE TİC. A.Ş.",
+    "short_name": "KARDEMİR"
+  },
+  {
+    "power_plant_id": 357,
+    "entsoe_code": "40X000000000357P",
+    "plant_name": "KAREL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KARELEN"
+  },
+  {
+    "power_plant_id": 105042,
+    "entsoe_code": "40X000000105042I",
+    "plant_name": "KAREN KAHRAMANMARAŞ ELEKTRİK ÜRETİM A.Ş. (TOPLAYICI)",
+    "short_name": "KAREN TOPLAYICI"
+  },
+  {
+    "power_plant_id": 10532,
+    "entsoe_code": "40X000000010532R",
+    "plant_name": "KARGI ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "KARGI ENRJ"
+  },
+  {
+    "power_plant_id": 648,
+    "entsoe_code": "40X000000000648E",
+    "plant_name": "KARGI KIZILIRMAK ENERJİ  A.Ş.",
+    "short_name": "KARGI"
+  },
+  {
+    "power_plant_id": 578,
+    "entsoe_code": "40X0000000005789",
+    "plant_name": "KARMAVİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KARMAVİ"
+  },
+  {
+    "power_plant_id": 448,
+    "entsoe_code": "40X000000000448M",
+    "plant_name": "KARSU TEKSTİL SAN. VE TİC. A.Ş.",
+    "short_name": "KARSU"
+  },
+  {
+    "power_plant_id": 15520,
+    "entsoe_code": "40X0000000155209",
+    "plant_name": "KARTALLAR EGE GERİ DÖNÜŞÜM ENERJİ ÜRETİM A.Ş.",
+    "short_name": "KARTALLAR"
+  },
+  {
+    "power_plant_id": 18880,
+    "entsoe_code": "40X0000000188801",
+    "plant_name": "KARTALLAR EGE GERİ DÖNÜŞÜM ENERJİ ÜRETİM A.Ş. URTMKTGR1",
+    "short_name": "KRTEGEKTGR"
+  },
+  {
+    "power_plant_id": 11764,
+    "entsoe_code": "40X0000000117641",
+    "plant_name": "KARTEKS GERİ DÖNÜŞÜM ENERJİ SAN. VE DIŞ TİC.LTD.ŞTİ.",
+    "short_name": "KARTEKS"
+  },
+  {
+    "power_plant_id": 11493,
+    "entsoe_code": "40X0000000114936",
+    "plant_name": "KARTEPE ENDÜSTRİYEL GERİ DÖNÜŞÜM SAN. VE TİC. A.Ş.",
+    "short_name": "KARTEPE"
+  },
+  {
+    "power_plant_id": 327,
+    "entsoe_code": "40X000000000327Y",
+    "plant_name": "KARTONSAN KARTON SANAYİ VE TİCARET A.Ş.",
+    "short_name": "KARTONSAN"
+  },
+  {
+    "power_plant_id": 570,
+    "entsoe_code": "40X000000000570P",
+    "plant_name": "KATIRCIOĞLU ELEKTRİK ÜRETİM LTD. ŞTİ.",
+    "short_name": "KATIRCIOĞL"
+  },
+  {
+    "power_plant_id": 6398,
+    "entsoe_code": "40X000000006398I",
+    "plant_name": "KAYA TURİSTİK TESİSLERİ TİTREYENGÖL OTELCİLİK A.Ş.",
+    "short_name": "KAYA T."
+  },
+  {
+    "power_plant_id": 9403,
+    "entsoe_code": "40X100000009403N",
+    "plant_name": "KAYEN OMİKRON ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "KAYENOMİK."
+  },
+  {
+    "power_plant_id": 2224,
+    "entsoe_code": "40X000000002224Y",
+    "plant_name": "KAYSERİ ŞEKER FABRİKASI A.Ş",
+    "short_name": "KAYSRİ ŞKR"
+  },
+  {
+    "power_plant_id": 10814,
+    "entsoe_code": "40X000000010814H",
+    "plant_name": "KAZAN SODA ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KAZAN SODA"
+  },
+  {
+    "power_plant_id": 5690,
+    "entsoe_code": "40X000000005690R",
+    "plant_name": "KAÇKAR ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KAÇKAR"
+  },
+  {
+    "power_plant_id": 9613,
+    "entsoe_code": "40X000000009613P",
+    "plant_name": "KEHRİBAR ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "KEHRİBAR"
+  },
+  {
+    "power_plant_id": 2445,
+    "entsoe_code": "40X000000002445I",
+    "plant_name": "KESKİNOĞLU TAVUKÇULUK VE DAMIZLIK İŞLETMELERİ SAN. TİC. A.Ş.",
+    "short_name": "KESKNOĞL"
+  },
+  {
+    "power_plant_id": 6148,
+    "entsoe_code": "40X0000000061484",
+    "plant_name": "KILIÇ ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "KILIÇ"
+  },
+  {
+    "power_plant_id": 9595,
+    "entsoe_code": "40X0000000095951",
+    "plant_name": "KIRCA ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "KIRCA"
+  },
+  {
+    "power_plant_id": 104722,
+    "entsoe_code": "40X0000001047221",
+    "plant_name": "KIVANÇ ELEKTRİK TOPTAN SATIŞ A.Ş (TOPLAYICI)",
+    "short_name": "KIVANÇ TOPLAYICI"
+  },
+  {
+    "power_plant_id": 401,
+    "entsoe_code": "40X000000000401B",
+    "plant_name": "KIZKALE ELEKTRİK ÜRETİM SAN. VE TİC. LTD. ŞTI.",
+    "short_name": "KIZKALE"
+  },
+  {
+    "power_plant_id": 4811,
+    "entsoe_code": "40X0000000048119",
+    "plant_name": "KNAUF İNŞAAT VE YAPI ELEMANLARI SAN. VE TİC. A.Ş.",
+    "short_name": "KNAUF"
+  },
+  {
+    "power_plant_id": 105423,
+    "entsoe_code": "40X0000001054236",
+    "plant_name": "KOLEN ENERJİ YÖNETİMİ VE TOPLAYICILIK A.Ş. (TOPLAYICI)",
+    "short_name": "KOLEN TOPLAYICI"
+  },
+  {
+    "power_plant_id": 13758,
+    "entsoe_code": "40X000000013758N",
+    "plant_name": "KONYA BİYOGAZ ELEKTRİK ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "KONYA BİYO"
+  },
+  {
+    "power_plant_id": 106,
+    "entsoe_code": "40X000000000106D",
+    "plant_name": "KONYA ŞEKER SANAYİ VE TİCARET A.Ş.",
+    "short_name": "KONYA ŞEK."
+  },
+  {
+    "power_plant_id": 5330,
+    "entsoe_code": "40X000000005330K",
+    "plant_name": "KOR-EN KORKUTELİ ELEKTRİK ÜRETİM SAN. TİC. A.Ş.",
+    "short_name": "KOR-EN"
+  },
+  {
+    "power_plant_id": 7399,
+    "entsoe_code": "40X000000007399B",
+    "plant_name": "KRDMR E KARDEMİR ENERJİ ELEKTRİK ÜRETİM  SAN. VE TİC. A.Ş.",
+    "short_name": "KRDMR"
+  },
+  {
+    "power_plant_id": 9769,
+    "entsoe_code": "40X000000009769V",
+    "plant_name": "KREMNA ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "KREMNA"
+  },
+  {
+    "power_plant_id": 17519,
+    "entsoe_code": "40X000000017519L",
+    "plant_name": "KUNKKA ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KUNKKA"
+  },
+  {
+    "power_plant_id": 12677,
+    "entsoe_code": "40X000000012677S",
+    "plant_name": "KURTAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KURTAL"
+  },
+  {
+    "power_plant_id": 489,
+    "entsoe_code": "40X0000000004898",
+    "plant_name": "KURTEKS TEKSTİL ENERJİ TİCARET VE SANAYİ AŞ",
+    "short_name": "KURTEKS"
+  },
+  {
+    "power_plant_id": 3465,
+    "entsoe_code": "40X0000000034657",
+    "plant_name": "KURTOĞLU BAKIR VE KURŞUN SAN. A.Ş.",
+    "short_name": "KURTOĞLU"
+  },
+  {
+    "power_plant_id": 5751,
+    "entsoe_code": "40X000000005751X",
+    "plant_name": "KURTSUYU ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "KURTSUYU"
+  },
+  {
+    "power_plant_id": 17880,
+    "entsoe_code": "40X0000000178806",
+    "plant_name": "KURUÇAYIRLILAR ENERJİ İNŞAAT TAAHHÜT SAN. VE TİC. A.Ş.",
+    "short_name": "KURUÇAYIR"
+  },
+  {
+    "power_plant_id": 9662,
+    "entsoe_code": "40X000000009662C",
+    "plant_name": "KUZEY BİRLİK ENERJİ VE SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "KZY BİRLİK"
+  },
+  {
+    "power_plant_id": 16539,
+    "entsoe_code": "40X000000016539K",
+    "plant_name": "KUŞ ENERJİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "KUS"
+  },
+  {
+    "power_plant_id": 5089,
+    "entsoe_code": "40X100000005089N",
+    "plant_name": "KÖRFEZ ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "KÖRFEZ"
+  },
+  {
+    "power_plant_id": 13437,
+    "entsoe_code": "40X0000000134376",
+    "plant_name": "KÜÇÜKBAY YAĞ VE DETERJAN SAN. A.Ş.",
+    "short_name": "KÜÇÜKBAY"
+  },
+  {
+    "power_plant_id": 6198,
+    "entsoe_code": "40X000000006198Q",
+    "plant_name": "KİPAŞ MENSUCAT İŞLETMELERİ A.Ş",
+    "short_name": "KİPAŞ M."
+  },
+  {
+    "power_plant_id": 13197,
+    "entsoe_code": "40X0000000131970",
+    "plant_name": "LANDFILL ENERJİ SANAYİ TİCARET ANONİM ŞİRKETİ",
+    "short_name": "LANDFILL"
+  },
+  {
+    "power_plant_id": 18540,
+    "entsoe_code": "40X000000018540P",
+    "plant_name": "LARA HES ENERJİ A.Ş.",
+    "short_name": "LARA"
+  },
+  {
+    "power_plant_id": 101721,
+    "entsoe_code": "40X000000101721I",
+    "plant_name": "LE ERZİN GES ENERJİ A.Ş.",
+    "short_name": "LEERZIN"
+  },
+  {
+    "power_plant_id": 12457,
+    "entsoe_code": "40X0000000124575",
+    "plant_name": "LE GÜNEŞ ELEKTRİK ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "LE GÜNEŞ"
+  },
+  {
+    "power_plant_id": 5659,
+    "entsoe_code": "40X000000005659L",
+    "plant_name": "LESAFFRE TURQUIE MAYACILIK ÜRETIM VE TICARET A.Ş",
+    "short_name": "LESAFFRE"
+  },
+  {
+    "power_plant_id": 521,
+    "entsoe_code": "40X0000000005211",
+    "plant_name": "LODOS ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "LODOS"
+  },
+  {
+    "power_plant_id": 5758,
+    "entsoe_code": "40X000000005758J",
+    "plant_name": "LODOS KARABURUN ELEKTRİK ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "L.KARABURU"
+  },
+  {
+    "power_plant_id": 6899,
+    "entsoe_code": "40X000000006899X",
+    "plant_name": "LUTUF MENSUCAT A.Ş.",
+    "short_name": "LUTUF M."
+  },
+  {
+    "power_plant_id": 684,
+    "entsoe_code": "40X000000000684A",
+    "plant_name": "LİMAK YATIRIM ENERJİ ÜRETİM İŞLETME HİZMETLERİ VE İNŞAAT A.Ş.",
+    "short_name": "LİMAK"
+  },
+  {
+    "power_plant_id": 3834,
+    "entsoe_code": "40X0000000038342",
+    "plant_name": "LİMAK YENİLENEBİLİR ENERJİ A.Ş.",
+    "short_name": "LİMAK YEN"
+  },
+  {
+    "power_plant_id": 11644,
+    "entsoe_code": "40X000000011644B",
+    "plant_name": "LİMGAZ ELEKTRİK ÜRETİM MADENCİLİK SAN. VE TİC. A.Ş.",
+    "short_name": "LİMGAZ"
+  },
+  {
+    "power_plant_id": 102960,
+    "entsoe_code": "40X000000102960W",
+    "plant_name": "MAHMUDİYE ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MAHMUDİYE"
+  },
+  {
+    "power_plant_id": 11113,
+    "entsoe_code": "40X0000000111135",
+    "plant_name": "MAKYOL İNŞAAT SANAYİ TURİZM VE TİCARET A.Ş.",
+    "short_name": "MAKYOL"
+  },
+  {
+    "power_plant_id": 104582,
+    "entsoe_code": "40X000000104582S",
+    "plant_name": "MAKİ ELEKTRİK ENERJİ OPERASYONLARI YÖNETİMİ A.Ş. (TOPLAYICI)",
+    "short_name": "MAKİ TOPLAYICI"
+  },
+  {
+    "power_plant_id": 10492,
+    "entsoe_code": "40X000000010492D",
+    "plant_name": "MANİSA OSB ÜRETİM",
+    "short_name": "MOSB_ÜRETM"
+  },
+  {
+    "power_plant_id": 4969,
+    "entsoe_code": "40X000000004969B",
+    "plant_name": "MAR-EN ENERJİ ÜRETİM TİC. VE SAN. A.Ş.",
+    "short_name": "MAR-EN"
+  },
+  {
+    "power_plant_id": 4857,
+    "entsoe_code": "40X000000004857M",
+    "plant_name": "MAREN MARAŞ ELK. ÜRT. SAN. VE TİC. A.Ş.",
+    "short_name": "MAREN"
+  },
+  {
+    "power_plant_id": 9531,
+    "entsoe_code": "40X000000009531R",
+    "plant_name": "MARTEKS MARAŞ TEKSTİL SAN. A.Ş.",
+    "short_name": "MARTEKS"
+  },
+  {
+    "power_plant_id": 10352,
+    "entsoe_code": "40X000000010352T",
+    "plant_name": "MAS 1 YENİLENEBİLİR ENERJİ VE ELEKTRİK ÜRETİMİ SANAYİ TİC. A.Ş.",
+    "short_name": "MAS1"
+  },
+  {
+    "power_plant_id": 10897,
+    "entsoe_code": "40X000000010897O",
+    "plant_name": "MASPO ENERJİ SANAYİ VE TİC. A.Ş.",
+    "short_name": "MASPO"
+  },
+  {
+    "power_plant_id": 11755,
+    "entsoe_code": "40X0000000117552",
+    "plant_name": "MASTAR ELEKTRİK ÜRETİM TİCARET VE SANAYİ A.Ş.",
+    "short_name": "MASTAR"
+  },
+  {
+    "power_plant_id": 387,
+    "entsoe_code": "40X000000000387G",
+    "plant_name": "MAURİ MAYA SANAYİ A.Ş.",
+    "short_name": "MAURİ"
+  },
+  {
+    "power_plant_id": 11769,
+    "entsoe_code": "40X000000011769S",
+    "plant_name": "MAVİBAYRAK DOĞU ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "MAVİBAYRAK"
+  },
+  {
+    "power_plant_id": 11234,
+    "entsoe_code": "40X000000011234U",
+    "plant_name": "MAVİBAYRAK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MAVİ"
+  },
+  {
+    "power_plant_id": 17620,
+    "entsoe_code": "40X000000017620W",
+    "plant_name": "MAVİİZ ÇEVRE VE ENERJİ SİSTEMLERİ ARAŞTIRMA GELİŞTİRME LTD. ŞTİ.",
+    "short_name": "MAVİİZ"
+  },
+  {
+    "power_plant_id": 8239,
+    "entsoe_code": "40X000000008239S",
+    "plant_name": "MAÇKAM ENERJİ ÜRETİM A.Ş",
+    "short_name": "MAÇKAM"
+  },
+  {
+    "power_plant_id": 13818,
+    "entsoe_code": "40X000000013818V",
+    "plant_name": "MEDCEM MADENCİLİK VE YAPI MALZEMELERİ SAN. VE TİC. A.Ş.",
+    "short_name": "MEDCEM"
+  },
+  {
+    "power_plant_id": 6921,
+    "entsoe_code": "40X000000006921T",
+    "plant_name": "MELET ENERJİ ELEKTRİK ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "MELET"
+  },
+  {
+    "power_plant_id": 6443,
+    "entsoe_code": "40X0000000064432",
+    "plant_name": "MELTEM KİMYA VE TEKSTİL SANAYİ İTHALAT İHRACAT VE TİCARET A.Ş.",
+    "short_name": "MELTEM K."
+  },
+  {
+    "power_plant_id": 10773,
+    "entsoe_code": "40X0000000107735",
+    "plant_name": "MELİKE İPLİK SANAYİ VE TİCARET A.Ş.",
+    "short_name": "MELİKE"
+  },
+  {
+    "power_plant_id": 9709,
+    "entsoe_code": "40X000000009709C",
+    "plant_name": "MELİKOM ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "MELİKOM"
+  },
+  {
+    "power_plant_id": 4491,
+    "entsoe_code": "40X0000000044911",
+    "plant_name": "MELİTA ELEKTRİK ÜRETİM SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "MELİTA"
+  },
+  {
+    "power_plant_id": 10713,
+    "entsoe_code": "40X000000010713N",
+    "plant_name": "MEM TEKSTİL SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "MEM TEKSTL"
+  },
+  {
+    "power_plant_id": 366,
+    "entsoe_code": "40X000000000366O",
+    "plant_name": "MENDERES GEOTERMAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "MENDRS GEO"
+  },
+  {
+    "power_plant_id": 11155,
+    "entsoe_code": "40X000000011155Q",
+    "plant_name": "MENDEZ ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "MENDEZ"
+  },
+  {
+    "power_plant_id": 683,
+    "entsoe_code": "40X000000000683C",
+    "plant_name": "MERCEDES-BENZ TÜRK A.Ş.",
+    "short_name": "MERCEDES"
+  },
+  {
+    "power_plant_id": 16499,
+    "entsoe_code": "40X0000000164996",
+    "plant_name": "MERSİN BÜYÜKŞEHİR İMAR İNŞAAT ELEKTRİK ÜRETİM ÖZEL GÜVENLİK HİZMETLERİ SAN.VE TİC. A.Ş.",
+    "short_name": "MERSİN BB"
+  },
+  {
+    "power_plant_id": 6143,
+    "entsoe_code": "40X000000006143E",
+    "plant_name": "MET DURU ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MET DURU"
+  },
+  {
+    "power_plant_id": 104663,
+    "entsoe_code": "40X000000104663S",
+    "plant_name": "MET TURKEY ENERJİ TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "MET TURKEY TOPLAYICI"
+  },
+  {
+    "power_plant_id": 6180,
+    "entsoe_code": "40X0000000061808",
+    "plant_name": "METEK HİDRO ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "METEKHİDRO"
+  },
+  {
+    "power_plant_id": 13477,
+    "entsoe_code": "40X000000013477V",
+    "plant_name": "MEY BİYOGAZ ENERJİ ÜRETİMİ SAN. VE TİC. A.Ş.",
+    "short_name": "MEY"
+  },
+  {
+    "power_plant_id": 11715,
+    "entsoe_code": "40X000000011715E",
+    "plant_name": "MHZ ENERJİ ÜRETİM TİC. SAN. A.Ş.",
+    "short_name": "MHZ"
+  },
+  {
+    "power_plant_id": 10893,
+    "entsoe_code": "40X000000010893W",
+    "plant_name": "MMK METALURJİ SANAYİ TİCARET VE LİMAN İŞLETMECİLİĞİ A.Ş.",
+    "short_name": "MMK"
+  },
+  {
+    "power_plant_id": 12657,
+    "entsoe_code": "40X000000012657Y",
+    "plant_name": "MODERN KARTON SANAYİ VE TİCARET A.Ş",
+    "short_name": "MODERN"
+  },
+  {
+    "power_plant_id": 354,
+    "entsoe_code": "40X000000000354V",
+    "plant_name": "MOLU ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MOLU"
+  },
+  {
+    "power_plant_id": 184,
+    "entsoe_code": "40X000000000184U",
+    "plant_name": "MOPAK KAĞIT KARTON SAN. VE TİC. A.Ş.",
+    "short_name": "MOPAK"
+  },
+  {
+    "power_plant_id": 15501,
+    "entsoe_code": "40X000000015501D",
+    "plant_name": "MOSBİO ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MOSBİO"
+  },
+  {
+    "power_plant_id": 6378,
+    "entsoe_code": "40X000000006378O",
+    "plant_name": "MOSTAR ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "MOSTAR A.Ş"
+  },
+  {
+    "power_plant_id": 4257,
+    "entsoe_code": "40X0000000042579",
+    "plant_name": "MOSTAR ENERJİ ELEKTRİK ÜRETİM LTD.ŞTİ",
+    "short_name": "MOSTAR"
+  },
+  {
+    "power_plant_id": 6258,
+    "entsoe_code": "40X000000006258Y",
+    "plant_name": "MOTEK ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "MOTEK"
+  },
+  {
+    "power_plant_id": 10269,
+    "entsoe_code": "40X000000010269G",
+    "plant_name": "MOĞİ ELEKTRİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MOĞİ"
+  },
+  {
+    "power_plant_id": 16019,
+    "entsoe_code": "40X0000000160199",
+    "plant_name": "MUDURNU ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "MUDURNU"
+  },
+  {
+    "power_plant_id": 4329,
+    "entsoe_code": "40X000000004329A",
+    "plant_name": "MURADİYE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "MURADIYE"
+  },
+  {
+    "power_plant_id": 14099,
+    "entsoe_code": "40X000000014099W",
+    "plant_name": "MURAT HES ENERJİ ELEKTRİK ÜRETİM VE TİC. A.Ş URTMKTGR1",
+    "short_name": "MURATKTGR1"
+  },
+  {
+    "power_plant_id": 4609,
+    "entsoe_code": "40X0000000046094",
+    "plant_name": "MURAT HES ENERJİ ELEKTRİK ÜRETİM VE TİC.A.Ş.",
+    "short_name": "MURATHES"
+  },
+  {
+    "power_plant_id": 15499,
+    "entsoe_code": "40X000000015499B",
+    "plant_name": "MURAT NEHRİ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MURAT NEH"
+  },
+  {
+    "power_plant_id": 503,
+    "entsoe_code": "40X0000000005033",
+    "plant_name": "MURATLI KARTON KAĞIT VE SANAYİ TİCARET A.Ş.",
+    "short_name": "MURATLI"
+  },
+  {
+    "power_plant_id": 10028,
+    "entsoe_code": "40X0000000100281",
+    "plant_name": "MURSAL ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "MURSAL"
+  },
+  {
+    "power_plant_id": 5554,
+    "entsoe_code": "40X000000005554Z",
+    "plant_name": "MUT ELEKTRİK ÜRETİM SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "MUT"
+  },
+  {
+    "power_plant_id": 10874,
+    "entsoe_code": "40X100000010874N",
+    "plant_name": "MUTLU MAKARNACILIK SAN. TİC. A.Ş.",
+    "short_name": "M_MAKARNA"
+  },
+  {
+    "power_plant_id": 18580,
+    "entsoe_code": "40X000000018580D",
+    "plant_name": "MZF ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MZF"
+  },
+  {
+    "power_plant_id": 11276,
+    "entsoe_code": "40X000000011276E",
+    "plant_name": "MİM SANAYİ KAZANLARI ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MİMSAN"
+  },
+  {
+    "power_plant_id": 16079,
+    "entsoe_code": "40X000000016079S",
+    "plant_name": "MİRSA ENERJİ GERİ DÖNÜŞÜM İNŞ. OTOMOTİV SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "MİRSA"
+  },
+  {
+    "power_plant_id": 11617,
+    "entsoe_code": "40X000000011617E",
+    "plant_name": "MİS ENERJİ ÜRETİM A.Ş.",
+    "short_name": "MİS"
+  },
+  {
+    "power_plant_id": 3908,
+    "entsoe_code": "40X100000003908N",
+    "plant_name": "NAS ENERJİ A.Ş.",
+    "short_name": "NAS"
+  },
+  {
+    "power_plant_id": 104643,
+    "entsoe_code": "40X000000104643Y",
+    "plant_name": "NAS TOPLAYICILIK VE ENERJİ ÇÖZÜMLERİ A.Ş. (TOPLAYICI)",
+    "short_name": "NAS TOPLAYICI"
+  },
+  {
+    "power_plant_id": 9021,
+    "entsoe_code": "40X000000009021D",
+    "plant_name": "NASSAN ELEKTRİK ÜRETİM İNŞAAT TURİZM VE TİCARET LTD. ŞTİ.",
+    "short_name": "NASSAN"
+  },
+  {
+    "power_plant_id": 9948,
+    "entsoe_code": "40X000000009948V",
+    "plant_name": "NEK ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "NEK_ELK"
+  },
+  {
+    "power_plant_id": 18581,
+    "entsoe_code": "40X000000018581B",
+    "plant_name": "NFY ENERJİ ÜRETİM A.Ş.",
+    "short_name": "NFY"
+  },
+  {
+    "power_plant_id": 8199,
+    "entsoe_code": "40X000000008199E",
+    "plant_name": "NKD ELEKTRİK ENERJİ ÜRETİM A.Ş",
+    "short_name": "NKD ELEK."
+  },
+  {
+    "power_plant_id": 9750,
+    "entsoe_code": "40X000000009750F",
+    "plant_name": "NM ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "NM ENERJİ"
+  },
+  {
+    "power_plant_id": 9530,
+    "entsoe_code": "40X000000009530T",
+    "plant_name": "NOVTEK ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "NOVTEK"
+  },
+  {
+    "power_plant_id": 11957,
+    "entsoe_code": "40X000000011957R",
+    "plant_name": "NOVTEK ENERJİ ELEKTRİK ÜRETİM A.Ş. URTMKTGR1",
+    "short_name": "NOVKTGR1"
+  },
+  {
+    "power_plant_id": 455,
+    "entsoe_code": "40X000000000455P",
+    "plant_name": "NUH ÇİMENTO SANAYİ A.Ş.",
+    "short_name": "NUH ÇİM"
+  },
+  {
+    "power_plant_id": 6179,
+    "entsoe_code": "40X000000006179U",
+    "plant_name": "NUROL GÖKSU ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "NUROLGÖKSU"
+  },
+  {
+    "power_plant_id": 4572,
+    "entsoe_code": "40X0000000045721",
+    "plant_name": "NİL ÖRME SANAYİ VE TİCARET A.Ş.",
+    "short_name": "NİLÖRME"
+  },
+  {
+    "power_plant_id": 15439,
+    "entsoe_code": "40X000000015439T",
+    "plant_name": "NİZİP BİYOGAZ ELEKTRİK ÜRETİM SAN. VE TİC.A.Ş.",
+    "short_name": "NİZİP"
+  },
+  {
+    "power_plant_id": 9708,
+    "entsoe_code": "40X000000009708E",
+    "plant_name": "OKKAYASI ELEKTRİK ÜRETİM VE İNŞAAT A.Ş.",
+    "short_name": "OKKAYASI"
+  },
+  {
+    "power_plant_id": 11375,
+    "entsoe_code": "40X000000011375C",
+    "plant_name": "OKNAL SINAİ TIBBİ GAZLAR GIDA PET. TAŞ. MAD. İNŞ. SAN. VE TİC. A.Ş.",
+    "short_name": "OKNAL"
+  },
+  {
+    "power_plant_id": 5778,
+    "entsoe_code": "40X000000005778D",
+    "plant_name": "OLGU ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "OLGU"
+  },
+  {
+    "power_plant_id": 11262,
+    "entsoe_code": "40X000000011262P",
+    "plant_name": "OLTAN VE KÖLEOĞLU ELEKTRİK VE ENERJİ ÜRETİMİ TİCARET A.Ş.",
+    "short_name": "OLTAN"
+  },
+  {
+    "power_plant_id": 15320,
+    "entsoe_code": "40X000000015320H",
+    "plant_name": "OMP ENERJİ ÜRETİM A.Ş.",
+    "short_name": "OMP"
+  },
+  {
+    "power_plant_id": 17479,
+    "entsoe_code": "40X0000000174797",
+    "plant_name": "ONO ENERJİ ENDÜSTRİYEL PROSES SİSTEMLERİ VE OTOMASYON SAN. TİC. LTD. ŞTİ.",
+    "short_name": "ONO"
+  },
+  {
+    "power_plant_id": 104782,
+    "entsoe_code": "40X000000104782K",
+    "plant_name": "OPERA ENERJİ A.Ş. (TOPLAYICI)",
+    "short_name": "OPERA TOPLAYICI"
+  },
+  {
+    "power_plant_id": 104542,
+    "entsoe_code": "40X0000001045423",
+    "plant_name": "OREN ORDU ÇEVRE ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "OREN ORDU"
+  },
+  {
+    "power_plant_id": 136,
+    "entsoe_code": "40X0000000001364",
+    "plant_name": "ORTADOĞU RULMAN SAN.TİC.A.Ş.",
+    "short_name": "ORTDĞU RLM"
+  },
+  {
+    "power_plant_id": 11253,
+    "entsoe_code": "40X000000011253Q",
+    "plant_name": "ORYA ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ORYA"
+  },
+  {
+    "power_plant_id": 10330,
+    "entsoe_code": "40X0000000103302",
+    "plant_name": "OVİT ENERJİ ÜRETİM A.Ş.",
+    "short_name": "OVİT"
+  },
+  {
+    "power_plant_id": 14499,
+    "entsoe_code": "40X000000014499G",
+    "plant_name": "OYAK ÇİMENTO FABRİKALARI A.Ş.",
+    "short_name": "OYAK ÇİM"
+  },
+  {
+    "power_plant_id": 12299,
+    "entsoe_code": "40X000000012299Y",
+    "plant_name": "OYKA ENERJİ SANAYİ TİCARET A.Ş.",
+    "short_name": "OYKAENERJİ"
+  },
+  {
+    "power_plant_id": 7059,
+    "entsoe_code": "40X000000007059Z",
+    "plant_name": "OYKA KAĞIT AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "OYKA"
+  },
+  {
+    "power_plant_id": 105142,
+    "entsoe_code": "40X000000105142E",
+    "plant_name": "OZE ENERJİ A.Ş.",
+    "short_name": "OZE ENERJİ"
+  },
+  {
+    "power_plant_id": 207,
+    "entsoe_code": "40X0000000002077",
+    "plant_name": "PAK GIDA ÜRET. VE PAZ. A.Ş (İZMIT)",
+    "short_name": "PAK İZMIT"
+  },
+  {
+    "power_plant_id": 243,
+    "entsoe_code": "40X0000000002433",
+    "plant_name": "PAK GIDA ÜRETİM VE PAZARLAMA A.Ş. (DÜZCE)",
+    "short_name": "PAK DÜZCE"
+  },
+  {
+    "power_plant_id": 392,
+    "entsoe_code": "40X000000000392N",
+    "plant_name": "PAK GIDA ÜRETİM VE PAZARLAMA A.Ş.(İZMİR)",
+    "short_name": "PAK_IZMR"
+  },
+  {
+    "power_plant_id": 11536,
+    "entsoe_code": "40X000000011536E",
+    "plant_name": "PAKMEM ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "PAKMEM"
+  },
+  {
+    "power_plant_id": 5731,
+    "entsoe_code": "40X0000000057312",
+    "plant_name": "PAMEL YENİLENEBİLİR ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "PAMEL"
+  },
+  {
+    "power_plant_id": 18599,
+    "entsoe_code": "40X000000018599T",
+    "plant_name": "PAMEL YENİLENEBİLİR ELEKTRİK ÜRETİM A.Ş. URTMKTGR1",
+    "short_name": "PAMELKTGR1"
+  },
+  {
+    "power_plant_id": 8801,
+    "entsoe_code": "40X000000008801T",
+    "plant_name": "PAMUK ELEKTRIK ÜRETIM TIC. VE SAN. LTD. ŞTI.",
+    "short_name": "PAMUK"
+  },
+  {
+    "power_plant_id": 16799,
+    "entsoe_code": "40X000000016799V",
+    "plant_name": "PASHA ENERJİ YATIRIMLARI A.Ş.",
+    "short_name": "PASHA"
+  },
+  {
+    "power_plant_id": 16319,
+    "entsoe_code": "40X000000016319Y",
+    "plant_name": "PAŞA ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş",
+    "short_name": "PAŞA"
+  },
+  {
+    "power_plant_id": 8245,
+    "entsoe_code": "40X000000008245X",
+    "plant_name": "PELİN ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "PELİN"
+  },
+  {
+    "power_plant_id": 15145,
+    "entsoe_code": "40X0000000151459",
+    "plant_name": "PELİTÖZÜ ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "PELİTÖZÜ"
+  },
+  {
+    "power_plant_id": 101940,
+    "entsoe_code": "40X0000001019406",
+    "plant_name": "PENTA HİDROELEKTRİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "PENTA"
+  },
+  {
+    "power_plant_id": 104523,
+    "entsoe_code": "40X0000001045237",
+    "plant_name": "PERFECT TOPLAYICILIK ENERJİ A.Ş. (TOPLAYICI)",
+    "short_name": "PERFECT TOPLAYICI"
+  },
+  {
+    "power_plant_id": 1864,
+    "entsoe_code": "40X0000000018643",
+    "plant_name": "PETA MÜHENDİSLİK ENERJİ TUR. SAN.TİC. A.Ş.",
+    "short_name": "PETA"
+  },
+  {
+    "power_plant_id": 173,
+    "entsoe_code": "40X000000000173Z",
+    "plant_name": "PETKİM PETROKİMYA HOLDİNG A.Ş.",
+    "short_name": "PETKİM"
+  },
+  {
+    "power_plant_id": 8981,
+    "entsoe_code": "40X0000000089811",
+    "plant_name": "PLASKO PLASTİK SAN. VE TİC. A.Ş.",
+    "short_name": "PLASKO"
+  },
+  {
+    "power_plant_id": 4853,
+    "entsoe_code": "40X000000004853U",
+    "plant_name": "POKUT ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "POKUT"
+  },
+  {
+    "power_plant_id": 6942,
+    "entsoe_code": "40X000000006942L",
+    "plant_name": "POLAT ELEKTRİK ÜRETİM İNŞAAT İTHALAT İHRACAT A.Ş.",
+    "short_name": "POLAT E."
+  },
+  {
+    "power_plant_id": 567,
+    "entsoe_code": "40X000000000567E",
+    "plant_name": "POLAT TURİZM OTELCİLİK TİCARET VE SANAYİ A.Ş.",
+    "short_name": "POLAT TRZ."
+  },
+  {
+    "power_plant_id": 12939,
+    "entsoe_code": "40X000000012939O",
+    "plant_name": "POLATBAY ENERJİ ÜRETİM İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "short_name": "POLATBAY"
+  },
+  {
+    "power_plant_id": 7979,
+    "entsoe_code": "40X000000007979U",
+    "plant_name": "POLRES ELEKTRİK ÜRETİM İNŞ. TAR. HAY. SAN. VE TİC. A.Ş.",
+    "short_name": "POLRES"
+  },
+  {
+    "power_plant_id": 4865,
+    "entsoe_code": "40X000000004865N",
+    "plant_name": "PRESTİJ ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "PRESTİJ"
+  },
+  {
+    "power_plant_id": 17840,
+    "entsoe_code": "40X000000017840I",
+    "plant_name": "PSP MÜHENDİSLİK ENERJİ DANIŞMANLIK MAKİNA TASARIM İMALAT TİC. A.Ş.",
+    "short_name": "PSP"
+  },
+  {
+    "power_plant_id": 103402,
+    "entsoe_code": "40X000000103402O",
+    "plant_name": "PURE ENERGY ELEKTRİK TEDARİK A.Ş. (TOPLAYICI)",
+    "short_name": "PURE TOPLAYICI"
+  },
+  {
+    "power_plant_id": 11413,
+    "entsoe_code": "40X000000011413U",
+    "plant_name": "PİR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "PİR"
+  },
+  {
+    "power_plant_id": 17579,
+    "entsoe_code": "40X0000000175793",
+    "plant_name": "R ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "R ENERJİ"
+  },
+  {
+    "power_plant_id": 6181,
+    "entsoe_code": "40X0000000061816",
+    "plant_name": "R.K. RÜZGAR ENERJİ SANTRALLERİ ELEKTRİK ÜRETİM SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "R.K."
+  },
+  {
+    "power_plant_id": 13037,
+    "entsoe_code": "40X000000013037M",
+    "plant_name": "RA GÜNEŞ ENERJİSİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "RA"
+  },
+  {
+    "power_plant_id": 17659,
+    "entsoe_code": "40X0000000176595",
+    "plant_name": "RDF ENERJİ ÜRETİM SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "RDF"
+  },
+  {
+    "power_plant_id": 15539,
+    "entsoe_code": "40X000000015539P",
+    "plant_name": "RENETECH ENERJİ ÜRETİM A.Ş.",
+    "short_name": "RENETECH"
+  },
+  {
+    "power_plant_id": 16399,
+    "entsoe_code": "40X000000016399A",
+    "plant_name": "RESPECT BİYOGAZ ELEKTRİK ENERJİ VE GÜBRE ÜRETİM SAN. TİC. A.Ş.",
+    "short_name": "RESPECT"
+  },
+  {
+    "power_plant_id": 9528,
+    "entsoe_code": "40X000000009528G",
+    "plant_name": "REİS RS ENERJI ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "REİS"
+  },
+  {
+    "power_plant_id": 11817,
+    "entsoe_code": "40X0000000118176",
+    "plant_name": "REİS RS ENERJİ ELEKTRİK ÜRETİM SANAYİ VE TİC. A.Ş. URTMKTGR1",
+    "short_name": "REİSKTGR1"
+  },
+  {
+    "power_plant_id": 336,
+    "entsoe_code": "40X000000000336X",
+    "plant_name": "REŞADİYE HAMZALI ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "RESADIYE"
+  },
+  {
+    "power_plant_id": 3846,
+    "entsoe_code": "40X000000003846W",
+    "plant_name": "RHG ENERTÜRK ENERJİ ÜRETİM VE TİC. A.Ş. ( ÜRETİM )",
+    "short_name": "RHG ÜRETİM"
+  },
+  {
+    "power_plant_id": 3625,
+    "entsoe_code": "40X000000003625B",
+    "plant_name": "RWE & TURCAS GÜNEY ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "RWE"
+  },
+  {
+    "power_plant_id": 104160,
+    "entsoe_code": "40X000000104160H",
+    "plant_name": "RÖNESANS REFLEX ENERJİ ÇÖZÜMLERİ SAN. VE TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "RÖNESANS REFLEX TOPLAYICI"
+  },
+  {
+    "power_plant_id": 17481,
+    "entsoe_code": "40X000000017481K",
+    "plant_name": "RÜYAM ENERJİ GERİ DÖNÜŞÜM MAKİNE VE ÜRETİM LTD. ŞTİ.",
+    "short_name": "RÜYAM"
+  },
+  {
+    "power_plant_id": 5029,
+    "entsoe_code": "40X000000005029H",
+    "plant_name": "RİNERJİ RİZE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "RİNERJİ"
+  },
+  {
+    "power_plant_id": 6518,
+    "entsoe_code": "40X000000006518Y",
+    "plant_name": "SAF ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş",
+    "short_name": "SAF"
+  },
+  {
+    "power_plant_id": 13117,
+    "entsoe_code": "40X000000013117O",
+    "plant_name": "SAFİR ENERJİ ÜRETİM YATIRIM VE TİCARET A.Ş.",
+    "short_name": "SAFİR"
+  },
+  {
+    "power_plant_id": 16199,
+    "entsoe_code": "40X000000016199I",
+    "plant_name": "SALKIM ENERJİ GERİ DÖNÜŞÜM VE BİYOKÜTLE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "SALKIM"
+  },
+  {
+    "power_plant_id": 4795,
+    "entsoe_code": "40X000000004795I",
+    "plant_name": "SAMSUN AVDAN ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "SAMSUN"
+  },
+  {
+    "power_plant_id": 122,
+    "entsoe_code": "40X000000000122F",
+    "plant_name": "SAMUR HALILARI SAN. TİC. A.Ş",
+    "short_name": "SAMUR HL"
+  },
+  {
+    "power_plant_id": 103120,
+    "entsoe_code": "40X000000103120Y",
+    "plant_name": "SANCARLAR ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "SANCARLAR"
+  },
+  {
+    "power_plant_id": 5650,
+    "entsoe_code": "40X0000000056502",
+    "plant_name": "SANKO ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "SANKO A.Ş."
+  },
+  {
+    "power_plant_id": 462,
+    "entsoe_code": "40X000000000462S",
+    "plant_name": "SANKO TEKSTİL İŞLETMELERİ SANAYİ VE TİCARET  A.Ş.",
+    "short_name": "SANKO2"
+  },
+  {
+    "power_plant_id": 15521,
+    "entsoe_code": "40X0000000155217",
+    "plant_name": "SANVAR İNŞAAT ELEKTRİK ENERJİ MALZEME TURİZM SAN. TİC. A.Ş.",
+    "short_name": "SANVAR"
+  },
+  {
+    "power_plant_id": 18482,
+    "entsoe_code": "40X000000018482D",
+    "plant_name": "SAREN SARGIN ENERJİ YATIRIMLARI VE ÜRETİM SANAYİ TİC. A.Ş.",
+    "short_name": "SAREN"
+  },
+  {
+    "power_plant_id": 121,
+    "entsoe_code": "40X000000000121H",
+    "plant_name": "SARKUYSAN ELEKTROLİT BAKIR SAN.TİC.A.Ş",
+    "short_name": "SARKUYSAN"
+  },
+  {
+    "power_plant_id": 15179,
+    "entsoe_code": "40X000000015179T",
+    "plant_name": "SATEM SİNOP BİYOKÜTLE ENERJİ LTD. ŞTİ.",
+    "short_name": "SATEM"
+  },
+  {
+    "power_plant_id": 11837,
+    "entsoe_code": "40X0000000118370",
+    "plant_name": "SEHER MENSUCAT TEKSTİL SAN. VE TIC. A.Ş.",
+    "short_name": "SEHER"
+  },
+  {
+    "power_plant_id": 4769,
+    "entsoe_code": "40X000000004769J",
+    "plant_name": "SELVA GIDA SAN. A.Ş.",
+    "short_name": "SELVA"
+  },
+  {
+    "power_plant_id": 609,
+    "entsoe_code": "40X000000000609O",
+    "plant_name": "SENERJİ ENERJİ ÜRETİM A.Ş.",
+    "short_name": "SENERJI"
+  },
+  {
+    "power_plant_id": 3405,
+    "entsoe_code": "40X000000003405P",
+    "plant_name": "SER-ER ENERJİ ÜRETİM VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "SER-ER"
+  },
+  {
+    "power_plant_id": 4833,
+    "entsoe_code": "40X100000004833N",
+    "plant_name": "SEYRANTEPE HES ELEKTRİK ÜRETİMI A.Ş.",
+    "short_name": "SEYRANTEPE"
+  },
+  {
+    "power_plant_id": 5429,
+    "entsoe_code": "40X0000000054291",
+    "plant_name": "SIR ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş..",
+    "short_name": "SIR ENERJİ"
+  },
+  {
+    "power_plant_id": 18823,
+    "entsoe_code": "40X000000018823D",
+    "plant_name": "SK GOLD COMPANY MÜCEVHERAT MADENCİLİK İTHALAT İHRACAT A.Ş.",
+    "short_name": "SK GOLD"
+  },
+  {
+    "power_plant_id": 103820,
+    "entsoe_code": "40X0000001038206",
+    "plant_name": "SOCAR ENERJİ TİCARET A.Ş. (TOPLAYICI)",
+    "short_name": "SOCAR TOPLAYICI"
+  },
+  {
+    "power_plant_id": 12378,
+    "entsoe_code": "40X0000000123781",
+    "plant_name": "SOLANA ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "SOLANA"
+  },
+  {
+    "power_plant_id": 675,
+    "entsoe_code": "40X000000000675B",
+    "plant_name": "SOMA ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "SOMA EÜ"
+  },
+  {
+    "power_plant_id": 9061,
+    "entsoe_code": "40X0000000090611",
+    "plant_name": "SOMA TERMİK SANTRAL ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "SOMATERMİK"
+  },
+  {
+    "power_plant_id": 17059,
+    "entsoe_code": "40X000000017059T",
+    "plant_name": "SONE ENERJİ YATIRIM ÜRETİM VE TİC. A.Ş.",
+    "short_name": "SONE"
+  },
+  {
+    "power_plant_id": 16286,
+    "entsoe_code": "40X000000016286N",
+    "plant_name": "SONSES ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş",
+    "short_name": "SONSES"
+  },
+  {
+    "power_plant_id": 101580,
+    "entsoe_code": "40X000000101580A",
+    "plant_name": "SPON ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "SPON"
+  },
+  {
+    "power_plant_id": 139,
+    "entsoe_code": "40X000000000139Z",
+    "plant_name": "STANDARD PROFİL OTOMOTİV SAN. VE TİC. A.Ş.",
+    "short_name": "STANDARD"
+  },
+  {
+    "power_plant_id": 6018,
+    "entsoe_code": "40X000000006018H",
+    "plant_name": "SUATA ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "SUATA"
+  },
+  {
+    "power_plant_id": 15480,
+    "entsoe_code": "40X000000015480W",
+    "plant_name": "SUEZ ÇANAKKALE RR ATIK HİZMETLERİ A.Ş.",
+    "short_name": "SUEZ"
+  },
+  {
+    "power_plant_id": 9301,
+    "entsoe_code": "40X0000000093017",
+    "plant_name": "SULTANMURAT ENERJİ ÜRETİM A.Ş.",
+    "short_name": "SULTN"
+  },
+  {
+    "power_plant_id": 18460,
+    "entsoe_code": "40X000000018460N",
+    "plant_name": "SUPRA ENERJİ İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "SUPRA"
+  },
+  {
+    "power_plant_id": 11213,
+    "entsoe_code": "40X0000000112131",
+    "plant_name": "SİLEN ELEKTRİK ÜRETİM VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "SİLEN"
+  },
+  {
+    "power_plant_id": 601,
+    "entsoe_code": "40X0000000006013",
+    "plant_name": "SİLOPİ ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "SİLOPİ A.Ş"
+  },
+  {
+    "power_plant_id": 15440,
+    "entsoe_code": "40X0000000154407",
+    "plant_name": "SİNNOVİA ENERJİ İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "SİNNOVİA"
+  },
+  {
+    "power_plant_id": 10593,
+    "entsoe_code": "40X0000000105937",
+    "plant_name": "SİS ENERJİ ÜRETİM A.Ş.",
+    "short_name": "SİS ENERJİ"
+  },
+  {
+    "power_plant_id": 104100,
+    "entsoe_code": "40X000000104100Z",
+    "plant_name": "TANİN ENERJİ ÜRETİMİ A.Ş.",
+    "short_name": "TANİN"
+  },
+  {
+    "power_plant_id": 12577,
+    "entsoe_code": "40X000000012577W",
+    "plant_name": "TATLIPINAR ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "TATLIPINAR"
+  },
+  {
+    "power_plant_id": 17423,
+    "entsoe_code": "40X000000017423Y",
+    "plant_name": "TAY ENERJİ İNŞAAT SAN. VE TİC. A.Ş.",
+    "short_name": "TAY"
+  },
+  {
+    "power_plant_id": 9928,
+    "entsoe_code": "40X0000000099280",
+    "plant_name": "TEKAS TEKSTİL İHRACAT VE İTHALAT TİCARET VE SANAYİ ANONİM ŞİRKETİ",
+    "short_name": "TEKAS"
+  },
+  {
+    "power_plant_id": 265,
+    "entsoe_code": "40X000000000265U",
+    "plant_name": "TEKBOY TEKSTİL VE BOYAMA SAN.TİC.A.Ş.",
+    "short_name": "TEKBOY"
+  },
+  {
+    "power_plant_id": 280,
+    "entsoe_code": "40X000000000280Y",
+    "plant_name": "TEKTUĞ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TEKTUĞ"
+  },
+  {
+    "power_plant_id": 13638,
+    "entsoe_code": "40X000000013638X",
+    "plant_name": "TELERKO TURİZM ANONİM ŞİRKETİ",
+    "short_name": "TELERKO"
+  },
+  {
+    "power_plant_id": 482,
+    "entsoe_code": "40X000000000482M",
+    "plant_name": "TEMSA ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TEMSA"
+  },
+  {
+    "power_plant_id": 103140,
+    "entsoe_code": "40X000000103140S",
+    "plant_name": "TERMOPET AKARYAKIT A.Ş.",
+    "short_name": "TERMOPET"
+  },
+  {
+    "power_plant_id": 103160,
+    "entsoe_code": "40X000000103160M",
+    "plant_name": "TERMOPET AKARYAKIT A.Ş. URTMKTGR1",
+    "short_name": "TERMOPETKTGR1"
+  },
+  {
+    "power_plant_id": 103161,
+    "entsoe_code": "40X000000103161K",
+    "plant_name": "TERMOPET AKARYAKIT A.Ş. URTMKTGR2",
+    "short_name": "TERMOPETKTGR2"
+  },
+  {
+    "power_plant_id": 13698,
+    "entsoe_code": "40X000000013698F",
+    "plant_name": "TEZLİ DERE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TEZLİDERE"
+  },
+  {
+    "power_plant_id": 8246,
+    "entsoe_code": "40X000000008246V",
+    "plant_name": "TG ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TG ELK."
+  },
+  {
+    "power_plant_id": 7899,
+    "entsoe_code": "40X000000007899S",
+    "plant_name": "TIRSAN ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TIRSAN"
+  },
+  {
+    "power_plant_id": 9651,
+    "entsoe_code": "40X000000009651H",
+    "plant_name": "TKD KUZEY ENERJİ ÜRETİM A.Ş.",
+    "short_name": "TKD ENERJİ"
+  },
+  {
+    "power_plant_id": 12737,
+    "entsoe_code": "40X100000012737N",
+    "plant_name": "TLOS YENİLENEBİLİR ENERJİ ÜRETİM VE TİCARET A.Ş",
+    "short_name": "TLOS"
+  },
+  {
+    "power_plant_id": 15880,
+    "entsoe_code": "40X000000015880G",
+    "plant_name": "TONYA ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TONYA"
+  },
+  {
+    "power_plant_id": 522,
+    "entsoe_code": "40X100000000522N",
+    "plant_name": "TOROS TARIM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "TOROSTARIM"
+  },
+  {
+    "power_plant_id": 6160,
+    "entsoe_code": "40X000000006160E",
+    "plant_name": "TRABZON ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "TRABZON Ü."
+  },
+  {
+    "power_plant_id": 16840,
+    "entsoe_code": "40X000000016840N",
+    "plant_name": "TRANSMARK TURKEY GÜLPINAR YENİLENEBİLİR ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "TRANSMARK"
+  },
+  {
+    "power_plant_id": 7141,
+    "entsoe_code": "40X000000007141D",
+    "plant_name": "TUFAN ENERJİ İNŞAAT TAAHHÜT SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "TUFAN"
+  },
+  {
+    "power_plant_id": 17220,
+    "entsoe_code": "40X000000017220B",
+    "plant_name": "TURK ÇİM TARIM SANAYİ ANONİM ŞİRKETİ",
+    "short_name": "TURK ÇİM"
+  },
+  {
+    "power_plant_id": 14179,
+    "entsoe_code": "40X000000014179Y",
+    "plant_name": "TURKA OTELCİLİK TURİZM VE TİC. A.Ş.",
+    "short_name": "TURKA"
+  },
+  {
+    "power_plant_id": 7679,
+    "entsoe_code": "40X0000000076795",
+    "plant_name": "TURKOL TURİZM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "TURKOL"
+  },
+  {
+    "power_plant_id": 379,
+    "entsoe_code": "40X000000000379F",
+    "plant_name": "TÜPRAŞ TÜRKİYE PETROL RAFİNERİLERİ A.Ş.",
+    "short_name": "TÜPRAŞ_İZT"
+  },
+  {
+    "power_plant_id": 8001,
+    "entsoe_code": "40X000000008001O",
+    "plant_name": "TÜRKERLER JEOTERMAL ENERJİ ARAMA VE ÜRETİM A.Ş.",
+    "short_name": "JEOTER ÜRE"
+  },
+  {
+    "power_plant_id": 17600,
+    "entsoe_code": "40X0000000176001",
+    "plant_name": "TÜRKMEN BEYİ SOLAR ENERJİ TARIM HAYVANCILIK A.Ş.",
+    "short_name": "TÜRKMENBEY"
+  },
+  {
+    "power_plant_id": 104481,
+    "entsoe_code": "40X000000104481Y",
+    "plant_name": "TÜRKİYE PETROLLERİ ANONİM ORTAKLIĞI",
+    "short_name": "TPAO"
+  },
+  {
+    "power_plant_id": 17120,
+    "entsoe_code": "40X000000017120F",
+    "plant_name": "TÜRKİYE ŞİŞE VE CAM FABRİKALARI A.Ş.",
+    "short_name": "TÜRKİYE ŞC"
+  },
+  {
+    "power_plant_id": 11135,
+    "entsoe_code": "40X000000011135W",
+    "plant_name": "TİRE BİYOGAZ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "TİREBİYO"
+  },
+  {
+    "power_plant_id": 9342,
+    "entsoe_code": "40X000000009342U",
+    "plant_name": "UFUK ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "UFUK"
+  },
+  {
+    "power_plant_id": 16000,
+    "entsoe_code": "40X000000016000U",
+    "plant_name": "ULU YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ULU"
+  },
+  {
+    "power_plant_id": 13077,
+    "entsoe_code": "40X000000013077A",
+    "plant_name": "ULUSAL ENERJİ ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş",
+    "short_name": "ULUSAL"
+  },
+  {
+    "power_plant_id": 16359,
+    "entsoe_code": "40X000000016359M",
+    "plant_name": "UNIVERSAL WIND ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "UNIV WIND"
+  },
+  {
+    "power_plant_id": 7359,
+    "entsoe_code": "40X000000007359N",
+    "plant_name": "VARTO ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "VARTO"
+  },
+  {
+    "power_plant_id": 7279,
+    "entsoe_code": "40X000000007279L",
+    "plant_name": "VASFİ ENERJİ ELEKTRİK ÜRETİM PAZARLAMA SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "VASFİ"
+  },
+  {
+    "power_plant_id": 9533,
+    "entsoe_code": "40X000000009533N",
+    "plant_name": "VERİM ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "VERİM"
+  },
+  {
+    "power_plant_id": 11214,
+    "entsoe_code": "40X100000011214N",
+    "plant_name": "VESMEC MAKİNE SANAYİ MÜMESSİLLİK  DANIŞMANLIK  VE TİC. A.Ş.",
+    "short_name": "VESMEC"
+  },
+  {
+    "power_plant_id": 5841,
+    "entsoe_code": "40X000000005841W",
+    "plant_name": "VİRA ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "VİRA"
+  },
+  {
+    "power_plant_id": 12197,
+    "entsoe_code": "40X0000000121975",
+    "plant_name": "WM ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "WM"
+  },
+  {
+    "power_plant_id": 10328,
+    "entsoe_code": "40X000000010328Q",
+    "plant_name": "YALOVA RÜZGAR ENERJİSİNDEN ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "YALOVA RES"
+  },
+  {
+    "power_plant_id": 11776,
+    "entsoe_code": "40X000000011776V",
+    "plant_name": "YAPILCAN ENERJİ YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "YAPILCANE"
+  },
+  {
+    "power_plant_id": 11259,
+    "entsoe_code": "40X000000011259E",
+    "plant_name": "YAPILCANLAR TOHUMCULUK HAYVANCILIK SAN. VE TİC.LTD.ŞTİ.",
+    "short_name": "YAPILCAN"
+  },
+  {
+    "power_plant_id": 8321,
+    "entsoe_code": "40X0000000083216",
+    "plant_name": "YATAĞAN TERMİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "YATAĞAN"
+  },
+  {
+    "power_plant_id": 11293,
+    "entsoe_code": "40X000000011293E",
+    "plant_name": "YAZICI DEMİR ÇELİK SANAYİ VE TURİZM TİC. A.Ş.",
+    "short_name": "YAZICI"
+  },
+  {
+    "power_plant_id": 20121,
+    "entsoe_code": "40X0000000201215",
+    "plant_name": "YAĞMUR ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "YAĞMURÜRTM"
+  },
+  {
+    "power_plant_id": 10308,
+    "entsoe_code": "40X000000010308W",
+    "plant_name": "YAĞMUR ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "YAGMR_ENRJ"
+  },
+  {
+    "power_plant_id": 3928,
+    "entsoe_code": "40X000000003928U",
+    "plant_name": "YAŞIL ENERJİ ELEKTRİK ÜRETİM İNŞAAT TURİZM GIDA MADENCİLİK A.Ş.",
+    "short_name": "YAŞIL"
+  },
+  {
+    "power_plant_id": 12077,
+    "entsoe_code": "40X000000012077F",
+    "plant_name": "YELEN-GÜLPINAR ENERJİ ÜRETİM SAN. VE TİC. A.Ş.",
+    "short_name": "YELEN"
+  },
+  {
+    "power_plant_id": 6238,
+    "entsoe_code": "40X0000000062383",
+    "plant_name": "YENİ BELEN ENERJİ ELEKTRİK ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "YENİ BELEN"
+  },
+  {
+    "power_plant_id": 6839,
+    "entsoe_code": "40X000000006839E",
+    "plant_name": "YENİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "YENİ"
+  },
+  {
+    "power_plant_id": 9591,
+    "entsoe_code": "40X0000000095919",
+    "plant_name": "YENİ ENERJİ YATIRIM ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "YENİENERJİ"
+  },
+  {
+    "power_plant_id": 8339,
+    "entsoe_code": "40X000000008339O",
+    "plant_name": "YENİKÖY KEMERKÖY ELEKTRİK ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "YENİKÖY K."
+  },
+  {
+    "power_plant_id": 558,
+    "entsoe_code": "40X000000000558F",
+    "plant_name": "YEŞİL ENERJİ ELEKTRİK ÜRETİM SAN. VE TİC. A.Ş",
+    "short_name": "YEŞİL ENER"
+  },
+  {
+    "power_plant_id": 5799,
+    "entsoe_code": "40X0000000057995",
+    "plant_name": "YEŞİLIRMAK ELEKTRİK ENERJİ ÜRETİM A.Ş.",
+    "short_name": "Y.ÜRETİM"
+  },
+  {
+    "power_plant_id": 14119,
+    "entsoe_code": "40X000000014119F",
+    "plant_name": "YEŞİLNEHİR ENERJİ ÜRETİM İNŞAAT SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "YEŞİLNEHİR"
+  },
+  {
+    "power_plant_id": 9283,
+    "entsoe_code": "40X000000009283K",
+    "plant_name": "YGT ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "YGT ÜRETİM"
+  },
+  {
+    "power_plant_id": 417,
+    "entsoe_code": "40X000000000417X",
+    "plant_name": "YILDIZ ENTEGRE AĞAÇ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "YILDIZ_ENT"
+  },
+  {
+    "power_plant_id": 5375,
+    "entsoe_code": "40X000000005375Z",
+    "plant_name": "YILMAZ ULUSOY ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÖZTÜRK"
+  },
+  {
+    "power_plant_id": 17460,
+    "entsoe_code": "40X000000017460S",
+    "plant_name": "YILMAZLAR MADENCİLİK SAN. VE TİC. LTD. ŞTİ.",
+    "short_name": "YILMAZLAR"
+  },
+  {
+    "power_plant_id": 449,
+    "entsoe_code": "40X000000000449K",
+    "plant_name": "YPM ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "YPM"
+  },
+  {
+    "power_plant_id": 18941,
+    "entsoe_code": "40X0000000189417",
+    "plant_name": "YURDEMİ ENERJİ A.Ş.",
+    "short_name": "YURDEMİ ÜRETİM"
+  },
+  {
+    "power_plant_id": 5249,
+    "entsoe_code": "40X0000000052493",
+    "plant_name": "YÜKSEL ENERJİ ELEKTRİK  ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "YÜKSEL.ÜR."
+  },
+  {
+    "power_plant_id": 18179,
+    "entsoe_code": "40X000000018179E",
+    "plant_name": "ZAGROS ENERJİ ÜRETİM ANONİM ŞİRKETİ",
+    "short_name": "ZAGROS"
+  },
+  {
+    "power_plant_id": 104460,
+    "entsoe_code": "40X0000001044605",
+    "plant_name": "ZENTRAL ENERJİ TEKNOLOJİLERİ A.Ş. (TOPLAYICI)",
+    "short_name": "ZENTRAL TOPLAYICI"
+  },
+  {
+    "power_plant_id": 103060,
+    "entsoe_code": "40X000000103060Q",
+    "plant_name": "ZEROS GAZ VE ENERJİ A.Ş. (TOPLAYICI)",
+    "short_name": "ZEROS TOPLAYICI"
+  },
+  {
+    "power_plant_id": 15080,
+    "entsoe_code": "40X000000015080B",
+    "plant_name": "ZEYN BİYOGAZ ELEKTRİK ÜRETİM VE TİC. A.Ş.",
+    "short_name": "ZEYN"
+  },
+  {
+    "power_plant_id": 18079,
+    "entsoe_code": "40X000000018079I",
+    "plant_name": "ZNP BİYOKÜTLE ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "ZNP"
+  },
+  {
+    "power_plant_id": 104280,
+    "entsoe_code": "40X0000001042807",
+    "plant_name": "ZORLU DENGELEME VE ENERJİ YÖNETİMİ A.Ş. (TOPLAYICI)",
+    "short_name": "ZORLU DENGELEME TOPLAYICI"
+  },
+  {
+    "power_plant_id": 582,
+    "entsoe_code": "40X000000000582I",
+    "plant_name": "ZORLU DOĞAL ELEKTRİK ÜRETİMİ A.Ş.",
+    "short_name": "ZODO"
+  },
+  {
+    "power_plant_id": 104,
+    "entsoe_code": "40X000000000104H",
+    "plant_name": "ZORLU ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ZORLUEN"
+  },
+  {
+    "power_plant_id": 647,
+    "entsoe_code": "40X000000000647G",
+    "plant_name": "ÇAKIT ENERJİ A.Ş.",
+    "short_name": "ÇAKIT"
+  },
+  {
+    "power_plant_id": 9788,
+    "entsoe_code": "40X000000009788R",
+    "plant_name": "ÇALIK RÜZGAR ENERJİSİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÇALIK RES"
+  },
+  {
+    "power_plant_id": 2565,
+    "entsoe_code": "40X0000000025658",
+    "plant_name": "ÇAMLIKAYA ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "ÇAMLIKAYA"
+  },
+  {
+    "power_plant_id": 10377,
+    "entsoe_code": "40X000000010377D",
+    "plant_name": "ÇAN 2 TERMİK A.Ş.",
+    "short_name": "ÇAN 2"
+  },
+  {
+    "power_plant_id": 7842,
+    "entsoe_code": "40X000000007842K",
+    "plant_name": "ÇANAKÇI HES ELEKTRIK ÜRETIM A.Ş.",
+    "short_name": "ÇANAKÇI"
+  },
+  {
+    "power_plant_id": 10815,
+    "entsoe_code": "40X000000010815F",
+    "plant_name": "ÇARDAKLI ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ÇARDAKLI"
+  },
+  {
+    "power_plant_id": 8360,
+    "entsoe_code": "40X000000008360X",
+    "plant_name": "ÇATES ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÇATES"
+  },
+  {
+    "power_plant_id": 104040,
+    "entsoe_code": "40X000000104040R",
+    "plant_name": "ÇAYIRHAN TERMİK ELEKTRİK ÜRETİM VE MADENCİLİK ANONİM ŞİRKETİ",
+    "short_name": "ÇAYIRHANTERMİK"
+  },
+  {
+    "power_plant_id": 10693,
+    "entsoe_code": "40X0000000106933",
+    "plant_name": "ÇAĞLAR ENERJİ ELEKTRİK ÜRETİMİ YAPI VE YAPI MALZEMELERİ SAN. TİC. A.Ş.",
+    "short_name": "ÇAĞLAR ENR"
+  },
+  {
+    "power_plant_id": 5571,
+    "entsoe_code": "40X000000005571Z",
+    "plant_name": "ÇAĞLAYAN HES ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ÇAĞLAYAN"
+  },
+  {
+    "power_plant_id": 10833,
+    "entsoe_code": "40X000000010833D",
+    "plant_name": "ÇAĞLAYAN-SU ELEKTRİK ÜRETİM LTD. ŞTİ.",
+    "short_name": "ÇAĞLAYANSU"
+  },
+  {
+    "power_plant_id": 17663,
+    "entsoe_code": "40X000000017663E",
+    "plant_name": "ÇEKEREK ENERJİ VE GÜBRE ÜRETİMİ A.Ş.",
+    "short_name": "ÇEKEREK"
+  },
+  {
+    "power_plant_id": 15619,
+    "entsoe_code": "40X000000015619R",
+    "plant_name": "ÇELİKLER AYDIN JEOTERMAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÇLKLR AYDN"
+  },
+  {
+    "power_plant_id": 4494,
+    "entsoe_code": "40X000000004494W",
+    "plant_name": "ÇELİKLER ELEKTRİK ÜRETİM A.Ş",
+    "short_name": "ÇELİKLER"
+  },
+  {
+    "power_plant_id": 6979,
+    "entsoe_code": "40X000000006979Z",
+    "plant_name": "ÇELİKLER JEOTERMAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÇELİKLER J"
+  },
+  {
+    "power_plant_id": 9083,
+    "entsoe_code": "40X000000009083S",
+    "plant_name": "ÇELİKLER ORHANELİ TUNÇBİLEK ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÇLKLR O.T."
+  },
+  {
+    "power_plant_id": 9451,
+    "entsoe_code": "40X000000009451P",
+    "plant_name": "ÇELİKLER PAMUKÖREN JEOTERMAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "Ç.PAMUKÖRE"
+  },
+  {
+    "power_plant_id": 6498,
+    "entsoe_code": "40X000000006498E",
+    "plant_name": "ÇELİKLER SEYİTÖMER ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "SEYİTÖMER"
+  },
+  {
+    "power_plant_id": 10375,
+    "entsoe_code": "40X000000010375H",
+    "plant_name": "ÇELİKLER SULTANHİSAR JEOTERMAL ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "Ç_SULTAN"
+  },
+  {
+    "power_plant_id": 104702,
+    "entsoe_code": "40X0000001047027",
+    "plant_name": "ÇETİNTEPE ENERJİ ÜRETİMİ A.Ş.",
+    "short_name": "ÇETİNTEPE"
+  },
+  {
+    "power_plant_id": 18479,
+    "entsoe_code": "40X0000000184792",
+    "plant_name": "ÇIRAĞAN SARAYI VE İŞLETMELERİ GELİŞTİRME İNŞAAT VE TURİZM A.Ş.",
+    "short_name": "ÇIRAĞAN S"
+  },
+  {
+    "power_plant_id": 149,
+    "entsoe_code": "40X000000000149W",
+    "plant_name": "ÇOLAKOĞLU METALURJİ A.Ş.",
+    "short_name": "Ç.OĞLU"
+  },
+  {
+    "power_plant_id": 18901,
+    "entsoe_code": "40X000000018901J",
+    "plant_name": "ÇORUH GIDA TARIM NAKLİYAT ENERJİ ÜRETİM SAN. VE DIŞ TİC. A.Ş.",
+    "short_name": "ÇORUH GIDA"
+  },
+  {
+    "power_plant_id": 12757,
+    "entsoe_code": "40X000000012757U",
+    "plant_name": "ÇORUM BİYOGAZ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÇORUM BİYO"
+  },
+  {
+    "power_plant_id": 12557,
+    "entsoe_code": "40X0000000125571",
+    "plant_name": "ÇUMRA GÜNEŞ ENERJİSİ VE ÜRETİM A.Ş.",
+    "short_name": "ÇUMRA"
+  },
+  {
+    "power_plant_id": 10896,
+    "entsoe_code": "40X000000010896Q",
+    "plant_name": "ÇİMSA ÇİMENTO SANAYİ VE TİCARET ANONİM ŞİRKETİ",
+    "short_name": "ÇİMSA"
+  },
+  {
+    "power_plant_id": 4872,
+    "entsoe_code": "40X000000004872Q",
+    "plant_name": "ÖZALTIN ENERJİ ÜRETİM VE İNŞAAT A.Ş.",
+    "short_name": "ÖZALTINÜRE"
+  },
+  {
+    "power_plant_id": 6338,
+    "entsoe_code": "40X100000006338N",
+    "plant_name": "ÖZBEY YATIRIM ARAŞTIRMA GELİŞTİRME MADENCİLİK İNŞAAT VE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÖZBEY"
+  },
+  {
+    "power_plant_id": 11855,
+    "entsoe_code": "40X000000011855Z",
+    "plant_name": "ÖZCE MADENCİLİK VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "ÖZCE"
+  },
+  {
+    "power_plant_id": 9001,
+    "entsoe_code": "40X000000009001J",
+    "plant_name": "ÖZDOĞAN ENERJİ A.Ş.",
+    "short_name": "ÖZDOĞ"
+  },
+  {
+    "power_plant_id": 4790,
+    "entsoe_code": "40X000000004790S",
+    "plant_name": "ÖZDİLEK EV TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "short_name": "ÖZDİLEKEV"
+  },
+  {
+    "power_plant_id": 11639,
+    "entsoe_code": "40X0000000116394",
+    "plant_name": "ÖZDİLEK OTEL TURİZM İŞLETMECİLİĞİ VE TİC.LTD.ŞTİ.",
+    "short_name": "ÖZDİLEK O"
+  },
+  {
+    "power_plant_id": 10353,
+    "entsoe_code": "40X000000010353R",
+    "plant_name": "ÖZTÜRK ENERJI AŞ",
+    "short_name": "ÖZTÜRK ENR"
+  },
+  {
+    "power_plant_id": 634,
+    "entsoe_code": "40X000000000634P",
+    "plant_name": "ÖZYAKUT ENERJİ ÜRETİM A.Ş.",
+    "short_name": "ÖZYAKUT"
+  },
+  {
+    "power_plant_id": 9449,
+    "entsoe_code": "40X000000009449C",
+    "plant_name": "ÖZYILMAZ ENERJİ ELEKTRİK ÜRETİM LTD.ŞTİ",
+    "short_name": "ÖZYILMAZ"
+  },
+  {
+    "power_plant_id": 8399,
+    "entsoe_code": "40X0000000083996",
+    "plant_name": "ÜLKE YATIRIM ARAŞTIRMA GELİŞTİRME MADENCİLİK İNŞAAT VE ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "ÜLKE YAT."
+  },
+  {
+    "power_plant_id": 9141,
+    "entsoe_code": "40X0000000091413",
+    "plant_name": "ÜNER ENERJİ ELEKTRİK ÜRETİM SANAYİ VE TİCARET  A.Ş.",
+    "short_name": "ÜNER"
+  },
+  {
+    "power_plant_id": 19921,
+    "entsoe_code": "40X0000000199218",
+    "plant_name": "ÜNSPED TARIM HAYVANCILIK SAN. VE TİC. A.Ş.",
+    "short_name": "ÜNSPED"
+  },
+  {
+    "power_plant_id": 10795,
+    "entsoe_code": "40X000000010795W",
+    "plant_name": "İGSAŞ İSTANBUL GÜBRE SANAYİİ A.Ş.",
+    "short_name": "İGSAŞ"
+  },
+  {
+    "power_plant_id": 1364,
+    "entsoe_code": "40X000000001364N",
+    "plant_name": "İLK ELEKTRİK ENERJİ ÜRETİMİ SAN. TİC. A.Ş.",
+    "short_name": "İLK ENJ"
+  },
+  {
+    "power_plant_id": 19460,
+    "entsoe_code": "40X000000019460I",
+    "plant_name": "İLTEK ENERJİ YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "İLTEK"
+  },
+  {
+    "power_plant_id": 179,
+    "entsoe_code": "40X000000000179N",
+    "plant_name": "İSKENDERUN DEMİR VE ÇELİK A.Ş.",
+    "short_name": "İSDMR"
+  },
+  {
+    "power_plant_id": 13257,
+    "entsoe_code": "40X0000000132578",
+    "plant_name": "İSKENDERUN ENERJİ ÜRETİM VE TİC. A.Ş.",
+    "short_name": "İSKENDERUN ÜRETİM"
+  },
+  {
+    "power_plant_id": 5329,
+    "entsoe_code": "40X0000000053295",
+    "plant_name": "İSKUR BOYA TEKSTİL TİC. VE SAN. A.Ş.",
+    "short_name": "İSKUR BOYA"
+  },
+  {
+    "power_plant_id": 160,
+    "entsoe_code": "40X0000000001607",
+    "plant_name": "İSKUR TEKSTİL ENERJİ TİCARET VE SANAYİ A.Ş.",
+    "short_name": "İSKUR"
+  },
+  {
+    "power_plant_id": 13177,
+    "entsoe_code": "40X0000000131776",
+    "plant_name": "İSTANBUL ARITMA VE ELEKTRİK ÜRETİM TESİSLERİ İŞLETMESİ VE DESTEK HİZMETLERİ A.Ş.",
+    "short_name": "İSTARITMA"
+  },
+  {
+    "power_plant_id": 14379,
+    "entsoe_code": "40X000000014379Q",
+    "plant_name": "İSTANBUL ENERJİ SAN. VE TİC. A.Ş.",
+    "short_name": "İSTANBUL"
+  },
+  {
+    "power_plant_id": 3948,
+    "entsoe_code": "40X000000003948O",
+    "plant_name": "İSTANBUL SABİHA GÖKÇEN ULUSLARARASI HAVALİMANI YATIRIM YAPIM VE İŞLETME A.Ş.",
+    "short_name": "ISG"
+  },
+  {
+    "power_plant_id": 148,
+    "entsoe_code": "40X000000000148Y",
+    "plant_name": "İSTANBUL ÇEVRE YÖNETİMİ SANAYİ VE TİCARET A.Ş.",
+    "short_name": "İSTAÇ"
+  },
+  {
+    "power_plant_id": 19080,
+    "entsoe_code": "40X000000019080S",
+    "plant_name": "İSTYAP ENERJİ A.Ş.",
+    "short_name": "İSTYAP"
+  },
+  {
+    "power_plant_id": 4509,
+    "entsoe_code": "40X0000000045098",
+    "plant_name": "İVME GRUP ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "short_name": "İVME"
+  },
+  {
+    "power_plant_id": 105,
+    "entsoe_code": "40X000000000105F",
+    "plant_name": "İZAYDAŞ İZMİT ATIK VE ARTIKLARI ARITMA YAKMA VE DEĞERLENDİRME A.Ş.",
+    "short_name": "İZAYDAŞ"
+  },
+  {
+    "power_plant_id": 6999,
+    "entsoe_code": "40X000000006999T",
+    "plant_name": "İZDEMİR ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "short_name": "İZDEMİR"
+  },
+  {
+    "power_plant_id": 11997,
+    "entsoe_code": "40X000000011997F",
+    "plant_name": "İZMİR ELEKTRİK ÜRETİM LTD. ŞTİ.",
+    "short_name": "İZMİR"
+  },
+  {
+    "power_plant_id": 9488,
+    "entsoe_code": "40X0000000094882",
+    "plant_name": "İÇ ANADOLU DOĞALGAZ ELEKTRİK ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "İÇ_ANADOLU"
+  },
+  {
+    "power_plant_id": 512,
+    "entsoe_code": "40X0000000005122",
+    "plant_name": "İÇ-EN ELEKTRİK ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "İÇ-EN"
+  },
+  {
+    "power_plant_id": 4831,
+    "entsoe_code": "40X0000000048313",
+    "plant_name": "İÇDAŞ ELEKTRİK ENERJİSİ ÜRETİM VE YATIRIM A.Ş.",
+    "short_name": "İÇDAŞ"
+  },
+  {
+    "power_plant_id": 369,
+    "entsoe_code": "40X000000000369I",
+    "plant_name": "İÇDAŞ ÇELİK ENERJİ TERSANE VE ULAŞIM SAN. A.Ş.",
+    "short_name": "İÇDAŞ ÇLK"
+  },
+  {
+    "power_plant_id": 7326,
+    "entsoe_code": "40X0000000073261",
+    "plant_name": "İÇTAŞ YENİLENEBİLİR ENERJİ ÜRETİM VE TİCARET A.Ş.",
+    "short_name": "IC İÇTAŞ"
+  },
+  {
+    "power_plant_id": 104341,
+    "entsoe_code": "40X000000104341D",
+    "plant_name": "İŞ PERAKENDE VE TOPTAN ELEKTRİK TİC. A.Ş. (TOPLAYICI)",
+    "short_name": "İŞ PERAKENDE TOPLAYICI"
+  },
+  {
+    "power_plant_id": 11875,
+    "entsoe_code": "40X000000011875T",
+    "plant_name": "İŞHES ENERJİ ANONİM ŞİRKETİ",
+    "short_name": "İŞHES"
+  },
+  {
+    "power_plant_id": 17661,
+    "entsoe_code": "40X000000017661I",
+    "plant_name": "ŞANLI BİYOGAZ ENERJİ VE SAN. A.Ş.",
+    "short_name": "ŞANLI"
+  },
+  {
+    "power_plant_id": 373,
+    "entsoe_code": "40X000000000373R",
+    "plant_name": "ŞIK MAKAS GİYİM SAN.TİC.A.Ş.",
+    "short_name": "ŞIK MAKAS"
+  },
+  {
+    "power_plant_id": 15560,
+    "entsoe_code": "40X000000015560Y",
+    "plant_name": "ŞÜKRA ENERJİ SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+    "short_name": "ŞÜKRA"
+  }
+]

@@ -1,0 +1,521 @@
+{
+  "generated_at": "2026-05-31T22:12:15.221158+00:00",
+  "predictions": "data/predictions/hybrid_fuel_switch_ptf_predictions.csv",
+  "inputs": {
+    "fuel_switch": "data/predictions/fuel_switch_routed_ptf_predictions.csv",
+    "high_precision": "data/predictions/high_precision_ptf_predictions.csv"
+  },
+  "top_validation_candidates": [
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.02,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.08,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.2,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.02,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.08,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.2,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.02,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.02,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.08,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.08,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.2,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.55,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.2,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.65,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.65,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.02,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.65,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.08,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.65,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.4,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.2,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.65,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.005,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    },
+    {
+      "params": {
+        "zero_threshold": 0.65,
+        "cheap_threshold": 0.45,
+        "fuel_weight": 1.0,
+        "spike_block_threshold": 0.005,
+        "gas_block_threshold": 0.82,
+        "high_price_block_threshold": 0.98,
+        "cap_risk_block_threshold": 0.02,
+        "zero_prob_scale": 0.1,
+        "transition_scale": 10.0
+      },
+      "validation_mae": 366.67222175380175,
+      "validation_zero_mae": 544.5649726042118,
+      "score": 377.563521205886
+    }
+  ],
+  "metrics": {
+    "params": {
+      "zero_threshold": 0.55,
+      "cheap_threshold": 0.45,
+      "fuel_weight": 1.0,
+      "spike_block_threshold": 0.005,
+      "gas_block_threshold": 0.4,
+      "high_price_block_threshold": 0.98,
+      "cap_risk_block_threshold": 0.005,
+      "zero_prob_scale": 0.1,
+      "transition_scale": 10.0
+    },
+    "validation": {
+      "hybrid_pred": {
+        "rows": 8760,
+        "mae": 366.67222175380175,
+        "rmse": 607.2289831450809,
+        "median_ae": 182.86708777291256,
+        "p90_ae": 976.3799620620371,
+        "pct_error_le_2": 0.007762557077625571,
+        "pct_error_le_10": 0.03744292237442922,
+        "pct_error_le_50": 0.26495433789954337
+      },
+      "high_precision_pred": {
+        "rows": 8760,
+        "mae": 396.2785130259487,
+        "rmse": 663.5084077283275,
+        "median_ae": 185.87805254769978,
+        "p90_ae": 1131.258093461663,
+        "pct_error_le_2": 0.004794520547945206,
+        "pct_error_le_10": 0.03515981735159817,
+        "pct_error_le_50": 0.2680365296803653
+      },
+      "fuel_switch_pred": {
+        "rows": 8760,
+        "mae": 376.12107754475,
+        "rmse": 606.2755706732528,
+        "median_ae": 197.36250111637605,
+        "p90_ae": 975.4823319428788,
+        "pct_error_le_2": 0.014954337899543379,
+        "pct_error_le_10": 0.05924657534246575,
+        "pct_error_le_50": 0.17671232876712328
+      },
+      "persistence_pred": {
+        "rows": 8760,
+        "mae": 398.51053196347027,
+        "rmse": 670.6460331563901,
+        "median_ae": 194.03500000000008,
+        "p90_ae": 1142.7420000000009,
+        "pct_error_le_2": 0.15445205479452054,
+        "pct_error_le_10": 0.18002283105022832,
+        "pct_error_le_50": 0.26837899543378996
+      },
+      "regime_wise": [
+        {
+          "target_regime": "normal",
+          "rows": 800,
+          "mae": 680.8597171173876,
+          "persistence_mae": 946.183575,
+          "high_precision_mae": 947.9475645386706,
+          "fuel_switch_mae": 680.6585368464193
+        },
+        {
+          "target_regime": "negative_zero_pressure",
+          "rows": 89,
+          "mae": 544.5649726042118,
+          "persistence_mae": 797.1606741573034,
+          "high_precision_mae": 806.837049447544,
+          "fuel_switch_mae": 544.5649726042118
+        },
+        {
+          "target_regime": "tight",
+          "rows": 7871,
+          "mae": 332.7270494610111,
+          "persistence_mae": 338.33796213949944,
+          "high_precision_mae": 335.5651410336099,
+          "fuel_switch_mae": 343.263565906886
+        }
+      ],
+      "fuel_usage_rate": 0.24623287671232877,
+      "zero_price_hours": {
+        "rows": 89,
+        "mae": 544.5649726042118,
+        "rmse": 742.8833163609726,
+        "median_ae": 509.45792554795395,
+        "p90_ae": 1150.9536355697685,
+        "pct_error_le_2": 0.25842696629213485,
+        "pct_error_le_10": 0.2696629213483146,
+        "pct_error_le_50": 0.3595505617977528
+      },
+      "spike_cap_hours": null
+    },
+    "test": {
+      "hybrid_pred": {
+        "rows": 3624,
+        "mae": 494.36810854500084,
+        "rmse": 771.7172907798623,
+        "median_ae": 258.77618826713206,
+        "p90_ae": 1306.248414906872,
+        "pct_error_le_2": 0.06512141280353201,
+        "pct_error_le_10": 0.07919426048565122,
+        "pct_error_le_50": 0.19370860927152317
+      },
+      "high_precision_pred": {
+        "rows": 3624,
+        "mae": 531.4510890104659,
+        "rmse": 832.1949120086997,
+        "median_ae": 258.86462653483954,
+        "p90_ae": 1453.0007212046753,
+        "pct_error_le_2": 0.00358719646799117,
+        "pct_error_le_10": 0.043874172185430466,
+        "pct_error_le_50": 0.2348233995584989
+      },
+      "fuel_switch_pred": {
+        "rows": 3624,
+        "mae": 510.5616669644346,
+        "rmse": 783.6186823474544,
+        "median_ae": 283.44424380595797,
+        "p90_ae": 1314.908910572491,
+        "pct_error_le_2": 0.06815673289183223,
+        "pct_error_le_10": 0.08416114790286976,
+        "pct_error_le_50": 0.15507726269315672
+      },
+      "persistence_pred": {
+        "rows": 3624,
+        "mae": 535.3891997792495,
+        "rmse": 839.7891139622645,
+        "median_ae": 257.5000000000002,
+        "p90_ae": 1468.7310000000002,
+        "pct_error_le_2": 0.13934878587196467,
+        "pct_error_le_10": 0.1608719646799117,
+        "pct_error_le_50": 0.2315121412803532
+      },
+      "regime_wise": [
+        {
+          "target_regime": "spike_cap",
+          "rows": 73,
+          "mae": 1174.4869019735759,
+          "persistence_mae": 1183.6687671232876,
+          "high_precision_mae": 1167.073425632423,
+          "fuel_switch_mae": 1790.7636132414393
+        },
+        {
+          "target_regime": "tight",
+          "rows": 1769,
+          "mae": 615.8804253470119,
+          "persistence_mae": 622.4692198982476,
+          "high_precision_mae": 615.5550782306394,
+          "fuel_switch_mae": 629.287852019427
+        },
+        {
+          "target_regime": "normal",
+          "rows": 1395,
+          "mae": 419.4589780628074,
+          "persistence_mae": 501.00216487455197,
+          "high_precision_mae": 496.1643597936945,
+          "fuel_switch_mae": 412.2758368484501
+        },
+        {
+          "target_regime": "negative_zero_pressure",
+          "rows": 387,
+          "mae": 80.65822916416491,
+          "persistence_mae": 139.00922480620156,
+          "high_precision_mae": 154.30535193942313,
+          "fuel_switch_mae": 80.65822916416491
+        }
+      ],
+      "fuel_usage_rate": 0.6705298013245033,
+      "zero_price_hours": {
+        "rows": 387,
+        "mae": 80.65822916416491,
+        "rmse": 223.5388586464023,
+        "median_ae": 0.0,
+        "p90_ae": 168.34687668188704,
+        "pct_error_le_2": 0.5839793281653747,
+        "pct_error_le_10": 0.6020671834625323,
+        "pct_error_le_50": 0.661498708010336
+      },
+      "spike_cap_hours": {
+        "rows": 73,
+        "mae": 1174.4869019735759,
+        "rmse": 1771.1616530689028,
+        "median_ae": 426.45012018406396,
+        "p90_ae": 3393.5933476669948,
+        "pct_error_le_2": 0.0,
+        "pct_error_le_10": 0.0,
+        "pct_error_le_50": 0.1917808219178082
+      }
+    }
+  },
+  "mechanism": "Fuel-switch is used only when zero/cheap-supply signals are high and spike/gas-risk blockers are low."
+}

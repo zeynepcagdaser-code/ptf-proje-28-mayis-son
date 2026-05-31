@@ -1,0 +1,311 @@
+{
+  "generated_at": "2026-05-31T21:54:10.119480+00:00",
+  "rows": 56232,
+  "coverage_start": "2020-01-01T00:00:00",
+  "coverage_end": "2026-05-31T23:00:00",
+  "missing_rates": {
+    "gas_share_of_generation": 0.0,
+    "hydro_share_of_generation": 0.0,
+    "renewable_share_of_generation": 0.0,
+    "renewable_minus_gas_shift": 0.0,
+    "gas_marginality_proxy": 0.0,
+    "hydro_displacement_score": 0.0,
+    "cheap_supply_pressure": 0.0,
+    "low_demand_flag": 0.0,
+    "gas_off_flag": 0.0,
+    "renewable_share_high_flag": 0.0,
+    "hydro_high_flag": 0.0,
+    "zero_price_pressure_score": 0.0,
+    "load_deviation_from_weekly_norm": 0.002969839237444871,
+    "load_deviation_from_monthly_norm": 0.0068110684307867405,
+    "demand_weakness_score": 0.0,
+    "load_vs_renewable_balance": 0.0004268032437046522
+  },
+  "correlations": {
+    "gas_marginality_proxy_vs_price": 0.1724551100981969,
+    "hydro_displacement_score_vs_price": -0.22251702250441352,
+    "renewable_share_of_generation_vs_price": -0.20313297037352443,
+    "gas_share_of_generation_vs_price": 0.06751964204590083,
+    "zero_price_pressure_score_vs_price": -0.2911644895273138,
+    "demand_weakness_score_vs_price": -0.16004033099152937,
+    "load_vs_renewable_balance_vs_price": 0.3559809851329017
+  },
+  "regime_means": {
+    "negative_zero_pressure": {
+      "rows": 951,
+      "gas_marginality_proxy_mean": 16.666431370473624,
+      "hydro_displacement_score_mean": 62.09260007253328,
+      "renewable_share_of_generation_mean": 0.7649326445681729,
+      "gas_share_of_generation_mean": 0.027011992338178536,
+      "demand_weakness_score_mean": 9.232931439446059,
+      "zero_price_pressure_score_mean": 83.12775816282488
+    },
+    "normal": {
+      "rows": 23699,
+      "gas_marginality_proxy_mean": 35.57178948304622,
+      "hydro_displacement_score_mean": 43.616318468409304,
+      "renewable_share_of_generation_mean": 0.4285279470983084,
+      "gas_share_of_generation_mean": 0.23322729933194525,
+      "demand_weakness_score_mean": 4.491004921222106,
+      "zero_price_pressure_score_mean": 36.08449514540194
+    },
+    "tight": {
+      "rows": 29878,
+      "gas_marginality_proxy_mean": 35.78831588697825,
+      "hydro_displacement_score_mean": 42.08264288824698,
+      "renewable_share_of_generation_mean": 0.40990307984776425,
+      "gas_share_of_generation_mean": 0.21483763869284697,
+      "demand_weakness_score_mean": 3.6414675272726504,
+      "zero_price_pressure_score_mean": 27.57507494701062
+    },
+    "spike_cap": {
+      "rows": 1704,
+      "gas_marginality_proxy_mean": 42.32405735960517,
+      "hydro_displacement_score_mean": 36.58298204154164,
+      "renewable_share_of_generation_mean": 0.3122984114437961,
+      "gas_share_of_generation_mean": 0.28604720968002767,
+      "demand_weakness_score_mean": 1.0158614318226666,
+      "zero_price_pressure_score_mean": 12.94817322774136
+    }
+  },
+  "slice_means": {
+    "zero_price": {
+      "rows": 951,
+      "gas_marginality_proxy_mean": 16.666431370473624,
+      "hydro_displacement_score_mean": 62.09260007253328,
+      "renewable_share_of_generation_mean": 0.7649326445681729,
+      "gas_share_of_generation_mean": 0.027011992338178536,
+      "zero_price_pressure_score_mean": 83.12775816282488
+    },
+    "low_price": {
+      "rows": 24806,
+      "gas_marginality_proxy_mean": 34.79619431528675,
+      "hydro_displacement_score_mean": 44.362436099622315,
+      "renewable_share_of_generation_mean": 0.4420721831966925,
+      "gas_share_of_generation_mean": 0.22455472693069534,
+      "zero_price_pressure_score_mean": 37.970720000272294
+    },
+    "spike": {
+      "rows": 1704,
+      "gas_marginality_proxy_mean": 42.32405735960517,
+      "hydro_displacement_score_mean": 36.58298204154164,
+      "renewable_share_of_generation_mean": 0.3122984114437961,
+      "gas_share_of_generation_mean": 0.28604720968002767,
+      "zero_price_pressure_score_mean": 12.94817322774136
+    }
+  },
+  "top_zero_pressure_hours": [
+    {
+      "ts_hour": "2025-03-30T05:00:00",
+      "score": 100.0,
+      "price": 2249.99
+    },
+    {
+      "ts_hour": "2022-07-10T06:00:00",
+      "score": 100.0,
+      "price": 250.01
+    },
+    {
+      "ts_hour": "2025-03-30T07:00:00",
+      "score": 100.0,
+      "price": 1780.0
+    },
+    {
+      "ts_hour": "2025-03-30T06:00:00",
+      "score": 100.0,
+      "price": 2396.0
+    },
+    {
+      "ts_hour": "2022-07-10T07:00:00",
+      "score": 99.95922116248794,
+      "price": 550.0
+    },
+    {
+      "ts_hour": "2022-07-10T05:00:00",
+      "score": 99.94289989264607,
+      "price": 1800.0
+    },
+    {
+      "ts_hour": "2024-06-16T06:00:00",
+      "score": 99.93899535487682,
+      "price": 925.21
+    },
+    {
+      "ts_hour": "2024-06-16T04:00:00",
+      "score": 99.92280392286715,
+      "price": 1247.99
+    },
+    {
+      "ts_hour": "2024-06-16T05:00:00",
+      "score": 99.92088121956942,
+      "price": 1040.0
+    },
+    {
+      "ts_hour": "2025-03-30T08:00:00",
+      "score": 99.91364438372594,
+      "price": 1000.01
+    },
+    {
+      "ts_hour": "2025-03-30T04:00:00",
+      "score": 99.90036585238892,
+      "price": 2200.0
+    },
+    {
+      "ts_hour": "2024-06-16T07:00:00",
+      "score": 99.89939238435137,
+      "price": 200.0
+    },
+    {
+      "ts_hour": "2022-07-10T04:00:00",
+      "score": 99.89414588193897,
+      "price": 1499.99
+    },
+    {
+      "ts_hour": "2024-06-16T03:00:00",
+      "score": 99.88563173819361,
+      "price": 1050.01
+    },
+    {
+      "ts_hour": "2022-07-10T03:00:00",
+      "score": 99.85537018652431,
+      "price": 1400.01
+    },
+    {
+      "ts_hour": "2024-06-16T08:00:00",
+      "score": 99.82004744358022,
+      "price": 54.0
+    },
+    {
+      "ts_hour": "2025-03-30T03:00:00",
+      "score": 99.80078012665587,
+      "price": 2200.01
+    },
+    {
+      "ts_hour": "2024-06-16T02:00:00",
+      "score": 99.78647657412557,
+      "price": 555.99
+    },
+    {
+      "ts_hour": "2022-07-10T02:00:00",
+      "score": 99.7760014073545,
+      "price": 2340.0
+    },
+    {
+      "ts_hour": "2022-07-10T08:00:00",
+      "score": 99.73819045277081,
+      "price": 99.95
+    }
+  ],
+  "top_gas_marginality_hours": [
+    {
+      "ts_hour": "2021-10-14T03:00:00",
+      "score": 57.823300123300214,
+      "price": 558.57
+    },
+    {
+      "ts_hour": "2021-10-14T02:00:00",
+      "score": 57.326096171191956,
+      "price": 615.0
+    },
+    {
+      "ts_hour": "2021-10-14T05:00:00",
+      "score": 56.97317018882784,
+      "price": 606.99
+    },
+    {
+      "ts_hour": "2021-10-14T04:00:00",
+      "score": 56.93961763419715,
+      "price": 465.13
+    },
+    {
+      "ts_hour": "2021-10-14T06:00:00",
+      "score": 56.888030055369484,
+      "price": 649.93
+    },
+    {
+      "ts_hour": "2021-10-14T01:00:00",
+      "score": 56.84724304017161,
+      "price": 717.92
+    },
+    {
+      "ts_hour": "2021-10-12T03:00:00",
+      "score": 56.52709003542748,
+      "price": 549.99
+    },
+    {
+      "ts_hour": "2021-10-14T07:00:00",
+      "score": 56.291604812342655,
+      "price": 649.93
+    },
+    {
+      "ts_hour": "2021-10-12T06:00:00",
+      "score": 56.272939754523954,
+      "price": 595.0
+    },
+    {
+      "ts_hour": "2021-10-21T03:00:00",
+      "score": 56.13641070861466,
+      "price": 581.9
+    },
+    {
+      "ts_hour": "2021-10-12T05:00:00",
+      "score": 55.99420975611936,
+      "price": 454.02
+    },
+    {
+      "ts_hour": "2021-10-12T01:00:00",
+      "score": 55.85967306411008,
+      "price": 710.07
+    },
+    {
+      "ts_hour": "2021-10-12T02:00:00",
+      "score": 55.844269609638395,
+      "price": 549.98
+    },
+    {
+      "ts_hour": "2021-10-12T04:00:00",
+      "score": 55.81305494533881,
+      "price": 449.97
+    },
+    {
+      "ts_hour": "2021-10-21T05:00:00",
+      "score": 55.72828791995621,
+      "price": 750.01
+    },
+    {
+      "ts_hour": "2021-10-21T02:00:00",
+      "score": 55.62480378102481,
+      "price": 750.0
+    },
+    {
+      "ts_hour": "2021-10-21T06:00:00",
+      "score": 55.60258198432367,
+      "price": 1078.0
+    },
+    {
+      "ts_hour": "2021-10-21T04:00:00",
+      "score": 55.43990383110502,
+      "price": 615.0
+    },
+    {
+      "ts_hour": "2021-10-12T07:00:00",
+      "score": 55.39351377604077,
+      "price": 495.11
+    },
+    {
+      "ts_hour": "2021-10-21T07:00:00",
+      "score": 55.19292201961128,
+      "price": 1078.0
+    }
+  ],
+  "leakage_notes": [
+    "Uses same-hour planned/forecast load and generation shares only.",
+    "Load deviation baselines are trailing rolling windows shifted by 24h.",
+    "No realized future PTF is used in feature construction."
+  ],
+  "target_availability": {
+    "price_rows_available": 56232,
+    "zero_price_rows": 951,
+    "spike_rows": 1704
+  }
+}

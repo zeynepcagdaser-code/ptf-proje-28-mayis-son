@@ -1,0 +1,90 @@
+{
+  "available": true,
+  "rows": 56208,
+  "coverage": {
+    "start": "2020-01-01 00:00:00+03:00",
+    "end": "2026-05-31 23:00:00+03:00"
+  },
+  "correlations": {
+    "supply_gap_vs_price": -0.12137345479744135,
+    "bid_stack_density_vs_price": -0.05774207233795052,
+    "offer_stack_density_vs_price": 0.04960380433565748,
+    "oversupply_pressure_vs_price": 0.04201892102548087,
+    "marginality_risk_vs_price": 0.183191252223629,
+    "curve_slope_vs_price": 0.022162553666010647
+  },
+  "regime_summary": {
+    "negative_zero_pressure": {
+      "rows": 944,
+      "mean_price": 9.71281779661017,
+      "mean_supply_gap": -1767.4103389830507,
+      "mean_curve_slope_near_ptf": 0.026011878970760263,
+      "mean_marginality_risk_score": 0.34563019377382453,
+      "mean_oversupply_curve_pressure": 0.08888505051442112,
+      "mean_cap_risk_from_curve": 0.0,
+      "mean_bid_stack_density": 0.9427221088959663
+    },
+    "normal": {
+      "rows": 23684,
+      "mean_price": 550.1688498564431,
+      "mean_supply_gap": -3505.3306476946464,
+      "mean_curve_slope_near_ptf": 0.10308578926122443,
+      "mean_marginality_risk_score": 0.6872621420887439,
+      "mean_oversupply_curve_pressure": 0.0989839418180281,
+      "mean_cap_risk_from_curve": 0.0,
+      "mean_bid_stack_density": 0.9027265805633243
+    },
+    "spike_cap": {
+      "rows": 1704,
+      "mean_price": 4432.541578638497,
+      "mean_supply_gap": -5779.718474178403,
+      "mean_curve_slope_near_ptf": 0.0756072149676521,
+      "mean_marginality_risk_score": 0.8597858504571328,
+      "mean_oversupply_curve_pressure": 0.1443198300267365,
+      "mean_cap_risk_from_curve": 0.9070399574530517,
+      "mean_bid_stack_density": 0.8556801699732633
+    },
+    "tight": {
+      "rows": 29876,
+      "mean_price": 2540.8810801312093,
+      "mean_supply_gap": -3918.0169681349576,
+      "mean_curve_slope_near_ptf": 0.2248663532650872,
+      "mean_marginality_risk_score": 0.7077429087363523,
+      "mean_oversupply_curve_pressure": 0.09993305199321295,
+      "mean_cap_risk_from_curve": 0.010000480318650423,
+      "mean_bid_stack_density": 0.901011744007583
+    }
+  },
+  "slices": {
+    "ptf_zero": {
+      "rows": 439,
+      "mean_supply_gap": -158.11938496583122,
+      "mean_oversupply_curve_pressure": 0.05532317573123482,
+      "mean_bid_stack_density": 1.0064859913599649
+    },
+    "ptf_low": {
+      "rows": 944,
+      "mean_supply_gap": -1767.4103389830507,
+      "mean_oversupply_curve_pressure": 0.08888505051442112,
+      "mean_bid_stack_density": 0.9427221088959663
+    },
+    "ptf_tight": {
+      "rows": 29876,
+      "mean_supply_gap": -3918.0169681349576,
+      "mean_marginality_risk_score": 0.7077429087363523,
+      "mean_curve_slope_near_ptf": 0.2248663532650872
+    },
+    "ptf_spike": {
+      "rows": 1704,
+      "mean_supply_gap": -5779.718474178403,
+      "mean_marginality_risk_score": 0.8597858504571328,
+      "mean_cap_risk_from_curve": 0.9070399574530517
+    }
+  },
+  "feature_summary": {
+    "mean_curve_convexity": 280.8882657272986,
+    "mean_low_price_pressure": 0.01353227298605181,
+    "mean_cap_risk_from_curve": 0.03281330838136919,
+    "mean_oversupply_curve_pressure": 0.10069321124072338
+  }
+}

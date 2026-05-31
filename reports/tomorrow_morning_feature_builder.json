@@ -1,0 +1,14 @@
+{
+  "diagnostics": {
+    "requested_rows": 13,
+    "produced_rows": 0,
+    "missing_reason": "No lag-24 aligned feature rows for tomorrow morning",
+    "fallbacks": {}
+  },
+  "metadata": {
+    "feature_store_max_ts": "2026-05-31 23:00:00",
+    "load_forecast_max_ts": "2026-05-31 23:00:00",
+    "regime_labels_max_ts": "2026-05-31 23:00:00",
+    "must_run_rows": 0
+  }
+}

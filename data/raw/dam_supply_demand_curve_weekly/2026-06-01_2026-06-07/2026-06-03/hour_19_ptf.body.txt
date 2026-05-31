@@ -1,0 +1,1 @@
+{"status":"400 BAD_REQUEST","correlationId":"75c0e0a1-2297-4176-87c1-696b2647441f","spanIds":"(electricity-service)89236","hostName":"*********4.7","clientIp":"176.40.224.64","userName":"zeynepcagdaser@gmail.com","successMessage":null,"errors":[{"errorCode":"(BUS)SEF1124","errorMessage":"2026-06-03T19:00:00.000+0300 tarihli veri saat 14 öncesinde mevcut değil!"}],"body":{}}

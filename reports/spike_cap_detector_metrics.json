@@ -1,0 +1,427 @@
+{
+  "generated_at": "2026-05-31T13:37:02.956529+00:00",
+  "model": "LightGBM LGBMClassifier binary",
+  "label_path": "data/regime_labels.csv",
+  "feature_store": "data/features/regime_feature_store.parquet",
+  "reasoning_features": "data/features/market_reasoning_features.parquet",
+  "operating_threshold": 0.2,
+  "focus_features": [
+    "residual_load_ramp",
+    "solar_cliff_score",
+    "load_minus_kgup",
+    "active_maintenance_capacity",
+    "outage_stress_index",
+    "gas_share",
+    "hydro_share",
+    "evening_ramp_flag",
+    "analyst_spike_score",
+    "analyst_persistence_break_score",
+    "volatility_cluster_score"
+  ],
+  "splits": {
+    "train": {
+      "years": "2020-2024",
+      "rows": 43848,
+      "positive_count": 1631,
+      "positive_rate": 0.037196679438058745
+    },
+    "validation": {
+      "years": "2025-2025",
+      "rows": 8760,
+      "positive_count": 0,
+      "positive_rate": 0.0
+    },
+    "test": {
+      "years": "2026-2026",
+      "rows": 3624,
+      "positive_count": 73,
+      "positive_rate": 0.020143487858719646
+    }
+  },
+  "validation": {
+    "split": "validation",
+    "rows": 8760,
+    "positive_count": 0,
+    "positive_rate": 0.0,
+    "operating_threshold": 0.2,
+    "pr_auc": 0.0,
+    "roc_auc": NaN,
+    "threshold_metrics": [
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balanced_accuracy": 0.9964611872146119,
+        "true_positive": 0,
+        "false_positive": 31,
+        "true_negative": 8729,
+        "false_negative": 0,
+        "cap_miss_rate": 0.0,
+        "false_alarm_rate": 0.003538812785388128
+      },
+      {
+        "threshold": 0.3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balanced_accuracy": 0.992579908675799,
+        "true_positive": 0,
+        "false_positive": 65,
+        "true_negative": 8695,
+        "false_negative": 0,
+        "cap_miss_rate": 0.0,
+        "false_alarm_rate": 0.007420091324200913
+      },
+      {
+        "threshold": 0.2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balanced_accuracy": 0.9898401826484018,
+        "true_positive": 0,
+        "false_positive": 89,
+        "true_negative": 8671,
+        "false_negative": 0,
+        "cap_miss_rate": 0.0,
+        "false_alarm_rate": 0.010159817351598174
+      },
+      {
+        "threshold": 0.1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balanced_accuracy": 0.9820776255707763,
+        "true_positive": 0,
+        "false_positive": 157,
+        "true_negative": 8603,
+        "false_negative": 0,
+        "cap_miss_rate": 0.0,
+        "false_alarm_rate": 0.017922374429223745
+      }
+    ],
+    "lag24_regime_baseline": {
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "balanced_accuracy": 1.0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "true_negative": 8760,
+      "false_negative": 0,
+      "cap_miss_rate": 0.0,
+      "false_alarm_rate": 0.0
+    },
+    "multiclass_classifier_baseline": {
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "balanced_accuracy": 0.9980593607305936,
+      "true_positive": 0,
+      "false_positive": 17,
+      "true_negative": 8743,
+      "false_negative": 0,
+      "cap_miss_rate": 0.0,
+      "false_alarm_rate": 0.0019406392694063927
+    },
+    "persistence_failure_hours": {
+      "threshold_train_p75": 304.115,
+      "rows": 3320,
+      "positive_count": 0,
+      "recall": null,
+      "lag24_baseline_recall": null,
+      "multiclass_recall": null
+    },
+    "transition_recall": {
+      "detector": [],
+      "lag24": [],
+      "multiclass": []
+    },
+    "confusion_matrix_operating_threshold": [
+      [
+        8671,
+        89
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "test": {
+    "split": "test",
+    "rows": 3624,
+    "positive_count": 73,
+    "positive_rate": 0.020143487858719646,
+    "operating_threshold": 0.2,
+    "pr_auc": 0.7081456780929395,
+    "roc_auc": 0.9640618309332118,
+    "threshold_metrics": [
+      {
+        "threshold": 0.5,
+        "precision": 1.0,
+        "recall": 0.1095890410958904,
+        "f1": 0.19753086419753085,
+        "balanced_accuracy": 0.5547945205479452,
+        "true_positive": 8,
+        "false_positive": 0,
+        "true_negative": 3551,
+        "false_negative": 65,
+        "cap_miss_rate": 0.8904109589041096,
+        "false_alarm_rate": 0.0
+      },
+      {
+        "threshold": 0.3,
+        "precision": 1.0,
+        "recall": 0.1506849315068493,
+        "f1": 0.2619047619047619,
+        "balanced_accuracy": 0.5753424657534246,
+        "true_positive": 11,
+        "false_positive": 0,
+        "true_negative": 3551,
+        "false_negative": 62,
+        "cap_miss_rate": 0.8493150684931506,
+        "false_alarm_rate": 0.0
+      },
+      {
+        "threshold": 0.2,
+        "precision": 0.95,
+        "recall": 0.2602739726027397,
+        "f1": 0.40860215053763443,
+        "balanced_accuracy": 0.6299961808944422,
+        "true_positive": 19,
+        "false_positive": 1,
+        "true_negative": 3550,
+        "false_negative": 54,
+        "cap_miss_rate": 0.7397260273972602,
+        "false_alarm_rate": 0.000281610813855252
+      },
+      {
+        "threshold": 0.1,
+        "precision": 0.8823529411764706,
+        "recall": 0.410958904109589,
+        "f1": 0.5607476635514018,
+        "balanced_accuracy": 0.704916230427084,
+        "true_positive": 30,
+        "false_positive": 4,
+        "true_negative": 3547,
+        "false_negative": 43,
+        "cap_miss_rate": 0.589041095890411,
+        "false_alarm_rate": 0.001126443255421008
+      }
+    ],
+    "lag24_regime_baseline": {
+      "threshold": 0.5,
+      "precision": 0.5142857142857142,
+      "recall": 0.4931506849315068,
+      "f1": 0.5034965034965035,
+      "balanced_accuracy": 0.7417879586302141,
+      "true_positive": 36,
+      "false_positive": 34,
+      "true_negative": 3517,
+      "false_negative": 37,
+      "cap_miss_rate": 0.5068493150684932,
+      "false_alarm_rate": 0.009574767671078569
+    },
+    "multiclass_classifier_baseline": {
+      "threshold": 0.5,
+      "precision": 1.0,
+      "recall": 0.0273972602739726,
+      "f1": 0.05333333333333334,
+      "balanced_accuracy": 0.5136986301369864,
+      "true_positive": 2,
+      "false_positive": 0,
+      "true_negative": 3551,
+      "false_negative": 71,
+      "cap_miss_rate": 0.9726027397260274,
+      "false_alarm_rate": 0.0
+    },
+    "persistence_failure_hours": {
+      "threshold_train_p75": 304.115,
+      "rows": 1673,
+      "positive_count": 41,
+      "recall": 0.0975609756097561,
+      "lag24_baseline_recall": 0.0975609756097561,
+      "multiclass_recall": 0.024390243902439025
+    },
+    "transition_recall": {
+      "detector": [
+        {
+          "transition_label": "spike_cap -> spike_cap",
+          "count": 36,
+          "spike_count": 36,
+          "recall": 0.4444444444444444
+        },
+        {
+          "transition_label": "tight -> spike_cap",
+          "count": 25,
+          "spike_count": 25,
+          "recall": 0.12
+        },
+        {
+          "transition_label": "normal -> spike_cap",
+          "count": 12,
+          "spike_count": 12,
+          "recall": 0.0
+        }
+      ],
+      "lag24": [
+        {
+          "transition_label": "spike_cap -> spike_cap",
+          "count": 36,
+          "spike_count": 36,
+          "recall": 1.0
+        },
+        {
+          "transition_label": "tight -> spike_cap",
+          "count": 25,
+          "spike_count": 25,
+          "recall": 0.0
+        },
+        {
+          "transition_label": "normal -> spike_cap",
+          "count": 12,
+          "spike_count": 12,
+          "recall": 0.0
+        }
+      ],
+      "multiclass": [
+        {
+          "transition_label": "spike_cap -> spike_cap",
+          "count": 36,
+          "spike_count": 36,
+          "recall": 0.05555555555555555
+        },
+        {
+          "transition_label": "tight -> spike_cap",
+          "count": 25,
+          "spike_count": 25,
+          "recall": 0.0
+        },
+        {
+          "transition_label": "normal -> spike_cap",
+          "count": 12,
+          "spike_count": 12,
+          "recall": 0.0
+        }
+      ]
+    },
+    "confusion_matrix_operating_threshold": [
+      [
+        3550,
+        1
+      ],
+      [
+        54,
+        19
+      ]
+    ]
+  },
+  "top_features": [
+    {
+      "feature": "ptf_lag_1",
+      "importance": 1332.0
+    },
+    {
+      "feature": "gas_share",
+      "importance": 1160.0
+    },
+    {
+      "feature": "load_minus_kgup",
+      "importance": 970.0
+    },
+    {
+      "feature": "residual_load_ramp",
+      "importance": 969.0
+    },
+    {
+      "feature": "hour",
+      "importance": 935.0
+    },
+    {
+      "feature": "ptf_lag_168",
+      "importance": 909.0
+    },
+    {
+      "feature": "volatility_cluster_score",
+      "importance": 903.0
+    },
+    {
+      "feature": "analyst_persistence_break_score",
+      "importance": 902.0
+    },
+    {
+      "feature": "rolling_volatility",
+      "importance": 872.0
+    },
+    {
+      "feature": "analyst_spike_score",
+      "importance": 859.0
+    },
+    {
+      "feature": "gas_maintenance",
+      "importance": 836.0
+    },
+    {
+      "feature": "coal_maintenance",
+      "importance": 812.0
+    },
+    {
+      "feature": "hydro_share",
+      "importance": 805.0
+    },
+    {
+      "feature": "yal_lagged",
+      "importance": 783.0
+    },
+    {
+      "feature": "ptf_lag_24",
+      "importance": 749.0
+    },
+    {
+      "feature": "load_ramp_3h",
+      "importance": 749.0
+    },
+    {
+      "feature": "load_ramp_1h",
+      "importance": 723.0
+    },
+    {
+      "feature": "coal_share",
+      "importance": 700.0
+    },
+    {
+      "feature": "hydro_maintenance",
+      "importance": 663.0
+    },
+    {
+      "feature": "thermal_share",
+      "importance": 641.0
+    }
+  ],
+  "leakage_checks": [
+    {
+      "check": "Forbidden feature columns absent",
+      "status": "pass",
+      "detail": "Forbidden columns present in model feature matrix: []"
+    },
+    {
+      "check": "historical interim-mcp oracle excluded",
+      "status": "pass",
+      "detail": "Only point-in-time snapshot columns from feature store are eligible."
+    },
+    {
+      "check": "same-hour finalized PTF excluded",
+      "status": "pass",
+      "detail": "Target regime and price are labels/evaluation only."
+    },
+    {
+      "check": "same-hour realized SMF/YAL-YAT excluded",
+      "status": "pass",
+      "detail": "Feature store exposes only lagged SMF/YAL-YAT fields."
+    }
+  ],
+  "critical_evaluation": "Spike/cap recall is still weak at threshold 0.2: 0.260. Precision is 0.950; false alarm rate is 0.000. Top features are: ptf_lag_1, gas_share, load_minus_kgup, residual_load_ramp, hour, ptf_lag_168, volatility_cluster_score, analyst_persistence_break_score. Recall comparison: detector 0.260, lag24 baseline 0.493, multiclass 0.027. The binary detector adds value over the multiclass classifier for spike screening."
+}

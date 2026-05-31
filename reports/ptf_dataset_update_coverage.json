@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-31T20:37:57.840011+00:00",
+  "csv_path": "data/ptf_dataset.csv",
+  "existing_rows": 56256,
+  "fetched_rows": 72,
+  "supplemental_interim_rows": 0,
+  "final_rows": 56256,
+  "max_timestamp": "2026-06-01 23:00:00",
+  "min_timestamp": "2020-01-01 00:00:00",
+  "duplicate_hours": 0,
+  "missing_hours_count": 0,
+  "missing_hours": [],
+  "price_non_null_ratio": 1.0,
+  "coverage_target": ">= 2026-06-02 23:00:00",
+  "coverage_met": false,
+  "chunks": [
+    {
+      "start": "2026-05-30",
+      "end": "2026-06-07",
+      "rows": 72
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "available": true,
+  "rows": 24,
+  "coverage_start": "2026-05-31 00:00:00",
+  "coverage_end": "2026-05-31 23:00:00",
+  "correlations": {
+    "must_run_supply_proxy_vs_price": -0.388131415768074,
+    "renewable_concentration_vs_price": 0.4239693259608822,
+    "solar_oversupply_vs_price_midday": NaN,
+    "renewable_curtailment_pressure_vs_price": -0.5229621877525723
+  },
+  "slices": {
+    "low_price_hours": {
+      "rows": 12,
+      "must_run_supply_proxy_mean": 1.9625000000000001,
+      "renewable_concentration_score_mean": 0.4134363585017397
+    },
+    "zero_pressure_hours": {
+      "rows": 12,
+      "must_run_supply_proxy_mean": 1.9625000000000001,
+      "renewable_concentration_score_mean": 0.4134363585017397
+    },
+    "midday_hours": {
+      "rows": 6,
+      "solar_oversupply_score_mean": 0.0,
+      "renewable_curtailment_pressure_proxy_mean": 2.2720725608384602e-05
+    }
+  },
+  "regime_summary": [
+    {
+      "target_regime": "negative_zero_pressure",
+      "rows": 12,
+      "must_run_supply_proxy_mean": 1.9625000000000001,
+      "must_run_supply_proxy_median": 1.75,
+      "renewable_concentration_score_mean": 0.4134363585017397,
+      "solar_oversupply_score_mean": 0.0,
+      "hydro_pressure_score_mean": 0.0,
+      "renewable_curtailment_pressure_proxy_mean": 1.774904770037263e-05,
+      "price_mean": 4.083333333333333
+    },
+    {
+      "target_regime": "normal",
+      "rows": 8,
+      "must_run_supply_proxy_mean": 0.41000000000000003,
+      "must_run_supply_proxy_median": 0.395,
+      "renewable_concentration_score_mean": 0.927734375,
+      "solar_oversupply_score_mean": 0.0,
+      "hydro_pressure_score_mean": 0.0,
+      "renewable_curtailment_pressure_proxy_mean": 1.1354851002289247e-05,
+      "price_mean": 412.25125
+    },
+    {
+      "target_regime": "spike_cap",
+      "rows": 3,
+      "must_run_supply_proxy_mean": 0.29000000000000004,
+      "must_run_supply_proxy_median": 0.27,
+      "renewable_concentration_score_mean": 1.0,
+      "solar_oversupply_score_mean": 0.0,
+      "hydro_pressure_score_mean": 0.0,
+      "renewable_curtailment_pressure_proxy_mean": 7.65249367696293e-06,
+      "price_mean": 4300.003333333333
+    },
+    {
+      "target_regime": "tight",
+      "rows": 1,
+      "must_run_supply_proxy_mean": 0.32,
+      "must_run_supply_proxy_median": 0.32,
+      "renewable_concentration_score_mean": 1.0,
+      "solar_oversupply_score_mean": 0.0,
+      "hydro_pressure_score_mean": 0.0,
+      "renewable_curtailment_pressure_proxy_mean": 9.119927040583676e-06,
+      "price_mean": 1849.99
+    }
+  ],
+  "smoke_meta": {
+    "raw_smoke_dir_exists": true,
+    "available_dates": [
+      "2026-05-31"
+    ],
+    "latest": "2026-05-31",
+    "raw_rows": 48,
+    "raw_keys": [
+      "date",
+      "time",
+      "toplam",
+      "dogalgaz",
+      "ruzgar",
+      "linyit",
+      "tasKomur",
+      "ithalKomur",
+      "fuelOil",
+      "jeotermal",
+      "barajli",
+      "nafta",
+      "biokutle",
+      "akarsu",
+      "gunes",
+      "diger",
+      "orgId",
+      "uevcbId",
+      "uevcbName"
+    ]
+  },
+  "feature_columns": [
+    "ts_hour",
+    "must_run_supply_proxy",
+    "must_run_wind_proxy",
+    "must_run_solar_proxy",
+    "must_run_hydro_proxy",
+    "must_run_biomass_proxy",
+    "must_run_geothermal_proxy",
+    "raw_uevcb_count",
+    "renewable_concentration_score",
+    "solar_oversupply_score",
+    "hydro_pressure_score",
+    "renewable_ramp_score",
+    "renewable_ramp_1h",
+    "renewable_ramp_24h",
+    "renewable_share_of_load",
+    "residual_load_after_renewables",
+    "renewable_curtailment_pressure_proxy",
+    "evening_solar_collapse",
+    "same_hour_renewable_ramp",
+    "strict_point_in_time_safe",
+    "structural_market_proxy",
+    "hour",
+    "load_forecast",
+    "kgup_total",
+    "kgup_wind",
+    "kgup_solar",
+    "kgup_hydro",
+    "kgup_biomass",
+    "kgup_geothermal",
+    "price",
+    "target_regime"
+  ],
+  "strict_point_in_time_safe": false,
+  "structural_market_proxy": true
+}

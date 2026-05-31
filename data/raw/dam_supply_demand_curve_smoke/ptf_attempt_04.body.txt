@@ -1,0 +1,1 @@
+{"status":"400 BAD_REQUEST","correlationId":"5f4fab9b-87c1-415c-814d-a5d8d7723d51","spanIds":"(electricity-service)93231","hostName":"*********.41","clientIp":"176.40.224.64","userName":"zeynepcagdaser@gmail.com","successMessage":null,"errors":[{"errorCode":"(BUS)CORE00003","errorMessage":"İstek geçerli değil. Ya giriş alanları eksik ya da format hatası."}],"body":{}}

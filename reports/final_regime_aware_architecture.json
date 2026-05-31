@@ -1,0 +1,189 @@
+{
+  "title": "Final Regime-Aware PTF Forecasting Architecture & Feasibility Synthesis",
+  "created_at": "2026-05-31",
+  "status": "research_synthesis_only",
+  "constraints": {
+    "production_training_started": false,
+    "hyperparameter_tuning_started": false,
+    "new_ensemble_built": false
+  },
+  "core_diagnosis": {
+    "ptf_problem_type": "regime-transition forecasting problem",
+    "persistence_strength_reason": "same-hour previous-day PTF carries yesterday's market-clearing regime, hourly shape, fuel stack, price band, and volatility state",
+    "true_alpha_location": "hours where yesterday's regime is no longer valid",
+    "historical_interim_mcp_status": "unsafe for training due oracle leakage risk",
+    "point_in_time_solution": "append-only interim MCP snapshot pipeline"
+  },
+  "architecture": [
+    {
+      "component": "point_in_time_data_layer",
+      "task": "capture leak-free market state and align only information available before forecast anchor",
+      "target": "data validity, not prediction",
+      "features": ["K.PTF snapshots", "KGUP", "load forecast", "wind forecast", "outages", "lagged SMF/YAL-YAT"],
+      "leakage_risk": "highest if historical interim MCP or same-hour SMF/YAL-YAT are used as ex-ante predictors",
+      "best_horizons": ["all"],
+      "status": "must-have"
+    },
+    {
+      "component": "regime_classifier",
+      "task": "predict probabilities for negative_zero_pressure, normal, tight, spike_cap",
+      "target": "regime probabilities, not price level",
+      "features": ["lag24 regime", "hour", "weekday", "residual load", "solar/wind forecast", "KGUP stack", "outage stress"],
+      "leakage_risk": "medium if finalized labels leak into anchor-time features",
+      "best_horizons": ["h1-h24", "day-ahead delivery curve"],
+      "status": "highest priority"
+    },
+    {
+      "component": "normal_regime_forecaster",
+      "task": "forecast continuous PTF for stable normal/tight-like non-tail hours",
+      "target": "price residual vs persistence or calibrated level",
+      "features": ["lag24 price", "hour profile", "weekday", "load_minus_kgup", "KGUP stack", "wind/load share"],
+      "leakage_risk": "low if only ex-ante public features are used",
+      "best_horizons": ["h1-h12"],
+      "status": "production-ready after validation"
+    },
+    {
+      "component": "zero_pressure_model",
+      "task": "detect zero/near-zero price risk and cap downside forecast",
+      "target": "P(PTF <= 50), zero-pressure conditional price",
+      "features": ["wind forecast", "solar/KGUP güneş", "load forecast", "VRE/load ratio", "lag24 zero regime"],
+      "leakage_risk": "low for public forecasts, medium for retrospective weather revisions",
+      "best_horizons": ["solar window", "h8-h16"],
+      "status": "needed"
+    },
+    {
+      "component": "spike_cap_risk_model",
+      "task": "detect tight -> spike_cap transition",
+      "target": "P(PTF >= 4000), cap-entry probability",
+      "features": ["residual load ramp", "solar cliff", "KGUP thermal/gas share", "active outage stress", "evening ramp", "lag24 spike/tight regime"],
+      "leakage_risk": "medium due outage publication timing and unseen bid strategy",
+      "best_horizons": ["h17-h23", "evening ramp"],
+      "status": "highest alpha"
+    },
+    {
+      "component": "correction_layer",
+      "task": "correct K.PTF snapshot to finalized PTF once real point-in-time snapshots exist",
+      "target": "finalized PTF - observed K.PTF",
+      "features": ["snapshot_ts", "published_status", "snapshot revision count", "K.PTF curve shape", "market stress"],
+      "leakage_risk": "very high until enough true point-in-time K.PTF history exists",
+      "best_horizons": ["post-publication correction"],
+      "status": "defer until snapshot history matures"
+    },
+    {
+      "component": "uncertainty_estimator",
+      "task": "produce regime-conditional prediction intervals",
+      "target": "quantiles or conformal intervals by regime",
+      "features": ["regime probability", "volatility band", "persistence failure indicators"],
+      "leakage_risk": "low",
+      "best_horizons": ["all"],
+      "status": "required for market simulation"
+    },
+    {
+      "component": "market_stress_detector",
+      "task": "generate interpretable stress flags",
+      "target": "diagnostic state, not price",
+      "features": ["residual load", "solar cliff", "outage stack", "KGUP gas/thermal share", "lagged SMF spread"],
+      "leakage_risk": "low if lagged/post-publication timing is respected",
+      "best_horizons": ["all, strongest evening"],
+      "status": "required"
+    }
+  ],
+  "persistence_failure_heatmap": {
+    "by_regime_mae": {
+      "spike_cap": 516.0,
+      "tight": 360.4,
+      "negative_zero_pressure": 267.4,
+      "normal": 197.4
+    },
+    "worst_transitions_mae": {
+      "normal -> spike_cap": 3612.4,
+      "spike_cap -> normal": 3512.6,
+      "negative_zero_pressure -> tight": 2126.9,
+      "tight -> negative_zero_pressure": 1799.1,
+      "tight -> spike_cap": 1128.5,
+      "normal -> tight": 1125.1,
+      "tight -> normal": 1017.2,
+      "spike_cap -> tight": 1013.9
+    },
+    "worst_hours_by_mae": {
+      "11": 424.8,
+      "10": 421.7,
+      "9": 409.5,
+      "15": 393.5,
+      "14": 391.2,
+      "13": 389.5,
+      "8": 387.2
+    },
+    "hour_regime_hotspots": [
+      "11 spike_cap",
+      "15 spike_cap",
+      "14 spike_cap",
+      "8 spike_cap",
+      "10 tight",
+      "11 tight",
+      "13 tight"
+    ],
+    "2026_outage_residual_hotspots": [
+      "Q3 outage + Q4 residual load",
+      "Q4 outage + Q4 residual load"
+    ]
+  },
+  "data_gap_priorities": [
+    {
+      "data": "order book / bid curve",
+      "public_access": "not fully public at participant curve level",
+      "proxy_possible": "limited via K.PTF shape, price bands, KGUP, load and renewables",
+      "alpha_potential": "very high"
+    },
+    {
+      "data": "participant strategy",
+      "public_access": "no",
+      "proxy_possible": "weak via historical behavior and regime states",
+      "alpha_potential": "very high"
+    },
+    {
+      "data": "intraday revisions / true point-in-time K.PTF",
+      "public_access": "only via own snapshots",
+      "proxy_possible": "yes via append-only archive",
+      "alpha_potential": "high"
+    },
+    {
+      "data": "reserve scarcity / ancillary services",
+      "public_access": "partial",
+      "proxy_possible": "lagged PFK/SFK/SMF/YAL-YAT",
+      "alpha_potential": "medium-high"
+    },
+    {
+      "data": "unit commitment visibility",
+      "public_access": "partial via KGUP/outages",
+      "proxy_possible": "yes but incomplete",
+      "alpha_potential": "high"
+    },
+    {
+      "data": "fuel forward prices and gas marginality",
+      "public_access": "external market data required",
+      "proxy_possible": "lagged gas share and FX/fuel proxies",
+      "alpha_potential": "high"
+    }
+  ],
+  "information_theoretic_limit": {
+    "one_two_tl_possible_with_public_data": false,
+    "reason": "hidden bid behavior, strategic order placement, unobserved unit constraints, reserve scarcity, congestion, and balancing expectations are not fully observable",
+    "realistic_h1_h4_mae_range_public_data": "350-450 TL/MWh in current high-volatility regime, lower only in stable normal hours",
+    "realistic_h24_mae_range_public_data": "450-700 TL/MWh depending on regime mix",
+    "transition_hour_mae_floor": "often several hundred TL/MWh, with spike transitions above 1000 TL/MWh unless cap probability is modeled well",
+    "post_publication_kptf_correction_floor": "unknown until true point-in-time snapshots accumulate"
+  },
+  "final_recommendation": {
+    "most_promising_direction": "regime classifier plus specialized zero/tight/spike experts with persistence correction",
+    "directions_to_stop": ["single global direct LSTM for price level", "training on historical interim MCP as if point-in-time", "global feature importance without regime slicing"],
+    "critical_missing_data": "order book / bid curve and true point-in-time K.PTF revisions",
+    "strongest_feature_family": "KGUP stack plus residual load, with wind/solar and outages as regime-transition modifiers",
+    "realistic_horizon": "h1-h4 strongest, h1-h12 workable, full h24 needs probabilistic/regime output",
+    "highest_alpha": "normal/tight -> spike_cap and normal/tight -> zero_pressure transitions",
+    "next_pipeline": "leakage-safe regime label builder, persistence failure audit, point-in-time feature store, regime-specific evaluation harness",
+    "must_snapshot": ["interim MCP", "KGUP first/latest versions", "outages", "load forecast", "wind/solar forecasts if endpoint supports revisions", "published status"],
+    "production_ready_features": ["calendar/hour", "lagged PTF", "KGUP", "load forecast", "wind forecast", "outages with timing audit"],
+    "regime_aware_required": true
+  }
+}

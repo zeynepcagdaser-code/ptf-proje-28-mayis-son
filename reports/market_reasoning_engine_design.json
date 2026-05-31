@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-05-31T21:54:10.383378+00:00",
+  "input": "data/features/regime_feature_store.parquet",
+  "output": "data/features/market_reasoning_features.parquet",
+  "rows": 56232,
+  "columns": [
+    "ts_hour",
+    "analyst_zero_score",
+    "analyst_spike_score",
+    "analyst_tight_score",
+    "analyst_persistence_break_score",
+    "analyst_expected_regime",
+    "analyst_confidence_score",
+    "analyst_reason_text"
+  ],
+  "score_ranges": {
+    "analyst_zero_score": {
+      "min": 0.0,
+      "mean": 40.95231876770269,
+      "max": 99.99999999999999
+    },
+    "analyst_spike_score": {
+      "min": 0.0,
+      "mean": 40.06743907695578,
+      "max": 94.39905926332432
+    },
+    "analyst_tight_score": {
+      "min": 4.699095493002726,
+      "mean": 47.59859347764393,
+      "max": 89.720738578194
+    },
+    "analyst_persistence_break_score": {
+      "min": 2.406522971837257,
+      "mean": 35.72481059186593,
+      "max": 94.90322858984395
+    },
+    "analyst_confidence_score": {
+      "min": 46.615710602552575,
+      "mean": 66.20585589024715,
+      "max": 95.82265943661466
+    }
+  },
+  "expected_regime_counts": {
+    "tight": 27033,
+    "negative_zero_pressure": 21252,
+    "normal": 4107,
+    "spike_cap": 3840
+  },
+  "logic": {
+    "persistence_reliability": [
+      "price_band_persistence",
+      "volatility_cluster_score",
+      "residual_load_ramp",
+      "solar_cliff_score",
+      "zero_price_pressure_score"
+    ],
+    "regime_shift_risk": [
+      "normal/tight -> spike through residual load, solar cliff, maintenance, gas dependency",
+      "normal/tight -> zero through renewable oversupply and low residual load",
+      "gas marginality and hydro displacement shape marginal fuel"
+    ],
+    "physical_market_context": [
+      "residual load level and ramp",
+      "solar cliff",
+      "wind relief",
+      "maintenance stack",
+      "gas/hydro/thermal dependency",
+      "gas marginality proxy",
+      "hydro displacement score",
+      "demand weakness score",
+      "evening ramp and sunset window"
+    ]
+  },
+  "leakage_policy": {
+    "training": false,
+    "uses_only_feature_store": true,
+    "same_hour_finalized_ptf": false,
+    "same_hour_smf_yal_yat": false,
+    "historical_interim_oracle": false
+  }
+}

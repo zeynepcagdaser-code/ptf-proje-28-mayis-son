@@ -1,0 +1,1297 @@
+{
+  "generated_at": "2026-05-31T22:45:16.077619+00:00",
+  "start_date": "2026-05-18",
+  "end_date": "2026-05-24",
+  "days_requested": 7,
+  "hours_requested": 168,
+  "completed_hours": 168,
+  "newly_completed_this_run": 168,
+  "attempted_this_run": 168,
+  "failed_hours_count": 0,
+  "pending_hours_count": 0,
+  "failed_hours": [],
+  "pending_hours": [],
+  "mean_reconstruction_error": 6.086125290663382,
+  "max_reconstruction_error": 189.9360500000139,
+  "p50_reconstruction_error": 0.002832281045712648,
+  "p90_reconstruction_error": 6.7190022727277565,
+  "high_error_completed_hours": [
+    "2026-05-18T19:00:00+03:00",
+    "2026-05-18T22:00:00+03:00",
+    "2026-05-18T23:00:00+03:00",
+    "2026-05-19T03:00:00+03:00",
+    "2026-05-19T19:00:00+03:00",
+    "2026-05-19T21:00:00+03:00",
+    "2026-05-20T19:00:00+03:00",
+    "2026-05-21T17:00:00+03:00",
+    "2026-05-21T21:00:00+03:00",
+    "2026-05-22T02:00:00+03:00",
+    "2026-05-22T21:00:00+03:00",
+    "2026-05-22T22:00:00+03:00",
+    "2026-05-23T00:00:00+03:00",
+    "2026-05-23T21:00:00+03:00"
+  ],
+  "zero_hours": [
+    "2026-05-18T12:00:00+03:00",
+    "2026-05-19T07:00:00+03:00",
+    "2026-05-19T08:00:00+03:00",
+    "2026-05-19T09:00:00+03:00",
+    "2026-05-19T10:00:00+03:00",
+    "2026-05-19T11:00:00+03:00",
+    "2026-05-19T12:00:00+03:00",
+    "2026-05-19T13:00:00+03:00",
+    "2026-05-19T14:00:00+03:00",
+    "2026-05-19T15:00:00+03:00",
+    "2026-05-19T16:00:00+03:00",
+    "2026-05-23T09:00:00+03:00",
+    "2026-05-23T10:00:00+03:00",
+    "2026-05-23T11:00:00+03:00",
+    "2026-05-23T12:00:00+03:00",
+    "2026-05-23T13:00:00+03:00",
+    "2026-05-23T14:00:00+03:00",
+    "2026-05-24T08:00:00+03:00",
+    "2026-05-24T09:00:00+03:00",
+    "2026-05-24T10:00:00+03:00",
+    "2026-05-24T11:00:00+03:00",
+    "2026-05-24T12:00:00+03:00",
+    "2026-05-24T13:00:00+03:00",
+    "2026-05-24T14:00:00+03:00",
+    "2026-05-24T15:00:00+03:00",
+    "2026-05-24T16:00:00+03:00",
+    "2026-05-24T17:00:00+03:00"
+  ],
+  "low_price_hours": [
+    "2026-05-18T10:00:00+03:00",
+    "2026-05-18T12:00:00+03:00",
+    "2026-05-18T13:00:00+03:00",
+    "2026-05-19T07:00:00+03:00",
+    "2026-05-19T08:00:00+03:00",
+    "2026-05-19T09:00:00+03:00",
+    "2026-05-19T10:00:00+03:00",
+    "2026-05-19T11:00:00+03:00",
+    "2026-05-19T12:00:00+03:00",
+    "2026-05-19T13:00:00+03:00",
+    "2026-05-19T14:00:00+03:00",
+    "2026-05-19T15:00:00+03:00",
+    "2026-05-19T16:00:00+03:00",
+    "2026-05-22T12:00:00+03:00",
+    "2026-05-23T08:00:00+03:00",
+    "2026-05-23T09:00:00+03:00",
+    "2026-05-23T10:00:00+03:00",
+    "2026-05-23T11:00:00+03:00",
+    "2026-05-23T12:00:00+03:00",
+    "2026-05-23T13:00:00+03:00",
+    "2026-05-23T14:00:00+03:00",
+    "2026-05-23T15:00:00+03:00",
+    "2026-05-24T07:00:00+03:00",
+    "2026-05-24T08:00:00+03:00",
+    "2026-05-24T09:00:00+03:00",
+    "2026-05-24T10:00:00+03:00",
+    "2026-05-24T11:00:00+03:00",
+    "2026-05-24T12:00:00+03:00",
+    "2026-05-24T13:00:00+03:00",
+    "2026-05-24T14:00:00+03:00",
+    "2026-05-24T15:00:00+03:00",
+    "2026-05-24T16:00:00+03:00",
+    "2026-05-24T17:00:00+03:00"
+  ],
+  "spike_hours": [
+    "2026-05-18T19:00:00+03:00",
+    "2026-05-18T20:00:00+03:00",
+    "2026-05-18T21:00:00+03:00",
+    "2026-05-19T20:00:00+03:00",
+    "2026-05-20T20:00:00+03:00",
+    "2026-05-20T21:00:00+03:00",
+    "2026-05-21T19:00:00+03:00",
+    "2026-05-21T20:00:00+03:00",
+    "2026-05-21T21:00:00+03:00",
+    "2026-05-22T19:00:00+03:00",
+    "2026-05-22T20:00:00+03:00",
+    "2026-05-22T21:00:00+03:00",
+    "2026-05-23T20:00:00+03:00"
+  ],
+  "average_error_over_completed": 6.086125290663382,
+  "hourly_status": [
+    {
+      "hour": "2026-05-18T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.01,
+      "reconstructed_clearing_price": 300.0075050200803,
+      "price_error": -0.0024949799196747335
+    },
+    {
+      "hour": "2026-05-18T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 205.01,
+      "reconstructed_clearing_price": 203.3851989389923,
+      "price_error": -1.6248010610077017
+    },
+    {
+      "hour": "2026-05-18T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 199.01,
+      "reconstructed_clearing_price": 198.47870329309353,
+      "price_error": -0.5312967069064598
+    },
+    {
+      "hour": "2026-05-18T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 199.99,
+      "reconstructed_clearing_price": 199.99297256097563,
+      "price_error": 0.0029725609756212634
+    },
+    {
+      "hour": "2026-05-18T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 194.5,
+      "reconstructed_clearing_price": 190.00526381909546,
+      "price_error": -4.494736180904539
+    },
+    {
+      "hour": "2026-05-18T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 198.86,
+      "reconstructed_clearing_price": 196.35160583941607,
+      "price_error": -2.508394160583947
+    },
+    {
+      "hour": "2026-05-18T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 170.0,
+      "reconstructed_clearing_price": 170.00355929171883,
+      "price_error": 0.003559291718829627
+    },
+    {
+      "hour": "2026-05-18T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 169.91,
+      "reconstructed_clearing_price": 169.90886064921784,
+      "price_error": -0.0011393507821537696
+    },
+    {
+      "hour": "2026-05-18T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 171.0,
+      "reconstructed_clearing_price": 171.00367298881,
+      "price_error": 0.0036729888099955588
+    },
+    {
+      "hour": "2026-05-18T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 150.0,
+      "reconstructed_clearing_price": 149.99704390243903,
+      "price_error": -0.0029560975609683737
+    },
+    {
+      "hour": "2026-05-18T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 8.01,
+      "reconstructed_clearing_price": 8.005264112903225,
+      "price_error": -0.00473588709677486
+    },
+    {
+      "hour": "2026-05-18T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 99.0,
+      "reconstructed_clearing_price": 99.000829368807,
+      "price_error": 0.0008293688070040162
+    },
+    {
+      "hour": "2026-05-18T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-18T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1.99,
+      "reconstructed_clearing_price": 1.9902805519053877,
+      "price_error": 0.0002805519053876715
+    },
+    {
+      "hour": "2026-05-18T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 169.91,
+      "reconstructed_clearing_price": 169.90564266666667,
+      "price_error": -0.004357333333331326
+    },
+    {
+      "hour": "2026-05-18T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 170.99,
+      "reconstructed_clearing_price": 170.9944237275393,
+      "price_error": 0.004423727539290212
+    },
+    {
+      "hour": "2026-05-18T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 249.99,
+      "reconstructed_clearing_price": 249.99306773588125,
+      "price_error": 0.003067735881245426
+    },
+    {
+      "hour": "2026-05-18T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 799.01,
+      "reconstructed_clearing_price": 799.0062022321429,
+      "price_error": -0.0037977678571223805
+    },
+    {
+      "hour": "2026-05-18T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2700.0,
+      "reconstructed_clearing_price": 2699.99176,
+      "price_error": -0.008240000000114378
+    },
+    {
+      "hour": "2026-05-18T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4300.0,
+      "reconstructed_clearing_price": 4250.589999999994,
+      "price_error": -49.41000000000622
+    },
+    {
+      "hour": "2026-05-18T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4300.01,
+      "reconstructed_clearing_price": 4300.007829931034,
+      "price_error": -0.002170068965824612
+    },
+    {
+      "hour": "2026-05-18T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4300.0,
+      "reconstructed_clearing_price": 4300.000496551724,
+      "price_error": 0.0004965517236996675
+    },
+    {
+      "hour": "2026-05-18T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2954.44,
+      "reconstructed_clearing_price": 2834.247500000012,
+      "price_error": -120.19249999998783
+    },
+    {
+      "hour": "2026-05-18T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2100.0,
+      "reconstructed_clearing_price": 2083.046251768036,
+      "price_error": -16.9537482319638
+    },
+    {
+      "hour": "2026-05-19T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 325.0,
+      "reconstructed_clearing_price": 324.9946046511628,
+      "price_error": -0.005395348837225811
+    },
+    {
+      "hour": "2026-05-19T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.01,
+      "reconstructed_clearing_price": 300.0097254255903,
+      "price_error": -0.0002745744096728231
+    },
+    {
+      "hour": "2026-05-19T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 252.01,
+      "reconstructed_clearing_price": 250.5370810810811,
+      "price_error": -1.4729189189188787
+    },
+    {
+      "hour": "2026-05-19T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 299.99,
+      "reconstructed_clearing_price": 252.0016985845129,
+      "price_error": -47.988301415487115
+    },
+    {
+      "hour": "2026-05-19T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 240.01,
+      "reconstructed_clearing_price": 236.99716460513795,
+      "price_error": -3.012835394862037
+    },
+    {
+      "hour": "2026-05-19T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 200.01,
+      "reconstructed_clearing_price": 200.0088290788013,
+      "price_error": -0.001170921198678343
+    },
+    {
+      "hour": "2026-05-19T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 169.91,
+      "reconstructed_clearing_price": 169.9061129171639,
+      "price_error": -0.0038870828360870746
+    },
+    {
+      "hour": "2026-05-19T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-19T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 171.01,
+      "reconstructed_clearing_price": 171.0051111807078,
+      "price_error": -0.004888819292204971
+    },
+    {
+      "hour": "2026-05-19T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 310.01,
+      "reconstructed_clearing_price": 310.00748046462513,
+      "price_error": -0.002519535374858606
+    },
+    {
+      "hour": "2026-05-19T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2100.0,
+      "reconstructed_clearing_price": 1910.063949999986,
+      "price_error": -189.9360500000139
+    },
+    {
+      "hour": "2026-05-19T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4000.01,
+      "reconstructed_clearing_price": 3999.99275862069,
+      "price_error": -0.01724137931023506
+    },
+    {
+      "hour": "2026-05-19T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 3599.99,
+      "reconstructed_clearing_price": 3559.418181818183,
+      "price_error": -40.57181818181698
+    },
+    {
+      "hour": "2026-05-19T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1725.01,
+      "reconstructed_clearing_price": 1725.009794,
+      "price_error": -0.00020599999993464735
+    },
+    {
+      "hour": "2026-05-19T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 500.01,
+      "reconstructed_clearing_price": 500.0093544422757,
+      "price_error": -0.0006455577242832078
+    },
+    {
+      "hour": "2026-05-20T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 328.01,
+      "reconstructed_clearing_price": 327.9499590163934,
+      "price_error": -0.06004098360659782
+    },
+    {
+      "hour": "2026-05-20T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 250.0,
+      "reconstructed_clearing_price": 250.00194096503648,
+      "price_error": 0.0019409650364821118
+    },
+    {
+      "hour": "2026-05-20T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 210.28,
+      "reconstructed_clearing_price": 210.27417822511356,
+      "price_error": -0.005821774886442199
+    },
+    {
+      "hour": "2026-05-20T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 210.73,
+      "reconstructed_clearing_price": 210.72379157972256,
+      "price_error": -0.0062084202774315145
+    },
+    {
+      "hour": "2026-05-20T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 299.99,
+      "reconstructed_clearing_price": 299.9945631372549,
+      "price_error": 0.004563137254876892
+    },
+    {
+      "hour": "2026-05-20T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 250.01,
+      "reconstructed_clearing_price": 250.00921987907387,
+      "price_error": -0.0007801209261231179
+    },
+    {
+      "hour": "2026-05-20T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 199.01,
+      "reconstructed_clearing_price": 197.9986954319007,
+      "price_error": -1.0113045680992911
+    },
+    {
+      "hour": "2026-05-20T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 200.0,
+      "reconstructed_clearing_price": 199.99881012972503,
+      "price_error": -0.001189870274970417
+    },
+    {
+      "hour": "2026-05-20T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 249.99,
+      "reconstructed_clearing_price": 241.15075982821273,
+      "price_error": -8.839240171787281
+    },
+    {
+      "hour": "2026-05-20T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 200.0,
+      "reconstructed_clearing_price": 200.00239059738422,
+      "price_error": 0.0023905973842204276
+    },
+    {
+      "hour": "2026-05-20T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 177.0,
+      "reconstructed_clearing_price": 176.07976878612712,
+      "price_error": -0.9202312138728814
+    },
+    {
+      "hour": "2026-05-20T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 174.99,
+      "reconstructed_clearing_price": 174.99193304535638,
+      "price_error": 0.001933045356366847
+    },
+    {
+      "hour": "2026-05-20T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 128.01,
+      "reconstructed_clearing_price": 125.83144444444443,
+      "price_error": -2.178555555555562
+    },
+    {
+      "hour": "2026-05-20T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 169.9,
+      "reconstructed_clearing_price": 169.90154269972453,
+      "price_error": 0.0015426997245242546
+    },
+    {
+      "hour": "2026-05-20T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 171.01,
+      "reconstructed_clearing_price": 171.009276,
+      "price_error": -0.0007239999999910651
+    },
+    {
+      "hour": "2026-05-20T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 199.0,
+      "reconstructed_clearing_price": 199.0002067039106,
+      "price_error": 0.0002067039106066204
+    },
+    {
+      "hour": "2026-05-20T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.0,
+      "reconstructed_clearing_price": 300.0049196141479,
+      "price_error": 0.004919614147922857
+    },
+    {
+      "hour": "2026-05-20T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 500.01,
+      "reconstructed_clearing_price": 500.0082024535371,
+      "price_error": -0.0017975464629103044
+    },
+    {
+      "hour": "2026-05-20T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 745.0,
+      "reconstructed_clearing_price": 745.0009078184363,
+      "price_error": 0.000907818436303387
+    },
+    {
+      "hour": "2026-05-20T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 3190.0,
+      "reconstructed_clearing_price": 3058.746254980077,
+      "price_error": -131.25374501992292
+    },
+    {
+      "hour": "2026-05-20T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4245.0,
+      "reconstructed_clearing_price": 4244.767196000001,
+      "price_error": -0.23280399999930523
+    },
+    {
+      "hour": "2026-05-20T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4142.01,
+      "reconstructed_clearing_price": 4142.005306666667,
+      "price_error": -0.004693333333307237
+    },
+    {
+      "hour": "2026-05-20T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1749.99,
+      "reconstructed_clearing_price": 1749.987274,
+      "price_error": -0.002725999999938722
+    },
+    {
+      "hour": "2026-05-20T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 500.01,
+      "reconstructed_clearing_price": 500.00978097295683,
+      "price_error": -0.00021902704315834853
+    },
+    {
+      "hour": "2026-05-21T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 324.99,
+      "reconstructed_clearing_price": 324.4306875753919,
+      "price_error": -0.5593124246080947
+    },
+    {
+      "hour": "2026-05-21T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 290.01,
+      "reconstructed_clearing_price": 290.00625846153844,
+      "price_error": -0.003741538461554228
+    },
+    {
+      "hour": "2026-05-21T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 250.0,
+      "reconstructed_clearing_price": 250.00012370784611,
+      "price_error": 0.0001237078461144847
+    },
+    {
+      "hour": "2026-05-21T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 229.0,
+      "reconstructed_clearing_price": 228.99849285714285,
+      "price_error": -0.0015071428571502565
+    },
+    {
+      "hour": "2026-05-21T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.01,
+      "reconstructed_clearing_price": 300.0081919111816,
+      "price_error": -0.0018080888183931165
+    },
+    {
+      "hour": "2026-05-21T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 259.95,
+      "reconstructed_clearing_price": 259.9486597938144,
+      "price_error": -0.0013402061856027103
+    },
+    {
+      "hour": "2026-05-21T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 200.0,
+      "reconstructed_clearing_price": 200.0008096258283,
+      "price_error": 0.0008096258283103452
+    },
+    {
+      "hour": "2026-05-21T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.0,
+      "reconstructed_clearing_price": 299.9959668508287,
+      "price_error": -0.004033149171277728
+    },
+    {
+      "hour": "2026-05-21T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 399.99,
+      "reconstructed_clearing_price": 399.99133810888253,
+      "price_error": 0.0013381088825212828
+    },
+    {
+      "hour": "2026-05-21T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 305.0,
+      "reconstructed_clearing_price": 305.00196691729326,
+      "price_error": 0.0019669172932594847
+    },
+    {
+      "hour": "2026-05-21T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 230.0,
+      "reconstructed_clearing_price": 224.94603404563566,
+      "price_error": -5.053965954364344
+    },
+    {
+      "hour": "2026-05-21T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 207.01,
+      "reconstructed_clearing_price": 207.00582452830187,
+      "price_error": -0.004175471698118827
+    },
+    {
+      "hour": "2026-05-21T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 170.01,
+      "reconstructed_clearing_price": 170.00937085230967,
+      "price_error": -0.0006291476903186322
+    },
+    {
+      "hour": "2026-05-21T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 174.99,
+      "reconstructed_clearing_price": 174.99264468503938,
+      "price_error": 0.0026446850393710974
+    },
+    {
+      "hour": "2026-05-21T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 220.0,
+      "reconstructed_clearing_price": 219.99636333333333,
+      "price_error": -0.003636666666665178
+    },
+    {
+      "hour": "2026-05-21T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.0,
+      "reconstructed_clearing_price": 299.99224510813593,
+      "price_error": -0.007754891864067304
+    },
+    {
+      "hour": "2026-05-21T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 500.01,
+      "reconstructed_clearing_price": 500.00946963927163,
+      "price_error": -0.0005303607283622114
+    },
+    {
+      "hour": "2026-05-21T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2900.0,
+      "reconstructed_clearing_price": 2796.908049999999,
+      "price_error": -103.0919500000009
+    },
+    {
+      "hour": "2026-05-21T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 3900.0,
+      "reconstructed_clearing_price": 3893.1742424242407,
+      "price_error": -6.825757575759326
+    },
+    {
+      "hour": "2026-05-21T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4000.01,
+      "reconstructed_clearing_price": 3999.63972972973,
+      "price_error": -0.3702702702703391
+    },
+    {
+      "hour": "2026-05-21T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4300.01,
+      "reconstructed_clearing_price": 4300.005841142857,
+      "price_error": -0.004158857143011119
+    },
+    {
+      "hour": "2026-05-21T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4233.0,
+      "reconstructed_clearing_price": 4200.00353,
+      "price_error": -32.996470000000045
+    },
+    {
+      "hour": "2026-05-21T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 3600.0,
+      "reconstructed_clearing_price": 3597.90306590258,
+      "price_error": -2.096934097420217
+    },
+    {
+      "hour": "2026-05-21T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2700.0,
+      "reconstructed_clearing_price": 2699.996819306931,
+      "price_error": -0.0031806930692255264
+    },
+    {
+      "hour": "2026-05-22T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1650.0,
+      "reconstructed_clearing_price": 1649.9964,
+      "price_error": -0.0036000000000058208
+    },
+    {
+      "hour": "2026-05-22T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 500.0,
+      "reconstructed_clearing_price": 499.99581169955,
+      "price_error": -0.004188300449982307
+    },
+    {
+      "hour": "2026-05-22T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 399.99,
+      "reconstructed_clearing_price": 372.81392886683176,
+      "price_error": -27.17607113316825
+    },
+    {
+      "hour": "2026-05-22T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 349.99,
+      "reconstructed_clearing_price": 349.9917679814385,
+      "price_error": 0.0017679814384905512
+    },
+    {
+      "hour": "2026-05-22T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 331.51,
+      "reconstructed_clearing_price": 329.9928674033149,
+      "price_error": -1.5171325966850873
+    },
+    {
+      "hour": "2026-05-22T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.01,
+      "reconstructed_clearing_price": 300.0069784892446,
+      "price_error": -0.00302151075538859
+    },
+    {
+      "hour": "2026-05-22T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 190.0,
+      "reconstructed_clearing_price": 189.99528225547493,
+      "price_error": -0.0047177445250667915
+    },
+    {
+      "hour": "2026-05-22T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 189.99,
+      "reconstructed_clearing_price": 189.9902344101214,
+      "price_error": 0.00023441012137936923
+    },
+    {
+      "hour": "2026-05-22T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 196.01,
+      "reconstructed_clearing_price": 196.00954654757814,
+      "price_error": -0.0004534524218513525
+    },
+    {
+      "hour": "2026-05-22T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 189.99,
+      "reconstructed_clearing_price": 189.99081304990045,
+      "price_error": 0.0008130499004437297
+    },
+    {
+      "hour": "2026-05-22T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 169.91,
+      "reconstructed_clearing_price": 169.90824616377125,
+      "price_error": -0.0017538362287439213
+    },
+    {
+      "hour": "2026-05-22T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 170.0,
+      "reconstructed_clearing_price": 170.00313079470197,
+      "price_error": 0.0031307947019740823
+    },
+    {
+      "hour": "2026-05-22T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 20.0,
+      "reconstructed_clearing_price": 19.99975024975025,
+      "price_error": -0.0002497502497504911
+    },
+    {
+      "hour": "2026-05-22T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 60.01,
+      "reconstructed_clearing_price": 60.007741726990695,
+      "price_error": -0.0022582730093034797
+    },
+    {
+      "hour": "2026-05-22T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 199.99,
+      "reconstructed_clearing_price": 199.99025823411165,
+      "price_error": 0.00025823411164083154
+    },
+    {
+      "hour": "2026-05-22T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 228.99,
+      "reconstructed_clearing_price": 223.23175265170647,
+      "price_error": -5.758247348293537
+    },
+    {
+      "hour": "2026-05-22T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 376.63,
+      "reconstructed_clearing_price": 376.6343793103448,
+      "price_error": 0.004379310344802434
+    },
+    {
+      "hour": "2026-05-22T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2567.0,
+      "reconstructed_clearing_price": 2567.0012673469387,
+      "price_error": 0.0012673469386754732
+    },
+    {
+      "hour": "2026-05-22T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 2567.0,
+      "reconstructed_clearing_price": 2567.0001346938775,
+      "price_error": 0.00013469387749864836
+    },
+    {
+      "hour": "2026-05-22T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4000.01,
+      "reconstructed_clearing_price": 4000.0050181818183,
+      "price_error": -0.004981818181931885
+    },
+    {
+      "hour": "2026-05-22T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4300.01,
+      "reconstructed_clearing_price": 4300.008075035461,
+      "price_error": -0.0019249645392847015
+    },
+    {
+      "hour": "2026-05-22T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4200.0,
+      "reconstructed_clearing_price": 4139.99416,
+      "price_error": -60.00583999999981
+    },
+    {
+      "hour": "2026-05-22T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 3249.99,
+      "reconstructed_clearing_price": 3210.0080000000003,
+      "price_error": -39.981999999999516
+    },
+    {
+      "hour": "2026-05-22T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1727.1,
+      "reconstructed_clearing_price": 1727.0994900763358,
+      "price_error": -0.000509923664139933
+    },
+    {
+      "hour": "2026-05-23T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1485.0,
+      "reconstructed_clearing_price": 1431.688361669241,
+      "price_error": -53.311638330759024
+    },
+    {
+      "hour": "2026-05-23T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 315.0,
+      "reconstructed_clearing_price": 315.00048024913946,
+      "price_error": 0.0004802491394571007
+    },
+    {
+      "hour": "2026-05-23T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 315.01,
+      "reconstructed_clearing_price": 315.0090460580233,
+      "price_error": -0.0009539419767179425
+    },
+    {
+      "hour": "2026-05-23T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 303.99,
+      "reconstructed_clearing_price": 303.6347,
+      "price_error": -0.3552999999999997
+    },
+    {
+      "hour": "2026-05-23T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 302.99,
+      "reconstructed_clearing_price": 301.00267622702484,
+      "price_error": -1.9873237729751736
+    },
+    {
+      "hour": "2026-05-23T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 240.01,
+      "reconstructed_clearing_price": 239.62296072507564,
+      "price_error": -0.38703927492434786
+    },
+    {
+      "hour": "2026-05-23T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 171.0,
+      "reconstructed_clearing_price": 171.00473780760626,
+      "price_error": 0.004737807606261413
+    },
+    {
+      "hour": "2026-05-23T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 100.0,
+      "reconstructed_clearing_price": 99.99535685320356,
+      "price_error": -0.004643146796439623
+    },
+    {
+      "hour": "2026-05-23T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 40.0,
+      "reconstructed_clearing_price": 40.0017546346783,
+      "price_error": 0.0017546346782992828
+    },
+    {
+      "hour": "2026-05-23T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-23T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-23T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-23T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-23T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-23T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-23T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 19.99,
+      "reconstructed_clearing_price": 12.920130434782397,
+      "price_error": -7.069869565217601
+    },
+    {
+      "hour": "2026-05-23T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 170.99,
+      "reconstructed_clearing_price": 170.0127628458498,
+      "price_error": -0.9772371541502025
+    },
+    {
+      "hour": "2026-05-23T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 229.99,
+      "reconstructed_clearing_price": 224.1927312902992,
+      "price_error": -5.797268709700802
+    },
+    {
+      "hour": "2026-05-23T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 303.01,
+      "reconstructed_clearing_price": 303.00867651235444,
+      "price_error": -0.0013234876455499034
+    },
+    {
+      "hour": "2026-05-23T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1499.99,
+      "reconstructed_clearing_price": 1498.5685714285714,
+      "price_error": -1.421428571428578
+    },
+    {
+      "hour": "2026-05-23T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 4127.0,
+      "reconstructed_clearing_price": 4126.99745,
+      "price_error": -0.0025500000001557055
+    },
+    {
+      "hour": "2026-05-23T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 3023.61,
+      "reconstructed_clearing_price": 2988.0806622516607,
+      "price_error": -35.52933774833946
+    },
+    {
+      "hour": "2026-05-23T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 520.0,
+      "reconstructed_clearing_price": 513.3267500000001,
+      "price_error": -6.673249999999939
+    },
+    {
+      "hour": "2026-05-23T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.01,
+      "reconstructed_clearing_price": 300.0090038855528,
+      "price_error": -0.0009961144472185879
+    },
+    {
+      "hour": "2026-05-24T00:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 310.01,
+      "reconstructed_clearing_price": 310.00528403361346,
+      "price_error": -0.0047159663865272705
+    },
+    {
+      "hour": "2026-05-24T01:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.0,
+      "reconstructed_clearing_price": 299.99212740384615,
+      "price_error": -0.00787259615384528
+    },
+    {
+      "hour": "2026-05-24T02:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.0,
+      "reconstructed_clearing_price": 299.9968437747819,
+      "price_error": -0.0031562252181061012
+    },
+    {
+      "hour": "2026-05-24T03:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 300.0,
+      "reconstructed_clearing_price": 299.99821570182394,
+      "price_error": -0.0017842981760622934
+    },
+    {
+      "hour": "2026-05-24T04:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 252.01,
+      "reconstructed_clearing_price": 252.0035409704585,
+      "price_error": -0.006459029541503014
+    },
+    {
+      "hour": "2026-05-24T05:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 252.01,
+      "reconstructed_clearing_price": 252.00424214295185,
+      "price_error": -0.0057578570481382485
+    },
+    {
+      "hour": "2026-05-24T06:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 174.99,
+      "reconstructed_clearing_price": 174.99077374561594,
+      "price_error": 0.0007737456159304656
+    },
+    {
+      "hour": "2026-05-24T07:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 38.01,
+      "reconstructed_clearing_price": 38.006106202723146,
+      "price_error": -0.00389379727685224
+    },
+    {
+      "hour": "2026-05-24T08:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T09:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T10:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T11:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T12:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T13:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T14:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T15:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T16:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T17:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 0.0,
+      "reconstructed_clearing_price": 0.0,
+      "price_error": 0.0
+    },
+    {
+      "hour": "2026-05-24T18:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 169.9,
+      "reconstructed_clearing_price": 169.9029385620915,
+      "price_error": 0.002938562091486574
+    },
+    {
+      "hour": "2026-05-24T19:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 210.0,
+      "reconstructed_clearing_price": 210.00145188711323,
+      "price_error": 0.0014518871132338518
+    },
+    {
+      "hour": "2026-05-24T20:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 1199.0,
+      "reconstructed_clearing_price": 1199.0026733524355,
+      "price_error": 0.002673352435522247
+    },
+    {
+      "hour": "2026-05-24T21:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 800.01,
+      "reconstructed_clearing_price": 800.0086658031088,
+      "price_error": -0.0013341968912072844
+    },
+    {
+      "hour": "2026-05-24T22:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 240.07,
+      "reconstructed_clearing_price": 240.01,
+      "price_error": -0.060000000000002274
+    },
+    {
+      "hour": "2026-05-24T23:00:00+03:00",
+      "status": "ok",
+      "mcp_price": 175.0,
+      "reconstructed_clearing_price": 174.9991811691776,
+      "price_error": -0.0008188308223964214
+    }
+  ],
+  "raw_directory": "data/raw/dam_supply_demand_curve_weekly/2026-05-18_2026-05-24",
+  "features_path": "data/features/reconstructed_weekly_curve_features_2026-05-18_2026-05-24.parquet",
+  "debug_directory": "reports/curve_debug_examples/weekly_2026-05-18_2026-05-24",
+  "state_path": "data/raw/dam_supply_demand_curve_weekly/2026-05-18_2026-05-24/state_2026-05-18_2026-05-24.json",
+  "command": "python3 fetch_and_reconstruct_weekly_dam_curves.py --start-date 2026-05-18 --end-date 2026-05-24 --sleep-seconds 1.0 --resume --only-missing --max-hours 168 --max-attempts 200"
+}

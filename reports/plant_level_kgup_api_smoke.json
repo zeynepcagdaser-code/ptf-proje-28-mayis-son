@@ -1,0 +1,1447 @@
+{
+  "smoke_date": "2026-05-31",
+  "sampled_powerplants": [
+    "2650",
+    "2652",
+    "2336",
+    "2789",
+    "2707",
+    "2868",
+    "2213",
+    "2175",
+    "1064",
+    "2691",
+    "663",
+    "2281",
+    "1767",
+    "1768",
+    "662",
+    "2011",
+    "1946",
+    "3018",
+    "2756",
+    "2800",
+    "1939",
+    "1662",
+    "2385",
+    "951",
+    "1839"
+  ],
+  "successful_plants": [
+    "663",
+    "662"
+  ],
+  "sampled_uevcb_ids": [
+    3648,
+    3818
+  ],
+  "scan_count": 25,
+  "payload": {
+    "date": "2026-05-31T00:00:00+03:00",
+    "region": "TR1",
+    "uevcbIds": [
+      3648,
+      3818
+    ]
+  },
+  "date_window": {
+    "startDate": "2026-05-31T00:00:00+03:00",
+    "endDate": "2026-05-31T23:59:59+03:00"
+  },
+  "powerplant_list_status": 200,
+  "powerplant_list_keys": [
+    "items"
+  ],
+  "uevcb_debug": [
+    {
+      "plant_id": "2650",
+      "payload": {
+        "powerPlantId": "2650",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2650",
+      "payload": {
+        "powerplantId": "2650",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "ee8cd5c3-e9ef-4b10-bb17-a71e5ef3f3d7",
+        "spanIds": "(electricity-service)58824",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2650",
+      "payload": {
+        "id": "2650",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "57764513-88a6-4532-adaf-91c19246b212",
+        "spanIds": "(electricity-service)96829",
+        "hostName": "*********143",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2652",
+      "payload": {
+        "powerPlantId": "2652",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2652",
+      "payload": {
+        "powerplantId": "2652",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "45d37d29-489c-4a77-be4f-9ba07e870679",
+        "spanIds": "(electricity-service)46917",
+        "hostName": "*********.63",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2652",
+      "payload": {
+        "id": "2652",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "c83e02b5-c8a5-4e62-a019-7b22d8cca3a9",
+        "spanIds": "(electricity-service)26049",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2336",
+      "payload": {
+        "powerPlantId": "2336",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2336",
+      "payload": {
+        "powerplantId": "2336",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "02352b32-df94-49e8-ab98-591d5c8ce2f1",
+        "spanIds": "(electricity-service)16602",
+        "hostName": "*********.41",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2336",
+      "payload": {
+        "id": "2336",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "5c5b6ae2-a484-4125-897e-41adea27c7bc",
+        "spanIds": "(electricity-service)43184",
+        "hostName": "*********143",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2789",
+      "payload": {
+        "powerPlantId": "2789",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2789",
+      "payload": {
+        "powerplantId": "2789",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "bf22c6e5-94d2-4875-82f9-457a7369254b",
+        "spanIds": "(electricity-service)12",
+        "hostName": "*********.41",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2789",
+      "payload": {
+        "id": "2789",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "577abcbe-1727-44aa-bf7d-950b6a17fed1",
+        "spanIds": "(electricity-service)33036",
+        "hostName": "*********143",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2707",
+      "payload": {
+        "powerPlantId": "2707",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2707",
+      "payload": {
+        "powerplantId": "2707",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "0e305d2a-0165-417e-abe0-87b0203638f0",
+        "spanIds": "(electricity-service)50974",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2707",
+      "payload": {
+        "id": "2707",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "71708fb5-3abd-4bdc-8dde-cc8db65e47d4",
+        "spanIds": "(electricity-service)82063",
+        "hostName": "*********.83",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2868",
+      "payload": {
+        "powerPlantId": "2868",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2868",
+      "payload": {
+        "powerplantId": "2868",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "adbf6dc8-dd32-47fe-aec8-40253a661ec8",
+        "spanIds": "(electricity-service)41199",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2868",
+      "payload": {
+        "id": "2868",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "6b3186a0-eda9-4e92-ad32-0b908f20b63f",
+        "spanIds": "(electricity-service)38744",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2213",
+      "payload": {
+        "powerPlantId": "2213",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2213",
+      "payload": {
+        "powerplantId": "2213",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "c11b15c2-e897-477f-a3b6-157884ec3d3c",
+        "spanIds": "(electricity-service)37020",
+        "hostName": "*********.51",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2213",
+      "payload": {
+        "id": "2213",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "35add474-978f-49f5-91d1-e078157e8e4a",
+        "spanIds": "(electricity-service)37283",
+        "hostName": "*********.51",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2175",
+      "payload": {
+        "powerPlantId": "2175",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2175",
+      "payload": {
+        "powerplantId": "2175",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "02f89ba3-0615-47db-9a31-6fe7975c5887",
+        "spanIds": "(electricity-service)18700",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2175",
+      "payload": {
+        "id": "2175",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "5a9e8820-ab99-471d-acde-9b1cc84a3bb6",
+        "spanIds": "(electricity-service)87875",
+        "hostName": "*********.83",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1064",
+      "payload": {
+        "powerPlantId": "1064",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "1064",
+      "payload": {
+        "powerplantId": "1064",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "9243b685-a969-46d4-9d1f-db2bc21f436e",
+        "spanIds": "(electricity-service)37868",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1064",
+      "payload": {
+        "id": "1064",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "7a159dec-422f-4675-8866-0ba140072aad",
+        "spanIds": "(electricity-service)41080",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2691",
+      "payload": {
+        "powerPlantId": "2691",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2691",
+      "payload": {
+        "powerplantId": "2691",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "6040a929-aa38-47f7-854a-35e1660b7b37",
+        "spanIds": "(electricity-service)89351",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2691",
+      "payload": {
+        "id": "2691",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "065000dc-2bd4-4ddb-a787-9e9a2d11e6e0",
+        "spanIds": "(electricity-service)63988",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "663",
+      "payload": {
+        "powerPlantId": "663",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": [
+          {
+            "id": 3648,
+            "name": "TEPERES Elektrik Üretim A.Ş.(Tepe Res)",
+            "eic": "40W000000003648D"
+          }
+        ]
+      }
+    },
+    {
+      "plant_id": "663",
+      "payload": {
+        "powerplantId": "663",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "f78dc8a4-3cac-4b6e-9ab2-cbe9578d410a",
+        "spanIds": "(electricity-service)36887",
+        "hostName": "*********.83",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "663",
+      "payload": {
+        "id": "663",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "bbd36fd6-4878-4475-b96d-0efcb314c0ac",
+        "spanIds": "(electricity-service)23972",
+        "hostName": "*********.63",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2281",
+      "payload": {
+        "powerPlantId": "2281",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2281",
+      "payload": {
+        "powerplantId": "2281",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "9d380e7e-02fa-4751-9458-cd73316350d8",
+        "spanIds": "(electricity-service)80480",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2281",
+      "payload": {
+        "id": "2281",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "be86ac75-b138-4afa-8a8f-c9d3526ca5fb",
+        "spanIds": "(electricity-service)98384",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1767",
+      "payload": {
+        "powerPlantId": "1767",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "1767",
+      "payload": {
+        "powerplantId": "1767",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "bc55a6af-29b9-4f13-8d9a-5ead19bc1997",
+        "spanIds": "(electricity-service)45125",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1767",
+      "payload": {
+        "id": "1767",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "a3fd830f-9cf8-40fd-87ee-ef1d8c946bbf",
+        "spanIds": "(electricity-service)51839",
+        "hostName": "*********143",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1768",
+      "payload": {
+        "powerPlantId": "1768",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "1768",
+      "payload": {
+        "powerplantId": "1768",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "225bfb9b-6948-4403-8329-dd3df1a5e9f1",
+        "spanIds": "(electricity-service)28839",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1768",
+      "payload": {
+        "id": "1768",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "05355147-13f3-474c-a9f9-e407588d03ac",
+        "spanIds": "(electricity-service)39409",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "662",
+      "payload": {
+        "powerPlantId": "662",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": [
+          {
+            "id": 3818,
+            "name": "MENDERES TEKSTİL SANAYİ VE TİCARET A.Ş.",
+            "eic": "40W000000003818E"
+          }
+        ]
+      }
+    },
+    {
+      "plant_id": "662",
+      "payload": {
+        "powerplantId": "662",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "83349ea9-6956-444c-b1a4-31a545eda2c2",
+        "spanIds": "(electricity-service)12587",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "662",
+      "payload": {
+        "id": "662",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "a9c903db-052a-4dad-841b-c609040e6ab0",
+        "spanIds": "(electricity-service)81881",
+        "hostName": "*********.78",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2011",
+      "payload": {
+        "powerPlantId": "2011",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2011",
+      "payload": {
+        "powerplantId": "2011",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "39351b4c-9965-4757-bdc6-8a87c60c343a",
+        "spanIds": "(electricity-service)23262",
+        "hostName": "*********.51",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2011",
+      "payload": {
+        "id": "2011",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "428dfa47-cec4-4396-a9d2-771d74a7f26d",
+        "spanIds": "(electricity-service)40405",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1946",
+      "payload": {
+        "powerPlantId": "1946",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "1946",
+      "payload": {
+        "powerplantId": "1946",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "a452bded-930a-4a73-a04d-d03c004d185c",
+        "spanIds": "(electricity-service)58827",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "1946",
+      "payload": {
+        "id": "1946",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "72ad0083-b385-4c82-b5d2-30723e2f4677",
+        "spanIds": "(electricity-service)11501",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "3018",
+      "payload": {
+        "powerPlantId": "3018",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "3018",
+      "payload": {
+        "powerplantId": "3018",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "e2bacd94-35e0-4f50-b9bb-fda6383dcfa8",
+        "spanIds": "(electricity-service)10593",
+        "hostName": "*********.83",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "3018",
+      "payload": {
+        "id": "3018",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "6f91fe8a-759e-4bec-b223-29371f382cc2",
+        "spanIds": "(electricity-service)24456",
+        "hostName": "*********4.7",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2756",
+      "payload": {
+        "powerPlantId": "2756",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2756",
+      "payload": {
+        "powerplantId": "2756",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "47725b42-4473-4f18-9888-374353583eac",
+        "spanIds": "(electricity-service)31116",
+        "hostName": "*********.41",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2756",
+      "payload": {
+        "id": "2756",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "c2b541de-bd5e-48fd-8750-9bcf62b2f0ea",
+        "spanIds": "(electricity-service)47848",
+        "hostName": "*********173",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2800",
+      "payload": {
+        "powerPlantId": "2800",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 200,
+      "body": {
+        "items": []
+      }
+    },
+    {
+      "plant_id": "2800",
+      "payload": {
+        "powerplantId": "2800",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 400,
+      "body": {
+        "status": "400 BAD_REQUEST",
+        "correlationId": "f7792196-4e1f-494a-a825-1ed8dc62c9ed",
+        "spanIds": "(electricity-service)75404",
+        "hostName": "*********.83",
+        "clientIp": "176.40.224.64",
+        "userName": "zeynepcagdaser@gmail.com",
+        "successMessage": null,
+        "errors": [
+          {
+            "errorCode": "(VAL)SEF1113",
+            "errorMessage": "`powerPlantId` alanı boş olamaz!"
+          }
+        ],
+        "body": {}
+      }
+    },
+    {
+      "plant_id": "2800",
+      "payload": {
+        "id": "2800",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[46576b36-17c1-4217-990a-4ad9787178b1],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1939",
+      "payload": {
+        "powerPlantId": "1939",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[cf159b58-5f8a-4213-a98e-bcdbecacbc95],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1939",
+      "payload": {
+        "powerplantId": "1939",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[6de83864-e48d-41c7-9d57-a95466efad83],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1939",
+      "payload": {
+        "id": "1939",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[6f97e90c-c424-4af1-b92a-b3e6e364fad4],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1662",
+      "payload": {
+        "powerPlantId": "1662",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[478154a3-be39-46a2-89a7-5be60260192a],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1662",
+      "payload": {
+        "powerplantId": "1662",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[74951240-a33c-4a4b-b89d-96bd9f60f0ed],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1662",
+      "payload": {
+        "id": "1662",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[a4c0698d-4967-48f3-824e-0794db806a8f],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "2385",
+      "payload": {
+        "powerPlantId": "2385",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[0d207b22-43b0-42c3-bc44-e3dd2de2cf5c],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "2385",
+      "payload": {
+        "powerplantId": "2385",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[e1aeec09-d7b2-4cfa-a2d2-65ecdc615a0e],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "2385",
+      "payload": {
+        "id": "2385",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[83910674-2b21-4acb-851a-eabe0dc87c02],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "951",
+      "payload": {
+        "powerPlantId": "951",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[111a0328-f791-48ac-a248-beabebe11c5f],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "951",
+      "payload": {
+        "powerplantId": "951",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[f33d0a39-3c3a-4478-ae53-a1d4a7439fb9],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "951",
+      "payload": {
+        "id": "951",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[e5c45ddd-fd8b-4685-8322-d8ed96e4ecbb],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1839",
+      "payload": {
+        "powerPlantId": "1839",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[652bc19e-91e4-43c9-85e5-826bb1e1c493],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1839",
+      "payload": {
+        "powerplantId": "1839",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[de5812ef-8ed5-41fc-9007-c545ac3ba775],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    },
+    {
+      "plant_id": "1839",
+      "payload": {
+        "id": "1839",
+        "startDate": "2026-05-31T00:00:00+03:00",
+        "endDate": "2026-05-31T23:59:59+03:00"
+      },
+      "status_code": 429,
+      "body": "[9cc5e495-f265-4613-969b-a38c02908b93],\n[APIGW-ERR-076],\n[Too many requests. Try again in 1 minute.],\n[429],\n[]"
+    }
+  ],
+  "smoke_status": "ok",
+  "smoke_error": null,
+  "publication_timestamp_present": false
+}

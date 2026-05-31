@@ -1,0 +1,62 @@
+{
+  "title": "Regime-Aware PTF Prototype Plan",
+  "created_at": "2026-05-31",
+  "current_step_scope": {
+    "included": [
+      "build_regime_labels.py",
+      "audit_persistence_failures.py",
+      "reports/regime_model_plan.md",
+      "reports/regime_model_plan.json"
+    ],
+    "excluded": [
+      "training",
+      "feature store",
+      "regime classifier",
+      "price experts",
+      "new ensemble",
+      "hyperparameter tuning"
+    ]
+  },
+  "label_policy": {
+    "finalized_ptf_usage": "labels_and_evaluation_only",
+    "target_regime_rules": {
+      "negative_zero_pressure": "price <= 50",
+      "normal": "50 < price < 1500",
+      "tight": "1500 <= price < 4000",
+      "spike_cap": "price >= 4000"
+    },
+    "transition_label": "lag24_regime -> target_regime",
+    "persistence_error": "abs(price - price_lag_24)"
+  },
+  "leakage_guards": [
+    "Finalized PTF target columns are not features.",
+    "Same-hour finalized PTF is forbidden as a feature.",
+    "Same-hour realized SMF/YAL/YAT are forbidden as ex-ante features.",
+    "Historical interim-mcp oracle data is forbidden.",
+    "The next feature store must include only anchor-time safe information."
+  ],
+  "horizon_policy": {
+    "h1_h4": "Short-horizon model evaluation slice in future training; in current audit, H1-H4 is reported only as delivery-hour diagnostic unless anchor horizons are explicitly built.",
+    "full_h24": "All delivery hours 0-23; required for day-ahead market simulation and regime coverage."
+  },
+  "scripts": {
+    "build_regime_labels.py": {
+      "purpose": "Create finalized-PTF labels and lag24 persistence evaluation columns.",
+      "output": [
+        "data/regime_labels.csv",
+        "reports/regime_label_summary.md",
+        "reports/regime_label_summary.json"
+      ],
+      "training": false
+    },
+    "audit_persistence_failures.py": {
+      "purpose": "Create persistence failure alpha map by hour, regime, transition, residual load, load-KGUP gap, and outage stress.",
+      "output": [
+        "reports/persistence_failure_alpha_map.md",
+        "reports/persistence_failure_alpha_map.json"
+      ],
+      "training": false
+    }
+  },
+  "next_step_after_approval": "Build leakage-safe regime feature store, then train regime classifier only after feature availability audit."
+}

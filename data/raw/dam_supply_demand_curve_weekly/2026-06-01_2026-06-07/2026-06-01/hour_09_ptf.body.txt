@@ -1,0 +1,1 @@
+{"status":"200 OK","correlationId":"14fdcc78-08fb-417b-ba35-f61459c1d38b","spanIds":"(electricity-service)55140","hostName":"*********.41","clientIp":"176.40.224.64","userName":"zeynepcagdaser@gmail.com","successMessage":null,"errors":null,"body":{"content":{"response":{"date":"2026-06-01T09:00:00+03:00","mcpPrice":45,"matchingQuantity":18953.999999999982}}}}

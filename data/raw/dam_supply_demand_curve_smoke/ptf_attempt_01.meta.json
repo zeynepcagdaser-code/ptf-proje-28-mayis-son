@@ -1,0 +1,18 @@
+{
+  "status_code": 200,
+  "content_type": "application/json",
+  "response_hash": "0a3e29d2e1be279f8398da28020892ee10a3d6b6c1126084c0581249684c7709",
+  "body_preview": "{\"status\":\"200 OK\",\"correlationId\":\"ea437cf6-7d16-49c5-ac95-d717ca4b5eda\",\"spanIds\":\"(electricity-service)78877\",\"hostName\":\"*********.41\",\"clientIp\":\"176.40.224.64\",\"userName\":\"zeynepcagdaser@gmail.com\",\"successMessage\":null,\"errors\":null,\"body\":{\"content\":{\"response\":{\"date\":\"2026-06-01T00:00:00+03:00\",\"mcpPrice\":456,\"matchingQuantity\":16438.900000000001}}}}",
+  "nested_response": true,
+  "nested_keys": [
+    "date",
+    "mcpPrice",
+    "matchingQuantity"
+  ],
+  "json_top_level_type": "dict",
+  "items_count": 1,
+  "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/supply-demand-chart-ptf-data",
+  "payload": {
+    "date": "2026-06-01T00:00:00+03:00"
+  }
+}
