@@ -1,0 +1,93 @@
+{
+  "title": "Point-in-Time Interim MCP Snapshot Pipeline",
+  "created_at": "2026-05-31",
+  "scope": {
+    "allowed": [
+      "current visible interim MCP snapshot capture",
+      "today and tomorrow delivery days",
+      "append-only archive",
+      "publication status capture",
+      "response hash capture",
+      "fetch run id capture"
+    ],
+    "not_allowed": [
+      "historical backfill",
+      "finalized MCP join",
+      "model training",
+      "feature engineering",
+      "correction model fitting"
+    ]
+  },
+  "script": {
+    "path": "snapshot_interim_mcp.py",
+    "source_endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp",
+    "published_status_endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp-published-status",
+    "delivery_days": [
+      "today",
+      "tomorrow"
+    ],
+    "historical_backfill": false,
+    "write_mode": "append-only with atomic CSV replacement",
+    "dedupe_key": [
+      "fetch_run_id",
+      "delivery_date",
+      "delivery_hour",
+      "response_hash"
+    ],
+    "lock_file": "data/snapshots/interim_mcp_snapshots.lock"
+  },
+  "output": {
+    "csv_path": "data/snapshots/interim_mcp_snapshots.csv",
+    "columns": [
+      "snapshot_ts",
+      "fetch_run_id",
+      "delivery_date",
+      "delivery_hour",
+      "marketTradePrice",
+      "published_status_completed",
+      "response_hash",
+      "source_endpoint"
+    ],
+    "point_in_time_fields": [
+      "snapshot_ts",
+      "fetch_run_id",
+      "published_status_completed",
+      "response_hash"
+    ]
+  },
+  "leakage_controls": {
+    "finalized_mcp_join": false,
+    "retrospective_backfill": false,
+    "overwrite_existing_snapshots": false,
+    "snapshot_versioning": "Every run records a new snapshot_ts and fetch_run_id.",
+    "response_integrity": "Canonical endpoint payload and returned items are hashed with SHA-256."
+  },
+  "workflow_recommendation": {
+    "path": ".github/workflows/snapshot_interim_mcp.yml",
+    "schedule": "hourly by default; can be changed to several daily captures around DAM publication windows",
+    "commit_scope": [
+      "data/snapshots/interim_mcp_snapshots.csv",
+      "snapshot_interim_mcp.py",
+      "reports/interim_snapshot_pipeline.md",
+      "reports/interim_snapshot_pipeline.json"
+    ],
+    "permissions": {
+      "contents": "write"
+    }
+  },
+  "future_storage_recommendation": {
+    "current": "CSV is acceptable for initial operational visibility and simple diffs.",
+    "recommended_when_growing": "partitioned parquet",
+    "partition_keys": [
+      "snapshot_date",
+      "delivery_date"
+    ],
+    "reasoning": [
+      "append-only snapshots will grow quickly under hourly capture",
+      "parquet reduces file size and improves downstream scan speed",
+      "partitions limit rewrite/corruption blast radius",
+      "CSV can remain a lightweight export, not the canonical long-term store"
+    ]
+  },
+  "next_safe_step": "Run the snapshot workflow for several weeks, then audit whether early K.PTF snapshots differ from finalized PTF before attempting correction forecasting."
+}

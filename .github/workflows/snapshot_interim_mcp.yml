@@ -1,0 +1,53 @@
+name: Snapshot Interim MCP
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshot-interim-mcp
+  cancel-in-progress: false
+
+jobs:
+  snapshot-interim-mcp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests python-dotenv
+
+      - name: Snapshot interim MCP
+        env:
+          EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
+          EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
+        run: python -u snapshot_interim_mcp.py
+
+      - name: Commit and push snapshot changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add snapshot_interim_mcp.py data/snapshots/interim_mcp_snapshots.csv reports/interim_snapshot_pipeline.md reports/interim_snapshot_pipeline.json
+
+          if git diff --cached --quiet; then
+            echo "No snapshot changes to commit"
+          else
+            git commit -m "Update interim MCP snapshots"
+            git push
+          fi

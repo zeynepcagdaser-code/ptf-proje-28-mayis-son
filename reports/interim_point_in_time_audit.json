@@ -1,0 +1,162 @@
+{
+  "generated_at": "2026-05-30T16:30:00+03:00",
+  "scope": "Point-in-time validity audit for EPİAŞ interim MCP / K.PTF historical data",
+  "inputs": {
+    "interim_csv": "data/raw/interim_mcp.csv",
+    "finalized_csv": "data/ptf_dataset.csv",
+    "interim_endpoint": "POST https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp",
+    "finalized_endpoint": "POST https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/mcp",
+    "published_status_endpoint": "GET https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/interim-mcp-published-status"
+  },
+  "coverage": {
+    "interim_rows": 21792,
+    "finalized_rows": 56232,
+    "aligned_rows": 21792,
+    "coverage_start_tr": "2020-01-01T00:00:00+03:00",
+    "coverage_end_tr": "2022-06-26T23:00:00+03:00",
+    "unique_days": 908,
+    "missing_hours_in_aligned_range": 0,
+    "duplicate_rows": 0,
+    "null_rows": 0
+  },
+  "oracle_leakage_tests": {
+    "tz_aware_join": {
+      "correlation": 1.0,
+      "exact_match_rows": 21792,
+      "exact_match_rate": 1.0,
+      "mean_abs_diff": 0.0,
+      "max_abs_diff": 0.0,
+      "nonzero_diff_rows_eps_1e_9": 0
+    },
+    "naive_date_hour_join": {
+      "rows": 21792,
+      "exact_match_rate": 1.0,
+      "mean_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    "shift_sanity_checks": [
+      {
+        "shift_hours_final_to_interim": 0,
+        "rows": 21792,
+        "mae": 0.0,
+        "exact_match_rate": 1.0
+      },
+      {
+        "shift_hours_final_to_interim": 1,
+        "rows": 21791,
+        "mae": 53.0304891928,
+        "exact_match_rate": 0.131338626
+      },
+      {
+        "shift_hours_final_to_interim": -1,
+        "rows": 21792,
+        "mae": 53.0557874449,
+        "exact_match_rate": 0.1313325991
+      },
+      {
+        "shift_hours_final_to_interim": 24,
+        "rows": 21768,
+        "mae": 86.4754235575,
+        "exact_match_rate": 0.0925670709
+      }
+    ],
+    "by_year": [
+      {
+        "year": 2020,
+        "rows": 8784,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      },
+      {
+        "year": 2021,
+        "rows": 8760,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      },
+      {
+        "year": 2022,
+        "rows": 4248,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      }
+    ]
+  },
+  "live_endpoint_checks": {
+    "published_status_response": {
+      "http_status": 200,
+      "body_content": {
+        "completed": false
+      },
+      "interpretation": "The status endpoint reports current publication completion only; it does not provide historical version timestamps."
+    },
+    "representative_days": [
+      {
+        "day": "2020-01-01",
+        "interim_count": 24,
+        "final_count": 24,
+        "first_hour_interim": 311.65,
+        "first_hour_final": 311.65,
+        "interim_avg": 284.06,
+        "final_avg": 284.06
+      },
+      {
+        "day": "2022-06-26",
+        "interim_count": 24,
+        "final_count": 24,
+        "first_hour_interim": 2240.0,
+        "first_hour_final": 2240.0,
+        "interim_avg": 1869.27,
+        "final_avg": 1869.27
+      },
+      {
+        "day": "2026-05-30",
+        "interim_count": 24,
+        "final_count": 24,
+        "first_hour_interim": 171.0,
+        "first_hour_final": 171.0,
+        "interim_avg": 142.53,
+        "final_avg": 142.53
+      },
+      {
+        "day": "2026-05-31",
+        "interim_count": 24,
+        "final_count": 24,
+        "first_hour_interim": 349.99,
+        "first_hour_final": 349.99,
+        "interim_avg": 754.04,
+        "final_avg": 754.04
+      }
+    ]
+  },
+  "technical_diagnosis": {
+    "point_in_time_status": "not_proven",
+    "oracle_leakage_risk": "critical",
+    "historical_training_safety": "unsafe",
+    "reason": "Historical interim-mcp values are exactly equal to finalized mcp values across all aligned rows and representative live API calls. The endpoint may return current canonical values rather than the originally published interim snapshot."
+  },
+  "snapshot_strategy": {
+    "recommended": "append-only point-in-time snapshot archive",
+    "minimum_frequency": "daily after interim-mcp-published-status completed=true",
+    "preferred_frequency": "hourly around publication window plus daily final snapshot",
+    "required_columns": [
+      "snapshot_ts",
+      "delivery_date",
+      "delivery_hour",
+      "marketTradePrice",
+      "source_endpoint",
+      "published_status_completed",
+      "response_hash",
+      "fetch_run_id"
+    ],
+    "storage": "partitioned parquet for snapshots; CSV export only for lightweight inspection",
+    "dedupe_key": [
+      "snapshot_ts",
+      "delivery_date",
+      "delivery_hour"
+    ]
+  },
+  "decision": {
+    "can_backtest_correction_forecasting_without_real_point_in_time_data": false,
+    "next_safe_research_step": "Start point-in-time K.PTF snapshot logging and keep current historical interim CSV out of model training until semantics are proven."
+  }
+}
