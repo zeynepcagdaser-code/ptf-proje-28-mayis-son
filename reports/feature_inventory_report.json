@@ -1,0 +1,1223 @@
+{
+  "features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
+  "row_count": 56016,
+  "feature_count": 102,
+  "families": [
+    "ptf_lag_rolling",
+    "calendar_holiday",
+    "load_demand",
+    "kgup_source_mix",
+    "renewable_pressure",
+    "thermal_price_setting",
+    "smf_yal_yat_lagged",
+    "wind_forecast",
+    "outage",
+    "fuel_currency",
+    "cap_imbalance",
+    "yekdem_merchant_proxy",
+    "low_zero_price_risk",
+    "other"
+  ],
+  "rows": [
+    {
+      "feature": "ptf_lag_1",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_168",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_168h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_1h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_2",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_24",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_24h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_2h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_3",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_3h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_lag_48",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_mean_168",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_mean_24",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_std_168",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_std_24",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_rolling_mean_168h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_rolling_mean_24h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_rolling_std_24h",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "dow_cos",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "dow_sin",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "hour_cos",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "hour_sin",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "is_holiday_or_weekend",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour",
+        "holidays.Turkey()"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "is_holiday_tr",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour",
+        "holidays.Turkey()"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "is_weekend",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "month_cos",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "month_sin",
+      "family": "calendar_holiday",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_total_minus_load",
+      "family": "load_demand",
+      "sources": [
+        "kgup_total_minus_load"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0003927449300199943
+    },
+    {
+      "feature": "load_lep",
+      "family": "load_demand",
+      "sources": [
+        "load_lep"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0003927449300199943
+    },
+    {
+      "feature": "kgup_akarsu",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_akarsu"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_barajli",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_barajli"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_biokutle",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_biokutle"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_diger",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_diger"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_dogalgaz",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_dogalgaz"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_fuelOil",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_fuelOil"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_gunes",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_gunes"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_ithalKomur",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_ithalKomur"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_jeotermal",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_linyit",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_linyit"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_nafta",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_nafta"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_renewable_share",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_renewable_share"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_ruzgar",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_ruzgar"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_tasKomur",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_tasKomur"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_thermal_share",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_thermal_share"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "kgup_toplam",
+      "family": "kgup_source_mix",
+      "sources": [
+        "kgup_toplam"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "hydro_share",
+      "family": "renewable_pressure",
+      "sources": [
+        "kgup_toplam",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "renewable_pressure",
+      "family": "renewable_pressure",
+      "sources": [
+        "kgup_toplam",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "renewable_suppression_pressure",
+      "family": "renewable_pressure",
+      "sources": [
+        "kgup_toplam",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "res_share",
+      "family": "renewable_pressure",
+      "sources": [
+        "kgup_toplam",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "solar_share",
+      "family": "renewable_pressure",
+      "sources": [
+        "kgup_toplam",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "wind_forecast_share",
+      "family": "renewable_pressure",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "coal_share",
+      "family": "thermal_price_setting",
+      "sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_coal_balance",
+      "family": "thermal_price_setting",
+      "sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_coal_competition_index",
+      "family": "thermal_price_setting",
+      "sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_share",
+      "family": "thermal_price_setting",
+      "sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "thermal_price_setting_share",
+      "family": "thermal_price_setting",
+      "sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "cons_consumption_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "cons_consumption_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "cons_consumption_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gen_total_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gen_total_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gen_total_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "smf_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "smf_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "smf_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "smf_ptf_spread_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "smf_ptf_spread_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "smf_to_cap_ratio",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "wind_generation_mean_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.004266638103399029
+    },
+    {
+      "feature": "wind_generation_mean_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.004266638103399029
+    },
+    {
+      "feature": "wind_generation_mean_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.004266638103399029
+    },
+    {
+      "feature": "yal_yat_downRegulationDelivered_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_downRegulationDelivered_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_downRegulationDelivered_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_net_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_net_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_net_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_upRegulationDelivered_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_upRegulationDelivered_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "yal_yat_upRegulationDelivered_lag_48",
+      "family": "smf_yal_yat_lagged",
+      "sources": [
+        "yal_yat_* (master)"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "wind_forecast_max",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "wind_forecast_mean",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "wind_forecast_min",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "wind_forecast_std",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "wind_quarter1_mean",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "wind_quarter2_mean",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "wind_quarter3_mean",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "wind_quarter4_mean",
+      "family": "wind_forecast",
+      "sources": [
+        "wind_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "outage_event_rows",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "outage_fault_event_count",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "outage_fault_mw_loss_max",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0024992859183090546
+    },
+    {
+      "feature": "outage_fault_mw_loss_sum",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0024992859183090546
+    },
+    {
+      "feature": "outage_fault_operator_power_sum",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0024992859183090546
+    },
+    {
+      "feature": "outage_maint_capacity_sum",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "outage_maint_event_count",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "outage_maint_operator_power_sum",
+      "family": "outage",
+      "sources": [
+        "outages_* (master)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "price_cap",
+      "family": "cap_imbalance",
+      "sources": [
+        "engineered_constant"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_to_cap_ratio",
+      "family": "cap_imbalance",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "holiday_low_load_flag",
+      "family": "low_zero_price_risk",
+      "sources": [
+        "load_lep",
+        "ts_hour (holiday/weekend flag)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "low_load_flag",
+      "family": "low_zero_price_risk",
+      "sources": [
+        "load_lep"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "solar_peak_hour_flag",
+      "family": "low_zero_price_risk",
+      "sources": [
+        "ts_hour"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "zero_price_risk_proxy",
+      "family": "low_zero_price_risk",
+      "sources": [
+        "kgup_* (renewable/gas shares)",
+        "load_lep",
+        "ts_hour (holiday/weekend flag)"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    }
+  ],
+  "counts_by_family": {
+    "ptf_lag_rolling": 18,
+    "calendar_holiday": 9,
+    "load_demand": 2,
+    "kgup_source_mix": 16,
+    "renewable_pressure": 6,
+    "thermal_price_setting": 5,
+    "smf_yal_yat_lagged": 24,
+    "wind_forecast": 8,
+    "outage": 8,
+    "fuel_currency": 0,
+    "cap_imbalance": 2,
+    "yekdem_merchant_proxy": 0,
+    "low_zero_price_risk": 4,
+    "other": 0
+  },
+  "counts_by_recommended_usage": {
+    "main_regression": 72,
+    "low_price_classifier": 4,
+    "risk_dashboard_only": 2,
+    "exclude": 24
+  },
+  "high_leakage_risk_features": []
+}

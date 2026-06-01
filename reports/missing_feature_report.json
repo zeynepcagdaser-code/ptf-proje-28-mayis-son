@@ -1,0 +1,337 @@
+{
+  "requested_features": [
+    "low_load_flag",
+    "holiday_low_load_flag",
+    "renewable_pressure",
+    "hydro_pressure",
+    "res_ges_hes_pressure",
+    "zero_price_risk_proxy",
+    "low_price_regime_score",
+    "gas_share",
+    "coal_share",
+    "gas_coal_competition_index",
+    "thermal_price_setting_share",
+    "gas_marginal_proxy",
+    "merchant_proxy_share",
+    "non_merchant_proxy_share",
+    "ttf_gas_price",
+    "brent_oil_price",
+    "usd_try",
+    "eur_try",
+    "ttf_try_proxy",
+    "fuel_cost_index",
+    "gas_cost_pressure",
+    "gas_marginal_pressure",
+    "price_cap",
+    "ptf_to_cap_ratio",
+    "smf_to_cap_ratio",
+    "spread_risk_flag",
+    "imbalance_cost_proxy",
+    "yekdem_unit_price",
+    "kgup_excess_generation",
+    "yekdem_revenue_loss_proxy"
+  ],
+  "present_count": 11,
+  "missing_count": 19,
+  "missing_source_data_count": 19,
+  "items": [
+    {
+      "feature": "low_load_flag",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "load_lep"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "holiday_low_load_flag",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "load_lep",
+        "ts_hour (holiday/weekend flag)"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "renewable_pressure",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "kgup_toplam",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "hydro_pressure",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "res_ges_hes_pressure",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "zero_price_risk_proxy",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "kgup_* (renewable/gas shares)",
+        "load_lep",
+        "ts_hour (holiday/weekend flag)"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "low_price_regime_score",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "gas_share",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "coal_share",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "gas_coal_competition_index",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "thermal_price_setting_share",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "kgup_toplam",
+        "kgup_dogalgaz",
+        "kgup_ithalKomur",
+        "kgup_linyit",
+        "kgup_tasKomur",
+        "kgup_ruzgar",
+        "kgup_gunes",
+        "kgup_barajli",
+        "kgup_akarsu",
+        "kgup_biokutle",
+        "kgup_jeotermal"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "gas_marginal_proxy",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "merchant_proxy_share",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "non_merchant_proxy_share",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "ttf_gas_price",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "brent_oil_price",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "usd_try",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "eur_try",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "ttf_try_proxy",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "fuel_cost_index",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "gas_cost_pressure",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "gas_marginal_pressure",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "price_cap",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "engineered_constant"
+      ],
+      "source_status": "partial_unknown",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "ptf_to_cap_ratio",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "ptf_price"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "smf_to_cap_ratio",
+      "present_in_dataset": true,
+      "expected_sources": [
+        "smf_systemMarginalPrice",
+        "ptf_price"
+      ],
+      "source_status": "ok",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "spread_risk_flag",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "imbalance_cost_proxy",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "yekdem_unit_price",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "kgup_excess_generation",
+      "present_in_dataset": false,
+      "expected_sources": [
+        "kgup_excess_generation"
+      ],
+      "source_status": "missing_source_data",
+      "missing_sources": [
+        "kgup_excess_generation"
+      ],
+      "master_cols_source": "parquet_schema"
+    },
+    {
+      "feature": "yekdem_revenue_loss_proxy",
+      "present_in_dataset": false,
+      "expected_sources": [],
+      "source_status": "missing_source_data",
+      "missing_sources": [],
+      "master_cols_source": "parquet_schema"
+    }
+  ]
+}

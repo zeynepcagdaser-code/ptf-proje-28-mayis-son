@@ -64,6 +64,45 @@ OUTAGE_FEATURE_COLS = [
     "outage_maint_operator_power_sum",
 ]
 
+# Feature selection buckets (for planned next steps: separate heads/models).
+# These lists are NOT yet enforced by the dataset builder; they exist as an explicit contract
+# for future model wiring and to avoid accidentally stuffing every new feature into the main regressor.
+MAIN_REGRESSION_FEATURES: list[str] = [
+    # The primary dataset builder still includes the base KGUP/load/wind/outage + lags.
+    # This list is intended for "engineered" features to prioritize in price regression.
+    "kgup_total_minus_load",
+    "kgup_renewable_share",
+    "kgup_thermal_share",
+    "wind_forecast_share",
+    "smf_ptf_spread_lag_24",
+    "smf_ptf_spread_lag_168",
+    "ptf_lag_24",
+    "ptf_lag_168",
+    "ptf_roll_mean_24",
+    "ptf_roll_std_24",
+    "ptf_roll_mean_168",
+    "ptf_roll_std_168",
+    # Downside / market structure proxies
+    "gas_share",
+    "coal_share",
+    "gas_coal_balance",
+    "gas_coal_competition_index",
+    "thermal_price_setting_share",
+    "renewable_pressure",
+    "renewable_suppression_pressure",
+]
+
+LOW_PRICE_CLASSIFIER_FEATURES: list[str] = [
+    "low_load_flag",
+    "holiday_low_load_flag",
+    "solar_peak_hour_flag",
+    "zero_price_risk_proxy",
+]
+
+RISK_DASHBOARD_FEATURES: list[str] = [
+    # Placeholder bucket for features we might use in monitoring but not in training.
+]
+
 # Realized / balancing — only lagged copies at 24/48/168.
 LAGGED_SOURCE_COLS = [
     "gen_total",
