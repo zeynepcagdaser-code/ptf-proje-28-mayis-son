@@ -70,6 +70,19 @@ Workflow:
 - Tetik: `schedule` (saatlik), `push` `main`, `workflow_dispatch`
 - Güncelleme: `data/predictions/` içeriği değişirse otomatik commit/push eder
 
+## PTF tahmin paneli
+
+Yeni panel dosyası: `src/dashboard/streamlit_ptf_dashboard.py`
+
+Çalıştırmak için:
+
+```bash
+pip install -r requirements.txt
+streamlit run src/dashboard/streamlit_ptf_dashboard.py
+```
+
+Panel, `data/predictions/` altındaki en güncel PTF tahminlerini ve iki aşamalı model performansını görselleştirir.
+
 ## LSTM baseline eğitimi (PyTorch)
 
 ```bash
