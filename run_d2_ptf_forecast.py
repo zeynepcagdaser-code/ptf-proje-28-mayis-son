@@ -115,6 +115,7 @@ def main() -> None:
     parser.add_argument("--target-date", default=None)
     args = parser.parse_args()
     target_date = args.target_date or (datetime.now().date() + timedelta(days=2)).isoformat()
+    target_date_obj = pd.to_datetime(target_date).date()
 
     if not FEATURE_PATH.exists():
         raise FileNotFoundError(f"Missing {FEATURE_PATH}. Run build_d2_ptf_features.py first.")
@@ -124,6 +125,9 @@ def main() -> None:
     from src.utils.io_utils import read_parquet_with_normalized_ts
     frame = read_parquet_with_normalized_ts(FEATURE_PATH)
     frame["ts_hour"] = pd.to_datetime(frame["ts_hour"], errors="coerce")
+    frame = frame[frame["ts_hour"].dt.date == target_date_obj].copy()
+    if frame.empty:
+        raise ValueError(f"No feature rows found for target date {target_date_obj}")
     pred = predict(frame)
     write_reports(pred, target_date)
     print(f"Wrote {OUT_CSV}")

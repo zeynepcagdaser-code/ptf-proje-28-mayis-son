@@ -47,7 +47,6 @@ MAX_RETRIES = 4
 ROLLING_REFRESH_HOURS = 48
 FORWARD_LOOK_DAYS = 7
 CHUNK_DAYS = 90
-TARGET_MIN_MAX_TS = pd.Timestamp("2026-06-02 23:00:00")
 
 
 def log(msg: str) -> None:
@@ -237,7 +236,13 @@ def dedupe_sort(df: pd.DataFrame) -> pd.DataFrame:
     return df.drop(columns=["ts_hour"], errors="ignore").reset_index(drop=True)
 
 
-def coverage_report(df: pd.DataFrame, existing_rows: int, fetched_rows: int, chunks: list[dict[str, Any]]) -> dict[str, Any]:
+def coverage_report(
+    df: pd.DataFrame,
+    existing_rows: int,
+    fetched_rows: int,
+    chunks: list[dict[str, Any]],
+    coverage_target_ts: pd.Timestamp,
+) -> dict[str, Any]:
     ts = parse_ts(df) if not df.empty else pd.Series(dtype="datetime64[ns]")
     full_hours = pd.date_range(ts.min(), ts.max(), freq="h") if not ts.empty else pd.DatetimeIndex([])
     missing = []
@@ -256,13 +261,20 @@ def coverage_report(df: pd.DataFrame, existing_rows: int, fetched_rows: int, chu
         "missing_hours_count": int(len(missing)),
         "missing_hours": missing[:200],
         "price_non_null_ratio": float(df["price"].notna().mean()) if "price" in df.columns and not df.empty else None,
-        "coverage_target": ">= 2026-06-02 23:00:00",
-        "coverage_met": bool(ts.max() >= TARGET_MIN_MAX_TS) if not ts.empty else False,
+        "coverage_target": f">= {coverage_target_ts}",
+        "coverage_met": bool(ts.max() >= coverage_target_ts) if not ts.empty else False,
         "chunks": chunks,
     }
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--target-date",
+        default=None,
+        help="Fetch EPİAŞ data through this date (YYYY-MM-DD). Defaults to today + FORWARD_LOOK_DAYS.",
+    )
+    args = parser.parse_args()
     if not USERNAME or not PASSWORD:
         raise SystemExit("Missing EPIAS credentials in .env")
 
@@ -270,7 +282,11 @@ def main() -> None:
     existing_rows = len(existing)
     start_date = get_start_date_from_csv(existing)
     start_date = start_date.replace(minute=0, second=0, microsecond=0)
-    end_date = datetime.now().replace(tzinfo=None) + timedelta(days=FORWARD_LOOK_DAYS)
+    if args.target_date:
+        end_date = pd.to_datetime(args.target_date).to_pydatetime().replace(tzinfo=None)
+    else:
+        end_date = datetime.now().replace(tzinfo=None) + timedelta(days=FORWARD_LOOK_DAYS)
+    target_coverage_ts = pd.Timestamp(end_date)
 
     tgt = obtain_tgt(USERNAME, PASSWORD)
     log(f"TGT alındı: {tgt[:20]}...")
@@ -299,9 +315,9 @@ def main() -> None:
 
     supplemental_rows = 0
     max_ts = pd.to_datetime(parse_ts(df), errors="coerce").max() if not df.empty else pd.NaT
-    if pd.notna(max_ts) and max_ts < TARGET_MIN_MAX_TS:
+    if pd.notna(max_ts) and max_ts < target_coverage_ts:
         missing_start = (max_ts + timedelta(days=1)).to_pydatetime().replace(tzinfo=None)
-        missing_end = TARGET_MIN_MAX_TS.to_pydatetime().replace(tzinfo=None)
+        missing_end = target_coverage_ts.to_pydatetime().replace(tzinfo=None)
         interim_chunk = fetch_interim_chunk(missing_start, missing_end, tgt)
         supplemental_rows = len(interim_chunk)
         if not interim_chunk.empty:
@@ -316,9 +332,9 @@ def main() -> None:
             df = pd.concat([df, interim_chunk.drop(columns=["ts_hour"], errors="ignore")], ignore_index=True)
             df = dedupe_sort(df)
             max_ts = pd.to_datetime(parse_ts(df), errors="coerce").max() if not df.empty else pd.NaT
-        if pd.notna(max_ts) and max_ts < TARGET_MIN_MAX_TS:
+        if pd.notna(max_ts) and max_ts < target_coverage_ts:
             curve_rows = []
-            supplement_day = TARGET_MIN_MAX_TS.to_pydatetime().replace(hour=0, minute=0, second=0, microsecond=0)
+            supplement_day = target_coverage_ts.to_pydatetime().replace(hour=0, minute=0, second=0, microsecond=0)
             for hour in range(24):
                 curve_rows.append(fetch_curve_ptf_hour(supplement_day + timedelta(hours=hour), tgt))
                 time.sleep(0.5)
@@ -328,7 +344,7 @@ def main() -> None:
                     {
                         "source": "curve-ptf",
                         "start": supplement_day.strftime("%Y-%m-%d"),
-                        "end": TARGET_MIN_MAX_TS.strftime("%Y-%m-%d"),
+                        "end": target_coverage_ts.strftime("%Y-%m-%d"),
                         "rows": int(len(curve_chunk)),
                     }
                 )
@@ -341,7 +357,7 @@ def main() -> None:
     df.to_csv(tmp_csv, index=False)
     tmp_csv.replace(CSV_PATH)
 
-    report = coverage_report(df, existing_rows, fetched_rows + supplemental_rows, chunk_meta)
+    report = coverage_report(df, existing_rows, fetched_rows + supplemental_rows, chunk_meta, target_coverage_ts)
     REPORT_JSON.parent.mkdir(parents=True, exist_ok=True)
     REPORT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
     lines = [
