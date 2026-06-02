@@ -1,9 +1,9 @@
 # Master Dataset Report
 
-- **Generated (UTC):** 2026-05-29T21:35:36.998776+00:00
+- **Generated (UTC):** 2026-06-02T07:13:44.178427+00:00
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet`
 - **Rows:** 56208 (spine: 56208, match: True)
-- **Columns:** 75
+- **Columns:** 89
 - **ts_hour unique:** 56208
 - **ts_hour range:** 2020-01-01 00:00:00+03:00 → 2026-05-30 23:00:00+03:00
 
@@ -20,12 +20,20 @@
 | yal_yat | 7 |
 | wind | 14 |
 | outages | 8 |
+| open_meteo_temperature | 2 |
+| dam_price_independent_buy | 1 |
+| dam_price_independent_sell | 1 |
+| dam_bid_volume | 1 |
+| dam_sell_offer_volume | 1 |
+| dam_matched_volume | 2 |
+| dam_block_buy_volume | 2 |
+| grf_daily_reference_price | 4 |
 
 ## Availability summary
 
 - **balancing:** 8 columns
 - **forecast:** 9 columns
-- **metadata:** 14 columns
+- **metadata:** 28 columns
 - **outage_event:** 8 columns
 - **planned:** 14 columns
 - **realized:** 22 columns
@@ -34,6 +42,8 @@
 
 | Column | Missing % | Availability |
 |--------|----------:|----------------|
+| `temp_2m` | 6.4048 | n/a |
+| `apparent_temp` | 6.4048 | n/a |
 | `wind_generation_mean` | 0.5586 | realized |
 | `wind_generation_min` | 0.5586 | realized |
 | `wind_generation_max` | 0.5586 | realized |
@@ -150,3 +160,17 @@
 | `outage_maint_event_count` | int64 | outage_event |
 | `outage_maint_capacity_sum` | float64 | outage_event |
 | `outage_maint_operator_power_sum` | float64 | outage_event |
+| `temp_2m` | float64 | n/a |
+| `apparent_temp` | float64 | n/a |
+| `dam_price_independent_buy_mwh` | float64 | planned |
+| `dam_price_independent_sell_mwh` | float64 | planned |
+| `dam_bid_volume_mwh` | float64 | planned |
+| `dam_sell_offer_volume_mwh` | float64 | planned |
+| `dam_matched_buy_mwh` | float64 | planned |
+| `dam_matched_sell_mwh` | float64 | planned |
+| `dam_block_matched_buy_mwh` | float64 | planned |
+| `dam_block_unmatched_buy_mwh` | float64 | planned |
+| `grf_tl_1000sm3` | float64 | realized |
+| `grf_usd_1000sm3` | float64 | realized |
+| `grf_eur_mwh` | float64 | realized |
+| `grf_usd_mmbtu` | float64 | realized |

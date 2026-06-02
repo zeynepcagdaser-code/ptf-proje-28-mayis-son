@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-06-01T00:15:15.034999+00:00",
+  "validation_rows": 168,
+  "best_weights": {
+    "hybrid_weight": 0.25,
+    "d2_weight": 0.5,
+    "persistence_weight": 0.25,
+    "must_run_zero_pull": 0.0,
+    "curve_cap_nudge": 0.0
+  },
+  "best_validation_mae": 328.0409927727503,
+  "top_candidates": [
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.0,
+        "curve_cap_nudge": 0.0
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.0,
+        "curve_cap_nudge": 0.1
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.0,
+        "curve_cap_nudge": 0.2
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.1,
+        "curve_cap_nudge": 0.0
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.1,
+        "curve_cap_nudge": 0.1
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.1,
+        "curve_cap_nudge": 0.2
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.2,
+        "curve_cap_nudge": 0.0
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.2,
+        "curve_cap_nudge": 0.1
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.25,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.25,
+        "must_run_zero_pull": 0.2,
+        "curve_cap_nudge": 0.2
+      },
+      "validation_mae": 328.0409927727503
+    },
+    {
+      "weights": {
+        "hybrid_weight": 0.35,
+        "d2_weight": 0.5,
+        "persistence_weight": 0.15000000000000002,
+        "must_run_zero_pull": 0.0,
+        "curve_cap_nudge": 0.0
+      },
+      "validation_mae": 328.09023006684197
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import argparse
 import json
 from pathlib import Path
 from typing import Any
+from typing import cast
 
 import matplotlib
 
@@ -23,6 +24,7 @@ PREDICTIONS_CSV = PROJECT_ROOT / "data" / "predictions" / "microstructure_h1h4_p
 METRICS_JSON = PROJECT_ROOT / "reports" / "microstructure_h1h4_metrics.json"
 METRICS_MD = PROJECT_ROOT / "reports" / "microstructure_h1h4_metrics.md"
 FIGURE_PATH = PROJECT_ROOT / "reports" / "figures" / "microstructure_h1h4_mae.png"
+OPTUNA_BEST_PARAMS_JSON = PROJECT_ROOT / "reports" / "optuna_best_params.json"
 
 BASELINE_PREDS = {
     "advanced_tree": PROJECT_ROOT / "data" / "predictions" / "tree_advanced_test_predictions.csv",
@@ -62,28 +64,33 @@ def train_lgbm(
     X_val: np.ndarray,
     y_val: np.ndarray,
     feature_names: list[str],
+    params_override: dict[str, Any] | None = None,
 ) -> Any:
     import lightgbm as lgb
 
     train_set = lgb.Dataset(X_train, label=y_train, feature_name=feature_names)
     val_set = lgb.Dataset(X_val, label=y_val, reference=train_set)
+    base_params: dict[str, Any] = {
+        "objective": "regression",
+        "metric": "mae",
+        "verbosity": -1,
+        "learning_rate": 0.03,
+        "num_leaves": 31,
+        "min_data_in_leaf": 50,
+        "lambda_l1": 0.1,
+        "lambda_l2": 1.0,
+        "feature_fraction": 0.85,
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "seed": 42,
+    }
+    if params_override:
+        base_params.update(params_override)
+
     booster = lgb.train(
-        {
-            "objective": "regression",
-            "metric": "mae",
-            "verbosity": -1,
-            "learning_rate": 0.03,
-            "num_leaves": 31,
-            "min_data_in_leaf": 50,
-            "lambda_l1": 0.1,
-            "lambda_l2": 1.0,
-            "feature_fraction": 0.85,
-            "bagging_fraction": 0.8,
-            "bagging_freq": 1,
-            "seed": 42,
-        },
+        base_params,
         train_set,
-        num_boost_round=MAX_BOOST_ROUNDS,
+        num_boost_round=int(base_params.get("num_boost_round", MAX_BOOST_ROUNDS)),
         valid_sets=[val_set],
         callbacks=[lgb.early_stopping(EARLY_STOPPING_ROUNDS), lgb.log_evaluation(0)],
     )
@@ -229,7 +236,122 @@ def write_md(report: dict) -> str:
     return "\n".join(lines)
 
 
-def run(*, smoke: bool = False) -> dict:
+def optuna_search_params(
+    *,
+    df: pd.DataFrame,
+    base_features: list[str],
+    n_trials: int = 50,
+    seed: int = 42,
+) -> dict[str, Any]:
+    """
+    Optimize hyperparameters on VALIDATION ONLY.
+
+    Objective: mean validation MAE (price) over h1–h4.
+    This does NOT touch the test split.
+    """
+    import optuna
+
+    # Materialize splits and arrays once (speed + determinism).
+    split_cache: dict[int, dict[str, Any]] = {}
+    for h in HORIZONS:
+        train, val, _test, fcols = load_splits(df, h, base_features)
+        tcol, pcol = f"target_{h}h", f"persistence_{h}h"
+        split_cache[h] = {
+            "fcols": fcols,
+            "X_train": train[fcols].to_numpy(dtype=np.float64),
+            "y_train": (train[tcol] - train[pcol]).to_numpy(dtype=np.float64),
+            "X_val": val[fcols].to_numpy(dtype=np.float64),
+            "y_val_res": (val[tcol] - val[pcol]).to_numpy(dtype=np.float64),
+            "y_val_price": val[tcol].to_numpy(dtype=np.float64),
+            "val_persistence": val[pcol].to_numpy(dtype=np.float64),
+        }
+
+    def objective(trial: optuna.Trial) -> float:
+        params: dict[str, Any] = {
+            "seed": seed,
+            # Search space (requested)
+            "learning_rate": trial.suggest_float("learning_rate", 0.005, 0.3, log=True),
+            "max_depth": trial.suggest_int("max_depth", 3, 10),
+            "num_leaves": trial.suggest_int("num_leaves", 20, 300),
+            "min_data_in_leaf": trial.suggest_int("min_child_samples", 5, 100),
+            "feature_fraction": trial.suggest_float("colsample_bytree", 0.5, 1.0),
+            "bagging_fraction": trial.suggest_float("subsample", 0.5, 1.0),
+            "bagging_freq": 1,
+            "num_boost_round": trial.suggest_int("n_estimators", 200, 2000),
+        }
+
+        # Safety: LGBM requires num_leaves <= 2^max_depth (roughly); constrain softly.
+        # If invalid, optuna can handle exceptions, but we reduce wasted trials.
+        max_leaves = 2 ** params["max_depth"]
+        if params["num_leaves"] > max_leaves:
+            params["num_leaves"] = max_leaves
+
+        maes: list[float] = []
+        for h in HORIZONS:
+            cached = split_cache[h]
+            booster = train_lgbm(
+                cast(np.ndarray, cached["X_train"]),
+                cast(np.ndarray, cached["y_train"]),
+                cast(np.ndarray, cached["X_val"]),
+                cast(np.ndarray, cached["y_val_res"]),
+                cast(list[str], cached["fcols"]),
+                params_override=params,
+            )
+            pred_res = booster.predict(cast(np.ndarray, cached["X_val"]))
+            pred_price = cast(np.ndarray, cached["val_persistence"]) + pred_res
+            maes.append(mae(cast(np.ndarray, cached["y_val_price"]), pred_price))
+
+        return float(np.mean(maes))
+
+    sampler = optuna.samplers.TPESampler(seed=seed)
+    study = optuna.create_study(direction="minimize", sampler=sampler)
+    study.optimize(objective, n_trials=n_trials, show_progress_bar=False)
+
+    best = dict(study.best_params)
+    # Normalize param names back to LGBM conventions used in this script.
+    best_params: dict[str, Any] = {
+        "learning_rate": float(best["learning_rate"]),
+        "max_depth": int(best["max_depth"]),
+        "num_leaves": int(best["num_leaves"]),
+        "min_data_in_leaf": int(best["min_child_samples"]),
+        "feature_fraction": float(best["colsample_bytree"]),
+        "bagging_fraction": float(best["subsample"]),
+        "bagging_freq": 1,
+        "num_boost_round": int(best["n_estimators"]),
+        "seed": seed,
+    }
+    max_leaves = 2 ** best_params["max_depth"]
+    if best_params["num_leaves"] > max_leaves:
+        best_params["num_leaves"] = max_leaves
+
+    OPTUNA_BEST_PARAMS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    OPTUNA_BEST_PARAMS_JSON.write_text(
+        json.dumps(
+            {
+                "study_name": study.study_name,
+                "n_trials": n_trials,
+                "best_value_validation_mean_mae_h1_h4": float(study.best_value),
+                "best_params": best_params,
+                "search_space": {
+                    "n_estimators": [200, 2000],
+                    "max_depth": [3, 10],
+                    "learning_rate": [0.005, 0.3],
+                    "num_leaves": [20, 300],
+                    "subsample": [0.5, 1.0],
+                    "colsample_bytree": [0.5, 1.0],
+                    "min_child_samples": [5, 100],
+                },
+                "note": "Optimized on VALIDATION ONLY; test split not used in objective.",
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+    return best_params
+
+
+def run(*, smoke: bool = False, optuna_trials: int = 0) -> dict:
     import lightgbm  # noqa: F401
 
     if not FEATURES_PATH.exists():
@@ -238,6 +360,10 @@ def run(*, smoke: bool = False) -> dict:
     df = add_persistence(pd.read_parquet(FEATURES_PATH))
     base_features = resolve_base_features(df)
     horizons = HORIZONS[:2] if smoke else HORIZONS
+
+    params_override: dict[str, Any] | None = None
+    if optuna_trials and not smoke:
+        params_override = optuna_search_params(df=df, base_features=base_features, n_trials=optuna_trials)
 
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     rows: list[dict] = []
@@ -251,7 +377,7 @@ def run(*, smoke: bool = False) -> dict:
         X_val = val[fcols].to_numpy(dtype=np.float64)
         y_val = (val[tcol] - val[pcol]).to_numpy(dtype=np.float64)
 
-        booster = train_lgbm(X_train, y_train, X_val, y_val, fcols)
+        booster = train_lgbm(X_train, y_train, X_val, y_val, fcols, params_override=params_override)
         booster.save_model(str(MODEL_DIR / f"horizon_{h:02d}.txt"))
         (MODEL_DIR / f"horizon_{h:02d}_features.json").write_text(
             json.dumps(fcols, indent=2), encoding="utf-8"
@@ -361,9 +487,10 @@ def run(*, smoke: bool = False) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Train microstructure LGBM h1–h4")
     parser.add_argument("--smoke-test", action="store_true")
+    parser.add_argument("--optuna-trials", type=int, default=0, help="If set (>0), run Optuna on validation then retrain with best params.")
     args = parser.parse_args()
 
-    report = run(smoke=args.smoke_test)
+    report = run(smoke=args.smoke_test, optuna_trials=args.optuna_trials)
     m = report["model_aligned"]
     print("\n=== Microstructure h1–h4 ===")
     for h in HORIZONS:
@@ -372,6 +499,8 @@ def main() -> None:
     print(f"  Mean: {m['mean_mae_h1_h4']:.2f}")
     print(report["verdict"])
     print(f"Metrics: {METRICS_JSON}")
+    if args.optuna_trials and not args.smoke_test:
+        print(f"Optuna best params: {OPTUNA_BEST_PARAMS_JSON}")
 
 
 if __name__ == "__main__":

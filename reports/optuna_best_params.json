@@ -1,0 +1,47 @@
+{
+  "study_name": "no-name-2e197974-2942-4e8c-a718-94b158f3da76",
+  "n_trials": 30,
+  "best_value_validation_mean_mae_h1_h4": 285.4653554272503,
+  "best_params": {
+    "learning_rate": 0.0066768157166851244,
+    "max_depth": 8,
+    "num_leaves": 49,
+    "min_data_in_leaf": 83,
+    "feature_fraction": 0.8407434980706122,
+    "bagging_fraction": 0.8139091586528407,
+    "bagging_freq": 1,
+    "num_boost_round": 1412,
+    "seed": 42
+  },
+  "search_space": {
+    "n_estimators": [
+      200,
+      2000
+    ],
+    "max_depth": [
+      3,
+      10
+    ],
+    "learning_rate": [
+      0.005,
+      0.3
+    ],
+    "num_leaves": [
+      20,
+      300
+    ],
+    "subsample": [
+      0.5,
+      1.0
+    ],
+    "colsample_bytree": [
+      0.5,
+      1.0
+    ],
+    "min_child_samples": [
+      5,
+      100
+    ]
+  },
+  "note": "Optimized on VALIDATION ONLY; test split not used in objective."
+}

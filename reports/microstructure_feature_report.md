@@ -1,13 +1,13 @@
 # Microstructure Feature Report
 
-- **Generated (UTC):** 2026-05-30T11:20:45.056234+00:00
+- **Generated (UTC):** 2026-06-01T18:20:32.688400+00:00
 - **Input:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Master (for raw lags):** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet`
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_microstructure_next24_v1.parquet`
 - **Rows:** 56016
 - **Microstructure spec features:** 24
-- **Newly added columns:** 23
-- **Already in input (kept as-is):** ['smf_ptf_spread_lag_24']
+- **Newly added columns:** 22
+- **Already in input (kept as-is):** ['smf_ptf_spread_lag_24', 'renewable_pressure']
 
 ## Leakage rules
 
@@ -24,7 +24,6 @@
 | `load_forecast_ramp_24h` | 0.09 |
 | `wind_forecast_ramp_1h` | 0.05 |
 | `load_forecast_ramp_1h` | 0.04 |
-| `renewable_pressure` | 0.04 |
 | `smf_ptf_spread_lag_1` | 0.01 |
 | `smf_ptf_spread_change_3h` | 0.01 |
 | `smf_ptf_spread_lag_24` | 0.00 |
@@ -38,6 +37,7 @@
 | `kgup_total_ramp_24h` | 0.00 |
 | `kgup_renewable_ramp_1h` | 0.00 |
 | `kgup_thermal_ramp_1h` | 0.00 |
+| `renewable_pressure` | 0.00 |
 | `thermal_margin` | 0.00 |
 | `yal_yat_net_pressure_lag_1` | 0.00 |
 | `yal_yat_net_pressure_lag_24` | 0.00 |
@@ -77,7 +77,7 @@
 | `kgup_total_ramp_24h` | -0.54 | 2826.85 | -14472.30 | -154.12 | 17921.32 |
 | `kgup_renewable_ramp_1h` | 0.24 | 1026.43 | -4519.64 | -35.24 | 6189.63 |
 | `kgup_thermal_ramp_1h` | -0.29 | 768.51 | -4523.71 | -8.53 | 5259.13 |
-| `renewable_pressure` | 0.35 | 0.14 | 0.08 | 0.33 | 1.26 |
+| `renewable_pressure` | 0.42 | 0.14 | 0.12 | 0.40 | 0.90 |
 | `thermal_margin` | 0.58 | 0.14 | 0.10 | 0.60 | 0.88 |
 | `wind_forecast_ramp_1h` | 0.04 | 189.49 | -1277.15 | -5.27 | 2211.12 |
 | `wind_forecast_ramp_24h` | 0.62 | 1791.68 | -7258.53 | -59.33 | 7808.42 |
@@ -92,9 +92,10 @@
 ## High |correlation| pairs (|r| > 0.85, new features only)
 
 - `yal_yat_net_pressure_lag_1` ↔ `yal_yat_transition_lag_1`: 1.000
-- `renewable_pressure` ↔ `thermal_margin`: -0.972
+- `renewable_pressure` ↔ `thermal_margin`: -0.991
 - `smf_volatility_24h` ↔ `ptf_volatility_24h`: 0.884
 - `kgup_total_ramp_24h` ↔ `load_forecast_ramp_24h`: 0.863
 - `thermal_margin` ↔ `gas_marginal_proxy`: 0.859
+- `renewable_pressure` ↔ `gas_marginal_proxy`: -0.853
 
 Correlation figure: `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/figures/microstructure_correlation.png`

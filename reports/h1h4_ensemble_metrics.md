@@ -4,7 +4,7 @@ Combines existing test predictions on LSTM-anchor aligned rows.
 
 - **Rows:** 13124
 - **Advanced tree baseline (mean h1–h4 MAE):** 453.09
-- **Primary result:** `primary_weighted_ensemble` (0.7 advanced + 0.3 micro, fixed — not tuned on test)
+- **Primary result:** `primary_weighted_ensemble` (0.803 advanced + 0.197 micro; optimized_on_validation (/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h1h4_optimized_weights.json))
 
 ## Strategy MAE (TL/MWh)
 
@@ -19,7 +19,7 @@ Combines existing test predictions on LSTM-anchor aligned rows.
 | weighted_0.7_0.3 | 380.17 | 426.79 | 461.98 | 492.23 | **440.29** | -12.80 |
 | weighted_0.6_0.4 | 377.83 | 426.17 | 461.61 | 490.81 | **439.11** | -13.99 |
 | weighted_0.5_0.5 | 377.64 | 427.02 | 462.52 | 490.65 | **439.46** | -13.64 |
-| primary_weighted_ensemble **PRIMARY** | 380.17 | 426.79 | 461.98 | 492.23 | **440.29** | -12.80 |
+| primary_weighted_ensemble **PRIMARY** | 384.51 | 429.09 | 463.62 | 495.10 | **443.08** | -10.02 |
 | horizon_best_oracle_test *(test oracle — leakage)* | 243.82 | 282.07 | 306.65 | 317.99 | **287.63** | -165.46 |
 
 ## Horizon-specific best selector
@@ -31,6 +31,6 @@ Oracle model picks: {'advanced_tree': 5063, 'microstructure': 4033, 'short_exper
 
 ## Verdict
 
-Primary weighted ensemble (0.7/0.3) beats advanced tree on mean h1–h4 MAE (440.29 vs 453.09, Δ -12.80).
+Primary weighted ensemble (0.7/0.3) beats advanced tree on mean h1–h4 MAE (443.08 vs 453.09, Δ -10.02).
 
-Primary ensemble mean MAE: **440.29**
+Primary ensemble mean MAE: **443.08**

@@ -1,0 +1,28 @@
+{
+  "rows": 24,
+  "curve_lag_stats": {
+    "curve_lag48": 24,
+    "curve_lag24": 24,
+    "curve_lag168": 24
+  },
+  "must_run_matched_rows": 0,
+  "real_curve_max": "2026-06-01 23:00:00",
+  "must_run_source": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/must_run_supply_features.parquet",
+  "generated_at": "2026-06-01T00:19:40.187356+00:00",
+  "output_path": "data/features/premium_d2_features.parquet",
+  "input_diagnostics": {
+    "target_date": "2026-06-02",
+    "requested_hours": 24,
+    "produced_rows": 24,
+    "fallbacks": {
+      "load_forecast": 24,
+      "kgup": 24
+    },
+    "missing_anchor_hours": [],
+    "ptf_max": "2026-06-01 23:00:00",
+    "load_max": "2026-06-01 23:00:00",
+    "kgup_max": "2026-06-01 23:00:00",
+    "generated_at": "2026-06-01T00:19:40.087599+00:00",
+    "output_path": "data/features/d2_ptf_features.parquet"
+  }
+}

@@ -1,6 +1,6 @@
 # Sequence Dataset Report
 
-- **Generated (UTC):** 2026-05-29T21:39:51.061814+00:00
+- **Generated (UTC):** 2026-06-01T19:43:39.663611+00:00
 - **Source:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Output dir:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model`
 
@@ -9,7 +9,7 @@
 - Window: **168**
 - Horizon: **24**
 - Mapping: `X[t-167:t] -> y[t+1:t+24]`
-- Features: 75
+- Features: 102
 - Targets: 24
 - Scaler fit split: **train**
 
@@ -17,9 +17,9 @@
 
 | Split | X shape | y shape |
 |-------|---------|---------|
-| train | (42871, 168, 75) | (42871, 24) |
-| validation | (8501, 168, 75) | (8501, 24) |
-| test | (3282, 168, 75) | (3282, 24) |
+| train | (42871, 168, 102) | (42871, 24) |
+| validation | (8501, 168, 102) | (8501, 24) |
+| test | (3282, 168, 102) | (3282, 24) |
 
 ## Sequence counts
 
@@ -58,19 +58,46 @@
 - `is_holiday_tr`
 - `is_holiday_or_weekend`
 - `ptf_lag_1`
+- `ptf_lag_2`
+- `ptf_lag_3`
 - `ptf_lag_24`
 - `ptf_lag_48`
 - `ptf_lag_168`
+- `ptf_lag_1h`
+- `ptf_lag_2h`
+- `ptf_lag_3h`
+- `ptf_lag_24h`
+- `ptf_lag_168h`
 - `ptf_roll_mean_24`
 - `ptf_roll_std_24`
 - `ptf_roll_mean_168`
 - `ptf_roll_std_168`
+- `ptf_rolling_mean_24h`
+- `ptf_rolling_std_24h`
+- `ptf_rolling_mean_168h`
 - `smf_ptf_spread_lag_24`
 - `smf_ptf_spread_lag_168`
 - `kgup_total_minus_load`
 - `kgup_renewable_share`
 - `kgup_thermal_share`
 - `wind_forecast_share`
+- `res_share`
+- `solar_share`
+- `hydro_share`
+- `renewable_pressure`
+- `thermal_price_setting_share`
+- `gas_coal_competition_index`
+- `renewable_suppression_pressure`
+- `gas_share`
+- `coal_share`
+- `gas_coal_balance`
+- `low_load_flag`
+- `holiday_low_load_flag`
+- `solar_peak_hour_flag`
+- `zero_price_risk_proxy`
+- `price_cap`
+- `ptf_to_cap_ratio`
+- `smf_to_cap_ratio`
 - `kgup_toplam`
 - `kgup_dogalgaz`
 - `kgup_ruzgar`

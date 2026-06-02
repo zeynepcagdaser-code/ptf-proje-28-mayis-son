@@ -13,7 +13,10 @@ This is a limited historical smoke test using reconstructed real DAM supply-dema
 - Persistence: `415.20` TL/MWh
 - Base market + fuel-switch: `465.65` TL/MWh
 - Curve-aware: `465.45` TL/MWh
+- Must-run proxy: `466.09` TL/MWh
+- Curve + must-run: `466.12` TL/MWh
 - Curve vs base delta: `-0.21` TL/MWh
+- (Curve+MR) vs base delta: `0.47` TL/MWh
 
 ## Regime MAE
 
@@ -31,6 +34,14 @@ This is a limited historical smoke test using reconstructed real DAM supply-dema
 | curve_aware | negative_zero_pressure | 4.04 |
 | curve_aware | spike_cap | 2452.84 |
 | curve_aware | tight | 1637.16 |
+| must_run_proxy | normal | 285.79 |
+| must_run_proxy | negative_zero_pressure | 4.04 |
+| must_run_proxy | spike_cap | 2454.47 |
+| must_run_proxy | tight | 1638.09 |
+| curve_plus_must_run | normal | 285.81 |
+| curve_plus_must_run | negative_zero_pressure | 4.04 |
+| curve_plus_must_run | spike_cap | 2454.65 |
+| curve_plus_must_run | tight | 1638.08 |
 
 ## Top Curve-Aware Features
 

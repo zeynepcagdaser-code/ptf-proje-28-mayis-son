@@ -1,0 +1,604 @@
+{
+  "generated_at_utc": "2026-06-01T21:30:01.031594+00:00",
+  "hybrid_policy": "if balanced_rule_signal==1: hybrid=min(main_pred,persistence_pred) else hybrid=main_pred",
+  "persistence_definition": "PTF at anchor+(h-24)h from features parquet; fallback ptf_lag_24",
+  "balanced_rule": "ptf_low_ratio_24>0 OR ptf_zero_ratio_24>0 OR ptf_zero_ratio_168>0.05",
+  "splits": {
+    "train": {
+      "rows": 1044312,
+      "main": {
+        "overall_mae": 128.6949786749802,
+        "zero_only_mae": 97.63344760992582,
+        "low_le_50_mae": 121.2451356281766,
+        "normal_price_mae": 128.67723581189023
+      },
+      "persistence": {
+        "overall_mae": 256.08040211162944,
+        "zero_only_mae": 433.19226415094334,
+        "low_le_50_mae": 272.75452631578946,
+        "normal_price_mae": 255.2699142623155
+      },
+      "hybrid": {
+        "overall_mae": 138.14301481903803,
+        "zero_only_mae": 70.51827454118805,
+        "low_le_50_mae": 89.88810139627833,
+        "normal_price_mae": 138.6934139805552
+      }
+    },
+    "validation": {
+      "rows": 205680,
+      "main": {
+        "overall_mae": 432.6275228046427,
+        "zero_only_mae": 898.7326899409429,
+        "low_le_50_mae": 1070.278749533015,
+        "normal_price_mae": 423.50377964560107
+      },
+      "persistence": {
+        "overall_mae": 401.4060878549203,
+        "zero_only_mae": 377.0583333333334,
+        "low_le_50_mae": 797.1606741573033,
+        "normal_price_mae": 393.8933889119028
+      },
+      "hybrid": {
+        "overall_mae": 450.0958117973954,
+        "zero_only_mae": 418.9193969303815,
+        "low_le_50_mae": 778.3766803444688,
+        "normal_price_mae": 444.4286106925863
+      }
+    },
+    "test": {
+      "rows": 81288,
+      "main": {
+        "overall_mae": 820.1222144749194,
+        "zero_only_mae": 1203.129568065677,
+        "low_le_50_mae": 1216.2161976010582,
+        "normal_price_mae": 769.9429235098233
+      },
+      "persistence": {
+        "overall_mae": 538.9253787766952,
+        "zero_only_mae": 144.40187024835276,
+        "low_le_50_mae": 148.49131196679733,
+        "normal_price_mae": 586.3035321361714
+      },
+      "hybrid": {
+        "overall_mae": 520.3048722729911,
+        "zero_only_mae": 163.2684914409562,
+        "low_le_50_mae": 171.29365089486478,
+        "normal_price_mae": 563.0085512801788
+      }
+    }
+  },
+  "per_horizon": [
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 157.40527012047323,
+        "zero_only_mae": 325.39192922036864,
+        "low_le_50_mae": 219.97864584559636,
+        "normal_price_mae": 156.26169656944572
+      },
+      "persistence": {
+        "overall_mae": 295.67395817559037,
+        "zero_only_mae": 206.88695443645085,
+        "low_le_50_mae": 276.62704026115347,
+        "normal_price_mae": 294.99114309392263
+      },
+      "hybrid": {
+        "overall_mae": 165.19992451248353,
+        "zero_only_mae": 98.53184219077315,
+        "low_le_50_mae": 99.31461518399715,
+        "normal_price_mae": 166.37509025152528
+      },
+      "horizon": 1
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 176.99213480800034,
+        "zero_only_mae": 411.8320488691202,
+        "low_le_50_mae": 280.6910308877124,
+        "normal_price_mae": 175.02870624568746
+      },
+      "persistence": {
+        "overall_mae": 295.6721310618352,
+        "zero_only_mae": 206.88695443645085,
+        "low_le_50_mae": 276.62704026115347,
+        "normal_price_mae": 294.9892766114181
+      },
+      "hybrid": {
+        "overall_mae": 182.8462096168885,
+        "zero_only_mae": 113.28438185062058,
+        "low_le_50_mae": 120.54627615131545,
+        "normal_price_mae": 183.86417605059788
+      },
+      "horizon": 2
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 192.6900339205191,
+        "zero_only_mae": 573.9421450490461,
+        "low_le_50_mae": 367.81550513061416,
+        "normal_price_mae": 189.48525603373565
+      },
+      "persistence": {
+        "overall_mae": 295.67684694429425,
+        "zero_only_mae": 206.88695443645085,
+        "low_le_50_mae": 276.62704026115347,
+        "normal_price_mae": 294.994094106814
+      },
+      "hybrid": {
+        "overall_mae": 194.84966260574282,
+        "zero_only_mae": 130.0340123596097,
+        "low_le_50_mae": 130.86336048527866,
+        "normal_price_mae": 195.90912281643168
+      },
+      "horizon": 3
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 201.29996603486666,
+        "zero_only_mae": 745.7772724757206,
+        "low_le_50_mae": 474.88563636593136,
+        "normal_price_mae": 196.22075080093944
+      },
+      "persistence": {
+        "overall_mae": 295.68697385974394,
+        "zero_only_mae": 206.88695443645085,
+        "low_le_50_mae": 276.62704026115347,
+        "normal_price_mae": 295.0044392265193
+      },
+      "hybrid": {
+        "overall_mae": 199.23142285257617,
+        "zero_only_mae": 152.54479724212405,
+        "low_le_50_mae": 160.29574383175375,
+        "normal_price_mae": 199.7052332676088
+      },
+      "horizon": 4
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 207.77686455209698,
+        "zero_only_mae": 800.039007269889,
+        "low_le_50_mae": 515.0353205134967,
+        "normal_price_mae": 202.03236193650545
+      },
+      "persistence": {
+        "overall_mae": 295.69154335676944,
+        "zero_only_mae": 206.88695443645085,
+        "low_le_50_mae": 276.62704026115347,
+        "normal_price_mae": 295.0091071823204
+      },
+      "hybrid": {
+        "overall_mae": 204.47165796176554,
+        "zero_only_mae": 168.33588745608296,
+        "low_le_50_mae": 177.96220591084005,
+        "normal_price_mae": 204.6251767795086
+      },
+      "horizon": 5
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 211.19199797521617,
+        "zero_only_mae": 789.4840041395325,
+        "low_le_50_mae": 519.3307680794745,
+        "normal_price_mae": 205.3807836498495
+      },
+      "persistence": {
+        "overall_mae": 295.69196232197584,
+        "zero_only_mae": 206.88695443645085,
+        "low_le_50_mae": 276.62704026115347,
+        "normal_price_mae": 295.0146000847161
+      },
+      "hybrid": {
+        "overall_mae": 207.16908578299373,
+        "zero_only_mae": 167.255679005299,
+        "low_le_50_mae": 185.02368619849256,
+        "normal_price_mae": 207.227152938672
+      },
+      "horizon": 6
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 211.23399086430803,
+        "zero_only_mae": 902.8129295661186,
+        "low_le_50_mae": 578.2309617997006,
+        "normal_price_mae": 204.35892058990962
+      },
+      "persistence": {
+        "overall_mae": 295.70265026140254,
+        "zero_only_mae": 206.392009569378,
+        "low_le_50_mae": 276.32635869565223,
+        "normal_price_mae": 295.03095196876495
+      },
+      "hybrid": {
+        "overall_mae": 205.43116128463302,
+        "zero_only_mae": 166.51100279679991,
+        "low_le_50_mae": 186.36638979133048,
+        "normal_price_mae": 205.39452203893526
+      },
+      "horizon": 7
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 216.43430596743292,
+        "zero_only_mae": 1044.1371247600625,
+        "low_le_50_mae": 646.2611165159169,
+        "normal_price_mae": 208.5141852884598
+      },
+      "persistence": {
+        "overall_mae": 295.7319579953128,
+        "zero_only_mae": 205.4235,
+        "low_le_50_mae": 275.7334707158352,
+        "normal_price_mae": 295.07165021364375
+      },
+      "hybrid": {
+        "overall_mae": 206.909604185816,
+        "zero_only_mae": 173.320089579122,
+        "low_le_50_mae": 187.11384975883357,
+        "normal_price_mae": 206.93403812811664
+      },
+      "horizon": 8
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 222.15474638243595,
+        "zero_only_mae": 1141.7441413796614,
+        "low_le_50_mae": 705.8072981567765,
+        "normal_price_mae": 213.1643791361427
+      },
+      "persistence": {
+        "overall_mae": 295.7517979087795,
+        "zero_only_mae": 204.4499289099526,
+        "low_le_50_mae": 275.3372372697725,
+        "normal_price_mae": 295.09901151118885
+      },
+      "hybrid": {
+        "overall_mae": 209.8102792194526,
+        "zero_only_mae": 183.50524015892972,
+        "low_le_50_mae": 196.718393396926,
+        "normal_price_mae": 209.63706711471454
+      },
+      "horizon": 9
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 221.183017326505,
+        "zero_only_mae": 1043.2376101063417,
+        "low_le_50_mae": 647.0334575494596,
+        "normal_price_mae": 213.2915326330557
+      },
+      "persistence": {
+        "overall_mae": 295.79583414458267,
+        "zero_only_mae": 203.96659574468083,
+        "low_le_50_mae": 275.0392532467533,
+        "normal_price_mae": 295.1494367701772
+      },
+      "hybrid": {
+        "overall_mae": 210.19216811234827,
+        "zero_only_mae": 161.85837772619348,
+        "low_le_50_mae": 179.56237053267256,
+        "normal_price_mae": 210.41834629216717
+      },
+      "horizon": 10
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 224.48395443310932,
+        "zero_only_mae": 1090.1682375599355,
+        "low_le_50_mae": 677.9647877170539,
+        "normal_price_mae": 216.06344457075193
+      },
+      "persistence": {
+        "overall_mae": 295.8150236163692,
+        "zero_only_mae": 203.48554245283017,
+        "low_le_50_mae": 274.7419135135135,
+        "normal_price_mae": 295.1744784778885
+      },
+      "hybrid": {
+        "overall_mae": 212.54061112732236,
+        "zero_only_mae": 167.41696909960345,
+        "low_le_50_mae": 189.17646545626783,
+        "normal_price_mae": 212.59562001591112
+      },
+      "horizon": 11
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 225.373237362766,
+        "zero_only_mae": 1031.5928885348892,
+        "low_le_50_mae": 649.8827928035447,
+        "normal_price_mae": 217.40217027420488
+      },
+      "persistence": {
+        "overall_mae": 295.81900036055526,
+        "zero_only_mae": 203.00675294117647,
+        "low_le_50_mae": 274.4452159827214,
+        "normal_price_mae": 295.18397830251234
+      },
+      "hybrid": {
+        "overall_mae": 214.6450123842404,
+        "zero_only_mae": 153.63334446954056,
+        "low_le_50_mae": 183.70667484215915,
+        "normal_price_mae": 214.81943716777158
+      },
+      "horizon": 12
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 226.16445705099608,
+        "zero_only_mae": 1182.208618656372,
+        "low_le_50_mae": 728.7558575527958,
+        "normal_price_mae": 216.77961221045885
+      },
+      "persistence": {
+        "overall_mae": 295.8836414277988,
+        "zero_only_mae": 202.53021126760564,
+        "low_le_50_mae": 274.1491585760518,
+        "normal_price_mae": 295.25546020519056
+      },
+      "hybrid": {
+        "overall_mae": 213.49995919869698,
+        "zero_only_mae": 186.74402350218836,
+        "low_le_50_mae": 204.42199910928414,
+        "normal_price_mae": 213.23222268474845
+      },
+      "horizon": 13
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 232.6462364298207,
+        "zero_only_mae": 1260.148543266693,
+        "low_le_50_mae": 765.0428601968176,
+        "normal_price_mae": 222.77635144513238
+      },
+      "persistence": {
+        "overall_mae": 295.91675770686857,
+        "zero_only_mae": 202.07466042154567,
+        "low_le_50_mae": 273.86237068965517,
+        "normal_price_mae": 295.2945872167987
+      },
+      "hybrid": {
+        "overall_mae": 219.95180373228308,
+        "zero_only_mae": 202.4750601597849,
+        "low_le_50_mae": 210.77092133136614,
+        "normal_price_mae": 219.7314242436692
+      },
+      "horizon": 14
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 233.85164687464865,
+        "zero_only_mae": 1214.3053983610178,
+        "low_le_50_mae": 742.184451661192,
+        "normal_price_mae": 224.46223397227772
+      },
+      "persistence": {
+        "overall_mae": 295.8953021453038,
+        "zero_only_mae": 202.07466042154567,
+        "low_le_50_mae": 273.86237068965517,
+        "normal_price_mae": 295.2726653158961
+      },
+      "hybrid": {
+        "overall_mae": 222.32110503055512,
+        "zero_only_mae": 192.51258761379387,
+        "low_le_50_mae": 204.8493503737886,
+        "normal_price_mae": 222.30562232494808
+      },
+      "horizon": 15
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 240.29259548799072,
+        "zero_only_mae": 1311.3701584246407,
+        "low_le_50_mae": 797.5658275090011,
+        "normal_price_mae": 229.95707554127293
+      },
+      "persistence": {
+        "overall_mae": 295.85316297097535,
+        "zero_only_mae": 202.07466042154567,
+        "low_le_50_mae": 273.86237068965517,
+        "normal_price_mae": 295.2296102412967
+      },
+      "hybrid": {
+        "overall_mae": 227.56536432865283,
+        "zero_only_mae": 226.6999651637454,
+        "low_le_50_mae": 227.43330782061378,
+        "normal_price_mae": 227.15252039462246
+      },
+      "horizon": 16
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 234.6536534915055,
+        "zero_only_mae": 1239.0450609033292,
+        "low_le_50_mae": 764.402871951315,
+        "normal_price_mae": 224.79320807831013
+      },
+      "persistence": {
+        "overall_mae": 295.8314497926807,
+        "zero_only_mae": 201.602523364486,
+        "low_le_50_mae": 273.5675780409042,
+        "normal_price_mae": 295.2128628267237
+      },
+      "hybrid": {
+        "overall_mae": 223.98615848878097,
+        "zero_only_mae": 210.6776110176226,
+        "low_le_50_mae": 221.45296184177855,
+        "normal_price_mae": 223.59334034232953
+      },
+      "horizon": 17
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 235.58265385430752,
+        "zero_only_mae": 1306.972005609018,
+        "low_le_50_mae": 789.5993254518021,
+        "normal_price_mae": 225.34892435127222
+      },
+      "persistence": {
+        "overall_mae": 295.8726169100415,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.2734193548387,
+        "normal_price_mae": 295.2603641688771
+      },
+      "hybrid": {
+        "overall_mae": 223.52959924709467,
+        "zero_only_mae": 197.77068993175868,
+        "low_le_50_mae": 208.1538719723815,
+        "normal_price_mae": 223.4602075145551
+      },
+      "horizon": 18
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 235.40737575976232,
+        "zero_only_mae": 1220.015259186918,
+        "low_le_50_mae": 743.0395202012585,
+        "normal_price_mae": 225.96520311036954
+      },
+      "persistence": {
+        "overall_mae": 295.8780870740941,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.0003007518797,
+        "normal_price_mae": 295.2710424226795
+      },
+      "hybrid": {
+        "overall_mae": 223.94775579011716,
+        "zero_only_mae": 192.5111162455225,
+        "low_le_50_mae": 203.18495676800543,
+        "normal_price_mae": 223.96758074525883
+      },
+      "horizon": 19
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 231.66834245207951,
+        "zero_only_mae": 1228.246224480142,
+        "low_le_50_mae": 754.0857964731287,
+        "normal_price_mae": 221.91457235747006
+      },
+      "persistence": {
+        "overall_mae": 295.86475572381465,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.0003007518797,
+        "normal_price_mae": 295.257420561092
+      },
+      "hybrid": {
+        "overall_mae": 220.7865009390097,
+        "zero_only_mae": 194.6118069477387,
+        "low_le_50_mae": 206.77708229878687,
+        "normal_price_mae": 220.6265937778327
+      },
+      "horizon": 20
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 231.54809536591654,
+        "zero_only_mae": 1252.984466245366,
+        "low_le_50_mae": 767.4225143966532,
+        "normal_price_mae": 221.55006358701897
+      },
+      "persistence": {
+        "overall_mae": 295.90669460969895,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.0003007518797,
+        "normal_price_mae": 295.3002733619467
+      },
+      "hybrid": {
+        "overall_mae": 219.56729008899373,
+        "zero_only_mae": 208.89462930879935,
+        "low_le_50_mae": 216.43460175761933,
+        "normal_price_mae": 219.23389481932256
+      },
+      "horizon": 21
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 227.63455030607224,
+        "zero_only_mae": 1262.2092261286462,
+        "low_le_50_mae": 766.5206412952782,
+        "normal_price_mae": 217.772835913517
+      },
+      "persistence": {
+        "overall_mae": 295.89126879394263,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.0003007518797,
+        "normal_price_mae": 295.2845113931512
+      },
+      "hybrid": {
+        "overall_mae": 215.73806241027063,
+        "zero_only_mae": 197.68354775282702,
+        "low_le_50_mae": 207.95357172849222,
+        "normal_price_mae": 215.62276210702865
+      },
+      "horizon": 22
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 222.07301303568747,
+        "zero_only_mae": 1242.4472865126877,
+        "low_le_50_mae": 749.6870390508807,
+        "normal_price_mae": 212.44644893687246
+      },
+      "persistence": {
+        "overall_mae": 295.8899378042185,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.0003007518797,
+        "normal_price_mae": 295.28315139904583
+      },
+      "hybrid": {
+        "overall_mae": 209.98036556924714,
+        "zero_only_mae": 193.2654803289963,
+        "low_le_50_mae": 198.85775946889683,
+        "normal_price_mae": 209.97842391547522
+      },
+      "horizon": 23
+    },
+    {
+      "rows": 55470,
+      "main": {
+        "overall_mae": 209.14976623185618,
+        "zero_only_mae": 1145.5825572016672,
+        "low_le_50_mae": 695.8433089437007,
+        "normal_price_mae": 200.21488819294555
+      },
+      "persistence": {
+        "overall_mae": 295.88927041644126,
+        "zero_only_mae": 201.1325874125874,
+        "low_le_50_mae": 273.0003007518797,
+        "normal_price_mae": 295.28246946782843
+      },
+      "hybrid": {
+        "overall_mae": 198.0026106790246,
+        "zero_only_mae": 201.31547788440687,
+        "low_le_50_mae": 199.65720270298922,
+        "normal_price_mae": 197.73329414548186
+      },
+      "horizon": 24
+    }
+  ],
+  "outputs": {
+    "predictions_csv": "data/predictions/hybrid_balanced_rule_predictions.csv"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "rows": 39372,
+  "spike_prob_source": {
+    "source": "data/predictions/spike_probability.csv",
+    "path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/spike_probability.csv"
+  },
+  "h1h4_optimized_weights": {
+    "w_adv": 0.7739381818535089,
+    "w_micro": 0.22606181814649107,
+    "meta": {
+      "available": true,
+      "objective": "mae",
+      "constraints": {
+        "w_adv_in_[0,1]": true,
+        "w_adv_plus_w_micro_eq_1": true
+      },
+      "optimized_weights": {
+        "advanced_tree": 0.7739381818535089,
+        "microstructure": 0.22606181814649107
+      },
+      "validation_mae": 257.89965821422254,
+      "optimizer": {
+        "method": "scipy.optimize.minimize",
+        "solver": "SLSQP",
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully",
+        "nfev": 31
+      }
+    },
+    "path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h1h4_optimized_weights.json"
+  },
+  "h5h12_per_horizon_w_adv": {
+    "weights": {
+      "5": 1.0,
+      "6": 1.0,
+      "7": 1.0,
+      "8": 1.0,
+      "9": 1.0,
+      "10": 1.0,
+      "11": 1.0,
+      "12": 1.0
+    },
+    "path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h5h12_validation_weighted_ensemble_metrics.json"
+  },
+  "mae_groups": {
+    "h1_h4": {
+      "mae": 458.97824577867976,
+      "rmse": 619.1230590631681,
+      "rows": 13124.0
+    },
+    "h5_h12": {
+      "mae": 595.2349680504519,
+      "rmse": 782.9219079204557,
+      "rows": 26248.0
+    },
+    "h1_h12_overall": {
+      "mae": 549.8160606265279,
+      "rmse": 732.4039846212718,
+      "rows": 39372.0
+    }
+  },
+  "h1h4_baselines": {
+    "micro_only": {
+      "mae": 458.97824577867976,
+      "rmse": 619.1230590631681,
+      "rows": 13124.0
+    },
+    "advanced_tree_only": {
+      "mae": 453.09477926779897,
+      "rmse": 632.8097272828461,
+      "rows": 13124.0
+    },
+    "optimized_ensemble": {
+      "mae": 441.64556084121944,
+      "rmse": 610.7502185091492,
+      "rows": 13124.0
+    }
+  }
+}

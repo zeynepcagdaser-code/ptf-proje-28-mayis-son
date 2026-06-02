@@ -349,5 +349,10 @@
     "holiday_low_load_flag": -0.1461480712425279,
     "zero_price_risk_proxy": -0.21439276406144955,
     "ptf_lag_24": 0.8731890201865203
-  }
+  },
+  "notes": [
+    "current FİBA/FİBS (dam_price_independent_* ve fiba_fibs_*) post_dam_publication_mode için kullanılabilir.",
+    "strict_forecast_mode için current FİBA/FİBS yerine lagged (örn. *_lag_24 / *_lag_168) tercih edilmeli.",
+    "current GRF (grf_tl_1000sm3) yayın zamanı belirsizliği nedeniyle main modelde lagged/türetilmiş versiyonlar öncelikli (örn. grf_tl_lag_1d ve *_pressure_lag_1d)."
+  ]
 }

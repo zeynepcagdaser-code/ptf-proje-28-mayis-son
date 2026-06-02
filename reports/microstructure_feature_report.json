@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-30T11:20:45.056234+00:00",
+  "generated_at_utc": "2026-06-01T18:20:32.688400+00:00",
   "input_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
   "master_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet",
   "output_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_microstructure_next24_v1.parquet",
@@ -44,7 +44,6 @@
     "kgup_total_ramp_24h",
     "kgup_renewable_ramp_1h",
     "kgup_thermal_ramp_1h",
-    "renewable_pressure",
     "thermal_margin",
     "wind_forecast_ramp_1h",
     "wind_forecast_ramp_24h",
@@ -57,7 +56,8 @@
     "gas_marginal_proxy"
   ],
   "columns_already_in_input": [
-    "smf_ptf_spread_lag_24"
+    "smf_ptf_spread_lag_24",
+    "renewable_pressure"
   ],
   "null_pct": {
     "smf_ptf_spread_lag_1": 0.0089,
@@ -73,7 +73,7 @@
     "kgup_total_ramp_24h": 0.0,
     "kgup_renewable_ramp_1h": 0.0,
     "kgup_thermal_ramp_1h": 0.0,
-    "renewable_pressure": 0.0428,
+    "renewable_pressure": 0.0,
     "thermal_margin": 0.0,
     "wind_forecast_ramp_1h": 0.0518,
     "wind_forecast_ramp_24h": 0.0964,
@@ -205,12 +205,12 @@
     },
     {
       "feature": "renewable_pressure",
-      "count_non_null": 55992,
-      "mean": 0.35260024026936154,
-      "std": 0.1405865895779788,
-      "min": 0.07522454162537166,
-      "p50": 0.32966557449342904,
-      "max": 1.2639048555969363
+      "count_non_null": 56016,
+      "mean": 0.4204896212889441,
+      "std": 0.1444654588536286,
+      "min": 0.11679137164024013,
+      "p50": 0.3963646024286588,
+      "max": 0.8995129053901552
     },
     {
       "feature": "thermal_margin",
@@ -364,7 +364,7 @@
     {
       "a": "renewable_pressure",
       "b": "thermal_margin",
-      "r": -0.9717470799148813
+      "r": -0.9910063642500151
     },
     {
       "a": "smf_volatility_24h",
@@ -380,6 +380,11 @@
       "a": "thermal_margin",
       "b": "gas_marginal_proxy",
       "r": 0.8585570882243682
+    },
+    {
+      "a": "renewable_pressure",
+      "b": "gas_marginal_proxy",
+      "r": -0.8533228200749414
     }
   ],
   "correlation_figure": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/figures/microstructure_correlation.png",

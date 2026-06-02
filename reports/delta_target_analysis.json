@@ -1,0 +1,98 @@
+{
+  "model_training_performed": false,
+  "definitions": {
+    "persistence_pred_h": "PTF(anchor + h - 24) with fallback to ptf_lag_24",
+    "delta_target_h": "actual_h - persistence_pred_h"
+  },
+  "overall": {
+    "direct_target_all": {
+      "stats": {
+        "n": 1324416,
+        "mean": 1721.674329749867,
+        "std": 1201.2918461179074,
+        "median": 1799.9999999999998,
+        "p10": 289.94,
+        "p90": 3256.36
+      },
+      "var": 1443102.0995493704
+    },
+    "delta_target_all": {
+      "stats": {
+        "n": 1324416,
+        "mean": 0.48507977855900186,
+        "std": 549.0823546964191,
+        "median": 0.0,
+        "p10": -499.99,
+        "p90": 459.995
+      },
+      "var": 301491.4322389642
+    },
+    "variance_ratio_delta_over_direct": 0.20891898940006343,
+    "variance_reduction_pct": 79.10810105999366
+  },
+  "by_split": {
+    "train": {
+      "rows": 43227,
+      "direct_target_all": {
+        "n": 1037448,
+        "mean": 1554.61442446272,
+        "std": 1179.25091666719,
+        "median": 1500.0,
+        "p10": 289.99,
+        "p90": 3000.0
+      },
+      "delta_target_all": {
+        "n": 1037448,
+        "mean": 1.6943048519058295,
+        "std": 488.89906222240324,
+        "median": 0.0,
+        "p10": -425.0,
+        "p90": 399.9899999999998
+      },
+      "direct_var_all": 1390632.724460408,
+      "delta_var_all": 239022.29304194532
+    },
+    "validation": {
+      "rows": 8570,
+      "direct_target_all": {
+        "n": 205680,
+        "mean": 2622.3555451186307,
+        "std": 806.6331156713464,
+        "median": 2888.8900000000003,
+        "p10": 1499.0,
+        "p90": 3400.0
+      },
+      "delta_target_all": {
+        "n": 205680,
+        "mean": 1.0188974620770097,
+        "std": 675.2975325079578,
+        "median": 0.0,
+        "p10": -681.0,
+        "p90": 600.02
+      },
+      "direct_var_all": 650656.9832976637,
+      "delta_var_all": 456026.7574113364
+    },
+    "test": {
+      "rows": 3387,
+      "direct_target_all": {
+        "n": 81288,
+        "mean": 1574.836570711544,
+        "std": 1299.0277817724236,
+        "median": 1499.99,
+        "p10": 6.01,
+        "p90": 3400.0
+      },
+      "delta_target_all": {
+        "n": 81288,
+        "mean": -16.298501500836537,
+        "std": 841.0977220326747,
+        "median": 0.0,
+        "p10": -1014.99,
+        "p90": 950.3200000000029
+      },
+      "direct_var_all": 1687473.1778165835,
+      "delta_var_all": 707445.3780085545
+    }
+  }
+}

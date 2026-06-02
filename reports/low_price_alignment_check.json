@@ -1,0 +1,2927 @@
+{
+  "generated_at_utc": "2026-06-01T20:43:14.332601+00:00",
+  "predictions_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/low_price_probabilities.csv",
+  "conventions": {
+    "row_grain": "one row per (split, sample_index, horizon)",
+    "probability_column": "low_prob",
+    "label_column_in_csv": "is_low_actual",
+    "label_column_in_parquet": "is_low_{h}h",
+    "horizon_alignment": "pred.horizon=h maps to is_low_{h}h (no offset)",
+    "sample_index_scope": "per-split 0..N-1, not global"
+  },
+  "split_alignment": {
+    "test": {
+      "split": "test",
+      "pred_rows": 81288,
+      "unique_samples": 3387,
+      "expected_rows_samples_x_24": 81288,
+      "is_low_label_mismatches_by_horizon": {
+        "h1": 0,
+        "h2": 0,
+        "h3": 0,
+        "h4": 0,
+        "h5": 0,
+        "h6": 0,
+        "h7": 0,
+        "h8": 0,
+        "h9": 0,
+        "h10": 0,
+        "h11": 0,
+        "h12": 0,
+        "h13": 0,
+        "h14": 0,
+        "h15": 0,
+        "h16": 0,
+        "h17": 0,
+        "h18": 0,
+        "h19": 0,
+        "h20": 0,
+        "h21": 0,
+        "h22": 0,
+        "h23": 0,
+        "h24": 0
+      },
+      "total_is_low_mismatches": 0,
+      "is_zero_label_mismatches_by_horizon": {
+        "h1": 0,
+        "h2": 0,
+        "h3": 0,
+        "h4": 0,
+        "h5": 0,
+        "h6": 0,
+        "h7": 0,
+        "h8": 0,
+        "h9": 0,
+        "h10": 0,
+        "h11": 0,
+        "h12": 0,
+        "h13": 0,
+        "h14": 0,
+        "h15": 0,
+        "h16": 0,
+        "h17": 0,
+        "h18": 0,
+        "h19": 0,
+        "h20": 0,
+        "h21": 0,
+        "h22": 0,
+        "h23": 0,
+        "h24": 0
+      }
+    },
+    "validation": {
+      "split": "validation",
+      "pred_rows": 205680,
+      "unique_samples": 8570,
+      "expected_rows_samples_x_24": 205680,
+      "is_low_label_mismatches_by_horizon": {
+        "h1": 0,
+        "h2": 0,
+        "h3": 0,
+        "h4": 0,
+        "h5": 0,
+        "h6": 0,
+        "h7": 0,
+        "h8": 0,
+        "h9": 0,
+        "h10": 0,
+        "h11": 0,
+        "h12": 0,
+        "h13": 0,
+        "h14": 0,
+        "h15": 0,
+        "h16": 0,
+        "h17": 0,
+        "h18": 0,
+        "h19": 0,
+        "h20": 0,
+        "h21": 0,
+        "h22": 0,
+        "h23": 0,
+        "h24": 0
+      },
+      "total_is_low_mismatches": 0,
+      "is_zero_label_mismatches_by_horizon": null
+    }
+  },
+  "split_summary": {
+    "train": {
+      "rows": 1044312,
+      "actual_low_count": 11400,
+      "p_low_median_given_actual_low": 0.9999999956887036,
+      "p_low_median_given_actual_not_low": 8.151306274743754e-10,
+      "recall_at_0.02": 1.0,
+      "roc_auc": 1.0
+    },
+    "validation": {
+      "rows": 205680,
+      "actual_low_count": 2136,
+      "p_low_median_given_actual_low": 2.60187138703813e-06,
+      "p_low_median_given_actual_not_low": 5.902044905342315e-10,
+      "recall_at_0.02": 0.10908239700374532,
+      "roc_auc": 0.9349236031896812
+    },
+    "test": {
+      "rows": 81288,
+      "actual_low_count": 8674,
+      "p_low_median_given_actual_low": 5.293130356369978e-06,
+      "p_low_median_given_actual_not_low": 1.2294816412424613e-09,
+      "recall_at_0.02": 0.14468526631311968,
+      "roc_auc": 0.8527077264636997
+    }
+  },
+  "per_horizon": {
+    "test": [
+      {
+        "horizon": 1,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 355,
+        "actual_low_rate": 0.10481251845290818,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=1) vs is_low_1h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 355,
+            "mean": 0.410688624466523,
+            "median": 0.1028106116820893
+          },
+          "actual_low_0": {
+            "count": 3032,
+            "mean": 0.017307501812014393,
+            "median": 9.699580639333806e-10
+          },
+          "actual_zero_1": {
+            "count": 322,
+            "mean": 0.4284768552763491,
+            "median": 0.11610839684143605
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.7153558052434457,
+            "recall": 0.5380281690140845,
+            "f1": 0.6141479099678456,
+            "pred_positive_rate": 0.07883082373782108,
+            "roc_auc": 0.8935235423092645,
+            "pr_auc": 0.6053503535099283
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.7204724409448819,
+            "recall": 0.5154929577464789,
+            "f1": 0.6009852216748769,
+            "pred_positive_rate": 0.07499261883672867,
+            "roc_auc": 0.8935235423092645,
+            "pr_auc": 0.6053503535099283
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.726530612244898,
+            "recall": 0.5014084507042254,
+            "f1": 0.5933333333333334,
+            "pred_positive_rate": 0.0723354000590493,
+            "roc_auc": 0.8935235423092645,
+            "pr_auc": 0.6053503535099283
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 322,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 2,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 355,
+        "actual_low_rate": 0.10481251845290818,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=2) vs is_low_2h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 355,
+            "mean": 0.4511129875749201,
+            "median": 0.313944362178286
+          },
+          "actual_low_0": {
+            "count": 3032,
+            "mean": 0.006763480558923077,
+            "median": 4.358910362643957e-10
+          },
+          "actual_zero_1": {
+            "count": 322,
+            "mean": 0.4740046650887719,
+            "median": 0.3491270414403792
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.8100358422939068,
+            "recall": 0.6366197183098592,
+            "f1": 0.7129337539432177,
+            "pred_positive_rate": 0.08237378210806023,
+            "roc_auc": 0.9565099037496748,
+            "pr_auc": 0.7823217225223846
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.8464566929133859,
+            "recall": 0.6056338028169014,
+            "f1": 0.7060755336617406,
+            "pred_positive_rate": 0.07499261883672867,
+            "roc_auc": 0.9565099037496748,
+            "pr_auc": 0.7823217225223846
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.8675213675213675,
+            "recall": 0.571830985915493,
+            "f1": 0.6893039049235993,
+            "pred_positive_rate": 0.06908768821966342,
+            "roc_auc": 0.9565099037496748,
+            "pr_auc": 0.7823217225223846
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 322,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 3,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 355,
+        "actual_low_rate": 0.10481251845290818,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=3) vs is_low_3h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 355,
+            "mean": 0.10917085985918538,
+            "median": 1.2700497106094436e-05
+          },
+          "actual_low_0": {
+            "count": 3032,
+            "mean": 0.004496765303576515,
+            "median": 1.5366300798043038e-09
+          },
+          "actual_zero_1": {
+            "count": 322,
+            "mean": 0.1138375346349976,
+            "median": 1.989420763651849e-05
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.6404494382022472,
+            "recall": 0.16056338028169015,
+            "f1": 0.25675675675675674,
+            "pred_positive_rate": 0.02627694124594036,
+            "roc_auc": 0.877031848080568,
+            "pr_auc": 0.5085007543335371
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.6375,
+            "recall": 0.14366197183098592,
+            "f1": 0.23448275862068965,
+            "pred_positive_rate": 0.023619722468261,
+            "roc_auc": 0.877031848080568,
+            "pr_auc": 0.5085007543335371
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.684931506849315,
+            "recall": 0.14084507042253522,
+            "f1": 0.2336448598130841,
+            "pred_positive_rate": 0.02155299675228816,
+            "roc_auc": 0.877031848080568,
+            "pr_auc": 0.5085007543335371
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 322,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 4,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 355,
+        "actual_low_rate": 0.10481251845290818,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=4) vs is_low_4h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 355,
+            "mean": 0.17289750845147125,
+            "median": 0.0004326787061611
+          },
+          "actual_low_0": {
+            "count": 3032,
+            "mean": 0.008152045137738605,
+            "median": 3.741502371199391e-09
+          },
+          "actual_zero_1": {
+            "count": 322,
+            "mean": 0.18740104998920304,
+            "median": 0.0009783779704713
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.6959459459459459,
+            "recall": 0.29014084507042254,
+            "f1": 0.4095427435387674,
+            "pred_positive_rate": 0.04369648656628285,
+            "roc_auc": 0.9308279757701885,
+            "pr_auc": 0.6062817829720486
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.7022900763358778,
+            "recall": 0.2591549295774648,
+            "f1": 0.3786008230452675,
+            "pred_positive_rate": 0.03867729554177739,
+            "roc_auc": 0.9308279757701885,
+            "pr_auc": 0.6062817829720486
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.7166666666666667,
+            "recall": 0.24225352112676057,
+            "f1": 0.36210526315789476,
+            "pred_positive_rate": 0.0354295837023915,
+            "roc_auc": 0.9308279757701885,
+            "pr_auc": 0.6062817829720486
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 322,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 5,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 355,
+        "actual_low_rate": 0.10481251845290818,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=5) vs is_low_5h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 355,
+            "mean": 0.11956319880027035,
+            "median": 1.027604127585205e-05
+          },
+          "actual_low_0": {
+            "count": 3032,
+            "mean": 0.0056311242875987525,
+            "median": 2.2650171755253234e-09
+          },
+          "actual_zero_1": {
+            "count": 322,
+            "mean": 0.13129019131127945,
+            "median": 1.4938614244220952e-05
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.6495726495726496,
+            "recall": 0.2140845070422535,
+            "f1": 0.3220338983050847,
+            "pred_positive_rate": 0.03454384410983171,
+            "roc_auc": 0.8498011817607493,
+            "pr_auc": 0.4700393663872799
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.6736842105263158,
+            "recall": 0.18028169014084508,
+            "f1": 0.28444444444444444,
+            "pred_positive_rate": 0.028048420431059935,
+            "roc_auc": 0.8498011817607493,
+            "pr_auc": 0.4700393663872799
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.6785714285714286,
+            "recall": 0.16056338028169015,
+            "f1": 0.25968109339407747,
+            "pred_positive_rate": 0.024800708591674048,
+            "roc_auc": 0.8498011817607493,
+            "pr_auc": 0.4700393663872799
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 322,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 6,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 355,
+        "actual_low_rate": 0.10481251845290818,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=6) vs is_low_6h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 355,
+            "mean": 0.17056287923421964,
+            "median": 0.000428615711785
+          },
+          "actual_low_0": {
+            "count": 3032,
+            "mean": 0.008709495388384088,
+            "median": 5.701865797665778e-09
+          },
+          "actual_zero_1": {
+            "count": 322,
+            "mean": 0.187295932743022,
+            "median": 0.0005844745345925
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.6923076923076923,
+            "recall": 0.3295774647887324,
+            "f1": 0.44656488549618323,
+            "pred_positive_rate": 0.04989666371420136,
+            "roc_auc": 0.9153749674829981,
+            "pr_auc": 0.5393982523776485
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.6933333333333334,
+            "recall": 0.29295774647887324,
+            "f1": 0.41188118811881186,
+            "pred_positive_rate": 0.04428697962798937,
+            "roc_auc": 0.9153749674829981,
+            "pr_auc": 0.5393982523776485
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.6904761904761905,
+            "recall": 0.24507042253521127,
+            "f1": 0.36174636174636177,
+            "pred_positive_rate": 0.03720106288751107,
+            "roc_auc": 0.9153749674829981,
+            "pr_auc": 0.5393982523776485
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 322,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 7,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 356,
+        "actual_low_rate": 0.10510776498376144,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=7) vs is_low_7h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 356,
+            "mean": 0.15855546283932262,
+            "median": 0.0005016478702896501
+          },
+          "actual_low_0": {
+            "count": 3031,
+            "mean": 0.008514760346291459,
+            "median": 2.094790308770049e-09
+          },
+          "actual_zero_1": {
+            "count": 323,
+            "mean": 0.17298333212062791,
+            "median": 0.0009021560959787
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.6645962732919255,
+            "recall": 0.300561797752809,
+            "f1": 0.41392649903288203,
+            "pred_positive_rate": 0.04753469146737526,
+            "roc_auc": 0.9226596702983033,
+            "pr_auc": 0.5821572704470525
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.6474820143884892,
+            "recall": 0.25280898876404495,
+            "f1": 0.36363636363636365,
+            "pred_positive_rate": 0.041039267788603485,
+            "roc_auc": 0.9226596702983033,
+            "pr_auc": 0.5821572704470525
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.6779661016949152,
+            "recall": 0.2247191011235955,
+            "f1": 0.33755274261603374,
+            "pred_positive_rate": 0.03483909064068497,
+            "roc_auc": 0.9226596702983033,
+            "pr_auc": 0.5821572704470525
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 323,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 8,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 358,
+        "actual_low_rate": 0.10569825804546797,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=8) vs is_low_8h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 358,
+            "mean": 0.10144292708721978,
+            "median": 1.548109129018684e-05
+          },
+          "actual_low_0": {
+            "count": 3029,
+            "mean": 0.007981334822921675,
+            "median": 2.087585738338956e-09
+          },
+          "actual_zero_1": {
+            "count": 325,
+            "mean": 0.11151524518249245,
+            "median": 2.9281895790237973e-05
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5350877192982456,
+            "recall": 0.17039106145251395,
+            "f1": 0.2584745762711864,
+            "pred_positive_rate": 0.03365810451727192,
+            "roc_auc": 0.913365400753609,
+            "pr_auc": 0.5160371336191028
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5698924731182796,
+            "recall": 0.14804469273743018,
+            "f1": 0.23503325942350334,
+            "pred_positive_rate": 0.02745792736935341,
+            "roc_auc": 0.913365400753609,
+            "pr_auc": 0.5160371336191028
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.5616438356164384,
+            "recall": 0.11452513966480447,
+            "f1": 0.1902552204176334,
+            "pred_positive_rate": 0.02155299675228816,
+            "roc_auc": 0.913365400753609,
+            "pr_auc": 0.5160371336191028
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 325,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 9,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 359,
+        "actual_low_rate": 0.10599350457632123,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=9) vs is_low_9h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 359,
+            "mean": 0.08516723424650562,
+            "median": 3.0553898991861612e-06
+          },
+          "actual_low_0": {
+            "count": 3028,
+            "mean": 0.005577980613281866,
+            "median": 1.1114831067032572e-09
+          },
+          "actual_zero_1": {
+            "count": 327,
+            "mean": 0.09077454109712325,
+            "median": 4.035915366039501e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5555555555555556,
+            "recall": 0.1392757660167131,
+            "f1": 0.22271714922049,
+            "pred_positive_rate": 0.026572187776793623,
+            "roc_auc": 0.9122903044196597,
+            "pr_auc": 0.4952446641138405
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5555555555555556,
+            "recall": 0.12534818941504178,
+            "f1": 0.20454545454545456,
+            "pred_positive_rate": 0.023914968999114262,
+            "roc_auc": 0.9122903044196597,
+            "pr_auc": 0.4952446641138405
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.6056338028169014,
+            "recall": 0.11977715877437325,
+            "f1": 0.2,
+            "pred_positive_rate": 0.020962503690581637,
+            "roc_auc": 0.9122903044196597,
+            "pr_auc": 0.4952446641138405
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 327,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 10,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 360,
+        "actual_low_rate": 0.10628875110717449,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=10) vs is_low_10h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 360,
+            "mean": 0.03563311545133953,
+            "median": 3.386794716565416e-06
+          },
+          "actual_low_0": {
+            "count": 3027,
+            "mean": 0.0007589287603047069,
+            "median": 2.487117554324301e-09
+          },
+          "actual_zero_1": {
+            "count": 328,
+            "mean": 0.039015210587897954,
+            "median": 4.177119467163054e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.7966101694915254,
+            "recall": 0.13055555555555556,
+            "f1": 0.2243436754176611,
+            "pred_positive_rate": 0.017419545320342487,
+            "roc_auc": 0.8990887567448519,
+            "pr_auc": 0.5138281077631744
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.8541666666666666,
+            "recall": 0.11388888888888889,
+            "f1": 0.20098039215686275,
+            "pred_positive_rate": 0.0141718334809566,
+            "roc_auc": 0.8990887567448519,
+            "pr_auc": 0.5138281077631744
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.8421052631578947,
+            "recall": 0.08888888888888889,
+            "f1": 0.16080402010050251,
+            "pred_positive_rate": 0.011219368172423975,
+            "roc_auc": 0.8990887567448519,
+            "pr_auc": 0.5138281077631744
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 328,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 11,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 361,
+        "actual_low_rate": 0.10658399763802776,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=11) vs is_low_11h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 361,
+            "mean": 3.1315950038895205e-06,
+            "median": 1.450970220360906e-09
+          },
+          "actual_low_0": {
+            "count": 3026,
+            "mean": 5.1642766643918205e-08,
+            "median": 3.554220845416738e-10
+          },
+          "actual_zero_1": {
+            "count": 329,
+            "mean": 3.432405399246797e-06,
+            "median": 1.510432090571979e-09
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.6083252623157016,
+            "pr_auc": 0.26252296903593475
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.6083252623157016,
+            "pr_auc": 0.26252296903593475
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.6083252623157016,
+            "pr_auc": 0.26252296903593475
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 329,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 12,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 362,
+        "actual_low_rate": 0.10687924416888102,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=12) vs is_low_12h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 362,
+            "mean": 0.0014897431103411225,
+            "median": 4.169088713436476e-06
+          },
+          "actual_low_0": {
+            "count": 3025,
+            "mean": 2.3099262799722224e-05,
+            "median": 9.069252266858506e-10
+          },
+          "actual_zero_1": {
+            "count": 330,
+            "mean": 0.001632550880562374,
+            "median": 4.289175264699601e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 1.0,
+            "recall": 0.013812154696132596,
+            "f1": 0.027247956403269755,
+            "pred_positive_rate": 0.0014762326542663124,
+            "roc_auc": 0.8943719464864619,
+            "pr_auc": 0.4938296275990613
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 1.0,
+            "recall": 0.008287292817679558,
+            "f1": 0.01643835616438356,
+            "pred_positive_rate": 0.0008857395925597874,
+            "roc_auc": 0.8943719464864619,
+            "pr_auc": 0.4938296275990613
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.0055248618784530384,
+            "f1": 0.01098901098901099,
+            "pred_positive_rate": 0.000590493061706525,
+            "roc_auc": 0.8943719464864619,
+            "pr_auc": 0.4938296275990613
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 330,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 13,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 363,
+        "actual_low_rate": 0.10717449069973428,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=13) vs is_low_13h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 363,
+            "mean": 0.002622397638474209,
+            "median": 2.0325965108625494e-06
+          },
+          "actual_low_0": {
+            "count": 3024,
+            "mean": 0.00013023291046236548,
+            "median": 9.053908429371673e-10
+          },
+          "actual_zero_1": {
+            "count": 331,
+            "mean": 0.0028752913065071876,
+            "median": 2.6131646189069584e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5714285714285714,
+            "recall": 0.02203856749311295,
+            "f1": 0.042440318302387266,
+            "pred_positive_rate": 0.004133451431945674,
+            "roc_auc": 0.816280590901803,
+            "pr_auc": 0.40887363699697754
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.6666666666666666,
+            "recall": 0.011019283746556474,
+            "f1": 0.02168021680216802,
+            "pred_positive_rate": 0.001771479185119575,
+            "roc_auc": 0.816280590901803,
+            "pr_auc": 0.40887363699697754
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.008264462809917356,
+            "f1": 0.01639344262295082,
+            "pred_positive_rate": 0.0008857395925597874,
+            "roc_auc": 0.816280590901803,
+            "pr_auc": 0.40887363699697754
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 331,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 14,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 364,
+        "actual_low_rate": 0.10746973723058754,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=14) vs is_low_14h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 364,
+            "mean": 0.013526525213305727,
+            "median": 4.141294740712104e-06
+          },
+          "actual_low_0": {
+            "count": 3023,
+            "mean": 0.0013780691019608976,
+            "median": 9.602043371077263e-10
+          },
+          "actual_zero_1": {
+            "count": 332,
+            "mean": 0.014184037337887367,
+            "median": 5.485845720251292e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.6,
+            "recall": 0.04945054945054945,
+            "f1": 0.09137055837563451,
+            "pred_positive_rate": 0.008857395925597875,
+            "roc_auc": 0.8409019858738682,
+            "pr_auc": 0.3939138821100561
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.47619047619047616,
+            "recall": 0.027472527472527472,
+            "f1": 0.05194805194805195,
+            "pred_positive_rate": 0.006200177147918512,
+            "roc_auc": 0.8409019858738682,
+            "pr_auc": 0.3939138821100561
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.5,
+            "recall": 0.024725274725274724,
+            "f1": 0.04712041884816754,
+            "pred_positive_rate": 0.005314437555358724,
+            "roc_auc": 0.8409019858738682,
+            "pr_auc": 0.3939138821100561
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 332,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 15,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 364,
+        "actual_low_rate": 0.10746973723058754,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=15) vs is_low_15h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 364,
+            "mean": 0.005375677318631839,
+            "median": 1.7837545684814185e-06
+          },
+          "actual_low_0": {
+            "count": 3023,
+            "mean": 0.001256929564398058,
+            "median": 3.161408851373779e-09
+          },
+          "actual_zero_1": {
+            "count": 332,
+            "mean": 0.005883420006918349,
+            "median": 2.1502439960510355e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.3548387096774194,
+            "recall": 0.03021978021978022,
+            "f1": 0.05569620253164557,
+            "pred_positive_rate": 0.009152642456451136,
+            "roc_auc": 0.828127215159964,
+            "pr_auc": 0.3410194648650711
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.3333333333333333,
+            "recall": 0.02197802197802198,
+            "f1": 0.041237113402061855,
+            "pred_positive_rate": 0.0070859167404783,
+            "roc_auc": 0.828127215159964,
+            "pr_auc": 0.3410194648650711
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.3333333333333333,
+            "recall": 0.013736263736263736,
+            "f1": 0.026385224274406333,
+            "pred_positive_rate": 0.0044286979627989375,
+            "roc_auc": 0.828127215159964,
+            "pr_auc": 0.3410194648650711
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 332,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 16,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 364,
+        "actual_low_rate": 0.10746973723058754,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=16) vs is_low_16h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 364,
+            "mean": 0.0031148621713801014,
+            "median": 1.7158200027701688e-06
+          },
+          "actual_low_0": {
+            "count": 3023,
+            "mean": 0.00047699976640287175,
+            "median": 3.253823017729788e-09
+          },
+          "actual_zero_1": {
+            "count": 332,
+            "mean": 0.0034115447887759507,
+            "median": 2.2509852180569783e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.47058823529411764,
+            "recall": 0.02197802197802198,
+            "f1": 0.04199475065616798,
+            "pred_positive_rate": 0.005019191024505462,
+            "roc_auc": 0.8464846433751494,
+            "pr_auc": 0.4092627276816919
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.4166666666666667,
+            "recall": 0.013736263736263736,
+            "f1": 0.026595744680851064,
+            "pred_positive_rate": 0.00354295837023915,
+            "roc_auc": 0.8464846433751494,
+            "pr_auc": 0.4092627276816919
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.45454545454545453,
+            "recall": 0.013736263736263736,
+            "f1": 0.02666666666666667,
+            "pred_positive_rate": 0.003247711839385887,
+            "roc_auc": 0.8464846433751494,
+            "pr_auc": 0.4092627276816919
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 332,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 17,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 365,
+        "actual_low_rate": 0.10776498376144081,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=17) vs is_low_17h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 365,
+            "mean": 0.0013954836256665775,
+            "median": 1.1359661649683077e-07
+          },
+          "actual_low_0": {
+            "count": 3022,
+            "mean": 3.8906033803670356e-05,
+            "median": 1.1012411293526262e-09
+          },
+          "actual_zero_1": {
+            "count": 333,
+            "mean": 0.001529042770801751,
+            "median": 1.564313266000695e-07
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.8333333333333334,
+            "recall": 0.0136986301369863,
+            "f1": 0.026954177897574125,
+            "pred_positive_rate": 0.001771479185119575,
+            "roc_auc": 0.7896385411094895,
+            "pr_auc": 0.39713594757057
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 1.0,
+            "recall": 0.010958904109589041,
+            "f1": 0.02168021680216802,
+            "pred_positive_rate": 0.00118098612341305,
+            "roc_auc": 0.7896385411094895,
+            "pr_auc": 0.39713594757057
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.0027397260273972603,
+            "f1": 0.00546448087431694,
+            "pred_positive_rate": 0.0002952465308532625,
+            "roc_auc": 0.7896385411094895,
+            "pr_auc": 0.39713594757057
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 333,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 18,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 366,
+        "actual_low_rate": 0.10806023029229407,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=18) vs is_low_18h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 366,
+            "mean": 3.462489334194682e-05,
+            "median": 3.328250527845606e-08
+          },
+          "actual_low_0": {
+            "count": 3021,
+            "mean": 1.6296081486017462e-05,
+            "median": 3.0601994183372695e-10
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 3.775246926526403e-05,
+            "median": 3.6065906177329805e-08
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0002952465308532625,
+            "roc_auc": 0.7893027496052225,
+            "pr_auc": 0.43156735345813707
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.7893027496052225,
+            "pr_auc": 0.43156735345813707
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.7893027496052225,
+            "pr_auc": 0.43156735345813707
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 19,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 367,
+        "actual_low_rate": 0.10835547682314733,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=19) vs is_low_19h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 367,
+            "mean": 0.0037858012845754783,
+            "median": 2.6464846896777213e-08
+          },
+          "actual_low_0": {
+            "count": 3020,
+            "mean": 1.6243764770994251e-06,
+            "median": 3.9947675350593994e-10
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 0.0041594431466946535,
+            "median": 2.734236400489021e-08
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 1.0,
+            "recall": 0.013623978201634877,
+            "f1": 0.026881720430107527,
+            "pred_positive_rate": 0.0014762326542663124,
+            "roc_auc": 0.7949167223054298,
+            "pr_auc": 0.4298470641540286
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 1.0,
+            "recall": 0.013623978201634877,
+            "f1": 0.026881720430107527,
+            "pred_positive_rate": 0.0014762326542663124,
+            "roc_auc": 0.7949167223054298,
+            "pr_auc": 0.4298470641540286
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.005449591280653951,
+            "f1": 0.01084010840108401,
+            "pred_positive_rate": 0.000590493061706525,
+            "roc_auc": 0.7949167223054298,
+            "pr_auc": 0.4298470641540286
+          }
+        },
+        "selected_threshold": 0.05,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 20,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 367,
+        "actual_low_rate": 0.10835547682314733,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=20) vs is_low_20h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 367,
+            "mean": 0.01123197326546297,
+            "median": 1.1278529680798117e-05
+          },
+          "actual_low_0": {
+            "count": 3020,
+            "mean": 2.2897108445303255e-05,
+            "median": 2.2929604761755333e-09
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 0.012335539502971532,
+            "median": 1.4964213152907215e-05
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 1.0,
+            "recall": 0.05994550408719346,
+            "f1": 0.11311053984575835,
+            "pred_positive_rate": 0.006495423678771774,
+            "roc_auc": 0.8979103885089413,
+            "pr_auc": 0.5595146072643635
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 1.0,
+            "recall": 0.035422343324250684,
+            "f1": 0.06842105263157895,
+            "pred_positive_rate": 0.003838204901092412,
+            "roc_auc": 0.8979103885089413,
+            "pr_auc": 0.5595146072643635
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.027247956403269755,
+            "f1": 0.05305039787798409,
+            "pred_positive_rate": 0.002952465308532625,
+            "roc_auc": 0.8979103885089413,
+            "pr_auc": 0.5595146072643635
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 21,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 367,
+        "actual_low_rate": 0.10835547682314733,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=21) vs is_low_21h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 367,
+            "mean": 0.042647170318551794,
+            "median": 1.7734958978253625e-05
+          },
+          "actual_low_0": {
+            "count": 3020,
+            "mean": 0.0002297465030753631,
+            "median": 1.3208750403267987e-09
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 0.04675976166668169,
+            "median": 2.082749390878618e-05
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.8928571428571429,
+            "recall": 0.0681198910081744,
+            "f1": 0.12658227848101267,
+            "pred_positive_rate": 0.008266902863891349,
+            "roc_auc": 0.9210296479419673,
+            "pr_auc": 0.5869141819378387
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.8695652173913043,
+            "recall": 0.05449591280653951,
+            "f1": 0.10256410256410256,
+            "pred_positive_rate": 0.006790670209625037,
+            "roc_auc": 0.9210296479419673,
+            "pr_auc": 0.5869141819378387
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.9473684210526315,
+            "recall": 0.04904632152588556,
+            "f1": 0.09326424870466321,
+            "pred_positive_rate": 0.005609684086211987,
+            "roc_auc": 0.9210296479419673,
+            "pr_auc": 0.5869141819378387
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 22,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 367,
+        "actual_low_rate": 0.10835547682314733,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=22) vs is_low_22h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 367,
+            "mean": 0.03666371755066857,
+            "median": 2.4015699996267355e-06
+          },
+          "actual_low_0": {
+            "count": 3020,
+            "mean": 0.0007536117577185876,
+            "median": 1.4613898030906483e-09
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 0.04028158888147906,
+            "median": 3.2984662059315075e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.675,
+            "recall": 0.07356948228882834,
+            "f1": 0.13267813267813267,
+            "pred_positive_rate": 0.0118098612341305,
+            "roc_auc": 0.8851841492682749,
+            "pr_auc": 0.48502427149140204
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.6944444444444444,
+            "recall": 0.0681198910081744,
+            "f1": 0.12406947890818859,
+            "pred_positive_rate": 0.010628875110717449,
+            "roc_auc": 0.8851841492682749,
+            "pr_auc": 0.48502427149140204
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.7586206896551724,
+            "recall": 0.05994550408719346,
+            "f1": 0.1111111111111111,
+            "pred_positive_rate": 0.008562149394744612,
+            "roc_auc": 0.8851841492682749,
+            "pr_auc": 0.48502427149140204
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 23,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 367,
+        "actual_low_rate": 0.10835547682314733,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=23) vs is_low_23h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 367,
+            "mean": 0.021610270613767236,
+            "median": 6.328797517031919e-06
+          },
+          "actual_low_0": {
+            "count": 3020,
+            "mean": 0.00012080331217687814,
+            "median": 5.700809109176795e-10
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 0.023731136320464332,
+            "median": 7.396468176653768e-06
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.925,
+            "recall": 0.1008174386920981,
+            "f1": 0.18181818181818182,
+            "pred_positive_rate": 0.0118098612341305,
+            "roc_auc": 0.880041774184817,
+            "pr_auc": 0.5252843303740901
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.8695652173913043,
+            "recall": 0.05449591280653951,
+            "f1": 0.10256410256410256,
+            "pred_positive_rate": 0.006790670209625037,
+            "roc_auc": 0.880041774184817,
+            "pr_auc": 0.5252843303740901
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.04632152588555858,
+            "f1": 0.08854166666666667,
+            "pred_positive_rate": 0.005019191024505462,
+            "roc_auc": 0.880041774184817,
+            "pr_auc": 0.5252843303740901
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      },
+      {
+        "horizon": 24,
+        "split": "test",
+        "rows": 3387,
+        "actual_low_count": 367,
+        "actual_low_rate": 0.10835547682314733,
+        "parquet_label_matches_csv": 3387,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=24) vs is_low_24h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 367,
+            "mean": 0.04456601098221169,
+            "median": 9.127304124124072e-06
+          },
+          "actual_low_0": {
+            "count": 3020,
+            "mean": 0.00042039167621182004,
+            "median": 4.961809486042104e-10
+          },
+          "actual_zero_1": {
+            "count": 334,
+            "mean": 0.04891224282035209,
+            "median": 1.1499013194603382e-05
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.7903225806451613,
+            "recall": 0.1335149863760218,
+            "f1": 0.22843822843822845,
+            "pred_positive_rate": 0.018305284912902273,
+            "roc_auc": 0.8865718100943754,
+            "pr_auc": 0.524663132153633
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.8636363636363636,
+            "recall": 0.10354223433242507,
+            "f1": 0.18491484184914841,
+            "pred_positive_rate": 0.012990847357543548,
+            "roc_auc": 0.8865718100943754,
+            "pr_auc": 0.524663132153633
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.9142857142857143,
+            "recall": 0.08719346049046321,
+            "f1": 0.15920398009950248,
+            "pred_positive_rate": 0.010333628579864187,
+            "roc_auc": 0.8865718100943754,
+            "pr_auc": 0.524663132153633
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 3387,
+        "low_pred_threshold_mismatches": 0,
+        "actual_zero_count": 334,
+        "is_zero_parquet_matches_csv": 3387
+      }
+    ],
+    "validation": [
+      {
+        "horizon": 1,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=1) vs is_low_1h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.5088474053949674,
+            "median": 0.4436490628973237
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.003610738837526577,
+            "median": 6.17572451921767e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5742574257425742,
+            "recall": 0.651685393258427,
+            "f1": 0.6105263157894737,
+            "pred_positive_rate": 0.011785297549591598,
+            "roc_auc": 0.9410367390955858,
+            "pr_auc": 0.6234329253233045
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5543478260869565,
+            "recall": 0.5730337078651685,
+            "f1": 0.56353591160221,
+            "pred_positive_rate": 0.01073512252042007,
+            "roc_auc": 0.9410367390955858,
+            "pr_auc": 0.6234329253233045
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.5681818181818182,
+            "recall": 0.5617977528089888,
+            "f1": 0.5649717514124294,
+            "pred_positive_rate": 0.010268378063010501,
+            "roc_auc": 0.9410367390955858,
+            "pr_auc": 0.6234329253233045
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 2,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=2) vs is_low_2h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.41336106243696363,
+            "median": 0.0280090994354331
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0020668705631863137,
+            "median": 3.026162338049887e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5465116279069767,
+            "recall": 0.5280898876404494,
+            "f1": 0.5371428571428571,
+            "pred_positive_rate": 0.010035005834305718,
+            "roc_auc": 0.9820510884210443,
+            "pr_auc": 0.613914358388531
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5584415584415584,
+            "recall": 0.48314606741573035,
+            "f1": 0.5180722891566265,
+            "pred_positive_rate": 0.00898483080513419,
+            "roc_auc": 0.9820510884210443,
+            "pr_auc": 0.613914358388531
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.5909090909090909,
+            "recall": 0.43820224719101125,
+            "f1": 0.5032258064516129,
+            "pred_positive_rate": 0.007701283547257876,
+            "roc_auc": 0.9820510884210443,
+            "pr_auc": 0.613914358388531
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 3,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=3) vs is_low_3h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.18014814797268713,
+            "median": 6.766608301296431e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0007777453519803663,
+            "median": 8.069689814481382e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5476190476190477,
+            "recall": 0.25842696629213485,
+            "f1": 0.3511450381679389,
+            "pred_positive_rate": 0.004900816802800466,
+            "roc_auc": 0.93754181521418,
+            "pr_auc": 0.4344811513443173
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5945945945945946,
+            "recall": 0.24719101123595505,
+            "f1": 0.3492063492063492,
+            "pred_positive_rate": 0.004317386231038506,
+            "roc_auc": 0.93754181521418,
+            "pr_auc": 0.4344811513443173
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.6176470588235294,
+            "recall": 0.23595505617977527,
+            "f1": 0.34146341463414637,
+            "pred_positive_rate": 0.0039673278879813305,
+            "roc_auc": 0.93754181521418,
+            "pr_auc": 0.4344811513443173
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 4,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=4) vs is_low_4h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.006094645417055414,
+            "median": 1.5084749908867308e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.00014791059931417802,
+            "median": 9.705131535634748e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5714285714285714,
+            "recall": 0.0449438202247191,
+            "f1": 0.08333333333333333,
+            "pred_positive_rate": 0.0008168028004667445,
+            "roc_auc": 0.9743113820847391,
+            "pr_auc": 0.36413017152617555
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.4,
+            "recall": 0.02247191011235955,
+            "f1": 0.0425531914893617,
+            "pred_positive_rate": 0.0005834305717619603,
+            "roc_auc": 0.9743113820847391,
+            "pr_auc": 0.36413017152617555
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.5,
+            "recall": 0.02247191011235955,
+            "f1": 0.043010752688172046,
+            "pred_positive_rate": 0.0004667444574095683,
+            "roc_auc": 0.9743113820847391,
+            "pr_auc": 0.36413017152617555
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 5,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=5) vs is_low_5h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.00421422326792198,
+            "median": 2.806670928126397e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.00030168125133176143,
+            "median": 8.239437180387423e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.35714285714285715,
+            "recall": 0.056179775280898875,
+            "f1": 0.0970873786407767,
+            "pred_positive_rate": 0.001633605600933489,
+            "roc_auc": 0.9732091164784733,
+            "pr_auc": 0.2798976564319927
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.3333333333333333,
+            "recall": 0.02247191011235955,
+            "f1": 0.042105263157894736,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.9732091164784733,
+            "pr_auc": 0.2798976564319927
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.25,
+            "recall": 0.011235955056179775,
+            "f1": 0.021505376344086023,
+            "pred_positive_rate": 0.0004667444574095683,
+            "roc_auc": 0.9732091164784733,
+            "pr_auc": 0.2798976564319927
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 6,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=6) vs is_low_6h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.003624870945273315,
+            "median": 8.653341319734318e-08
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.00012609157474842913,
+            "median": 2.7816326343647863e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.5,
+            "recall": 0.056179775280898875,
+            "f1": 0.10101010101010101,
+            "pred_positive_rate": 0.0011668611435239206,
+            "roc_auc": 0.9541923850934474,
+            "pr_auc": 0.263649762478525
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.3333333333333333,
+            "recall": 0.02247191011235955,
+            "f1": 0.042105263157894736,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.9541923850934474,
+            "pr_auc": 0.263649762478525
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.2,
+            "recall": 0.011235955056179775,
+            "f1": 0.02127659574468085,
+            "pred_positive_rate": 0.0005834305717619603,
+            "roc_auc": 0.9541923850934474,
+            "pr_auc": 0.263649762478525
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 7,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=7) vs is_low_7h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.0024377099282960986,
+            "median": 2.486415810992226e-07
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 2.2600750101618037e-05,
+            "median": 3.351881232386445e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.4,
+            "recall": 0.02247191011235955,
+            "f1": 0.0425531914893617,
+            "pred_positive_rate": 0.0005834305717619603,
+            "roc_auc": 0.9641432468346297,
+            "pr_auc": 0.3003012646863087
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5,
+            "recall": 0.011235955056179775,
+            "f1": 0.02197802197802198,
+            "pred_positive_rate": 0.00023337222870478414,
+            "roc_auc": 0.9641432468346297,
+            "pr_auc": 0.3003012646863087
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 1.0,
+            "recall": 0.011235955056179775,
+            "f1": 0.022222222222222223,
+            "pred_positive_rate": 0.00011668611435239207,
+            "roc_auc": 0.9641432468346297,
+            "pr_auc": 0.3003012646863087
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 8,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=8) vs is_low_8h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.005303613977849574,
+            "median": 2.053106998123019e-07
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 7.960377970563491e-05,
+            "median": 4.273468511517549e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.4166666666666667,
+            "recall": 0.056179775280898875,
+            "f1": 0.09900990099009901,
+            "pred_positive_rate": 0.0014002333722287048,
+            "roc_auc": 0.9666034718716919,
+            "pr_auc": 0.311869124133367
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5,
+            "recall": 0.0449438202247191,
+            "f1": 0.08247422680412371,
+            "pred_positive_rate": 0.0009334889148191366,
+            "roc_auc": 0.9666034718716919,
+            "pr_auc": 0.311869124133367
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.25,
+            "recall": 0.011235955056179775,
+            "f1": 0.021505376344086023,
+            "pred_positive_rate": 0.0004667444574095683,
+            "roc_auc": 0.9666034718716919,
+            "pr_auc": 0.311869124133367
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 9,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=9) vs is_low_9h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.0006261536205340883,
+            "median": 2.688782569517414e-07
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 3.7487306188755064e-05,
+            "median": 4.534178025447751e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.16666666666666666,
+            "recall": 0.011235955056179775,
+            "f1": 0.021052631578947368,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.9570778832790813,
+            "pr_auc": 0.2726236628824173
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.00011668611435239207,
+            "roc_auc": 0.9570778832790813,
+            "pr_auc": 0.2726236628824173
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.00011668611435239207,
+            "roc_auc": 0.9570778832790813,
+            "pr_auc": 0.2726236628824173
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 10,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=10) vs is_low_10h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 3.8712756197316e-06,
+            "median": 4.660419939226728e-08
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 1.1785790702188175e-06,
+            "median": 3.901248513603344e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9450642480415575,
+            "pr_auc": 0.19364329563014057
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9450642480415575,
+            "pr_auc": 0.19364329563014057
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9450642480415575,
+            "pr_auc": 0.19364329563014057
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 11,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=11) vs is_low_11h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 1.0326194063944587e-07,
+            "median": 5.317835450793364e-09
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 2.5235400713140777e-08,
+            "median": 1.2579745870905114e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9015035591785471,
+            "pr_auc": 0.15418181311278142
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9015035591785471,
+            "pr_auc": 0.15418181311278142
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9015035591785471,
+            "pr_auc": 0.15418181311278142
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 12,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=12) vs is_low_12h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 1.4504174735673542e-06,
+            "median": 5.6665767229425175e-08
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 5.412794170428733e-05,
+            "median": 1.736838762511336e-09
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.00023337222870478414,
+            "roc_auc": 0.781661320943444,
+            "pr_auc": 0.04428605979396351
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.00023337222870478414,
+            "roc_auc": 0.781661320943444,
+            "pr_auc": 0.04428605979396351
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.00011668611435239207,
+            "roc_auc": 0.781661320943444,
+            "pr_auc": 0.04428605979396351
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 13,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=13) vs is_low_13h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 2.4701880166824857e-05,
+            "median": 1.991922342026531e-07
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 6.588167743328968e-07,
+            "median": 8.873110935488167e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9214715245843651,
+            "pr_auc": 0.1961571072560661
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9214715245843651,
+            "pr_auc": 0.1961571072560661
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9214715245843651,
+            "pr_auc": 0.1961571072560661
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 14,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=14) vs is_low_14h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.001147803891397604,
+            "median": 4.301457334897676e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 1.205469543602287e-06,
+            "median": 7.725823332411721e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 1.0,
+            "recall": 0.011235955056179775,
+            "f1": 0.022222222222222223,
+            "pred_positive_rate": 0.00011668611435239207,
+            "roc_auc": 0.9647049783455153,
+            "pr_auc": 0.3533384789042986
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9647049783455153,
+            "pr_auc": 0.3533384789042986
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0,
+            "roc_auc": 0.9647049783455153,
+            "pr_auc": 0.3533384789042986
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 15,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=15) vs is_low_15h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.0041819017734395,
+            "median": 7.0455468811076205e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.00014126415996219496,
+            "median": 1.4025397775450335e-09
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.375,
+            "recall": 0.06741573033707865,
+            "f1": 0.11428571428571428,
+            "pred_positive_rate": 0.0018669778296382731,
+            "roc_auc": 0.962723019995787,
+            "pr_auc": 0.23328857095119046
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.2727272727272727,
+            "recall": 0.033707865168539325,
+            "f1": 0.06,
+            "pred_positive_rate": 0.0012835472578763127,
+            "roc_auc": 0.962723019995787,
+            "pr_auc": 0.23328857095119046
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.16666666666666666,
+            "recall": 0.011235955056179775,
+            "f1": 0.021052631578947368,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.962723019995787,
+            "pr_auc": 0.23328857095119046
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 16,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=16) vs is_low_16h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.0012775209017332997,
+            "median": 9.963392815122904e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.00036957429836363334,
+            "median": 1.5209576742187934e-09
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.18181818181818182,
+            "recall": 0.02247191011235955,
+            "f1": 0.04,
+            "pred_positive_rate": 0.0012835472578763127,
+            "roc_auc": 0.9519110132497095,
+            "pr_auc": 0.29307088384361685
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0008168028004667445,
+            "roc_auc": 0.9519110132497095,
+            "pr_auc": 0.29307088384361685
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.9519110132497095,
+            "pr_auc": 0.29307088384361685
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 17,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=17) vs is_low_17h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.001019661035072645,
+            "median": 5.095957103545007e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0006168566874187541,
+            "median": 1.4042926121334727e-09
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.08333333333333333,
+            "recall": 0.011235955056179775,
+            "f1": 0.019801980198019802,
+            "pred_positive_rate": 0.0014002333722287048,
+            "roc_auc": 0.9597659805328235,
+            "pr_auc": 0.28394165534698235
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0010501750291715287,
+            "roc_auc": 0.9597659805328235,
+            "pr_auc": 0.28394165534698235
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.9597659805328235,
+            "pr_auc": 0.28394165534698235
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 18,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=18) vs is_low_18h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.004527779342106033,
+            "median": 1.7172330956687105e-05
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0007958891228885466,
+            "median": 5.229545271285773e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.35,
+            "recall": 0.07865168539325842,
+            "f1": 0.12844036697247707,
+            "pred_positive_rate": 0.002333722287047841,
+            "roc_auc": 0.9262290195267942,
+            "pr_auc": 0.28546852197230954
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.2,
+            "recall": 0.033707865168539325,
+            "f1": 0.057692307692307696,
+            "pred_positive_rate": 0.001750291715285881,
+            "roc_auc": 0.9262290195267942,
+            "pr_auc": 0.28546852197230954
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0011668611435239206,
+            "roc_auc": 0.9262290195267942,
+            "pr_auc": 0.28546852197230954
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 19,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=19) vs is_low_19h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.011022082009543258,
+            "median": 2.1555436147212787e-05
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0010908608450433104,
+            "median": 5.815537571661054e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.18181818181818182,
+            "recall": 0.0449438202247191,
+            "f1": 0.07207207207207207,
+            "pred_positive_rate": 0.0025670945157526253,
+            "roc_auc": 0.9670645156589284,
+            "pr_auc": 0.2671881681183597
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.2222222222222222,
+            "recall": 0.0449438202247191,
+            "f1": 0.07476635514018691,
+            "pred_positive_rate": 0.0021003500583430573,
+            "roc_auc": 0.9670645156589284,
+            "pr_auc": 0.2671881681183597
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.14285714285714285,
+            "recall": 0.02247191011235955,
+            "f1": 0.038834951456310676,
+            "pred_positive_rate": 0.001633605600933489,
+            "roc_auc": 0.9670645156589284,
+            "pr_auc": 0.2671881681183597
+          }
+        },
+        "selected_threshold": 0.05,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 20,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=20) vs is_low_20h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.0016435156881797809,
+            "median": 1.1307293434471712e-05
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0009732532259021072,
+            "median": 4.728768323140061e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.13333333333333333,
+            "recall": 0.02247191011235955,
+            "f1": 0.038461538461538464,
+            "pred_positive_rate": 0.001750291715285881,
+            "roc_auc": 0.9610259019169088,
+            "pr_auc": 0.29858358319242617
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.07142857142857142,
+            "recall": 0.011235955056179775,
+            "f1": 0.019417475728155338,
+            "pred_positive_rate": 0.001633605600933489,
+            "roc_auc": 0.9610259019169088,
+            "pr_auc": 0.29858358319242617
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0011668611435239206,
+            "roc_auc": 0.9610259019169088,
+            "pr_auc": 0.29858358319242617
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 21,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=21) vs is_low_21h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.0008873812990016456,
+            "median": 5.026700237658493e-06
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0005179645283109285,
+            "median": 3.619006402585192e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.16666666666666666,
+            "recall": 0.02247191011235955,
+            "f1": 0.039603960396039604,
+            "pred_positive_rate": 0.0014002333722287048,
+            "roc_auc": 0.953442526519954,
+            "pr_auc": 0.25027815290780014
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0008168028004667445,
+            "roc_auc": 0.953442526519954,
+            "pr_auc": 0.25027815290780014
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "pred_positive_rate": 0.0007001166861143524,
+            "roc_auc": 0.953442526519954,
+            "pr_auc": 0.25027815290780014
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 22,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=22) vs is_low_22h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.021685782778358677,
+            "median": 3.09975265109033e-05
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0012281340182498084,
+            "median": 1.0939177390192758e-09
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.25,
+            "recall": 0.07865168539325842,
+            "f1": 0.11965811965811966,
+            "pred_positive_rate": 0.003267211201866978,
+            "roc_auc": 0.9685138889440903,
+            "pr_auc": 0.2372733321122828
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.21739130434782608,
+            "recall": 0.056179775280898875,
+            "f1": 0.08928571428571429,
+            "pred_positive_rate": 0.0026837806301050174,
+            "roc_auc": 0.9685138889440903,
+            "pr_auc": 0.2372733321122828
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.15789473684210525,
+            "recall": 0.033707865168539325,
+            "f1": 0.05555555555555555,
+            "pred_positive_rate": 0.0022170361726954494,
+            "roc_auc": 0.9685138889440903,
+            "pr_auc": 0.2372733321122828
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 23,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=23) vs is_low_23h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.06492322967475908,
+            "median": 0.0001471432587943
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0010290666353041402,
+            "median": 6.543455042302798e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.48214285714285715,
+            "recall": 0.30337078651685395,
+            "f1": 0.3724137931034483,
+            "pred_positive_rate": 0.006534422403733956,
+            "roc_auc": 0.9713212216600491,
+            "pr_auc": 0.2959813721823316
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.5142857142857142,
+            "recall": 0.20224719101123595,
+            "f1": 0.2903225806451613,
+            "pred_positive_rate": 0.004084014002333722,
+            "roc_auc": 0.9713212216600491,
+            "pr_auc": 0.2959813721823316
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.4827586206896552,
+            "recall": 0.15730337078651685,
+            "f1": 0.23728813559322035,
+            "pred_positive_rate": 0.00338389731621937,
+            "roc_auc": 0.9713212216600491,
+            "pr_auc": 0.2959813721823316
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      },
+      {
+        "horizon": 24,
+        "split": "validation",
+        "rows": 8570,
+        "actual_low_count": 89,
+        "actual_low_rate": 0.010385064177362895,
+        "parquet_label_matches_csv": 8570,
+        "parquet_label_mismatches": 0,
+        "mapping": "low_prob (horizon=24) vs is_low_24h / is_low_actual",
+        "p_low_stats": {
+          "actual_low_1": {
+            "count": 89,
+            "mean": 0.07321616448943213,
+            "median": 2.8024760780811644e-05
+          },
+          "actual_low_0": {
+            "count": 8481,
+            "mean": 0.0012897470391048731,
+            "median": 4.4361574123571277e-10
+          }
+        },
+        "threshold_metrics": {
+          "0.02": {
+            "threshold": 0.02,
+            "precision": 0.4,
+            "recall": 0.2696629213483146,
+            "f1": 0.3221476510067114,
+            "pred_positive_rate": 0.007001166861143524,
+            "roc_auc": 0.9607543100307496,
+            "pr_auc": 0.22715359400020446
+          },
+          "0.05": {
+            "threshold": 0.05,
+            "precision": 0.4772727272727273,
+            "recall": 0.23595505617977527,
+            "f1": 0.3157894736842105,
+            "pred_positive_rate": 0.005134189031505251,
+            "roc_auc": 0.9607543100307496,
+            "pr_auc": 0.22715359400020446
+          },
+          "0.1": {
+            "threshold": 0.1,
+            "precision": 0.40625,
+            "recall": 0.14606741573033707,
+            "f1": 0.21487603305785125,
+            "pred_positive_rate": 0.0037339556592765463,
+            "roc_auc": 0.9607543100307496,
+            "pr_auc": 0.22715359400020446
+          }
+        },
+        "selected_threshold": 0.02,
+        "low_pred_matches_threshold_rule": 8570,
+        "low_pred_threshold_mismatches": 0
+      }
+    ]
+  },
+  "contradiction_analysis": {
+    "apparent_paradox": "High overall median p_low for actual_low vs low test recall",
+    "root_cause": "Overall diagnostics pool train+validation+test. Train rows (~78% of stacked rows) show extreme overfit (median p_low|low\u22481, recall@0.02=1.0). Test-only median p_low|actual_low is near zero, so recall stays low.",
+    "train_median_p_low_given_low": 0.9999999956887036,
+    "test_median_p_low_given_low": 5.293130356369978e-06,
+    "test_recall_at_0.02": 0.14468526631311968,
+    "test_roc_auc": 0.8527077264636997,
+    "alignment_verdict": "PASS",
+    "horizon_offset_detected": false
+  },
+  "planned_models": {
+    "zero_specific_classifier": {
+      "status": "planned_not_trained",
+      "target": "is_zero_{h}h from inverse-scaled y (PTF == 0)",
+      "model": "separate horizon-wise classifier (LightGBM/HGB)",
+      "threshold_policy": "recall-first; target zero recall >= 0.70 on validation",
+      "features": "LOW_PRICE_CLASSIFIER_FEATURES + zero regime history",
+      "note": "Decouple from <=50 TL low-price head; optimize zero capture"
+    },
+    "any_horizon_classifier": {
+      "status": "planned_not_trained",
+      "target_any_low": "any(is_low_1h..is_low_24h) per anchor row",
+      "target_any_zero": "any(is_zero_1h..is_zero_24h) per anchor row",
+      "grain": "one row per anchor hour (not 24x stacked)",
+      "use_case": "hourly regime alert independent of horizon offset",
+      "threshold_policy": "recall-first on validation"
+    }
+  }
+}

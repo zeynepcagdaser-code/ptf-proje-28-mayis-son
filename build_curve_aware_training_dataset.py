@@ -35,6 +35,7 @@ KGUP_PATH = PROJECT_ROOT / "data" / "kgup_combined.csv"
 LOAD_FORECAST_PATH = PROJECT_ROOT / "data" / "load_forecast.csv"
 REGIME_FEATURES_PATH = PROJECT_ROOT / "data" / "features" / "regime_feature_store.parquet"
 REASONING_PATH = PROJECT_ROOT / "data" / "features" / "market_reasoning_features.parquet"
+MUST_RUN_GLOB = "must_run_supply_features_*.parquet"
 
 OUT_PATH = PROJECT_ROOT / "data" / "features" / "curve_aware_training_dataset.parquet"
 REPORT_MD = PROJECT_ROOT / "reports" / "curve_aware_dataset_audit.md"
@@ -88,6 +89,27 @@ def read_curve_features() -> tuple[pd.DataFrame, list[str]]:
     return curve, [str(path.relative_to(PROJECT_ROOT)) for path in curve_files]
 
 
+def read_must_run_features() -> tuple[pd.DataFrame, list[str]]:
+    files = sorted((PROJECT_ROOT / "data" / "features").glob(MUST_RUN_GLOB))
+    frames = []
+    for path in files:
+        try:
+            frame = pd.read_parquet(path)
+        except Exception:
+            continue
+        if "delivery_hour" not in frame.columns:
+            continue
+        frame = frame.copy()
+        frame["delivery_hour"] = to_naive(frame["delivery_hour"])
+        frame["source_must_run_file"] = path.name
+        frames.append(frame)
+    if not frames:
+        return pd.DataFrame(), []
+    mr = pd.concat(frames, ignore_index=True)
+    mr = mr.drop_duplicates("delivery_hour", keep="last").sort_values("delivery_hour")
+    return mr, [str(path.relative_to(PROJECT_ROOT)) for path in files]
+
+
 def read_market_tables() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, list[str]]:
     curve, curve_files = read_curve_features()
     if curve.empty:
@@ -123,6 +145,11 @@ def read_market_tables() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.D
     reasoning["ts_hour"] = to_naive(reasoning["ts_hour"])
     reasoning = reasoning.sort_values("ts_hour").drop_duplicates("ts_hour", keep="last")
 
+    must_run, must_run_files = read_must_run_features()
+    if not must_run.empty:
+        must_run["delivery_hour"] = to_naive(must_run["delivery_hour"])
+
+    # curve_files is already in the return signature; append must_run_files via audit only.
     return curve, ptf, kgup, load, regime, reasoning, curve_files
 
 
@@ -249,6 +276,34 @@ def build_dataset() -> tuple[pd.DataFrame, dict[str, Any]]:
     reasoning = reasoning.rename(columns={"ts_hour": "delivery_hour"})
     dataset = dataset.merge(reasoning, on="delivery_hour", how="left")
 
+    # Optional must-run proxy features (structural market proxy).
+    must_run, must_run_files = read_must_run_features()
+    if not must_run.empty:
+        keep_mr = [
+            "delivery_hour",
+            "must_run_supply",
+            "must_run_wind",
+            "must_run_solar",
+            "must_run_hydro",
+            "must_run_biomass",
+            "must_run_geothermal",
+            "must_run_share_of_load",
+            "residual_load_after_must_run",
+            "must_run_ramp_1h",
+            "must_run_ramp_3h",
+            "renewable_must_run_pressure",
+            "hydro_must_run_pressure",
+            "solar_must_run_pressure",
+            "strict_point_in_time_safe",
+            "structural_market_proxy",
+        ]
+        for col in keep_mr:
+            if col not in must_run.columns:
+                must_run[col] = np.nan
+        dataset = dataset.merge(must_run[keep_mr], on="delivery_hour", how="left")
+    else:
+        must_run_files = []
+
     # Preserve target and audit features.
     dataset["target_ptf"] = pd.to_numeric(dataset["target_ptf"], errors="coerce")
     dataset["target_band"] = price_band(dataset["target_ptf"])
@@ -308,6 +363,22 @@ def build_dataset() -> tuple[pd.DataFrame, dict[str, Any]]:
         "load_deviation_from_monthly_norm",
         "demand_weakness_score",
         "load_vs_renewable_balance",
+        # must-run proxy features (may be missing outside fetched window)
+        "must_run_supply",
+        "must_run_wind",
+        "must_run_solar",
+        "must_run_hydro",
+        "must_run_biomass",
+        "must_run_geothermal",
+        "must_run_share_of_load",
+        "residual_load_after_must_run",
+        "must_run_ramp_1h",
+        "must_run_ramp_3h",
+        "renewable_must_run_pressure",
+        "hydro_must_run_pressure",
+        "solar_must_run_pressure",
+        "strict_point_in_time_safe",
+        "structural_market_proxy",
     ]
     for col in keep_cols:
         if col not in dataset.columns:
@@ -325,6 +396,7 @@ def build_dataset() -> tuple[pd.DataFrame, dict[str, Any]]:
         "available": True,
         "rows": int(len(out)),
         "curve_input_files": curve_files,
+        "must_run_input_files": must_run_files,
         "curve_source_rows": int(len(curve)),
         "curve_rows_with_t_plus_1_target": int(len(out)),
         "coverage_start": str(out["delivery_hour"].min()) if not out.empty else None,
@@ -375,6 +447,11 @@ def build_dataset() -> tuple[pd.DataFrame, dict[str, Any]]:
         "load_vs_renewable_balance",
         "renewable_share_of_generation",
         "gas_share_of_generation",
+        "must_run_supply",
+        "must_run_share_of_load",
+        "renewable_must_run_pressure",
+        "hydro_must_run_pressure",
+        "solar_must_run_pressure",
     ]
     for col in numeric_cols:
         if col in out.columns:

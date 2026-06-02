@@ -14,7 +14,7 @@ Per-horizon blend weights chosen on **validation** only; applied to test.
 |--------|-------------:|----------:|
 | h1 | 0.6 | 0.4 |
 | h2 | 0.7 | 0.3 |
-| h3 | 0.9 | 0.1 |
+| h3 | 0.8 | 0.2 |
 | h4 | 1.0 | 0.0 |
 
 ## Test MAE (TL/MWh)
@@ -22,11 +22,11 @@ Per-horizon blend weights chosen on **validation** only; applied to test.
 | Model | h1 | h2 | h3 | h4 | Mean h1–h4 | vs advanced |
 |-------|-----:|-----:|-----:|-----:|-----:|-----:|
 | advanced_tree_only | 398.84 | 438.56 | 470.51 | 504.47 | **453.09** | +0.00 |
-| microstructure_only | 400.43 | 450.60 | 486.45 | 509.57 | **461.76** | +8.67 |
-| validation_weighted_ensemble **PRIMARY** | 377.83 | 426.79 | 466.39 | 504.47 | **443.87** | -9.22 |
-| fixed_0.7_0.3 | 380.17 | 426.79 | 461.98 | 492.23 | **440.29** | -12.80 |
-| test_oracle_weights *(test oracle — leakage)* | 377.64 | 426.17 | 461.61 | 490.65 | **439.02** | -14.08 |
+| microstructure_only | 394.88 | 445.05 | 485.02 | 510.97 | **458.98** | +5.88 |
+| validation_weighted_ensemble **PRIMARY** | 376.29 | 425.50 | 462.54 | 504.47 | **442.20** | -10.89 |
+| fixed_0.7_0.3 | 379.23 | 425.50 | 460.49 | 493.02 | **439.56** | -13.53 |
+| test_oracle_weights *(test oracle — leakage)* | 375.40 | 424.23 | 459.73 | 491.82 | **437.80** | -15.30 |
 
 ## Verdict
 
-Validation-weighted ensemble beats advanced tree on test (443.87 vs 453.09, Δ -9.22).
+Validation-weighted ensemble beats advanced tree on test (442.20 vs 453.09, Δ -10.89).

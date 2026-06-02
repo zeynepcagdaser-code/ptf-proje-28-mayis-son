@@ -1,0 +1,21 @@
+{
+  "available": true,
+  "objective": "mae",
+  "constraints": {
+    "w_adv_in_[0,1]": true,
+    "w_adv_plus_w_micro_eq_1": true
+  },
+  "optimized_weights": {
+    "advanced_tree": 0.7739381818535089,
+    "microstructure": 0.22606181814649107
+  },
+  "validation_mae": 257.89965821422254,
+  "optimizer": {
+    "method": "scipy.optimize.minimize",
+    "solver": "SLSQP",
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully",
+    "nfev": 31
+  }
+}

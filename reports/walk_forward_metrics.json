@@ -1,0 +1,127 @@
+{
+  "data_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet",
+  "time_col": "ts_hour",
+  "target_col": "ptf_price",
+  "n_rows_used": 55660,
+  "n_features_used": 61,
+  "n_folds": 5,
+  "split_policy": "chronological_walk_forward_60_20_20",
+  "leakage_checks": [
+    "Rows are sorted by time_col and split chronologically.",
+    "No test rows are included in train/val in any fold (index ranges are disjoint and forward).",
+    "Dropped all ptf_* columns except target to avoid direct target-derived leakage."
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "sizes": {
+        "train_rows": 33396,
+        "val_rows": 11132,
+        "test_rows": 2226
+      },
+      "time_range": {
+        "train_start": "2020-01-01 00:00:00+03:00",
+        "train_end_exclusive": "2023-11-03 16:00:00+03:00",
+        "val_start": "2023-11-03 17:00:00+03:00",
+        "val_end_exclusive": "2025-02-15 19:00:00+03:00",
+        "test_start": "2025-02-15 20:00:00+03:00",
+        "test_end_exclusive": "2025-05-19 13:00:00+03:00"
+      },
+      "metrics": {
+        "mae": 334.26834832374476,
+        "rmse": 451.2213921908489,
+        "best_iteration": 314
+      }
+    },
+    {
+      "fold": 2,
+      "sizes": {
+        "train_rows": 35622,
+        "val_rows": 11132,
+        "test_rows": 2226
+      },
+      "time_range": {
+        "train_start": "2020-01-01 00:00:00+03:00",
+        "train_end_exclusive": "2024-02-09 10:00:00+03:00",
+        "val_start": "2024-02-09 11:00:00+03:00",
+        "val_end_exclusive": "2025-05-19 13:00:00+03:00",
+        "test_start": "2025-05-19 14:00:00+03:00",
+        "test_end_exclusive": "2025-08-20 07:00:00+03:00"
+      },
+      "metrics": {
+        "mae": 332.68892328359584,
+        "rmse": 428.20714027586297,
+        "best_iteration": 282
+      }
+    },
+    {
+      "fold": 3,
+      "sizes": {
+        "train_rows": 37848,
+        "val_rows": 11132,
+        "test_rows": 2226
+      },
+      "time_range": {
+        "train_start": "2020-01-01 00:00:00+03:00",
+        "train_end_exclusive": "2024-05-12 20:00:00+03:00",
+        "val_start": "2024-05-12 21:00:00+03:00",
+        "val_end_exclusive": "2025-08-20 07:00:00+03:00",
+        "test_start": "2025-08-20 08:00:00+03:00",
+        "test_end_exclusive": "2025-11-22 04:00:00+03:00"
+      },
+      "metrics": {
+        "mae": 340.9279761268666,
+        "rmse": 435.82451679728433,
+        "best_iteration": 245
+      }
+    },
+    {
+      "fold": 4,
+      "sizes": {
+        "train_rows": 40074,
+        "val_rows": 11132,
+        "test_rows": 2226
+      },
+      "time_range": {
+        "train_start": "2020-01-01 00:00:00+03:00",
+        "train_end_exclusive": "2024-08-13 14:00:00+03:00",
+        "val_start": "2024-08-13 15:00:00+03:00",
+        "val_end_exclusive": "2025-11-22 04:00:00+03:00",
+        "test_start": "2025-11-22 05:00:00+03:00",
+        "test_end_exclusive": "2026-02-22 22:00:00+03:00"
+      },
+      "metrics": {
+        "mae": 316.6511498330008,
+        "rmse": 421.0139587307605,
+        "best_iteration": 211
+      }
+    },
+    {
+      "fold": 5,
+      "sizes": {
+        "train_rows": 42300,
+        "val_rows": 11132,
+        "test_rows": 2226
+      },
+      "time_range": {
+        "train_start": "2020-01-01 00:00:00+03:00",
+        "train_end_exclusive": "2024-11-14 08:00:00+03:00",
+        "val_start": "2024-11-14 09:00:00+03:00",
+        "val_end_exclusive": "2026-02-22 22:00:00+03:00",
+        "test_start": "2026-02-22 23:00:00+03:00",
+        "test_end_exclusive": "2026-05-28 20:00:00+03:00"
+      },
+      "metrics": {
+        "mae": 529.950471643916,
+        "rmse": 798.0778431657459,
+        "best_iteration": 218
+      }
+    }
+  ],
+  "summary": {
+    "mae_mean": 370.8973738422248,
+    "mae_std": 89.35921433114666,
+    "rmse_mean": 506.8689702321006,
+    "rmse_std": 163.17578058105943
+  }
+}

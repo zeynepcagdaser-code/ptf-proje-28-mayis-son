@@ -1,18 +1,18 @@
 # Microstructure h1–h4 LightGBM
 
 - **Source:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_microstructure_next24_v1.parquet`
-- **Features per horizon:** 99 (all non-target + `persistence_h`)
+- **Features per horizon:** 120 (all non-target + `persistence_h`)
 - **Method:** persistence + residual
 
 ## Model MAE (aligned test)
 
 | Horizon | MAE |
 |--------|-----:|
-| h1 | 400.43 |
-| h2 | 450.60 |
-| h3 | 486.45 |
-| h4 | 509.57 |
-| **Mean h1–h4** | **461.76** |
+| h1 | 394.88 |
+| h2 | 445.05 |
+| h3 | 485.02 |
+| h4 | 510.97 |
+| **Mean h1–h4** | **458.98** |
 
 ### Persistence
 | Horizon | MAE |
@@ -43,8 +43,8 @@
 
 ## Delta vs baselines (model − baseline, TL/MWh)
 
-- **persistence** mean: -82.38
-- **advanced_tree** mean: +8.67
-- **short_expert** mean: -14.17
+- **persistence** mean: -85.16
+- **advanced_tree** mean: +5.88
+- **short_expert** mean: -16.95
 
-**Microstructure h1–h4 is WORSE than advanced tree on mean MAE (461.8 vs 453.1). Advanced tree remains best for short horizons.**
+**Microstructure h1–h4 is WORSE than advanced tree on mean MAE (459.0 vs 453.1). Advanced tree remains best for short horizons.**

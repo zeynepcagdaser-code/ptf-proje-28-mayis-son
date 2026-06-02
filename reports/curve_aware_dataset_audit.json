@@ -6,6 +6,9 @@
     "data/features/reconstructed_weekly_curve_features_2026-05-25_2026-05-31.parquet",
     "data/features/reconstructed_weekly_curve_features_2026-06-01_2026-06-07.parquet"
   ],
+  "must_run_input_files": [
+    "data/features/must_run_supply_features_2026-05-18_2026-05-31.parquet"
+  ],
   "curve_source_rows": 360,
   "curve_rows_with_t_plus_1_target": 336,
   "coverage_start": "2026-05-19 00:00:00",
@@ -60,7 +63,22 @@
     "load_deviation_from_weekly_norm": 0.07142857142857142,
     "load_deviation_from_monthly_norm": 0.07142857142857142,
     "demand_weakness_score": 0.07142857142857142,
-    "load_vs_renewable_balance": 0.07142857142857142
+    "load_vs_renewable_balance": 0.07142857142857142,
+    "must_run_supply": 0.07142857142857142,
+    "must_run_wind": 0.07142857142857142,
+    "must_run_solar": 0.07142857142857142,
+    "must_run_hydro": 0.07142857142857142,
+    "must_run_biomass": 0.07142857142857142,
+    "must_run_geothermal": 0.07142857142857142,
+    "must_run_share_of_load": 0.07142857142857142,
+    "residual_load_after_must_run": 0.07142857142857142,
+    "must_run_ramp_1h": 0.07142857142857142,
+    "must_run_ramp_3h": 0.07142857142857142,
+    "renewable_must_run_pressure": 0.07142857142857142,
+    "hydro_must_run_pressure": 0.07142857142857142,
+    "solar_must_run_pressure": 0.07142857142857142,
+    "strict_point_in_time_safe": 0.07142857142857142,
+    "structural_market_proxy": 0.07142857142857142
   },
   "leakage_checks": {
     "uses_same_day_curve_as_feature": false,
@@ -107,6 +125,11 @@
     "demand_weakness_score": -0.32632032994941335,
     "load_vs_renewable_balance": 0.4765035460848805,
     "renewable_share_of_generation": -0.5117419053659217,
-    "gas_share_of_generation": 0.6108247304716738
+    "gas_share_of_generation": 0.6108247304716738,
+    "must_run_supply": 0.5498360551488632,
+    "must_run_share_of_load": 0.24415941869263447,
+    "renewable_must_run_pressure": -0.30253833992582835,
+    "hydro_must_run_pressure": 0.5881580722456446,
+    "solar_must_run_pressure": -0.3819319866621605
   }
 }

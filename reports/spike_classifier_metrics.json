@@ -1,0 +1,267 @@
+{
+  "spike_threshold": 4800.0,
+  "master_rows": 56208,
+  "master_spike_count": 473,
+  "features_rows": 56016,
+  "stacked_rows": 1344384,
+  "feature_count": 86,
+  "scale_pos_weight": 91.34672304439746,
+  "validation": {
+    "overall": {
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_rate": 0.0,
+      "pred_positive_rate": 0.010078957382039573,
+      "rows": 210240
+    },
+    "per_horizon": [
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.008561643835616438,
+        "rows": 8760,
+        "target_hour": 1
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.006278538812785388,
+        "rows": 8760,
+        "target_hour": 2
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.0031963470319634705,
+        "rows": 8760,
+        "target_hour": 3
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.002054794520547945,
+        "rows": 8760,
+        "target_hour": 4
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.0019406392694063927,
+        "rows": 8760,
+        "target_hour": 5
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.0012557077625570776,
+        "rows": 8760,
+        "target_hour": 6
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.0012557077625570776,
+        "rows": 8760,
+        "target_hour": 7
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.005365296803652968,
+        "rows": 8760,
+        "target_hour": 8
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.008789954337899543,
+        "rows": 8760,
+        "target_hour": 9
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.008561643835616438,
+        "rows": 8760,
+        "target_hour": 10
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.014726027397260274,
+        "rows": 8760,
+        "target_hour": 11
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.012442922374429224,
+        "rows": 8760,
+        "target_hour": 12
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.010616438356164383,
+        "rows": 8760,
+        "target_hour": 13
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.010388127853881279,
+        "rows": 8760,
+        "target_hour": 14
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.012328767123287671,
+        "rows": 8760,
+        "target_hour": 15
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.012442922374429224,
+        "rows": 8760,
+        "target_hour": 16
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.01723744292237443,
+        "rows": 8760,
+        "target_hour": 17
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.014611872146118721,
+        "rows": 8760,
+        "target_hour": 18
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.018036529680365298,
+        "rows": 8760,
+        "target_hour": 19
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.017465753424657535,
+        "rows": 8760,
+        "target_hour": 20
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.015296803652968037,
+        "rows": 8760,
+        "target_hour": 21
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.0091324200913242,
+        "rows": 8760,
+        "target_hour": 22
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.014155251141552512,
+        "rows": 8760,
+        "target_hour": 23
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "positive_rate": 0.0,
+        "pred_positive_rate": 0.015753424657534248,
+        "rows": 8760,
+        "target_hour": 24
+      }
+    ]
+  },
+  "outputs": {
+    "model_path": "models/spike_classifier.pkl",
+    "predictions_path": "data/predictions/spike_probability.csv"
+  },
+  "note": "Model is trained on stacked horizons (h=1..24) with target_hour as a feature."
+}

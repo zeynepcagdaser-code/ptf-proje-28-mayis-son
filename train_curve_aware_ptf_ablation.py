@@ -84,6 +84,24 @@ CURVE_FEATURES = [
     "prev_day_zero_pressure_from_curve",
 ]
 
+MUST_RUN_FEATURES = [
+    "must_run_supply",
+    "must_run_wind",
+    "must_run_solar",
+    "must_run_hydro",
+    "must_run_biomass",
+    "must_run_geothermal",
+    "must_run_share_of_load",
+    "residual_load_after_must_run",
+    "must_run_ramp_1h",
+    "must_run_ramp_3h",
+    "renewable_must_run_pressure",
+    "hydro_must_run_pressure",
+    "solar_must_run_pressure",
+    # flags
+    "structural_market_proxy",
+]
+
 CATEGORICAL = ["previous_day_regime", "analyst_expected_regime"]
 
 
@@ -225,6 +243,10 @@ def main() -> None:
 
     base_pred, base_model, base_imp = train_model(train, val, test, BASE_FEATURES, "base_market_fuel_switch")
     curve_pred, curve_model, curve_imp = train_model(train, val, test, BASE_FEATURES + CURVE_FEATURES, "curve_aware")
+    must_pred, must_model, must_imp = train_model(train, val, test, BASE_FEATURES + MUST_RUN_FEATURES, "must_run_proxy")
+    curve_must_pred, curve_must_model, curve_must_imp = train_model(
+        train, val, test, BASE_FEATURES + CURVE_FEATURES + MUST_RUN_FEATURES, "curve_plus_must_run"
+    )
 
     pred_df = test[
         [
@@ -243,15 +265,24 @@ def main() -> None:
     pred_df["persistence_pred"] = persistence_pred
     pred_df["base_market_pred"] = base_pred
     pred_df["curve_aware_pred"] = curve_pred
+    pred_df["must_run_proxy_pred"] = must_pred
+    pred_df["curve_plus_must_run_pred"] = curve_must_pred
     pred_df["persistence_abs_error"] = (pred_df["target_ptf"] - pred_df["persistence_pred"]).abs()
     pred_df["base_market_abs_error"] = (pred_df["target_ptf"] - pred_df["base_market_pred"]).abs()
     pred_df["curve_aware_abs_error"] = (pred_df["target_ptf"] - pred_df["curve_aware_pred"]).abs()
+    pred_df["must_run_proxy_abs_error"] = (pred_df["target_ptf"] - pred_df["must_run_proxy_pred"]).abs()
+    pred_df["curve_plus_must_run_abs_error"] = (pred_df["target_ptf"] - pred_df["curve_plus_must_run_pred"]).abs()
 
     persistence_metrics = metrics(y_test, persistence_pred, test)
     base_metrics = metrics(y_test, base_pred, test)
     curve_metrics = metrics(y_test, curve_pred, test)
+    must_metrics = metrics(y_test, must_pred, test)
+    curve_must_metrics = metrics(y_test, curve_must_pred, test)
 
-    importance = pd.concat([base_imp.head(30), curve_imp.head(30)], ignore_index=True)
+    importance = pd.concat(
+        [base_imp.head(30), curve_imp.head(30), must_imp.head(30), curve_must_imp.head(30)],
+        ignore_index=True,
+    )
 
     report = {
         "dataset_rows": int(len(df)),
@@ -277,16 +308,21 @@ def main() -> None:
             "persistence": persistence_metrics,
             "base_market_fuel_switch": base_metrics,
             "curve_aware": curve_metrics,
+            "must_run_proxy": must_metrics,
+            "curve_plus_must_run": curve_must_metrics,
         },
         "delta_vs_persistence": {
             "base_market_fuel_switch_mae": float(base_metrics["mae"] - persistence_metrics["mae"]),
             "curve_aware_mae": float(curve_metrics["mae"] - persistence_metrics["mae"]),
+            "must_run_proxy_mae": float(must_metrics["mae"] - persistence_metrics["mae"]),
+            "curve_plus_must_run_mae": float(curve_must_metrics["mae"] - persistence_metrics["mae"]),
         },
         "delta_curve_vs_base": {
             "mae": float(curve_metrics["mae"] - base_metrics["mae"]),
             "rmse": float(curve_metrics["rmse"] - base_metrics["rmse"]),
         },
         "top_curve_aware_features": curve_imp.head(20).to_dict(orient="records"),
+        "top_curve_plus_must_run_features": curve_must_imp.head(25).to_dict(orient="records"),
         "caveat": "This is a two-week curve-history smoke ablation, not a production-grade backtest. More historical DAM curve days are required before trusting small MAE differences.",
     }
 
@@ -298,6 +334,8 @@ def main() -> None:
     importance.to_csv(MODEL_DIR / "feature_importance.csv", index=False)
     joblib.dump(base_model, MODEL_DIR / "base_market_fuel_switch_lgbm.pkl")
     joblib.dump(curve_model, MODEL_DIR / "curve_aware_lgbm.pkl")
+    joblib.dump(must_model, MODEL_DIR / "must_run_proxy_lgbm.pkl")
+    joblib.dump(curve_must_model, MODEL_DIR / "curve_plus_must_run_lgbm.pkl")
     REPORT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2, default=str) + "\n")
 
     lines = [
@@ -316,7 +354,10 @@ def main() -> None:
         f"- Persistence: `{persistence_metrics['mae']:.2f}` TL/MWh",
         f"- Base market + fuel-switch: `{base_metrics['mae']:.2f}` TL/MWh",
         f"- Curve-aware: `{curve_metrics['mae']:.2f}` TL/MWh",
+        f"- Must-run proxy: `{must_metrics['mae']:.2f}` TL/MWh",
+        f"- Curve + must-run: `{curve_must_metrics['mae']:.2f}` TL/MWh",
         f"- Curve vs base delta: `{curve_metrics['mae'] - base_metrics['mae']:.2f}` TL/MWh",
+        f"- (Curve+MR) vs base delta: `{curve_must_metrics['mae'] - base_metrics['mae']:.2f}` TL/MWh",
         "",
         "## Regime MAE",
         "",

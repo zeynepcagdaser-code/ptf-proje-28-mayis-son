@@ -1,0 +1,337 @@
+{
+  "generated_at": "2026-06-01T00:24:57.838576+00:00",
+  "protocol": {
+    "target_date": "2026-06-01",
+    "anchor": "PTF(2026-05-31, same hour)",
+    "actuals": "PTF(2026-06-01) held out from model inputs",
+    "fundamentals": "2026-06-01 load/kgup from forecast tables when available"
+  },
+  "build_diagnostics": {
+    "target_date": "2026-06-01",
+    "requested_hours": 24,
+    "produced_rows": 24,
+    "fallbacks": {},
+    "missing_anchor_hours": [],
+    "refreshed_fuel_switch_from_delivery_kgup": true,
+    "ptf_max": "2026-06-01 23:00:00",
+    "load_max": "2026-06-01 23:00:00",
+    "kgup_max": "2026-06-01 23:00:00"
+  },
+  "enrich_audit": {
+    "rows": 24,
+    "curve_lag_stats": {
+      "curve_lag48": 24,
+      "curve_lag24": 24,
+      "curve_lag168": 24
+    },
+    "must_run_matched_rows": 0,
+    "real_curve_max": "2026-06-01 23:00:00",
+    "must_run_source": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/must_run_supply_features.parquet"
+  },
+  "metrics": {
+    "persistence_may31_anchor": {
+      "mae": 560.9,
+      "rmse": 1220.9776062784008,
+      "median_ae": 137.51,
+      "max_ae": 4050.01,
+      "pct_le_100": 0.4583333333333333,
+      "pct_le_50": 0.2916666666666667,
+      "pct_le_200": 0.75
+    },
+    "d2_model": {
+      "mae": 634.1340332800845,
+      "rmse": 1265.4174428753242,
+      "median_ae": 180.8742488532676,
+      "max_ae": 4068.487085454254,
+      "pct_le_100": 0.25,
+      "pct_le_50": 0.16666666666666666,
+      "pct_le_200": 0.5416666666666666
+    },
+    "hybrid_stack": {
+      "mae": 635.9622939758551,
+      "rmse": 1309.3999614369197,
+      "median_ae": 199.995,
+      "max_ae": 4178.49674673866,
+      "pct_le_100": 0.25,
+      "pct_le_50": 0.16666666666666666,
+      "pct_le_200": 0.5833333333333334
+    },
+    "premium_blend": {
+      "mae": 539.6613966547519,
+      "rmse": 1212.5711581257292,
+      "median_ae": 102.84,
+      "max_ae": 4050.01,
+      "pct_le_100": 0.5,
+      "pct_le_50": 0.2916666666666667,
+      "pct_le_200": 0.7916666666666666
+    },
+    "high_precision": {
+      "mae": 560.9,
+      "rmse": 1220.9776062784008,
+      "median_ae": 137.51,
+      "max_ae": 4050.01,
+      "pct_le_100": 0.4583333333333333,
+      "pct_le_50": 0.2916666666666667,
+      "pct_le_200": 0.75
+    }
+  },
+  "best_model": "premium_blend",
+  "hourly": [
+    {
+      "ts_hour": "2026-06-01 00:00:00",
+      "hour_group": "night",
+      "actual_ptf": 456.0,
+      "persistence_pred": 349.99,
+      "premium_pred": 349.99,
+      "error_premium": 106.00999999999999,
+      "error_persistence": 106.00999999999999
+    },
+    {
+      "ts_hour": "2026-06-01 01:00:00",
+      "hour_group": "night",
+      "actual_ptf": 350.0,
+      "persistence_pred": 328.01,
+      "premium_pred": 328.01,
+      "error_premium": 21.99000000000001,
+      "error_persistence": 21.99000000000001
+    },
+    {
+      "ts_hour": "2026-06-01 02:00:00",
+      "hour_group": "night",
+      "actual_ptf": 322.99,
+      "persistence_pred": 315.01,
+      "premium_pred": 315.01,
+      "error_premium": 7.980000000000018,
+      "error_persistence": 7.980000000000018
+    },
+    {
+      "ts_hour": "2026-06-01 03:00:00",
+      "hour_group": "night",
+      "actual_ptf": 340.0,
+      "persistence_pred": 300.0,
+      "premium_pred": 300.0,
+      "error_premium": 40.0,
+      "error_persistence": 40.0
+    },
+    {
+      "ts_hour": "2026-06-01 04:00:00",
+      "hour_group": "night",
+      "actual_ptf": 349.68,
+      "persistence_pred": 250.01,
+      "premium_pred": 250.01,
+      "error_premium": 99.67000000000002,
+      "error_persistence": 99.67000000000002
+    },
+    {
+      "ts_hour": "2026-06-01 05:00:00",
+      "hour_group": "night",
+      "actual_ptf": 327.0,
+      "persistence_pred": 230.01,
+      "premium_pred": 230.01,
+      "error_premium": 96.99000000000001,
+      "error_persistence": 96.99000000000001
+    },
+    {
+      "ts_hour": "2026-06-01 06:00:00",
+      "hour_group": "morning",
+      "actual_ptf": 200.0,
+      "persistence_pred": 30.01,
+      "premium_pred": 30.01,
+      "error_premium": 169.99,
+      "error_persistence": 169.99
+    },
+    {
+      "ts_hour": "2026-06-01 07:00:00",
+      "hour_group": "morning",
+      "actual_ptf": 169.9,
+      "persistence_pred": 0.0,
+      "premium_pred": 0.0,
+      "error_premium": 169.9,
+      "error_persistence": 169.9
+    },
+    {
+      "ts_hour": "2026-06-01 08:00:00",
+      "hour_group": "morning",
+      "actual_ptf": 169.01,
+      "persistence_pred": 0.0,
+      "premium_pred": 104.11327721092113,
+      "error_premium": 64.89672278907886,
+      "error_persistence": 169.01
+    },
+    {
+      "ts_hour": "2026-06-01 09:00:00",
+      "hour_group": "morning",
+      "actual_ptf": 45.0,
+      "persistence_pred": 0.0,
+      "premium_pred": 89.18236342296419,
+      "error_premium": 44.18236342296419,
+      "error_persistence": 45.0
+    },
+    {
+      "ts_hour": "2026-06-01 10:00:00",
+      "hour_group": "morning",
+      "actual_ptf": 0.0,
+      "persistence_pred": 0.0,
+      "premium_pred": 55.8813868011968,
+      "error_premium": 55.8813868011968,
+      "error_persistence": 0.0
+    },
+    {
+      "ts_hour": "2026-06-01 11:00:00",
+      "hour_group": "solar_window",
+      "actual_ptf": 55.0,
+      "persistence_pred": 0.0,
+      "premium_pred": 62.331612460958894,
+      "error_premium": 7.331612460958894,
+      "error_persistence": 55.0
+    },
+    {
+      "ts_hour": "2026-06-01 12:00:00",
+      "hour_group": "solar_window",
+      "actual_ptf": 0.0,
+      "persistence_pred": 0.0,
+      "premium_pred": 62.44147505311466,
+      "error_premium": 62.44147505311466,
+      "error_persistence": 0.0
+    },
+    {
+      "ts_hour": "2026-06-01 13:00:00",
+      "hour_group": "solar_window",
+      "actual_ptf": 60.0,
+      "persistence_pred": 0.0,
+      "premium_pred": 67.37377120112134,
+      "error_premium": 7.373771201121343,
+      "error_persistence": 60.0
+    },
+    {
+      "ts_hour": "2026-06-01 14:00:00",
+      "hour_group": "solar_window",
+      "actual_ptf": 171.01,
+      "persistence_pred": 0.0,
+      "premium_pred": 63.002770541630085,
+      "error_premium": 108.0072294583699,
+      "error_persistence": 171.01
+    },
+    {
+      "ts_hour": "2026-06-01 15:00:00",
+      "hour_group": "solar_window",
+      "actual_ptf": 199.99,
+      "persistence_pred": 0.0,
+      "premium_pred": 78.54442192197966,
+      "error_premium": 121.44557807802035,
+      "error_persistence": 199.99
+    },
+    {
+      "ts_hour": "2026-06-01 16:00:00",
+      "hour_group": "solar_window",
+      "actual_ptf": 343.0,
+      "persistence_pred": 0.0,
+      "premium_pred": 161.8846097772505,
+      "error_premium": 181.1153902227495,
+      "error_persistence": 343.0
+    },
+    {
+      "ts_hour": "2026-06-01 17:00:00",
+      "hour_group": "evening_ramp",
+      "actual_ptf": 1500.0,
+      "persistence_pred": 18.99,
+      "premium_pred": 138.38200977352932,
+      "error_premium": 1361.6179902264707,
+      "error_persistence": 1481.01
+    },
+    {
+      "ts_hour": "2026-06-01 18:00:00",
+      "hour_group": "evening_ramp",
+      "actual_ptf": 4300.0,
+      "persistence_pred": 249.99,
+      "premium_pred": 249.99,
+      "error_premium": 4050.01,
+      "error_persistence": 4050.01
+    },
+    {
+      "ts_hour": "2026-06-01 19:00:00",
+      "hour_group": "evening_ramp",
+      "actual_ptf": 4400.01,
+      "persistence_pred": 1274.99,
+      "premium_pred": 1274.99,
+      "error_premium": 3125.0200000000004,
+      "error_persistence": 3125.0200000000004
+    },
+    {
+      "ts_hour": "2026-06-01 20:00:00",
+      "hour_group": "evening_ramp",
+      "actual_ptf": 4500.0,
+      "persistence_pred": 4300.0,
+      "premium_pred": 4300.0,
+      "error_premium": 200.0,
+      "error_persistence": 200.0
+    },
+    {
+      "ts_hour": "2026-06-01 21:00:00",
+      "hour_group": "evening_ramp",
+      "actual_ptf": 4300.01,
+      "persistence_pred": 4300.01,
+      "premium_pred": 4300.01,
+      "error_premium": 0.0,
+      "error_persistence": 0.0
+    },
+    {
+      "ts_hour": "2026-06-01 22:00:00",
+      "hour_group": "evening_ramp",
+      "actual_ptf": 4099.99,
+      "persistence_pred": 4300.0,
+      "premium_pred": 4300.0,
+      "error_premium": 200.01000000000022,
+      "error_persistence": 200.01000000000022
+    },
+    {
+      "ts_hour": "2026-06-01 23:00:00",
+      "hour_group": "other",
+      "actual_ptf": 4500.0,
+      "persistence_pred": 1849.99,
+      "premium_pred": 1849.99,
+      "error_premium": 2650.01,
+      "error_persistence": 2650.01
+    }
+  ],
+  "by_hour_group": [
+    {
+      "hour_group": "evening_ramp",
+      "rows": 6,
+      "actual_mean": 3850.001666666667,
+      "persistence_mae": 1509.341666666667,
+      "premium_mae": 1489.4429983710786
+    },
+    {
+      "hour_group": "morning",
+      "rows": 5,
+      "actual_mean": 116.782,
+      "persistence_mae": 110.78,
+      "premium_mae": 100.97009460264798
+    },
+    {
+      "hour_group": "night",
+      "rows": 6,
+      "actual_mean": 357.6116666666667,
+      "persistence_mae": 62.106666666666676,
+      "premium_mae": 62.106666666666676
+    },
+    {
+      "hour_group": "other",
+      "rows": 1,
+      "actual_mean": 4500.0,
+      "persistence_mae": 2650.01,
+      "premium_mae": 2650.01
+    },
+    {
+      "hour_group": "solar_window",
+      "rows": 6,
+      "actual_mean": 138.16666666666666,
+      "persistence_mae": 138.16666666666666,
+      "premium_mae": 81.28584274572243
+    }
+  ],
+  "may31_daily_mean": 754.0420833333334,
+  "june1_actual_mean": 1298.2745833333336,
+  "regime_shift": "May 31 avg ~754 TL → June 1 actual ~1298 TL (+72% spike day)"
+}

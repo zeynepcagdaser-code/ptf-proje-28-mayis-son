@@ -38,6 +38,30 @@ FIGURE_PATH = PROJECT_ROOT / "reports" / "figures" / "h1h4_ensemble_comparison.p
 HORIZONS = [1, 2, 3, 4]
 ADVANCED_TREE_BASELINE_MAE = 453.0947792677989
 PRIMARY_WEIGHTS = (0.7, 0.3)  # advanced, micro — fixed; not tuned on test
+OPT_WEIGHTS_JSON = PROJECT_ROOT / "reports" / "h1h4_optimized_weights.json"
+
+
+def load_primary_weights() -> tuple[float, float, dict[str, Any] | None]:
+    """
+    Load validation-optimized weights if present.
+    Falls back to PRIMARY_WEIGHTS when missing/invalid.
+    """
+    if not OPT_WEIGHTS_JSON.exists():
+        return PRIMARY_WEIGHTS[0], PRIMARY_WEIGHTS[1], None
+    try:
+        payload = json.loads(OPT_WEIGHTS_JSON.read_text(encoding="utf-8"))
+        if not payload.get("available"):
+            return PRIMARY_WEIGHTS[0], PRIMARY_WEIGHTS[1], payload
+        w = payload.get("optimized_weights") or {}
+        w_adv = float(w.get("advanced_tree"))
+        w_micro = float(w.get("microstructure"))
+        if not (0.0 <= w_adv <= 1.0 and 0.0 <= w_micro <= 1.0):
+            return PRIMARY_WEIGHTS[0], PRIMARY_WEIGHTS[1], payload
+        if abs((w_adv + w_micro) - 1.0) > 1e-6:
+            return PRIMARY_WEIGHTS[0], PRIMARY_WEIGHTS[1], payload
+        return w_adv, w_micro, payload
+    except Exception:
+        return PRIMARY_WEIGHTS[0], PRIMARY_WEIGHTS[1], None
 
 
 def mae_series(actual: pd.Series, pred: pd.Series) -> float:
@@ -106,7 +130,7 @@ def add_ensemble_columns(df: pd.DataFrame) -> pd.DataFrame:
         (0.5, "weighted_0.5_0.5"),
     ]:
         out[tag] = w_adv * a + (1.0 - w_adv) * m
-    w_adv, w_micro = PRIMARY_WEIGHTS
+    w_adv, w_micro, _ = load_primary_weights()
     out["primary_weighted_ensemble"] = w_adv * a + w_micro * m
 
     candidates = np.column_stack(
@@ -151,8 +175,8 @@ def write_md(payload: dict[str, Any]) -> None:
         f"- **Rows:** {payload['aligned_rows']}",
         f"- **Advanced tree baseline (mean h1–h4 MAE):** {payload['advanced_tree_baseline_mae']:.2f}",
         f"- **Primary result:** `{payload['primary_strategy']}` "
-        f"({payload['primary_weights']['advanced_tree']:.1f} advanced + "
-        f"{payload['primary_weights']['microstructure']:.1f} micro, fixed — not tuned on test)",
+        f"({payload['primary_weights']['advanced_tree']:.3f} advanced + "
+        f"{payload['primary_weights']['microstructure']:.3f} micro; {payload['primary_weights'].get('source','fixed')})",
         "",
         "## Strategy MAE (TL/MWh)",
         "",
@@ -240,6 +264,11 @@ def main() -> None:
     adv_mae = strategies["advanced_tree_only"]["mean_h1_h4"]
     beats = primary_mae < adv_mae
 
+    w_adv, w_micro, opt_payload = load_primary_weights()
+    weight_source = "fixed_0.7_0.3"
+    if opt_payload is not None and opt_payload.get("available"):
+        weight_source = f"optimized_on_validation ({OPT_WEIGHTS_JSON})"
+
     if beats:
         verdict = (
             f"Primary weighted ensemble ({PRIMARY_WEIGHTS[0]:.1f}/{PRIMARY_WEIGHTS[1]:.1f}) "
@@ -261,7 +290,8 @@ def main() -> None:
         "aligned_anchors": int(df["anchor_ts_hour"].nunique()),
         "advanced_tree_baseline_mae": ADVANCED_TREE_BASELINE_MAE,
         "primary_strategy": primary_name,
-        "primary_weights": {"advanced_tree": PRIMARY_WEIGHTS[0], "microstructure": PRIMARY_WEIGHTS[1]},
+        "primary_weights": {"advanced_tree": w_adv, "microstructure": w_micro, "source": weight_source},
+        "optimized_weights_payload": opt_payload,
         "strategies": strategies,
         "delta_vs_advanced_tree": {
             name: {k: strategies[name][k] - strategies["advanced_tree_only"][k] for k in ("1", "2", "3", "4", "mean_h1_h4")}
@@ -305,7 +335,7 @@ def main() -> None:
 
     print(f"Aligned rows: {len(df)}")
     print(f"Advanced tree only: {adv_mae:.2f}")
-    print(f"Primary weighted ({PRIMARY_WEIGHTS[0]}/{PRIMARY_WEIGHTS[1]}): {primary_mae:.2f}")
+    print(f"Primary weighted ({w_adv:.3f}/{w_micro:.3f}): {primary_mae:.2f}")
     print(verdict)
     print(f"Metrics: {METRICS_JSON}")
 

@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-01T00:42:26.713645+00:00",
+  "start_date": "2026-05-18",
+  "end_date": "2026-05-31",
+  "expected_hours": 336,
+  "produced_hours": 336,
+  "missing_hours_count": 0,
+  "missing_hours_sample": [],
+  "curve_overlap_hours": 336,
+  "curve_overlap_ratio": 1.0,
+  "matched_yekdem_plants": 660,
+  "unmatched_plants": 17,
+  "match_method_counts": {
+    "normalized_name_exact": 221760
+  },
+  "leakage_status": {
+    "strict_point_in_time_safe": false,
+    "structural_market_proxy": true,
+    "note": "dpp-bulk publication timestamp missing; features are structural proxies."
+  },
+  "leakage_audit": {
+    "eligible_rows": 227472,
+    "leakage_rows": 0,
+    "strict_point_in_time_rows": 0,
+    "structural_proxy_rows": 227472,
+    "missing_publication_timestamp": 227472,
+    "missing_forecast_timestamp": 0,
+    "missing_snapshot_timestamp": 0
+  },
+  "requested_chunks": 392,
+  "successful_chunks": 392,
+  "failed_chunks_count": 0,
+  "failed_chunks_sample": [],
+  "fuel_breakdown_mwh": {
+    "must_run_supply": 1634747.6600000001,
+    "must_run_wind": 509005.03,
+    "must_run_solar": 41422.990000000005,
+    "must_run_hydro": 571945.03,
+    "must_run_biomass": 187057.55,
+    "must_run_geothermal": 179518.8
+  },
+  "outputs": {
+    "feature_parquet": "data/features/must_run_supply_features_2026-05-18_2026-05-31.parquet",
+    "raw_archive_dir": "data/plant_level_kgup/raw_archive/2026-05-18_2026-05-31",
+    "state_path": "data/plant_level_kgup/raw_archive/2026-05-18_2026-05-31/plant_level_kgup_archive_state_2026-05-18_2026-05-31.json"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "generated_at_utc": "2026-06-02T08:55:13.435686+00:00",
+  "model_training_performed": false,
+  "backend": "lightgbm",
+  "dataset": {
+    "sequence_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model",
+    "feature_profile": "main_regression",
+    "feature_count": 73,
+    "x_train_shape": [
+      43227,
+      168,
+      73
+    ]
+  },
+  "balanced_rule": "ptf_low_ratio_24>0 OR ptf_zero_ratio_24>0 OR ptf_zero_ratio_168>0.05",
+  "hybrid_policy": "if signal==1: final=min(delta_final,persistence) else final=delta_final",
+  "test_metrics": {
+    "persistence": {
+      "mae": 538.9253787766952,
+      "rmse": 841.2556205813587,
+      "mape_gt_50": 72.3950420011751,
+      "mape_gt_100": 68.41278720743331,
+      "wape": 34.22103529975796,
+      "smape": 58.69151548579885,
+      "zero_only_mae": 144.40187024835276,
+      "low_le_50_mae": 148.49131196679733,
+      "normal_gt_100_mae": 586.3035321361714,
+      "spike_ge_1000_mae": 671.9405313507551
+    },
+    "delta_model": {
+      "mae": 535.8539151844484,
+      "rmse": 758.9857579436389,
+      "mape_gt_50": 93.19699566224753,
+      "mape_gt_100": 88.67159461954319,
+      "wape": 34.026001500735944,
+      "smape": 63.52389105603896,
+      "zero_only_mae": 421.96702301864866,
+      "low_le_50_mae": 428.5661281047396,
+      "normal_gt_100_mae": 548.621697247821,
+      "spike_ge_1000_mae": 541.523968866067
+    },
+    "final_delta_hybrid": {
+      "mae": 486.5184515344924,
+      "rmse": 749.1683602751796,
+      "mape_gt_50": 67.55329179328001,
+      "mape_gt_100": 64.90516775680194,
+      "wape": 30.893266043134442,
+      "smape": 60.523550206485,
+      "zero_only_mae": 154.24493791979967,
+      "low_le_50_mae": 153.43506864783637,
+      "normal_gt_100_mae": 527.5628197106824,
+      "spike_ge_1000_mae": 587.2804928256832
+    }
+  },
+  "per_horizon_test_mae": [
+    {
+      "horizon": 1,
+      "persistence_mae": 540.869799232359,
+      "delta_model_mae": 425.0460123601563,
+      "final_delta_hybrid_mae": 421.18981330582443
+    },
+    {
+      "horizon": 2,
+      "persistence_mae": 540.5893061706524,
+      "delta_model_mae": 456.9102201759521,
+      "final_delta_hybrid_mae": 443.14572987068254
+    },
+    {
+      "horizon": 3,
+      "persistence_mae": 540.2264481842338,
+      "delta_model_mae": 494.7448776145759,
+      "final_delta_hybrid_mae": 452.2893996343
+    },
+    {
+      "horizon": 4,
+      "persistence_mae": 539.9268881015648,
+      "delta_model_mae": 507.9627503364677,
+      "final_delta_hybrid_mae": 459.39476279055526
+    },
+    {
+      "horizon": 5,
+      "persistence_mae": 539.654602893416,
+      "delta_model_mae": 527.9314135950117,
+      "final_delta_hybrid_mae": 468.31676052348865
+    },
+    {
+      "horizon": 6,
+      "persistence_mae": 539.4446737525834,
+      "delta_model_mae": 538.8939611007812,
+      "final_delta_hybrid_mae": 472.91921547956474
+    },
+    {
+      "horizon": 7,
+      "persistence_mae": 539.2043607912607,
+      "delta_model_mae": 521.0620869448389,
+      "final_delta_hybrid_mae": 468.4271623110491
+    },
+    {
+      "horizon": 8,
+      "persistence_mae": 539.114679657514,
+      "delta_model_mae": 518.1472038558273,
+      "final_delta_hybrid_mae": 476.170300415861
+    },
+    {
+      "horizon": 9,
+      "persistence_mae": 538.8916710953647,
+      "delta_model_mae": 543.2263298166395,
+      "final_delta_hybrid_mae": 481.1866452265931
+    },
+    {
+      "horizon": 10,
+      "persistence_mae": 538.8916710953646,
+      "delta_model_mae": 513.9464332772077,
+      "final_delta_hybrid_mae": 485.7849099189334
+    },
+    {
+      "horizon": 11,
+      "persistence_mae": 538.8916710953646,
+      "delta_model_mae": 526.3457261957387,
+      "final_delta_hybrid_mae": 489.21399095022895
+    },
+    {
+      "horizon": 12,
+      "persistence_mae": 538.8621464422793,
+      "delta_model_mae": 539.566381402551,
+      "final_delta_hybrid_mae": 493.82270036580996
+    },
+    {
+      "horizon": 13,
+      "persistence_mae": 538.774325361677,
+      "delta_model_mae": 549.5284320711094,
+      "final_delta_hybrid_mae": 499.1992540814286
+    },
+    {
+      "horizon": 14,
+      "persistence_mae": 538.434230882787,
+      "delta_model_mae": 538.2796947525916,
+      "final_delta_hybrid_mae": 499.08750878620424
+    },
+    {
+      "horizon": 15,
+      "persistence_mae": 538.0485857691173,
+      "delta_model_mae": 556.4045817770872,
+      "final_delta_hybrid_mae": 500.39705098978254
+    },
+    {
+      "horizon": 16,
+      "persistence_mae": 537.8064629465603,
+      "delta_model_mae": 549.3187354874989,
+      "final_delta_hybrid_mae": 505.1043726086321
+    },
+    {
+      "horizon": 17,
+      "persistence_mae": 537.8613758488337,
+      "delta_model_mae": 543.1142850268538,
+      "final_delta_hybrid_mae": 500.30683386499754
+    },
+    {
+      "horizon": 18,
+      "persistence_mae": 538.5392589312077,
+      "delta_model_mae": 573.3609588999229,
+      "final_delta_hybrid_mae": 510.1887501611826
+    },
+    {
+      "horizon": 19,
+      "persistence_mae": 538.6257661647476,
+      "delta_model_mae": 574.0507714890775,
+      "final_delta_hybrid_mae": 515.3175792630826
+    },
+    {
+      "horizon": 20,
+      "persistence_mae": 538.1551461470327,
+      "delta_model_mae": 554.874519668149,
+      "final_delta_hybrid_mae": 506.14715146042425
+    },
+    {
+      "horizon": 21,
+      "persistence_mae": 538.5628845586065,
+      "delta_model_mae": 565.5056669672869,
+      "final_delta_hybrid_mae": 508.90116611504425
+    },
+    {
+      "horizon": 22,
+      "persistence_mae": 538.3865721877768,
+      "delta_model_mae": 572.8526900025709,
+      "final_delta_hybrid_mae": 510.92576527056167
+    },
+    {
+      "horizon": 23,
+      "persistence_mae": 538.297950989076,
+      "delta_model_mae": 573.3946873131056,
+      "final_delta_hybrid_mae": 505.4122868153359
+    },
+    {
+      "horizon": 24,
+      "persistence_mae": 538.148612341305,
+      "delta_model_mae": 596.0255442957628,
+      "final_delta_hybrid_mae": 503.5937266182497
+    }
+  ],
+  "success_criteria": {
+    "final_better_than_persistence_mae": true,
+    "final_better_than_prev_hybrid_mae_520": true,
+    "final_better_than_prev_hybrid_mae_from_report": true,
+    "mape_gt_100_close_to_8pct": false
+  },
+  "direct_main_comparison": {
+    "mae": 820.1222144749194,
+    "rmse": 1016.5243521884993,
+    "mape_gt_50": 184.51326080155135,
+    "mape_gt_100": 175.76185656752125,
+    "wape": 52.0766554274499,
+    "smape": 74.05412739898914,
+    "zero_only_mae": 1203.129568065677,
+    "low_le_50_mae": 1216.2161976010582,
+    "normal_gt_100_mae": 769.9429235098233,
+    "spike_ge_1000_mae": 549.8445536447524
+  },
+  "outputs": {
+    "report_json": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/final_delta_hybrid_system_metrics.json",
+    "report_md": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/final_delta_hybrid_system_metrics.md",
+    "predictions_csv": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/final_delta_hybrid_predictions.csv"
+  }
+}

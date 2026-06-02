@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-05-29T21:35:36.998776+00:00",
+  "generated_at_utc": "2026-06-02T07:13:44.178427+00:00",
   "output_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/master/master_hourly_v1.parquet",
   "row_count": 56208,
   "spine_row_count": 56208,
   "row_count_matches_spine": true,
-  "column_count": 75,
+  "column_count": 89,
   "ts_hour_unique": 56208,
   "ts_hour_start": "2020-01-01 00:00:00+03:00",
   "ts_hour_end": "2026-05-30 23:00:00+03:00",
@@ -101,6 +101,36 @@
       "outage_maint_event_count",
       "outage_maint_capacity_sum",
       "outage_maint_operator_power_sum"
+    ],
+    "open_meteo_temperature": [
+      "temp_2m",
+      "apparent_temp"
+    ],
+    "dam_price_independent_buy": [
+      "dam_price_independent_buy_mwh"
+    ],
+    "dam_price_independent_sell": [
+      "dam_price_independent_sell_mwh"
+    ],
+    "dam_bid_volume": [
+      "dam_bid_volume_mwh"
+    ],
+    "dam_sell_offer_volume": [
+      "dam_sell_offer_volume_mwh"
+    ],
+    "dam_matched_volume": [
+      "dam_matched_buy_mwh",
+      "dam_matched_sell_mwh"
+    ],
+    "dam_block_buy_volume": [
+      "dam_block_matched_buy_mwh",
+      "dam_block_unmatched_buy_mwh"
+    ],
+    "grf_daily_reference_price": [
+      "grf_tl_1000sm3",
+      "grf_usd_1000sm3",
+      "grf_eur_mwh",
+      "grf_usd_mmbtu"
     ]
   },
   "column_count_by_dataset": {
@@ -112,7 +142,15 @@
     "smf": 3,
     "yal_yat": 7,
     "wind": 14,
-    "outages": 8
+    "outages": 8,
+    "open_meteo_temperature": 2,
+    "dam_price_independent_buy": 1,
+    "dam_price_independent_sell": 1,
+    "dam_bid_volume": 1,
+    "dam_sell_offer_volume": 1,
+    "dam_matched_volume": 2,
+    "dam_block_buy_volume": 2,
+    "grf_daily_reference_price": 4
   },
   "availability_by_column": {
     "ts_hour": "metadata",
@@ -189,10 +227,22 @@
     "outage_fault_operator_power_sum": "outage_event",
     "outage_maint_event_count": "outage_event",
     "outage_maint_capacity_sum": "outage_event",
-    "outage_maint_operator_power_sum": "outage_event"
+    "outage_maint_operator_power_sum": "outage_event",
+    "dam_price_independent_buy_mwh": "planned",
+    "dam_price_independent_sell_mwh": "planned",
+    "dam_bid_volume_mwh": "planned",
+    "dam_sell_offer_volume_mwh": "planned",
+    "dam_matched_buy_mwh": "planned",
+    "dam_matched_sell_mwh": "planned",
+    "dam_block_matched_buy_mwh": "planned",
+    "dam_block_unmatched_buy_mwh": "planned",
+    "grf_tl_1000sm3": "realized",
+    "grf_usd_1000sm3": "realized",
+    "grf_eur_mwh": "realized",
+    "grf_usd_mmbtu": "realized"
   },
   "availability_column_counts": {
-    "metadata": 14,
+    "metadata": 28,
     "realized": 22,
     "planned": 14,
     "forecast": 9,
@@ -235,7 +285,9 @@
     "outage_fault_mw_loss_max": 0.2989,
     "outage_fault_operator_power_sum": 0.2989,
     "outage_maint_capacity_sum": 0.1352,
-    "outage_maint_operator_power_sum": 0.1352
+    "outage_maint_operator_power_sum": 0.1352,
+    "temp_2m": 6.4048,
+    "apparent_temp": 6.4048
   },
   "schema": {
     "ts_hour": "datetime64[us, Europe/Istanbul]",
@@ -312,7 +364,21 @@
     "outage_fault_operator_power_sum": "float64",
     "outage_maint_event_count": "int64",
     "outage_maint_capacity_sum": "float64",
-    "outage_maint_operator_power_sum": "float64"
+    "outage_maint_operator_power_sum": "float64",
+    "temp_2m": "float64",
+    "apparent_temp": "float64",
+    "dam_price_independent_buy_mwh": "float64",
+    "dam_price_independent_sell_mwh": "float64",
+    "dam_bid_volume_mwh": "float64",
+    "dam_sell_offer_volume_mwh": "float64",
+    "dam_matched_buy_mwh": "float64",
+    "dam_matched_sell_mwh": "float64",
+    "dam_block_matched_buy_mwh": "float64",
+    "dam_block_unmatched_buy_mwh": "float64",
+    "grf_tl_1000sm3": "float64",
+    "grf_usd_1000sm3": "float64",
+    "grf_eur_mwh": "float64",
+    "grf_usd_mmbtu": "float64"
   },
   "join_stats": {
     "kgup": {
@@ -443,6 +509,85 @@
         "outage_maint_operator_power_sum"
       ],
       "duplicate_columns_removed": []
+    },
+    "open_meteo_temperature": {
+      "side_rows": 52608,
+      "matched_rows": 52608,
+      "match_pct": 93.5952,
+      "columns_added": [
+        "temp_2m",
+        "apparent_temp"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "dam_price_independent_buy": {
+      "side_rows": 56208,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "dam_price_independent_buy_mwh"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "dam_price_independent_sell": {
+      "side_rows": 56208,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "dam_price_independent_sell_mwh"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "dam_bid_volume": {
+      "side_rows": 56208,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "dam_bid_volume_mwh"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "dam_sell_offer_volume": {
+      "side_rows": 56208,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "dam_sell_offer_volume_mwh"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "dam_matched_volume": {
+      "side_rows": 56208,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "dam_matched_buy_mwh",
+        "dam_matched_sell_mwh"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "dam_block_buy_volume": {
+      "side_rows": 56208,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "dam_block_matched_buy_mwh",
+        "dam_block_unmatched_buy_mwh"
+      ],
+      "duplicate_columns_removed": []
+    },
+    "grf_daily_reference_price": {
+      "side_rows": 2342,
+      "matched_rows": 56208,
+      "match_pct": 100.0,
+      "columns_added": [
+        "grf_tl_1000sm3",
+        "grf_usd_1000sm3",
+        "grf_eur_mwh",
+        "grf_usd_mmbtu"
+      ],
+      "duplicate_columns_removed": [],
+      "note": "Joined by day (ts_day) then forward-filled on hourly spine."
     }
   }
 }

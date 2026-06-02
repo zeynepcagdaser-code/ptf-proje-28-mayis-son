@@ -35,6 +35,7 @@
 - `hour`: `0.000`
 - `hydro_displacement_score`: `0.071`
 - `hydro_high_flag`: `0.071`
+- `hydro_must_run_pressure`: `0.071`
 - `hydro_share`: `0.071`
 - `hydro_share_of_generation`: `0.071`
 - `kgup_renewable_mw`: `0.071`
@@ -47,6 +48,15 @@
 - `load_vs_renewable_balance`: `0.071`
 - `low_demand_flag`: `0.071`
 - `month`: `0.000`
+- `must_run_biomass`: `0.071`
+- `must_run_geothermal`: `0.071`
+- `must_run_hydro`: `0.071`
+- `must_run_ramp_1h`: `0.071`
+- `must_run_ramp_3h`: `0.071`
+- `must_run_share_of_load`: `0.071`
+- `must_run_solar`: `0.071`
+- `must_run_supply`: `0.071`
+- `must_run_wind`: `0.071`
 - `prev_day_cap_risk_score`: `0.000`
 - `prev_day_curve_fragility_score`: `0.000`
 - `prev_day_elasticity_near_clearing`: `0.000`
@@ -60,10 +70,15 @@
 - `ptf_lag_24`: `0.000`
 - `reconstruction_confidence`: `0.000`
 - `renewable_minus_gas_shift`: `0.071`
+- `renewable_must_run_pressure`: `0.071`
 - `renewable_share_high_flag`: `0.071`
 - `renewable_share_of_generation`: `0.071`
+- `residual_load_after_must_run`: `0.071`
 - `residual_load_forecast`: `0.071`
+- `solar_must_run_pressure`: `0.071`
 - `solar_share`: `0.071`
+- `strict_point_in_time_safe`: `0.071`
+- `structural_market_proxy`: `0.071`
 - `thermal_share`: `0.071`
 - `weekday`: `0.000`
 - `weekend`: `0.000`
@@ -84,6 +99,7 @@
 - `gas_share`: `0.6108247304716738`
 - `gas_share_of_generation`: `0.6108247304716738`
 - `hydro_displacement_score`: `0.3421673965108277`
+- `hydro_must_run_pressure`: `0.5881580722456446`
 - `hydro_share`: `0.4059517700766382`
 - `kgup_renewable_mw`: `-0.18028393217287933`
 - `kgup_solar_mw`: `-0.34096964127534846`
@@ -91,6 +107,8 @@
 - `kgup_wind_mw`: `0.025265450654798967`
 - `load_forecast`: `0.36688043537978887`
 - `load_vs_renewable_balance`: `0.4765035460848805`
+- `must_run_share_of_load`: `0.24415941869263447`
+- `must_run_supply`: `0.5498360551488632`
 - `prev_day_cap_risk_score`: `0.6572190539505615`
 - `prev_day_curve_fragility_score`: `-0.0645795779942522`
 - `prev_day_elasticity_near_clearing`: `-0.06876539146539123`
@@ -100,8 +118,10 @@
 - `prev_day_volume_needed_for_500TL_move`: `-0.5056298959794185`
 - `ptf_lag_24`: `0.7686517119343221`
 - `reconstruction_confidence`: `0.383477960925134`
+- `renewable_must_run_pressure`: `-0.30253833992582835`
 - `renewable_share_of_generation`: `-0.5117419053659217`
 - `residual_load_forecast`: `0.5525184307747638`
+- `solar_must_run_pressure`: `-0.3819319866621605`
 - `solar_share`: `-0.36149854103152707`
 - `thermal_share`: `0.528337313162821`
 - `wind_share`: `-0.0742920037320636`

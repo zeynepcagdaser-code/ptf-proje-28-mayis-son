@@ -18,8 +18,30 @@
   "advanced_tree_baseline_mae": 453.0947792677989,
   "primary_strategy": "primary_weighted_ensemble",
   "primary_weights": {
-    "advanced_tree": 0.7,
-    "microstructure": 0.3
+    "advanced_tree": 0.8029921714693379,
+    "microstructure": 0.19700782853066212,
+    "source": "optimized_on_validation (/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/h1h4_optimized_weights.json)"
+  },
+  "optimized_weights_payload": {
+    "available": true,
+    "objective": "mae",
+    "constraints": {
+      "w_adv_in_[0,1]": true,
+      "w_adv_plus_w_micro_eq_1": true
+    },
+    "optimized_weights": {
+      "advanced_tree": 0.8029921714693379,
+      "microstructure": 0.19700782853066212
+    },
+    "validation_mae": 258.63926786951754,
+    "optimizer": {
+      "method": "scipy.optimize.minimize",
+      "solver": "SLSQP",
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "nfev": 40
+    }
   },
   "strategies": {
     "advanced_tree_only": {
@@ -86,11 +108,11 @@
       "mean_h1_h4": 439.456633069748
     },
     "primary_weighted_ensemble": {
-      "1": 380.1667712812589,
-      "2": 426.79184897800695,
-      "3": 461.9834535470666,
-      "4": 492.23305133705736,
-      "mean_h1_h4": 440.29378128584744
+      "1": 384.50602551796936,
+      "2": 429.0876669259136,
+      "3": 463.6205034194975,
+      "4": 495.101301832198,
+      "mean_h1_h4": 443.0788744238946
     },
     "horizon_best_oracle_test": {
       "1": 243.81537261288284,
@@ -165,11 +187,11 @@
       "mean_h1_h4": -13.63814619805089
     },
     "primary_weighted_ensemble": {
-      "1": -18.672990830658136,
-      "2": -11.765233149228493,
-      "3": -8.52495385280281,
-      "4": -12.240814095116491,
-      "mean_h1_h4": -12.800997981951468
+      "1": -14.333736593947663,
+      "2": -9.469415201321851,
+      "3": -6.887903980371902,
+      "4": -9.372563599975877,
+      "mean_h1_h4": -10.015904843904309
     },
     "horizon_best_oracle_test": {
       "1": -155.02438949903419,
@@ -199,7 +221,7 @@
     "microstructure": 4033,
     "short_expert": 4028
   },
-  "verdict": "Primary weighted ensemble (0.7/0.3) beats advanced tree on mean h1\u2013h4 MAE (440.29 vs 453.09, \u0394 -12.80).",
+  "verdict": "Primary weighted ensemble (0.7/0.3) beats advanced tree on mean h1\u2013h4 MAE (443.08 vs 453.09, \u0394 -10.02).",
   "predictions_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/h1h4_ensemble_predictions.csv",
   "figure_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/figures/h1h4_ensemble_comparison.png"
 }

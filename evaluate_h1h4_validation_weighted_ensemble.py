@@ -16,6 +16,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy.optimize import minimize
 
 from tree_advanced.backend import pick_backend
 from tree_advanced.pipeline import (
@@ -57,6 +58,7 @@ PREDICTIONS_CSV = (
     PROJECT_ROOT / "data" / "predictions" / "h1h4_validation_weighted_ensemble_predictions.csv"
 )
 FIGURE_PATH = PROJECT_ROOT / "reports" / "figures" / "h1h4_validation_weighted_ensemble.png"
+OPT_WEIGHTS_JSON = PROJECT_ROOT / "reports" / "h1h4_optimized_weights.json"
 
 HORIZONS = [1, 2, 3, 4]
 WEIGHT_GRID = [round(w, 1) for w in np.arange(0.0, 1.01, 0.1)]
@@ -230,6 +232,55 @@ def merge_pair(val_paths: dict[str, Path], anchor_path: Path) -> pd.DataFrame:
     )
     return merged.sort_values(["anchor_ts_hour", "target_hour"]).reset_index(drop=True)
 
+def optimize_primary_weights(val_df: pd.DataFrame) -> dict[str, Any]:
+    """
+    Optimize a single global weight pair for (advanced_tree, microstructure)
+    on validation predictions only.
+
+    Constraints:
+      - w_adv in [0,1]
+      - w_micro = 1 - w_adv (so w_adv + w_micro = 1)
+    Objective:
+      - minimize MAE over all validation rows (h1-h4 combined)
+    """
+    if val_df.empty:
+        return {"available": False, "reason": "validation dataframe empty"}
+
+    actual = val_df["actual_price"].to_numpy(dtype=float)
+    adv = val_df["advanced_tree"].to_numpy(dtype=float)
+    micro = val_df["microstructure"].to_numpy(dtype=float)
+
+    def obj(x: np.ndarray) -> float:
+        w_adv = float(x[0])
+        pred = w_adv * adv + (1.0 - w_adv) * micro
+        return mae(actual, pred)
+
+    res = minimize(
+        obj,
+        x0=np.array([0.7], dtype=float),
+        bounds=[(0.0, 1.0)],
+        method="SLSQP",
+        options={"maxiter": 200, "ftol": 1e-10},
+    )
+    w_adv = float(np.clip(res.x[0], 0.0, 1.0))
+    w_micro = 1.0 - w_adv
+    pred = w_adv * adv + w_micro * micro
+    return {
+        "available": True,
+        "objective": "mae",
+        "constraints": {"w_adv_in_[0,1]": True, "w_adv_plus_w_micro_eq_1": True},
+        "optimized_weights": {"advanced_tree": w_adv, "microstructure": w_micro},
+        "validation_mae": mae(actual, pred),
+        "optimizer": {
+            "method": "scipy.optimize.minimize",
+            "solver": "SLSQP",
+            "success": bool(res.success),
+            "status": int(res.status),
+            "message": str(res.message),
+            "nfev": int(getattr(res, "nfev", -1)),
+        },
+    }
+
 
 def select_weights_validation(val_df: pd.DataFrame) -> dict[str, Any]:
     selected: dict[str, float] = {}
@@ -370,6 +421,9 @@ def plot_results(payload: dict[str, Any]) -> None:
 def run(*, regenerate_val: bool = False) -> dict[str, Any]:
     val_paths = ensure_validation_predictions(regenerate=regenerate_val)
     val_df = merge_pair(val_paths, ANCHOR_VAL_PATH)
+    optimized = optimize_primary_weights(val_df)
+    OPT_WEIGHTS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    OPT_WEIGHTS_JSON.write_text(json.dumps(optimized, ensure_ascii=False, indent=2, default=str) + "\n")
     weight_info = select_weights_validation(val_df)
     weights = weight_info["selected_weights_advanced"]
 
@@ -439,6 +493,7 @@ def run(*, regenerate_val: bool = False) -> dict[str, Any]:
         "anchor_test": str(ANCHOR_TEST_PATH),
         "validation_rows": int(len(val_df)),
         "test_rows": int(len(test_df)),
+        "optimized_primary_weights": optimized,
         "selected_weights_validation": weights,
         "validation_metrics": validation_metrics,
         "validation_weight_search": weight_info["validation_search"],

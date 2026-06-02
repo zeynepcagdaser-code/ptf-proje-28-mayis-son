@@ -1,0 +1,186 @@
+{
+  "model_training_performed": false,
+  "backend": "hist_gradient_boosting",
+  "dataset": {
+    "feature_profile": "main_regression",
+    "feature_count": 73
+  },
+  "test": {
+    "persistence": {
+      "overall_mae": 538.9253787766952,
+      "zero_only_mae": 144.40187024835276,
+      "low_le_50_mae": 148.49131196679733,
+      "normal_price_mae": 586.3035321361714,
+      "spike_ge_1000_mae": 671.9405313507551
+    },
+    "delta_model": {
+      "overall_mae": 522.1946569687785,
+      "zero_only_mae": 384.8334191457644,
+      "low_le_50_mae": 390.89692705399233,
+      "normal_price_mae": 537.9542149040574,
+      "spike_ge_1000_mae": 547.7542265737552
+    },
+    "delta_hybrid": {
+      "overall_mae": 486.0912292164335,
+      "zero_only_mae": 156.86726296036463,
+      "low_le_50_mae": 155.27953045587338,
+      "normal_price_mae": 526.8426330441783,
+      "spike_ge_1000_mae": 589.090674845937
+    }
+  },
+  "per_horizon_test": [
+    {
+      "horizon": 1,
+      "persistence_mae": 540.869799232359,
+      "delta_model_mae": 420.0207753901433,
+      "delta_hybrid_mae": 416.02083966114463
+    },
+    {
+      "horizon": 2,
+      "persistence_mae": 540.5893061706524,
+      "delta_model_mae": 459.82844181410866,
+      "delta_hybrid_mae": 448.38235592132366
+    },
+    {
+      "horizon": 3,
+      "persistence_mae": 540.2264481842338,
+      "delta_model_mae": 492.01664192952677,
+      "delta_hybrid_mae": 462.96733259228984
+    },
+    {
+      "horizon": 4,
+      "persistence_mae": 539.9268881015648,
+      "delta_model_mae": 493.9467185625037,
+      "delta_hybrid_mae": 460.46456913927136
+    },
+    {
+      "horizon": 5,
+      "persistence_mae": 539.654602893416,
+      "delta_model_mae": 504.07548153709007,
+      "delta_hybrid_mae": 467.184956412768
+    },
+    {
+      "horizon": 6,
+      "persistence_mae": 539.4446737525834,
+      "delta_model_mae": 517.7718858056807,
+      "delta_hybrid_mae": 475.75580895876885
+    },
+    {
+      "horizon": 7,
+      "persistence_mae": 539.2043607912607,
+      "delta_model_mae": 504.0623144219876,
+      "delta_hybrid_mae": 469.63227508450035
+    },
+    {
+      "horizon": 8,
+      "persistence_mae": 539.114679657514,
+      "delta_model_mae": 513.743233856867,
+      "delta_hybrid_mae": 478.2877147888601
+    },
+    {
+      "horizon": 9,
+      "persistence_mae": 538.8916710953647,
+      "delta_model_mae": 513.6939660482848,
+      "delta_hybrid_mae": 482.661280411735
+    },
+    {
+      "horizon": 10,
+      "persistence_mae": 538.8916710953646,
+      "delta_model_mae": 512.7882630125848,
+      "delta_hybrid_mae": 487.7240776843804
+    },
+    {
+      "horizon": 11,
+      "persistence_mae": 538.8916710953646,
+      "delta_model_mae": 521.7633354782031,
+      "delta_hybrid_mae": 488.39285166939715
+    },
+    {
+      "horizon": 12,
+      "persistence_mae": 538.8621464422793,
+      "delta_model_mae": 528.5118269130352,
+      "delta_hybrid_mae": 495.1455829234621
+    },
+    {
+      "horizon": 13,
+      "persistence_mae": 538.774325361677,
+      "delta_model_mae": 534.548621858991,
+      "delta_hybrid_mae": 496.39440320812935
+    },
+    {
+      "horizon": 14,
+      "persistence_mae": 538.434230882787,
+      "delta_model_mae": 527.4488073203872,
+      "delta_hybrid_mae": 498.03497056533035
+    },
+    {
+      "horizon": 15,
+      "persistence_mae": 538.0485857691173,
+      "delta_model_mae": 532.0493134528002,
+      "delta_hybrid_mae": 495.6988603043822
+    },
+    {
+      "horizon": 16,
+      "persistence_mae": 537.8064629465603,
+      "delta_model_mae": 528.7391933514461,
+      "delta_hybrid_mae": 494.55006589118057
+    },
+    {
+      "horizon": 17,
+      "persistence_mae": 537.8613758488337,
+      "delta_model_mae": 547.0207772504082,
+      "delta_hybrid_mae": 499.7361647715475
+    },
+    {
+      "horizon": 18,
+      "persistence_mae": 538.5392589312077,
+      "delta_model_mae": 541.5396279424118,
+      "delta_hybrid_mae": 505.52058274372683
+    },
+    {
+      "horizon": 19,
+      "persistence_mae": 538.6257661647476,
+      "delta_model_mae": 563.6031207931075,
+      "delta_hybrid_mae": 509.3427170883254
+    },
+    {
+      "horizon": 20,
+      "persistence_mae": 538.1551461470327,
+      "delta_model_mae": 549.0825280264042,
+      "delta_hybrid_mae": 509.5057986968627
+    },
+    {
+      "horizon": 21,
+      "persistence_mae": 538.5628845586065,
+      "delta_model_mae": 545.8031574405544,
+      "delta_hybrid_mae": 507.8460110463711
+    },
+    {
+      "horizon": 22,
+      "persistence_mae": 538.3865721877768,
+      "delta_model_mae": 555.3789089553305,
+      "delta_hybrid_mae": 509.64153504546806
+    },
+    {
+      "horizon": 23,
+      "persistence_mae": 538.297950989076,
+      "delta_model_mae": 552.3513593003793,
+      "delta_hybrid_mae": 501.48539844628755
+    },
+    {
+      "horizon": 24,
+      "persistence_mae": 538.148612341305,
+      "delta_model_mae": 572.8834667884493,
+      "delta_hybrid_mae": 505.81334813889134
+    }
+  ],
+  "comparison_to_previous": {
+    "previous_direct_main_mae": 820.1222144749194,
+    "previous_hybrid_mae": 520.3048722729911,
+    "previous_persistence_mae": 538.9253787766952,
+    "delta_model_mae": 522.1946569687785,
+    "delta_hybrid_mae": 486.0912292164335,
+    "delta_hybrid_minus_prev_hybrid": -34.21364305655766,
+    "delta_hybrid_minus_prev_persistence": -52.83414956026172
+  }
+}

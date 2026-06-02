@@ -13,7 +13,7 @@
   "recency_days": 60,
   "recency_medium_days": 90,
   "recency_boost": 3.0,
-  "training_cells": 0,
+  "training_cells": 576,
   "predictions_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/predictions/tree_advanced_test_predictions.csv",
   "full_test_split": {
     "test_samples_anchors": 3449,

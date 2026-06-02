@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-06-01T00:19:42.297588+00:00",
+  "target_date": "2026-06-02",
+  "rows": 24,
+  "mean_premium_pred": 1303.0434183917107,
+  "min_premium_pred": 0.0,
+  "max_premium_pred": 4500.0,
+  "stack": [
+    "high_precision",
+    "fuel_switch_hybrid",
+    "d2_forecaster",
+    "must_run_adjustment",
+    "curve_adjustment"
+  ]
+}
