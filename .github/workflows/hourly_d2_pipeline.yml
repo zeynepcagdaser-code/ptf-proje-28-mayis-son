@@ -1,0 +1,52 @@
+name: Hourly D+2 PTF Pipeline
+
+on:
+  schedule:
+    - cron: '0 * * * *' # every hour at minute 0 (UTC)
+  workflow_dispatch: {}
+
+jobs:
+  run-hourly-pipeline:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Istanbul
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || pip install -r requirements_dashboard.txt || true
+
+      - name: Validate EPIAS secrets
+        run: |
+          if [ -z "${{ secrets.EPIAS_USERNAME }}" ] || [ -z "${{ secrets.EPIAS_PASSWORD }}" ]; then
+            echo "Missing EPIAS_USERNAME / EPIAS_PASSWORD repository secrets" >&2
+            exit 1
+          fi
+
+      - name: Update EPİAŞ dataset
+        env:
+          EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
+          EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
+        run: |
+          python -u update_dataset.py
+
+      - name: Run end-to-end D+2 pipeline
+        run: |
+          python -u run_d2_ptf_pipeline.py
+
+      - name: Upload prediction artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ptf-predictions
+          path: |
+            data/predictions/*.csv
+            reports/*.json
+            reports/*.md
