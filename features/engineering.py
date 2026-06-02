@@ -60,6 +60,42 @@ def add_ptf_lag_features(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def add_ptf_low_regime_history_features(
+    df: pd.DataFrame,
+    *,
+    low_threshold: float = 50.0,
+) -> pd.DataFrame:
+    """
+    Low/zero regime history from past PTF only (through t-1).
+
+    Uses ptf.shift(1) before rolling counts/ratios — leakage-safe for DAM anchor t.
+    """
+    out = df.copy()
+    ptf_past = out[PTF_COL].shift(1)
+
+    roll_24 = ptf_past.rolling(24, min_periods=24)
+    roll_168 = ptf_past.rolling(168, min_periods=168)
+    out["ptf_roll_min_24"] = roll_24.min()
+    out["ptf_roll_max_24"] = roll_24.max()
+    out["ptf_roll_min_168"] = roll_168.min()
+    out["ptf_roll_max_168"] = roll_168.max()
+
+    is_low = (ptf_past <= low_threshold).astype(float)
+    is_zero = (ptf_past == 0.0).astype(float)
+
+    out["ptf_low_count_24"] = is_low.rolling(24, min_periods=24).sum()
+    out["ptf_zero_count_24"] = is_zero.rolling(24, min_periods=24).sum()
+    out["ptf_low_count_168"] = is_low.rolling(168, min_periods=168).sum()
+    out["ptf_zero_count_168"] = is_zero.rolling(168, min_periods=168).sum()
+
+    out["ptf_low_ratio_24"] = out["ptf_low_count_24"] / 24.0
+    out["ptf_zero_ratio_24"] = out["ptf_zero_count_24"] / 24.0
+    out["ptf_low_ratio_168"] = out["ptf_low_count_168"] / 168.0
+    out["ptf_zero_ratio_168"] = out["ptf_zero_count_168"] / 168.0
+
+    return out
+
+
 def add_calendar_features(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     ts = out["ts_hour"]
@@ -119,6 +155,93 @@ def add_spread_lag_features(df: pd.DataFrame) -> pd.DataFrame:
     spread = out[SMF_COL] - out[PTF_COL]
     out["smf_ptf_spread_lag_24"] = spread.shift(24)
     out["smf_ptf_spread_lag_168"] = spread.shift(168)
+    return out
+
+
+def add_fiba_fibs_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    DAM price-independent buy/sell order features (leakage-safe).
+
+    Assumes raw hourly volumes are available at anchor hour t as market/orderbook totals.
+    Safe division rules:
+      - ratio: sell==0 -> NaN
+      - pressure: total==0 -> NaN
+    """
+    out = df.copy()
+    buy = pd.to_numeric(out.get("dam_price_independent_buy_mwh"), errors="coerce")
+    sell = pd.to_numeric(out.get("dam_price_independent_sell_mwh"), errors="coerce")
+
+    if buy is None or sell is None:
+        return out
+
+    balance = buy - sell
+    total = buy + sell
+
+    out["fiba_fibs_ratio"] = np.where(sell > 0, buy / sell, np.nan).astype(float)
+    out["fiba_fibs_balance"] = balance.astype(float)
+    out["fiba_fibs_total"] = total.astype(float)
+    out["fiba_fibs_pressure"] = np.where(total > 0, balance / total, np.nan).astype(float)
+
+    # Strict-forecast alternatives (lagged).
+    out["dam_price_independent_buy_lag_24"] = buy.shift(24).astype(float)
+    out["dam_price_independent_sell_lag_24"] = sell.shift(24).astype(float)
+    out["fiba_fibs_ratio_lag_24"] = out["fiba_fibs_ratio"].shift(24).astype(float)
+    out["fiba_fibs_balance_lag_24"] = out["fiba_fibs_balance"].shift(24).astype(float)
+    out["fiba_fibs_pressure_lag_24"] = out["fiba_fibs_pressure"].shift(24).astype(float)
+    out["fiba_fibs_ratio_lag_168"] = out["fiba_fibs_ratio"].shift(168).astype(float)
+    out["fiba_fibs_pressure_lag_168"] = out["fiba_fibs_pressure"].shift(168).astype(float)
+    return out
+
+
+def add_grf_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Natural gas GRF (daily reference price) features.
+
+    - grf_tl_lag_1d is past-only (t-24 hours) to reduce publication-time leakage.
+    - rolling mean uses lagged series (past-only).
+    """
+    out = df.copy()
+    grf = pd.to_numeric(out.get("grf_tl_1000sm3"), errors="coerce")
+    if grf is None:
+        return out
+
+    grf_lag_1d = grf.shift(24)
+    out["grf_tl_lag_1d"] = grf_lag_1d.astype(float)
+
+    grf_lag_8d = grf_lag_1d.shift(24 * 7)
+    out["grf_tl_change_7d"] = (grf_lag_1d - grf_lag_8d).astype(float)
+
+    out["grf_tl_rolling_mean_7d"] = grf_lag_1d.rolling(24 * 7, min_periods=24 * 7).mean().astype(float)
+
+    gas_share = pd.to_numeric(out.get("gas_share"), errors="coerce")
+    thermal_share = pd.to_numeric(out.get("thermal_price_setting_share"), errors="coerce")
+    if gas_share is not None:
+        out["gas_cost_pressure"] = (gas_share * grf).astype(float)
+    else:
+        out["gas_cost_pressure"] = np.nan
+    if thermal_share is not None:
+        out["thermal_cost_pressure"] = (thermal_share * grf).astype(float)
+    else:
+        out["thermal_cost_pressure"] = np.nan
+    if gas_share is not None and thermal_share is not None:
+        out["gas_marginal_pressure"] = (gas_share * thermal_share * grf).astype(float)
+    else:
+        out["gas_marginal_pressure"] = np.nan
+
+    # Timing-safer alternatives (use grf_tl_lag_1d).
+    if gas_share is not None:
+        out["gas_cost_pressure_lag_1d"] = (gas_share * grf_lag_1d).astype(float)
+    else:
+        out["gas_cost_pressure_lag_1d"] = np.nan
+    if thermal_share is not None:
+        out["thermal_cost_pressure_lag_1d"] = (thermal_share * grf_lag_1d).astype(float)
+    else:
+        out["thermal_cost_pressure_lag_1d"] = np.nan
+    if gas_share is not None and thermal_share is not None:
+        out["gas_marginal_pressure_lag_1d"] = (gas_share * thermal_share * grf_lag_1d).astype(float)
+    else:
+        out["gas_marginal_pressure_lag_1d"] = np.nan
+
     return out
 
 
@@ -317,6 +440,20 @@ def list_engineered_feature_columns() -> list[str]:
         "ptf_rolling_std_24h",
         "ptf_rolling_mean_168h",
     ]
+    ptf_low_regime = [
+        "ptf_roll_min_24",
+        "ptf_roll_max_24",
+        "ptf_roll_min_168",
+        "ptf_roll_max_168",
+        "ptf_low_count_24",
+        "ptf_zero_count_24",
+        "ptf_low_count_168",
+        "ptf_zero_count_168",
+        "ptf_low_ratio_24",
+        "ptf_zero_ratio_24",
+        "ptf_low_ratio_168",
+        "ptf_zero_ratio_168",
+    ]
     spread = ["smf_ptf_spread_lag_24", "smf_ptf_spread_lag_168"]
     supply = [
         "kgup_total_minus_load",
@@ -340,6 +477,36 @@ def list_engineered_feature_columns() -> list[str]:
         "solar_peak_hour_flag",
         "zero_price_risk_proxy",
     ]
+    market_orders = [
+        "dam_price_independent_buy_mwh",
+        "dam_price_independent_sell_mwh",
+        "dam_price_independent_buy_lag_24",
+        "dam_price_independent_sell_lag_24",
+        "fiba_fibs_ratio",
+        "fiba_fibs_balance",
+        "fiba_fibs_total",
+        "fiba_fibs_pressure",
+        "fiba_fibs_ratio_lag_24",
+        "fiba_fibs_balance_lag_24",
+        "fiba_fibs_pressure_lag_24",
+        "fiba_fibs_ratio_lag_168",
+        "fiba_fibs_pressure_lag_168",
+    ]
+    grf = [
+        "grf_tl_1000sm3",
+        "grf_usd_1000sm3",
+        "grf_eur_mwh",
+        "grf_usd_mmbtu",
+        "grf_tl_lag_1d",
+        "grf_tl_change_7d",
+        "grf_tl_rolling_mean_7d",
+        "gas_cost_pressure",
+        "thermal_cost_pressure",
+        "gas_marginal_pressure",
+        "gas_cost_pressure_lag_1d",
+        "thermal_cost_pressure_lag_1d",
+        "gas_marginal_pressure_lag_1d",
+    ]
     cap_ratios = ["price_cap", "ptf_to_cap_ratio", "smf_to_cap_ratio"]
 
     lagged = []
@@ -351,7 +518,10 @@ def list_engineered_feature_columns() -> list[str]:
     return (
         calendar
         + ptf_lags
+        + ptf_low_regime
         + spread
+        + market_orders
+        + grf
         + supply
         + downside
         + cap_ratios

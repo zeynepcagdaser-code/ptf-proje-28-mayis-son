@@ -1,7 +1,7 @@
 {
   "features_path": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
   "row_count": 56016,
-  "feature_count": 102,
+  "feature_count": 140,
   "families": [
     "ptf_lag_rolling",
     "calendar_holiday",
@@ -27,7 +27,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -49,7 +49,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -60,7 +60,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -71,7 +71,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -93,7 +93,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -104,7 +104,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -115,7 +115,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -126,7 +126,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -137,7 +137,29 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_max_168",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_max_24",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -160,6 +182,28 @@
       "availability": "lag_required",
       "leakage_risk": "low",
       "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_min_168",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_roll_min_24",
+      "family": "ptf_lag_rolling",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -192,7 +236,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -203,7 +247,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -214,7 +258,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -270,7 +314,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -370,7 +414,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -381,7 +425,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -403,7 +447,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -436,7 +480,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -458,7 +502,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -530,7 +574,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -581,7 +625,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -598,7 +642,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
     },
     {
@@ -639,7 +683,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0
     },
     {
@@ -708,7 +752,7 @@
       "sources": [],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -718,6 +762,69 @@
       "availability": "lag_required",
       "leakage_risk": "low",
       "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "dam_price_independent_buy_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "dam_price_independent_sell_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_balance_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_pressure_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_pressure_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_ratio_lag_168",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_ratio_lag_24",
+      "family": "smf_yal_yat_lagged",
+      "sources": [],
+      "availability": "lag_required",
+      "leakage_risk": "low",
+      "recommended_usage": "main_regression",
       "null_pct": 0.0
     },
     {
@@ -735,7 +842,7 @@
       "sources": [],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -756,7 +863,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -768,7 +875,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -780,7 +887,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -792,7 +899,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -804,7 +911,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -816,7 +923,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -827,7 +934,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.004266638103399029
     },
     {
@@ -838,7 +945,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.004266638103399029
     },
     {
@@ -849,7 +956,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.004266638103399029
     },
     {
@@ -871,7 +978,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -893,7 +1000,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -904,7 +1011,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -915,7 +1022,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -937,7 +1044,7 @@
       ],
       "availability": "lag_required",
       "leakage_risk": "low",
-      "recommended_usage": "exclude",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -959,7 +1066,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.00041059697229363037
     },
     {
@@ -981,7 +1088,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.00041059697229363037
     },
     {
@@ -992,7 +1099,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.00041059697229363037
     },
     {
@@ -1014,7 +1121,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.00041059697229363037
     },
     {
@@ -1025,7 +1132,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.00041059697229363037
     },
     {
@@ -1036,7 +1143,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.00041059697229363037
     },
     {
@@ -1069,7 +1176,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0024992859183090546
     },
     {
@@ -1080,7 +1187,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0024992859183090546
     },
     {
@@ -1091,7 +1198,7 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
       "null_pct": 0.0024992859183090546
     },
     {
@@ -1124,7 +1231,34 @@
       ],
       "availability": "same_hour_ok",
       "leakage_risk": "low",
-      "recommended_usage": "main_regression",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "grf_eur_mwh",
+      "family": "fuel_currency",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "grf_usd_1000sm3",
+      "family": "fuel_currency",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "grf_usd_mmbtu",
+      "family": "fuel_currency",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
       "null_pct": 0.0
     },
     {
@@ -1195,29 +1329,266 @@
       "leakage_risk": "low",
       "recommended_usage": "low_price_classifier",
       "null_pct": 0.0
+    },
+    {
+      "feature": "dam_price_independent_buy_mwh",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "dam_price_independent_sell_mwh",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_balance",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_pressure",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_ratio",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "fiba_fibs_total",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "exclude",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_cost_pressure",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_cost_pressure_lag_1d",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_marginal_pressure",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "gas_marginal_pressure_lag_1d",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "grf_tl_1000sm3",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "grf_tl_change_7d",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0004284490145672665
+    },
+    {
+      "feature": "grf_tl_lag_1d",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "grf_tl_rolling_mean_7d",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.00041059697229363037
+    },
+    {
+      "feature": "ptf_low_count_168",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_low_count_24",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_low_ratio_168",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_low_ratio_24",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_zero_count_168",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_zero_count_24",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_zero_ratio_168",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "ptf_zero_ratio_24",
+      "family": "other",
+      "sources": [
+        "ptf_price"
+      ],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "low_price_classifier",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "thermal_cost_pressure",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "risk_dashboard_only",
+      "null_pct": 0.0
+    },
+    {
+      "feature": "thermal_cost_pressure_lag_1d",
+      "family": "other",
+      "sources": [],
+      "availability": "same_hour_ok",
+      "leakage_risk": "medium",
+      "recommended_usage": "main_regression",
+      "null_pct": 0.0
     }
   ],
   "counts_by_family": {
-    "ptf_lag_rolling": 18,
+    "ptf_lag_rolling": 22,
     "calendar_holiday": 9,
     "load_demand": 2,
     "kgup_source_mix": 16,
     "renewable_pressure": 6,
     "thermal_price_setting": 5,
-    "smf_yal_yat_lagged": 24,
+    "smf_yal_yat_lagged": 31,
     "wind_forecast": 8,
     "outage": 8,
-    "fuel_currency": 0,
+    "fuel_currency": 3,
     "cap_imbalance": 2,
     "yekdem_merchant_proxy": 0,
     "low_zero_price_risk": 4,
-    "other": 0
+    "other": 24
   },
   "counts_by_recommended_usage": {
-    "main_regression": 72,
-    "low_price_classifier": 4,
-    "risk_dashboard_only": 2,
-    "exclude": 24
+    "main_regression": 55,
+    "low_price_classifier": 23,
+    "risk_dashboard_only": 25,
+    "exclude": 37
   },
-  "high_leakage_risk_features": []
+  "high_leakage_risk_features": [],
+  "notes": [
+    "current FİBA/FİBS (dam_price_independent_* ve fiba_fibs_*) post_dam_publication_mode için kullanılabilir.",
+    "strict_forecast_mode için current FİBA/FİBS yerine lagged (örn. *_lag_24 / *_lag_168) tercih edilmeli.",
+    "current GRF (grf_tl_1000sm3) yayın zamanı belirsizliği nedeniyle main modelde lagged/türetilmiş versiyonlar öncelikli (örn. grf_tl_lag_1d ve *_pressure_lag_1d)."
+  ]
 }

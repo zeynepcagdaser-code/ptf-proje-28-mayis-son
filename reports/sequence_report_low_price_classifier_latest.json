@@ -1,0 +1,180 @@
+{
+  "generated_at_utc": "2026-06-02T06:57:23.133200+00:00",
+  "source_features": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
+  "output_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price",
+  "window_size": 168,
+  "horizon": 24,
+  "index_mapping": "X[t-167:t] -> y[t+1:t+24]",
+  "feature_count": 49,
+  "target_count": 24,
+  "feature_columns": [
+    "low_load_flag",
+    "holiday_low_load_flag",
+    "solar_peak_hour_flag",
+    "zero_price_risk_proxy",
+    "renewable_pressure",
+    "renewable_suppression_pressure",
+    "res_share",
+    "solar_share",
+    "hydro_share",
+    "kgup_renewable_share",
+    "kgup_gunes",
+    "kgup_ruzgar",
+    "wind_forecast_mean",
+    "wind_forecast_share",
+    "gas_share",
+    "coal_share",
+    "thermal_price_setting_share",
+    "gas_coal_competition_index",
+    "hour_sin",
+    "hour_cos",
+    "is_holiday_or_weekend",
+    "is_weekend",
+    "is_holiday_tr",
+    "load_lep",
+    "ptf_lag_1",
+    "ptf_lag_2",
+    "ptf_lag_3",
+    "ptf_lag_24",
+    "ptf_lag_168",
+    "ptf_roll_mean_24",
+    "ptf_roll_mean_168",
+    "ptf_roll_min_24",
+    "ptf_roll_max_24",
+    "ptf_roll_min_168",
+    "ptf_roll_max_168",
+    "ptf_low_count_24",
+    "ptf_zero_count_24",
+    "ptf_low_count_168",
+    "ptf_zero_count_168",
+    "ptf_low_ratio_24",
+    "ptf_zero_ratio_24",
+    "ptf_low_ratio_168",
+    "ptf_zero_ratio_168",
+    "fiba_fibs_ratio",
+    "fiba_fibs_pressure",
+    "fiba_fibs_ratio_lag_24",
+    "fiba_fibs_pressure_lag_24",
+    "fiba_fibs_ratio_lag_168",
+    "fiba_fibs_pressure_lag_168"
+  ],
+  "target_columns": [
+    "target_1h",
+    "target_2h",
+    "target_3h",
+    "target_4h",
+    "target_5h",
+    "target_6h",
+    "target_7h",
+    "target_8h",
+    "target_9h",
+    "target_10h",
+    "target_11h",
+    "target_12h",
+    "target_13h",
+    "target_14h",
+    "target_15h",
+    "target_16h",
+    "target_17h",
+    "target_18h",
+    "target_19h",
+    "target_20h",
+    "target_21h",
+    "target_22h",
+    "target_23h",
+    "target_24h"
+  ],
+  "shapes": {
+    "train": {
+      "X": [
+        43513,
+        168,
+        49
+      ],
+      "y": [
+        43513,
+        24
+      ]
+    },
+    "validation": {
+      "X": [
+        8570,
+        168,
+        49
+      ],
+      "y": [
+        8570,
+        24
+      ]
+    },
+    "test": {
+      "X": [
+        3387,
+        168,
+        49
+      ],
+      "y": [
+        3387,
+        24
+      ]
+    }
+  },
+  "sequence_counts": {
+    "train": 43513,
+    "validation": 8570,
+    "test": 3387
+  },
+  "dropped_nan_sequences": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "dropped_insufficient_rows": {
+    "train": 167,
+    "validation": 167,
+    "test": 167
+  },
+  "scaler_fit_split": "train",
+  "leakage_checklist": [
+    {
+      "check": "feature_scaler fit only on train tabular rows",
+      "status": "pass"
+    },
+    {
+      "check": "target_scaler fit only on train tabular rows",
+      "status": "pass"
+    },
+    {
+      "check": "validation/test only transformed",
+      "status": "pass"
+    },
+    {
+      "check": "sequences do not cross split boundaries",
+      "status": "pass",
+      "detail": "windows built inside each split partition"
+    },
+    {
+      "check": "no interpolation/bfill/centered rolling in this stage",
+      "status": "pass"
+    },
+    {
+      "check": "NaN sequences dropped, no imputation",
+      "status": "pass"
+    }
+  ],
+  "feature_profile": "low_price_classifier",
+  "requested_feature_count": 49,
+  "resolved_feature_count": 49,
+  "missing_feature_count": 0,
+  "missing_features": [],
+  "tabular_nan_rows": {
+    "feature_nan_rows": 45,
+    "target_nan_rows": 0
+  },
+  "metadata_file": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price/sequence_metadata.json",
+  "anchor_files": {
+    "train": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price/anchor_train.csv",
+    "validation": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price/anchor_val.csv",
+    "test": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price/anchor_test.csv"
+  }
+}

@@ -13,7 +13,7 @@ No model training.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -21,6 +21,22 @@ import numpy as np
 import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from features.config import (
+    EXCLUDED_FROM_MAIN_REGRESSION,
+    LOW_PRICE_CLASSIFIER_FEATURES,
+    MAIN_REGRESSION_FEATURES,
+    RISK_DASHBOARD_FEATURES,
+    THESIS_DATA_DEBT_GROUPS,
+    resolve_feature_list,
+)
+
+_MAIN_REGRESSION_SET = set(MAIN_REGRESSION_FEATURES)
+_LOW_PRICE_CLASSIFIER_SET = set(LOW_PRICE_CLASSIFIER_FEATURES)
+_RISK_DASHBOARD_SET = set(RISK_DASHBOARD_FEATURES)
+_EXCLUDED_FROM_MAIN_SET = set(EXCLUDED_FROM_MAIN_REGRESSION)
 FEATURES_PATH = PROJECT_ROOT / "data" / "features" / "lstm_next24_v1.parquet"
 MASTER_PATH = PROJECT_ROOT / "data" / "master" / "master_hourly_v1.parquet"
 
@@ -30,6 +46,13 @@ OUT_MISSING_JSON = PROJECT_ROOT / "reports" / "missing_feature_report.json"
 OUT_MISSING_MD = PROJECT_ROOT / "reports" / "missing_feature_report.md"
 OUT_SANITY_JSON = PROJECT_ROOT / "reports" / "feature_sanity_report.json"
 OUT_SANITY_MD = PROJECT_ROOT / "reports" / "feature_sanity_report.md"
+
+# Notes about timing / operational usage modes (see docs/feature_usage_modes.md)
+USAGE_MODE_NOTES = [
+    "current FİBA/FİBS (dam_price_independent_* ve fiba_fibs_*) post_dam_publication_mode için kullanılabilir.",
+    "strict_forecast_mode için current FİBA/FİBS yerine lagged (örn. *_lag_24 / *_lag_168) tercih edilmeli.",
+    "current GRF (grf_tl_1000sm3) yayın zamanı belirsizliği nedeniyle main modelde lagged/türetilmiş versiyonlar öncelikli (örn. grf_tl_lag_1d ve *_pressure_lag_1d).",
+]
 
 
 FAMILY_ORDER = [
@@ -184,13 +207,13 @@ def infer_leakage_risk(col: str) -> str:
 
 
 def recommend_usage(col: str) -> str:
-    fam = infer_family(col)
-    if fam in {"calendar_holiday", "ptf_lag_rolling", "load_demand", "kgup_source_mix", "renewable_pressure", "thermal_price_setting", "wind_forecast", "outage"}:
-        return "main_regression"
-    if fam in {"low_zero_price_risk"}:
-        return "low_price_classifier"
-    if fam in {"fuel_currency", "cap_imbalance", "yekdem_merchant_proxy"}:
+    """Map columns to model buckets using features.config contract lists."""
+    if col in _RISK_DASHBOARD_SET:
         return "risk_dashboard_only"
+    if col in _MAIN_REGRESSION_SET:
+        return "main_regression"
+    if col in _LOW_PRICE_CLASSIFIER_SET:
+        return "low_price_classifier"
     return "exclude"
 
 
@@ -294,12 +317,42 @@ def build_missing_report(feat: pd.DataFrame, master: pd.DataFrame) -> dict[str, 
                 "master_cols_source": master_cols_source,
             }
         )
+    feat_cols_list = sorted(feat_cols)
+    main_present, main_missing = resolve_feature_list(MAIN_REGRESSION_FEATURES, feat_cols_list)
+    low_present, low_missing = resolve_feature_list(LOW_PRICE_CLASSIFIER_FEATURES, feat_cols_list)
+    risk_present, risk_missing = resolve_feature_list(RISK_DASHBOARD_FEATURES, feat_cols_list)
+    excluded_present, _ = resolve_feature_list(EXCLUDED_FROM_MAIN_REGRESSION, feat_cols_list)
+
+    bucket_resolution = {
+        "main_regression": {
+            "requested_count": len(MAIN_REGRESSION_FEATURES),
+            "present_count": len(main_present),
+            "present": main_present,
+            "missing": main_missing,
+        },
+        "low_price_classifier": {
+            "requested_count": len(LOW_PRICE_CLASSIFIER_FEATURES),
+            "present_count": len(low_present),
+            "present": low_present,
+            "missing": low_missing,
+        },
+        "risk_dashboard": {
+            "requested_count": len(RISK_DASHBOARD_FEATURES),
+            "present_count": len(risk_present),
+            "present": risk_present,
+            "missing": risk_missing,
+        },
+        "excluded_from_main_present_count": len(excluded_present),
+    }
+
     return {
         "requested_features": REQUESTED_FEATURES,
         "present_count": int(sum(1 for x in items if x["present_in_dataset"])),
         "missing_count": int(sum(1 for x in items if not x["present_in_dataset"])),
         "missing_source_data_count": int(sum(1 for x in items if x["source_status"] == "missing_source_data")),
         "items": items,
+        "bucket_resolution": bucket_resolution,
+        "thesis_data_debt_groups": THESIS_DATA_DEBT_GROUPS,
     }
 
 
@@ -410,12 +463,51 @@ def write_md_missing(rep: dict[str, Any]) -> str:
         f"- Missing: {rep['missing_count']}",
         f"- Missing source data: {rep['missing_source_data_count']}",
         "",
+        "## Tez / piyasa veri borcu (ham veri yok — pipeline'a eklenmez)",
+        "",
+        "Aşağıdaki gruplar `features.config.THESIS_DATA_DEBT_GROUPS` ile tanımlıdır.",
+        "Feature engineering bu kaynaklar gelene kadar üretilmez; yalnızca raporlanır.",
+        "",
+        "| Grup | Hedef feature'lar | Ham veri kaynağı |",
+        "|------|-------------------|------------------|",
+    ]
+    for g in THESIS_DATA_DEBT_GROUPS:
+        lines.append(
+            f"| {g['group']} | `{g['target_features']}` | {g['raw_sources']} |"
+        )
+    lines += [
+        "",
+        "## İstenen feature'lar (REQUESTED_FEATURES)",
+        "",
         "| Feature | Present | Source status | Missing sources |",
         "|---------|:-------:|--------------|----------------|",
     ]
     for it in rep["items"]:
         miss = ", ".join(it["missing_sources"]) if it["missing_sources"] else "-"
         lines.append(f"| `{it['feature']}` | {int(it['present_in_dataset'])} | {it['source_status']} | {miss} |")
+
+    bucket = rep.get("bucket_resolution", {})
+    if bucket:
+        lines += [
+            "",
+            "## Model kovaları — parquet'te mevcut / eksik",
+            "",
+            f"- MAIN_REGRESSION: {bucket['main_regression']['present_count']}/{bucket['main_regression']['requested_count']} mevcut"
+            f" ({len(bucket['main_regression']['missing'])} eksik)",
+            f"- LOW_PRICE_CLASSIFIER: {bucket['low_price_classifier']['present_count']}/{bucket['low_price_classifier']['requested_count']} mevcut"
+            f" ({len(bucket['low_price_classifier']['missing'])} eksik)",
+            f"- RISK_DASHBOARD: {bucket['risk_dashboard']['present_count']}/{bucket['risk_dashboard']['requested_count']} mevcut"
+            f" ({len(bucket['risk_dashboard']['missing'])} eksik)",
+        ]
+        for key, label in (
+            ("main_regression", "MAIN eksik"),
+            ("low_price_classifier", "LOW_PRICE eksik"),
+            ("risk_dashboard", "RISK eksik"),
+        ):
+            miss = bucket[key]["missing"]
+            if miss:
+                lines.append(f"- {label}: `{', '.join(miss)}`")
+
     return "\n".join(lines) + "\n"
 
 
@@ -454,33 +546,63 @@ def main() -> None:
     missing = build_missing_report(feat, master)
     sanity = build_sanity_report(feat)
 
+    inv["notes"] = USAGE_MODE_NOTES
+    missing["notes"] = USAGE_MODE_NOTES
+    sanity["notes"] = USAGE_MODE_NOTES
+
     OUT_INV_JSON.parent.mkdir(parents=True, exist_ok=True)
-    OUT_INV_JSON.write_text(json.dumps(inv, indent=2), encoding="utf-8")
+    OUT_INV_JSON.write_text(json.dumps(inv, ensure_ascii=False, indent=2), encoding="utf-8")
     OUT_INV_MD.write_text(write_md_inventory(inv), encoding="utf-8")
 
-    OUT_MISSING_JSON.write_text(json.dumps(missing, indent=2), encoding="utf-8")
+    OUT_MISSING_JSON.write_text(json.dumps(missing, ensure_ascii=False, indent=2), encoding="utf-8")
     OUT_MISSING_MD.write_text(write_md_missing(missing), encoding="utf-8")
 
-    OUT_SANITY_JSON.write_text(json.dumps(sanity, indent=2), encoding="utf-8")
+    OUT_SANITY_JSON.write_text(json.dumps(sanity, ensure_ascii=False, indent=2), encoding="utf-8")
     OUT_SANITY_MD.write_text(write_md_sanity(sanity), encoding="utf-8")
 
     # Terminal summary
     total_features = inv["feature_count"]
-    # We don't have a historical baseline inside this script; report "new" as 0 here.
-    new_added = 0
     missing_source = missing["missing_source_data_count"]
-    main_n = inv["counts_by_recommended_usage"]["main_regression"]
-    low_n = inv["counts_by_recommended_usage"]["low_price_classifier"]
-    dash_n = inv["counts_by_recommended_usage"]["risk_dashboard_only"]
+    bucket = missing["bucket_resolution"]
+    main_req = bucket["main_regression"]["requested_count"]
+    main_pres = bucket["main_regression"]["present_count"]
+    main_miss = len(bucket["main_regression"]["missing"])
+    low_req = bucket["low_price_classifier"]["requested_count"]
+    low_pres = bucket["low_price_classifier"]["present_count"]
+    low_miss = len(bucket["low_price_classifier"]["missing"])
+    risk_req = bucket["risk_dashboard"]["requested_count"]
+    risk_pres = bucket["risk_dashboard"]["present_count"]
+    risk_miss = len(bucket["risk_dashboard"]["missing"])
+    excluded_from_main_n = bucket["excluded_from_main_present_count"]
+    inv_main_n = inv["counts_by_recommended_usage"]["main_regression"]
+    inv_low_n = inv["counts_by_recommended_usage"]["low_price_classifier"]
+    inv_dash_n = inv["counts_by_recommended_usage"]["risk_dashboard_only"]
+    inv_exclude_n = inv["counts_by_recommended_usage"]["exclude"]
     high_risk = inv["high_leakage_risk_features"]
 
     print("=== Feature Audit Summary ===")
-    print("Toplam feature sayisi:", total_features)
-    print("Yeni eklenen feature sayisi:", new_added)
-    print("Eksik ham veri gerektiren feature sayisi:", missing_source)
-    print("Ana regression'a onerilen feature sayisi:", main_n)
-    print("Low-price classifier'a onerilen feature sayisi:", low_n)
-    print("Risk dashboard'a onerilen feature sayisi:", dash_n)
+    print("Toplam parquet feature sayisi:", total_features)
+    print(
+        f"MAIN_REGRESSION_FEATURES: {main_pres}/{main_req} mevcut, {main_miss} eksik"
+    )
+    if bucket["main_regression"]["missing"]:
+        print("  MAIN eksik:", ", ".join(bucket["main_regression"]["missing"]))
+    print(
+        f"LOW_PRICE_CLASSIFIER_FEATURES: {low_pres}/{low_req} mevcut, {low_miss} eksik"
+    )
+    if bucket["low_price_classifier"]["missing"]:
+        print("  LOW_PRICE eksik:", ", ".join(bucket["low_price_classifier"]["missing"]))
+    print(
+        f"RISK_DASHBOARD_FEATURES: {risk_pres}/{risk_req} mevcut, {risk_miss} eksik"
+    )
+    if bucket["risk_dashboard"]["missing"]:
+        print("  RISK eksik:", ", ".join(bucket["risk_dashboard"]["missing"]))
+    print(
+        "Ana regression'dan cikarilan (EXCLUDED_FROM_MAIN, parquet'te):",
+        excluded_from_main_n,
+    )
+    print("Eksik ham veri gerektiren feature sayisi (REQUESTED):", missing_source)
+    print("Envanter recommended_usage — main:", inv_main_n, "| low:", inv_low_n, "| risk:", inv_dash_n, "| exclude:", inv_exclude_n)
     print("Leakage riski high olan feature'lar:", high_risk)
     print("Wrote:")
     print(" ", OUT_INV_MD)

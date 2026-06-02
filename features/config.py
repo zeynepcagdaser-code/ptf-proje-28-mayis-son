@@ -64,32 +64,75 @@ OUTAGE_FEATURE_COLS = [
     "outage_maint_operator_power_sum",
 ]
 
-# Feature selection buckets (for planned next steps: separate heads/models).
-# These lists are NOT yet enforced by the dataset builder; they exist as an explicit contract
-# for future model wiring and to avoid accidentally stuffing every new feature into the main regressor.
+# Feature selection buckets — contract for model heads and inventory audit.
+# The dataset builder still emits additional columns (lags, aliases); models should
+# filter with resolve_feature_list() so missing optional columns never crash pipelines.
 MAIN_REGRESSION_FEATURES: list[str] = [
-    # The primary dataset builder still includes the base KGUP/load/wind/outage + lags.
-    # This list is intended for "engineered" features to prioritize in price regression.
-    "kgup_total_minus_load",
-    "kgup_renewable_share",
-    "kgup_thermal_share",
-    "wind_forecast_share",
-    "smf_ptf_spread_lag_24",
-    "smf_ptf_spread_lag_168",
+    # PTF history
     "ptf_lag_24",
     "ptf_lag_168",
     "ptf_roll_mean_24",
     "ptf_roll_std_24",
     "ptf_roll_mean_168",
     "ptf_roll_std_168",
-    # Downside / market structure proxies
-    "gas_share",
-    "coal_share",
-    "gas_coal_balance",
-    "gas_coal_competition_index",
-    "thermal_price_setting_share",
+    # Calendar
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "month_sin",
+    "month_cos",
+    "is_weekend",
+    "is_holiday_tr",
+    # Demand / balance
+    "load_lep",
+    "kgup_total_minus_load",
+    # Market structure (planned KGUP-derived)
     "renewable_pressure",
     "renewable_suppression_pressure",
+    "thermal_price_setting_share",
+    "gas_share",
+    "coal_share",
+    "gas_coal_competition_index",
+    "kgup_renewable_share",
+    "kgup_thermal_share",
+    # Wind
+    "wind_forecast_mean",
+    "wind_forecast_share",
+    "wind_quarter1_mean",
+    # Selected KGUP MW (not full 14-column mix when shares are present)
+    "kgup_toplam",
+    "kgup_dogalgaz",
+    "kgup_ruzgar",
+    "kgup_gunes",
+    "kgup_barajli",
+    "kgup_akarsu",
+    "kgup_ithalKomur",
+    "kgup_linyit",
+    "kgup_tasKomur",
+    # Outage (maint + fault counts)
+    "outage_maint_event_count",
+    "outage_maint_capacity_sum",
+    "outage_fault_event_count",
+    "outage_event_rows",
+    # FİBA/FİBS (DAM price-independent orders)
+    "dam_price_independent_buy_mwh",
+    "dam_price_independent_sell_mwh",
+    "fiba_fibs_ratio",
+    "fiba_fibs_balance",
+    "fiba_fibs_pressure",
+    # FİBA/FİBS lagged (strict forecast alternative)
+    "fiba_fibs_ratio_lag_24",
+    "fiba_fibs_pressure_lag_24",
+    "fiba_fibs_ratio_lag_168",
+    "fiba_fibs_pressure_lag_168",
+    # GRF (daily reference price) - prefer timing-safer variants
+    "grf_tl_lag_1d",
+    "grf_tl_change_7d",
+    "grf_tl_rolling_mean_7d",
+    "gas_cost_pressure_lag_1d",
+    "thermal_cost_pressure_lag_1d",
+    "gas_marginal_pressure_lag_1d",
 ]
 
 LOW_PRICE_CLASSIFIER_FEATURES: list[str] = [
@@ -97,11 +140,212 @@ LOW_PRICE_CLASSIFIER_FEATURES: list[str] = [
     "holiday_low_load_flag",
     "solar_peak_hour_flag",
     "zero_price_risk_proxy",
+    "renewable_pressure",
+    "renewable_suppression_pressure",
+    "res_share",
+    "solar_share",
+    "hydro_share",
+    "kgup_renewable_share",
+    "kgup_gunes",
+    "kgup_ruzgar",
+    "wind_forecast_mean",
+    "wind_forecast_share",
+    "gas_share",
+    "coal_share",
+    "thermal_price_setting_share",
+    "gas_coal_competition_index",
+    "hour_sin",
+    "hour_cos",
+    "is_holiday_or_weekend",
+    "is_weekend",
+    "is_holiday_tr",
+    "load_lep",
+    "ptf_lag_1",
+    "ptf_lag_2",
+    "ptf_lag_3",
+    "ptf_lag_24",
+    "ptf_lag_168",
+    "ptf_roll_mean_24",
+    "ptf_roll_mean_168",
+    "ptf_roll_min_24",
+    "ptf_roll_max_24",
+    "ptf_roll_min_168",
+    "ptf_roll_max_168",
+    "ptf_low_count_24",
+    "ptf_zero_count_24",
+    "ptf_low_count_168",
+    "ptf_zero_count_168",
+    "ptf_low_ratio_24",
+    "ptf_zero_ratio_24",
+    "ptf_low_ratio_168",
+    "ptf_zero_ratio_168",
+    # FİBA/FİBS
+    "fiba_fibs_ratio",
+    "fiba_fibs_pressure",
+    "fiba_fibs_ratio_lag_24",
+    "fiba_fibs_pressure_lag_24",
+    "fiba_fibs_ratio_lag_168",
+    "fiba_fibs_pressure_lag_168",
 ]
 
 RISK_DASHBOARD_FEATURES: list[str] = [
-    # Placeholder bucket for features we might use in monitoring but not in training.
+    "price_cap",
+    "ptf_to_cap_ratio",
+    "smf_to_cap_ratio",
+    "smf_lag_24",
+    "smf_lag_48",
+    "smf_lag_168",
+    "smf_ptf_spread_lag_24",
+    "smf_ptf_spread_lag_168",
+    "yal_yat_net_lag_24",
+    "yal_yat_net_lag_48",
+    "yal_yat_net_lag_168",
+    "yal_yat_upRegulationDelivered_lag_24",
+    "yal_yat_downRegulationDelivered_lag_24",
+    "gen_total_lag_24",
+    "cons_consumption_lag_24",
+    "wind_generation_mean_lag_24",
+    "wind_generation_mean_lag_48",
+    "wind_generation_mean_lag_168",
+    # GRF (monitoring; timing may be uncertain)
+    "grf_tl_1000sm3",
+    "grf_usd_1000sm3",
+    "grf_eur_mwh",
+    "grf_usd_mmbtu",
+    "gas_cost_pressure",
+    "thermal_cost_pressure",
+    "gas_marginal_pressure",
 ]
+
+# Built in parquet but intentionally excluded from MAIN_REGRESSION_FEATURES (audit / docs).
+EXCLUDED_FROM_MAIN_REGRESSION: list[str] = [
+    # Risk / balancing → RISK_DASHBOARD_FEATURES
+    "smf_ptf_spread_lag_24",
+    "smf_ptf_spread_lag_168",
+    "price_cap",
+    "ptf_to_cap_ratio",
+    "smf_to_cap_ratio",
+    "smf_lag_24",
+    "smf_lag_48",
+    "smf_lag_168",
+    "yal_yat_net_lag_24",
+    "yal_yat_net_lag_48",
+    "yal_yat_net_lag_168",
+    "yal_yat_upRegulationDelivered_lag_24",
+    "yal_yat_upRegulationDelivered_lag_48",
+    "yal_yat_upRegulationDelivered_lag_168",
+    "yal_yat_downRegulationDelivered_lag_24",
+    "yal_yat_downRegulationDelivered_lag_48",
+    "yal_yat_downRegulationDelivered_lag_168",
+    "gen_total_lag_24",
+    "gen_total_lag_48",
+    "gen_total_lag_168",
+    "cons_consumption_lag_24",
+    "cons_consumption_lag_48",
+    "cons_consumption_lag_168",
+    "wind_generation_mean_lag_24",
+    "wind_generation_mean_lag_48",
+    "wind_generation_mean_lag_168",
+    # Low-price classifier only
+    "low_load_flag",
+    "holiday_low_load_flag",
+    "solar_peak_hour_flag",
+    "zero_price_risk_proxy",
+    "res_share",
+    "solar_share",
+    "hydro_share",
+    "is_holiday_or_weekend",
+    # Redundant / duplicate PTF columns
+    "gas_coal_balance",
+    "ptf_lag_1",
+    "ptf_lag_2",
+    "ptf_lag_3",
+    "ptf_lag_48",
+    "ptf_lag_1h",
+    "ptf_lag_2h",
+    "ptf_lag_3h",
+    "ptf_lag_24h",
+    "ptf_lag_168h",
+    "ptf_rolling_mean_24h",
+    "ptf_rolling_std_24h",
+    "ptf_rolling_mean_168h",
+    # Extra KGUP / wind / outage (not in main contract)
+    "kgup_fuelOil",
+    "kgup_jeotermal",
+    "kgup_nafta",
+    "kgup_biokutle",
+    "kgup_diger",
+    "wind_quarter2_mean",
+    "wind_quarter3_mean",
+    "wind_quarter4_mean",
+    "wind_forecast_min",
+    "wind_forecast_max",
+    "wind_forecast_std",
+    "outage_fault_mw_loss_sum",
+    "outage_fault_mw_loss_max",
+    "outage_fault_operator_power_sum",
+    "outage_maint_operator_power_sum",
+]
+
+# Thesis / market raw-data gaps (not in pipeline until sources exist).
+THESIS_DATA_DEBT_GROUPS: list[dict[str, str]] = [
+    {
+        "group": "Fiyattan bağımsız alış/satış oranı",
+        "target_features": "buy_sell_ratio, order_book_imbalance_proxy",
+        "raw_sources": "GÖP/DAM işlem veya emir defteri (alış/satış hacmi ayrımı)",
+    },
+    {
+        "group": "BOTAŞ doğal gaz tarifesi",
+        "target_features": "botas_gas_tariff, botas_tariff_lag_30d",
+        "raw_sources": "BOTAŞ / EPDK tarihsel tarife tablosu",
+    },
+    {
+        "group": "USD/TL, EUR/TL",
+        "target_features": "usd_try, eur_try, fx_vol_30d",
+        "raw_sources": "TCMB / ECB günlük kur serisi",
+    },
+    {
+        "group": "TTF / Brent",
+        "target_features": "ttf_gas_price, brent_oil_price, ttf_try_proxy",
+        "raw_sources": "ICE TTF, Brent; ttf_try_proxy = ttf * usd_try",
+    },
+    {
+        "group": "TETAŞ-EÜAŞ tarife",
+        "target_features": "tetas_euas_tariff, regulated_tariff_index",
+        "raw_sources": "EPDK / şirket duyuruları",
+    },
+    {
+        "group": "Mesken AG tarife",
+        "target_features": "residential_ag_tariff",
+        "raw_sources": "EPDK perakende tarife",
+    },
+    {
+        "group": "Doğal gaz santrali yakıt maliyeti",
+        "target_features": "gas_plant_fuel_cost, fuel_cost_index, gas_cost_pressure, gas_marginal_pressure",
+        "raw_sources": "BOTAŞ tarife + TTF + verimlilik / kgup gaz MW",
+    },
+    {
+        "group": "Güneş / gökyüzü açıklığı veya solar radiation proxy",
+        "target_features": "clearness_index, solar_radiation_proxy, sky_clear_fraction",
+        "raw_sources": "Meteoroloji, PVGIS veya bulutluluk (şu an yalnızca solar_peak_hour_flag)",
+    },
+    {
+        "group": "YEKDEM / merchant / non-merchant ayrımı",
+        "target_features": "yekdem_unit_price, merchant_proxy_share, non_merchant_proxy_share, yekdem_revenue_loss_proxy",
+        "raw_sources": "YEKDEM birim fiyat, KGUP müst run / sözleşme sınıflandırması",
+    },
+]
+
+
+def resolve_feature_list(
+    requested: list[str],
+    available_columns: list[str] | set[str],
+) -> tuple[list[str], list[str]]:
+    """Return (present, missing) without raising if optional columns are absent."""
+    avail = set(available_columns)
+    present = [c for c in requested if c in avail]
+    missing = [c for c in requested if c not in avail]
+    return present, missing
 
 # Realized / balancing — only lagged copies at 24/48/168.
 LAGGED_SOURCE_COLS = [

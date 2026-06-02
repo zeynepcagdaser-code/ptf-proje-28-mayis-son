@@ -11,21 +11,24 @@ import pandas as pd
 
 from sequence.config import (
     ANCHOR_FILE_MAP,
+    DEFAULT_FEATURE_PROFILE,
     EXCLUDE_COLUMNS,
     FEATURE_COLUMNS_FILE,
+    FEATURE_PROFILES,
     FEATURE_SCALER_FILE,
     FEATURES_PATH,
     INPUT_WINDOW,
     LEAKAGE_CHECKLIST,
     METADATA_FILE,
-    MODEL_DATA_DIR,
     OUTPUT_HORIZON,
+    PROFILE_OUTPUT_DIRS,
     REPORTS_DIR,
     SPLIT_ORDER,
     TARGET_COLUMNS_FILE,
     TARGET_PREFIX,
     TARGET_SCALER_FILE,
 )
+from features.config import resolve_feature_list
 from sequence.framing import build_split_sequences
 from sequence.report import build_sequence_report, write_sequence_report
 from sequence.scaler import (
@@ -37,17 +40,41 @@ from sequence.scaler import (
 )
 
 
-def _resolve_columns(df: pd.DataFrame) -> tuple[list[str], list[str]]:
-    target_columns = sorted(
+def _resolve_target_columns(df: pd.DataFrame) -> list[str]:
+    return sorted(
         [c for c in df.columns if c.startswith(TARGET_PREFIX)],
         key=lambda name: int(name.replace(TARGET_PREFIX, "").replace("h", "")),
     )
-    feature_columns = [
+
+
+def _parquet_feature_column_names(df: pd.DataFrame, target_columns: list[str]) -> list[str]:
+    return [
         c
         for c in df.columns
         if c not in EXCLUDE_COLUMNS and c not in target_columns
     ]
-    return feature_columns, target_columns
+
+
+def _select_profile_features(
+    df: pd.DataFrame,
+    feature_profile: str,
+) -> tuple[list[str], dict[str, Any]]:
+    if feature_profile not in FEATURE_PROFILES:
+        allowed = ", ".join(sorted(FEATURE_PROFILES))
+        raise ValueError(f"Unknown feature_profile={feature_profile!r}. Choose: {allowed}")
+
+    requested = FEATURE_PROFILES[feature_profile]
+    parquet_cols = _parquet_feature_column_names(df, _resolve_target_columns(df))
+    present, missing = resolve_feature_list(requested, parquet_cols)
+
+    return present, {
+        "feature_profile": feature_profile,
+        "requested_feature_count": len(requested),
+        "resolved_feature_count": len(present),
+        "missing_feature_count": len(missing),
+        "missing_features": missing,
+        "feature_columns": present,
+    }
 
 
 def _save_anchor_csv(
@@ -83,14 +110,22 @@ def run_pipeline(
     features_path: Path | None = None,
     output_dir: Path | None = None,
     reports_dir: Path | None = None,
+    feature_profile: str = DEFAULT_FEATURE_PROFILE,
+    report_basename: str | None = None,
 ) -> dict[str, Any]:
     features_path = features_path or FEATURES_PATH
-    output_dir = output_dir or MODEL_DATA_DIR
+    if feature_profile not in FEATURE_PROFILES:
+        allowed = ", ".join(sorted(FEATURE_PROFILES))
+        raise ValueError(f"Unknown feature_profile={feature_profile!r}. Choose: {allowed}")
+
+    output_dir = output_dir or PROFILE_OUTPUT_DIRS[feature_profile]
     reports_dir = reports_dir or REPORTS_DIR
+    report_basename = report_basename or f"sequence_report_{feature_profile}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_parquet(features_path).sort_values("ts_hour").reset_index(drop=True)
-    feature_columns, target_columns = _resolve_columns(df)
+    target_columns = _resolve_target_columns(df)
+    feature_columns, profile_meta = _select_profile_features(df, feature_profile)
 
     tabular_nan = _tabular_nan_report(df, feature_columns, target_columns)
 
@@ -169,6 +204,12 @@ def run_pipeline(
         "source_features": str(features_path),
         "input_window": INPUT_WINDOW,
         "output_horizon": OUTPUT_HORIZON,
+        "feature_profile": profile_meta["feature_profile"],
+        "requested_feature_count": profile_meta["requested_feature_count"],
+        "resolved_feature_count": profile_meta["resolved_feature_count"],
+        "missing_feature_count": profile_meta["missing_feature_count"],
+        "missing_features": profile_meta["missing_features"],
+        "feature_columns": profile_meta["feature_columns"],
         "feature_count": len(feature_columns),
         "target_count": len(target_columns),
         "index_mapping": f"X[t-{INPUT_WINDOW - 1}:t] -> y[t+1:t+{OUTPUT_HORIZON}]",
@@ -200,11 +241,14 @@ def run_pipeline(
         output_dir=output_dir,
         source_path=features_path,
     )
+    report.update(profile_meta)
     report["tabular_nan_rows"] = tabular_nan
     report["metadata_file"] = str(output_dir / METADATA_FILE)
     report["anchor_files"] = anchor_paths
 
-    json_path, md_path = write_sequence_report(report, reports_dir)
+    json_path, md_path = write_sequence_report(
+        report, reports_dir, basename=report_basename
+    )
     report["report_json"] = str(json_path)
     report["report_md"] = str(md_path)
 

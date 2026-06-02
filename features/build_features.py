@@ -19,9 +19,12 @@ from features.config import (
 from features.engineering import (
     add_cap_and_ratio_features,
     add_calendar_features,
+    add_fiba_fibs_features,
+    add_grf_features,
     add_holiday_features,
     add_lagged_realized_features,
     add_ptf_lag_features,
+    add_ptf_low_regime_history_features,
     add_spread_lag_features,
     add_ptf_downside_risk_features,
     add_supply_demand_features,
@@ -49,11 +52,14 @@ def build_feature_dataframe(master_path: Path | None = None) -> tuple[pd.DataFra
 
     df = add_targets(df)
     df = add_ptf_lag_features(df)
+    df = add_ptf_low_regime_history_features(df)
     df = add_calendar_features(df)
     df = add_holiday_features(df)
     df = add_spread_lag_features(df)
     df = add_supply_demand_features(df)
     df = add_ptf_downside_risk_features(df)
+    df = add_fiba_fibs_features(df)
+    df = add_grf_features(df)
     df = add_lagged_realized_features(df)
     df = add_cap_and_ratio_features(df)
 

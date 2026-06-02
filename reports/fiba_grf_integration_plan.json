@@ -1,0 +1,229 @@
+{
+  "generated_at_utc": "2026-06-02T06:29:36Z",
+  "scope": "First-step integration plan for EPİAŞ DAM price-independent buy/sell (FİBA/FİBS) and natural gas DRP/GRF into master pipeline.",
+  "constraints": {
+    "no_model_training": true,
+    "no_data_fetch": true,
+    "no_code_changes": true,
+    "deliverable_is_plan_only": true
+  },
+  "current_repo_state": {
+    "epias_auth_pattern": "CAS TGT via https://giris.epias.com.tr/cas/v1/tickets, then POST to service endpoints (see update_dataset.py, fetch_*.py).",
+    "cleaning_pipeline": {
+      "entrypoint": "run_cleaning.py",
+      "config": "cleaning/config.py HOURLY_CSV_SOURCES",
+      "outputs": "data/clean/*_hourly.parquet"
+    },
+    "master_pipeline": {
+      "entrypoint": "build_master.py",
+      "schema": "master/schema.py JOIN_DATASETS",
+      "output": "data/master/master_hourly_v1.parquet",
+      "latest_report": "reports/master_report_latest.md"
+    },
+    "master_columns": {
+      "has_dam_price_independent_buy_mwh": false,
+      "has_dam_price_independent_sell_mwh": false,
+      "has_grf_tl_1000sm3": false,
+      "has_grf_usd_1000sm3": false,
+      "has_grf_eur_mwh": false,
+      "has_grf_usd_mmbtu": false
+    },
+    "existing_fetch_scripts_found": {
+      "fiba_fibs": false,
+      "grf_drp": false
+    }
+  },
+  "datasets": [
+    {
+      "name": "GÖP Fiyattan Bağımsız Alış Teklifi (FİBA)",
+      "url": "https://seffaflik.epias.com.tr/electricity/electricity-markets/day-ahead-market-dam/dam-price-independent-bid-order",
+      "expected_master_columns": [
+        "dam_price_independent_buy_mwh"
+      ],
+      "repo_status": {
+        "endpoint_in_repo": false,
+        "fetch_script_in_repo": false,
+        "master_column_present": false
+      },
+      "endpoint_status": "Unknown (UI URL provided). Requires manual browser Network inspection to discover underlying API path and JSON payload contract.",
+      "planned_raw_files": [
+        "data/dam_price_independent_buy.csv"
+      ],
+      "planned_clean_files": [
+        "data/clean/dam_price_independent_buy_hourly.parquet"
+      ],
+      "planned_master_merge": {
+        "master_schema_dataset_spec": {
+          "name": "dam_price_independent_buy",
+          "filename": "dam_price_independent_buy_hourly.parquet",
+          "prefix": "dam_",
+          "default_availability": "planned"
+        },
+        "join_key": "ts_hour",
+        "merge_type": "left join onto ptf spine"
+      },
+      "leakage_risk": {
+        "risk_level": "low",
+        "reason": "Price-independent orders are part of DAM order book; they are known before clearing for the delivery hour (typically D-1). Treat as planned/same-hour observable at anchor."
+      },
+      "derived_features": [
+        "fiba_fibs_ratio",
+        "fiba_fibs_balance",
+        "fiba_fibs_total",
+        "fiba_fibs_pressure"
+      ],
+      "feature_list_additions": {
+        "main_regression": [
+          "fiba_fibs_pressure",
+          "fiba_fibs_balance",
+          "fiba_fibs_total"
+        ],
+        "low_price_classifier": [
+          "fiba_fibs_pressure",
+          "fiba_fibs_balance"
+        ]
+      },
+      "manual_gaps": [
+        "Discover API endpoint behind UI page.",
+        "Confirm whether response is hourly by delivery hour and which fields map to MWh volumes.",
+        "Confirm timezone semantics (Europe/Istanbul) for join onto ts_hour."
+      ]
+    },
+    {
+      "name": "GÖP Fiyattan Bağımsız Satış Teklifi (FİBS)",
+      "url": "https://seffaflik.epias.com.tr/electricity/electricity-markets/day-ahead-market-dam/dam-price-independent-sales-order",
+      "expected_master_columns": [
+        "dam_price_independent_sell_mwh"
+      ],
+      "repo_status": {
+        "endpoint_in_repo": false,
+        "fetch_script_in_repo": false,
+        "master_column_present": false
+      },
+      "endpoint_status": "Unknown (UI URL provided). Requires manual browser Network inspection to discover underlying API path and JSON payload contract.",
+      "planned_raw_files": [
+        "data/dam_price_independent_sell.csv"
+      ],
+      "planned_clean_files": [
+        "data/clean/dam_price_independent_sell_hourly.parquet"
+      ],
+      "planned_master_merge": {
+        "master_schema_dataset_spec": {
+          "name": "dam_price_independent_sell",
+          "filename": "dam_price_independent_sell_hourly.parquet",
+          "prefix": "dam_",
+          "default_availability": "planned"
+        },
+        "join_key": "ts_hour",
+        "merge_type": "left join onto ptf spine"
+      },
+      "leakage_risk": {
+        "risk_level": "low",
+        "reason": "Same as buy side: order book volumes are known before clearing for delivery hour (typically D-1)."
+      },
+      "derived_features": [
+        "fiba_fibs_ratio",
+        "fiba_fibs_balance",
+        "fiba_fibs_total",
+        "fiba_fibs_pressure"
+      ],
+      "feature_list_additions": {
+        "main_regression": [
+          "fiba_fibs_pressure",
+          "fiba_fibs_balance",
+          "fiba_fibs_total"
+        ],
+        "low_price_classifier": [
+          "fiba_fibs_pressure",
+          "fiba_fibs_balance"
+        ]
+      },
+      "manual_gaps": [
+        "Discover API endpoint behind UI page.",
+        "Confirm whether response is hourly by delivery hour and which fields map to MWh volumes."
+      ]
+    },
+    {
+      "name": "GRF / Günlük Referans Fiyatı (DRP)",
+      "url": "https://seffaflik.epias.com.tr/natural-gas/natural-gas-markets/spot-gas-markets-sgp/price/daily-reference-price-drp",
+      "expected_master_columns": [
+        "grf_tl_1000sm3",
+        "grf_usd_1000sm3",
+        "grf_eur_mwh",
+        "grf_usd_mmbtu"
+      ],
+      "repo_status": {
+        "endpoint_in_repo": false,
+        "fetch_script_in_repo": false,
+        "master_column_present": false
+      },
+      "endpoint_status": "Unknown (UI URL provided). Requires manual browser Network inspection to discover underlying API path. May use a different service family than electricity-service.",
+      "planned_raw_files": [
+        "data/grf_drp.csv"
+      ],
+      "planned_clean_files": [
+        "data/clean/grf_hourly.parquet"
+      ],
+      "planned_master_merge": {
+        "master_schema_dataset_spec": {
+          "name": "grf",
+          "filename": "grf_hourly.parquet",
+          "prefix": "grf_",
+          "default_availability": "realized"
+        },
+        "join_key": "ts_hour",
+        "merge_type": "left join onto ptf spine",
+        "granularity_strategy": "Daily values expanded to 24 hourly rows for the delivery date to fit master ts_hour."
+      },
+      "leakage_risk": {
+        "risk_level": "medium",
+        "reason": "Daily publication time is unclear; to avoid same-day leakage, model features should use lag/rolling versions only."
+      },
+      "derived_features": [
+        "grf_tl_lag_1d",
+        "grf_tl_change_7d",
+        "grf_tl_rolling_mean_7d",
+        "gas_cost_pressure",
+        "thermal_cost_pressure",
+        "gas_marginal_pressure"
+      ],
+      "feature_definitions": {
+        "grf_tl_lag_1d": "grf_tl_1000sm3 shifted by 24 hours (past-only).",
+        "grf_tl_change_7d": "grf_tl_lag_1d - grf_tl_lag_1d shifted by 7 days.",
+        "grf_tl_rolling_mean_7d": "rolling mean over past 7 days on grf_tl_lag_1d.",
+        "gas_cost_pressure": "gas_share * grf_tl_lag_1d",
+        "thermal_cost_pressure": "thermal_price_setting_share * grf_tl_lag_1d",
+        "gas_marginal_pressure": "gas_share * thermal_price_setting_share * grf_tl_lag_1d"
+      },
+      "feature_list_additions": {
+        "main_regression": [
+          "grf_tl_lag_1d",
+          "grf_tl_change_7d",
+          "grf_tl_rolling_mean_7d",
+          "gas_cost_pressure",
+          "thermal_cost_pressure",
+          "gas_marginal_pressure"
+        ],
+        "low_price_classifier": [
+          "grf_tl_lag_1d",
+          "gas_cost_pressure"
+        ]
+      },
+      "manual_gaps": [
+        "Discover the natural gas DRP API endpoint and whether CAS auth is required.",
+        "Confirm field names/units mapping to the four target columns.",
+        "Decide whether daily->hourly expansion should occur in fetch script or cleaning stage."
+      ]
+    }
+  ],
+  "implementation_sequence_plan": [
+    "1) Endpoint discovery (browser Network) for each UI URL; document full URL, method, required headers, payload schema, and response keys.",
+    "2) Add three fetch scripts (buy, sell, grf) reusing CAS TGT pattern; write raw CSVs under data/.",
+    "3) Extend cleaning pipeline: add hourly CSV sources for buy/sell; add daily-to-hourly handling for GRF.",
+    "4) Extend master/schema.py JOIN_DATASETS with DatasetSpec entries (dam_, grf_ prefixes).",
+    "5) Add feature engineering in features/engineering.py for fiba/fibs and GRF lag/pressure features with explicit leakage-safe shifts.",
+    "6) Add new engineered features to MAIN_REGRESSION_FEATURES / LOW_PRICE_CLASSIFIER_FEATURES as listed above.",
+    "7) Validate with master report + feature inventory audit (no training)."
+  ]
+}
+

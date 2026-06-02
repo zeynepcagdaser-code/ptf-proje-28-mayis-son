@@ -1,9 +1,27 @@
 from pathlib import Path
 
+from features.config import (
+    LOW_PRICE_CLASSIFIER_FEATURES,
+    MAIN_REGRESSION_FEATURES,
+)
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 FEATURES_PATH = PROJECT_ROOT / "data" / "features" / "lstm_next24_v1.parquet"
 MODEL_DATA_DIR = PROJECT_ROOT / "data" / "model"
+MODEL_LOW_PRICE_DATA_DIR = PROJECT_ROOT / "data" / "model_low_price"
 REPORTS_DIR = PROJECT_ROOT / "reports"
+
+DEFAULT_FEATURE_PROFILE = "main_regression"
+
+FEATURE_PROFILES: dict[str, list[str]] = {
+    "main_regression": MAIN_REGRESSION_FEATURES,
+    "low_price_classifier": LOW_PRICE_CLASSIFIER_FEATURES,
+}
+
+PROFILE_OUTPUT_DIRS: dict[str, Path] = {
+    "main_regression": MODEL_DATA_DIR,
+    "low_price_classifier": MODEL_LOW_PRICE_DATA_DIR,
+}
 
 INPUT_WINDOW = 168
 OUTPUT_HORIZON = 24

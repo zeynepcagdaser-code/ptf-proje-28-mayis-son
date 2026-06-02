@@ -1,6 +1,6 @@
 # LSTM Feature Dataset Report
 
-- **Generated (UTC):** 2026-05-29T21:35:38.843583+00:00
+- **Generated (UTC):** 2026-06-02T06:54:39.452661+00:00
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Source:** `data/master/master_hourly_v1.parquet`
 
@@ -19,7 +19,7 @@
 
 ## Features & targets
 
-- Feature columns: 75
+- Feature columns: 140
 - Target columns: 24
 - ts_hour range: 2020-01-08 00:00:00+03:00 → 2026-05-29 23:00:00+03:00
 
@@ -36,16 +36,28 @@
 - `wind_generation_mean_lag_168`: 0.8116%
 - `wind_generation_mean_lag_48`: 0.5980%
 - `wind_generation_mean_lag_24`: 0.5553%
+- `grf_tl_change_7d`: 0.3417%
+- `grf_tl_rolling_mean_7d`: 0.3400%
 - `ptf_lag_168`: 0.2990%
+- `ptf_lag_168h`: 0.2990%
 - `ptf_roll_mean_168`: 0.2990%
 - `ptf_roll_std_168`: 0.2990%
+- `ptf_rolling_mean_168h`: 0.2990%
+- `ptf_roll_min_168`: 0.2990%
+- `ptf_roll_max_168`: 0.2990%
 - `smf_ptf_spread_lag_168`: 0.2990%
+- `fiba_fibs_ratio_lag_168`: 0.2990%
+- `fiba_fibs_pressure_lag_168`: 0.2990%
 - `gen_total_lag_168`: 0.2990%
 - `cons_consumption_lag_168`: 0.2990%
 - `smf_lag_168`: 0.2990%
 - `yal_yat_net_lag_168`: 0.2990%
 - `yal_yat_upRegulationDelivered_lag_168`: 0.2990%
 - `yal_yat_downRegulationDelivered_lag_168`: 0.2990%
+- `ptf_low_count_168`: 0.2972%
+- `ptf_zero_count_168`: 0.2972%
+- `ptf_low_ratio_168`: 0.2972%
+- `ptf_zero_ratio_168`: 0.2972%
 - `outage_fault_mw_loss_sum`: 0.2563%
 - `outage_fault_mw_loss_max`: 0.2563%
 - `outage_fault_operator_power_sum`: 0.2563%
@@ -67,10 +79,26 @@
 - `wind_forecast_min`: 0.0481%
 - `wind_forecast_max`: 0.0481%
 - `ptf_lag_24`: 0.0427%
+- `ptf_lag_24h`: 0.0427%
 - `ptf_roll_mean_24`: 0.0427%
 - `ptf_roll_std_24`: 0.0427%
+- `ptf_rolling_mean_24h`: 0.0427%
+- `ptf_rolling_std_24h`: 0.0427%
+- `ptf_roll_min_24`: 0.0427%
+- `ptf_roll_max_24`: 0.0427%
 - `smf_ptf_spread_lag_24`: 0.0427%
+- `dam_price_independent_buy_lag_24`: 0.0427%
+- `dam_price_independent_sell_lag_24`: 0.0427%
+- `fiba_fibs_ratio_lag_24`: 0.0427%
+- `fiba_fibs_balance_lag_24`: 0.0427%
+- `fiba_fibs_pressure_lag_24`: 0.0427%
+- `grf_tl_lag_1d`: 0.0427%
+- `gas_cost_pressure_lag_1d`: 0.0427%
+- `thermal_cost_pressure_lag_1d`: 0.0427%
+- `gas_marginal_pressure_lag_1d`: 0.0427%
 - `kgup_total_minus_load`: 0.0427%
+- `ptf_to_cap_ratio`: 0.0427%
+- `smf_to_cap_ratio`: 0.0427%
 - `load_lep`: 0.0427%
 - `gen_total_lag_24`: 0.0427%
 - `cons_consumption_lag_24`: 0.0427%
@@ -78,23 +106,44 @@
 - `yal_yat_net_lag_24`: 0.0427%
 - `yal_yat_upRegulationDelivered_lag_24`: 0.0427%
 - `yal_yat_downRegulationDelivered_lag_24`: 0.0427%
+- `ptf_low_count_24`: 0.0409%
+- `ptf_zero_count_24`: 0.0409%
+- `ptf_low_ratio_24`: 0.0409%
+- `ptf_zero_ratio_24`: 0.0409%
+- `ptf_lag_3`: 0.0053%
+- `ptf_lag_3h`: 0.0053%
+- `ptf_lag_2`: 0.0036%
+- `ptf_lag_2h`: 0.0036%
 - `ptf_lag_1`: 0.0018%
+- `ptf_lag_1h`: 0.0018%
 
 ## Missing features (after ffill limit=2, % > 0)
 
 - `wind_generation_mean_lag_168`: 0.7244%
 - `wind_generation_mean_lag_48`: 0.5108%
 - `wind_generation_mean_lag_24`: 0.4681%
+- `grf_tl_change_7d`: 0.3417%
+- `grf_tl_rolling_mean_7d`: 0.3400%
 - `ptf_lag_168`: 0.2990%
+- `ptf_lag_168h`: 0.2990%
 - `ptf_roll_mean_168`: 0.2990%
 - `ptf_roll_std_168`: 0.2990%
+- `ptf_rolling_mean_168h`: 0.2990%
+- `ptf_roll_min_168`: 0.2990%
+- `ptf_roll_max_168`: 0.2990%
 - `smf_ptf_spread_lag_168`: 0.2990%
+- `fiba_fibs_ratio_lag_168`: 0.2990%
+- `fiba_fibs_pressure_lag_168`: 0.2990%
 - `gen_total_lag_168`: 0.2990%
 - `cons_consumption_lag_168`: 0.2990%
 - `smf_lag_168`: 0.2990%
 - `yal_yat_net_lag_168`: 0.2990%
 - `yal_yat_upRegulationDelivered_lag_168`: 0.2990%
 - `yal_yat_downRegulationDelivered_lag_168`: 0.2990%
+- `ptf_low_count_168`: 0.2972%
+- `ptf_zero_count_168`: 0.2972%
+- `ptf_low_ratio_168`: 0.2972%
+- `ptf_zero_ratio_168`: 0.2972%
 - `outage_fault_mw_loss_sum`: 0.2492%
 - `outage_fault_mw_loss_max`: 0.2492%
 - `outage_fault_operator_power_sum`: 0.2492%
@@ -108,15 +157,35 @@
 - `yal_yat_upRegulationDelivered_lag_48`: 0.0854%
 - `yal_yat_downRegulationDelivered_lag_48`: 0.0854%
 - `ptf_lag_24`: 0.0427%
+- `ptf_lag_24h`: 0.0427%
 - `ptf_roll_mean_24`: 0.0427%
 - `ptf_roll_std_24`: 0.0427%
+- `ptf_rolling_mean_24h`: 0.0427%
+- `ptf_rolling_std_24h`: 0.0427%
+- `ptf_roll_min_24`: 0.0427%
+- `ptf_roll_max_24`: 0.0427%
 - `smf_ptf_spread_lag_24`: 0.0427%
+- `dam_price_independent_buy_lag_24`: 0.0427%
+- `dam_price_independent_sell_lag_24`: 0.0427%
+- `fiba_fibs_ratio_lag_24`: 0.0427%
+- `fiba_fibs_balance_lag_24`: 0.0427%
+- `fiba_fibs_pressure_lag_24`: 0.0427%
+- `grf_tl_lag_1d`: 0.0427%
+- `gas_cost_pressure_lag_1d`: 0.0427%
+- `thermal_cost_pressure_lag_1d`: 0.0427%
+- `gas_marginal_pressure_lag_1d`: 0.0427%
+- `ptf_to_cap_ratio`: 0.0427%
+- `smf_to_cap_ratio`: 0.0427%
 - `gen_total_lag_24`: 0.0427%
 - `cons_consumption_lag_24`: 0.0427%
 - `smf_lag_24`: 0.0427%
 - `yal_yat_net_lag_24`: 0.0427%
 - `yal_yat_upRegulationDelivered_lag_24`: 0.0427%
 - `yal_yat_downRegulationDelivered_lag_24`: 0.0427%
+- `ptf_low_count_24`: 0.0409%
+- `ptf_zero_count_24`: 0.0409%
+- `ptf_low_ratio_24`: 0.0409%
+- `ptf_zero_ratio_24`: 0.0409%
 - `wind_forecast_share`: 0.0409%
 - `wind_quarter2_mean`: 0.0409%
 - `wind_quarter3_mean`: 0.0409%
@@ -127,7 +196,12 @@
 - `wind_forecast_std`: 0.0409%
 - `kgup_total_minus_load`: 0.0392%
 - `load_lep`: 0.0392%
+- `ptf_lag_3`: 0.0053%
+- `ptf_lag_3h`: 0.0053%
+- `ptf_lag_2`: 0.0036%
+- `ptf_lag_2h`: 0.0036%
 - `ptf_lag_1`: 0.0018%
+- `ptf_lag_1h`: 0.0018%
 
 ## Leakage checklist
 

@@ -1,0 +1,216 @@
+{
+  "generated_at_local": "2026-06-02T09:46:00+03:00",
+  "model_training_performed": false,
+  "endpoints": {
+    "dam_price_independent_buy": {
+      "service_base": "https://seffaflik.epias.com.tr/electricity-service",
+      "path": "/v1/markets/dam/data/price-independent-bid",
+      "full_url": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/price-independent-bid",
+      "discovery_source": "electricity-service technical docs (TR) section 5.129"
+    },
+    "dam_price_independent_sell": {
+      "service_base": "https://seffaflik.epias.com.tr/electricity-service",
+      "path": "/v1/markets/dam/data/price-independent-offer",
+      "full_url": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/price-independent-offer",
+      "discovery_source": "electricity-service technical docs (TR) section 5.130"
+    },
+    "grf_daily_reference_price": {
+      "service_base": "https://seffaflik.epias.com.tr/natural-gas-service",
+      "path": "/v1/markets/sgp/data/daily-reference-price",
+      "full_url": "https://seffaflik.epias.com.tr/natural-gas-service/v1/markets/sgp/data/daily-reference-price",
+      "discovery_source": "natural-gas-service technical docs (TR) section 5.10"
+    }
+  },
+  "requested_date_range_target": {
+    "start": "2020-01-01",
+    "end": "master_ts_hour_end (inclusive day)"
+  },
+  "actual_date_range": {
+    "master_ts_hour_start": "2020-01-01 00:00:00+03:00",
+    "master_ts_hour_end": "2026-05-30 23:00:00+03:00",
+    "features_ts_hour_start": "2020-01-08 00:00:00+03:00",
+    "features_ts_hour_end": "2026-05-29 23:00:00+03:00"
+  },
+  "fetch_results": {
+    "dam_price_independent_buy": {
+      "raw_csv": "data/external/epias_market/fiba_fibs/dam_price_independent_buy_raw.csv",
+      "processed_parquet": "data/processed/dam_price_independent_buy.parquet",
+      "rows": 56208,
+      "chunking": {
+        "strategy": "yearly (365-day) chunks",
+        "api_limit_observed": false
+      }
+    },
+    "dam_price_independent_sell": {
+      "raw_csv": "data/external/epias_market/fiba_fibs/dam_price_independent_sell_raw.csv",
+      "processed_parquet": "data/processed/dam_price_independent_sell.parquet",
+      "rows": 56208,
+      "chunking": {
+        "strategy": "yearly (365-day) chunks",
+        "api_limit_observed": false
+      }
+    },
+    "grf_daily_reference_price": {
+      "raw_csv": "data/external/epias_market/grf/grf_daily_reference_price_raw.csv",
+      "processed_parquet": "data/processed/grf_daily_reference_price.parquet",
+      "rows": 2342,
+      "granularity": "daily (ts_day)",
+      "chunking": {
+        "strategy": "yearly (365-day) chunks",
+        "api_limit_observed": false
+      }
+    }
+  },
+  "master_merge": {
+    "command": "python3 master/build_master.py",
+    "output": "data/master/master_hourly_v1.parquet",
+    "columns_added": [
+      "dam_price_independent_buy_mwh",
+      "dam_price_independent_sell_mwh",
+      "grf_tl_1000sm3",
+      "grf_usd_1000sm3",
+      "grf_eur_mwh",
+      "grf_usd_mmbtu"
+    ],
+    "grf_join_policy": "join by day key (ts_day := floor(ts_hour,'D')) then forward-fill on hourly spine"
+  },
+  "feature_engineering": {
+    "safe_division_policy": {
+      "fiba_fibs_ratio": "sell==0 -> NaN",
+      "fiba_fibs_pressure": "total==0 -> NaN"
+    },
+    "engineered_features_added": [
+      "fiba_fibs_ratio",
+      "fiba_fibs_balance",
+      "fiba_fibs_total",
+      "fiba_fibs_pressure",
+      "grf_tl_lag_1d",
+      "grf_tl_change_7d",
+      "grf_tl_rolling_mean_7d",
+      "gas_cost_pressure",
+      "thermal_cost_pressure",
+      "gas_marginal_pressure"
+    ],
+    "notes": [
+      "grf_tl_lag_1d and rolling/change features are computed from lagged (t-24h) GRF to reduce publication-time leakage risk."
+    ]
+  },
+  "feature_lists": {
+    "feature_parquet_total_feature_count": 130,
+    "MAIN_REGRESSION_FEATURES": {
+      "count": 52,
+      "missing": 0
+    },
+    "LOW_PRICE_CLASSIFIER_FEATURES": {
+      "count": 45,
+      "missing": 0
+    },
+    "RISK_DASHBOARD_FEATURES": {
+      "count": 21,
+      "missing": 0
+    }
+  },
+  "leakage_risk": {
+    "high_risk_features_detected_by_audit": [],
+    "manual_review_notes": [
+      "Using same-day GRF (grf_tl_1000sm3) as a feature may still be sensitive to publication timing; lag-based GRF features are safer for strict cutoff."
+    ]
+  },
+  "commands_executed": [
+    "python3 fetch_dam_price_independent_buy.py",
+    "python3 fetch_dam_price_independent_sell.py",
+    "python3 fetch_grf_daily_reference_price.py",
+    "python3 master/build_master.py",
+    "python3 build_features.py",
+    "python3 audit_feature_inventory.py",
+    "python3 run_sequence.py",
+    "python3 run_sequence.py --feature-profile low_price_classifier"
+  ],
+  "sequence_build_status_at_report_time": {
+    "main_regression": "success",
+    "low_price_classifier": "success"
+  },
+  "sequence_build_outputs": {
+    "main_regression": {
+      "output_dir": "data/model",
+      "feature_count": 52,
+      "targets": 24,
+      "window": 168,
+      "horizon": 24,
+      "shapes": {
+        "train_X": [
+          43489,
+          168,
+          52
+        ],
+        "train_y": [
+          43489,
+          24
+        ],
+        "validation_X": [
+          8570,
+          168,
+          52
+        ],
+        "validation_y": [
+          8570,
+          24
+        ],
+        "test_X": [
+          3387,
+          168,
+          52
+        ],
+        "test_y": [
+          3387,
+          24
+        ]
+      },
+      "reports": {
+        "json": "reports/sequence_report_main_regression_latest.json",
+        "md": "reports/sequence_report_main_regression_latest.md"
+      }
+    },
+    "low_price_classifier": {
+      "output_dir": "data/model_low_price",
+      "feature_count": 45,
+      "targets": 24,
+      "window": 168,
+      "horizon": 24,
+      "shapes": {
+        "train_X": [
+          43513,
+          168,
+          45
+        ],
+        "train_y": [
+          43513,
+          24
+        ],
+        "validation_X": [
+          8570,
+          168,
+          45
+        ],
+        "validation_y": [
+          8570,
+          24
+        ],
+        "test_X": [
+          3387,
+          168,
+          45
+        ],
+        "test_y": [
+          3387,
+          24
+        ]
+      },
+      "reports": {
+        "json": "reports/sequence_report_low_price_classifier_latest.json",
+        "md": "reports/sequence_report_low_price_classifier_latest.md"
+      }
+    }
+  }
+}
+
