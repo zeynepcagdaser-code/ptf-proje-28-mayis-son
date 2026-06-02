@@ -27,15 +27,25 @@ st.title("PTF Tahmin Paneli")
 st.write("Bu panel, saatlik PTF tahminlerini ve iki aşamalı model performansını izlemek için hazırlandı.")
 
 
+def _parse_datetime_column(series: pd.Series) -> pd.Series:
+    if pd.api.types.is_integer_dtype(series.dtype):
+        max_val = int(series.max(skipna=True)) if not series.empty else 0
+        if 10**14 <= max_val < 10**16:
+            return pd.to_datetime(series, unit="us", errors="coerce")
+        if 10**16 <= max_val < 10**19:
+            return pd.to_datetime(series, unit="ns", errors="coerce")
+    return pd.to_datetime(series, errors="coerce")
+
+
 @st.cache_data(show_spinner=False)
 def load_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
     df = pd.read_csv(path)
     if "ts_hour" in df.columns:
-        df["ts_hour"] = pd.to_datetime(df["ts_hour"], errors="coerce")
+        df["ts_hour"] = _parse_datetime_column(df["ts_hour"])
     if "delivery_hour" in df.columns:
-        df["delivery_hour"] = pd.to_datetime(df["delivery_hour"], errors="coerce")
+        df["delivery_hour"] = _parse_datetime_column(df["delivery_hour"])
     return df
 
 
