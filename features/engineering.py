@@ -245,6 +245,94 @@ def add_grf_features(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def add_dam_microstructure_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    DAM offer/match/block microstructure features.
+
+    Safe division:
+      - Any ratio uses denominator > 0 else NaN (never inf).
+
+    Matched volume:
+      - If matched buy/sell differ, use average (robust + symmetric).
+    """
+    out = df.copy()
+
+    bid = pd.to_numeric(out.get("dam_bid_volume_mwh"), errors="coerce")
+    sell = pd.to_numeric(out.get("dam_sell_offer_volume_mwh"), errors="coerce")
+    m_buy = pd.to_numeric(out.get("dam_matched_buy_mwh"), errors="coerce")
+    m_sell = pd.to_numeric(out.get("dam_matched_sell_mwh"), errors="coerce")
+    b_match = pd.to_numeric(out.get("dam_block_matched_buy_mwh"), errors="coerce")
+    b_unmatch = pd.to_numeric(out.get("dam_block_unmatched_buy_mwh"), errors="coerce")
+
+    if bid is not None and sell is not None:
+        gap = bid - sell
+        total = bid + sell
+        out["dam_buy_sell_ratio"] = np.where(sell > 0, bid / sell, np.nan).astype(float)
+        out["dam_offer_supply_demand_gap"] = gap.astype(float)
+        out["dam_offer_total_volume_mwh"] = total.astype(float)
+        out["dam_offer_balance_pressure"] = np.where(total > 0, gap / total, np.nan).astype(float)
+    else:
+        out["dam_buy_sell_ratio"] = np.nan
+        out["dam_offer_supply_demand_gap"] = np.nan
+        out["dam_offer_total_volume_mwh"] = np.nan
+        out["dam_offer_balance_pressure"] = np.nan
+
+    # matched volume
+    if m_buy is not None and m_sell is not None:
+        out["dam_matched_volume_mwh"] = np.where(
+            (m_buy.notna()) & (m_sell.notna()),
+            0.5 * (m_buy + m_sell),
+            np.where(m_buy.notna(), m_buy, m_sell),
+        ).astype(float)
+        out["dam_unmatched_buy_proxy"] = (bid - m_buy).astype(float) if bid is not None else np.nan
+        out["dam_unmatched_sell_proxy"] = (sell - m_sell).astype(float) if sell is not None else np.nan
+    else:
+        out["dam_matched_volume_mwh"] = np.nan
+        out["dam_unmatched_buy_proxy"] = np.nan
+        out["dam_unmatched_sell_proxy"] = np.nan
+
+    mv = pd.to_numeric(out.get("dam_matched_volume_mwh"), errors="coerce")
+    if bid is not None and mv is not None:
+        out["dam_bid_to_match_ratio"] = np.where(mv > 0, bid / mv, np.nan).astype(float)
+    else:
+        out["dam_bid_to_match_ratio"] = np.nan
+    if sell is not None and mv is not None:
+        out["dam_sell_to_match_ratio"] = np.where(mv > 0, sell / mv, np.nan).astype(float)
+    else:
+        out["dam_sell_to_match_ratio"] = np.nan
+    if mv is not None and "dam_offer_total_volume_mwh" in out.columns:
+        tv = pd.to_numeric(out["dam_offer_total_volume_mwh"], errors="coerce")
+        out["dam_match_ratio"] = np.where(tv > 0, mv / tv, np.nan).astype(float)
+    else:
+        out["dam_match_ratio"] = np.nan
+
+    # Block buy
+    if b_match is not None and b_unmatch is not None:
+        out["dam_block_total_buy_mwh"] = (b_match + b_unmatch).astype(float)
+        bt = pd.to_numeric(out["dam_block_total_buy_mwh"], errors="coerce")
+        out["dam_block_unmatched_ratio"] = np.where(bt > 0, b_unmatch / bt, np.nan).astype(float)
+        out["dam_block_pressure"] = bt.astype(float)
+    else:
+        out["dam_block_total_buy_mwh"] = np.nan
+        out["dam_block_unmatched_ratio"] = np.nan
+        out["dam_block_pressure"] = np.nan
+
+    # Lagged alternatives (strict forecast)
+    for lag in (24, 168):
+        if "dam_bid_volume_mwh" in out.columns:
+            out[f"dam_bid_volume_lag_{lag}"] = pd.to_numeric(out["dam_bid_volume_mwh"], errors="coerce").shift(lag)
+        if "dam_sell_offer_volume_mwh" in out.columns:
+            out[f"dam_sell_offer_volume_lag_{lag}"] = pd.to_numeric(out["dam_sell_offer_volume_mwh"], errors="coerce").shift(lag)
+        if "dam_buy_sell_ratio" in out.columns:
+            out[f"dam_buy_sell_ratio_lag_{lag}"] = pd.to_numeric(out["dam_buy_sell_ratio"], errors="coerce").shift(lag)
+        if "dam_offer_balance_pressure" in out.columns:
+            out[f"dam_offer_balance_pressure_lag_{lag}"] = pd.to_numeric(out["dam_offer_balance_pressure"], errors="coerce").shift(lag)
+    # only requested lag_24 for these
+    out["dam_match_ratio_lag_24"] = pd.to_numeric(out.get("dam_match_ratio"), errors="coerce").shift(24)
+    out["dam_block_unmatched_ratio_lag_24"] = pd.to_numeric(out.get("dam_block_unmatched_ratio"), errors="coerce").shift(24)
+    return out
+
+
 def add_cap_and_ratio_features(df: pd.DataFrame) -> pd.DataFrame:
     """
     Cap / ratio proxies (leakage-safe).
@@ -507,6 +595,37 @@ def list_engineered_feature_columns() -> list[str]:
         "thermal_cost_pressure_lag_1d",
         "gas_marginal_pressure_lag_1d",
     ]
+    dam_micro = [
+        "dam_bid_volume_mwh",
+        "dam_sell_offer_volume_mwh",
+        "dam_matched_buy_mwh",
+        "dam_matched_sell_mwh",
+        "dam_matched_volume_mwh",
+        "dam_bid_to_match_ratio",
+        "dam_sell_to_match_ratio",
+        "dam_unmatched_buy_proxy",
+        "dam_unmatched_sell_proxy",
+        "dam_block_matched_buy_mwh",
+        "dam_block_unmatched_buy_mwh",
+        "dam_block_total_buy_mwh",
+        "dam_block_unmatched_ratio",
+        "dam_block_pressure",
+        "dam_buy_sell_ratio",
+        "dam_offer_supply_demand_gap",
+        "dam_offer_total_volume_mwh",
+        "dam_offer_balance_pressure",
+        "dam_match_ratio",
+        "dam_bid_volume_lag_24",
+        "dam_sell_offer_volume_lag_24",
+        "dam_buy_sell_ratio_lag_24",
+        "dam_offer_balance_pressure_lag_24",
+        "dam_match_ratio_lag_24",
+        "dam_block_unmatched_ratio_lag_24",
+        "dam_bid_volume_lag_168",
+        "dam_sell_offer_volume_lag_168",
+        "dam_buy_sell_ratio_lag_168",
+        "dam_offer_balance_pressure_lag_168",
+    ]
     cap_ratios = ["price_cap", "ptf_to_cap_ratio", "smf_to_cap_ratio"]
 
     lagged = []
@@ -522,6 +641,7 @@ def list_engineered_feature_columns() -> list[str]:
         + spread
         + market_orders
         + grf
+        + dam_micro
         + supply
         + downside
         + cap_ratios

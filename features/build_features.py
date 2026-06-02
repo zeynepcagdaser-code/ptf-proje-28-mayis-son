@@ -20,6 +20,7 @@ from features.engineering import (
     add_cap_and_ratio_features,
     add_calendar_features,
     add_fiba_fibs_features,
+    add_dam_microstructure_features,
     add_grf_features,
     add_holiday_features,
     add_lagged_realized_features,
@@ -60,6 +61,7 @@ def build_feature_dataframe(master_path: Path | None = None) -> tuple[pd.DataFra
     df = add_ptf_downside_risk_features(df)
     df = add_fiba_fibs_features(df)
     df = add_grf_features(df)
+    df = add_dam_microstructure_features(df)
     df = add_lagged_realized_features(df)
     df = add_cap_and_ratio_features(df)
 

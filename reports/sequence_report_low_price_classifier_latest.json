@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-06-02T06:57:23.133200+00:00",
+  "generated_at_utc": "2026-06-02T07:16:53.331086+00:00",
   "source_features": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
   "output_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price",
   "window_size": 168,
   "horizon": 24,
   "index_mapping": "X[t-167:t] -> y[t+1:t+24]",
-  "feature_count": 49,
+  "feature_count": 57,
   "target_count": 24,
   "feature_columns": [
     "low_load_flag",
@@ -56,7 +56,15 @@
     "fiba_fibs_ratio_lag_24",
     "fiba_fibs_pressure_lag_24",
     "fiba_fibs_ratio_lag_168",
-    "fiba_fibs_pressure_lag_168"
+    "fiba_fibs_pressure_lag_168",
+    "dam_buy_sell_ratio",
+    "dam_offer_balance_pressure",
+    "dam_match_ratio",
+    "dam_unmatched_buy_proxy",
+    "dam_block_unmatched_ratio",
+    "dam_buy_sell_ratio_lag_24",
+    "dam_offer_balance_pressure_lag_24",
+    "dam_match_ratio_lag_24"
   ],
   "target_columns": [
     "target_1h",
@@ -87,12 +95,12 @@
   "shapes": {
     "train": {
       "X": [
-        43513,
+        43275,
         168,
-        49
+        57
       ],
       "y": [
-        43513,
+        43275,
         24
       ]
     },
@@ -100,7 +108,7 @@
       "X": [
         8570,
         168,
-        49
+        57
       ],
       "y": [
         8570,
@@ -111,7 +119,7 @@
       "X": [
         3387,
         168,
-        49
+        57
       ],
       "y": [
         3387,
@@ -120,7 +128,7 @@
     }
   },
   "sequence_counts": {
-    "train": 43513,
+    "train": 43275,
     "validation": 8570,
     "test": 3387
   },
@@ -163,12 +171,12 @@
     }
   ],
   "feature_profile": "low_price_classifier",
-  "requested_feature_count": 49,
-  "resolved_feature_count": 49,
+  "requested_feature_count": 57,
+  "resolved_feature_count": 57,
   "missing_feature_count": 0,
   "missing_features": [],
   "tabular_nan_rows": {
-    "feature_nan_rows": 45,
+    "feature_nan_rows": 283,
     "target_nan_rows": 0
   },
   "metadata_file": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price/sequence_metadata.json",

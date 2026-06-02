@@ -2,7 +2,7 @@
 
 - Dataset: `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - Rows: 56016
-- Feature count: 140
+- Feature count: 169
 
 ## Counts by Family
 
@@ -12,21 +12,21 @@
 - kgup_source_mix: 16
 - renewable_pressure: 6
 - thermal_price_setting: 5
-- smf_yal_yat_lagged: 31
+- smf_yal_yat_lagged: 41
 - wind_forecast: 8
 - outage: 8
 - fuel_currency: 3
 - cap_imbalance: 2
 - yekdem_merchant_proxy: 0
 - low_zero_price_risk: 4
-- other: 24
+- other: 43
 
 ## Counts by Recommended Usage
 
-- main_regression: 55
+- main_regression: 70
 - low_price_classifier: 23
-- risk_dashboard_only: 25
-- exclude: 37
+- risk_dashboard_only: 32
+- exclude: 44
 
 ## Inventory
 
@@ -95,8 +95,18 @@
 | `cons_consumption_lag_168` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
 | `cons_consumption_lag_24` | smf_yal_yat_lagged | - | lag_required | low | risk_dashboard_only | 0.00 |
 | `cons_consumption_lag_48` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
+| `dam_bid_volume_lag_168` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
+| `dam_bid_volume_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
+| `dam_block_unmatched_ratio_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.42 |
+| `dam_buy_sell_ratio_lag_168` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
+| `dam_buy_sell_ratio_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
+| `dam_match_ratio_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
+| `dam_offer_balance_pressure_lag_168` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
+| `dam_offer_balance_pressure_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
 | `dam_price_independent_buy_lag_24` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
 | `dam_price_independent_sell_lag_24` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
+| `dam_sell_offer_volume_lag_168` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
+| `dam_sell_offer_volume_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
 | `fiba_fibs_balance_lag_24` | smf_yal_yat_lagged | - | lag_required | low | exclude | 0.00 |
 | `fiba_fibs_pressure_lag_168` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
 | `fiba_fibs_pressure_lag_24` | smf_yal_yat_lagged | - | lag_required | low | main_regression | 0.00 |
@@ -148,8 +158,27 @@
 | `low_load_flag` | low_zero_price_risk | load_lep | same_hour_ok | low | low_price_classifier | 0.00 |
 | `solar_peak_hour_flag` | low_zero_price_risk | ts_hour | same_hour_ok | low | low_price_classifier | 0.00 |
 | `zero_price_risk_proxy` | low_zero_price_risk | kgup_* (renewable/gas shares), load_lep, ts_hour (holiday/weekend flag) | same_hour_ok | low | low_price_classifier | 0.00 |
+| `dam_bid_to_match_ratio` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_bid_volume_mwh` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_block_matched_buy_mwh` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_block_pressure` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_block_total_buy_mwh` | other | - | same_hour_ok | medium | exclude | 0.00 |
+| `dam_block_unmatched_buy_mwh` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_block_unmatched_ratio` | other | - | same_hour_ok | medium | main_regression | 0.42 |
+| `dam_buy_sell_ratio` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_match_ratio` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_matched_buy_mwh` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_matched_sell_mwh` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_matched_volume_mwh` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_offer_balance_pressure` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_offer_supply_demand_gap` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_offer_total_volume_mwh` | other | - | same_hour_ok | medium | exclude | 0.00 |
 | `dam_price_independent_buy_mwh` | other | - | same_hour_ok | medium | main_regression | 0.00 |
 | `dam_price_independent_sell_mwh` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_sell_offer_volume_mwh` | other | - | same_hour_ok | medium | risk_dashboard_only | 0.00 |
+| `dam_sell_to_match_ratio` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_unmatched_buy_proxy` | other | - | same_hour_ok | medium | main_regression | 0.00 |
+| `dam_unmatched_sell_proxy` | other | - | same_hour_ok | medium | exclude | 0.00 |
 | `fiba_fibs_balance` | other | - | same_hour_ok | medium | main_regression | 0.00 |
 | `fiba_fibs_pressure` | other | - | same_hour_ok | medium | main_regression | 0.00 |
 | `fiba_fibs_ratio` | other | - | same_hour_ok | medium | main_regression | 0.00 |

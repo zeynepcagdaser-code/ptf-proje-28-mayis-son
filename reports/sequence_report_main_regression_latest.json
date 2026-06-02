@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-06-02T06:56:12.611317+00:00",
+  "generated_at_utc": "2026-06-02T07:15:47.352267+00:00",
   "source_features": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet",
   "output_dir": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model",
   "window_size": 168,
   "horizon": 24,
   "index_mapping": "X[t-167:t] -> y[t+1:t+24]",
-  "feature_count": 55,
+  "feature_count": 73,
   "target_count": 24,
   "feature_columns": [
     "ptf_lag_24",
@@ -62,7 +62,25 @@
     "grf_tl_rolling_mean_7d",
     "gas_cost_pressure_lag_1d",
     "thermal_cost_pressure_lag_1d",
-    "gas_marginal_pressure_lag_1d"
+    "gas_marginal_pressure_lag_1d",
+    "dam_bid_volume_mwh",
+    "dam_sell_offer_volume_mwh",
+    "dam_matched_volume_mwh",
+    "dam_bid_to_match_ratio",
+    "dam_sell_to_match_ratio",
+    "dam_buy_sell_ratio",
+    "dam_offer_supply_demand_gap",
+    "dam_offer_balance_pressure",
+    "dam_match_ratio",
+    "dam_unmatched_buy_proxy",
+    "dam_block_unmatched_ratio",
+    "dam_block_pressure",
+    "dam_bid_volume_lag_24",
+    "dam_sell_offer_volume_lag_24",
+    "dam_buy_sell_ratio_lag_24",
+    "dam_offer_balance_pressure_lag_24",
+    "dam_match_ratio_lag_24",
+    "dam_block_unmatched_ratio_lag_24"
   ],
   "target_columns": [
     "target_1h",
@@ -93,12 +111,12 @@
   "shapes": {
     "train": {
       "X": [
-        43489,
+        43227,
         168,
-        55
+        73
       ],
       "y": [
-        43489,
+        43227,
         24
       ]
     },
@@ -106,7 +124,7 @@
       "X": [
         8570,
         168,
-        55
+        73
       ],
       "y": [
         8570,
@@ -117,7 +135,7 @@
       "X": [
         3387,
         168,
-        55
+        73
       ],
       "y": [
         3387,
@@ -126,7 +144,7 @@
     }
   },
   "sequence_counts": {
-    "train": 43489,
+    "train": 43227,
     "validation": 8570,
     "test": 3387
   },
@@ -169,12 +187,12 @@
     }
   ],
   "feature_profile": "main_regression",
-  "requested_feature_count": 55,
-  "resolved_feature_count": 55,
+  "requested_feature_count": 73,
+  "resolved_feature_count": 73,
   "missing_feature_count": 0,
   "missing_features": [],
   "tabular_nan_rows": {
-    "feature_nan_rows": 69,
+    "feature_nan_rows": 331,
     "target_nan_rows": 0
   },
   "metadata_file": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model/sequence_metadata.json",

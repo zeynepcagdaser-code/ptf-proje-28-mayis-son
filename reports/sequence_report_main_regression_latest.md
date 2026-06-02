@@ -1,6 +1,6 @@
 # Sequence Dataset Report
 
-- **Generated (UTC):** 2026-06-02T06:56:12.611317+00:00
+- **Generated (UTC):** 2026-06-02T07:15:47.352267+00:00
 - **Source:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Output dir:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model`
 
@@ -9,7 +9,7 @@
 - Window: **168**
 - Horizon: **24**
 - Mapping: `X[t-167:t] -> y[t+1:t+24]`
-- Features: 55
+- Features: 73
 - Targets: 24
 - Scaler fit split: **train**
 
@@ -17,15 +17,15 @@
 
 | Split | X shape | y shape |
 |-------|---------|---------|
-| train | (43489, 168, 55) | (43489, 24) |
-| validation | (8570, 168, 55) | (8570, 24) |
-| test | (3387, 168, 55) | (3387, 24) |
+| train | (43227, 168, 73) | (43227, 24) |
+| validation | (8570, 168, 73) | (8570, 24) |
+| test | (3387, 168, 73) | (3387, 24) |
 
 ## Sequence counts
 
 | Split | Sequences |
 |-------|----------:|
-| train | 43489 |
+| train | 43227 |
 | validation | 8570 |
 | test | 3387 |
 
@@ -103,6 +103,24 @@
 - `gas_cost_pressure_lag_1d`
 - `thermal_cost_pressure_lag_1d`
 - `gas_marginal_pressure_lag_1d`
+- `dam_bid_volume_mwh`
+- `dam_sell_offer_volume_mwh`
+- `dam_matched_volume_mwh`
+- `dam_bid_to_match_ratio`
+- `dam_sell_to_match_ratio`
+- `dam_buy_sell_ratio`
+- `dam_offer_supply_demand_gap`
+- `dam_offer_balance_pressure`
+- `dam_match_ratio`
+- `dam_unmatched_buy_proxy`
+- `dam_block_unmatched_ratio`
+- `dam_block_pressure`
+- `dam_bid_volume_lag_24`
+- `dam_sell_offer_volume_lag_24`
+- `dam_buy_sell_ratio_lag_24`
+- `dam_offer_balance_pressure_lag_24`
+- `dam_match_ratio_lag_24`
+- `dam_block_unmatched_ratio_lag_24`
 
 ## Target columns
 

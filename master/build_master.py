@@ -172,6 +172,10 @@ def build_master_dataframe(
     for name, filename, cols_added in [
         ("dam_price_independent_buy", "dam_price_independent_buy.parquet", ["dam_price_independent_buy_mwh"]),
         ("dam_price_independent_sell", "dam_price_independent_sell.parquet", ["dam_price_independent_sell_mwh"]),
+        ("dam_bid_volume", "dam_bid_volume.parquet", ["dam_bid_volume_mwh"]),
+        ("dam_sell_offer_volume", "dam_sell_offer_volume.parquet", ["dam_sell_offer_volume_mwh"]),
+        ("dam_matched_volume", "dam_matched_volume.parquet", ["dam_matched_buy_mwh", "dam_matched_sell_mwh"]),
+        ("dam_block_buy_volume", "dam_block_buy_volume.parquet", ["dam_block_matched_buy_mwh", "dam_block_unmatched_buy_mwh"]),
     ]:
         path = processed_dir / filename
         if not path.exists():
@@ -275,6 +279,12 @@ def run_build(
     availability_extra = {
         "dam_price_independent_buy_mwh": "planned",
         "dam_price_independent_sell_mwh": "planned",
+        "dam_bid_volume_mwh": "planned",
+        "dam_sell_offer_volume_mwh": "planned",
+        "dam_matched_buy_mwh": "planned",
+        "dam_matched_sell_mwh": "planned",
+        "dam_block_matched_buy_mwh": "planned",
+        "dam_block_unmatched_buy_mwh": "planned",
         "grf_tl_1000sm3": "realized",
         "grf_usd_1000sm3": "realized",
         "grf_eur_mwh": "realized",

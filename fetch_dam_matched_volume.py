@@ -1,0 +1,170 @@
+#!/usr/bin/env python3
+"""
+Fetch EPİAŞ DAM clearing (matched) quantities (GÖP Eşleşme Miktarı).
+
+Endpoint (electricity-service docs TR 5.120):
+  POST /v1/markets/dam/data/clearing-quantity
+
+Outputs:
+  - Raw CSV: data/external/epias_market/dam_microstructure/dam_matched_volume_raw.csv
+  - Processed parquet: data/processed/dam_matched_volume.parquet
+
+No model training.
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import time
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Any
+
+import pandas as pd
+import requests
+from dotenv import load_dotenv
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+load_dotenv(PROJECT_ROOT / ".env")
+
+USERNAME = os.getenv("EPIAS_USERNAME")
+PASSWORD = os.getenv("EPIAS_PASSWORD")
+
+LOGIN_URL = "https://giris.epias.com.tr/cas/v1/tickets"
+ENDPOINT_URL = "https://seffaflik.epias.com.tr/electricity-service/v1/markets/dam/data/clearing-quantity"
+
+RAW_DIR = PROJECT_ROOT / "data" / "external" / "epias_market" / "dam_microstructure"
+RAW_CSV = RAW_DIR / "dam_matched_volume_raw.csv"
+PROCESSED_PATH = PROJECT_ROOT / "data" / "processed" / "dam_matched_volume.parquet"
+
+REQUEST_TIMEOUT = (10, 120)
+MAX_RETRIES = 4
+CHUNK_DAYS = 365
+SLEEP_SECONDS = 1.5
+
+
+def _log(msg: str) -> None:
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {msg}", flush=True)
+
+
+def post_with_retries(url: str, **kwargs) -> requests.Response:
+    last_error: Exception | None = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = requests.post(url, timeout=REQUEST_TIMEOUT, **kwargs)
+            if resp.status_code == 429 and attempt < MAX_RETRIES:
+                wait_s = min(120, 3 * 2 ** (attempt - 1))
+                _log(f"rate-limit retry={attempt}/{MAX_RETRIES} wait={wait_s}s")
+                time.sleep(wait_s)
+                continue
+            return resp
+        except requests.exceptions.RequestException as exc:
+            last_error = exc
+            wait_s = min(120, 3 * 2 ** (attempt - 1))
+            _log(f"network retry={attempt}/{MAX_RETRIES} wait={wait_s}s err={exc}")
+            time.sleep(wait_s)
+    raise last_error  # type: ignore[misc]
+
+
+def obtain_tgt(username: str, password: str) -> str:
+    resp = post_with_retries(
+        LOGIN_URL,
+        headers={"Content-Type": "application/x-www-form-urlencoded", "Accept": "text/plain"},
+        data={"username": username, "password": password},
+    )
+    text = resp.text.strip()
+    if text.startswith("TGT-"):
+        return text
+    m = re.search(r"/cas/v1/tickets/([^\" ]+)", text)
+    if not m:
+        raise RuntimeError(f"TGT alınamadı: {text[:500]}")
+    return m.group(1)
+
+
+def _master_date_range() -> tuple[datetime, datetime]:
+    master_path = PROJECT_ROOT / "data" / "master" / "master_hourly_v1.parquet"
+    if not master_path.exists():
+        return datetime(2020, 1, 1), datetime.now()
+    ts = pd.read_parquet(master_path, columns=["ts_hour"])["ts_hour"]
+    ts = pd.to_datetime(ts, errors="coerce")
+    start = ts.min()
+    end = ts.max()
+    if pd.isna(start) or pd.isna(end):
+        return datetime(2020, 1, 1), datetime.now()
+    return start.to_pydatetime().replace(tzinfo=None), end.to_pydatetime().replace(tzinfo=None)
+
+
+def _normalize_items(items: list[dict[str, Any]]) -> pd.DataFrame:
+    if not items:
+        return pd.DataFrame(columns=["date", "hour", "matchedBids", "matchedOffers"])
+    df = pd.DataFrame(items)
+    keep = [c for c in ["date", "hour", "matchedBids", "matchedOffers"] if c in df.columns]
+    out = df[keep].copy()
+    out["matchedBids"] = pd.to_numeric(out.get("matchedBids"), errors="coerce")
+    out["matchedOffers"] = pd.to_numeric(out.get("matchedOffers"), errors="coerce")
+
+    from cleaning.datetime_utils import make_ts_hour
+
+    if "hour" not in out.columns:
+        out["hour"] = pd.to_datetime(out["date"], errors="coerce").dt.strftime("%H:00")
+    out["ts_hour"] = make_ts_hour(out, date_col="date")
+    out = out.dropna(subset=["ts_hour"]).drop_duplicates(subset=["ts_hour"], keep="last").sort_values("ts_hour").reset_index(drop=True)
+    return out
+
+
+def fetch_chunk(start_date: datetime, end_date: datetime, tgt: str) -> pd.DataFrame:
+    headers = {"Accept": "application/json", "Content-Type": "application/json", "TGT": tgt}
+    payload = {
+        "startDate": start_date.strftime("%Y-%m-%dT00:00:00+03:00"),
+        "endDate": end_date.strftime("%Y-%m-%dT23:00:00+03:00"),
+    }
+    _log(f"Fetch: {payload['startDate']} → {payload['endDate']}")
+    resp = post_with_retries(ENDPOINT_URL, json=payload, headers=headers)
+    _log(f"HTTP {resp.status_code}")
+    if resp.status_code != 200:
+        raise RuntimeError(resp.text[:2000])
+    data = resp.json()
+    items = data.get("items", [])
+    return _normalize_items(items)
+
+
+def main() -> None:
+    if not USERNAME or not PASSWORD:
+        raise SystemExit("Missing EPIAS credentials (EPIAS_USERNAME/EPIAS_PASSWORD) in .env")
+
+    start, end = _master_date_range()
+    _log(f"Master range for fetch: {start.date()} → {end.date()}")
+
+    tgt = obtain_tgt(USERNAME, PASSWORD)
+    _log(f"TGT ok: {tgt[:12]}…")
+
+    rows: list[pd.DataFrame] = []
+    cur = start
+    while cur <= end:
+        cur_end = min(end, cur + timedelta(days=CHUNK_DAYS - 1))
+        rows.append(fetch_chunk(cur, cur_end, tgt))
+        cur = cur_end + timedelta(days=1)
+        time.sleep(SLEEP_SECONDS)
+
+    raw = pd.concat(rows, ignore_index=True) if rows else pd.DataFrame()
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    raw.to_csv(RAW_CSV, index=False)
+
+    processed = raw[["ts_hour", "matchedBids", "matchedOffers"]].rename(
+        columns={
+            "matchedBids": "dam_matched_buy_mwh",
+            "matchedOffers": "dam_matched_sell_mwh",
+        }
+    )
+    PROCESSED_PATH.parent.mkdir(parents=True, exist_ok=True)
+    processed.to_parquet(PROCESSED_PATH, index=False)
+
+    _log(f"Wrote raw: {RAW_CSV} rows={len(raw)}")
+    _log(f"Wrote processed: {PROCESSED_PATH} rows={len(processed)}")
+    _log(f"Endpoint: {ENDPOINT_URL}")
+
+
+if __name__ == "__main__":
+    main()
+

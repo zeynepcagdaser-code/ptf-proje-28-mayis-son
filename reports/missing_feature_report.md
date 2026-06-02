@@ -59,6 +59,6 @@ Feature engineering bu kaynaklar gelene kadar üretilmez; yalnızca raporlanır.
 
 ## Model kovaları — parquet'te mevcut / eksik
 
-- MAIN_REGRESSION: 55/55 mevcut (0 eksik)
-- LOW_PRICE_CLASSIFIER: 49/49 mevcut (0 eksik)
-- RISK_DASHBOARD: 25/25 mevcut (0 eksik)
+- MAIN_REGRESSION: 73/73 mevcut (0 eksik)
+- LOW_PRICE_CLASSIFIER: 57/57 mevcut (0 eksik)
+- RISK_DASHBOARD: 32/32 mevcut (0 eksik)

@@ -336,8 +336,8 @@
   ],
   "bucket_resolution": {
     "main_regression": {
-      "requested_count": 55,
-      "present_count": 55,
+      "requested_count": 73,
+      "present_count": 73,
       "present": [
         "ptf_lag_24",
         "ptf_lag_168",
@@ -393,13 +393,31 @@
         "grf_tl_rolling_mean_7d",
         "gas_cost_pressure_lag_1d",
         "thermal_cost_pressure_lag_1d",
-        "gas_marginal_pressure_lag_1d"
+        "gas_marginal_pressure_lag_1d",
+        "dam_bid_volume_mwh",
+        "dam_sell_offer_volume_mwh",
+        "dam_matched_volume_mwh",
+        "dam_bid_to_match_ratio",
+        "dam_sell_to_match_ratio",
+        "dam_buy_sell_ratio",
+        "dam_offer_supply_demand_gap",
+        "dam_offer_balance_pressure",
+        "dam_match_ratio",
+        "dam_unmatched_buy_proxy",
+        "dam_block_unmatched_ratio",
+        "dam_block_pressure",
+        "dam_bid_volume_lag_24",
+        "dam_sell_offer_volume_lag_24",
+        "dam_buy_sell_ratio_lag_24",
+        "dam_offer_balance_pressure_lag_24",
+        "dam_match_ratio_lag_24",
+        "dam_block_unmatched_ratio_lag_24"
       ],
       "missing": []
     },
     "low_price_classifier": {
-      "requested_count": 49,
-      "present_count": 49,
+      "requested_count": 57,
+      "present_count": 57,
       "present": [
         "low_load_flag",
         "holiday_low_load_flag",
@@ -449,13 +467,21 @@
         "fiba_fibs_ratio_lag_24",
         "fiba_fibs_pressure_lag_24",
         "fiba_fibs_ratio_lag_168",
-        "fiba_fibs_pressure_lag_168"
+        "fiba_fibs_pressure_lag_168",
+        "dam_buy_sell_ratio",
+        "dam_offer_balance_pressure",
+        "dam_match_ratio",
+        "dam_unmatched_buy_proxy",
+        "dam_block_unmatched_ratio",
+        "dam_buy_sell_ratio_lag_24",
+        "dam_offer_balance_pressure_lag_24",
+        "dam_match_ratio_lag_24"
       ],
       "missing": []
     },
     "risk_dashboard": {
-      "requested_count": 25,
-      "present_count": 25,
+      "requested_count": 32,
+      "present_count": 32,
       "present": [
         "price_cap",
         "ptf_to_cap_ratio",
@@ -481,7 +507,14 @@
         "grf_usd_mmbtu",
         "gas_cost_pressure",
         "thermal_cost_pressure",
-        "gas_marginal_pressure"
+        "gas_marginal_pressure",
+        "dam_bid_volume_mwh",
+        "dam_sell_offer_volume_mwh",
+        "dam_matched_buy_mwh",
+        "dam_matched_sell_mwh",
+        "dam_block_matched_buy_mwh",
+        "dam_block_unmatched_buy_mwh",
+        "dam_offer_supply_demand_gap"
       ],
       "missing": []
     },

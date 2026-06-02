@@ -133,6 +133,26 @@ MAIN_REGRESSION_FEATURES: list[str] = [
     "gas_cost_pressure_lag_1d",
     "thermal_cost_pressure_lag_1d",
     "gas_marginal_pressure_lag_1d",
+    # DAM microstructure (offer/match/block)
+    "dam_bid_volume_mwh",
+    "dam_sell_offer_volume_mwh",
+    "dam_matched_volume_mwh",
+    "dam_bid_to_match_ratio",
+    "dam_sell_to_match_ratio",
+    "dam_buy_sell_ratio",
+    "dam_offer_supply_demand_gap",
+    "dam_offer_balance_pressure",
+    "dam_match_ratio",
+    "dam_unmatched_buy_proxy",
+    "dam_block_unmatched_ratio",
+    "dam_block_pressure",
+    # strict-forecast alternatives
+    "dam_bid_volume_lag_24",
+    "dam_sell_offer_volume_lag_24",
+    "dam_buy_sell_ratio_lag_24",
+    "dam_offer_balance_pressure_lag_24",
+    "dam_match_ratio_lag_24",
+    "dam_block_unmatched_ratio_lag_24",
 ]
 
 LOW_PRICE_CLASSIFIER_FEATURES: list[str] = [
@@ -186,6 +206,15 @@ LOW_PRICE_CLASSIFIER_FEATURES: list[str] = [
     "fiba_fibs_pressure_lag_24",
     "fiba_fibs_ratio_lag_168",
     "fiba_fibs_pressure_lag_168",
+    # DAM microstructure (signal for tightness / imbalance)
+    "dam_buy_sell_ratio",
+    "dam_offer_balance_pressure",
+    "dam_match_ratio",
+    "dam_unmatched_buy_proxy",
+    "dam_block_unmatched_ratio",
+    "dam_buy_sell_ratio_lag_24",
+    "dam_offer_balance_pressure_lag_24",
+    "dam_match_ratio_lag_24",
 ]
 
 RISK_DASHBOARD_FEATURES: list[str] = [
@@ -215,6 +244,14 @@ RISK_DASHBOARD_FEATURES: list[str] = [
     "gas_cost_pressure",
     "thermal_cost_pressure",
     "gas_marginal_pressure",
+    # DAM microstructure monitoring
+    "dam_bid_volume_mwh",
+    "dam_sell_offer_volume_mwh",
+    "dam_matched_buy_mwh",
+    "dam_matched_sell_mwh",
+    "dam_block_matched_buy_mwh",
+    "dam_block_unmatched_buy_mwh",
+    "dam_offer_supply_demand_gap",
 ]
 
 # Built in parquet but intentionally excluded from MAIN_REGRESSION_FEATURES (audit / docs).

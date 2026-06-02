@@ -1,6 +1,6 @@
 # Sequence Dataset Report
 
-- **Generated (UTC):** 2026-06-02T06:57:23.133200+00:00
+- **Generated (UTC):** 2026-06-02T07:16:53.331086+00:00
 - **Source:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Output dir:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/model_low_price`
 
@@ -9,7 +9,7 @@
 - Window: **168**
 - Horizon: **24**
 - Mapping: `X[t-167:t] -> y[t+1:t+24]`
-- Features: 49
+- Features: 57
 - Targets: 24
 - Scaler fit split: **train**
 
@@ -17,15 +17,15 @@
 
 | Split | X shape | y shape |
 |-------|---------|---------|
-| train | (43513, 168, 49) | (43513, 24) |
-| validation | (8570, 168, 49) | (8570, 24) |
-| test | (3387, 168, 49) | (3387, 24) |
+| train | (43275, 168, 57) | (43275, 24) |
+| validation | (8570, 168, 57) | (8570, 24) |
+| test | (3387, 168, 57) | (3387, 24) |
 
 ## Sequence counts
 
 | Split | Sequences |
 |-------|----------:|
-| train | 43513 |
+| train | 43275 |
 | validation | 8570 |
 | test | 3387 |
 
@@ -97,6 +97,14 @@
 - `fiba_fibs_pressure_lag_24`
 - `fiba_fibs_ratio_lag_168`
 - `fiba_fibs_pressure_lag_168`
+- `dam_buy_sell_ratio`
+- `dam_offer_balance_pressure`
+- `dam_match_ratio`
+- `dam_unmatched_buy_proxy`
+- `dam_block_unmatched_ratio`
+- `dam_buy_sell_ratio_lag_24`
+- `dam_offer_balance_pressure_lag_24`
+- `dam_match_ratio_lag_24`
 
 ## Target columns
 

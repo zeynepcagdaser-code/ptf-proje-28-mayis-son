@@ -1,6 +1,6 @@
 # LSTM Feature Dataset Report
 
-- **Generated (UTC):** 2026-06-02T06:54:39.452661+00:00
+- **Generated (UTC):** 2026-06-02T07:13:49.061951+00:00
 - **Output:** `/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/features/lstm_next24_v1.parquet`
 - **Source:** `data/master/master_hourly_v1.parquet`
 
@@ -19,7 +19,7 @@
 
 ## Features & targets
 
-- Feature columns: 140
+- Feature columns: 169
 - Target columns: 24
 - ts_hour range: 2020-01-08 00:00:00+03:00 → 2026-05-29 23:00:00+03:00
 
@@ -36,6 +36,8 @@
 - `wind_generation_mean_lag_168`: 0.8116%
 - `wind_generation_mean_lag_48`: 0.5980%
 - `wind_generation_mean_lag_24`: 0.5553%
+- `dam_block_unmatched_ratio_lag_24`: 0.4699%
+- `dam_block_unmatched_ratio`: 0.4272%
 - `grf_tl_change_7d`: 0.3417%
 - `grf_tl_rolling_mean_7d`: 0.3400%
 - `ptf_lag_168`: 0.2990%
@@ -48,6 +50,10 @@
 - `smf_ptf_spread_lag_168`: 0.2990%
 - `fiba_fibs_ratio_lag_168`: 0.2990%
 - `fiba_fibs_pressure_lag_168`: 0.2990%
+- `dam_bid_volume_lag_168`: 0.2990%
+- `dam_sell_offer_volume_lag_168`: 0.2990%
+- `dam_buy_sell_ratio_lag_168`: 0.2990%
+- `dam_offer_balance_pressure_lag_168`: 0.2990%
 - `gen_total_lag_168`: 0.2990%
 - `cons_consumption_lag_168`: 0.2990%
 - `smf_lag_168`: 0.2990%
@@ -96,6 +102,11 @@
 - `gas_cost_pressure_lag_1d`: 0.0427%
 - `thermal_cost_pressure_lag_1d`: 0.0427%
 - `gas_marginal_pressure_lag_1d`: 0.0427%
+- `dam_bid_volume_lag_24`: 0.0427%
+- `dam_sell_offer_volume_lag_24`: 0.0427%
+- `dam_buy_sell_ratio_lag_24`: 0.0427%
+- `dam_offer_balance_pressure_lag_24`: 0.0427%
+- `dam_match_ratio_lag_24`: 0.0427%
 - `kgup_total_minus_load`: 0.0427%
 - `ptf_to_cap_ratio`: 0.0427%
 - `smf_to_cap_ratio`: 0.0427%
@@ -122,6 +133,8 @@
 - `wind_generation_mean_lag_168`: 0.7244%
 - `wind_generation_mean_lag_48`: 0.5108%
 - `wind_generation_mean_lag_24`: 0.4681%
+- `dam_block_unmatched_ratio_lag_24`: 0.4663%
+- `dam_block_unmatched_ratio`: 0.4236%
 - `grf_tl_change_7d`: 0.3417%
 - `grf_tl_rolling_mean_7d`: 0.3400%
 - `ptf_lag_168`: 0.2990%
@@ -134,6 +147,10 @@
 - `smf_ptf_spread_lag_168`: 0.2990%
 - `fiba_fibs_ratio_lag_168`: 0.2990%
 - `fiba_fibs_pressure_lag_168`: 0.2990%
+- `dam_bid_volume_lag_168`: 0.2990%
+- `dam_sell_offer_volume_lag_168`: 0.2990%
+- `dam_buy_sell_ratio_lag_168`: 0.2990%
+- `dam_offer_balance_pressure_lag_168`: 0.2990%
 - `gen_total_lag_168`: 0.2990%
 - `cons_consumption_lag_168`: 0.2990%
 - `smf_lag_168`: 0.2990%
@@ -174,6 +191,11 @@
 - `gas_cost_pressure_lag_1d`: 0.0427%
 - `thermal_cost_pressure_lag_1d`: 0.0427%
 - `gas_marginal_pressure_lag_1d`: 0.0427%
+- `dam_bid_volume_lag_24`: 0.0427%
+- `dam_sell_offer_volume_lag_24`: 0.0427%
+- `dam_buy_sell_ratio_lag_24`: 0.0427%
+- `dam_offer_balance_pressure_lag_24`: 0.0427%
+- `dam_match_ratio_lag_24`: 0.0427%
 - `ptf_to_cap_ratio`: 0.0427%
 - `smf_to_cap_ratio`: 0.0427%
 - `gen_total_lag_24`: 0.0427%
