@@ -10,3 +10,4 @@ torch>=2.0
 matplotlib>=3.7
 lightgbm>=4.0
 xgboost>=2.0
+optuna>=3.0

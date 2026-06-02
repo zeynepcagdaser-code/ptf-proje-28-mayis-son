@@ -1,0 +1,56 @@
+name: Retrain PTF pipeline
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  retrain-ptf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run two-stage PTF pipeline
+        run: |
+          PYTHONPATH=. python scripts/two_stage_ptf_pipeline.py --run-all --quantile-alpha 0.5
+
+      - name: Run multi-horizon two-stage pipeline
+        run: |
+          PYTHONPATH=. python scripts/two_stage_multihorizon_pipeline.py --run-all --quantile-alpha 0.5
+
+      - name: Run hourly retrain PTF regressor
+        run: |
+          PYTHONPATH=. python scripts/hourly_retrain_ptf_regressor.py
+
+      - name: Commit and push predictions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/predictions || true
+          if git diff --cached --quiet; then
+            echo "No prediction updates to commit"
+          else
+            git commit -m "Update PTF pipeline predictions"
+            git push
+          fi

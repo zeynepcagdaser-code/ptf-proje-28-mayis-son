@@ -55,6 +55,21 @@ Ham CSV güncellemesinden sonra parquet/feature/sequence üretmek için GitHub A
 - Tetik: yalnızca `workflow_dispatch` (saatlik cron’u yavaşlatmaz)
 - `.npy` dosyaları commit edilmez (yerelde `python run_sequence.py` ile üretilir)
 
+## PTF üretim pipeline
+
+Aşağıdaki script ve workflow, iki aşamalı PTF tahmin zincirini üretim için hazırlar:
+
+- `python scripts/two_stage_ptf_pipeline.py --run-all --quantile-alpha 0.5`
+- `python scripts/two_stage_multihorizon_pipeline.py --run-all --quantile-alpha 0.5`
+- `python scripts/hourly_retrain_ptf_regressor.py`
+- `python scripts/optuna_tune_two_stage.py --horizon 1 --objective regression --trials 50`
+
+Workflow:
+
+- `.github/workflows/retrain_ptf_pipeline.yml`
+- Tetik: `schedule` (saatlik), `push` `main`, `workflow_dispatch`
+- Güncelleme: `data/predictions/` içeriği değişirse otomatik commit/push eder
+
 ## LSTM baseline eğitimi (PyTorch)
 
 ```bash
