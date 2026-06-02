@@ -101,10 +101,10 @@ else:
             sample = data.tail(240)
             if "target_1h" in sample.columns:
                 fig = px.line(sample, x="ts_hour", y=["target_1h", "pred"], labels={"value": "PTF TL", "ts_hour": "Zaman"}, title="Son 240 Saat: Gerçek vs Tahmin")
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             st.subheader("Hata Dağılımı")
             hist = px.histogram(sample, x="abs_err", nbins=40, title="Mutlak Hata Dağılımı")
-            st.plotly_chart(hist, use_container_width=True)
+            st.plotly_chart(hist, width="stretch")
 
             if "is_spike_true" in sample.columns and "is_spike_pred" in sample.columns:
                 spike_tab = sample.groupby(["is_spike_true", "is_spike_pred"]).size().reset_index(name="count")
@@ -118,7 +118,6 @@ with st.sidebar:
     else:
         st.write(real_time)
         rt_fig = px.bar(real_time, x="delivery_hour", y="predicted_ptf", color="horizon", title="Realtime PTF Tahminleri")
-        st.plotly_chart(rt_fig, use_container_width=True)
-
+        st.plotly_chart(rt_fig, width="stretch")
 st.markdown("---")
 st.caption("PTF tahmin paneli, data/predictions altındaki en güncel PTF sonuçlarına dayanır.")
