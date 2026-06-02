@@ -229,7 +229,8 @@ def analysis_block(frame: pd.DataFrame, meta: dict[str, Any]) -> dict[str, Any]:
 
 def write_outputs(frame: pd.DataFrame, meta: dict[str, Any], audit: dict[str, Any]) -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(frame, str(OUT_PATH), index=False)
     REPORT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2, default=str) + "\n")
     lines = [
         "# Supply-Demand Curve Analysis",

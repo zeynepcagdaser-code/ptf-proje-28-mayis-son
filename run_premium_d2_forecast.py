@@ -58,7 +58,8 @@ def main() -> None:
     if not FEATURE_PATH.exists():
         raise FileNotFoundError(f"Missing {FEATURE_PATH}. Run build_premium_d2_features.py first.")
 
-    frame = pd.read_parquet(FEATURE_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    frame = read_parquet_with_normalized_ts(FEATURE_PATH)
     pred = predict_premium(frame)
     target_date = args.target_date or str(pred["ts_hour"].dt.date.iloc[0])
     write_reports(pred, target_date)

@@ -275,7 +275,8 @@ def build_design_report(reasoning: pd.DataFrame) -> dict[str, Any]:
 def write_outputs(reasoning: pd.DataFrame, report: dict[str, Any]) -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     DESIGN_JSON.parent.mkdir(parents=True, exist_ok=True)
-    reasoning.to_parquet(OUTPUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(reasoning, str(OUTPUT_PATH), index=False)
     DESIGN_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 
     lines = [
@@ -326,7 +327,8 @@ def main() -> None:
         raise FileNotFoundError(
             f"Missing feature store: {FEATURE_STORE_PATH}. Run build_regime_feature_store.py first."
         )
-    features = pd.read_parquet(FEATURE_STORE_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    features = read_parquet_with_normalized_ts(FEATURE_STORE_PATH)
     reasoning = build_reasoning_features(features)
     report = build_design_report(reasoning)
     write_outputs(reasoning, report)

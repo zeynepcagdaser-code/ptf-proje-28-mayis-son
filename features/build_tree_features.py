@@ -24,7 +24,8 @@ OUTPUT_PATH = PROJECT_ROOT / "data" / "features" / "lstm_tree_micro_v1.parquet"
 
 def build_tree_dataframe(master_path: Path | None = None) -> tuple[pd.DataFrame, dict[str, Any]]:
     master_path = master_path or MASTER_PATH
-    rows_master = len(pd.read_parquet(master_path, columns=["ts_hour"]))
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    rows_master = len(read_parquet_with_normalized_ts(master_path, columns=["ts_hour"]))
 
     df = _prepare_master(master_path)
     from features.engineering import (
@@ -108,7 +109,8 @@ def run_build(
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     df, metadata = build_tree_dataframe(master_path)
-    df.to_parquet(output_path, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(df, str(output_path), index=False)
 
     report = build_features_report(
         df=df,

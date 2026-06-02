@@ -38,7 +38,8 @@ st.title("Regime-Aware PTF Forecasting Dashboard")
 
 @st.cache_data(show_spinner=False)
 def load_parquet(path: Path) -> pd.DataFrame:
-    return pd.read_parquet(path) if path.exists() else pd.DataFrame()
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    return read_parquet_with_normalized_ts(path) if path.exists() else pd.DataFrame()
 
 
 @st.cache_data(show_spinner=False)

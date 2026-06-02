@@ -52,11 +52,12 @@ def _zero_label(h: int) -> str:
 
 def _load_split(split: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame | None]:
     key = {"train": "train", "validation": "val", "test": "test"}[split]
-    X = pd.read_parquet(TABULAR_DIR / f"X_{key}.parquet")
-    y_low = pd.read_parquet(TABULAR_DIR / f"y_low_{key}.parquet")
-    y_zero = None
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        X = read_parquet_with_normalized_ts(TABULAR_DIR / f"X_{key}.parquet")
+        y_low = read_parquet_with_normalized_ts(TABULAR_DIR / f"y_low_{key}.parquet")
+        y_zero = None
     if split == "test":
-        y_zero = pd.read_parquet(TABULAR_DIR / "y_zero_test.parquet")
+           y_zero = read_parquet_with_normalized_ts(TABULAR_DIR / "y_zero_test.parquet")
     return X, y_low, y_zero
 
 

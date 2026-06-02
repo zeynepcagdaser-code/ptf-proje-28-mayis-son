@@ -43,7 +43,8 @@ def spike_direction_objective(y_true: np.ndarray, y_pred: np.ndarray) -> tuple[n
 
 
 def _load_features() -> pd.DataFrame:
-    frame = pd.read_parquet(FEATURE_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    frame = read_parquet_with_normalized_ts(FEATURE_PATH)
     frame["ts_hour"] = pd.to_datetime(frame["ts_hour"], errors="coerce")
     return frame
 
@@ -65,7 +66,8 @@ def load_inputs() -> pd.DataFrame:
     frame = _load_features()
 
     if REASONING_PATH.exists():
-        reasoning = pd.read_parquet(REASONING_PATH)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        reasoning = read_parquet_with_normalized_ts(REASONING_PATH)
         reasoning["ts_hour"] = pd.to_datetime(reasoning["ts_hour"], errors="coerce")
         frame = frame.merge(reasoning, on="ts_hour", how="left", suffixes=("", "_reason"))
 

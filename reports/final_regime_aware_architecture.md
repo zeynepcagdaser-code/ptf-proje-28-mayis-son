@@ -1,4 +1,3 @@
-# Final Regime-Aware PTF Forecasting Architecture & Feasibility Synthesis
 
 ## Executive Answer
 
@@ -176,7 +175,8 @@ Target:
 Feature families:
 
 - residual load ramp
-- solar cliff
+- solar cliff# Final Regime-Aware PTF Forecasting Architecture & Feasibility Synthesis
+
 - evening ramp hour
 - KGÜP gas/thermal share
 - active outage/maintenance stress

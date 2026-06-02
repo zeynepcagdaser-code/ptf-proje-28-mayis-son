@@ -59,7 +59,8 @@ def horizon_mae_df(df: pd.DataFrame) -> dict[int, float]:
 
 
 def load_ptf_lookup() -> pd.Series:
-    master = pd.read_parquet(MASTER_PATH, columns=["ts_hour", "ptf_price"])
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    master = read_parquet_with_normalized_ts(MASTER_PATH, columns=["ts_hour", "ptf_price"])
     master = master.sort_values("ts_hour")
     ts = pd.to_datetime(master["ts_hour"], utc=True).dt.tz_convert("Europe/Istanbul")
     return pd.Series(master["ptf_price"].values, index=ts)
@@ -213,7 +214,8 @@ def write_markdown(report: dict) -> str:
 
 def load_test_anchors() -> pd.DataFrame:
     """Same test rows as LSTM (sequence anchors with 168h in-split history)."""
-    features = pd.read_parquet(FEATURES_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    features = read_parquet_with_normalized_ts(FEATURES_PATH)
     test_df = features[features["split"] == "test"].copy()
     test_df["ts_hour"] = pd.to_datetime(test_df["ts_hour"], utc=True).dt.tz_convert(
         "Europe/Istanbul"

@@ -476,7 +476,8 @@ def train_all(*, smoke: bool = False, residual_target: bool = True) -> dict:
     backend = pick_backend()
     print(f"Backend: {backend}")
 
-    df = pd.read_parquet(FEATURES_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(FEATURES_PATH)
     df = add_persistence_columns(df)
     base_feature_cols, target_cols = resolve_columns(df)
     print(f"Base features: {len(base_feature_cols)} (+ persistence_h per horizon)")

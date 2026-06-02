@@ -83,7 +83,8 @@ def load_curve_hours() -> set[pd.Timestamp]:
         return set()
     frames = []
     for path in curve_files:
-        df = pd.read_parquet(path)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        df = read_parquet_with_normalized_ts(path)
         if "delivery_hour" in df.columns:
             frames.append(pd.DataFrame({"delivery_hour": to_naive(df["delivery_hour"])}))
     if not frames:
@@ -122,7 +123,8 @@ def enrich_must_run(features: pd.DataFrame, load: pd.DataFrame) -> pd.DataFrame:
 def write_parquet_atomic(path: Path, frame: pd.DataFrame) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + ".tmp.parquet")
-    frame.to_parquet(tmp, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(frame, str(tmp), index=False)
     tmp.replace(path)
 
 

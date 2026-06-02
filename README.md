@@ -64,3 +64,9 @@ python train_lstm.py
 ```
 
 Çıktılar: `models/lstm_baseline.pt`, `reports/lstm_baseline_metrics.*`, `reports/figures/`, `data/predictions/lstm_test_predictions.csv`
+
+## Güvenlik / risk azaltma yardımcıları
+
+- Atomik Parquet yazımı için: `src/utils/safe_io.py` içindeki `atomic_parquet_write(df, path)` fonksiyonunu kullanın; bu, önce geçici dosyaya yazar sonra hedef dosyayla atomik olarak değiştirir.
+- Zaman damgası normalizasyonu: `src/utils/tz_utils.py` içindeki `normalize_to_ts_hour(df, col='date')` fonksiyonu `ts_hour` sütununu `Europe/Istanbul` zaman dilimine göre oluşturur (naive vs tz-aware uyuşmazlıklarını azaltmak için).
+- Veri klasörünüzü taramak için basit bir araç: `scripts/check_timezones.py` — örnekleme yapıp hangi sütunların tz-aware olduğunu raporlar.

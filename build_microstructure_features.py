@@ -190,8 +190,11 @@ def run() -> dict:
     if not MASTER_PATH.exists():
         raise FileNotFoundError(f"Missing {MASTER_PATH}")
 
-    base = pd.read_parquet(INPUT_FEATURES)
-    master = pd.read_parquet(MASTER_PATH).sort_values("ts_hour").reset_index(drop=True)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    base = read_parquet_with_normalized_ts(INPUT_FEATURES)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    master = read_parquet_with_normalized_ts(MASTER_PATH)
+    master = master.sort_values("ts_hour").reset_index(drop=True)
 
     micro_full = build_microstructure_columns(master)
     micro_full["ts_hour"] = master["ts_hour"]
@@ -209,7 +212,8 @@ def run() -> dict:
         raise ValueError(f"Failed to create features: {missing_new}")
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    merged.to_parquet(OUTPUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(merged, str(OUTPUT_PATH), index=False)
 
     new_cols = NEW_FEATURE_NAMES
     null_pct = null_report(merged, new_cols)

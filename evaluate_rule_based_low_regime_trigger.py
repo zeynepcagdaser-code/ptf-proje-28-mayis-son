@@ -37,9 +37,10 @@ def _zero_label(h: int) -> str:
 
 
 def _load_test_frame() -> pd.DataFrame:
-    X = pd.read_parquet(TABULAR_DIR / "X_test.parquet", columns=["sample_index", "anchor_ts_hour"])
-    y_low = pd.read_parquet(TABULAR_DIR / "y_low_test.parquet")
-    y_zero = pd.read_parquet(TABULAR_DIR / "y_zero_test.parquet")
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    X = read_parquet_with_normalized_ts(TABULAR_DIR / "X_test.parquet", columns=["sample_index", "anchor_ts_hour"])
+    y_low = read_parquet_with_normalized_ts(TABULAR_DIR / "y_low_test.parquet")
+    y_zero = read_parquet_with_normalized_ts(TABULAR_DIR / "y_zero_test.parquet")
 
     raw_cols = [
         "ts_hour",
@@ -54,16 +55,16 @@ def _load_test_frame() -> pd.DataFrame:
         "renewable_suppression_pressure",
         "thermal_price_setting_share",
     ]
-    raw = pd.read_parquet(FEATURES_PATH, columns=raw_cols)
+    raw = read_parquet_with_normalized_ts(FEATURES_PATH, columns=raw_cols)
     raw["ts_hour"] = pd.to_datetime(raw["ts_hour"], utc=True)
 
     base = X.merge(raw, left_on="anchor_ts_hour", right_on="ts_hour", how="left")
     base = base.merge(y_low, on="sample_index", how="left")
     base = base.merge(y_zero, on="sample_index", how="left")
 
-    train_raw = pd.read_parquet(
-        FEATURES_PATH,
-        columns=["split", "renewable_suppression_pressure", "thermal_price_setting_share"],
+    train_raw = read_parquet_with_normalized_ts(
+        FEATURE_PATH,
+        columns=train_cols,
     )
     train_raw = train_raw[train_raw["split"] == "train"]
     base["_ren_q75"] = float(train_raw["renewable_suppression_pressure"].quantile(0.75))

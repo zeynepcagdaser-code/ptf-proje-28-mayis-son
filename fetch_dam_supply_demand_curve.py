@@ -216,7 +216,8 @@ def main() -> None:
         normalized = normalized.sort_values(["source_endpoint", "delivery_hour"]).reset_index(drop=True)
         normalized.to_csv(NORMALIZED_CSV, index=False)
         try:
-            normalized.to_parquet(NORMALIZED_PQ, index=False)
+            from src.utils.safe_io import atomic_parquet_write
+            atomic_parquet_write(normalized, str(NORMALIZED_PQ), index=False)
         except Exception:
             pass
 

@@ -287,7 +287,8 @@ def main() -> None:
 
     features = pd.DataFrame(all_rows)
     if not features.empty:
-        features.to_parquet(FEATURES_PATH, index=False)
+        from src.utils.safe_io import atomic_parquet_write
+        atomic_parquet_write(features, str(FEATURES_PATH), index=False)
 
     ok = features[features["status"] == "ok"] if not features.empty else pd.DataFrame()
     report = {

@@ -57,7 +57,8 @@ def run_build(
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     df, metadata = build_residual_feature_dataframe(master_path)
-    df.to_parquet(output_path, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(df, str(output_path), index=False)
 
     training_format = {
         "input_window": INPUT_WINDOW,

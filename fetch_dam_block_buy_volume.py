@@ -90,7 +90,8 @@ def _master_date_range() -> tuple[datetime, datetime]:
     master_path = PROJECT_ROOT / "data" / "master" / "master_hourly_v1.parquet"
     if not master_path.exists():
         return datetime(2020, 1, 1), datetime.now()
-    ts = pd.read_parquet(master_path, columns=["ts_hour"])["ts_hour"]
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    ts = read_parquet_with_normalized_ts(master_path, columns=["ts_hour"])["ts_hour"]
     ts = pd.to_datetime(ts, errors="coerce")
     start = ts.min()
     end = ts.max()
@@ -198,7 +199,8 @@ def main() -> None:
         }
     )
     PROCESSED_PATH.parent.mkdir(parents=True, exist_ok=True)
-    processed.to_parquet(PROCESSED_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(processed, str(PROCESSED_PATH), index=False)
 
     _log(f"Wrote raw: {RAW_CSV} rows={len(raw)}")
     _log(f"Wrote processed: {PROCESSED_PATH} rows={len(processed)}")

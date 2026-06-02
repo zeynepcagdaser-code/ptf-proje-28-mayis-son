@@ -50,7 +50,8 @@ def parse_ts(series: pd.Series) -> pd.Series:
 def load_real_curves() -> pd.DataFrame:
     frames = []
     for path in sorted((PROJECT_ROOT / "data" / "features").glob(CURVE_GLOB)):
-        frame = pd.read_parquet(path)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        frame = read_parquet_with_normalized_ts(path)
         frame["delivery_hour"] = parse_ts(frame["delivery_hour"])
         frames.append(frame)
     if not frames:
@@ -62,7 +63,7 @@ def load_real_curves() -> pd.DataFrame:
 def load_must_run() -> pd.DataFrame:
     for path in [MUST_RUN_PATH, MUST_RUN_PROXY_PATH]:
         if path.exists():
-            frame = pd.read_parquet(path)
+            frame = read_parquet_with_normalized_ts(path)
             frame["delivery_hour"] = parse_ts(frame["delivery_hour"])
             return frame
     return pd.DataFrame()
@@ -93,7 +94,7 @@ def attach_curve_lags(frame: pd.DataFrame, curves: pd.DataFrame) -> tuple[pd.Dat
 def attach_proxy_curve(frame: pd.DataFrame) -> pd.DataFrame:
     if frame.empty or not PROXY_CURVE_PATH.exists():
         return frame
-    proxy = pd.read_parquet(PROXY_CURVE_PATH)
+    proxy = read_parquet_with_normalized_ts(PROXY_CURVE_PATH)
     proxy["ts_hour"] = parse_ts(proxy["ts_hour"])
     keep = [
         "ts_hour",
@@ -183,7 +184,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.reuse_d2 and D2_PATH.exists():
-        base = pd.read_parquet(D2_PATH)
+        base = read_parquet_with_normalized_ts(D2_PATH)
         base["ts_hour"] = parse_ts(base["ts_hour"])
         diagnostics = {"reused_d2_path": str(D2_PATH)}
     else:
@@ -197,7 +198,8 @@ def main() -> None:
 
     premium, audit = enrich(base)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    premium.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(premium, str(OUT_PATH), index=False)
     audit["generated_at"] = datetime.now(timezone.utc).isoformat()
     audit["output_path"] = str(OUT_PATH.relative_to(PROJECT_ROOT))
     audit["input_diagnostics"] = diagnostics

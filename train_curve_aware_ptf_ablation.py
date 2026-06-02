@@ -114,7 +114,8 @@ def price_band(price: pd.Series) -> pd.Series:
 
 
 def load_data() -> pd.DataFrame:
-    df = pd.read_parquet(DATA_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(DATA_PATH)
     df["delivery_hour"] = pd.to_datetime(df["delivery_hour"], errors="coerce")
     df["target_ptf"] = pd.to_numeric(df["target_ptf"], errors="coerce")
     df["ptf_lag_24"] = pd.to_numeric(df["ptf_lag_24"], errors="coerce")

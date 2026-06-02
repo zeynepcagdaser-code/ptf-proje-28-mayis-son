@@ -186,7 +186,8 @@ def ensure_validation_predictions(*, regenerate: bool) -> dict[str, Path]:
     backend = pick_backend()
     tree_df = prepare_df(TREE_FEATURES)
     tree_base = resolve_base_features(tree_df)
-    micro_df = add_micro_persistence(pd.read_parquet(MICRO_FEATURES))
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    micro_df = add_micro_persistence(read_parquet_with_normalized_ts(MICRO_FEATURES))
 
     outputs: dict[str, Path] = {}
     builders = {

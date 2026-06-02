@@ -106,13 +106,15 @@ def per_horizon_metrics(frame: pd.DataFrame, prob_col: str) -> list[dict[str, An
 
 def main() -> None:
     # 1) Read master (audit only; training uses leakage-safe feature parquet)
-    master = pd.read_parquet(MASTER_PATH, columns=["ts_hour", "ptf_price"])
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    master = read_parquet_with_normalized_ts(MASTER_PATH, columns=["ts_hour", "ptf_price"])
     master["ts_hour"] = pd.to_datetime(master["ts_hour"], errors="coerce")
     master["ptf_price"] = pd.to_numeric(master["ptf_price"], errors="coerce")
     master_spikes = int((master["ptf_price"] >= SPIKE_THRESHOLD).sum())
 
     # 2) Read features parquet and build stacked horizon training table
-    df = pd.read_parquet(FEATURES_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(FEATURES_PATH)
     df["ts_hour"] = pd.to_datetime(df["ts_hour"], errors="coerce")
     long_df, feature_cols = build_long_table(df)
 

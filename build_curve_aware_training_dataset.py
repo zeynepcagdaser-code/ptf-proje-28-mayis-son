@@ -25,6 +25,7 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
+from src.utils.io_utils import read_parquet_with_normalized_ts
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 
@@ -77,8 +78,9 @@ def read_curve_features() -> tuple[pd.DataFrame, list[str]]:
     if not curve_files and CURVE_PATH.exists():
         curve_files = [CURVE_PATH]
     frames = []
+    from src.utils.io_utils import read_parquet_with_normalized_ts
     for path in curve_files:
-        frame = pd.read_parquet(path)
+        frame = read_parquet_with_normalized_ts(path)
         frame["source_curve_file"] = path.name
         frames.append(frame)
     if not frames:
@@ -94,7 +96,8 @@ def read_must_run_features() -> tuple[pd.DataFrame, list[str]]:
     frames = []
     for path in files:
         try:
-            frame = pd.read_parquet(path)
+            from src.utils.io_utils import read_parquet_with_normalized_ts
+            frame = read_parquet_with_normalized_ts(path)
         except Exception:
             continue
         if "delivery_hour" not in frame.columns:
@@ -137,11 +140,11 @@ def read_market_tables() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.D
     load["load_forecast"] = pd.to_numeric(load["lep"], errors="coerce")
     load = load.drop_duplicates("ts_hour", keep="last")
 
-    regime = pd.read_parquet(REGIME_FEATURES_PATH)
+    regime = read_parquet_with_normalized_ts(REGIME_FEATURES_PATH)
     regime["ts_hour"] = to_naive(regime["ts_hour"])
     regime = regime.sort_values("ts_hour").drop_duplicates("ts_hour", keep="last")
 
-    reasoning = pd.read_parquet(REASONING_PATH)
+    reasoning = read_parquet_with_normalized_ts(REASONING_PATH)
     reasoning["ts_hour"] = to_naive(reasoning["ts_hour"])
     reasoning = reasoning.sort_values("ts_hour").drop_duplicates("ts_hour", keep="last")
 
@@ -506,7 +509,8 @@ def main() -> None:
             "target_band",
             "curve_day",
         ]
-        pd.DataFrame(columns=empty_cols).to_parquet(OUT_PATH, index=False)
+        from src.utils.safe_io import atomic_parquet_write
+        atomic_parquet_write(pd.DataFrame(columns=empty_cols), str(OUT_PATH), index=False)
         REPORT_MD.write_text(
             "\n".join(
                 [
@@ -528,7 +532,7 @@ def main() -> None:
         return
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    out.to_parquet(OUT_PATH, index=False)
+    atomic_parquet_write(out, str(OUT_PATH), index=False)
     REPORT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2, default=str) + "\n")
     REPORT_MD.write_text(
         "\n".join(

@@ -219,7 +219,8 @@ def load_price_and_persistence(anchor_path: Path) -> tuple[np.ndarray, np.ndarra
     price_cols = [f"target_{h}h" for h in range(1, OUTPUT_HORIZON + 1)]
     persistence_cols = [f"persistence_{h}h" for h in range(1, OUTPUT_HORIZON + 1)]
 
-    features = pd.read_parquet(FEATURES_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    features = read_parquet_with_normalized_ts(FEATURES_PATH)
     features["ts_hour"] = pd.to_datetime(features["ts_hour"], utc=True).dt.tz_convert(
         "Europe/Istanbul"
     )

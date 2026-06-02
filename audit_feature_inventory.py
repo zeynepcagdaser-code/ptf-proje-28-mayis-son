@@ -225,9 +225,11 @@ def load_frames() -> tuple[pd.DataFrame, pd.DataFrame]:
     column-restricted master read (it would create false "missing" flags).
     We handle source-availability via parquet schema in `build_missing_report`.
     """
-    feat = pd.read_parquet(FEATURES_PATH)
-    master = pd.read_parquet(
-        MASTER_PATH, columns=["ts_hour", "ptf_price", "smf_systemMarginalPrice"]
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    feat = read_parquet_with_normalized_ts(FEATURES_PATH)
+    master = read_parquet_with_normalized_ts(
+        MASTER_PATH,
+        columns=["ts_hour", "ptf_price", "smf_systemMarginalPrice"],
     )
     return feat, master
 

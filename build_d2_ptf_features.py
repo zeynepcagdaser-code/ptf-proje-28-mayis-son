@@ -203,11 +203,12 @@ def delivery_hours(target_date: date) -> list[pd.Timestamp]:
 def build_rows(target_date: date) -> tuple[pd.DataFrame, dict[str, Any]]:
     ptf = load_ptf()
     ptf_map = ptf.set_index("ts_hour")["price"]
-    feature_store = pd.read_parquet(FEATURE_STORE_PATH) if FEATURE_STORE_PATH.exists() else pd.DataFrame()
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    feature_store = read_parquet_with_normalized_ts(FEATURE_STORE_PATH) if FEATURE_STORE_PATH.exists() else pd.DataFrame()
     if not feature_store.empty:
         feature_store["ts_hour"] = parse_ts(feature_store["ts_hour"])
 
-    reasoning = pd.read_parquet(REASONING_PATH) if REASONING_PATH.exists() else pd.DataFrame()
+    reasoning = read_parquet_with_normalized_ts(REASONING_PATH) if REASONING_PATH.exists() else pd.DataFrame()
     if not reasoning.empty:
         reasoning["ts_hour"] = parse_ts(reasoning["ts_hour"])
 
@@ -329,7 +330,8 @@ def write_reports(frame: pd.DataFrame, diagnostics: dict[str, Any]) -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_JSON.parent.mkdir(parents=True, exist_ok=True)
     if not frame.empty:
-        frame.to_parquet(OUT_PATH, index=False)
+        from src.utils.safe_io import atomic_parquet_write
+        atomic_parquet_write(frame, str(OUT_PATH), index=False)
     diagnostics["generated_at"] = datetime.now(timezone.utc).isoformat()
     diagnostics["output_path"] = str(OUT_PATH.relative_to(PROJECT_ROOT))
     REPORT_JSON.write_text(json.dumps(diagnostics, ensure_ascii=False, indent=2, default=str) + "\n")

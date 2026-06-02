@@ -82,7 +82,8 @@ def parse_datetime_with_hour(df: pd.DataFrame, date_col: str = "date", hour_col:
 def load_base_store() -> pd.DataFrame:
     if not FEATURE_STORE_PATH.exists():
         raise FileNotFoundError(f"Missing feature store: {FEATURE_STORE_PATH}")
-    frame = pd.read_parquet(FEATURE_STORE_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    frame = read_parquet_with_normalized_ts(FEATURE_STORE_PATH)
     frame["ts_hour"] = pd.to_datetime(frame["ts_hour"], errors="coerce")
     return frame.sort_values("ts_hour").reset_index(drop=True)
 
@@ -392,12 +393,13 @@ def analyze_features(features: pd.DataFrame) -> dict[str, Any]:
 def write_outputs(features: pd.DataFrame, report: dict[str, Any]) -> None:
     FUEL_SWITCH_PATH.parent.mkdir(parents=True, exist_ok=True)
     AUDIT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    features.to_parquet(FUEL_SWITCH_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(features, str(FUEL_SWITCH_PATH), index=False)
 
     # Merge into the main feature store, replacing or appending the new columns.
     base = load_base_store().drop(columns=[c for c in NEW_COLUMNS if c in load_base_store().columns], errors="ignore")
     merged = base.merge(features, on="ts_hour", how="left")
-    merged.to_parquet(OUTPUT_PATH, index=False)
+    atomic_parquet_write(merged, str(OUTPUT_PATH), index=False)
 
     AUDIT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 

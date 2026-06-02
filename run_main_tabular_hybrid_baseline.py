@@ -112,9 +112,11 @@ def _load_ptf_lookup() -> pd.DataFrame:
         "ptf_zero_ratio_24",
         "ptf_zero_ratio_168",
     ]
-    feat = pd.read_parquet(FEATURES_PATH, columns=feat_cols)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    feat = read_parquet_with_normalized_ts(FEATURES_PATH, columns=feat_cols)
     feat["ts_hour"] = pd.to_datetime(feat["ts_hour"], utc=True)
-    master = pd.read_parquet(MASTER_PATH, columns=["ts_hour", "ptf_price"])
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    master = read_parquet_with_normalized_ts(MASTER_PATH, columns=["ts_hour", "ptf_price"])
     master["ts_hour"] = pd.to_datetime(master["ts_hour"], utc=True)
     df = feat.merge(master, on="ts_hour", how="left")
     return df.set_index("ts_hour")

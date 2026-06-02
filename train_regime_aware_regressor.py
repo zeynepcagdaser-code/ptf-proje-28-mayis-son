@@ -58,7 +58,8 @@ def assign_split(ts: pd.Series) -> pd.Series:
 
 
 def load_base() -> tuple[pd.DataFrame, dict[str, Any]]:
-    features = pd.read_parquet(FEATURE_STORE)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    features = read_parquet_with_normalized_ts(FEATURE_STORE)
     labels = pd.read_csv(LABELS)
     features["ts_hour"] = pd.to_datetime(features["ts_hour"], errors="coerce")
     labels["ts_hour"] = pd.to_datetime(labels["ts_hour"], errors="coerce")
@@ -79,7 +80,7 @@ def load_base() -> tuple[pd.DataFrame, dict[str, Any]]:
     }
 
     if MUST_RUN_FEATURES.exists():
-        mr = pd.read_parquet(MUST_RUN_FEATURES)
+        mr = read_parquet_with_normalized_ts(MUST_RUN_FEATURES)
         if not mr.empty:
             mr["delivery_hour"] = pd.to_datetime(mr["delivery_hour"], errors="coerce")
             frame = frame.merge(

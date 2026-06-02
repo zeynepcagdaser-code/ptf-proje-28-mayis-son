@@ -97,7 +97,8 @@ def run(*, smoke: bool = False) -> None:
     if not FEATURES_PATH.exists():
         raise FileNotFoundError(f"Missing {FEATURES_PATH}")
 
-    df = add_persistence(pd.read_parquet(FEATURES_PATH))
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = add_persistence(read_parquet_with_normalized_ts(FEATURES_PATH))
     base_features = resolve_base_features(df)
     horizons = HORIZONS[:2] if smoke else HORIZONS
 

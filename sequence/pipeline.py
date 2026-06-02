@@ -123,7 +123,8 @@ def run_pipeline(
     report_basename = report_basename or f"sequence_report_{feature_profile}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    df = pd.read_parquet(features_path).sort_values("ts_hour").reset_index(drop=True)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(features_path).sort_values("ts_hour").reset_index(drop=True)
     target_columns = _resolve_target_columns(df)
     feature_columns, profile_meta = _select_profile_features(df, feature_profile)
 

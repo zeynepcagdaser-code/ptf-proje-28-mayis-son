@@ -159,7 +159,8 @@ def run(
     if not data_path.exists():
         raise FileNotFoundError(f"Missing dataset: {data_path}")
 
-    df = pd.read_parquet(data_path)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(data_path)
     if time_col not in df.columns:
         raise KeyError(f"Missing time_col={time_col} in {data_path.name}")
     if target_col not in df.columns:

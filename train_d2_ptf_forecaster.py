@@ -66,8 +66,9 @@ def hour_group(hour: pd.Series) -> pd.Series:
 
 
 def load_training_frame() -> pd.DataFrame:
-    features = pd.read_parquet(FEATURE_STORE)
-    reasoning = pd.read_parquet(REASONING)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    features = read_parquet_with_normalized_ts(FEATURE_STORE)
+    reasoning = read_parquet_with_normalized_ts(REASONING)
     labels = pd.read_csv(LABELS)
     for frame in [features, reasoning, labels]:
         frame["ts_hour"] = pd.to_datetime(frame["ts_hour"], errors="coerce")

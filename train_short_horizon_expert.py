@@ -283,7 +283,8 @@ def run(*, smoke: bool = False) -> dict:
     if not FEATURES_PATH.exists():
         raise FileNotFoundError(f"Missing {FEATURES_PATH}")
 
-    df = add_persistence(pd.read_parquet(FEATURES_PATH))
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = add_persistence(read_parquet_with_normalized_ts(FEATURES_PATH))
     missing = [c for c in BASE_FEATURE_COLS if c not in df.columns]
     if missing:
         raise ValueError(f"Missing feature columns: {missing}")

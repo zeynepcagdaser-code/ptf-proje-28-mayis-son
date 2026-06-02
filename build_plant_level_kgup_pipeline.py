@@ -82,7 +82,8 @@ def detect_col(columns: pd.Index, candidates: list[str]) -> str | None:
 def read_any(path: Path) -> pd.DataFrame:
     suffix = path.suffix.lower()
     if suffix == ".parquet":
-        return pd.read_parquet(path)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        return read_parquet_with_normalized_ts(path)
     if suffix == ".csv":
         return pd.read_csv(path)
     if suffix in {".xls", ".xlsx", ".xlsm"}:
@@ -408,7 +409,7 @@ def load_load_forecast() -> pd.DataFrame:
 
 def load_aggregate_kgup() -> pd.DataFrame:
     if AGG_KGUP_PATH.exists():
-        agg = pd.read_parquet(AGG_KGUP_PATH)
+        agg = read_parquet_with_normalized_ts(AGG_KGUP_PATH)
         agg["delivery_hour"] = pd.to_datetime(agg["ts_hour"], errors="coerce").dt.tz_localize(None)
         return agg[["delivery_hour", "toplam"]].rename(columns={"toplam": "kgup_total"})
     if AGG_KGUP_PATH.with_suffix(".csv").exists():
@@ -689,9 +690,10 @@ def main() -> None:
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     FEATURE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    normalized.to_parquet(NORMALIZED_PATH, index=False)
-    matched.to_parquet(YEKDEM_MATCHED_PATH, index=False)
-    features.to_parquet(FEATURE_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(normalized, str(NORMALIZED_PATH), index=False)
+    atomic_parquet_write(matched, str(YEKDEM_MATCHED_PATH), index=False)
+    atomic_parquet_write(features, str(FEATURE_PATH), index=False)
 
     write_reports(
         normalized=normalized,

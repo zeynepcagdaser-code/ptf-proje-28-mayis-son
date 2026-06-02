@@ -37,8 +37,8 @@ def _read_csv(path: Path) -> pd.DataFrame:
 
 
 def load_inputs() -> tuple[pd.DataFrame, dict[str, Any]]:
-    feature_store = pd.read_parquet(FEATURE_STORE_PATH)
-    feature_store["ts_hour"] = pd.to_datetime(feature_store["ts_hour"], errors="coerce")
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    feature_store = read_parquet_with_normalized_ts(FEATURE_STORE_PATH)
 
     labels = _read_csv(REGIME_LABELS_PATH)
     if not labels.empty:
@@ -50,7 +50,8 @@ def load_inputs() -> tuple[pd.DataFrame, dict[str, Any]]:
         load_forecast["load_forecast"] = pd.to_numeric(load_forecast["lep"], errors="coerce")
         load_forecast = load_forecast[["ts_hour", "load_forecast"]]
 
-    must_run = pd.read_parquet(MUST_RUN_PATH) if MUST_RUN_PATH.exists() else pd.DataFrame()
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    must_run = read_parquet_with_normalized_ts(MUST_RUN_PATH) if MUST_RUN_PATH.exists() else pd.DataFrame()
     if not must_run.empty:
         must_run["delivery_hour"] = pd.to_datetime(must_run["delivery_hour"], errors="coerce")
 
@@ -182,7 +183,8 @@ def build_rows(
 def write_reports(out: pd.DataFrame, diag: dict[str, Any], metadata: dict[str, Any]) -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    out.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(out, str(OUT_PATH), index=False)
     REPORT_JSON.write_text(json.dumps({"diagnostics": diag, "metadata": metadata}, ensure_ascii=False, indent=2) + "\n")
     report = [
         "# Tomorrow Morning Feature Builder",

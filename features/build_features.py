@@ -35,19 +35,25 @@ from features.engineering import (
     list_target_columns,
 )
 from features.report import build_features_report, missing_pct, write_features_report
+from src.utils.tz_utils import normalize_to_ts_hour
+from src.utils.safe_io import atomic_parquet_write
 
 
 def _prepare_master(master_path: Path) -> pd.DataFrame:
-    df = pd.read_parquet(master_path)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(master_path)
     df = df.sort_values("ts_hour").reset_index(drop=True)
     if df["ts_hour"].duplicated().any():
         raise ValueError("master ts_hour must be unique")
+    # Ensure master ts_hour is normalized to naive hourly Europe/Istanbul
+    df = normalize_to_ts_hour(df, col="ts_hour", out="ts_hour")
     return df
 
 
 def build_feature_dataframe(master_path: Path | None = None) -> tuple[pd.DataFrame, dict[str, Any]]:
     master_path = master_path or MASTER_PATH
-    rows_master = len(pd.read_parquet(master_path, columns=["ts_hour"]))
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    rows_master = len(read_parquet_with_normalized_ts(master_path, columns=["ts_hour"]))
 
     df = _prepare_master(master_path)
 
@@ -128,7 +134,8 @@ def run_build(
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     df, metadata = build_feature_dataframe(master_path)
-    df.to_parquet(output_path, index=False)
+    # Use atomic write to avoid partial output files
+    atomic_parquet_write(df, str(output_path), index=False)
 
     training_format = {
         "input_window": INPUT_WINDOW,

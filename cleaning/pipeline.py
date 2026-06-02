@@ -31,7 +31,8 @@ CLEANING_RULES = [
 
 def _save_parquet(df: pd.DataFrame, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(path, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(df, str(path), index=False)
 
 
 def _load_csv(path: Path) -> pd.DataFrame:

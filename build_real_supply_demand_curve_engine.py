@@ -72,7 +72,8 @@ def _discover_raw_curve_files() -> list[Path]:
 def _build_from_proxy() -> tuple[pd.DataFrame, dict[str, Any]]:
     if not CURVE_PROXY_PATH.exists():
         return pd.DataFrame(), {"available": False, "reason": "No raw curve files and no curve proxy layer found."}
-    curve = pd.read_parquet(CURVE_PROXY_PATH).copy()
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    curve = read_parquet_with_normalized_ts(CURVE_PROXY_PATH).copy()
     curve["ts_hour"] = _ensure_datetime(curve["ts_hour"])
     if "clearing_volume_proxy" not in curve.columns and "supply_gap" in curve.columns:
         curve["clearing_volume_proxy"] = np.abs(curve["supply_gap"])
@@ -139,7 +140,8 @@ def _load_raw_curve_frames(raw_files: list[Path]) -> list[pd.DataFrame]:
     for path in raw_files:
         try:
             if path.suffix.lower() == ".parquet":
-                df = pd.read_parquet(path)
+                from src.utils.io_utils import read_parquet_with_normalized_ts
+                df = read_parquet_with_normalized_ts(path)
             elif path.suffix.lower() in {".csv", ".txt"}:
                 df = pd.read_csv(path)
             elif path.suffix.lower() in {".json"}:
@@ -397,7 +399,8 @@ def _analysis(frame: pd.DataFrame, meta: dict[str, Any]) -> dict[str, Any]:
 
 def _write_outputs(frame: pd.DataFrame, analysis: dict[str, Any], meta: dict[str, Any]) -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(frame, str(OUT_PATH), index=False)
     REPORT_JSON.write_text(json.dumps(analysis, ensure_ascii=False, indent=2, default=str) + "\n")
     lines = [
         "# Real Supply-Demand Curve Analysis",

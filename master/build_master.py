@@ -28,9 +28,14 @@ from master.schema import (
 )
 from master.schema import DatasetSpec
 
+# Utilities for safer IO and timezone normalization
+from src.utils.tz_utils import normalize_to_ts_hour
+from src.utils.safe_io import atomic_parquet_write
+
 
 def _load_and_prefix(df_path: Path, spec: DatasetSpec) -> tuple[pd.DataFrame, list[str]]:
-    df = pd.read_parquet(df_path)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(df_path)
 
     if JOIN_KEY not in df.columns:
         raise ValueError(f"{df_path.name} missing {JOIN_KEY}")
@@ -106,6 +111,8 @@ def build_master_dataframe(
     spine_path = clean_dir / SPINE_FILE.name
 
     spine_df, spine_value_cols = _load_and_prefix(spine_path, SPINE_SPEC)
+    # Ensure spine join key is normalized to naive hourly ts_hour in Europe/Istanbul
+    spine_df = normalize_to_ts_hour(spine_df, col=JOIN_KEY, out=JOIN_KEY)
     spine_rows = len(spine_df)
     master = spine_df.sort_values(JOIN_KEY).reset_index(drop=True)
 
@@ -180,14 +187,12 @@ def build_master_dataframe(
         path = processed_dir / filename
         if not path.exists():
             continue
-        side = pd.read_parquet(path)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        side = read_parquet_with_normalized_ts(path)
         if JOIN_KEY not in side.columns:
             raise ValueError(f"{path.name} missing {JOIN_KEY}")
-        side[JOIN_KEY] = pd.to_datetime(side[JOIN_KEY], errors="coerce")
-        if side[JOIN_KEY].dt.tz is None:
-            side[JOIN_KEY] = side[JOIN_KEY].dt.tz_localize("Europe/Istanbul")
-        else:
-            side[JOIN_KEY] = side[JOIN_KEY].dt.tz_convert("Europe/Istanbul")
+        # Normalize join key to naive hourly ts_hour in Europe/Istanbul
+        side = normalize_to_ts_hour(side, col=JOIN_KEY, out=JOIN_KEY)
         side = side.dropna(subset=[JOIN_KEY]).drop_duplicates(subset=[JOIN_KEY], keep="last")
         master = master.merge(side[[JOIN_KEY] + cols_added], on=JOIN_KEY, how="left")
         matched = int(master[cols_added[0]].notna().sum()) if cols_added else 0
@@ -203,7 +208,7 @@ def build_master_dataframe(
     # GRF daily: join by day and forward-fill to hourly.
     grf_path = processed_dir / "grf_daily_reference_price.parquet"
     if grf_path.exists():
-        grf = pd.read_parquet(grf_path)
+        grf = read_parquet_with_normalized_ts(grf_path)
         if "ts_day" not in grf.columns:
             raise ValueError(f"{grf_path.name} missing ts_day")
         grf["ts_day"] = pd.to_datetime(grf["ts_day"], errors="coerce")
@@ -264,7 +269,8 @@ def run_build(
         metadata["joined_specs"],
     )
 
-    master.to_parquet(output_path, index=False)
+    # Write master parquet atomically to avoid partial/half-written files
+    atomic_parquet_write(master, str(output_path), index=False)
 
     report = build_master_report(
         master,

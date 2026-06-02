@@ -422,7 +422,8 @@ def audit_feature_store(features: pd.DataFrame) -> dict[str, Any]:
 def write_outputs(features: pd.DataFrame, audit: dict[str, Any]) -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     AUDIT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    features.to_parquet(OUTPUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(features, str(OUTPUT_PATH), index=False)
     AUDIT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n")
 
     lines = [

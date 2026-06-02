@@ -165,14 +165,19 @@ def _tabularize(X: np.ndarray, *, feature_count: int) -> np.ndarray:
 
 
 def _load_ptf_series() -> pd.Series:
-    master = pd.read_parquet(MASTER_PATH, columns=["ts_hour", "ptf_price"])
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    master = read_parquet_with_normalized_ts(MASTER_PATH, columns=["ts_hour", "ptf_price"])
     master["ts_hour"] = pd.to_datetime(master["ts_hour"], utc=True)
     master = master.dropna(subset=["ts_hour"]).set_index("ts_hour").sort_index()
     return master["ptf_price"]
 
 
 def _load_ptf_fallback_lag24() -> pd.Series:
-    feat = pd.read_parquet(FEATURES_PATH, columns=["ts_hour", "ptf_lag_24", "ptf_low_ratio_24", "ptf_zero_ratio_24", "ptf_zero_ratio_168"])
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    feat = read_parquet_with_normalized_ts(
+        FEATURES_PATH,
+        columns=["ts_hour", "ptf_lag_24", "ptf_low_ratio_24", "ptf_zero_ratio_24", "ptf_zero_ratio_168"],
+    )
     feat["ts_hour"] = pd.to_datetime(feat["ts_hour"], utc=True)
     feat = feat.dropna(subset=["ts_hour"]).set_index("ts_hour").sort_index()
     return feat["ptf_lag_24"], feat[["ptf_low_ratio_24", "ptf_zero_ratio_24", "ptf_zero_ratio_168"]]

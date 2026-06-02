@@ -167,7 +167,8 @@ def write_csv_atomic(path: Path, frame: pd.DataFrame) -> None:
 def write_parquet_atomic(path: Path, frame: pd.DataFrame) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + ".tmp.parquet")
-    frame.to_parquet(tmp, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(frame, str(tmp), index=False)
     tmp.replace(path)
 
 

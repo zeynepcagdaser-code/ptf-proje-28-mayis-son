@@ -289,14 +289,16 @@ def append_feature_row(features_path: Path, row: dict[str, Any]) -> None:
     features_path.parent.mkdir(parents=True, exist_ok=True)
     new_df = pd.DataFrame([row])
     if features_path.exists():
-        existing = pd.read_parquet(features_path)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        existing = read_parquet_with_normalized_ts(features_path)
         combined = pd.concat([existing, new_df], ignore_index=True)
     else:
         combined = new_df
     if "delivery_hour" in combined.columns:
         combined = combined.drop_duplicates("delivery_hour", keep="last").sort_values("delivery_hour")
     tmp_parquet = features_path.with_suffix(".parquet.tmp")
-    combined.to_parquet(tmp_parquet, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(combined, str(tmp_parquet), index=False)
     tmp_parquet.replace(features_path)
     csv_path = features_path.with_suffix(".csv")
     tmp_csv = csv_path.with_suffix(".csv.tmp")
@@ -551,7 +553,7 @@ def main() -> None:
         state["attempted_last_run"] = attempted_this_run
         update_state(state_path, state)
 
-        features = pd.read_parquet(features_path) if features_path.exists() else pd.DataFrame(all_rows)
+        features = read_parquet_with_normalized_ts(features_path) if features_path.exists() else pd.DataFrame(all_rows)
         ok = features[features["status"] == "ok"] if not features.empty else pd.DataFrame()
         abs_errors = ok["reconstruction_price_error"].abs() if not ok.empty else pd.Series(dtype=float)
         pending_hours_final = [f"{(pd.Timestamp(start_date) + pd.Timedelta(days=day_offset)).date().isoformat()}T{hour:02d}:00:00+03:00"

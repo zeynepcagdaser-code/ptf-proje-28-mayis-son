@@ -86,8 +86,9 @@ def assign_split(ts: pd.Series) -> pd.Series:
 
 
 def load_dataset() -> tuple[pd.DataFrame, Path]:
-    features = pd.read_parquet(FEATURE_STORE_PATH)
-    reasoning = pd.read_parquet(REASONING_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    features = read_parquet_with_normalized_ts(FEATURE_STORE_PATH)
+    reasoning = read_parquet_with_normalized_ts(REASONING_PATH)
     labels, label_path = load_labels()
 
     for frame in [features, reasoning, labels]:

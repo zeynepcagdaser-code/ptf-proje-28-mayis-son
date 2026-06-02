@@ -24,7 +24,8 @@ REPORT_JSON = PROJECT_ROOT / "reports" / "tomorrow_must_run_enrichment_audit.jso
 
 
 def load_frame(path: Path) -> pd.DataFrame:
-    frame = pd.read_parquet(path)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    frame = read_parquet_with_normalized_ts(path)
     if "ts_hour" in frame.columns:
         frame["ts_hour"] = pd.to_datetime(frame["ts_hour"], errors="coerce")
     if "delivery_hour" in frame.columns:
@@ -148,7 +149,8 @@ def build_enrichment(tomorrow: pd.DataFrame, proxy: pd.DataFrame) -> tuple[pd.Da
 
 def write_reports(frame: pd.DataFrame, audit: dict[str, Any]) -> None:
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(frame, str(OUT_PATH), index=False)
     REPORT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2, default=str) + "\n")
 
     lines = [

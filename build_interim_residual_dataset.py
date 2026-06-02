@@ -223,7 +223,8 @@ def write_audit_md(report: dict) -> None:
 def main() -> None:
     df, build_meta = build_dataset()
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(OUTPUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(df, str(OUTPUT_PATH), index=False)
     print(f"Wrote {OUTPUT_PATH} ({len(df)} rows)")
 
     report = run_audit(df, build_meta)

@@ -86,7 +86,8 @@ def load_load_forecast() -> pd.DataFrame:
 
 def load_aggregate_kgup() -> pd.DataFrame:
     if AGG_KGUP_PATH.exists():
-        agg = pd.read_parquet(AGG_KGUP_PATH)
+        from src.utils.io_utils import read_parquet_with_normalized_ts
+        agg = read_parquet_with_normalized_ts(AGG_KGUP_PATH)
         agg["ts_hour"] = pd.to_datetime(agg["ts_hour"], errors="coerce")
         if getattr(agg["ts_hour"].dt, "tz", None) is not None:
             agg["ts_hour"] = agg["ts_hour"].dt.tz_localize(None)
@@ -274,7 +275,8 @@ def write_reports(frame: pd.DataFrame, audit: dict[str, Any]) -> None:
     FEATURE_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_MD.parent.mkdir(parents=True, exist_ok=True)
     FEATURE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_parquet(FEATURE_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(frame, str(FEATURE_PATH), index=False)
     REPORT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n")
 
     lines = [

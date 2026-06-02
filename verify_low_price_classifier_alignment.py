@@ -174,9 +174,10 @@ def run_alignment_check() -> dict[str, Any]:
     pred["low_prob"] = pd.to_numeric(pred["low_prob"], errors="coerce")
     pred["is_low_actual"] = pd.to_numeric(pred["is_low_actual"], errors="coerce").fillna(0).astype(int)
 
-    y_low_test = pd.read_parquet(TABULAR_DIR / "y_low_test.parquet")
-    y_zero_test = pd.read_parquet(TABULAR_DIR / "y_zero_test.parquet")
-    y_low_val = pd.read_parquet(TABULAR_DIR / "y_low_val.parquet")
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    y_low_test = read_parquet_with_normalized_ts(TABULAR_DIR / "y_low_test.parquet")
+    y_zero_test = read_parquet_with_normalized_ts(TABULAR_DIR / "y_zero_test.parquet")
+    y_low_val = read_parquet_with_normalized_ts(TABULAR_DIR / "y_low_val.parquet")
 
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),

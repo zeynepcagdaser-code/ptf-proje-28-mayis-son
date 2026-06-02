@@ -121,7 +121,8 @@ def main() -> None:
     if not MODEL_DIR.exists():
         raise FileNotFoundError(f"Missing {MODEL_DIR}. Run train_d2_ptf_forecaster.py first.")
 
-    frame = pd.read_parquet(FEATURE_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    frame = read_parquet_with_normalized_ts(FEATURE_PATH)
     frame["ts_hour"] = pd.to_datetime(frame["ts_hour"], errors="coerce")
     pred = predict(frame)
     write_reports(pred, target_date)

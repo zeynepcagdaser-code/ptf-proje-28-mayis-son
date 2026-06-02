@@ -104,8 +104,9 @@ def improvement_pct(model_mae: float, persistence_mae: float) -> float:
 
 
 def audit_splits() -> dict[str, Any]:
-    df = pd.read_parquet(FEATURES_LSTM, columns=["ts_hour", "split"])
-    df["ts_hour"] = pd.to_datetime(df["ts_hour"], utc=True).dt.tz_convert("Europe/Istanbul")
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(FEATURES_LSTM, columns=["ts_hour", "split"])
+    df["ts_hour"] = pd.to_datetime(df["ts_hour"], errors="coerce").dt.tz_localize("Europe/Istanbul")
     test_anchors = load_anchors(ANCHOR_TEST)
     val_anchors = load_anchors(ANCHOR_VAL)
 
@@ -139,12 +140,12 @@ def audit_splits() -> dict[str, Any]:
 
 
 def audit_persistence_shift() -> dict[str, Any]:
-    df = pd.read_parquet(
+    df = read_parquet_with_normalized_ts(
         FEATURES_MICRO,
         columns=["ts_hour", "split"] + [f"target_{h}h" for h in HORIZONS],
     )
     df = df.sort_values("ts_hour").reset_index(drop=True)
-    df["ts_hour"] = pd.to_datetime(df["ts_hour"], utc=True).dt.tz_convert("Europe/Istanbul")
+    df["ts_hour"] = pd.to_datetime(df["ts_hour"], errors="coerce").dt.tz_localize("Europe/Istanbul")
 
     micro_preds = pd.read_csv(PRED_PATHS["microstructure"])
     micro_preds = micro_preds[micro_preds["target_hour"].isin(HORIZONS)]

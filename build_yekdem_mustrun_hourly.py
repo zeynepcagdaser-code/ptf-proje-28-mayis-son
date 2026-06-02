@@ -44,11 +44,12 @@ def price_band(price: pd.Series) -> pd.Series:
 
 
 def load_tables() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    proxy = pd.read_parquet(PROXY_PATH)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    proxy = read_parquet_with_normalized_ts(PROXY_PATH)
     if "ts_hour" in proxy.columns:
         proxy["ts_hour"] = to_naive(proxy["ts_hour"])
 
-    regime = pd.read_parquet(REGIME_FEATURES_PATH)
+    regime = read_parquet_with_normalized_ts(REGIME_FEATURES_PATH)
     regime["ts_hour"] = to_naive(regime["ts_hour"])
 
     labels = pd.read_csv(REGIME_LABELS_PATH)
@@ -139,7 +140,8 @@ def main() -> None:
     proxy, regime, labels, ptf = load_tables()
     out, audit = build_hourly(proxy, regime, labels, ptf)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    out.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(out, str(OUT_PATH), index=False)
     REPORT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2, default=str) + "\n")
     REPORT_MD.write_text(
         "\n".join(

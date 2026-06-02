@@ -61,7 +61,8 @@ def mape_masked(actual: np.ndarray, pred: np.ndarray, threshold: float) -> float
 
 
 def prepare_df(features_path: Path) -> pd.DataFrame:
-    df = pd.read_parquet(features_path).sort_values("ts_hour").reset_index(drop=True)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(features_path).sort_values("ts_hour").reset_index(drop=True)
     if "anchor_hour" not in df.columns:
         ts = pd.to_datetime(df["ts_hour"], utc=True).dt.tz_convert("Europe/Istanbul")
         df["anchor_hour"] = ts.dt.hour.astype(int)

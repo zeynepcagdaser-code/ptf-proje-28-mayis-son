@@ -91,7 +91,8 @@ def run_pipeline(
     reports_dir = reports_dir or REPORTS_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    df = pd.read_parquet(features_path).sort_values("ts_hour").reset_index(drop=True)
+    from src.utils.io_utils import read_parquet_with_normalized_ts
+    df = read_parquet_with_normalized_ts(features_path).sort_values("ts_hour").reset_index(drop=True)
     feature_columns, target_columns = _resolve_columns(df)
 
     tabular_nan = _tabular_nan_report(df, feature_columns, target_columns)

@@ -198,7 +198,8 @@ def main() -> None:
     mcp_volume = float(ptf_row.get("matchingQuantity", np.nan))
 
     features = compute_features(supply, demand, clearing_price, clearing_volume, meta, mcp_price, mcp_volume)
-    features.to_parquet(OUT_PATH, index=False)
+    from src.utils.safe_io import atomic_parquet_write
+    atomic_parquet_write(features, str(OUT_PATH), index=False)
     plot_curve(supply, demand, clearing_price, clearing_volume)
 
     analysis = {

@@ -216,12 +216,13 @@ def build_low_price_tabular_dataset(
 
         file_key = SPLIT_FILE_PREFIX[split]
         x_path = output_dir / f"X_{file_key}.parquet"
-        X_tab.to_parquet(x_path, index=False)
+        from src.utils.safe_io import atomic_parquet_write
+        atomic_parquet_write(X_tab, str(x_path), index=False)
 
         y_low_path = output_dir / f"y_low_{file_key}.parquet"
         y_low_out = y_low.copy()
         y_low_out.insert(0, "sample_index", anchor["sample_index"].astype(int))
-        y_low_out.to_parquet(y_low_path, index=False)
+        atomic_parquet_write(y_low_out, str(y_low_path), index=False)
 
         split_report: dict[str, Any] = {
             "X_path": str(x_path),
@@ -238,7 +239,7 @@ def build_low_price_tabular_dataset(
             y_zero_path = output_dir / "y_zero_test.parquet"
             y_zero_out = y_zero.copy()
             y_zero_out.insert(0, "sample_index", anchor["sample_index"].astype(int))
-            y_zero_out.to_parquet(y_zero_path, index=False)
+            atomic_parquet_write(y_zero_out, str(y_zero_path), index=False)
             split_report["y_zero_path"] = str(y_zero_path)
             split_report["y_zero_shape"] = list(y_zero.shape)
 
