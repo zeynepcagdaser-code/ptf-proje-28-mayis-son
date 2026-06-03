@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-06-03T21:55:04.883476Z",
+  "mode": "quick",
+  "val_window_days": 60,
+  "results": [
+    {
+      "month": "Ocak 2026",
+      "target_start": "2026-01-01",
+      "target_end": "2026-02-01",
+      "val_mae": 164.6,
+      "val_persistence": 331.96,
+      "test_mae": 201.69,
+      "test_persistence": 403.07,
+      "test_improvement_pct": 50.0,
+      "test_rows": 17856
+    },
+    {
+      "month": "Şubat 2026",
+      "target_start": "2026-02-01",
+      "target_end": "2026-03-01",
+      "val_mae": 174.88,
+      "val_persistence": 354.11,
+      "test_mae": 334.41,
+      "test_persistence": 749.27,
+      "test_improvement_pct": 55.4,
+      "test_rows": 16128
+    },
+    {
+      "month": "Mart 2026",
+      "target_start": "2026-03-01",
+      "target_end": "2026-04-01",
+      "val_mae": 251.26,
+      "val_persistence": 565.05,
+      "test_mae": 402.77,
+      "test_persistence": 667.57,
+      "test_improvement_pct": 39.7,
+      "test_rows": 17856
+    },
+    {
+      "month": "Nisan 2026",
+      "target_start": "2026-04-01",
+      "target_end": "2026-05-01",
+      "val_mae": 358.75,
+      "val_persistence": 703.41,
+      "test_mae": 468.15,
+      "test_persistence": 536.38,
+      "test_improvement_pct": 12.7,
+      "test_rows": 17280
+    },
+    {
+      "month": "Mayıs 2026",
+      "target_start": "2026-05-01",
+      "target_end": "2026-06-01",
+      "val_mae": 397.76,
+      "val_persistence": 605.86,
+      "test_mae": 344.92,
+      "test_persistence": 341.39,
+      "test_improvement_pct": -1.0,
+      "test_rows": 17856
+    },
+    {
+      "month": "Haziran 2026 (kısmi)",
+      "target_start": "2026-06-01",
+      "target_end": "2026-06-04",
+      "val_mae": 300.98,
+      "val_persistence": 434.15,
+      "test_mae": 1173.71,
+      "test_persistence": 685.68,
+      "test_improvement_pct": -71.2,
+      "test_rows": 1152
+    }
+  ],
+  "summary": {
+    "avg_test_mae": 487.61,
+    "avg_persistence": 563.89,
+    "avg_improvement_pct": 13.5,
+    "baseline_single_train_mae": 381.26
+  }
+}

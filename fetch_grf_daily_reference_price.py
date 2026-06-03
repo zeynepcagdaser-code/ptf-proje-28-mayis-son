@@ -17,6 +17,8 @@ from __future__ import annotations
 import os
 import re
 import time
+import argparse
+import json
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -37,6 +39,9 @@ ENDPOINT_URL = "https://seffaflik.epias.com.tr/natural-gas-service/v1/markets/sg
 RAW_DIR = PROJECT_ROOT / "data" / "external" / "epias_market" / "grf"
 RAW_CSV = RAW_DIR / "grf_daily_reference_price_raw.csv"
 PROCESSED_PATH = PROJECT_ROOT / "data" / "processed" / "grf_daily_reference_price.parquet"
+HOURLY_PATH = PROJECT_ROOT / "data" / "processed" / "grf_hourly_reference_price.parquet"
+REPORT_JSON = PROJECT_ROOT / "reports" / "grf_reference_price_report.json"
+REPORT_MD = PROJECT_ROOT / "reports" / "grf_reference_price_report.md"
 
 REQUEST_TIMEOUT = (10, 120)
 MAX_RETRIES = 4
@@ -96,6 +101,27 @@ def _master_date_range() -> tuple[datetime, datetime]:
     return start.to_pydatetime().replace(tzinfo=None), end.to_pydatetime().replace(tzinfo=None)
 
 
+def _ptf_date_range(start_date: str | None = None, end_date: str | None = None) -> tuple[datetime, datetime]:
+    if start_date:
+        start = pd.Timestamp(start_date).to_pydatetime().replace(tzinfo=None)
+    else:
+        start = datetime(2020, 1, 1)
+
+    if end_date:
+        end = pd.Timestamp(end_date).to_pydatetime().replace(tzinfo=None)
+    else:
+        ptf_path = PROJECT_ROOT / "data" / "ptf_dataset.csv"
+        if ptf_path.exists():
+            ptf = pd.read_csv(ptf_path, usecols=["date"])
+            ts = pd.to_datetime(ptf["date"], errors="coerce")
+            if getattr(ts.dt, "tz", None) is not None:
+                ts = ts.dt.tz_convert("Europe/Istanbul").dt.tz_localize(None)
+            end = ts.max().to_pydatetime().replace(tzinfo=None)
+        else:
+            _, end = _master_date_range()
+    return start, end
+
+
 def _normalize_items(items: list[dict[str, Any]]) -> pd.DataFrame:
     if not items:
         return pd.DataFrame(columns=["date", "grfTl", "grfUsd", "grfEur", "grfUsdMmBtu"])
@@ -126,12 +152,89 @@ def fetch_chunk(start_date: datetime, end_date: datetime, tgt: str) -> pd.DataFr
     return _normalize_items(items)
 
 
+def align_daily_to_hourly(processed: pd.DataFrame, start: datetime, end: datetime) -> pd.DataFrame:
+    spine = pd.DataFrame({"ts_hour": pd.date_range(pd.Timestamp(start).floor("h"), pd.Timestamp(end).floor("h"), freq="h")})
+    daily = processed.copy()
+    daily["ts_day"] = pd.to_datetime(daily["ts_day"], errors="coerce")
+    if getattr(daily["ts_day"].dt, "tz", None) is not None:
+        daily["ts_day"] = daily["ts_day"].dt.tz_convert("Europe/Istanbul").dt.tz_localize(None)
+    daily["ts_day"] = daily["ts_day"].dt.floor("D")
+
+    hourly = spine.copy()
+    hourly["ts_day"] = hourly["ts_hour"].dt.floor("D")
+    hourly = hourly.merge(daily, on="ts_day", how="left").sort_values("ts_hour")
+    value_cols = [c for c in daily.columns if c != "ts_day"]
+    hourly[value_cols] = hourly[value_cols].ffill()
+
+    # Cost trend features aligned to project hourly axis.
+    hourly["grf_tl_lag_24"] = hourly["grf_tl_1000sm3"].shift(24)
+    hourly["grf_tl_change_7d"] = hourly["grf_tl_1000sm3"] - hourly["grf_tl_1000sm3"].shift(24 * 7)
+    hourly["grf_tl_pct_change_7d"] = hourly["grf_tl_1000sm3"].pct_change(24 * 7)
+    hourly["grf_tl_roll_mean_7d"] = hourly["grf_tl_1000sm3"].rolling(24 * 7, min_periods=24 * 3).mean()
+    hourly["grf_tl_roll_mean_30d"] = hourly["grf_tl_1000sm3"].rolling(24 * 30, min_periods=24 * 10).mean()
+    hourly["grf_usd_mmbtu_lag_24"] = hourly["grf_usd_mmbtu"].shift(24)
+    hourly["grf_usd_mmbtu_change_7d"] = hourly["grf_usd_mmbtu"] - hourly["grf_usd_mmbtu"].shift(24 * 7)
+    return hourly.drop(columns=["ts_day"])
+
+
+def write_report(processed: pd.DataFrame, hourly: pd.DataFrame) -> None:
+    REPORT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    report = {
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "source": "EPİAŞ Şeffaflık Platformu natural-gas-service daily-reference-price",
+        "endpoint": ENDPOINT_URL,
+        "daily_output": str(PROCESSED_PATH),
+        "hourly_output": str(HOURLY_PATH),
+        "daily_rows": int(len(processed)),
+        "hourly_rows": int(len(hourly)),
+        "daily_start": str(processed["ts_day"].min()),
+        "daily_end": str(processed["ts_day"].max()),
+        "hourly_start": str(hourly["ts_hour"].min()),
+        "hourly_end": str(hourly["ts_hour"].max()),
+        "columns": list(hourly.columns),
+        "missing_hourly_pct": {
+            c: float(hourly[c].isna().mean() * 100)
+            for c in hourly.columns
+            if c != "ts_hour"
+        },
+    }
+    REPORT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    lines = [
+        "# GRF Reference Price Report",
+        "",
+        f"Generated: `{report['generated_at']}`",
+        f"Endpoint: `{ENDPOINT_URL}`",
+        "",
+        f"- Daily rows: `{report['daily_rows']}`",
+        f"- Hourly rows: `{report['hourly_rows']}`",
+        f"- Daily range: `{report['daily_start']}` → `{report['daily_end']}`",
+        f"- Hourly range: `{report['hourly_start']}` → `{report['hourly_end']}`",
+        "",
+        "## Columns",
+        "",
+        "- `grf_tl_1000sm3`: TL/1000Sm3 spot natural gas daily reference price",
+        "- `grf_usd_1000sm3`: USD/1000Sm3 equivalent",
+        "- `grf_eur_mwh`: EUR/MWh equivalent",
+        "- `grf_usd_mmbtu`: USD/MMBtu equivalent",
+        "- lag/change/rolling columns: short-term natural gas cost trend features",
+    ]
+    REPORT_MD.write_text("\n".join(lines) + "\n")
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--start-date", default="2020-01-01")
+    parser.add_argument("--end-date", default=None)
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     if not USERNAME or not PASSWORD:
         raise SystemExit("Missing EPIAS credentials (EPIAS_USERNAME/EPIAS_PASSWORD) in .env")
 
-    start, end = _master_date_range()
-    _log(f"Master range for fetch: {start.date()} → {end.date()}")
+    start, end = _ptf_date_range(args.start_date, args.end_date)
+    _log(f"Fetch range: {start.date()} → {end.date()}")
 
     tgt = obtain_tgt(USERNAME, PASSWORD)
     _log(f"TGT ok: {tgt[:12]}…")
@@ -164,12 +267,16 @@ def main() -> None:
     PROCESSED_PATH.parent.mkdir(parents=True, exist_ok=True)
     from src.utils.safe_io import atomic_parquet_write
     atomic_parquet_write(processed, str(PROCESSED_PATH), index=False)
+    hourly = align_daily_to_hourly(processed, start, end)
+    atomic_parquet_write(hourly, str(HOURLY_PATH), index=False)
+    write_report(processed, hourly)
 
     _log(f"Wrote raw: {RAW_CSV} rows={len(raw)}")
     _log(f"Wrote processed: {PROCESSED_PATH} rows={len(processed)}")
+    _log(f"Wrote hourly: {HOURLY_PATH} rows={len(hourly)}")
+    _log(f"Wrote report: {REPORT_MD}")
     _log(f"Endpoint: {ENDPOINT_URL}")
 
 
 if __name__ == "__main__":
     main()
-

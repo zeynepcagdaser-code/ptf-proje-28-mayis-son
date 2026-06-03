@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-06-02T21:33:57.944558Z",
+  "source": "Yahoo Finance (yfinance)",
+  "tickers": {
+    "BZ=F": "brent_usd",
+    "NG=F": "henry_hub_usd",
+    "TTF=F": "ttf_eur_mwh",
+    "MTF=F": "coal_api2_usd"
+  },
+  "daily_rows": 2345,
+  "hourly_rows": 56280,
+  "daily_start": "2020-01-01 00:00:00",
+  "daily_end": "2026-06-02 00:00:00",
+  "hourly_start": "2020-01-01 00:00:00",
+  "hourly_end": "2026-06-02 23:00:00",
+  "price_stats": {
+    "brent_usd": {
+      "mean": 74.83830632040525,
+      "min": 19.329999923706055,
+      "max": 127.9800033569336,
+      "missing_pct": 0.042643923240938165
+    },
+    "henry_hub_usd": {
+      "mean": 3.4900268754658033,
+      "min": 1.4819999933242798,
+      "max": 9.680000305175781,
+      "missing_pct": 0.042643923240938165
+    },
+    "ttf_eur_mwh": {
+      "mean": 49.69792832479949,
+      "min": 3.509999990463257,
+      "max": 339.1960144042969,
+      "missing_pct": 0.042643923240938165
+    },
+    "coal_api2_usd": {
+      "mean": 130.6959770026874,
+      "min": 38.599998474121094,
+      "max": 438.3500061035156,
+      "missing_pct": 0.042643923240938165
+    }
+  }
+}

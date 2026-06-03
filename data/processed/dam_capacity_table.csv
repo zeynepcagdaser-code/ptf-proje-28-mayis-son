@@ -1,0 +1,84 @@
+﻿dam_name,basin,il,cap_max_hm3,cap_active_hm3,installed_mw
+KARACAÖREN I,Antalya,Burdur,435.0,400.0,27.0
+KARACAÖREN II,Antalya,Antalya,100.0,80.0,8.5
+MANAVGAT,Antalya,Antalya,210.0,175.0,30.5
+OYMAPINAR,Antalya,Antalya,296.7,76.5,540.0
+SORGUN,Antalya,Isparta,90.0,70.0,10.0
+BÜYÜK KARAÇAY,Asi,Hatay,100.0,50.0,10.0
+AKKÖPRÜ,Batı Akdeniz,Antalya,100.0,50.0,22.0
+ALAKIR,Batı Akdeniz,Antalya,30.0,15.0,12.0
+EŞEN 1,Batı Akdeniz,Muğla,50.0,25.0,8.0
+ARAÇ BARAJI,Batı Karadeniz,Kastamonu,100.0,50.0,17.0
+KÖPRÜBAŞI,Batı Karadeniz,Bolu,50.0,25.0,10.0
+KİRAZLIKÖPRÜ,Batı Karadeniz,Bartın,60.0,30.0,15.0
+ADIGÜZEL,Büyük Menderes,Denizli,1480.0,620.0,176.0
+ADIGÜZEL-2 HES,Büyük Menderes,Denizli,50.0,25.0,14.0
+CİNDERE,Büyük Menderes,Denizli,285.0,150.0,54.0
+KEMER,Büyük Menderes,Burdur,700.0,350.0,42.0
+ÇAPALI DİNAR KARAKUYU,Büyük Menderes,Afyon,30.0,15.0,4.0
+ÇİNE ADNAN MENDERES,Büyük Menderes,Aydın,200.0,100.0,44.65
+ADATEPE,Ceyhan,Adana,100.0,50.0,12.0
+ASLANTAŞ,Ceyhan,Adana,1344.0,900.0,95.0
+BERKE,Ceyhan,Osmaniye,427.0,302.0,510.0
+KANDİL HES,Ceyhan,Kahramanmaraş,50.0,25.0,12.0
+KARTALKAYA,Ceyhan,Adana,300.0,100.0,35.0
+KILAVUZLU,Ceyhan,Adana,100.0,60.0,77.0
+KOZAN,Ceyhan,Adana,200.0,120.0,18.0
+MENZELET,Ceyhan,Kahramanmaraş,2760.0,1440.0,124.0
+SARIGÜZEL HES,Ceyhan,Kahramanmaraş,200.0,100.0,45.0
+SIR,Ceyhan,Kahramanmaraş,1200.0,747.9,283.5
+ALAKÖPRÜ,Doğu Akdeniz,Adana,100.0,50.0,60.0
+BERDAN,Doğu Akdeniz,Mersin,150.0,75.0,22.0
+ERMENEK,Doğu Akdeniz,Karaman,4500.0,1747.0,302.4
+GEZENDE,Doğu Akdeniz,Mersin,585.0,400.0,159.0
+PAMUKLUK,Doğu Akdeniz,Mersin,50.0,25.0,7.5
+YALNIZARDIÇ,Doğu Akdeniz,Mersin,100.0,50.0,15.0
+ALADEREÇAM,Doğu Karadeniz,Rize,30.0,15.0,5.0
+KÜRTÜN,Doğu Karadeniz,Gümüşhane,100.0,50.0,30.0
+TOPÇAM-ORDU,Doğu Karadeniz,Ordu,60.0,30.0,17.0
+TORUL,Doğu Karadeniz,Gümüşhane,375.0,250.0,103.0
+YAŞMAKLI,Doğu Karadeniz,Trabzon,30.0,15.0,10.0
+DEMİRKÖPRÜ,Gediz,Manisa,1325.0,800.0,69.0
+BAYRAMİÇ,Kuzey Ege,Çanakkale,250.0,150.0,29.0
+ALTINKAYA,Kızılırmak,Samsun,5763.0,2892.0,703.0
+BAYRAMHACILI HES,Kızılırmak,Kırıkkale,50.0,25.0,8.0
+BOYABAT,Kızılırmak,Sinop,3557.0,1402.0,513.0
+DERBENT,Kızılırmak,Kırşehir,100.0,50.0,17.0
+GÜLDÜRCEK,Kızılırmak,Çorum,60.0,30.0,5.0
+HIRFANLI,Kızılırmak,Kırşehir,5740.0,2035.0,128.0
+KAPULUKAYA,Kızılırmak,Kırıkkale,200.0,140.8,54.0
+KARGI KIZILIRMAK,Kızılırmak,Çankırı,400.0,200.0,110.0
+KESİKKÖPRÜ,Kızılırmak,Kırıkkale,1355.0,525.0,72.0
+OBRUK,Kızılırmak,Konya,100.0,50.0,15.0
+YAMULA,Kızılırmak,Kayseri,2200.0,580.0,60.0
+ÇERMİKLER,Kızılırmak,Kırıkkale,30.0,15.0,3.5
+YENİCE-GÖNEN,Marmara,Balıkesir,200.0,100.0,18.0
+BOĞAZKÖY,Sakarya,Bolu,50.0,25.0,7.0
+GÖKÇEKAYA,Sakarya,Eskişehir,900.0,300.0,278.0
+GÜRSÖĞÜT-1,Sakarya,Bilecik,30.0,15.0,17.0
+GÜRSÖĞÜT-2,Sakarya,Bilecik,30.0,15.0,24.0
+KARGI BARAJI VE HES,Sakarya,Kastamonu,500.0,300.0,80.0
+SARIYAR,Sakarya,Ankara,1500.0,942.0,160.0
+YENİCE,Sakarya,Sakarya,600.0,400.0,80.0
+BAHÇELİK,Seyhan,Adana,50.0,25.0,6.5
+FEKE-2,Seyhan,Adana,50.0,25.0,8.0
+GÖKTAŞ-1,Seyhan,Adana,30.0,15.0,7.5
+GÜMÜŞÖREN,Seyhan,Adana,30.0,15.0,8.0
+KAVŞAKBENDİ HES,Seyhan,Adana,100.0,50.0,25.0
+KÖPRÜ,Seyhan,Adana,30.0,15.0,5.0
+MENGE HES,Seyhan,Adana,30.0,15.0,7.0
+YEDİGÖZE,Seyhan,Adana,200.0,100.0,33.0
+ÇATALAN,Seyhan,Adana,2086.0,1200.0,124.0
+MANYAS,Susurluk,Balıkesir,80.0,40.0,10.0
+ÇINARCIK,Susurluk,Bursa,50.0,25.0,8.0
+MORGEDİK,Van Gölü,Van,80.0,40.0,17.0
+SARIMEHMET,Van Gölü,Van,100.0,50.0,24.0
+ZERNEK,Van Gölü,Van,150.0,80.0,36.0
+ALMUS,Yeşilırmak,Tokat,620.0,380.0,27.0
+GÖLOVA,Yeşilırmak,Sivas,100.0,60.0,11.5
+H.UĞURLU,Yeşilırmak,Samsun,4500.0,3200.0,180.0
+KILIÇKAYA,Yeşilırmak,Samsun,330.0,220.0,32.0
+S.UĞURLU,Yeşilırmak,Samsun,2000.0,1500.0,200.0
+TEPEKIŞLA,Yeşilırmak,Tokat,60.0,30.0,14.0
+ÇAMLIGÖZE,Yeşilırmak,Sivas,50.0,25.0,15.0
+ÇEKEREK,Yeşilırmak,Yozgat,80.0,40.0,20.0

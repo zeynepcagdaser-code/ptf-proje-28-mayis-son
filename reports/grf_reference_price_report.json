@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-02T18:57:48.380997Z",
+  "source": "EPİAŞ Şeffaflık Platformu natural-gas-service daily-reference-price",
+  "endpoint": "https://seffaflik.epias.com.tr/natural-gas-service/v1/markets/sgp/data/daily-reference-price",
+  "daily_output": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/processed/grf_daily_reference_price.parquet",
+  "hourly_output": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/processed/grf_hourly_reference_price.parquet",
+  "daily_rows": 2344,
+  "hourly_rows": 56280,
+  "daily_start": "2020-01-01 00:00:00+03:00",
+  "daily_end": "2026-06-01 00:00:00+03:00",
+  "hourly_start": "2020-01-01 00:00:00",
+  "hourly_end": "2026-06-02 23:00:00",
+  "columns": [
+    "ts_hour",
+    "grf_tl_1000sm3",
+    "grf_usd_1000sm3",
+    "grf_eur_mwh",
+    "grf_usd_mmbtu",
+    "grf_tl_lag_24",
+    "grf_tl_change_7d",
+    "grf_tl_pct_change_7d",
+    "grf_tl_roll_mean_7d",
+    "grf_tl_roll_mean_30d",
+    "grf_usd_mmbtu_lag_24",
+    "grf_usd_mmbtu_change_7d"
+  ],
+  "missing_hourly_pct": {
+    "grf_tl_1000sm3": 0.0,
+    "grf_usd_1000sm3": 0.0,
+    "grf_eur_mwh": 0.0,
+    "grf_usd_mmbtu": 0.0,
+    "grf_tl_lag_24": 0.042643923240938165,
+    "grf_tl_change_7d": 0.2985074626865672,
+    "grf_tl_pct_change_7d": 0.2985074626865672,
+    "grf_tl_roll_mean_7d": 0.1261549395877754,
+    "grf_tl_roll_mean_30d": 0.4246624022743426,
+    "grf_usd_mmbtu_lag_24": 0.042643923240938165,
+    "grf_usd_mmbtu_change_7d": 0.2985074626865672
+  }
+}

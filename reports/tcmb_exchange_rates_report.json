@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-06-02T18:52:29.147665+00:00",
+  "source": "TCMB EVDS",
+  "series": {
+    "TP_DK_USD_A_YTL": "usd_try_buy",
+    "TP_DK_EUR_A_YTL": "eur_try_buy"
+  },
+  "daily_output": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/processed/tcmb_exchange_rates_daily.parquet",
+  "hourly_output": "/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/data/processed/tcmb_exchange_rates_hourly.parquet",
+  "daily_rows": 2345,
+  "hourly_rows": 56280,
+  "daily_start": "2020-01-01 00:00:00",
+  "daily_end": "2026-06-02 00:00:00",
+  "hourly_start": "2020-01-01 00:00:00",
+  "hourly_end": "2026-06-02 23:00:00",
+  "missing_hourly_pct": {
+    "usd_try_buy": 0.042643923240938165,
+    "eur_try_buy": 0.042643923240938165,
+    "eur_usd_cross_buy": 0.042643923240938165,
+    "usd_try_buy_lag_1d": 0.08528784648187633,
+    "eur_try_buy_lag_1d": 0.08528784648187633,
+    "usd_try_buy_change_7d": 0.3411513859275053,
+    "eur_try_buy_change_7d": 0.3411513859275053,
+    "usd_try_buy_pct_change_7d": 0.3411513859275053,
+    "eur_try_buy_pct_change_7d": 0.3411513859275053,
+    "usd_try_buy_roll_mean_7d": 0.1279317697228145,
+    "eur_try_buy_roll_mean_7d": 0.1279317697228145
+  }
+}

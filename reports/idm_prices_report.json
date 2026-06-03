@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-02T22:07:05.095096Z",
+  "source": "EPİAŞ Şeffaflık Platformu electricity-service IDM VWAP",
+  "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/markets/idm/data/weighted-average-price",
+  "rows": 56260,
+  "ts_start": "2020-01-01 00:00:00",
+  "ts_end": "2026-06-02 23:00:00",
+  "idm_price_mean": 1699.4641626377531,
+  "idm_price_min": 0.0,
+  "idm_price_max": 4905.5,
+  "missing_pct": {
+    "idm_price": 0.0,
+    "idm_price_lag_24": 0.04265908282971916,
+    "idm_price_lag_48": 0.08531816565943832,
+    "idm_price_lag_168": 0.29861357980803416,
+    "idm_price_roll_mean_24": 0.008887308922858158,
+    "idm_price_roll_mean_168": 0.08354070387486669,
+    "dam_idm_spread": 0.0,
+    "dam_idm_spread_lag_24": 0.04265908282971916,
+    "dam_idm_spread_lag_168": 0.29861357980803416
+  }
+}

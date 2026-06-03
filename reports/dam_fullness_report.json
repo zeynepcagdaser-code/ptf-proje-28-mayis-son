@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-03T14:49:53.133878Z",
+  "source": "EPİAŞ electricity-service /v1/dams/data/active-fullness",
+  "endpoint": "https://seffaflik.epias.com.tr/electricity-service/v1/dams/data/active-fullness",
+  "daily_rows": 1,
+  "hourly_rows": 56280,
+  "daily_start": "2026-06-02 00:00:00",
+  "daily_end": "2026-06-02 00:00:00",
+  "dam_fullness_mean_overall": 77.54124464578835,
+  "dam_fullness_min_ever": 77.54124464578835,
+  "dam_fullness_max_ever": 77.54124464578835,
+  "missing_hourly_pct": {
+    "dam_fullness_mean": 99.95735607675907,
+    "dam_fullness_roll_30d": 100.0,
+    "dam_fullness_seasonal_dev": 100.0
+  }
+}

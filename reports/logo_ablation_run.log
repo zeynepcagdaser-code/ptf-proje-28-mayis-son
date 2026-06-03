@@ -1,0 +1,137 @@
+[2026-06-03 01:56:53] Building supervised dataset (full_market profile)...
+[2026-06-03 01:56:53] Building hourly market table for profile=full_market
+/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/rolling_ptf_forecast_system.py:391: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  data["hour"] = data["ts_hour"].dt.hour
+/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/rolling_ptf_forecast_system.py:392: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  data["dow"] = data["ts_hour"].dt.dayofweek
+/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/rolling_ptf_forecast_system.py:393: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  data["month"] = data["ts_hour"].dt.month
+[2026-06-03 01:57:34] Dataset: 1,346,388 rows × 194 features
+[2026-06-03 01:57:36] Train: 1,048,020 | Val: 210,240 | Test: 88,128
+[2026-06-03 01:57:36] 
+=== BASELINE (all features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:57:58]   [BASELINE] features=194 val_MAE=225.1 test_MAE=396.6
+[2026-06-03 01:57:58] 
+=== ABLATE: PTF_history (38 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:58:14]   [NO_PTF_history] features=156 val_MAE=237.3 test_MAE=376.2
+[2026-06-03 01:58:14] 
+=== ABLATE: Baseline_persistence (6 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:58:33]   [NO_Baseline_persistence] features=188 val_MAE=316.3 test_MAE=483.0
+[2026-06-03 01:58:33] 
+=== ABLATE: Load_demand (14 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:58:50]   [NO_Load_demand] features=180 val_MAE=232.5 test_MAE=390.4
+[2026-06-03 01:58:50] 
+=== ABLATE: KGUP_generation_plan (14 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:59:08]   [NO_KGUP_generation_plan] features=180 val_MAE=222.3 test_MAE=406.9
+[2026-06-03 01:59:08] 
+=== ABLATE: Ramp_dynamics (8 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:59:26]   [NO_Ramp_dynamics] features=186 val_MAE=237.2 test_MAE=413.7
+[2026-06-03 01:59:26] 
+=== ABLATE: GRF_gas_price (14 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 01:59:45]   [NO_GRF_gas_price] features=180 val_MAE=224.8 test_MAE=397.6
+[2026-06-03 01:59:45] 
+=== ABLATE: Exchange_rates (11 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:00:03]   [NO_Exchange_rates] features=183 val_MAE=222.7 test_MAE=393.4
+[2026-06-03 02:00:03] 
+=== ABLATE: International_commodities (11 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:00:21]   [NO_International_commodities] features=183 val_MAE=225.5 test_MAE=393.0
+[2026-06-03 02:00:21] 
+=== ABLATE: Temperature (8 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:00:40]   [NO_Temperature] features=186 val_MAE=220.6 test_MAE=398.5
+[2026-06-03 02:00:40] 
+=== ABLATE: DAM_orderbook (13 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:00:58]   [NO_DAM_orderbook] features=181 val_MAE=266.4 test_MAE=384.2
+[2026-06-03 02:00:58] 
+=== ABLATE: Calendar_time (31 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:01:16]   [NO_Calendar_time] features=163 val_MAE=228.9 test_MAE=396.6
+[2026-06-03 02:01:16] 
+=== ABLATE: Lagged_realized (20 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:01:34]   [NO_Lagged_realized] features=174 val_MAE=231.9 test_MAE=401.8
+[2026-06-03 02:01:34] 
+=== ABLATE: Composite_interactions (6 features) ===
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+[2026-06-03 02:01:54]   [NO_Composite_interactions] features=188 val_MAE=217.5 test_MAE=395.1
+/Users/salihcagdaser/Desktop/ptf-proje-28-may-s/run_logo_ablation.py:357: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "generated_at": datetime.utcnow().isoformat() + "Z",
+[2026-06-03 02:01:55] 
+JSON saved: /Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/logo_ablation_results.json
+[2026-06-03 02:01:55] Markdown saved: /Users/salihcagdaser/Desktop/ptf-proje-28-may-s/reports/logo_ablation_results.md
+
+========================================================================
+LEAVE-ONE-GROUP-OUT ABLATION SUMMARY
+Baseline Val MAE: 225.1 | Test MAE: 396.6
+========================================================================
+Group                             N     ΔVAL    ΔTEST  En kritik saat
+------------------------------------------------------------------------
+▲ Composite_interactions          6     +7.5     +1.5  s21(Δ+18), s17(Δ+18), s16(Δ+16)
+▲ Temperature                     8     +4.4     -1.9  s21(Δ+25), s19(Δ+19), s17(Δ+17)
+▲ KGUP_generation_plan           14     +2.8    -10.3  s18(Δ+19), s21(Δ+19), s8(Δ-16)
+▲ Exchange_rates                 11     +2.4     +3.2  s1(Δ+21), s23(Δ+15), s14(Δ-12)
+▲ GRF_gas_price                  14     +0.2     -1.0  s10(Δ-15), s17(Δ+14), s18(Δ+12)
+▼ International_commodities      11     -0.5     +3.6  s6(Δ-17), s10(Δ-16), s17(Δ+13)
+▼ Calendar_time                  31     -3.8     +0.0  s8(Δ-26), s6(Δ-22), s0(Δ-14)
+▼ Lagged_realized                20     -6.8     -5.1  s5(Δ-24), s6(Δ-22), s0(Δ-20)
+▼ Load_demand                    14     -7.4     +6.2  s8(Δ-33), s10(Δ-28), s9(Δ-27)
+▼ Ramp_dynamics                   8    -12.1    -17.1  s8(Δ-38), s9(Δ-32), s10(Δ-30)
+▼ PTF_history                    38    -12.2    +20.4  s8(Δ-46), s9(Δ-28), s3(Δ-26)
+▼ DAM_orderbook                  13    -41.4    +12.4  s8(Δ-96), s10(Δ-90), s16(Δ-83)
+▼ Baseline_persistence            6    -91.3    -86.3  s12(Δ-205), s10(Δ-204), s13(Δ-180)
+========================================================================
+★ = çok kritik (ΔMAE>50) | ▲ = faydalı | ▼ = zararlı/nötr
+[2026-06-03 02:01:55] 
+Toplam süre: 5.0 dakika
