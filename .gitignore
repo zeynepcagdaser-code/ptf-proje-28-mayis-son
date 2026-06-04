@@ -11,6 +11,12 @@ data/raw/*.csv
 data/predictions/
 models/
 
+# Üretim modeli ve live forecast — git'te tutulur (Streamlit Cloud için)
+!models/rolling_ptf_next24/
+!models/rolling_ptf_next24/**
+!data/live/
+!data/live/**
+
 # Large sequence tensors — regenerate with: python run_sequence.py
 data/model/*.npy
 data/model_residual/*.npy

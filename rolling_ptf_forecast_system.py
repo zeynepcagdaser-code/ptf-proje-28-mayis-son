@@ -420,7 +420,8 @@ def build_hourly_market_table() -> pd.DataFrame:
     data["hour"] = data["ts_hour"].dt.hour
     data["dow"] = data["ts_hour"].dt.dayofweek
     data["month"] = data["ts_hour"].dt.month
-    return add_market_composites(data)
+    data = add_market_composites(data)
+    return add_merit_order_features(data)
 
 
 def add_market_composites(df: pd.DataFrame) -> pd.DataFrame:
@@ -468,6 +469,24 @@ def add_market_composites(df: pd.DataFrame) -> pd.DataFrame:
     out["morning_ramp_flag"] = out["hour"].between(5, 8).astype(int)
     out["evening_ramp_flag"] = out["hour"].between(17, 21).astype(int)
     out["night_block_flag"] = out["hour"].between(0, 6).astype(int)
+
+    # Solar rampa feature'ları — duck curve evening spike encoding
+    # Saat 19-21 PTF spike'ı, solar'ın ÖNCEKI 3-6 saatte düşmesinden kaynaklanıyor.
+    # Örnek: saat 16'da solar=8,000 MW → saat 19'da solar=100 MW → 7,900 MW gaz rampa
+    # shift(3): 3 saat ÖNCEKİ solar → bugünden çıkar = geçen 3h düşüş
+    solar_clean = solar.fillna(0)
+    out["solar_drop_past_3h"] = (solar_clean.shift(3) - solar_clean).clip(lower=0)  # son 3h düşüş
+    out["solar_drop_past_6h"] = (solar_clean.shift(6) - solar_clean).clip(lower=0)  # son 6h düşüş
+    # KGÜP ile ileriye bakan: 3 saat sonra solar ne kadar düşecek? (gün öncesi bilinir)
+    out["solar_drop_next_3h"] = (solar_clean - solar_clean.shift(-3)).clip(lower=0)
+    # Geçmiş düşüş × gaz maliyeti: gaz rampa zorunlu + pahalı → PTF spike
+    if "grf_tl_lag_24" in out.columns:
+        grf = pd.to_numeric(out["grf_tl_lag_24"], errors="coerce").ffill()
+        out["grf_x_solar_drop_3h"] = grf * out["solar_drop_past_3h"] / 10000
+        out["grf_x_solar_drop_6h"] = grf * out["solar_drop_past_6h"] / 10000  # 6h daha güçlü sinyal
+    # Günlük solar max'a göre normalize (şiddeti ölçer)
+    daily_solar_max = solar_clean.groupby(out["ts_hour"].dt.date).transform("max").replace(0, np.nan)
+    out["solar_drop_pct_of_day"] = safe_div(out["solar_drop_past_3h"], daily_solar_max).to_numpy()
 
     # net_load_coverage: load/kgup_total — supply tightness signal independent of renewable mix
     out["net_load_coverage"] = safe_div(load, total).to_numpy()
@@ -582,21 +601,142 @@ def add_market_composites(df: pd.DataFrame) -> pd.DataFrame:
         roll90 = ist.rolling(2160, min_periods=240).mean()
         out["istanbul_dam_seasonal_dev"] = ist - roll90                    # mevsimsel sapma
 
+    # --- Sıfır fiyat sinyal feature'ları ---
+    # Şubat 2026 analizinden: PTF=0 saatlerinde gas_share=%3.7, ren_share=%52.7, gas≈980 MW
+    _gas = pd.to_numeric(out.get("kgup_gas"), errors="coerce").fillna(0)
+    _tot = pd.to_numeric(out.get("kgup_total"), errors="coerce").replace(0, np.nan)
+    _lep = pd.to_numeric(out.get("load_forecast"), errors="coerce").replace(0, np.nan)
+    _ren = pd.to_numeric(out.get("renewable_share"), errors="coerce").fillna(0)
+
+    # Gaz payı — sıfır fiyat saatlerinde %3.7'ye düşüyor
+    out["gas_share_raw"] = safe_div(_gas, _tot).to_numpy()
+
+    # Gaz × yenilenebilir ters etkileşim: gaz düşükken yenilenebilir yüksek → PTF=0 bölgesi
+    out["low_gas_high_ren"] = (1 - out["gas_share_raw"].fillna(1)) * _ren
+
+    # Hidro surge sinyali: hidro/talep oranı yüksekse + gaz düşükse → Şubat 2026 rejimi
+    _hyd = pd.to_numeric(out.get("kgup_dammed_hydro"), errors="coerce").fillna(0)
+    out["hydro_gas_ratio"] = safe_div(_hyd, _gas.replace(0, np.nan)).to_numpy()
+
+    # Talep normalize: saatlik yük / o ayin ortalama yükü (düşük talep + ucuz supply = PTF=0)
+    if "month" in out.columns:
+        load_monthly_avg = _lep.groupby(out["month"]).transform("mean")
+        out["load_vs_monthly_avg"] = safe_div(_lep, load_monthly_avg).to_numpy()
+
+    return out
+
+
+# YEKDEM kapasiteleri — Excel listelerinden (MWe), 2020 için 2021 değeri kullanıldı
+_YEKDEM_WIND_CAP = {
+    2020: 8060, 2021: 8060, 2022: 9286, 2023: 8043,
+    2024: 6751, 2025: 6805, 2026: 6268,
+}
+_YEKDEM_RIVER_CAP = {  # akarsu kanal tipi — su gelince üretiyor, gerçek must-run
+    2020: 5681, 2021: 5681, 2022: 5113, 2023: 3637,
+    2024: 2997, 2025: 2291, 2026: 1643,
+}
+_YEKDEM_BARAJLI_CAP = {  # rezervuarlı YEKDEM — garantili fiyat ama operatör zamanlar
+    2020: 7577, 2021: 7577, 2022: 6911, 2023: 4111,
+    2024: 3997, 2025: 4251, 2026: 2708,
+}
+
+
+def add_merit_order_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Ucuzdan pahalıya merit order stack kurarak hangi santralin marjinal
+    olduğunu her saat için sayısal olarak encode eder.
+
+    Stack sırası:
+      Tier 0 (~0 TL)   : Solar + YEKDEM Rüzgar + YEKDEM Akarsu + YEKDEM Barajlı
+                         + Jeotermal + Biyokütle
+      Tier 1 (~50 TL)  : Piyasa Rüzgar + Piyasa Akarsu (YEKDEM dışı)
+      Tier 2 (~300 TL) : Linyit
+      Tier 3 (~600 TL) : Taş Kömür + İthal Kömür
+      Tier 4 (~800 TL) : Piyasa Barajlı HES (stratejik swing, YEKDEM dışı)
+      Tier 5 (~2000 TL): Doğalgaz
+    """
+    out = df.copy()
+    year = out["ts_hour"].dt.year
+
+    # Kaynak bazlı KGÜP kolonları
+    solar   = pd.to_numeric(out.get("kgup_solar"),       errors="coerce").fillna(0)
+    wind    = pd.to_numeric(out.get("kgup_wind"),         errors="coerce").fillna(0)
+    river   = pd.to_numeric(out.get("kgup_river"),        errors="coerce").fillna(0)
+    geo     = pd.to_numeric(out.get("kgup_geothermal"),   errors="coerce").fillna(0)
+    bio     = pd.to_numeric(out.get("kgup_biomass"),      errors="coerce").fillna(0)
+    hydro   = pd.to_numeric(out.get("kgup_dammed_hydro"), errors="coerce").fillna(0)
+    lignite = pd.to_numeric(out.get("kgup_lignite"),      errors="coerce").fillna(0)
+    bcoal   = pd.to_numeric(out.get("kgup_black_coal"),   errors="coerce").fillna(0)
+    icoal   = pd.to_numeric(out.get("kgup_import_coal"),  errors="coerce").fillna(0)
+    load    = pd.to_numeric(out.get("load_forecast"),     errors="coerce")
+
+    # YEKDEM kapasitesi tavan — min(KGÜP, YEKDEM_cap[yıl])
+    yekdem_wind_cap   = year.map(_YEKDEM_WIND_CAP).fillna(6268).astype(float)
+    yekdem_river_cap  = year.map(_YEKDEM_RIVER_CAP).fillna(1643).astype(float)
+    yekdem_hydro_cap  = year.map(_YEKDEM_BARAJLI_CAP).fillna(2708).astype(float)
+
+    yekdem_wind  = np.minimum(wind.values,  yekdem_wind_cap.values)
+    yekdem_river = np.minimum(river.values, yekdem_river_cap.values)
+    yekdem_hydro = np.minimum(hydro.values, yekdem_hydro_cap.values)  # YEKDEM barajlı → tier0
+
+    # Piyasa kısımları (YEKDEM dışı) — fiyat duyarlı
+    market_wind  = (wind  - yekdem_wind).clip(lower=0)
+    market_river = (river - yekdem_river).clip(lower=0)
+    market_hydro = (hydro - yekdem_hydro).clip(lower=0)  # piyasa barajlı → tier4
+
+    # Merit order kümülatif arz katmanları
+    tier0 = solar + yekdem_wind + yekdem_river + yekdem_hydro + geo + bio  # ~0 TL
+    tier1 = tier0 + market_wind + market_river                              # ~50 TL
+    tier2 = tier1 + lignite                                                 # ~300 TL
+    tier3 = tier2 + bcoal + icoal                                           # ~600 TL
+    tier4 = tier3 + market_hydro                                            # ~800 TL
+
+    # Residual yük — her kattan sonra ne kadar kaldı?
+    out["merit_residual_zero"]    = load - tier0  # <0 → PTF≈0 bölgesi
+    out["merit_residual_mkt_ren"] = load - tier1  # <0 → piyasa yenilenebilir marjinal
+    out["merit_residual_lignite"] = load - tier2  # <0 → linyit marjinal
+    out["merit_residual_coal"]    = load - tier3  # <0 → kömür marjinal
+    out["merit_residual_hydro"]   = load - tier4  # <0 → piyasa baraj marjinal
+
+    # Gaz baskısı — tier4'ü geçen talep = gaz devreye giriyor
+    out["gas_running_mw"] = (load - tier4).clip(lower=0)
+
+    # Bileşen feature'lar (modele ek context)
+    out["yekdem_total_mw"] = tier0
+    out["market_ren_mw"]   = market_wind + market_river
+    out["coal_total_mw"]   = bcoal + icoal + lignite
+
     return out
 
 
 ZERO_PRICE_CLF_FEATURES = [
+    # Ham KGÜP kaynakları
     "kgup_solar",
     "kgup_wind",
     "kgup_dammed_hydro",
+    "kgup_river",
+    "kgup_geothermal",
+    "kgup_biomass",
     "kgup_total",
     "load_forecast",
+    # Oran feature'ları
     "renewable_share",
     "solar_load_share",
     "hydro_share",
     "hydro_demand_ratio",
     "net_load_after_wind_solar",
     "net_load_coverage",
+    # Merit order sinyalleri
+    "merit_residual_zero",
+    "merit_residual_hydro",
+    "gas_running_mw",
+    "yekdem_total_mw",
+    # Şubat 2026 analizinden türetilen sıfır fiyat sinyalleri
+    "gas_share_raw",           # PTF=0'da %3.7'ye düşüyor (normal: %26)
+    "low_gas_high_ren",        # (1-gas_share) × ren_share etkileşimi
+    "hydro_gas_ratio",         # hidro surge + gaz geri çekilmesi
+    "load_vs_monthly_avg",     # talep / ay ortalaması — düşük talep PTF=0 riskini artırıyor
+    # Zaman ve hava
     "hour",
     "month",
     "tr_radiation_mean",
@@ -860,7 +1000,8 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "ttf_eur_mwh",
         "ttf_try_mwh",
         "coal_api2_usd",
-        "brent_try",
+        # "brent_try" → ablasyon: drift=2.5, importance=211, 2026'da TL depresiasyonu+İran şoku nedeniyle
+        #               eğitim dağılımı dışına çıkıyor → test MAE'yi +13.5 artırıyor. Kaldırıldı.
         "henry_hub_usd",
         "brent_usd_change_7d",
         "ttf_eur_mwh_change_7d",
@@ -868,14 +1009,15 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "ttf_eur_mwh_roll_mean_30d",
         "ttf_x_gas_share",
         "ttf_vs_grf_premium",
-        "brent_ttf_try_ratio",
+        # "brent_ttf_try_ratio" → brent_try'a bağımlı, o kaldırılınca bu da anlamsız
+
         # Zero-price classifier output — P(PTF<1): solar overcapacity signal
         "zero_price_prob",
         # Hydro displacement features (Feb 2026 hydro-surge regime)
         "hydro_demand_ratio",
         "hydro_gas_displacement",
-        # Gas marginality threshold — captures merit-order paradox (low gas_share ≠ low price)
-        "gas_margin_proximity",
+        # "gas_margin_proximity" → ablasyon: drift=2.3, gas 2026'da %10'a düştü,
+        #                          2020-2024 rejimi için tasarlandı, test MAE'yi +7.0 artırıyor. Kaldırıldı.
         # GRF cost × gas share: gas marginal cost exposure when gas is price-setter
         "grf_x_gas_share",
         # İstanbul baraj doluluk (İBB 2000-2024) — Marmara hidro stres proxy
@@ -884,6 +1026,28 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "istanbul_dam_lag_30d",
         "istanbul_dam_change_30d",
         "istanbul_dam_seasonal_dev",
+        # Merit order stack features — YEKDEM tabanlı marjinal santral tespiti
+        "merit_residual_zero",     # <0 → PTF≈0 bölgesi (must-run talebi aşıyor)
+        "merit_residual_mkt_ren",  # <0 → piyasa yenilenebilir marjinal
+        "merit_residual_lignite",  # <0 → linyit marjinal
+        "merit_residual_coal",     # <0 → kömür marjinal
+        "merit_residual_hydro",    # <0 → barajlı HES marjinal
+        "gas_running_mw",          # >0 → kaç MW gaz çalışıyor
+        "yekdem_total_mw",         # toplam YEKDEM must-run üretim
+        "market_ren_mw",           # piyasa yenilenebilir (YEKDEM dışı)
+        "coal_total_mw",           # toplam kömür üretimi
+        # Sıfır fiyat sinyal feature'ları (Şubat 2026 analizi)
+        "gas_share_raw",
+        "low_gas_high_ren",
+        # "hydro_gas_ratio" → ablasyon: drift=6.4 (en yüksek), test MAE'yi +7.0 artırıyor. Kaldırıldı.
+        "load_vs_monthly_avg",
+        # Solar rampa — duck curve evening spike (geçmiş düşüş → gaz rampa baskısı)
+        "solar_drop_past_3h",      # son 3 saatte solar kaç MW düştü
+        "solar_drop_past_6h",      # son 6 saatte solar kaç MW düştü
+        "solar_drop_next_3h",      # önümüzdeki 3 saatte solar kaç MW düşecek (KGÜP'ten)
+        "grf_x_solar_drop_3h",     # gaz maliyeti × geçmiş rampa: spike riski
+        "solar_drop_pct_of_day",   # günlük solar max'a göre normalize
+        "grf_x_solar_drop_6h",     # gaz maliyeti × 6h rampa (daha güçlü)
     ]
     orderbook_cols = [
         "dam_bid_volume",

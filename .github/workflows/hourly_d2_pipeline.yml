@@ -1,33 +1,37 @@
-name: Hourly D+2 PTF Pipeline
+name: Hourly PTF Pipeline
 
 on:
   schedule:
-    - cron: '0 * * * *' # every hour at minute 0 (UTC)
+    - cron: '0 * * * *'   # her saat başı (UTC)
   workflow_dispatch: {}
 
 jobs:
-  run-hourly-pipeline:
+  run-pipeline:
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Istanbul
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt || pip install -r requirements_dashboard.txt || true
+          pip install -r requirements_dashboard.txt
 
       - name: Validate EPIAS secrets
         run: |
           if [ -z "${{ secrets.EPIAS_USERNAME }}" ] || [ -z "${{ secrets.EPIAS_PASSWORD }}" ]; then
-            echo "Missing EPIAS_USERNAME / EPIAS_PASSWORD repository secrets" >&2
+            echo "EPIAS_USERNAME / EPIAS_PASSWORD eksik" >&2
             exit 1
           fi
 
@@ -35,18 +39,70 @@ jobs:
         env:
           EPIAS_USERNAME: ${{ secrets.EPIAS_USERNAME }}
           EPIAS_PASSWORD: ${{ secrets.EPIAS_PASSWORD }}
-        run: |
-          python -u update_dataset.py
+        run: python -u update_dataset.py
 
-      - name: Run end-to-end D+2 pipeline
+      - name: Generate next-24h PTF forecast
         run: |
-          python -u run_d2_ptf_pipeline.py
+          python - <<'EOF'
+          import warnings; warnings.filterwarnings('ignore')
+          import pandas as pd
+          from pathlib import Path
+          from rolling_ptf_forecast_system import forecast_next24
 
-      - name: Upload prediction artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: ptf-predictions
-          path: |
-            data/predictions/*.csv
-            reports/*.json
-            reports/*.md
+          live_dir = Path("data/live")
+          live_dir.mkdir(parents=True, exist_ok=True)
+
+          # Sonraki 24 saat tahmini
+          fc = forecast_next24()
+          fc.to_csv(live_dir / "forecast_next24_latest.csv", index=False)
+          print(f"Forecast kaydedildi: {len(fc)} saat, anchor={fc['anchor_ts_hour'].iloc[0]}")
+
+          # Son 30 günlük tahmin geçmişi (birikim)
+          history_path = live_dir / "forecast_history_30d.csv"
+          if history_path.exists():
+              hist = pd.read_csv(history_path, parse_dates=["delivery_ts_hour","anchor_ts_hour"])
+          else:
+              hist = pd.DataFrame()
+
+          hist = pd.concat([hist, fc], ignore_index=True)
+          # 30 günden eski kayıtları sil
+          cutoff = pd.Timestamp.now() - pd.Timedelta(days=30)
+          hist = hist[pd.to_datetime(hist["delivery_ts_hour"]) >= cutoff]
+          # Aynı delivery+anchor'dan sadece birini tut
+          hist = hist.drop_duplicates(subset=["delivery_ts_hour","anchor_ts_hour"], keep="last")
+          hist.to_csv(history_path, index=False)
+          print(f"Forecast history: {len(hist)} kayıt")
+          EOF
+
+      - name: Save recent PTF actuals for dashboard
+        run: |
+          python - <<'EOF'
+          import warnings; warnings.filterwarnings('ignore')
+          import pandas as pd
+          from pathlib import Path
+          from rolling_ptf_forecast_system import load_ptf
+
+          live_dir = Path("data/live")
+          live_dir.mkdir(parents=True, exist_ok=True)
+
+          ptf = load_ptf()
+          ptf["ts_hour"] = pd.to_datetime(ptf["ts_hour"]).dt.tz_localize(None)
+          cutoff = pd.Timestamp.now() - pd.Timedelta(days=30)
+          recent = ptf[ptf["ts_hour"] >= cutoff][["ts_hour","price"]].dropna()
+          recent.to_csv(live_dir / "ptf_actuals_30d.csv", index=False)
+          print(f"Actuals kaydedildi: {len(recent)} saat")
+          EOF
+
+      - name: Commit and push live data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/live/
+          # Sadece değişiklik varsa commit et
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok, commit atlanıyor."
+          else
+            ANCHOR=$(python3 -c "import pandas as pd; fc=pd.read_csv('data/live/forecast_next24_latest.csv'); print(fc['anchor_ts_hour'].iloc[0][:16])")
+            git commit -m "chore: hourly forecast update [${ANCHOR}]"
+            git push
+          fi
