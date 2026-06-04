@@ -1098,13 +1098,17 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
     base_anchor_cols = ["ts_hour", "ptf"] + history_cols
     if profile.include_lagged_realized:
         base_anchor_cols += [c for c in lagged_realized_cols if c not in base_anchor_cols]
+    if profile.include_orderbook:
+        # DAM orderbook volumes are published simultaneously with PTF (after auction closes ~14:30).
+        # Using delivery-hour values would be a train/inference mismatch — at inference time the
+        # delivery day hasn't happened yet and these are NaN→0. Anchor-hour values (yesterday's
+        # cleared auction) ARE available and carry valid market-depth signal.
+        base_anchor_cols += [c for c in orderbook_cols if c not in base_anchor_cols]
     base_anchor_cols = [c for c in base_anchor_cols if c in anchors.columns]
 
     delivery_cols: list[str] = ["ptf"]
     if profile.include_market_forecasts:
         delivery_cols += [c for c in market_cols if c in hourly.columns]
-    if profile.include_orderbook:
-        delivery_cols += [c for c in orderbook_cols if c in hourly.columns]
     delivery_cols = list(dict.fromkeys(delivery_cols))
     delivery_lookup = by_ts[delivery_cols].copy()
 
@@ -1624,7 +1628,6 @@ def forecast_next24(*, profile_name: str | None = None) -> pd.DataFrame:
             for col in [
                 "dam_bid_volume",
                 "dam_sell_offer_volume",
-                # dam_matched_volume excluded: post-auction, not available before PTF
                 "dam_price_independent_buy",
                 "dam_price_independent_sell",
                 "dam_block_buy_volume",
@@ -1637,7 +1640,7 @@ def forecast_next24(*, profile_name: str | None = None) -> pd.DataFrame:
                 "night_block_pressure",
             ]:
                 if col in hourly.columns:
-                    row[f"delivery_{col}"] = delivery_row.get(col, np.nan)
+                    row[f"anchor_{col}"] = anchor_row.get(col, np.nan)
         rows.append(row)
     frame = pd.DataFrame(rows)
     frame = pd.concat([frame, calendar_features(frame["anchor_ts_hour"], "anchor"), calendar_features(frame["delivery_ts_hour"], "delivery")], axis=1)

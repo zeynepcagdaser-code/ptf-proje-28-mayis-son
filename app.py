@@ -119,85 +119,63 @@ if not fc.empty:
 else:
     st.info("Tahmin verisi bekleniyor — GitHub Actions her saat başında günceller.")
 
-# ── Bölüm 2: Tahmin vs Gerçek (2026) ─────────────────────────────────────────
+# ── Bölüm 2: Saatlik Tahmin vs Gerçek PTF ────────────────────────────────────
 
 st.divider()
-st.subheader("2026 Tahmin vs Gerçekleşen PTF")
+st.subheader("Saatlik Tahmin vs Gerçek PTF")
 
 if not history.empty:
-    # Sidebar filtre
-    years_avail = sorted(history["ts_hour"].dt.year.dropna().unique().astype(int), reverse=True)
-    col_filter, col_agg = st.columns([2, 2])
-    with col_filter:
-        selected_years = st.multiselect(
-            "Yıl seç", years_avail,
-            default=[y for y in [2026, 2025] if y in years_avail]
-        )
-    with col_agg:
-        agg_mode = st.radio("Gruplama", ["Günlük ort.", "Saatlik"], horizontal=True)
+    df_plot = history[history["ts_hour"].dt.year >= 2025].copy().sort_values("ts_hour")
+    min_d = df_plot["ts_hour"].min().date()
+    max_d = df_plot["ts_hour"].max().date()
 
-    sub = history[history["ts_hour"].dt.year.isin(selected_years)].copy() if selected_years else history.copy()
+    fc1, fc2 = st.columns(2)
+    with fc1:
+        date_from = st.date_input("Başlangıç", value=max_d - pd.Timedelta(days=30), min_value=min_d, max_value=max_d)
+    with fc2:
+        date_to = st.date_input("Bitiş", value=max_d, min_value=min_d, max_value=max_d)
 
-    if agg_mode == "Günlük ort.":
-        sub["date"] = sub["ts_hour"].dt.date
-        grp = sub.groupby(["date","split"])[["actual_ptf","predicted_ptf"]].mean().reset_index()
-        grp["date"] = pd.to_datetime(grp["date"])
-        x_col = "date"
+    mask = (df_plot["ts_hour"].dt.date >= date_from) & (df_plot["ts_hour"].dt.date <= date_to)
+    sub = df_plot[mask].sort_values("ts_hour")
+
+    if sub.empty:
+        st.warning("Bu aralıkta veri yok.")
     else:
-        grp = sub
-        x_col = "ts_hour"
-
-    fig2 = go.Figure()
-
-    # Gerçekleşen PTF
-    for sp, color in [("test","#ffd60a"), ("validation","#f4a261"), ("train","#adb5bd")]:
-        mask = grp["split"] == sp
-        if mask.any():
-            label_map = {"test":"Gerçek PTF (Test 2026)", "validation":"Gerçek PTF (Val 2025 Q2)", "train":"Gerçek PTF (Eğitim)"}
-            fig2.add_trace(go.Scatter(
-                x=grp.loc[mask, x_col], y=grp.loc[mask, "actual_ptf"],
-                name=label_map[sp],
-                line=dict(color=color, width=1.5 if sp=="test" else 1),
-                opacity=1 if sp in ("test","validation") else 0.4,
-            ))
-
-    # Tahmin (test + val)
-    mask_tv = grp["split"].isin(["test","validation"])
-    if mask_tv.any():
+        fig2 = go.Figure()
         fig2.add_trace(go.Scatter(
-            x=grp.loc[mask_tv, x_col], y=grp.loc[mask_tv, "predicted_ptf"],
+            x=sub["ts_hour"], y=sub["actual_ptf"],
+            name="Gerçek PTF",
+            line=dict(color="#ffd60a", width=1.5),
+        ))
+        fig2.add_trace(go.Scatter(
+            x=sub["ts_hour"], y=sub["predicted_ptf"],
             name="Model Tahmini",
-            line=dict(color="#00b4d8", width=2, dash="dot"),
+            line=dict(color="#00b4d8", width=1.5, dash="dot"),
         ))
 
-    # MAE hesapla
-    test_rows = sub[sub["split"]=="test"].dropna(subset=["actual_ptf","predicted_ptf"])
-    mae_str = f"Test MAE: {(test_rows['predicted_ptf']-test_rows['actual_ptf']).abs().mean():,.0f} TL/MWh" if len(test_rows) else ""
+        mae = (sub["predicted_ptf"] - sub["actual_ptf"]).abs().mean()
+        fig2.update_layout(
+            title=f"MAE: {mae:,.0f} TL/MWh  ({len(sub):,} saat)",
+            height=450, hovermode="x unified",
+            xaxis_title="Saat", yaxis_title="PTF (TL/MWh)",
+            legend=dict(orientation="h", y=1.08, x=1, xanchor="right"),
+            plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+            xaxis=dict(gridcolor="rgba(200,200,200,0.15)"),
+            yaxis=dict(gridcolor="rgba(200,200,200,0.15)"),
+            margin=dict(t=55, b=40),
+        )
+        st.plotly_chart(fig2, use_container_width=True)
 
-    fig2.update_layout(
-        title=f"PTF Tahmin vs Gerçekleşen — {agg_mode}  {mae_str}",
-        height=420, hovermode="x unified",
-        xaxis_title="Tarih", yaxis_title="PTF (TL/MWh)",
-        legend=dict(orientation="h", y=1.12, x=1, xanchor="right"),
-        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        xaxis=dict(gridcolor="rgba(200,200,200,0.15)"),
-        yaxis=dict(gridcolor="rgba(200,200,200,0.15)"),
-        margin=dict(t=60, b=40),
-    )
-    st.plotly_chart(fig2, use_container_width=True)
-
-    # Aylık MAE tablosu (sadece test/val)
-    with st.expander("Aylık MAE detayı"):
-        err_df = sub[sub["split"].isin(["test","validation"])].copy()
-        err_df["ym"] = err_df["ts_hour"].dt.to_period("M").astype(str)
-        err_df["abs_err"] = (err_df["predicted_ptf"] - err_df["actual_ptf"]).abs()
-        monthly = err_df.groupby("ym").agg(
-            MAE=("abs_err","mean"),
-            Gerçek_ort=("actual_ptf","mean"),
-            Tahmin_ort=("predicted_ptf","mean"),
-            Saat=("abs_err","count")
-        ).round(0).astype(int)
-        st.dataframe(monthly, use_container_width=True)
+        with st.expander("Aylık MAE detayı"):
+            sub2 = sub.copy()
+            sub2["ym"] = sub2["ts_hour"].dt.to_period("M").astype(str)
+            sub2["hata"] = (sub2["predicted_ptf"] - sub2["actual_ptf"]).abs()
+            tbl = sub2.groupby("ym").agg(
+                MAE=("hata","mean"), Gerçek=("actual_ptf","mean"),
+                Tahmin=("predicted_ptf","mean"), Saat=("hata","count")
+            ).round(0).astype(int).reset_index()
+            tbl.columns = ["Ay","MAE","Gerçek Ort.","Tahmin Ort.","Saat"]
+            st.dataframe(tbl, hide_index=True, use_container_width=True)
 else:
     st.info("Geçmiş tahmin verisi oluşturuluyor...")
 
