@@ -488,6 +488,28 @@ def add_market_composites(df: pd.DataFrame) -> pd.DataFrame:
     daily_solar_max = solar_clean.groupby(out["ts_hour"].dt.date).transform("max").replace(0, np.nan)
     out["solar_drop_pct_of_day"] = safe_div(out["solar_drop_past_3h"], daily_solar_max).to_numpy()
 
+    # Duck curve temel sinyali: günlük solar zirvesinden ne kadar uzaklaştık?
+    # Log-transform ve yük normalizasyonu ile ölçek bağımsız hale getiriyoruz.
+    # Böylece 2020'deki 5,000 MW peak ile 2026'daki 17,000 MW peak aynı ölçekte kalıyor.
+    out["solar_pct_of_daily_peak"] = safe_div(solar_clean, daily_solar_max).to_numpy()  # 0=gece, 1=zirve
+
+    # Load-normalized solar drop from peak: yükün yüzdesi olarak solar kaybı
+    # 2020: kayıp=5,000 MW / load=35,000 = 0.14 | 2026: 17,000/42,000 = 0.40 → anlamlı fark, drift değil
+    solar_deficit_vs_load = safe_div(
+        (daily_solar_max - solar_clean).clip(lower=0), load.replace(0, np.nan)
+    ).to_numpy()
+    out["solar_deficit_pct_load"] = solar_deficit_vs_load
+
+    # Gaz rampa oranı — yüke göre normalize (ölçek bağımsız)
+    # 2020: gaz 3h artışı 500 MW / load 30,000 = 0.017 | 2026: 4,000 / 40,000 = 0.10
+    gas_clean = gas.fillna(0)
+    gas_ramp_3h = (gas_clean - gas_clean.shift(3)).clip(lower=0)
+    out["gas_ramp_pct_load"] = safe_div(gas_ramp_3h, load.replace(0, np.nan)).to_numpy()
+
+    # Duck curve stress — bileşik ama ölçek bağımsız:
+    # (solar kayıp / load) × (gaz / load) → her iki faktör load'a göre normalize
+    out["duck_stress_normalized"] = solar_deficit_vs_load * safe_div(gas_clean, load.replace(0, np.nan)).to_numpy()
+
     # net_load_coverage: load/kgup_total — supply tightness signal independent of renewable mix
     out["net_load_coverage"] = safe_div(load, total).to_numpy()
 
@@ -859,6 +881,13 @@ def add_history_features(hourly: pd.DataFrame) -> pd.DataFrame:
     out["ptf_spike_ratio_24"] = (past >= 3000).astype(float).rolling(24, min_periods=12).mean()
     out["ptf_d1_momentum"] = out["ptf_lag_24"] - out["ptf_lag_48"]
 
+    # PTF rejim proxyleri — kısa vadeli volatilite ve spike prevalence
+    out["ptf_spike_ratio_168"] = (past >= 3000).astype(float).rolling(168, min_periods=24).mean()
+    # Akşam saatlerinde (18-22) son 7 günlük peak — duck curve şiddeti proxy
+    evening_mask = out["hour"].between(18, 22)
+    ptf_evening = ptf.where(evening_mask)
+    out["ptf_evening_max_7d"] = ptf_evening.shift(1).rolling(168, min_periods=12).max()
+
     lagged_cols = [
         "smf",
         "real_consumption",
@@ -956,17 +985,10 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "evening_ramp_flag",
         "night_block_flag",
         "net_load_coverage",
-        "grf_tl_1000sm3",
-        "grf_usd_1000sm3",
-        "grf_eur_mwh",
-        "grf_usd_mmbtu",
-        "grf_tl_lag_24",
-        "grf_tl_change_7d",
-        "grf_tl_pct_change_7d",
-        "grf_tl_roll_mean_7d",
-        "grf_tl_roll_mean_30d",
-        "grf_usd_mmbtu_lag_24",
-        "grf_usd_mmbtu_change_7d",
+        # GRF: teslimat günü sabah yayımlanıyor → gün öncesi bilinmiyor → sadece lag güvenli
+        "grf_tl_lag_24",          # dünkü GRF TL (safe)
+        "grf_usd_mmbtu_lag_24",   # dünkü GRF USD (safe)
+        # grf_tl_change_7d vb. hesaplamak için lag_24 yeterli; aşağıdaki türevler lag_24'ten türetilmeli
         # National weighted temperature & HVAC features (from fetch_temperature.py)
         "tr_temp_mean",
         "tr_apparent_temp_mean",
@@ -1007,8 +1029,8 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "ttf_eur_mwh_change_7d",
         "brent_usd_roll_mean_30d",
         "ttf_eur_mwh_roll_mean_30d",
-        "ttf_x_gas_share",
-        "ttf_vs_grf_premium",
+        # "ttf_x_gas_share" → ttf_try_mwh look-ahead (teslimat günü bilinmiyor) — kaldırıldı
+        # "ttf_vs_grf_premium" → grf_tl_1000sm3 look-ahead içeriyor — kaldırıldı
         # "brent_ttf_try_ratio" → brent_try'a bağımlı, o kaldırılınca bu da anlamsız
 
         # Zero-price classifier output — P(PTF<1): solar overcapacity signal
@@ -1018,8 +1040,7 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "hydro_gas_displacement",
         # "gas_margin_proximity" → ablasyon: drift=2.3, gas 2026'da %10'a düştü,
         #                          2020-2024 rejimi için tasarlandı, test MAE'yi +7.0 artırıyor. Kaldırıldı.
-        # GRF cost × gas share: gas marginal cost exposure when gas is price-setter
-        "grf_x_gas_share",
+        # "grf_x_gas_share" → grf_tl_1000sm3 look-ahead içeriyor — kaldırıldı
         # İstanbul baraj doluluk (İBB 2000-2024) — Marmara hidro stres proxy
         "istanbul_genel",
         "istanbul_dam_lag_7d",
@@ -1045,9 +1066,14 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "solar_drop_past_3h",      # son 3 saatte solar kaç MW düştü
         "solar_drop_past_6h",      # son 6 saatte solar kaç MW düştü
         "solar_drop_next_3h",      # önümüzdeki 3 saatte solar kaç MW düşecek (KGÜP'ten)
-        "grf_x_solar_drop_3h",     # gaz maliyeti × geçmiş rampa: spike riski
+        # "grf_x_solar_drop_3h" → grf_tl_1000sm3 look-ahead — kaldırıldı
         "solar_drop_pct_of_day",   # günlük solar max'a göre normalize
-        "grf_x_solar_drop_6h",     # gaz maliyeti × 6h rampa (daha güçlü)
+        # "grf_x_solar_drop_6h"   → grf_tl_1000sm3 look-ahead — kaldırıldı
+        # Duck curve sinyalleri — yük-normalize, ölçek bağımsız
+        "solar_pct_of_daily_peak",  # kalan solar oranı (1=zirve, 0=güneş battı)
+        "solar_deficit_pct_load",   # (zirve-şimdiki solar) / load — akşam spike sinyali
+        "gas_ramp_pct_load",        # 3h gaz artışı / load — hızlı devreye giriş
+        "duck_stress_normalized",   # (solar_kayıp/load) × (gaz/load) — bileşik
     ]
     orderbook_cols = [
         "dam_bid_volume",
@@ -1066,7 +1092,7 @@ def build_supervised_dataset(profile: Profile) -> tuple[pd.DataFrame, list[str],
         "night_block_pressure",
     ]
     history_cols = [c for c in hourly.columns if c.startswith("ptf_lag_") or c.startswith("ptf_roll_") or c.startswith("ptf_low_") or c.startswith("ptf_zero_") or c.startswith("ptf_spike_")]
-    history_cols += ["ptf_d1_momentum"]
+    history_cols += ["ptf_d1_momentum", "ptf_evening_max_7d", "ptf_spike_ratio_168"]
     lagged_realized_cols = [c for c in hourly.columns if c.endswith("_lag_24") or c.endswith("_lag_168")]
 
     base_anchor_cols = ["ts_hour", "ptf"] + history_cols
@@ -1268,24 +1294,41 @@ def fit_profile(profile: Profile, *, quick: bool = False) -> dict[str, Any]:
     test = data[data["split"] == "test"].copy()
 
     params = {
-        "n_estimators": 350 if quick else 700,
-        "learning_rate": 0.045 if quick else 0.03,
+        "n_estimators": 2000 if not quick else 500,
+        "learning_rate": 0.02 if not quick else 0.04,
         "num_leaves": 63,
+        "min_child_samples": 50,    # min_data_in_leaf — overfitting'i azaltır
         "subsample": 0.9,
         "colsample_bytree": 0.85,
         "random_state": 42,
         "n_jobs": -1,
         "verbose": -1,
     }
+    early_stopping_rounds = 50
+
     x_train = train[feature_cols].replace([np.inf, -np.inf], np.nan).fillna(0.0)
     y_train = train["residual_target"].to_numpy(float)
     weights = compute_sample_weights(train, y_train)
 
+    x_val_es = val[feature_cols].replace([np.inf, -np.inf], np.nan).fillna(0.0)
+    y_val_es = val["residual_target"].to_numpy(float)
+
     log(f"Training {profile.name}: rows={len(train)} features={len(feature_cols)}")
     log(f"Running walk-forward CV for {profile.name}…")
     cv_folds = walk_forward_cv(data, feature_cols, params)
+
+    from lightgbm import early_stopping as lgb_early_stopping, log_evaluation as lgb_log_evaluation
     model = LGBMRegressor(**params)
-    model.fit(x_train, y_train, sample_weight=weights)
+    model.fit(
+        x_train, y_train,
+        sample_weight=weights,
+        eval_set=[(x_val_es, y_val_es)],
+        callbacks=[
+            lgb_early_stopping(stopping_rounds=early_stopping_rounds, verbose=False),
+            lgb_log_evaluation(period=-1),
+        ],
+    )
+    log(f"Best iteration: {model.best_iteration_} (early stopping at {early_stopping_rounds})")
 
     def predict(frame: pd.DataFrame) -> np.ndarray:
         x = frame[feature_cols].replace([np.inf, -np.inf], np.nan).fillna(0.0)
