@@ -649,7 +649,12 @@ class TwoStagePTFForecaster:
         if self._master is None:
             p = PROJECT_ROOT / "data" / "master" / "master_hourly_v1.parquet"
             self._master = pd.read_parquet(p)
-            self._master["ts_hour"] = pd.to_datetime(self._master["ts_hour"], utc=True).dt.tz_convert("Europe/Istanbul")
+            ts = pd.to_datetime(self._master["ts_hour"])
+            if ts.dt.tz is None:
+                ts = ts.dt.tz_localize("Europe/Istanbul", ambiguous="NaT", nonexistent="NaT")
+            else:
+                ts = ts.dt.tz_convert("Europe/Istanbul")
+            self._master["ts_hour"] = ts
         return self._master
 
     def predict_day(
@@ -680,7 +685,14 @@ class TwoStagePTFForecaster:
         day_data = master[day_mask].sort_values("ts_hour").reset_index(drop=True)
 
         if day_data.empty:
-            raise ValueError(f"{for_date} için master tablosunda veri yok.")
+            # En yakın geçmiş günün verisiyle devam et
+            available = master["ts_hour"].dt.date.unique()
+            past = [d for d in available if d < date_ts.date()]
+            if not past:
+                raise ValueError(f"{for_date} için master tablosunda veri yok.")
+            nearest = max(past)
+            log.warning(f"{for_date} master'da yok — en yakın gün kullanılıyor: {nearest}")
+            day_data = master[master["ts_hour"].dt.date == nearest].sort_values("ts_hour").reset_index(drop=True)
 
         cols = [c for c in self._feature_cols if c in day_data.columns]
         X_day = day_data[cols].apply(pd.to_numeric, errors="coerce").fillna(0.0).values.astype(np.float32)
@@ -692,12 +704,16 @@ class TwoStagePTFForecaster:
         model = MarketClearingModel(solver_name=self.solver_name)
         results = model.clear_day(bids)
 
+        # Kalman düzeltmelerini önceden al (saat → bias sözlüğü)
+        kalman_corrections: dict[int, float] = {}
+        if self.kalman is not None:
+            kalman_corrections = self.kalman.corrections_for_tomorrow()
+
         rows = []
         for r in results:
             ptf = r.clearing_price
-            # Kalman düzeltmesi
-            if self.kalman is not None:
-                ptf = float(self.kalman.correct(np.array([ptf]))[0])
+            if kalman_corrections:
+                ptf += kalman_corrections.get(r.hour, 0.0)
             rows.append({
                 "hour": r.hour,
                 "predicted_ptf": round(ptf, 2),

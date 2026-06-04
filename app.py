@@ -208,7 +208,7 @@ with tab1:
             yaxis=dict(gridcolor="rgba(200,200,200,0.12)"),
             margin=dict(t=40, b=40),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         # Detay tablosu
         with st.expander("Saatlik detay tablosu"):
@@ -228,7 +228,7 @@ with tab1:
             tbl = fc[show_cols].rename(columns=tbl_cols).copy()
             for c in tbl.select_dtypes("float64").columns:
                 tbl[c] = tbl[c].round(1)
-            st.dataframe(tbl, hide_index=True, use_container_width=True)
+            st.dataframe(tbl, hide_index=True, width='stretch')
 
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB 2 — Geçmiş performans
@@ -288,7 +288,7 @@ with tab2:
                     yaxis=dict(gridcolor="rgba(200,200,200,0.12)"),
                     margin=dict(t=55, b=40),
                 )
-                st.plotly_chart(fig2, use_container_width=True)
+                st.plotly_chart(fig2, width='stretch')
 
                 if pred_c and "actual_ptf" in sub.columns:
                     with st.expander("Aylık MAE detayı"):
@@ -300,7 +300,7 @@ with tab2:
                             Tahmin=(pred_c,"mean"), Saat=("hata","count")
                         ).round(0).astype(int).reset_index()
                         tbl.columns = ["Ay","MAE","Gerçek Ort.","Tahmin Ort.","Saat"]
-                        st.dataframe(tbl, hide_index=True, use_container_width=True)
+                        st.dataframe(tbl, hide_index=True, width='stretch')
 
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB 3 — Kalman Düzeltici Durumu
@@ -358,7 +358,7 @@ with tab3:
             yaxis_gridcolor="rgba(200,200,200,0.1)",
             margin=dict(t=50, b=40),
         )
-        st.plotly_chart(fig_k, use_container_width=True)
+        st.plotly_chart(fig_k, width='stretch')
 
         # P kovaryans ısı haritası
         col_p, col_t = st.columns([2, 1])
@@ -380,7 +380,7 @@ with tab3:
                 yaxis_gridcolor="rgba(200,200,200,0.1)",
                 margin=dict(t=50, b=40),
             )
-            st.plotly_chart(fig_p, use_container_width=True)
+            st.plotly_chart(fig_p, width='stretch')
 
         with col_t:
             st.markdown("**Filtre tablosu**")
@@ -395,7 +395,7 @@ with tab3:
             })
             st.dataframe(
                 tbl_k[tbl_k["Bias TL"].abs() > 0.1][["Saat","Bias TL","±","P","N","Kırp%"]],
-                hide_index=True, use_container_width=True
+                hide_index=True, width='stretch'
             )
 
         st.caption(
@@ -456,7 +456,7 @@ with tab4:
             margin=dict(t=20, b=80), xaxis_tickangle=-20,
             showlegend=False,
         )
-        st.plotly_chart(fig_mae, use_container_width=True)
+        st.plotly_chart(fig_mae, width='stretch')
 
         # Eski model metrikleri (geriye dönük uyumluluk)
         if old_met:
