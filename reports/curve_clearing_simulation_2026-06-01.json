@@ -1,0 +1,12 @@
+{
+  "eval_date": "2026-06-01",
+  "mae_raw_lp": 4.7958,
+  "mae_kalman": 5.2843,
+  "mape_raw_lp": 0.2952,
+  "mape_kalman": 0.6488,
+  "rmse_raw_lp": 20.4736,
+  "rmse_kalman": 18.9597,
+  "kalman_bias": 1.2591,
+  "kalman_uncertainty": 1.0892,
+  "kalman_clip_rate": 0.0476
+}
