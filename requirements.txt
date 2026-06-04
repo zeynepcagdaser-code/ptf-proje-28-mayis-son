@@ -15,3 +15,17 @@ xgboost>=2.0
 optuna>=3.0
 yfinance>=0.2
 python-dateutil>=2.8
+
+# Şebeke simülasyonu ve piyasa verisi
+eptr2[allextras]>=1.2.4
+
+# Optimizasyon (sosyal refah, blok teklif simülasyonu)
+pyomo>=6.0
+
+# Saatlik dinamik Kalman Filtresi düzeltmeleri
+filterpy>=1.4.5
+
+# LP/MILP çözücü — öncelik sırası:
+highspy>=1.7        # HiGHS çözücüsü; Python 3.12+ ile python-mip'in yerine
+# python-mip>=1.15  # CBC tabanlı; Python ≤3.11 için alternatif
+# gurobipy          # ticari lisans gerektirir
