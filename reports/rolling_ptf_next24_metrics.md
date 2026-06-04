@@ -1,6 +1,6 @@
 # Rolling Next-24 PTF Metrics
 
-Generated: `2026-06-04T03:58:52.286831+00:00`
+Generated: `2026-06-04T06:38:58.918113+00:00`
 Selected profile: `full_market`
 
 ## Final Train/Val/Test Split

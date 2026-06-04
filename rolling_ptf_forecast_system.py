@@ -1295,9 +1295,9 @@ def fit_profile(profile: Profile, *, quick: bool = False) -> dict[str, Any]:
 
     params = {
         "n_estimators": 2000 if not quick else 500,
-        "learning_rate": 0.02 if not quick else 0.04,
-        "num_leaves": 63,
-        "min_child_samples": 50,    # min_data_in_leaf — overfitting'i azaltır
+        "learning_rate": 0.02 if not quick else 0.05,
+        "num_leaves": 63,           # full retrain'de 63 > 31 (alpha optimizasyonu dahil)
+        "min_child_samples": 50,    # min_data_in_leaf — overfitting baskısı
         "subsample": 0.9,
         "colsample_bytree": 0.85,
         "random_state": 42,
